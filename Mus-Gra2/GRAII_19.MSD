@@ -1,0 +1,54 @@
+;**************************************
+;* GRADIUS II^19 [Ranking] by UNISKIE *
+;**************************************
+FM1 =t
+FM2 =t
+FM3 =t
+FM4 =t,fm3,c0/2,c0/2
+FM5 =t,fm4,c0/2,c0/2
+FM6 =t,fm5,c0/2,c0/2
+FMR =
+FM7 =t
+FM8 =t,fm7,e0
+FM9 =t,fm8,e0
+PSG1=t
+PSG2=t
+PSG3=t,ps2,f0
+SCC1=t,
+SCC2=t,
+SCC3=t,sc2,c0/2,c0/2
+SCC4=t,sc3,c0/2,c0/2
+SCC5=t,
+
+t=t110
+
+;*** part 1 ***
+
+a0=r2.
+
+;*** part 2 ***
+
+;*** part 3 ***
+
+fm4=v12@24q5s1o4
+fm3=v13@24q4o5
+fm5=v12@33q5s1o3M4I2
+sc2=v8@2o4
+sc3=v8@14o4z2
+
+c0=l16fb->c
+
+;*** part 4 ***
+
+fm8=v13@12q5s1o2
+
+;*** part 5 (SNARE DRAM) ***
+
+fm7=v15O1
+fm8=v15O1z80
+ps2=v12O2
+
+e0=l16@91a>@90cc<@92aag>l32@90ccccccl16c<@92ag
+f0=q6l16@01a>@00cc@23aa@25gl32@00ccccccl16c@23a@25g
+
+
