@@ -1,0 +1,141 @@
+
+#opll_mode 1
+#tempo 164
+#title {
+
+  "SQUARESOFT   FINAL FANTASY III "
+
+      " - BOSS BATTLE BGM 1 - "
+
+           "  BY UNI  "}
+
+; special thanks  ÍÞ°Ï¶Þ 1992' 11¶ÞÂºÞ³
+;		 »¶² ÉÌÞ±· »ÝÉ MML DATA
+@v15 = {;TL,FB
+         21, 5,
+     ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
+      15, 7, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+      14, 5, 4, 1, 0, 4, 0, 0, 0, 0, 0}
+@e00 = {3,2,C9=4.0=10}
+@e01 = {3,2,D9=13.0=30}
+@e02 = {3,3,F*2n4.En5.Dn6.Cn7.Cn8.Bn9.Bn10.An11.An12.9n13.0=20}
+
+@e09 = {1,,FED}
+@e10 = {1,,FED:20[CCDEED]}
+@e12 = {1,,FA=4.6=20.0=40}
+@e13 = {1,,DEFEDDC}
+
+;* Brass ------------------------------
+9BD so @6@e10
+1 v8 h10,5,0,1 k5
+9 v14
+B v12 r8. @\30
+D v14
+19BD [0 l8
+19BD o6
+D \1
+1  @10
+9BD @6
+19BD [rq7e-q5ec<ag+a>c q7eq5gf+d)fq7e4q5cq7(]
+19BD [rq7g+q5afdc+df q7aq5>c<bg)b-q7a4q5fq7(]
+19BD l4( ec<af ec<af ec<af l12eg+b>eg+b>eg+b>eg+b
+1  @12
+9B @3@e10
+D <\0
+19BD l8) <fg+fg+>c<brg+ fg+>c<bg+b>d+d
+19BD <a>c<a>cee-rc <a>cgf+df>c<b
+19BD )[
+1  @10
+9B @6
+19BD < a2..a16b16 a2g2
+19BD a2g2& g1
+19BD |
+19BD f2..f16g16 f2d2
+19BD e1 g+1>
+19BD ]
+19BD a2..a16b16 a2g2
+19BD a1 g+1
+19BD ( ]
+
+;* Strings ----------------------------
+AC @0 so h30,4,0,2
+2 v6 @13 h30,4,0,2 k5
+A v13
+C v11 r16. @\30
+2AC [0 l8 Q6
+AC o6
+2 o5
+2AC [eccccccc cdd+e)fg+4a(]
+2AC [afffffff fgg+a)a+>c+4d<(]
+2AC l4 aged <aged <aged <l12a>eg+a>eg+a>eg+a>eg+<
+2AC l8 <c1& c1
+2AC e1& e2)ab>c<b>)
+2AC [
+2AC [l8 c<a24b24>c24d<a>c<a>d<a>]
+2AC [<bg24a24b-24bgagbg>]
+2AC |
+2AC [<af24g24g+24bfafbf>]
+2AC <ge24f24f+24aegeae g+e24f24g24g+eaebe>
+2AC ]
+2AC <adfdadfd> c<dgd>c<dgd
+2AC >d<eae>d<eae >d<bg+fl16ef+g+ab>cdel8
+2AC (( ]
+
+;* Bass -------------------------------
+E @15q4 v14 so
+E [0 o2 l8
+E [4 [a]8]
+E >[4 [d]8]<
+E a2.>e4 a2.r4 <aarraarr b4>e4g+4b4
+E ([ rrffrrfr]
+E >rrccrrcr rrccc<bge
+E ))[
+E [ ffccffcc]
+E [ eee-eeee-e]
+E |
+E [ ddc+dddc+d]
+E cccccccc eeef+f+f+g+g+
+E ]
+E <b-b->ff<b-b->df e-e-gae-e-ga
+E [ee<bb>ee<bb>]
+E (]
+
+;* Drums ------------------------------
+*03 = { bh8bh:h:bms8bh:bh }
+*04 = { y23,156y24,160 }
+*05 = { y23,176y24,180 }
+*06 = { y23,136y24,140 }
+*07 = { y23,116y24,120 }
+
+F y22,12y38,5
+F y39,4
+F y40,2
+F *4
+F v15 vs13 vh10 vc13
+F l16
+
+F [0
+F bhc4[3 bh4] [3 [4 bh4]]
+F [4 [4 bh4]]
+F [3 bhc4.bh8bh4ms4] [*3]
+F v-1[3 r4ms8ms4.ms4] v+1 r4ms4*5ms:ms:*6cms8*4ms:ms:*7cms8*4
+F [31 *3]
+F bms:ms:ms:ms:*6bms:ms:ms:ms:*4
+F ]
+
+;* psg drum ---------------------------
+*00 = { o8@0 }
+*01 = { o8@1 }
+*02 = { o2@2 }}
+
+3 v9 k3 \-9
+3 [0 l8
+3 *1g+4[3 *0gr] [3 [4 *0gr]]
+3 [4 [4 *0gr]]
+3 [3 *1g+4.*0ggr*2d4] l16[*0g8gg*2d8*0gg]
+3 ([3 *2r4d8d4.d4] ))r4d4ddc8c+c+<b8(
+3 [31 *0g8gg*2d8*0gg]
+3 *2ddddcccc
+3 ]
+
+

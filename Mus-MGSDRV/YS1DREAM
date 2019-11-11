@@ -1,0 +1,82 @@
+
+#opll_mode 1
+#lfo_mode 0
+#tempo 130
+
+#title {"Falcom Ys not-used number  ¢ D R E A M I N G £  mini-ARRANGE ver."
+        "  by UNI"}
+
+@v15 = {
+;	TL FB
+	21, 5,
+;	AR DR SL RR KL MT AM VB EG KR DT
+	14, 1, 2, 3, 0, 1, 0, 0, 1, 0, 0,
+	13, 2, 1, 3, 0, 2, 1, 1, 1, 0, 0}
+@v16 = {
+;       TL FB
+         6, 3,
+;       AR DR SL RR KL MT AM VB EG KR DT
+        15, 3, 3, 5, 0, 1, 1, 0, 1, 0, 0,
+        15, 1, 2, 4, 0, 3, 0, 0, 1, 0, 1 }
+
+@e00 = { 3,2,fn3*2,en4,dn5,cn6,cn7,bn8,bn9,an10,an11,9n12,9n13,80=10}
+@e01 = { 2,8,4e=120,n31*3,fn24*2,5=120,n31*3,bn26*2,2=120,n31*3,9n27*2,0=120,n31*3,7n28*2,0=120,n31*3,5n29*2,0=120}
+@e02 = { 3,13,0f=239 }
+@e21 = { 3,7,*3,ff*1,0=26}
+
+@r10 = { 1,0,200,230,20,160,0,150 }
+@r06 = { 3,1,255,255,4,200,17,17 }
+@r07 = { 3,2,255,255,90,0,90,90 }
+
+;**** introduction
+3 h3,2,1,1 @1v11 l1o2 e& e& e& e& e& e& e& e o7v12@2e& e& e4
+9A @2 so q3 o6 [r1] v13
+9 l4a((a((a(a (a(a)7g((g    ((g(g(g(g      )8b-((b-((b-(b-( b-(b-)5a((a ((a(a(a(a (a(a(a(a r1 r4q8
+A l4c((c((c(c (c(c)7<b-((b- ((b-(b-(b-(b-> )8d-((d-((d-(d-( d-(d-)5c((c ((c(c(c(c (c(c(c(c r1 r4q8
+12BCDEF [41 r4]
+
+;**** main
+12 v10 H32,1,1,1
+9A v11 H32,3,1,1
+BC v10 \1 r16.
+
+12 [0 o4 @10
+9ABC [0 o5 @2@15
+19B  l4 [3 a1 a2gb-8.a16&] a1 a2b->c8.d16& d2<l8gb->dc& c2l4<a>c8.<b-16& b-1& b-2r2> )
+2AC  l4 [3 d1 d2ce-8.d16&] d1 d2e-f8.g16&  g2<b->g8f8&  f2cf8.g16&       g1&  g2r2>  (r8.@\32
+9ABC @2@16
+129ABC  d2ab-& b-agd& ddab- >c<b-ad&  d2ab-& b-agd& ddc<b- >c<b-af g1& g2r2>
+129ABC  [ l8 e-2e-fga& a2ab->cd& d1 dcfd&d2 <e-2.e-f& f2a2 |b-1& b-2r2 ] g1&
+19B    g1<(
+2AC    g2.&g16<)
+129ABC @\0 ]
+
+
+;**** bass
+d o3 @13q6so v14 @\7
+e o2 @14q6so v12
+
+DE [0 l1 [2 g f g f] e- f g g [ g f e- f] g g [3 e- f g g8.>d8.g4<g4.] e- f g g
+DE ]
+
+
+;**** rhythm
+F [0 v15 vs13 vh9 vc11 y22,18y38,5 y23,156y39,4 y24,165y40,2
+
+*00 = { bh16h16h16bh16vh11hms16vm13mh16vh9vm12mbh16vm11mh16vm15h16h16bh16bh16vh11hms16vh9vm13mbc16vm12mh16vm11mh16vm15 }
+
+F [11 *00] bh16h16h16bh16hms16vm13mc16vm12mbh16vm11mbh16vm15r8bms16bms16y23,126y24,135ms16ms16ms16ms16y23,156y24,165
+F [9 *00] b8y23,156y24,195ms16ms16y23,126y24,135bms16bms16y23,96y24,105ms16ms16y23,186y24,195bsm24ms48b48ms24ms16ms16y23,126y24,135bms16bms16y23,96y24,105bms16bms16y23,156y24,165
+F [15 *00] bh16h16h16bh16msh16vm13mc32mh32vm12mbh16vm11mbh16vm15ms16ms16ms16ms16y23,126y24,135ms16ms16ms16ms16
+F ]
+
+;**** psg drum
+3 l16\-4 [0
+*01 = {p0v8o8@7a+v7av9a+v7av10@0o3f+8o8v9@7a+a v8a+v7av9a+v7av10@0o3f+8o8v8@6a+v9@7a}
+3 [11 *01] v8o8@7a+v7av9a+v7av10@0o3f+8o8v9@7a+a v10 p14o3r8@0ff@21n11eeee
+3 [9 *01] v10p14o3r8@21f+f+n11een13dd@21g+24g+24g+24g+g+n11een18dd
+3 [15 *01] v8o8@7a+v7av9a+v7av10@0o3f+8o8v9@7a+a v10o3@0f+f+f+f+p14@21n11eeee
+3 ]
+
+
+
