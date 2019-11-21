@@ -5,57 +5,55 @@
 }
 
 @v15 = {;TL,FB
-         0, 4,
+          0, 4,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
       15, 1, 5, 1, 0, 1, 0, 0, 1, 0, 0,
-      15, 6, 1, 0, 0, 8, 1, 0, 1, 0, 0}
+      15, 6, 2, 0, 0, 8, 0, 0, 1, 0, 0}
 @e00 = {3,2,D9=4.0=10}
 @e01 = {3,2,E9=13.0=30}
-@e02 = {3,3,F*2n4.En5.Dn6.Cn7.Cn8.Bn9.Bn10.An11.An12.9n13.0=20}
+@e02 = {3,10,F*2n4.En5.Dn6.Cn7.Cn8.Bn9.Bn10.An11.An12.9n13.0=30}
 
+@e08 = {1,,@15fa=10.d0=120}
 @e09 = {1,,Fd}
-@e10 = {1,,Fedc:20[CCDEED]}
+@e10 = {1,,Fedc:20[C:4.D:4.E:4.D:4]}
+@e11 = {1,,Fe}
 @e12 = {1,,F6=6.c0=40}
-@e13 = {1,,DEFEDC:10[CBACBA]}
+@e13 = {1,,DEFED:10[CBACBA]}
+@e14 = {1,,Fed:20[C:4.D:4.E:4.D:4]}
 
 ;* Brass ------------------------------
 9BD so @6@e10
-1 v8 h10,5,0,1 k5 
+1 v10 h20,5,0,1 k5 
 9 v14
-B v12 r8. @\12
-D v13
-19BD [0 l8
-1 o6
-9BD o6
-D \1
+B v12 r8 @\20
+;D v12 @\8 
+19B [0 l8
+19B o6
+;D o7
 1  @10
-9B @6@e10
-19BD [rq7e-q4e(c<ag+a>c q7eq4gf+d)fq7e4q4cq7]
-19BD [rq7g+q4a(fdc+df q7aq4>c<bgb-)q7a4q4fq7]
-9B @0
-19BD l4 ec<af (ec<af (ec<af l12eg+b>eg+b>)eg+b>eg+b
+9B @10@e13
+19B [rq7e-q3e((c<ag+a>c ))q7eq3g(f+df)q7e4q3cq7]
+19B [rq7g+q3a((fdc+df ))q7aq3(>c<bgb-)q7a4q3fq7]
+9B @0@e10
+19B l4 ec<af (ec<af (ec<af l12eg+b>)eg+b>)eg+b>eg+b
 1  @12
-9B @5@e9(
-D <\0
-19BD l8 <fg+fg+>c<brg+ fg+>c<bg+b>d+d
-19BD <a>c<a>cee-rc <a>cgf+
+9B @3@e13
+19B (l8 <fg+fg+>c<brg+ fg+>c<bg+b>d+d
+19B <a>c<a>cee-rc <a>cg
+19B )f+df>c<b
 1  @10
-9B @6@e10)
-19B )
-D (
-19BD )df>c<b
-19BD [
-19BD < a2..a16b16 a2g2
-19BD a2g2& g1
-19BD |
-19BD f2..f16g16 f2d2
-19BD e1 g+1>
-19BD ]
-19BD a2..a16b16 a2g2
-19BD a1 g+1
-19B (
-D )
-19BD ]
+9B @7@e14 )
+19B ) [
+19B < a2..a16b16 a2g2
+19B a2g2& g1
+19B |
+19B f2..f16g16 f2d2
+19B e1 g+1>
+19B ]
+19B a2..a16b16 a2g2
+19B a1 g+1
+19B ( ]
+9B (
 
 ;* Strings ----------------------------
 AC @0 so h30,4,0,2
@@ -67,12 +65,13 @@ AC o6 @0
 2 o5 
 2AC [eccccccc cdd+e)fg+4a(]
 2AC [afffffff fgg+a)a+>c+4d<(]
-AC @15
-2AC l4 aged <aged <aged <l12a>eg+a>eg+a>eg+a>eg+<
-AC @0@15
-2AC l8 <c1& c1
-2AC e1& e2)ab>c<b>)
 AC @0
+2AC l4 aged <aged <aged <l12a>eg+a>eg+a>eg+a>eg+<
+AC @15@e10
+2AC l8 <c1& c1
+2AC e1& e2
+2AC ))ab>c<b>
+AC @0@e11
 2AC [
 2AC [l8 c<a24b24>c24d<a>c<a>d<a>]
 2AC [<bg24a24b-24bgagbg>]
@@ -85,23 +84,24 @@ AC @0
 2AC (( ]
 
 ;* Bass -------------------------------
-E @13@e9 q6 v14 so 
-E [0 o2 l8 
-E [4 [a]8] 
-E >[4 [d]8]< 
-E a2.>e4 a2.r4 <aarraarr b4>e4g+4b4 
-E ([ rrffrrfr] 
-E >rrccrrcr rrcc)c<bge 
-E )[ 
-E [ ffccffcc] 
-E [ eee-eeee-e] 
-E | 
-E [ ddc+dddc+d] 
-E cccccccc eeef+f+f+g+g+ 
-E ] 
-E <b-b->ff<b-b->df e-e-gae-e-ga 
-E [ee<bb>ee<bb>] 
-E (] 
+D @13 q1 v12 so
+E @15@e10 q4 v12 so 
+DE [0 o2 l8 
+DE [4 [a]8] 
+DE >[4 [d]8]< 
+DE a2.>e4 a2.r4 <aarraarr b4>e4g+4b4 
+DE ([ rrffrrfr] 
+DE >rrccrrcr rrcc)c<bge 
+DE )[ 
+DE [ ffccffcc] 
+DE [ eee-eeee-e] 
+DE | 
+DE [ ddc+dddc+d] 
+DE cccccccc eeef+f+f+g+g+ 
+DE ] 
+DE <b-b->ff<b-b->df e-e-gae-e-ga 
+DE [ee<bb>ee<bb>] 
+DE (] 
 
 ;* Drums ------------------------------
 *03 = { bh8bh:h:bms8bh:bh }
@@ -115,7 +115,8 @@ F y39,3
 F y40,2 
 F *4 
 F vb15 vm14 vs12 vh9 vc11 
-F l16 
+F l16
+F kf ; cut drum
 
 F [0 
 F bhc4[3 bh4] [3 [4 bh4]] 
