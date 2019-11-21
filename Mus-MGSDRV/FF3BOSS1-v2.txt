@@ -39,11 +39,11 @@ D o7
 9B @0@e10 (
 19BD l4 ec<af (ec<af (ec<af (l12eg+b>)eg+b>)eg+b>eg+b)
 1  @12
-9B @1@e10
+9B @1@e10 (
 19BD l8 <fg+fg+>c<br(g+ fg+>c<b)g+b>d+d
 19BD <a>c<a>cee-rc <a>cgf+)df>c<b
 1  @10
-9B @6@e10
+9B @6@e10 )
 19BD [
 19BD < a2..a16b16 a2g2
 19BD a2g2& g1
