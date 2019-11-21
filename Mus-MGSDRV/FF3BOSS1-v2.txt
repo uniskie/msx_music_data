@@ -15,7 +15,7 @@
 @e01 = {3,2,E9=13.0=30}
 @e02 = {3,3,F*2n4.En5.Dn6.Cn7.Cn8.Bn9.Bn10.An11.An12.9n13.0=20}
 
-@e08 = {1,,@10.f.@13.ea=10.d.0=120}
+@e08 = {1,,@10.f.@13.eedd.@6.a=8.0=120}
 @e09 = {1,,Fed}
 @e10 = {1,,Fed:20[C:3.D:3.E:3.D:3]}
 @e11 = {1,,Fe}
@@ -24,26 +24,26 @@
 @e14 = {1,,EA:30.9a9a9abababbcbcbcdcdcdcdeded[efefe]}
 
 ;* Main ------------------------------
-9BD so @10@e10
+9BD so @3@e10
 1 v9 h20,5,0,1 k5 
 9 v14
-B v12 r8 @\20
-D v12 @\1
+B v12 r8. @\20
+D v12 @\5
 19BD [0 l8
 19B o6
 D o7
 1  @10
 9B @9@e10
-19BD [rq7e-q3e((c<ag+a>c ))q7eq3g(f+df)q7e4q3cq7]
+19BD [rq7e-q3e((c<ag+a>c ))q7eq3(gf+df)q7e4q3cq7]
 19BD [rq7g+q3a((fdc+df ))q7aq3(>c<bgb-)q7a4q3fq7]
-9B @0@e10 (
-19BD l4 ec<af (ec<af (ec<af (l12eg+b>)eg+b>)eg+b>eg+b)
+9B @0@e10
+19BD l4 ec<af (ec<af (ec<af (l12eg+b>)eg+b>)eg+b>)eg+b
 1  @12
-9B @1@e10 (
-19BD l8 <fg+fg+>c<br(g+ fg+>c<b)g+b>d+d
-19BD <a>c<a>cee-rc <a>cgf+)df>c<b
+9B @3@e10 
+19BD ( l8 <fg+fg+>c<br(g+ fg+>c<b)g+b>d+d
+19BD <a>c<a>cee-rc <a>cgf+)df>c<b 
 1  @10
-9B @6@e10 )
+9B @6@e10 
 19BD [
 19BD < a2..a16b16 a2g2
 19BD a2g2& g1
@@ -53,7 +53,6 @@ D o7
 19BD ]
 19BD a2..a16b16 a2g2
 19BD a1 g+1
-19BD (
 19BD ]
 
 ;* Strings ----------------------------
@@ -72,7 +71,7 @@ AC @0@e14
 2AC l8 <c1& c1
 2AC e1& e2
 AC @e10
-2AC ))ab>c<b>
+2AC )ab>c<b>)
 AC @0@e11
 2AC [
 2AC [l8 c<a24b24>c24d<a>c<a>d<a>]
@@ -86,7 +85,7 @@ AC @0@e11
 2AC (( ]
 
 ;* Bass -------------------------------
-E @14@e8 q6 v13 so 
+E @14@e8 q7 v13 so 
 E [0 o2 l8 
 E [4 [a]8] 
 E >[4 [d]8]< 
