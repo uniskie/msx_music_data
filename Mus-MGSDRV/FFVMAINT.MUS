@@ -1,8 +1,9 @@
-#opll_mode 1
+
+ #opll_mode 1
  #tempo 139
  #title {
   "SQUARESOFT   FINAL FANTASY V   - MAIN THEME -"
-  }
+"   BY Uniskie&Br"}
 
 
 ;* PSG Drum Voice ---------------------
@@ -11,19 +12,17 @@
 @e07 = {3,3,C6=7.0=16}
 @e08 = {3,1,FE0=70}
 ;* PSG Voice --------------------------
-@e01 = {1,0,F8=6.0=30.8.0=15.4.0=5}
-;* FM envelope --------------------------
+@e01 = {1,0,Fa=19.0=30}
+;* FM envelope
 @e10 = {,,FFE}
-@e11 = {,,FED}
-@e12 = {,,FE:5[D:4.E:4]}
 
 1239ABCDEF r4
 ;* Merody -----------------------------
-9A h40,4,0,2 o5 so
+9A h35,4,0,2 o5 so
 9 v14
-A v12 r8. @\40
+A v13 r8. @\30
 
-9A @8@e10 l8
+9A @8@e10 l8 
 9A r2.rq4c16e16 g1& g2.rq4f16g16> q8c1
 9A @6@e10 (< l4
 9A [0
@@ -32,9 +31,9 @@ A v12 r8. @\40
 9A d2.c <a+2g2 f+>dc2^ 2<a+f+ a+1& a+1 r1 r1
 
 ;* Harp. (PSG) ------------------------
-12 @1 h20,4,0,2
-1 v9
-2 v7 r8. @\18
+12 @1 
+1 v8
+2 v6 r8. @\30
 
 12 q3k4 l32 [o3 eg>c8. eg>c8. g>ce8.^4 |r1]
 12 q8k5 l24 o3 ceg>ceg< g>ceg>ce< )ceg>ceg< g>ceg>ce(
@@ -46,7 +45,7 @@ A v12 r8. @\40
 12 [r1]8
 
 ;* Strings ---------------------------
-BCD @0@e12 so q3 v13 o5 l8 h38,3,0,3
+BCD @0@e10 so q3 v14 o5 l8 h35,4,0,2
 B [eeffeedd]4
 C [gggggggg]4
 D ([cccccccc]4
@@ -58,7 +57,7 @@ BCD )
 B l16q5 c<e-g>c e-<g>ce- gce-g >c<e-g>c <d<fa>d f<a>df adfa >d<fa>d q8c1 c-1<
 C l16q5 g<b->e-g b-e-gb- >e-<gb->e- g<b->e-g <acfa >c<fa>c f<a>cf acfa q8g1& g1<
 D q7<l4d+dc<a+agf>c<g1& g1> l8
-BCD l4 q8
+BCD l4 q8 
 B [d+1& d+d+fg f1& ffga |f1 f2f2 g1 f1] f2a2 >c1< b1& b1
 C [g1& ggaa+ >c1& c1 |c1 f2c2 d2g2& g1<] c2f2 f2a2 g1& g1<
 D [g1& g2gg a1& aaa+>c d1 c1 <|a+1& a+1] g1& g1
@@ -67,10 +66,10 @@ C a+2.>c d1 d+ff+2& f+2d+2 d1 c1 c+1 c1<
 D g1& g>dc<a+ a+1& a+1 a+1 g+1 a+1 g+1>
 
 ;* Base -------------------------------
-E @13@e11 v14 so o3 h36,4,0,2
+E @13 v14 so o3
 E r1 r1 r1 r1
 E [0
-E q5l8 [ccr2>c<g ccr2. ccr2>c<g ccr2. |[d+d+r2>d+<a+ ffr2.]]
+E q6l8 [ccr2>c<g ccr2. ccr2>c<g ccr2. |[d+d+r2>d+<a+ ffr2.]]
 E q7>d+4d4c4<a+4a4g4f4>c4< [q5ggq7rd]4 q6
 E [d+d+r2>d+<a+ d+d+r2. d+d+r2>fc< d+d+r2. ddr2>d<a ddr2. ggr2>gd< ggr4ffr4]
 E [q5ccq6r>c<] q5ccrq6grcrg [q5ccrq6>c<] q5ccrq6f+rcrc
@@ -80,13 +79,13 @@ E q5a+a+rq6fq5a+a+r4 q5g+g+rq6fq5g+g+r4 q5[f+c+]4 ffr4ffr4
 *00 = { y23,175 }
 *02 = { y23,198 }
 *03 = { bh8bh16h16 }
-*04 = { msh16vm12m16vm10hm16vm8mh16vm14 }
-*05 = { msh16vm12m16vm10bhm16vm8mh16vm14 }
+*04 = { msh16vm13m16vm12hm16vm11mh16vm15 }
+*05 = { msh16vm13m16vm12bhm16vm11mh16vm15 }
 *06 = { bh8bh16h16y23,198h8y23,175h16h16 }
 *07 = { bh8bh16h16y23,198h8y23,175bh16h16 }
 
-F vb15 vm14 vs12 vh9 vc12
-F y22,243y38,3 *0y39,2 y24,134y40,2
+F vb15 vm15 vs13 vh10 vc14
+F y22,13y38,5 *0y39,4 y24,164y40,2
 F [h4]16
 F bhc8bc8h4h4h4
 F [0
@@ -94,7 +93,7 @@ F [bh8b8h4h4h4]11 [bh8*2h8*0]8 [bh8*2bh8*0|bh8*2bh8*0]r4 bh8bh16h16*2h8*0bh16h16
 F [ [4 *6*4*2h8*0bh16h16 |*6*4*2h8*0h16h16]
 F *3*2h8*0h16h16*5*2h8*0bh16h16 ]
 F [*7*5*2h8*0h16h16 *7*5*2h8*0bh16h16 ]
-F [*7*5*2h8*0h16h16 *7*5*2|h8*0h16h16 ]msc16vm12m16*0vm10hm16vm8mh16vm14
+F [*7*5*2h8*0h16h16 *7*5*2|h8*0h16h16 ]msc16vm13m16*0vm12hm16vm11mh16vm15
 F bh8b8h4h4h4
 
 ;* psg drum
@@ -103,7 +102,7 @@ F bh8b8h4h4h4
 *10 = { o8@8 }
 *01 = { o2@0 }
 
-3 l16 v10 \-8
+3 l16 v9 \-8
 3 *9 [a4]16
 3 )*10g+8g+4.(*9a4a4
 3 [0
