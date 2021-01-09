@@ -1,4 +1,4 @@
-;    YS ¢FIRST STEP TOWERDS WARS£
+;    YS ¢FIRST STEP TOWARDS WARS£
 ; voice.vcd
 FM1 =T,fm1,z6,vd ,A0,A1,   A3,    A4,A5,   A8,    vd, a8',A9,A10,A9,A11,vc,A12/4,    vd,A13
 FM2 =T,fm1,   vcr,A0,A2,vd,B3,vcr,A4,A6,vd,B8,    vcr,a8',A9,A10,A9,A11,vb,A12/3,b12,vd,B13
