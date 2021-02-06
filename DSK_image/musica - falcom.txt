@@ -1,0 +1,68 @@
+---------------------------------------
+※ご注意
+---------------------------------------
+
+BlueMSXで作成・演奏・調整しています。
+音量は実機に合わせていませんので、実機での演奏については保証外です。
+Bluemsx.iniをテキストエディタで開いて各種音量設定を反映してから聞いてみてください。
+（※その際、書き換え前のbluemsx.iniのバックアップをしておくと良いと思います。）
+
+元々音量バランスの崩壊したデータをBlueMSX上で聴けるように弄ったもので、
+SCCとPSGのバランスも、FM音源のバランスも実機とは異なると思います。
+
+---------------------------------------
+ファルコム曲のMuSICAデータ
+---------------------------------------
+YS*.* やvoice*.vcdファイル。
+
+MSD（MMLテキスト）
+VCD（音色バイナリ）
+BGM（演奏データ）ファイルのセット。
+
+BlueMSXでの音量は
+sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
+sound.mixerChannel.MIXER_CHANNEL_PSG.pan=50
+sound.mixerChannel.MIXER_CHANNEL_PSG.volume=100
+sound.mixerChannel.MIXER_CHANNEL_SCC.enable=yes
+sound.mixerChannel.MIXER_CHANNEL_SCC.pan=50
+sound.mixerChannel.MIXER_CHANNEL_SCC.volume=85
+sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
+sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
+sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=77
+です。
+
+---------------------------------------
+OMAKE
+『Relics Openning Theme(SCC ver)』
+---------------------------------------
+relicsop.bgm
+
+音量はファルコム曲と同じ
+
+---------------------------------------
+OMAKE
+『高収入求人情報バニラ(VANILLA)の広告宣伝カーの曲』
+---------------------------------------
+vanila.bgm : OPLL+PSG
+vanilap.bgm : PSG
+vanila.bas : MSX スクリーンモード2で画像＋PSG版BGM再生
+
+音量はファルコム曲と同じ
+
+---------------------------------------
+OMAKE
+DragonSaber Stage1 『水没都市』
+---------------------------------------
+
+SUIBOTU1、SUIBOTUはファルコム系と音量バランスが異なります。
+BlueMSXでの音量は
+sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
+sound.mixerChannel.MIXER_CHANNEL_PSG.pan=50
+sound.mixerChannel.MIXER_CHANNEL_PSG.volume=66
+sound.mixerChannel.MIXER_CHANNEL_SCC.enable=yes
+sound.mixerChannel.MIXER_CHANNEL_SCC.pan=50
+sound.mixerChannel.MIXER_CHANNEL_SCC.volume=66
+sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
+sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
+sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
+です。
