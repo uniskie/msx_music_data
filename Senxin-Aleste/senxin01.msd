@@ -39,13 +39,13 @@ A1=l16
    a2..(g+)a f2..(e)f e2..(f)e d+2..(e)d+ d2..(d)d+ e2..(d+)e f4.(f+8)f+4. (f)f+g4.
 A2=(g+4)g+4(g)g+
 A3=g+4.(e8)e8
-FA2=v10 @60 q6s0
-PA2=v11 @11 q6
+FA2=v10 @60 q8s0
+PA2=v09 @10 q6
 A4=l1
    g+ mp6>d+ p5<a+ p7>f p5c p6<g p6>d p7<a p7
    >(e) e (e) e< p
 FA3=v10@33 q4s1
-PA3=v10@17 q4 m5i10
+PA3=v08@17 q4 m5i10
 A5=l8 
   f4rf+ g4f e4 egg+ a>a<ed+ d4rd+ e4ra4aag+ g>c<gf+
   f4rf+ g4eg+4eg+a4ea 
@@ -126,7 +126,7 @@ D2=<(a+4m5i60a+4)a+8.mp6 >f4p4 (c2m5i60)c2mp2
 ;  o5 P* q4 @guiter
 FD3=v11 @66 q4
 FE3=v10 @66 q4
-PD3=v9 q4
+PD3=v10 q4
 ;  [
 D3= a4c4<b4>a8g4c8<b8>c4d8e8 f4<a4g+8>d8e8f8e4c8<b8>(c8c4i60)c4i
     a4c4<b4>a8 g+4a8b8>c4 d8e8
@@ -147,7 +147,7 @@ D6= aaf+f+ aaf+f+ aaf+f+ aaf+f+
 
 ;--- TR5 arpeggeo
 ;  @arp l16 q1 EC1,32,-8,1
-FM5=@16 v12 q1s1 l16 o5 m5
+FM5=@16 v11 q1s1 l16 o5 m3i40
 F0=c e f a e f a>c<f a>c e<a>c e f 
    d f g b f g b>d<g b>d f<b>d f g 
    d f g+b f g+b>d<g+b>d f<b>d f g+
@@ -194,11 +194,12 @@ F5=c4e4d2<b4g4>c2
 F6=d4c8c8<a8a8f8r8
    b4a8g+8f8e8d8c8<b8>>
 ;  ]2
-F7=d4. c4.<a4f8q7(a4i60a4)a8iq1 b8>c8 q7(e2i60e2)e8i(d2i60)d2i
+F7=v12 m5
+   d4. c4.<a4f8q7(a4i60a4)a8iq1 b8>c8 q7(e2i60e2)e8i(d2i60)d2i
    (d1i60)d1i(c2.i60c4)c2.iq1c4 q7(d1i60)d1i(c1i60)c1iq1
 ;  L
 ;  v125 (4 o6
-FF4=v13
+FF4=v13 m3i20
 F8=c+c+<aa> c+c+<aa> c+c+<aa> c+c+<aa>
    c+c+<aa> c+c+<aa> c+c+<aa> c+c+<aa>
    cc<aa> cc<aa> cc<aa> cc<aa>
@@ -213,7 +214,7 @@ PSR=v12 o2 z120 l16 m4i10
 S0=q4
    v12@1c8@1g v10@1c8@1g v09@1c8@1g v08@1c8@1g
    v07@1c8@1g v06@1c8@1g v05@1c8@1g v04@1c8@1g
-   v03@1c8@1g v02@1c v13@5dV11dv12@1cv9@5d
+   v03@1c8@1g v02@1c v12@5dV11dv12@1cv9@5d
    v12 q4
 ;  ]4
 ;  [
