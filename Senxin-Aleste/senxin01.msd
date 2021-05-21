@@ -1,22 +1,22 @@
-;--------------------------------------------------
+;--------------------------------------
 ; Senxin-Aleste // ACES -Array of Stars-(Stage01)  
 ; (C)2021 M2Co ., Ltd.                             
 ; Composed by Tatsuhiko Kasuga                     
-; https://m2stg.com/senxin-aleste/mml.php
-;--------------------------------------------------
+;https://m2stg.com/senxin-aleste/mml.php
+;--------------------------------------
 ; Converted by Uniskie
 
 FM1 =t,FM1,A0,FA1,A1,A2,A1,A3,FA2,A4,FA3,A5,A6,A5,A7,A8/3,A9,AA/8
 FM2 =t,FM2,B1,FB2,B2/2,FB3,B3,FB4,B4,B5,B4,B6,B7/2,B8/8
 FM3 =t,FM2,C1,FB2,C2/2,FB3,C3,FB4,C4,C5,C4,C6,C7/2,C8/8
-FM4 =t,FM3,D0,FD1,D1/2,FD2,D2,D2F,D2',FD3,D3,D4,D3,D5, FD4,D6/8
-FM5 =t,FM4,D0,FE1,D1/2,FE2,D2,D2F,D2',FE3,D3,D4,D3,D5, FE4,D6/8
+FM4 =t,FM3,D0,FD1,D1/2,FD2,D2,FD3,D3,D4,D3,D5, FD4,D6/8
+FM5 =t,FM4,D0,FE1,D1/2,FE2,D2,FE3,D3,D4,D3,D5, FE4,D6/8
 FM6 =t,FM5,F0,FF1,F1,F2,F1,F3,FF2,F4,FF3,F5,F6,F5,F7, FF4,F8/8
 FMR =t,FMR,R0/4,RF1,R1/28,R2/6,R3/5,R4, R5,R3,R5,R3,R5,R3,R5,R7, R3/32
 FM7 =
 FM8 =
 FM9 =
-PSG1=t,PS0,D0,PD1,D1/2,PD2,D2,    D2',PD3,D3,D4,D3,D5, PD4,D6/8
+PSG1=t,PS0,D0,PD1,D1/2,PD2,D2,PD3,D3,D4,D3,D5, PD4,D6/8
 PSG2=t,PS1,A0,PA1,A1,A2,A1,A3,PA2,A4,PA3,A5,A6,A5,A7,A8/3,A9,AA/8
 PSG3=t,PSR,S0/4,S1/3,S2,S1/3,S2, S3/6, S4,S5/4,S6,S5/5,S6,S5/4,S6, S5/4,S6,S5/4,S6,S5/2
 SCC1=
@@ -39,13 +39,13 @@ A1=l16
    a2..(g+)a f2..(e)f e2..(f)e d+2..(e)d+ d2..(d)d+ e2..(d+)e f4.(f+8)f+4. (f)f+g4.
 A2=(g+4)g+4(g)g+
 A3=g+4.(e8)e8
-FA2=v10 @6 q6s1
+FA2=v10 @60 q6s0
 PA2=v11 @11 q6
 A4=l1
    g+ mp6>d+ p5<a+ p7>f p5c p6<g p6>d p7<a p7
    >(e) e (e) e< p
 FA3=v10@33 q4s1
-PA3=v11@17 q4 m5i10
+PA3=v10@17 q4 m5i10
 A5=l8 
   f4rf+ g4f e4 egg+ a>a<ed+ d4rd+ e4ra4aag+ g>c<gf+
   f4rf+ g4eg+4eg+a4ea 
@@ -121,9 +121,7 @@ D2=<(a+4m5i60a+4)a+8.mp6 >f4p4 (c2m5i60)c2mp2
    (d+4m5i60)d+4mp6<(a+4m5i60)a+4mp7 >(g2m5i60)g2mp6<
    >(c4.m5i60)c4.mp6 g4p5 (d2m5i60)d2mp5
    (a4m5i60)a4mp5(e4m5i60)e4mp4<(b4m5i60)b4mp1>(c4m5i60)c4mp2
-   (d1m5i60d1
-D2F=@59
-D2'=) d8r2..r1r16i>
+   (d1m5i60)d1 r1r1r16i>
 ;  _0 D0
 ;  o5 P* q4 @guiter
 FD3=v11 @66 q4
