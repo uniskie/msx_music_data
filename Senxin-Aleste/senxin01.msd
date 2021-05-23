@@ -147,7 +147,7 @@ D6= aaf+f+ aaf+f+ aaf+f+ aaf+f+
 
 ;--- TR5 arpeggeo
 ;  @arp l16 q1 EC1,32,-8,1
-FM5=@16 v11 q1s1 l16 o5 m3i40
+FM5=@16 v11 q1s1 l16 o5 m5i10
 F0=c e f a e f a>c<f a>c e<a>c e f 
    d f g b f g b>d<g b>d f<b>d f g 
    d f g+b f g+b>d<g+b>d f<b>d f g+
@@ -159,12 +159,13 @@ F0=c e f a e f a>c<f a>c e<a>c e f
    eg+b>d <g+b>de <b>deg+ deg+b
    <
 ;  @strings o5 
-FF1=v14@2 q1s1
+FF1=v12@2 s1
 ;  [
-F1=e2g2e2c4d4g2b2a+2g2
-   a8 fa>cr <a>c fr c fa8v12a8v14
-   r8 gb>dr <b>dgr d gb8v12b8v14
-   << g2 >c2
+F1=l4q6
+   v12(ei80)ei(gi80)gi(ei80)eicd(gi80)gi(bi80)bi(a+i80)a+i(gi80)gi
+   v13l16 a8 fa>cr <a>c fr c fa8v10a8v13q2
+   r8 gb>dr <b>dgr d gb8v10b8v12q6
+   << (g4i80)g4i >(c4i80)c4i v13q2
 ;  :
 F2=  dd<bbggdd bbg+g+ffdd
 ;  ]2
@@ -172,34 +173,34 @@ F3=  dd<bbggdd bbeeg+g+bb
 ;  @triangle o5 q4
 FF2=@16 q1s1 v11
 F4=>
-   v12d+v10d+v11d+v10d+ v11d+v10d+v11d+v10d+ v10d+v9d+d+d+ v10d+v9d+d+d+
-   v12a+v10a+v11a+v10a+ v11a+v10a+v11a+v10a+ v10a+v9a+a+a+ v10a+v9a+a+a+
-   v12fv10fv11fv10f v11fv10fv11fv10f v10fv9fff v10fv9fff 
-  >v12cv10cv11cv10c v11cv10cv11cv10c v10cv9ccc v10cv9ccc 
-  <v12gv10gv11gv10g v11gv10gv11gv10g v10gv9ggg v10gv9ggg 
-   v12dv10dv11dv10d v11dv10dv11dv10d v10dv9ddd v10dv9ddd 
-   v12av10av11av10a v11av10av11av10a v10av9aaa v10av9aaa 
-   v12ev10ev11ev10e v11ev10ev11ev10e v10ev9eee v10ev9eee 
-   v12bv10bv11bv10b v11bv10bv11bv10b v10bv9bbb v10bv9bbb
-   v12bv10bv11bv10b v11bv10bv11bv10b v10bv9bbb v10bv9bbb
-   v12bv10bv11bv10b v11bv10bv11bv10b v10bv9bbb v10bv9bbb
-   v12bv10bv11bv10b v11bv10bv11bv10b v10bv9bbb v10bv9bbb
+   v12d+v10d+v11d+v10d+ v11d+v10d+v11d+v10d+ d+d+d+d+ d+d+d+d+
+   v12a+v10a+v11a+v10a+ v11a+v10a+v11a+v10a+ a+a+a+a+ a+a+a+a+
+   v12fv10fv11fv10f v11fv10fv11fv10f ffff ffff 
+  >v12cv10cv11cv10c v11cv10cv11cv10c cccc cccc 
+  <v12gv10gv11gv10g v11gv10gv11gv10g gggg gggg 
+   v12dv10dv11dv10d v11dv10dv11dv10d dddd dddd 
+   v12av10av11av10a v11av10av11av10a aaaa aaaa 
+   v12ev10ev11ev10e v11ev10ev11ev10e eeee eeee 
+   v12bv10bv11bv10b v11bv10bv11bv10b bbbb bbbb
+   v12bv10bv11bv10b v11bv10bv11bv10b bbbb bbbb
+   v12bv10bv11bv10b v11bv10bv11bv10b bbbb bbbb
+   v12bv10bv11bv10b v11bv10bv11bv10b bbbb bbbb
 ;  @strings 
-FF3=@2 v13 q1s1 >
+FF3=@16 v11 q1s1 > i10
 ;  [
-F5=c4e4d2<b4g4>c2
+F5=c4e4(d4i60)d4i10<b4g4>(c4i60)c4i10
    g4e4d4<b4>d4<b4a+4>c4
    <c4d4e4f8g+4a8b8>c4<b8>c8
 ;  :
 F6=d4c8c8<a8a8f8r8
    b4a8g+8f8e8d8c8<b8>>
 ;  ]2
-F7=v12 m5
-   d4. c4.<a4f8q7(a4i60a4)a8iq1 b8>c8 q7(e2i60e2)e8i(d2i60)d2i
+F7=v10 m5 @16
+   d4. c4.<a4f8q7(a4i60a4)a8iq1 b8>c8 v9 q7(e2i60e2)e8i(d2i60)d2i
    (d1i60)d1i(c2.i60c4)c2.iq1c4 q7(d1i60)d1i(c1i60)c1iq1
 ;  L
 ;  v125 (4 o6
-FF4=v13 m3i20
+FF4=v9 m3i20
 F8=c+c+<aa> c+c+<aa> c+c+<aa> c+c+<aa>
    c+c+<aa> c+c+<aa> c+c+<aa> c+c+<aa>
    cc<aa> cc<aa> cc<aa> cc<aa>
