@@ -12,6 +12,9 @@ SENXIN01.BGM	- Compiled BGM File
 SENXIN01.MSD	- MML File
 SENXIN01.VCD	- Voice File
 
+再生方法
+RUN"HEAR40.BAS"
+
 FS-A1 + FMPACに合わせて調整してありますが、
 OpenMSXで聴くときはOPLL 100/PSG 70ぐらいです。
 （ただし、高音域、Hi-HutやCymbalが実機より大きめに聞こえます）
