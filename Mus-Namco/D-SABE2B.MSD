@@ -11,9 +11,9 @@ FM2 =t,fn1,bx',bz
        fm1,bx,b0/2,b',a1,bx1,b2,b3,  b4/2,b5,b6/8,vd,b7,b8,bv,b9,ba
 FM3 =t,fn1,by',dz
        fm1,bx,c0/2,by,b1,by1,b2,c3,  c4/2,c5,b6/8,vc,b7,c8,bv,c9,ba
-FM4 =t,fm4,bx',az
+FM4 =t,fm3,bx',az
        fm1,bx,d0/2,   a1,dx,d1,d2/3,d3/8, fx,d4/5,      bv,d9,bw,ba
-FM5 =t,fm4,by',cz
+FM5 =t,fm3,by',cz
        fm3,   q0  ,by,b1,ex,q1,q2/3,q3/8, fx,e4/5,      gw,d9,ev,ba
 FM6 =t,fm2,az,
        fm2,f0/32,     a1,f0/32,     f1/8, fx,f4/5,      fv,a4
@@ -58,7 +58,7 @@ a4=>l16d8.dr2. d8.dr4ddr4. d8.dr8ddr4ddr8 e-d-c-g-r8gc<b->gr4
 ;** key 1
 fm1=@77 m5o4 q6
 fn1=@78 m5o4 q6
-bx'=v13
+bx'=v12
 by'=v11
 bz=l16e-a-b->e-<b-a-dga>d<agd-f-a->d-
 dz=l16r.e-a-b->e-<b-a-dga>d<agd-f-a-32z
@@ -80,24 +80,24 @@ b2=>l(a..i80)a..ig+16a16 (b..i80)b..ia16b16
    <l(a..i80)a..il32agaa+ l8b.g.d.ga.(b16. )b>(c2..i80
 b3=)c1i<
 c3=c16)c2.i<z
-b4=l8@77v11(e.i80)e.i(f2 fi80)f2.i (e.i80)e.i(f.i80)f.i(g g4.i80)g2i
-c4=l8@77v11(c.i80)c.i(d2 di80)d2.i (c.i80)c.i(d.i80)d.i(e e4.i80)e2i
-b5=@78v12l16(a1i80 )a2..iga (a4mp3c4.p5>c4.  c2m5i80c2 mp2d1 m5i80)d1i (c2i80)c2i (g4..i80)g4..ifgv13
-c5=@78v12l16(d1i80 )d2..icd (c4mp3<f4.p5>f4. f2m5i80f2 mp3a1 m5i80)a1i (g2i80)g2i >(c2i80)c2i r8.v11z20
+b4=l8@77v12(e.i80)e.i(f2 fi80)f2.i (e.i80)e.i(f.i80)f.i(g g4.i80)g2i
+c4=l8@77v12(c.i80)c.i(d2 di80)d2.i (c.i80)c.i(d.i80)d.i(e e4.i80)e2i
+b5=@78v13l16(a1i80 )a2..iga (a4mp3c4.p5>c4.  c2m5i80c2 mp2d1 m5i80)d1i (c2i80)c2i (g4..i80)g4..ifgv13
+c5=@78v13l16(d1i80 )d2..icd (c4mp3<f4.p5>f4. f2m5i80f2 mp3a1 m5i80)a1i (g2i80)g2i >(c2i80)c2i r8.v12z20
 b6=agfd
 vd=v13
-vc=v11
+vc=v12
 b7=>(c4i80)c4l8<g.f.g d.c.d<(a4mp2<)a4p>>
    l16d8c<ag>f8.d8c<ag>g8. d8c<ag>a8.d8c<ag>g8.
    (a>c<a-bgb-g-afa-ege-g-df d-e-<b->
 b8=d-<a>c<<cp8>>>c)c2p
-   l8v12d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
+   l8v13d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
    <<mp2a2.>>p12a4 a4m5i80)a2.i
 c8=)d-a>c<<<(cp8>>>c)c2p
-   l8v10d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
+   l8v12d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
    <<mp2a2.>>p12a4 a4m5i80a16)a2i
 bv=@78v13q6s1 o6
-bw=z20v11
+bw=z20v12
 b9=l16 g8.gr2. g8.gr4ggr4. g8.gr8ggr4ggr8
 c9=l16 d8.dr2. d8.dr4ddr4. d8.dr8ddr4ddr8 < z22
 d9=l16<a8.ar2. a8.ar4aar4. a8.ar8aar4aar8 r16.
@@ -107,10 +107,9 @@ ba=q4a-e-d-a-r8adcar8
 fm2=@16q4 v11 o6 l16
 f0=araaraar
 f1=>frffrffrfrfrfr
-fv=@14q2 v11o2 z20
+fv=@24q4 v13o2 z20
 ;
 ;** key 2
-fm4=@24 q5s1 m5i30 o
 fm3=@77 q5s1 m5i30 o
 ps0=@19 m5i30 o
 gx=v10
