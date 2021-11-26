@@ -26,9 +26,9 @@ FM7 =
 FM8 =
 FM9 =
 PSG1=t,ps0,gx,bz
-       ps0,gx,g0/2,   a1,g1,g2/3,   g3/8, d4/5,         gv,b9,ba
+       ps0,gx,g0/2,   a1,g1,g2/3,   g3/8, gx,d4/5,      gv,b9,ba
 PSG2=t,ps0,gy,dz
-       ps0,gx,h0/2,gy,b1,h1,h2/3,   h3/8, e4/5,         gv,c9,ba
+       ps0,gx,h0/2,gy,b1,h1,h2/3,   h3/8, gx,e4/5,      gv,c9,ba
 PSG3=t,psr,sz
        psr,s0,s1/2,s2,s3/3,s4,s01,s11/2,s21,s3/3,s5,s5'
            s6/3,s7,s6/3,s7,s6/3,s7,s6/3,s5
@@ -58,18 +58,18 @@ a4=>l16d8.dr2. d8.dr4ddr4. d8.dr8ddr4ddr8 e-d-c-g-r8gc<b->gr4
 ;** key 1
 fm1=@77 m5o4 q6
 fn1=@78 m5o4 q6
-bx'=v13
-by'=v11
+bx'=v12
+by'=v10
 bz=l16e-a-b->e-<b-a-dga>d<agd-f-a->d-
 dz=l16r.e-a-b->e-<b-a-dga>d<agd-f-a-32z
 ;
 bx=v12
-by=v11z30
+by=v10z30
 b0=l(a..i80)a..i(b8 b.i80)b2i>(c8 c.i80)c2i(d8 d2i80)d2i< (a..i80)a..i(b8 b.i80)b2i>(c8 c2..i80c8 )c1i<l16
 c0=l(f..i80)f..i(g8 g.i80)g2i(a8  a.i80)a2i(b8 b2i80)b2i  (f..i80)f..i(g8 g.i80)g2i(a8 a2..i80a8  )a1il16z10
 d0=l<(g..i80)g..i(g8g.i80)g2i(g8  g.i80)g2i(g8 g2i80)g2i  (g..i80)g..i(g8 g.i80)g2i(g8 g2..i80g8  )g1il16
 b'=@77
-bx1=v12@76
+bx1=v13@76
 by1=v11r8.z30
 b2=>l(a..i80)a..ig+16a16 (b..i80)b..ia16b16
     >l8(c.i80)c.i(f.i80)f.ic4 (d.i80)d.i(gg.i80g16)g4i
@@ -80,48 +80,48 @@ b2=>l(a..i80)a..ig+16a16 (b..i80)b..ia16b16
    <l(a..i80)a..il32agaa+ l8b.g.d.ga.(b16. )b>(c2..i80
 b3=)c1i<
 c3=c16)c2.i<z
-b4=l8@77v11(e.i80)e.i(f2 fi80)f2.i (e.i80)e.i(f.i80)f.i(g g4.i80)g2i
-c4=l8@77v11(c.i80)c.i(d2 di80)d2.i (c.i80)c.i(d.i80)d.i(e e4.i80)e2i
-b5=@78v12l16(a1i80 )a2..iga (a4mp3c4.p5>c4.  c2m5i80c2 mp2d1 m5i80)d1i (c2i80)c2i (g4..i80)g4..ifgv13
-c5=@78v12l16(d1i80 )d2..icd (c4mp3<f4.p5>f4. f2m5i80f2 mp3a1 m5i80)a1i (g2i80)g2i >(c2i80)c2i r8.v11z20
+b4=l8q@79v12>(e.i80)e.i(f2 fi80)f2.i (e.i80)e.i(f.i80)f.i(g g4.i80)g2i<q6
+c4=l8q@79v12>(c.i80)c.i(d2 di80)d2.i (c.i80)c.i(d.i80)d.i(e e4.i80)e2i<q6
+b5=@78v12l16(a1i80 )a2..iga (a4mp3c4.p5>c4.  c2m5i80c2 mp2d1 m5i80)d1i (c2i80)c2i (g4..i80)g4..ifgv12
+c5=@78v12l16(d1i80 )d2..icd (c4mp3<f4.p5>f4. f2m5i80f2 mp3a1 m5i80)a1i (g2i80)g2i >(c2i80)c2i r8.v10z16
 b6=agfd
-vd=v13
+vd=v12
 vc=v11
 b7=>(c4i80)c4l8<g.f.g d.c.d<(a4mp2<)a4p>>
    l16d8c<ag>f8.d8c<ag>g8. d8c<ag>a8.d8c<ag>g8.
    (a>c<a-bgb-g-afa-ege-g-df d-e-<b->
 b8=d-<a>c<<cp8>>>c)c2p
-   l8v12d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
+   l8v11d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
    <<mp2a2.>>p12a4 a4m5i80)a2.i
 c8=)d-a>c<<<(cp8>>>c)c2p
-   l8v10d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
+   l8v9 d.<g.>c.<f.b-.e -.a.d.(g.c.m5i80c
    <<mp2a2.>>p12a4 a4m5i80a16)a2i
-bv=@78v13q6s1 o6
-bw=z20v11
+bv=@78v12q6s1 o6
+bw=z20v10
 b9=l16 g8.gr2. g8.gr4ggr4. g8.gr8ggr4ggr8
 c9=l16 d8.dr2. d8.dr4ddr4. d8.dr8ddr4ddr8 < z22
 d9=l16<a8.ar2. a8.ar4aar4. a8.ar8aar4aar8 r16.
 ba=q4a-e-d-a-r8adcar8
 ;
 ;** sequence
-fm2=@16q4 v11 o6 l16
+fm2=@16q1s1 v10 o6 l16
 f0=araaraar
 f1=>frffrffrfrfrfr
-fv=@14q2 v11o2 z20
+fv=@14q1 v12 o2 z20
 ;
 ;** key 2
 fm4=@24 q5s1 m5i30 o
-fm3=@77 q5s1 m5i30 o
+fm3=@24 q5s1 m5i30 o
 ps0=@19 m5i30 o
-gx=v10
+gx=v11
 gy=v9z20
 ;
 g0=l(a..i80)a..i30(b8 b.i80)b2i30>(c8 c.i80)c2i30(d8 d2i80)d2i30< (a..i80)a..i30(b8 b.i80)b2i30>(c8 c2..i80c8 )c1i30<l16
 h0=l(f..i80)f..i30(g8 g.i80)g2i30(a8 a.i80)a2i30(b8 b2i80)b2i30 (f..i80)f..i30(g8 g.i80)g2i30(a8 a2..i80a8 )a1i30l16z10
-q0=v11l(g..i80)g..i(g8g.i80)g2i30(g8 g.i80)g2i30(g8 g2i80)g2i30 (g..i80)g..i30(g8 g.i80)g2i30(g8 )g2..i30l16>@16df+ gbf+gb>d<gb>df+<b>df+gb>d<<<@77<i30
+q0=v12l(g..i80)g..i(g8g.i80)g2i30(g8 g.i80)g2i30(g8 g2i80)g2i30 (g..i80)g..i30(g8 g.i80)g2i30(g8 )g2..i30l16i80@6df+ gbf+gb>d<gb>df+<b>df+gb>d<<<@24i30
    l(g..i80)g..i(g8g.i80)g2i30(g8 g.i80)g2i30(g8 g2i80)g2i30 (g..i80)g..i30(g8 g.i80)g2i30(g8 g2..i80g8 )g1i30l16<
 dx=@24v13o3
-ex=@3v11o5q3s1
+ex=@16v12o5q1s1
 g1=v9>l(f..i80)f..i30(g8 g.i80)g2i30(e-8 e-.i80)e-2i30(f8 f2i80)f2i30
 h1=v9>l(c..i80)c..i30(d8 d.i80)d2i30(c8 c.i80)c2i30(d8 d2i80)d2i30
 q1=   l(a..i80)a..i30(b8 b.i80)b2i30(a-8 a-.i80)a-2i30(b-8 b-2i80)b-2i30
@@ -130,15 +130,16 @@ g2=(f..i80)f..i30(g8 g.i80)g2i30(a-8 a-1 i80)a-1i30
 h2=(c..i80)c..i30(d8 d.i80)d2i30(e-8 e-1 i80)e-1i30<
 q2=(a..i80)a..i30(b8 b.i80)b2i30>(c8 c1 i80)c1i30<
 d2=(g..i80)g..i30(g8 g.i80)g2i30(g8 g1 i80)g1i30
-g3=@18v10l16drddrddrdre-re-r
-h3=@18v10l16b-rb-b-rb-b-rb-r>crcr<
-q3=v10   l16frffrffrfrgrgr
-d3=     l16b-rb-b-rb-b-rb-rb-rb-r
-gv=@11 v11 o4
-gw=@4 q4 v11 o5
+g3=@18v11l16drddrddrdre-re-r
+h3=@18v11l16b-rb-b-rb-b-rb-r>crcr<
+q3=v11   l16frffrffrfrgrgr
+d3=      l16b-rb-b-rb-b-rb-rb-rb-r
+gv=@11  v11 o4
+gw=@9q4 v11 o5
 ev=v11z30
 ;
 fx=@2 q2s1 v12 o6 l16
+gx=v9
 d4=f8ff8gg8f8ff8gg8 f8ff8gg8f8ff8gg8
    g8gg8gg8g8gg8gg8 g8gg8gg8g8gg8gg8
 e4=d8dd8ee8d8dd8ee8 d8dd8ee8d8dd8ee8
