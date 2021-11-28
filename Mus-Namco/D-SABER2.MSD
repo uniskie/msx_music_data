@@ -80,8 +80,8 @@ b2=>l(a..i80)a..ig+16a16 (b..i80)b..ia16b16
    <l(a..i80)a..il32agaa+ l8b.g.d.ga.(b16. )b>(c2..i80
 b3=)c1i<
 c3=c16)c2.i<z
-b4=l8q@79v12>(e.i80)e.i(f2 fi80)f2.i (e.i80)e.i(f.i80)f.i(g g4.i80)g2i<q6
-c4=l8q@79v12>(c.i80)c.i(d2 di80)d2.i (c.i80)c.i(d.i80)d.i(e e4.i80)e2i<q6
+b4=l8q@79v12>(e.i80)e.i(f2 fi80)f2.i (e.i80)e.i(f.i80)f.i(g g4.i80)g2iq6<
+c4=l8q@79v12>(c.i80)c.i(d2 di80)d2.i (c.i80)c.i(d.i80)d.i(e e4.i80)e2iq6<
 b5=@78v12l16(a1i80 )a2..iga (a4mp3c4.p5>c4.  c2m5i80c2 mp2d1 m5i80)d1i (c2i80)c2i (g4..i80)g4..ifgv12
 c5=@78v12l16(d1i80 )d2..icd (c4mp3<f4.p5>f4. f2m5i80f2 mp3a1 m5i80)a1i (g2i80)g2i >(c2i80)c2i r8.v10z16
 b6=agfd
