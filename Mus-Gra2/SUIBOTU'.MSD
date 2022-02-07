@@ -1,4 +1,4 @@
-;   DRAGON SABER Stage1  intro
+;   DRAGON SABER Stage1  [intro]
 ;
 ; suibotu1.msd suibotu.vcd/voice.vcd
 
