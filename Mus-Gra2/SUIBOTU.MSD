@@ -1,5 +1,5 @@
 ;**************************************
-;  DRAGON SABER  Stage1  ¢½²ÎÞÂ Ä¼£
+;  DRAGON SABER  Stage1  SUIBOTU TOSI  
 ;**************************************
 ;suibotu.msd suyibotu.vcd/voice.vcd
 
