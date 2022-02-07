@@ -1,0 +1,9 @@
+# Auto detect text files and perform LF normalization
+#* text=auto
+
+# don't change!! no more
+#* binary
+
+# Auto detect text files and not modify line feed
+* text=false
+
