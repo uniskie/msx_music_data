@@ -1,0 +1,144 @@
+;[gain=1.0 name=vanillde duration=135s fade=5s]
+; The line above defines the extra options for MSXplay. 
+; gain    : The volume gain of the playback. It is just linear multiplier, not dB.
+; name    : The name of the mml, use as the base download filename.
+; duration: The length of the song.
+; fade    : The time of fade out.
+#opll_mode 1
+#tempo 150
+#title { "ヴァニラで高収入的なやつ for OPLL/PSG"}
+
+@v15 = {
+;       TL FB
+         8, 6,
+; AR DR SL RR KL MT AM VB EG KR DT
+  12, 6, 2, 1, 2, 1, 0, 0, 0, 0, 0,
+  14, 5, 2, 6, 0, 1, 0, 0, 0, 0, 0 }
+
+@e0 = {3,31,/3.fb/1.80=34}
+@e1 = {3,0,f/2.d0=34}
+@e2 = {2,0,d8=3.0=20}
+@e3 = {2,0,db0=40}
+
+@e10 = {1,0,dfa=4.8=30}
+@e11 = {1,0,fa=4.8=30}
+
+;9abcdef ! ;psg only
+
+1239abcdef [
+#macro_offset a=0
+#macro_offset b=6
+#macro_offset c=12
+#macro_offset r=20
+#macro_offset s=30
+
+;-- main
+*0={ l8
+    b-_g4b-_g4b-_g4b-_g-4
+    b-_g4b-_gb_g4b_b+16b_g-16a_g-
+   }
+*6={ l8
+    b_g4b_g4b_g4b_g-4
+    b_g-4b_fb+_g4b-_b+16b_g-16b-_g-
+   }
+
+*1={
+    a _b-&b-a-a-_b16r.b-a-b- a_b-&b-aga_b-4>cr<
+    a _b-&b-ab-16r16b-ag16r16e16r16 a_b->cc_dc<b-_g-2
+    a _b-&b-aa_b16r.b-16r16a-b- a-_b-&b-aga_b-4>cr<
+    a _b-&b-ab-16r16b-age a_b-4b-_b.r16a_g-2
+   }
+*7={
+    a-_b-&b-a-a-_b-16r.b a b- a_b 4a-ga-_b-4>cr<
+    a-_b-&b-a-b-16r16b-ag-16r16e-16r16 a_b->cc_dc<b-_g2
+    a-_b-&b-a-a-_b-16r.b-16r16a-b- a-_b-4a-ga-_b-4>cr<
+    a-_b-&b-a-b-16r16b-ag-e a-_b-4b-.r16a-_g2
+   }
+
+*2={
+    agfdc4d4 da4a_g&g4r4
+    da4a_g&g4r4 cg4g_f&f4r4
+    agfdc4d4 da4a_g&g4ga
+    b-4d4fg4g_f& f2.r8
+   }
+*8={
+    r1 r2rb_a12.a-_g12.&g
+    r2rg_a-12g-12a-_b12b r2ba-a-_b4
+    r1 r1
+    r1 r4b-8a8a_>d-2<
+   }
+*14={
+    r1 r2ra-_g12.g-_f12.&f
+    r2rf_a-12f12a_b12&b r2ba-a-_b-4
+    r1 r1
+    r1 r4a8a-8a-_>c2<
+   }
+
+1 v10@10o4q4 k2
+9 v12@15o5q4 l8 
+b v9 @15o5q4 l8 \2 r
+a v11@10o5q4 l8 \10
+c v8 @10o5q4 l8 \12 r
+19bac h30,5,2,1
+
+19b *a0 r8 *a0 r8
+ac  *b0 r8 *b0 r8
+19b *a1    *a1
+ac  *b1    *b1
+19b *a0 r8 *a0 r8
+ac  *b0 r8 *b0 
+a   r8
+1 )
+19b *a2 r8 *a2
+19  r8
+ac  v11@8 q4so
+a   *b2    *b2 
+c   *c2    *c2 
+
+;-- sequance
+d v9 @11o6 q4so l8 
+d [ bb-aa-gg-fe ]4
+d [ aaaa>a<aga aaaa>a<aaa ]8
+d [ bb-aa-gg-fe ]4
+d [ f>f<f>f<f>f<fe d>d<d>d<d>d<dc
+d   <b->b-<b->b-c>c<c>c< f>f<f>f<fcde
+d   f>f<f>f<f>f<fe d>d<d>d<d>d<dc
+d   <b->b-<b->b-c>c<e>e< f>f<f>f<f>f<f>f<
+d ]2
+
+;-- base
+e v13 @15o3 l8
+3 v11 @11o2 l8 k2
+3  v-2 @10q4o4\8 *b0 r8 *b0 r8 v+2 @11q8o2\0
+de [ r1 ]4
+3de [ c16e16fcfcfcf c16e16fcfcfcf ]8
+3  v-2 @10q4o4\8 *b0 r8 *b0 r8 v+2 @11q8o2\0
+de [ r1 ]4
+3de [
+3de  frfrfrfe drdrdrdc <b-rb-r>crcr frfrfcde
+3de  frfrfrfe drdrdrdc <b-rb-r>crer frfrfrfr
+3de ]2
+
+;--  rhythm opll
+f v15vc10vh8vs11
+f y38,3 y22,108
+f y39,4 y23,121
+f y40,3 y24,138
+*20 = { b4b4b4b4 b4b4b4b4 b4b4b4b4 b4b4b4b8c8 }
+*21 = { b16h16c16h16bs16h16c16h16 }
+f *r0 [ *r1 *r1 ]16
+f *r0 [ b16h16c16h16b16 h16c16h16 *r1 ]16
+
+;-- rhythm psg
+2 v12 o2 l8 p10
+*30 = { l4 @0aaaa aaaa aaaa aaa@1>c< }
+2 *s0 [
+2  l8 [ @0a@2>d16d16>@3a<@2d16|d16< ]2
+2                              @1d16<
+2 ]16
+2 *s0 [ 
+2  l8 [ @0a@2>d16d16<|@0a@2>d16d16< ]2
+2                     @3a<@2d16@1d16<
+2 ]16
+
+1239abcdef ]0
