@@ -1,4 +1,4 @@
-;[gain=1.0 name=DSEED_5s duration=300s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=DSEED_5 duration=300s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com 
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -8,14 +8,7 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
 #tempo 150
-#title {"Dangerous Seed (MD) Jupiter (Stage 6&10) | 素YM2413+素PSG | uniskie"}
-
-;@v15 = { ; Brass
-;;       TL FB
-;         0, 5, ; ※ lpf=0 なら FeedBack=4
-;; AR DR SL RR KL MT AM VB EG KR DT
-;   9, 7, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-;  12, 7, 0, 2, 0, 3, 0, 0, 1, 0, 1 }
+#title {"Dangerous Seed (MD) Jupiter (Stage 6&10) | YM2413+PSG | uniskie"}
 
 @v15 = { ; Brass
 ;       TL FB
@@ -24,27 +17,27 @@
    8, 7, 2, 1, 2, 3, 0, 0, 0, 0, 1,
   12, 7, 0, 2, 0, 1, 0, 0, 1, 0, 1 }
 
-;@e1 = {1,0,cfe:40 [d:3.c:3.b:3.c:3]0 }
-;@e10 = {1,0,@10.f:4.@9.f }
+@e1 = {1,0,cfe:40 [d:3.c:3.b:3.c:3]0 }
+@e10 = {1,0,@10.f:4.@9.f }
 
-;9ABCDE !
+;BCDE !
 
-1 v7 o5 ;@e1 k4 h50,4,1,-1 @p3
-9A @15 o5 ;h50,4,1,-1
-9 v12
-A v10 r ;@\6
-19A [ l8
-19A d+2&d+eg+b >d+4<b4g+4e4
-19A >c+2.<af+& f+2.f+g
-19A g+2&g+g+f+g+ e4g+4b4>d+4
-19A e2.e16d+16d16c+16& c+2.<b>c+
-19A d+2&d+<b4>c+ d+1&
-19A d+4c+d+e4f+4 c+4.g+4.f+e
-19A d+4.<b&b2& b2>c+d+ef+
-19A d+4.g+&g+2& g+2.<c+d
-19A ]0
+;1 v7 o5 @e1 k4 h50,4,1,-1 @p3 @\1
+9A @15 o5 h50,4,1,-1
+9 v11
+A v9  r @\7
+9A [ l8
+9A d+2&d+eg+b >d+4<b4g+4e4
+9A >c+2.<af+& f+2.f+g
+9A g+2&g+g+f+g+ e4g+4b4>d+4
+9A e2.e16d+16d16c+16& c+2.<b>c+
+9A d+2&d+<b4>c+ d+1&
+9A d+4c+d+e4f+4 c+4.g+4.f+e
+9A d+4.<b&b2& b2>c+d+ef+
+9A d+4.g+&g+2& g+2.<c+d
+9A ]0
 
-E @10 v12 q1sf o2 ;\1
+E @10 v11 q1sf o2 @\6
 D @13 v13 q1sf o2
 DE l16 o2 [
 DE [[c+c+c+>>c+8c+<<c+c+]3 
@@ -62,7 +55,7 @@ DE [bb>b<b]4
 DE [>cc>c<c<]3 >cc>cc<<
 DE ]0
 
-BC @1 v10 q4 ;@e0
+BC @1 v10 q4 @e0 @\3
 BC l8 o5 [
 BC [
 B   [bbb16b16b16bb16bb16b16b16b16]2
@@ -80,7 +73,7 @@ B  f+f+f+f+16f+f+f+16f+f+ gggg16ggg16gg
 C  [d+d+d+d+16d+d+d+16d+d+]2
 BC ]0
 
-23 v7 ;@e1 k4 h50,4,1,-1 @p3
+23 v7 @e1 k4 h50,4,1,-1 @p3 @\1
 23 l1 o4 [
 2 [g+& g+ a& a]2  d+
 3 [d+& d+ e& e]2 <g+>
@@ -88,10 +81,21 @@ BC ]0
 3 <f+ g+ g+  f+ g+ f+ g+>
 23 ]0
 
-F v14 vs12 vm12
+F v14 vh7 vc9 vs8 vm13 y38,3 y22,168 y39,3 y23,60 y40,2 y24,140
 F [
-F [[b4b4b4|b4]2 b8b16b16]4 
-F [[b4sm8.b16|b4sm4]4 
-F             b16b16b8sm16sm16|sm8]2
+F [[hb8h8b4b4|b4]2 b8b16b16]4 
+F [[hb4m8.b16|hb4sm4]4 
+F              hb16b16cb8sm16sm16|sm8]2
 F                              sm16sm16
 F ]0
+
+@e4={3,0,*3.f.*1.ca754.0=20}
+@e5={3,6,*3.f.n8.e.n10.d.n12.c.n14.b.n16.*1.a.n18.9.n20.8.n22.7.n24.0=30}
+
+1 v11 o3 p26 \5
+1 [
+1 [[@4c4c4c4|c4]2 c8c16c16]4 
+1 [[@4c4@5g8.@4c16|c4@5g4]4 
+1                  c16c16c8@5g16g16|g8]2
+1                                   g16g16
+1 ]0
