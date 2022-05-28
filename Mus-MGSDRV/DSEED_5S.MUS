@@ -1,4 +1,4 @@
-;[gain=1.0 name=DSEED_5s duration=300s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=DSEED_5S duration=300s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com 
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -12,16 +12,13 @@
 
 @v15 = { ; Brass
 ;       TL FB
-         0, 3, ; ※ lpf=0 なら FeedBack=4
+         0, 5, ; ※ lpf=0 なら FeedBack=4
 ; AR DR SL RR KL MT AM VB EG KR DT
    9, 7, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-  12, 7, 0, 2, 0, 6, 0, 0, 1, 0, 1 }
+  12, 7, 0, 2, 0, 3, 0, 0, 1, 0, 1 }
 
 ;@e1 = {1,0,cfe:40 [d:3.c:3.b:3.c:3]0 }
-
 ;@e10 = {1,0,@10.f:4.@9.f }
-
-;9ABCDE !
 
 1 v8 o5 ;@e1 k4 h50,4,1,-1 @p3
 9A @15 o5 ;h50,4,1,-1
@@ -82,7 +79,7 @@ BC ]0
 3 <f+ g+ g+  f+ g+ f+ g+>
 23 ]0
 
-F v14 vs12 vm12
+F v14 vs11 vm12
 F [
 F [[b4b4b4|b4]2 b8b16b16]4 
 F [[b4sm8.b16|b4sm4]4 
