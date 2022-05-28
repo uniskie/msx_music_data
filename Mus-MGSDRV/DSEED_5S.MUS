@@ -1,0 +1,91 @@
+;[gain=1.0 name=DSEED_5s duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com 
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 1
+#tempo 150
+#title {"Dangerous Seed (MD) Jupiter (Stage 6&10) | 素YM2413+素PSG | uniskie"}
+
+@v15 = { ; Brass
+;       TL FB
+         0, 3, ; ※ lpf=0 なら FeedBack=4
+; AR DR SL RR KL MT AM VB EG KR DT
+   9, 7, 2, 1, 0, 1, 0, 0, 0, 0, 0,
+  12, 7, 0, 2, 0, 6, 0, 0, 1, 0, 1 }
+
+;@e1 = {1,0,cfe:40 [d:3.c:3.b:3.c:3]0 }
+
+;@e10 = {1,0,@10.f:4.@9.f }
+
+;9ABCDE !
+
+1 v8 o5 ;@e1 k4 h50,4,1,-1 @p3
+9A @15 o5 ;h50,4,1,-1
+9 v12
+A v10 r ;@\6
+19A [ l8
+19A d+2&d+eg+b >d+4<b4g+4e4
+19A >c+2.<af+& f+2.f+g
+19A g+2&g+g+f+g+ e4g+4b4>d+4
+19A e2.e16d+16d16c+16& c+2.<b>c+
+19A d+2&d+<b4>c+ d+1&
+19A d+4c+d+e4f+4 c+4.g+4.f+e
+19A d+4.<b&b2& b2>c+d+ef+
+19A d+4.g+&g+2& g+2.<c+d
+19A ]0
+
+E @10 v12 q1sf o2 ;\1
+D @13 v13 q1sf o2
+DE l16 o2 [
+DE [[c+c+c+>>c+8c+<<c+c+]3 
+DE   c+c+c+>>c+<c+c+c+c+<
+DE  [ddd>>d8d<<dd]3
+DE   ddd>>d8d<dd<
+DE ]2 
+DE [>c+c+>c+<c+<]4
+DE [bb>b<b]3 bb>bb<
+DE [a+a+>a+<a+]4
+DE [aa>a<a]3 aa>aa<
+DE [g+g+>g+<g+]4
+DE [aa>a<a]3 aa>aa<
+DE [bb>b<b]4
+DE [>cc>c<c<]3 >cc>cc<<
+DE ]0
+
+BC @10 v11 q4 ;@e0
+BC l8 o5 [
+BC [
+B   [bbb16b16b16bb16bb16b16b16b16]2
+C   [g+g+g+16g+16g+16g+g+16g+g+16g+16g+16g+16]2
+B   [aaa16a16a16aa16aa16a16a16a16]2
+C   [f+f+f+16f+16f+16f+f+16f+f+16f+16f+16f+16]2
+BC ]2
+B  g+g+g+g+16g+g+g+16g+g+ f+f+f+f+16f+f+f+16f+f+
+C  [d+d+d+d+16d+d+d+16d+d+]2
+B  ffff16fff16ff eeee16eee16ee
+C  [c+c+c+c+16c+c+c+16c+c+]2
+B  d+d+d+d+16d+d+d+16d+d+ eeee16eee16ee
+C  <bbbb16bbb16bb >c+c+c+c+16c+c+c+16c+c+
+B  f+f+f+f+16f+f+f+16f+f+ gggg16ggg16gg
+C  [d+d+d+d+16d+d+d+16d+d+]2
+BC ]0
+
+23 v7 ;@e1 k4 h50,4,1,-1 @p3
+23 l1 o4 [
+2 [g+& g+ a& a]2  d+
+3 [d+& d+ e& e]2 <g+>
+2  d+ c+ c+ <b> c+ d+ d+
+3 <f+ g+ g+  f+ g+ f+ g+>
+23 ]0
+
+F v14 vs12 vm12
+F [
+F [[b4b4b4|b4]2 b8b16b16]4 
+F [[b4sm8.b16|b4sm4]4 
+F             b16b16b8sm16sm16|sm8]2
+F                              sm16sm16
+F ]0
