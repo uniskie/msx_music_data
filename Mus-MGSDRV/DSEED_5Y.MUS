@@ -7,15 +7,15 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
-#tempo 150
+#tempo 152
 #title {"Dangerous Seed (MD) Jupiter (Stage 6&10) | 素YM2413 | uniskie"}
 
 @v15 = { ; Brass
 ;       TL FB
-         7, 6,
+         0, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 9, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-  13, 7, 0, 1, 0, 3, 1, 0, 1, 0, 0 }
+  13, 7, 0, 7, 0, 6, 0, 0, 1, 0, 1 }
 
 9 @15 o5
 9 v12
@@ -30,7 +30,7 @@
 9 d+4.g+&g+2& g+2.<c+d
 9 ]0
 
-A @9 v13 q3 o2
+A @15 v13 q2 o2
 A l16 [
 A [[c+c+c+>>c+8c+<<c+c+]3 
 A   c+c+c+>>c+<c+c+c+c+<
@@ -47,7 +47,7 @@ A [bb>b<b]4
 A [>cc>c<c<]3 >cc>cc<<
 A ]0
 
-BC @10 v9
+BC @10 v10
 BC l8 o5 [
 BC [
 B   [q8b b q1b 16b 16b 16q8b q1b 16q8b q1b 16b 16b 16b 16]2
@@ -65,7 +65,7 @@ B   q8f+f+f+q1f+16q8f+f+q1f+16q8f+f+ g g g q1g 16q8g g q1g 16q8g g
 C  [q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+]2
 BC ]0
 
-DE @7 v9
+DE @0 v11
 DE l1 o5 [
 D [g+& g+ a& a]2  d+
 E [d+& d+ e& e]2 <g+>
@@ -73,7 +73,7 @@ D  d+ c+ c+ <b> c+ d+ d+
 E <f+ g+ g+  f+ g+ f+ g+>
 DE ]0
 
-F v14 vs10 vm12 vh7
+F v14 vs10 vm13 vh7
 F [
 F [[hb8h8b4hb4|b4]2 b8b16b16]4 
 F [[hb4sm8.b16|hb4sm4]4 

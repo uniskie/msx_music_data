@@ -14,8 +14,8 @@
 ;       TL FB
          0, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 7, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-  12, 7, 0, 2, 0, 3, 0, 0, 1, 0, 1 }
+  10, 9, 2, 1, 0, 1, 0, 0, 0, 0, 0,
+  13, 7, 0, 7, 0, 6, 0, 0, 1, 0, 1 }
 
 ;@v15 = { ; Brass
 ;;       TL FB
@@ -29,10 +29,10 @@
 
 ;9ABCDE !
 
-1 v7 o5 ;@e1 k4 h50,4,1,-1 @p3
-9A @15 o5 ;h50,4,1,-1
+1 v7 o5
+9A @15 o5
 9 v12
-A v10 r ;@\6
+A v10 r
 19A [ l8
 19A d+2&d+eg+b >d+4<b4g+4e4
 19A >c+2.<af+& f+2.f+g
@@ -44,7 +44,7 @@ A v10 r ;@\6
 19A d+4.g+&g+2& g+2.<c+d
 19A ]0
 
-E @10 v12 q1sf o2 ;\1
+E @10 v12 q1sf o2
 D @13 v13 q1sf o2
 DE l16 o2 [
 DE [[c+c+c+>>c+8c+<<c+c+]3 
@@ -62,25 +62,25 @@ DE [bb>b<b]4
 DE [>cc>c<c<]3 >cc>cc<<
 DE ]0
 
-BC @10 v9 q3 ;@e0
+BC @10 v10 
 BC l8 o5 [
 BC [
-B   [bbb16b16b16bb16bb16b16b16b16]2
-C   [g+g+g+16g+16g+16g+g+16g+g+16g+16g+16g+16]2
-B   [aaa16a16a16aa16aa16a16a16a16]2
-C   [f+f+f+16f+16f+16f+f+16f+f+16f+16f+16f+16]2
+B   [q8b b q1b 16b 16b 16q8b q1b 16q8b q1b 16b 16b 16b 16]2
+C   [q8g+g+q1g+16g+16g+16q8g+q1g+16q8g+q1g+16g+16g+16g+16]2
+B   [q8a a q1a 16a 16a 16q8a q1a 16q8a q1a 16a 16a 16a 16]2
+C   [q8f+f+q1f+16f+16f+16q8f+q1f+16q8f+q1f+16f+16f+16f+16]2
 BC ]2
-B  g+g+g+g+16g+g+g+16g+g+ f+f+f+f+16f+f+f+16f+f+
-C  [d+d+d+d+16d+d+d+16d+d+]2
-B  ffff16fff16ff eeee16eee16ee
-C  [c+c+c+c+16c+c+c+16c+c+]2
-B  d+d+d+d+16d+d+d+16d+d+ eeee16eee16ee
-C  <bbbb16bbb16bb >c+c+c+c+16c+c+c+16c+c+
-B  f+f+f+f+16f+f+f+16f+f+ gggg16ggg16gg
-C  [d+d+d+d+16d+d+d+16d+d+]2
+B   q8g+g+g+q1g+16q8g+g+q1g+16q8g+g+ f+f+f+q1f+16q8f+f+q1f+16q8f+f+
+C  [q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+]2
+B   q8f f f q1f 16q8f f q1f 16q8f f  e e e q1e 16q8e e q1e 16q8e e 
+C  [q8c+c+c+q1c+16q8c+c+q1c+16q8c+c+]2
+B   q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+ e e e q1e 16q8e e q1e 16q8e e
+C  <q8b b b q1b 16q8b b q1b 16q8b b >c+c+c+q1c+16q8c+c+q1c+16q8c+c+
+B   q8f+f+f+q1f+16q8f+f+q1f+16q8f+f+ g g g q1g 16q8g g q1g 16q8g g
+C  [q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+]2
 BC ]0
 
-23 v7 ;@e1 k4 h50,4,1,-1 @p3
+23 v7
 23 l1 o4 [
 2 [g+& g+ a& a]2  d+
 3 [d+& d+ e& e]2 <g+>

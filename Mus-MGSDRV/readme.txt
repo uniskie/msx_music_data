@@ -1,76 +1,60 @@
-MGSDRV ver2/ver3で作成した曲データです。
-基本はPSG+OPLLで、
-曲によってSCCを使っていたりいなかったります。
+主に [MSXPLAY] (https://msxplay.com/editor.html) で作成したMGSDRV用データです。
+他にも、昔作成したデータを再調整したものはこちらにあります。
 
-ver2環境が見つからなかったり、いじるのが面倒だったりで
-約20年前のデータそのままです。
-
-BlueMSXでの音量は
-sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_PSG.pan=50
-sound.mixerChannel.MIXER_CHANNEL_PSG.volume=100
-sound.mixerChannel.MIXER_CHANNEL_SCC.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_SCC.pan=50
-sound.mixerChannel.MIXER_CHANNEL_SCC.volume=85
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=77
-だと思いますが、違うかもしれません。
-
-MSXDOSのコマンドプロンプトからMGSELを実行すれば聞けます。
-
+[OLD] (./OLD)フォルダはそれ以前の古いMGSDRV環境で作成したままのデータです。
 
 --
 MSXPLAYで聞く場合：
 
-DSEED_5.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5.MUS
+デンジャラスシードMD 「Jupiter」 (Stage 6&10) (YM2413+PSG)
+[DSEED_5.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5.MUS)
 
-DSEED_5S.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5S.MUS
+デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413+素PSG)
+[DSEED_5S.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5S.MUS)
 
-DSEED_5Y.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5Y.MUS
+デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413)
+[DSEED_5Y.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5Y.MUS)
 
+ファイナルファンタジー3 BOSS1
+[FF3BOSS1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS)
 
-DS-3JUNG.MGS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDS-3JUNG.MGS
+ファイナルファンタジー5 タイトルBGM
+[FFVMAINT.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS)
 
-DS-7DEEP.MGS 
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDS-7DEEP.MGS
+グラディウス2(MSX) 空中戦
+[GRA2_I03.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_I03.MUS)
 
-FF3BOSS1.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS
+バニラで高収入
+[VANILLDE.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FVANILLDE.MUS)
 
-FFVMAINT.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS
+イース 「Dreaming」(イースオリジン風アレンジ)(※作成作業中)
+[YS1DREA2.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREA2.MUS)
 
-G-F-1.MGS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FG-F-1.MGS
+イース 「Dreaming」(ドラムエコーが流行ってた時代の遺物アレンジ)
+[YS1DREAM.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREAM.MUS)
 
-GRA2_I03.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_I03.MUS
+--OLD
 
-VANILLDE.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FVANILLDE.MUS
+ドラゴンスピリット ステージ3 ジャングル
+[DS-3JUNG.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-3JUNG.MGS)
 
-YS1DREA2.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREA2.MUS
+ドラゴンスピリット ステージ7 深海
+[DS-7DEEP.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-7DEEP.MGS)
 
-YS1DREAM.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREAM.MUS
+ガンフロンティア 1面 （超スロー版）
+[G-F-1.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FG-F-1.MGS)
 
-YS1FAIR.MUS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1FAIR.MUS
+イース FAIRWIND (未完成)
+[YS1FAIR.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FAIR.MUS)
 
-YS1FEENA.MGS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1FEENA.MGS
+イース FEENA (未完成)
+[YS1FEENA.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FEENA.MGS)
 
-YS1MORNI.MGS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1MORNI.MGS
+イース モーニンググロー (未完成)
+[YS1MORNI.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1MORNI.MGS)
 
-YS2NOBLE.MGS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS2NOBLE.MGS
+イース2 NOBLE DIRECT OF TOAL
+[YS2NOBLE.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2NOBLE.MGS)
 
-YS2RUINS.MGS
-https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS2RUINS.MGS
+イース2 RUINS OF MOONDORIA
+[YS2RUINS.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2RUINS.MGS)
