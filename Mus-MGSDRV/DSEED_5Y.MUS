@@ -1,5 +1,5 @@
-;[gain=1.0 name=DSEED_5y duration=300s fade=5s cpu=0 lpf=1]
-; The line above defines extra options, works only on msxplay.com 
+;[gain=1.0 name=DSEED_5y duration=300s fade=5s cpu=0 lpf=0]
+; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
 ; duration: Length of the song. (default: 300s)
@@ -12,71 +12,71 @@
 
 @v15 = { ; Brass
 ;       TL FB
-         0, 4,
+         4, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  10, 9, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-  13, 7, 0, 7, 0, 6, 0, 0, 1, 0, 1 }
+  10, 1, 8, 1, 0, 1, 0, 0, 1, 0, 0,
+  13, 7, 0, 7, 0, 5, 0, 0, 1, 0, 1 }
 
-9 @15 o5
-9 v12
-9 [ l8
-9 d+2&d+eg+b >d+4<b4g+4e4
-9 >c+2.<af+& f+2.f+g
-9 g+2&g+g+f+g+ e4g+4b4>d+4
-9 e2.e16d+16d16c+16& c+2.<b>c+
-9 d+2&d+<b4>c+ d+1&
-9 d+4c+d+e4f+4 c+4.g+4.f+e
-9 d+4.<b&b2& b2>c+d+ef+
-9 d+4.g+&g+2& g+2.<c+d
-9 ]0
+9 @15 o5 
+9 v12 
+9 [ l8 
+9 d+2&d+eg+b >d+4<b4g+4e4 
+9 >c+2.<af+& f+2.f+g 
+9 g+2&g+g+f+g+ e4g+4b4>d+4 
+9 e2.e16d+16d16c+16& c+2.<b>c+ 
+9 d+2&d+<b4>c+ d+1& 
+9 d+4c+d+e4f+4 c+4.g+4.f+e 
+9 d+4.<b&b2& b2>c+d+ef+ 
+9 d+4.g+&g+2& g+2.<c+d 
+9 ]0 
 
-A @15 v13 q2 o2
-A l16 [
+A @15 v13 q1 o2 
+A l16 [ 
 A [[c+c+c+>>c+8c+<<c+c+]3 
-A   c+c+c+>>c+<c+c+c+c+<
-A  [ddd>>d8d<<dd]3
-A   ddd>>d8d<dd<
+A   c+c+c+>>c+<c+c+c+c+< 
+A  [ddd>>d8d<<dd]3 
+A   ddd>>d8d<dd< 
 A ]2 
-A [>c+c+>c+<c+<]4
-A [bb>b<b]3 bb>bb<
-A [a+a+>a+<a+]4
-A [aa>a<a]3 aa>aa<
-A [g+g+>g+<g+]4
-A [aa>a<a]3 aa>aa<
-A [bb>b<b]4
-A [>cc>c<c<]3 >cc>cc<<
-A ]0
+A [>c+c+>c+<c+<]4 
+A [bb>b<b]3 bb>bb< 
+A [a+a+>a+<a+]4 
+A [aa>a<a]3 aa>aa< 
+A [g+g+>g+<g+]4 
+A [aa>a<a]3 aa>aa< 
+A [bb>b<b]4 
+A [>cc>c<c<]3 >cc>cc<< 
+A ]0 
 
 BC @10 v10
 BC l8 o5 [
 BC [
-B   [q8b b q1b 16b 16b 16q8b q1b 16q8b q1b 16b 16b 16b 16]2
-C   [q8g+g+q1g+16g+16g+16q8g+q1g+16q8g+q1g+16g+16g+16g+16]2
-B   [q8a a q1a 16a 16a 16q8a q1a 16q8a q1a 16a 16a 16a 16]2
-C   [q8f+f+q1f+16f+16f+16q8f+q1f+16q8f+q1f+16f+16f+16f+16]2
+B   [q8b b q1b 16b 16b 16q8b q1b 16q8b q1b 16b 16b 16b 16]2 
+C   [q8g+g+q1g+16g+16g+16q8g+q1g+16q8g+q1g+16g+16g+16g+16]2 
+B   [q8a a q1a 16a 16a 16q8a q1a 16q8a q1a 16a 16a 16a 16]2 
+C   [q8f+f+q1f+16f+16f+16q8f+q1f+16q8f+q1f+16f+16f+16f+16]2 
 BC ]2
-B   q8g+g+g+q1g+16q8g+g+q1g+16q8g+g+ f+f+f+q1f+16q8f+f+q1f+16q8f+f+
-C  [q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+]2
+B   q8g+g+g+q1g+16q8g+g+q1g+16q8g+g+ f+f+f+q1f+16q8f+f+q1f+16q8f+f+ 
+C  [q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+]2 
 B   q8f f f q1f 16q8f f q1f 16q8f f  e e e q1e 16q8e e q1e 16q8e e 
-C  [q8c+c+c+q1c+16q8c+c+q1c+16q8c+c+]2
-B   q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+ e e e q1e 16q8e e q1e 16q8e e
-C  <q8b b b q1b 16q8b b q1b 16q8b b >c+c+c+q1c+16q8c+c+q1c+16q8c+c+
-B   q8f+f+f+q1f+16q8f+f+q1f+16q8f+f+ g g g q1g 16q8g g q1g 16q8g g
-C  [q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+]2
+C  [q8c+c+c+q1c+16q8c+c+q1c+16q8c+c+]2 
+B   q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+ e e e q1e 16q8e e q1e 16q8e e 
+C  <q8b b b q1b 16q8b b q1b 16q8b b >c+c+c+q1c+16q8c+c+q1c+16q8c+c+ 
+B   q8f+f+f+q1f+16q8f+f+q1f+16q8f+f+ g g g q1g 16q8g g q1g 16q8g g 
+C  [q8d+d+d+q1d+16q8d+d+q1d+16q8d+d+]2 
 BC ]0
 
 DE @0 v11
 DE l1 o5 [
-D [g+& g+ a& a]2  d+
-E [d+& d+ e& e]2 <g+>
-D  d+ c+ c+ <b> c+ d+ d+
-E <f+ g+ g+  f+ g+ f+ g+>
+D [g+& g+ a& a]2  d+ 
+E [d+& d+ e& e]2 <g+> 
+D  d+ c+ c+ <b> c+ d+ d+ 
+E <f+ g+ g+  f+ g+ f+ g+> 
 DE ]0
 
-F v14 vs10 vm13 vh7
-F [
-F [[hb8h8b4hb4|b4]2 b8b16b16]4 
+F v14 vs11 vm9 vh7 
+F [ 
+F [[hb4b4hb4|b4]2 b8b16b16]4 
 F [[hb4sm8.b16|hb4sm4]4 
-F              hb16b16b8sm16sm16|sm8]2
-F                                sm16sm16
-F ]0
+F              hb16b16b8sm16sm16|sm8]2 
+F                                sm16sm16 
+F ]0 
