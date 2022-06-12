@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+デンジャラスシードMD 「Tube」 (Stage 1&8)
+[DSEED_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
+
 デンジャラスシードMD 「Tube」 (Stage 1&8) (素YM2413)
 [DSEED_1Y.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1Y.MUS)
 

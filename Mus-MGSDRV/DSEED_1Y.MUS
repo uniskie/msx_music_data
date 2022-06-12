@@ -19,10 +19,10 @@
 
 @v16 = { ; Brass
 ;       TL FB
-         0, 7,
+         4, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1,
-  15, 7, 0, 2, 0, 2, 1, 1, 1, 0, 1 }
+  15, 7, 0, 2, 0, 2, 1, 0, 1, 0, 1 }
 
 @e1 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
 @e10 = {1,0,fe.b=8 }
@@ -60,20 +60,21 @@ B ]2
 B  a+ra+ra+ra+r brbrbrbr >crcrcrcr c+rc+rc+c+c+c+<
 B ]0
 
-C v10 @11 o4
+C v9 o4
 C [ l16
-C [aa>eeaaeeaa>eeaa>ee aaee<aaee<aaeeaaee<
-C  gg>ddggddgg>ddgg>dd ggdd<ggdd<ggddggdd<
-C  ff>ccffccff>ccff>cc ffcc<ffcc<ffccffcc
-C  (((
-C  g+g+g+g+d+d+d+d+g+g+g+g+d+d+a+a+
-C  bbbb)eeee)ee)bb>ee>cc<<
+C @11
+C [<aa>eeaaeeaa>eeaa>ee aaee<aaee<aaeeaaee
+C  <gg>ddggddgg>ddgg>dd ggdd<ggdd<ggddggdd
+C  <ff>ccffccff>ccff>cc ffcc<ffcc<ffccffcc
+C  ((
+C  <g+g+g+g+d+d+d+d+g+g+g+g+d+d+a+a+
+C   bbbb)eeee)eebb>ee>cc<
 C ]2 >
 C [[g>c<cf]8 [g>c<cd+]8 [a>d<df+]8 | [a>c+<c+e]8 
-C ]2
-C @10 ((
-C <a+4.b2&b8> c4.c+2&c+8<
-C @11 )) 
+C ]2 <
+C @16 ))
+C a+4.b2&b8 >c4.c+2&c+8<
+C (( 
 C ]0
 
 D v10 @10 o4
@@ -86,12 +87,12 @@ D [ l8
 D  b8b4a4.b8a8& a8b4.b4a4
 D  g8g4f4.g8f8& f8g4.g4f4
 D  a8a4g+4.a8g+8& g+8a4.a4a4|
-D  @11 ))
+D  @11 )
 D  l16 >ee8e<e8>ee8ee8<
 D  @1 (
 D                     <a>eea
 D  <a>eeaa>ee<aa>eeaa>eer<<
-D  @10 (
+D  @10
 D ]2 l8
 D  a+4.b2&b8 >c4.c+2&c+8<
 D ]0
@@ -107,17 +108,17 @@ E [ l8
 E  e8e4e4.e8e8& e8e4.e4e4
 E  c8c4c4.c8c8& c8c4.c4c4
 E  e8e4e4.e8e8& e8e4.e4e4|
-E  @11 ))
+E  @11 )
 E  l16 >aa8a<a8>aa8aa8<
 E  @1 ((
 E                     <aa>ee
 E  a<a>ee aa>ee <aa>ee aa>ee<< 
-E  @10 
+E  @10 )
 E ]2 l8
 E  f4.f+2&f+8 g4.g+2&g+8
 E ]0
 
-F v14 vh8 vc12vs12vm10
+F v13 vh8 vc11vs12vm10
 F [ 
 F [[[b8h16h16smc8h16h16]3|b8b16smc16smc8h16h16]4 
 F                         b16b16smc16b16smc16b16smc16smc16 
