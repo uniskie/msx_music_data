@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+デンジャラスシードMD 「Tube」 (Stage 1&8) (素YM2413)
+[DSEED_5Y.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1Y.MUS)
+
 デンジャラスシードMD 「Jupiter」 (Stage 6&10) (YM2413+PSG)
 [DSEED_5.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5.MUS)
 
