@@ -10,26 +10,28 @@
 
 @v15 = {
 ;   TL FB
-     3, 7,
+     0, 7,
 ;   AR DR SL RR KL MT AM VB EG KR DT
-    15, 2, 4, 1, 0, 3, 1, 0, 0, 1, 1,
-    15, 7, 3, 1, 0, 1, 0, 1, 0, 1, 0 }
+     9, 2, 3, 1, 2, 1, 0, 0, 1, 0, 1,
+    14, 6, 3, 1, 0, 1, 0, 0, 0, 1, 0 }
 
 @v16 = {
 ;	TL FB
-	 0, 5,
+	35, 3,
 ;	AR DR SL RR KL MT AM VB EG KR DT
-	13, 1, 3, 1, 1, 1, 0, 0, 1, 1, 1,
-	14, 4, 3, 1, 0, 2, 1, 0, 0, 1, 0 }
+	 6, 1, 3, 1, 0, 3, 0, 0, 1, 1, 1,
+	13, 3, 2, 1, 0, 1, 1, 0, 0, 1, 1 }
 
 @e00 = { 3,26,f,*2 n2 8=4,0=10}
 ;@e00 = { 3,20,fn2*2,en4,dn5,cn6,cn7,bn8,bn9,an10,an11,9n12,9n13,8,n14,0=20}
+;@e01 = { 1,0,f }
+;@e02 = { 1,0,d }
 
 @r06 = { 3,1,255,255,4,200,17,17 }
 @r07 = { 3,2,255,255,90,0,90,90 }
 
 @r10 = { 1,0,200,230,20,160,0,150 }
-@e11 = {1,0,af7=4[64=3] }
+@e11 = {1,0,af8=5e7=6[85=3] }
 ;@e02 = { 3,13,1d=200}
 
 @e21 = { 3,7,*3f,*1e,0=26}
@@ -44,36 +46,44 @@
 ;**** main
 ;12 v10 H45,1,5,1 HO
 9A v14 H45,1,5,1 HO
-BC v12 @\7 r16.
+;BC v12 @\7 r16.
 
 ;12 ![0 o4 @10
-9ABC [0 o5 @15@e2 l4
-9B   [3 a1 a2gb-8.a16&] a1 a2b->c8.d16& d2<l8gb->dc& c2l4<a>c8.<b-16& b-1& b-2r2 )
-AC   [3 d1 d2ce-8.d16&] d1 d2e-f8.g16&  g2<b->g8f8&  f2cf8.g16&       g1&  g2r2
-AC  (r8.@\32
-9ABC @16@e2 >
-9ABC  d2ab-& b-agd& ddab- >c<b-ad&  d2ab-& b-agd& ddc<b- >c<b-af g1& g2r2>
-9ABC  [ l8 e-2e-fga& a2ab->cd& d1 dcfd&d2 <e-2.e-f& f2a2 |b-1& b-2r2 ] g1&
-9B    g1<(
-AC    g2.&g16<)
-9ABC @\0 ]
+;9ABC
+9A [0 o5 @15@e1 l4
+;9B
+9 [3 a1 a2gb-8.a16&] a1 a2b->c8.d16& d2<l8gb->dc& c2l4<a>c8.<b-16& b-1& b-2r2 )
+;AC
+A [3 d1 d2ce-8.d16&] d1 d2e-f8.g16&  g2<b->g8f8&  f2cf8.g16&       g1&  g2r2
+;AC
+A (r8.@\32
+;9ABC
+9A @16@e2 > v-2
+;9ABC
+9A d2ab-& b-agd& ddab- >c<b-ad&  d2ab-& b-agd& ddc<b- >c<b-af g1& g2r2>
+;9ABC
+9A [ l8 e-2e-fga& a2ab->cd& d1 dcfd&d2 <e-2.e-f& f2a2 |b-1& b-2r2 ] g1&
+;9B
+9 g1<(
+;AC
+A g2.&g16<)
+;9ABC
+9A @\0  v+2 ]
 
 ;**** sub
-12 v8 H30,1,5,1 HO o6 @11k10
-2 ( @\6 r16. 
-12 [0 l16 ;(((
-12  [8 [4 gd<b->d] ] [8 afcf ] [8 b-gdg ]
-12 l8< [<gb->dg4d<b->d <fa>cfc<afa> <e-gb->e-c<afc> | <fa>cd4<b-fd>] <fab->d<b-afd>
-12      <gb->dg4d<b-g <gb->dg4;d<b-g> >
-12      > >l16ab-afd8<  >
-12 l4 ;)))
-;12  d2ab-& b-agd& ddab- >c<b-ad&  d2ab-& b-agd& ddc<b- >c<b-af g1& g2r2>
-12  [ l8 e-2e-fga& a2ab->cd& d1 dcfd&d2 <e-2.e-f& f2a2 |b-1& b-2r2 ] g1&
-12   g1 
-12 ]
+12 ! v8 H30,1,5,1 HO o6 @11k10
+BC v9 o6 @11 q4 so ;H30,1,5,1 HO @e11
+2C (( @\6 r16. 
+12BC [0 l16
+12BC  [8 [4 gd<b->d] ] [8 afcf ] [8 b-gdg ]
+12BC l8< [<gb->dg4d<b->d <fa>cfc<afa> <e-gb->e-c<afc> | <fa>cd4<b-fd>] <fab->d<b-afd>
+12BC      <gb->dg4d<b-g <gb->dg4;d<b-g> >
+12BC      > >l16ab-afd8<  >
+12BC l16 [ [4 gd<b->d] [4 fc<a>c] r1 r1 r1 r1 | r1 r1 ]
+12BC    r1 r1 ]
 
 ;**** bass
-d o3 @9q1so v12 
+d o3 @9q1so v11
 e o2 @13q6sf v13 @\4 
 
 DE [0 l16
