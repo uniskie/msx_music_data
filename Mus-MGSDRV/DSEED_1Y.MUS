@@ -7,7 +7,7 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
-#tempo 156
+#tempo 154
 #title {"Dangerous Seed (MD) Tube (Stage 1&8) | 素YM2413 | uniskie"}
 
 @v15 = { ; E-Guiter
@@ -19,37 +19,34 @@
 
 @v16 = { ; Brass
 ;       TL FB
-        15, 6,
+         1, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0,
-  15, 7, 0, 4, 0, 2, 1, 0, 1, 0, 1 }
-
-@e1 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
-@e10 = {1,0,fe.b=8 }
+  15, 7, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+  15, 7, 1, 4, 0, 2, 1, 0, 1, 0, 1 }
 
 9A @15 o4
 9 v13    
-A v11 r8 
+A v10 r8 
 9A [
 9A [
 9A  e1 &e4b32>c16.&c8c32c+32d16&d8e8<g8 &g1&
 9A  g16.>f32g8f8d+8c8d8d+8f16.b32> c1& c8<a+8>c8<a+8f8c8c+8d+8
 9A  f8d+8f16.a32a+8f8d+8a8e8 f+8e8f+8>c8d8<b8a8|g8<
-9A ]2 
+9A ]2
 9                                               g8 
 9A @16
-A                                               r8
+A                                               r8 
 9A [e1& e2a4e4 g1& g2>c4<g4 >d1& d2d4e4 |
 9A  c+1& c+1<]2
 9A  f4.f+2&f+8g4& g8
-9                   g+2&g+8<
+9                   g+2&g+8< 
 A                   g+2< 
-9A < 
+9A <
 9A @15
-A r8
+A  r8
 9A ]0
 
-B v9 @13 q1so o2
+B v11 @13 q2so o2
 B [ l16
 B [[aaaa]8 [g+g+g+g+]8 [f+f+f+f+]8 [dddd]3
 B  >d<ddd [eeee]2 eeee a>cde<
@@ -61,20 +58,20 @@ B ]2
 B  a+ra+ra+ra+r brbrbrbr >crcrcrcr c+rc+rc+c+c+c+<
 B ]0
 
-C v10 o4
+C v9 o4
 C [ l16
-C @11 q1so 
+C @11 q2so
 C [<aa>eeaaeeaa>eeaa>ee aaee<aaee<aaeeaaee
 C  <gg>ddggddgg>ddgg>dd ggdd<ggdd<ggddggdd
 C  <ff>ccffccff>ccff>cc ffcc<ffcc<ffccffcc
 C  ((
-C  <g+g+g+g+d+d+d+d+g+g+g+g+d+d+a+a+
-C   bbbb)eeee)eebb>ee>cc<
-C ]2 >
+C   g+g+g+g+d+d+d+d+g+g+g+g+d+d+a+a+
+C   bbbb)eeee)eebb>ee>cc<<
+C ]2 > 
 C [[g>c<cf]8 [g>c<cd+]8 [a>d<df+]8 | [a>c+<c+e]8 
 C ]2 <
 C @16 )) q8sf
-C a+4.b2&b8 >c4.c+2&c+8<
+C >a+4.b2&b8 >c4.c+2&c+8<<
 C (( 
 C ]0
 
@@ -119,17 +116,16 @@ E ]2 l8
 E  f4.f+2&f+8 g4.g+2&g+8 
 E ]0 
 
-F v13 vh8 vc9vs10vm10
+F v13 vh8 vc8vs9vm11
 F [ 
-F [[[b8h16h16smc8h16h16]3|b8b16smc16smc8h16h16]4 
-F                         b16b16smc16b16smc16b16smc16smc16 
+F [[[b8h16h16sm8h16h16]3|b8b16sm16sm8h16h16]4 
+F                        b16b16sm16b16sm16b16sm16sm16 
 F ]2 
-F [b16h16b16b16smc16h16b16b16]14 
-F b16h16smc16b16smc16smc16b16b16smc16 
-F b16smc16b16smc16b16smc16smc16 
-F [b16h16b16b16smc16h16b16b16]12 
-F [b16h16b16b16smc16h16b16b16 
-F  b16h16smc16b16smc16|smc16smc16b16]2 
-F                      b16smc16smc16 
+F [b16h16b16b16sm16h16b16b16]14 
+F b16h16sm16b16sm16sm16b16b16sm16 
+F b16sm16b16sm16b16sm16sm16 
+F [b16h16b16b16sm16h16b16b16]12 
+F [b16h16b16b16sm16h16b16b16 
+F  b16h16sm16b16sm16|sm16sm16b16]2 
+F                    b16sm16sm16 
 F ]0
-
