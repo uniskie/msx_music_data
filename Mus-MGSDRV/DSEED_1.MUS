@@ -19,7 +19,7 @@
 
 @v16 = { ; Brass
 ;       TL FB
-         5, 5,
+         9, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15, 7, 1, 1, 0, 1, 0, 0, 0, 0, 0,
   15, 7, 0, 4, 0, 2, 0, 0, 1, 0, 1 }
@@ -49,9 +49,8 @@ A                   g+2<
 A  r8
 9A ]0
 
-;@e11={1,0,@14.f.@13.f}
-B v10 @10 q1 o2 
-C v11 @13 q2 o2; v11@e11 q3
+B v10 @10 q1   o2 
+C v9  @13 q1so o2
 BC [ l16
 BC [[aaaa]8 [g+g+g+g+]8 [f+f+f+f+]8 [dddd]3
 BC  >d<ddd [eeee]2 eeee a>cde<

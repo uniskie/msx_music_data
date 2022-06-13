@@ -19,10 +19,10 @@
 
 @v16 = { ; Brass
 ;       TL FB
-         5, 5,
+        15, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 7, 1, 1, 0, 1, 0, 0, 0, 0, 0,
-  15, 7, 0, 4, 0, 2, 0, 0, 1, 0, 1 }
+  15, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 7, 0, 4, 0, 2, 1, 0, 1, 0, 1 }
 
 @e1 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
 @e10 = {1,0,fe.b=8 }
@@ -49,7 +49,7 @@ A                   g+2<
 A r8
 9A ]0
 
-B v12 @9 q1 o3
+B v9 @13 q1so o2
 B [ l16
 B [[aaaa]8 [g+g+g+g+]8 [f+f+f+f+]8 [dddd]3
 B  >d<ddd [eeee]2 eeee a>cde<
@@ -119,7 +119,7 @@ E ]2 l8
 E  f4.f+2&f+8 g4.g+2&g+8 
 E ]0 
 
-F v13 vh8 vc11vs6vm10
+F v13 vh8 vc9vs10vm10
 F [ 
 F [[[b8h16h16smc8h16h16]3|b8b16smc16smc8h16h16]4 
 F                         b16b16smc16b16smc16b16smc16smc16 
