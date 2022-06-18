@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+HARD DRIVIN' - MAIN THEME | (now working)
+[harddrv0.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2Fharddrv0.MUS)
+
 デンジャラスシードMD 「Tube」 (Stage 1&8)
 [DSEED_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
 
