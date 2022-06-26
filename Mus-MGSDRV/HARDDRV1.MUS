@@ -1,0 +1,50 @@
+;[gain=1.0 name=HARDDRV1 duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 1
+#tempo 200
+#title {"HARD DRIVIN' - CRASH! | 素YM2413 | MML by uniskie"}
+
+; EGUITER
+@v17 = {
+;       TL FB
+         0, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+   6, 4, 1, 1, 0, 1, 0, 0, 0, 1, 1,
+  15, 1, 8, 6, 0, 1, 0, 0, 0, 1, 0 }
+
+9 @17 v10 o4
+9 [
+9  [r1]4 | r2b2& b1 a1 g1
+9 ]2
+9  <<<l32 dd+ef f+gg+a a+b>dd+ eff+g g+aa+b>
+
+ABCD @17q1so v14 o5
+CD @0 q8sf r16 (
+ABCD L8 [
+AC  r2.g(g (g(g(g(g(g(g(g(g (g(gv+11r4a(a(a(a (a(a(a(a(a(a(a(av+11
+AC |r4b(b(b(b(b(b (b(b(b(b(b(bv+11r4 r4v-4g)g)a)a)b(b (b(b(b(b(b(bv+7
+BD  r2.e(e (e(e(e(e(e(e(e(e (e(ev+11r4f+(f+(f+(f+ (f+(f+(f+(f+(f+(f+(f+(f+v+11
+BD |r4g(g(g(g(g(g (g(g(g(g(g(gv+11r4 r4v-4e)e)f+)f+)g(g (g(g(g(g(g(gv+7
+ABCD ]2
+AC  <<<<d1>>>>
+BD  <<<<g1>>>>
+
+E @13 v14 o3 q4
+E l4 [
+E  [eere]2 [eree]2 | [eere]2 er4ee erer
+E ]2
+E  <l32 ba+ag+ gf+fe d+dc+c <ba+ag+ gf+fe d+dc+c>>
+
+F v9 vc8
+F [
+;F  [ h2h2 s4s4h4m4 s4b8b8h2 m8m8m8m8s4b4 ]2
+F  h2h2 h4h4h4h4 h4h8h8h2 h8h8h8h8h4h4
+F |h2h2 h4h4h4h4 h4h8h8h2 h8h8h8h8h4h4
+F ]2
+F r1
