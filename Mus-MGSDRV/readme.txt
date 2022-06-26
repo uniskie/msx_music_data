@@ -7,7 +7,7 @@
 MSXPLAYÇ≈ï∑Ç≠èÍçáÅF
 
 HARD DRIVIN' - CRASH REPLAY BGM v2 ëΩâπêFêÿÇËë÷Ç¶ (ëfYM2413)
-[HARDDR_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
+[HARDDR_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDR_1.MUS)
 
 HARD DRIVIN' - CRASH REPLAY BGM (ëfYM2413)
 [HARDDRV1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
