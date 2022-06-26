@@ -13,7 +13,7 @@
 ; GUITER
 @v16 = {
 ;       TL FB
-         0, 0,
+         2, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
   12, 5, 1, 1, 0, 1, 0, 0, 0, 1, 0,
   15, 1, 8, 6, 0, 3, 0, 0, 0, 1, 0 }
@@ -48,10 +48,10 @@ AC   r4a r4g& g4. a4g
 BD   r4e r4d& d4. d4. 
 AC   a4r r4. r4. r4>d&  d4r r4. r4. r4e&<
 BD   d4r r4. r4. r4 a&  a4r r4. r4. r4b& 
-AC   >e4r r4. er4 erc+&  c+rc+ r4c+& c+4c+ r4.
+AC   >e4r r4. er4 erc+&  c+rc+ r4c+& c+4c+ r4.<
 BD    b4r r4. br4 bra &  a ra  r4a & a 4a  r4.
-AC  >dr4 r4d& d4r r4.< >ere r4e e4. r4.< 
-BD   ar4 r4a& a4r r4.   brb r4b b4. ega 
+AC   >dr4 r4d& d4r r4.  ere r4e e4. r4.< 
+BD   ar4 r4a& a4r r4.  brb r4b b4. ega 
 
 E v14 @13 o2 q2
 E l8 [
