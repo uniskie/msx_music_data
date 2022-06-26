@@ -6,11 +6,14 @@
 --
 MSXPLAYで聞く場合：
 
-HARD DRIVIN' - CRASH REPLAY BGM
-[harddrv0.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
+HARD DRIVIN' - CRASH REPLAY BGM v2 多音色切り替え (素YM2413)
+[HARDDR_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
 
-HARD DRIVIN' - MAIN THEME
-[harddrv0.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV0.MUS)
+HARD DRIVIN' - CRASH REPLAY BGM (素YM2413)
+[HARDDRV1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
+
+HARD DRIVIN' - MAIN THEME (素YM2413)
+[HARDDRV0.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV0.MUS)
 
 デンジャラスシードMD 「Tube」 (Stage 1&8)
 [DSEED_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
