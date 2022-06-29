@@ -18,28 +18,28 @@
 ; Converted by Uniskie
 
 #alloc { 0=200, 1=1400, 2=500, 3=800,
-         9=400, A=200, B=200, C=500, D=500, E=1200, F=1900 }
+         9=400, A=200, B=200, C=500, D=500, E=1200, F=2000 }
 
 @v16 = { ; @m60 Feedreed
 ;       TL FB
-        14, 7,
+         7, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 1, 9, 1, 0, 1, 0, 0, 0, 0, 0,
    8, 5, 0, 1, 0, 8, 0, 0, 1, 0, 0 }
 
 @v17 = { ; @m68 Synth Recorder
 ;       TL FB
-        12, 5,
+         14, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 2, 2, 1, 0, 4, 0, 0, 0, 0, 0,
-  15, 1, 1, 6, 1, 8, 1, 1, 1, 0, 0 }
+  15, 1, 0, 6, 1, 8, 1, 1, 1, 0, 0 }
 
 @v18 = { ; @m67 Feed Keyboard
 ;       TL FB
          0, 0,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 6, 1, 1, 0, 1, 0, 0, 0, 0, 0,
-  13, 5, 1, 6, 0, 8, 1, 0, 1, 0, 0 }
+  15, 4, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+  13, 5, 0, 6, 0, 8, 1, 0, 1, 0, 0 }
 
 @v19 = { ; @m66 Feed Electric Guiter
 ;       TL FB
@@ -62,20 +62,20 @@
 @e17 = {1, 0, ffeeddc.0=90 }
 
 ;--- TR0 bass
-9 v13 @6   o3 h50,1,3,3 
-1 v11 @e11 o2 k1 @\1 h50,1,2,3
+9 v12 @6   o3 h50,1,3,5
+1 v11 @e12 o2 k1 @\2 h50,1,2,3
 19 l1
 19  f g g+ a
 19  a+4.f4.d4.<a+4.>f4a+4 b4.f+4.d4 e2.g+8b8
-9 v12 @13 q1so < 
+9 v12 @13 q1so h50,1,3,5 < 
 1 v11 @e17 < 
 19 l16
 19 [a2..g+&a f2..e&f e2..f&e d+2..e&d+ d2..d&d+
 19  e2..d+&e f4.f+8&f+4. f&f+g4.|g+4&g+4g&g+
 19 ]2                            g+4.e8&e8
-9 v11 @16 q8so 
+9 v10 @16 q8so 
 1 v10 @e10 q8 
-19 l4
+19 l4 
 19  g+1 g+_>d+4&d+2. d+_<a+4&a+2. a+_>f4&f2. f_c4&c2. c_<g4&g2. g_>d4&d2. d_<a4&a2.
 19  a_>e4&e2. e1 e1& e1<
 9 v13  @13 q1so 
@@ -183,7 +183,7 @@ D   v11 @0  o6q2so
 
 ;--- TR5 arpeggeo
 ;  @arp l16 q1 EC1,32,-8,1
-E  @17 v12 l16 o5 h1,1,2,-4 
+E  @17 v11 l16 o4 h1,1,2,-4 
 E  c e f a e f a>c<f a>c e<a>c e f 
 E  d f g b f g b>d<g b>d f<b>d f g 
 E  d f g+b f g+b>d<g+b>d f<b>d f g+ 
@@ -261,18 +261,18 @@ E  ]8
 3  [
 3   [
 3    @1c8.@1c8.@1c8r8@1c8@5d4
-3    @1c8.@1c8.@1c8r8@1cv-3@1cv+3@5d4
+3    @1c8.@1c8.@1c8r8@1cv-2@1cv+2@5d4
 3   ]3
 3    @1c8.@1c8.@5d8r8@1c8@5d4
-3    @1c8.@1c8.@5d8r8@1cv-3@1cv+3@5d8@1c8
+3    @1c8.@1c8.@5d8r8@1cv-2@1cv+2@5d8@1c8
 3  ]2
 ;(1) (2*3+2)*2 = 8*2 = 16
 3  [
-3   @1c8v-3@1c8v+3@1c8@1c8.v-2@1cv+2@1c8r8@5d8
-3   r8@1c8r8@5d8r8@1c8@5d8.v-3@5dv+3
+3   @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c8r8@5d8
+3   r8@1c8r8@5d8r8@1c8@5d8.v-2@5dv+2
 3  ]6
 ;(2) 2*6 = 12
-3  @1c8v-3@1c8v+3@1c8@1c8.v-2@1cv+2@1c8r8@5d8
+3  @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c8r8@5d8
 3  @1c8@5d8@5d8@5d8 @5d@5d@1c@1c@5d8r8
 ;(3) 2
 *20={@1c4@5d4@1c8@1c8@5d8@1c8 r8@1c8@5d4@1c8@1c8@5d4};S5
@@ -375,35 +375,35 @@ F   [
 ;    @1c8.@1c8.@1c8r8@1c8@5d4 
 F    bh16vh-2h16vh+2h16vh-2bh16vh+2          h16vh-2h16vh+2bh16vh-2h32h32vh+2
 F    h16vh-2h16vh+2bh16vh-2h16vh+2           mh16vh-2h16vh+2c8
-;    @1c8.@1c8.@1c8r8@1cv-3@1cv+3@5d4 
+;    @1c8.@1c8.@1c8r8@1cv-2@1cv+2@5d4 
 F    bh16vh-2h16vh+2h16vh-2bh16vh+2          h16vh-2h16vh+2bh16vh-2h32h32vh+2
-F    h16vh-2h16vh+2bh16vb-3vh-2bh16vb+3vh+2  mh16vh-2h16vh+2c8
+F    h16vh-2h16vh+2bh16vb-3vh-2bh16vb+2vh+2  mh16vh-2h16vh+2c8
 F   ]3
 ;    @1c8.@1c8.@5d8r8@1c8@5d4 
 F    bh16vh-2h16vh+2h16vh-2bh16vh+2          h16vh-2h16vh+2mh16vh-2h32h32vh+2
 F    h16vh-2h16vh+2bh16vh-2h16vh+2           mh16vh-2h16vh+2c8
-;    @1c8.@1c8.@5d8r8@1cv-3@1cv+3@5d8@1c8 
+;    @1c8.@1c8.@5d8r8@1cv-2@1cv+2@5d8@1c8 
 F    bh16vh-2h16vh+2h16vh-2bh16vh+2          h16vh-2h16vh+2bh16vh-2h32h32vh+2
-F    h16vh-2h16vh+2bh16vb-3vh-2bh16vb+3vh+2  mh16vh-2h16vh+2bc8
+F    h16vh-2h16vh+2bh16vb-2vh-2bh16vb+2vh+2  mh16vh-2h16vh+2bc8
 F ]2
 ;(1) (2*3+2)*2 - (2*3+2)*2 = 16 - 16 = 0
 ;(B) (4*7) - (2*3+2)*2 = 28 - 16 = 12
 F [
-;    @1c8v-3@1c8v+3@1c8@1c8.v-2@1cv+2@1c8r8@5d8 
-F    bh16vh-2h16vh+2bh16vh-2h16vh+2          bh16vh-2h16vh+2bh16vh-2h32h32vh+2
-F    h16vh-2bh16vh+2bh16vh-2h16vh+2          h16vh-2h16vh+2mc8
-;    r8@1c8r8@5d8r8@1c8@5d8.v-3@5dv+3 
+;    @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c8r8@5d8 
+F    bh16vh-2h16vb-2vh+2bh16vb+2vh-2h16vh+2  bh16vh-2h16vh+2bh16vh-2h32h32vh+2
+F    h16vb-2vh-2bh16vb+2vh+2bh16vh-2h16vh+2  h16vh-2h16vh+2mc8
+;    r8@1c8r8@5d8r8@1c8@5d8.v-2@5dv+2 
 F    h16vh-2h16vh+2bh16vh-2h16vh+2           h16vh-2h16vh+2mh16vh-2h32h32vh+2
-F    h16vh-2h16vh+2bh16vh-2h16vh+2           mh16vh-2h16vh+2c16m16
+F    h16vh-2h16vh+2bh16vh-2h16vh+2           mh16vh-2h16vh+2c16vm-2m16vm+2
 F ]6
 ;(2) (2*6) - 2*6 = 12 - 12 = 0
 ;(B) ((4*7) - (2*3+2)*2) - 2*6 = 12 - 12 = 0
-;    @1c8v-3@1c8v+3@1c8@1c8.v-2@1cv+2@1c8r8@5d8 
-F    bh16vh-2h16vh+2bh16vh-2h16vh+2    bh16vh-2h16vh+2bh16vh-2h32h32vh+2
-F    h16vh-2bh16vh+2bh16vh-2h16vh+2    h16vh-2h16vh+2mc8
+;    @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c8r8@5d8 
+F    bh16vh-2h16vb-2vh+2bh16vb+2vh-2h16vh+2  bh16vh-2h16vh+2bh16vh-2h32h32vh+2
+F    h16vb-2vh-2bh16vb+2vh+2bh16vh-2h16vh+2  h16vh-2h16vh+2mc8
 ;    @1c8@5d8@5d8@5d8 @5d@5d@1c@1c@5d8r8 
-F    bh16vh-2h16vh+2mh16vh-2h16vh+2    mh16vh-2h16vh+2mh16vh-2h32h32vh+2
-F    mh16vh-2mh16vh+2bc16b16           mh16vh-2h16vh+2h16vh-2h16vh+2
+F    bh16vh-2h16vh+2mh16vh-2h16vh+2          mh16vh-2h16vh+2mh16vh-2h32h32vh+2
+F    mh16vh-2mh16vh+2bc16b16                 mh16vh-2h16vh+2h16vh-2h16vh+2
 ;(3) 2 -2  = 0
 ;(C) 2*2*3 - 2 = 12 - 2 = 10
 F [
