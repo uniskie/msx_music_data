@@ -9,6 +9,9 @@ MSXPLAYÇ≈ï∑Ç≠èÍçáÅF
 Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG ver]
 [SENXIN01.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXIN01.MUS)
 
+Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG simple ver]
+[SENXI_01.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXI_01.MUS)
+
 HARD DRIVIN' - CRASH REPLAY BGM v2 ëΩâπêFêÿÇËë÷Ç¶ (ëfYM2413)
 [HARDDR_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDR_1.MUS)
 
