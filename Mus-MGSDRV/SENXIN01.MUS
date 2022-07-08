@@ -29,24 +29,24 @@
 
 @v17 = { ; @m68 Synth Recorder
 ;       TL FB
-        13, 6,
+        12, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 2, 2, 1, 1, 4, 0, 0, 0, 0, 0,
   15, 1, 0, 6, 0, 4, 1, 1, 1, 0, 1 }
 
 @v18 = { ; @m67 Feed Keyboard
 ;       TL FB
-         0, 4,
+         0, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 2, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-  13, 5, 0, 6, 0, 4, 1, 0, 1, 0, 0 }
+  13, 2, 3, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 5, 0, 6, 0, 6, 1, 0, 1, 0, 0 }
 
 @v19 = { ; @m66 Feed Electric Guiter
 ;       TL FB
-         1, 6,
+         0, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  14, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1,
-  15, 5, 2, 1, 0, 3, 1, 0, 1, 0, 1 }
+  13, 3, 3, 1, 1, 1, 0, 0, 0, 0, 1,
+  15, 4, 3, 2, 0, 6, 1, 0, 1, 0, 1 }
 
 ;--FM envelope
 @e20 = {1, 0, fedcb }
@@ -131,11 +131,11 @@ AB ]14
 
 ;--- TR3,4 melody
 ;   @melo q4 o5 P#6 MD24 MP2,8,12
-C v13 @17 o5 
+C v13 @17 o5 @\1
 D v11 @17 o5 r8 @\4 
-2 v09 @12 o4 k3 
-CD h45,2,1,2
-2 h50,1,2,2 
+2 v10 @12 o4 k3 
+CD h45,2,1,2 q8sf
+2 h45,1,2,2 
 2CD l16
 2CD >c4.<a4.>e4 d2d8c8<b8a8 g+4.e4.b8>c8^2c8d8e4
 2CD  f4.e4.c4^ 8<a4.>c4d4 e2^8f8e8d8 ^2..r8 <
@@ -161,18 +161,19 @@ D   v09 @16
 ;  o5 P* q4 @guiter
 C   v13 @19 > 
 D   v11 @19 > 
-2   v10 @10 q6k5 
+2   v10 @10 q6k5
 2CD [
 2CD  a4c4<b4>a8g4c8<b8>c4d8e8 f4<a4g+8>d8e8f8e4c8<b8>c8^2
 2CD  a4c4<b4>a8 g+4a8b8>c4 d8e8
 2CD |f4e8e8c8c8<a4>d8^2e2<
 2CD ]2
+2CD h60,1,2,3
 2CD f4.e4.c4< a8>c8^2d8e8g8^ 1 g+1
 2CD b1& b1 a1& a2.a4 b1& b1 a1& a1
 ;  @strings (4
 C   v13 @0  o6q2so 
 D   v11 @0  o6q2so 
-2   v09 @10 o5q2k1 
+2   v10 @10 o5q2k1 
 2CD [
 2CD  aaf+f+ aaf+f+ aaf+f+ aaf+f+
 2CD  aaf+f+ aaf+f+ aaf+f+ aaf+f+
@@ -247,8 +248,8 @@ E  ]7
 
 ;--- TR6 Drum
 ;  @P"drumD" o0 l16 KM
-@e1={3,31,e.*1.ba860=60}
-@e2={3,25,e.*1.ba860=60}
+@e1={3,31,d.*1.ba870=60}
+@e2={3,25,d.*1.ba870=60}
 ;@e5={3,20,fe.*2.8=5.0=60}
 @e5={3,16,f.n17.e.*2.n18.8=6.n19.7=8.n20.6=8.n21.5=8.n22.0=36}
 3 v12 o2 l16 k3 p22 @\512
