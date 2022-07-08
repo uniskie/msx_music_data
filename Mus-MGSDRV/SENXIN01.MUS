@@ -22,31 +22,31 @@
 
 @v16 = { ; @m60 Feedreed
 ;       TL FB
-         7, 6,
+         6, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 1, 9, 1, 0, 1, 0, 0, 0, 0, 0,
-   8, 5, 0, 1, 0, 4, 0, 0, 1, 0, 0 }
+   8, 5, 0, 1, 0, 6, 0, 0, 1, 0, 0 }
 
 @v17 = { ; @m68 Synth Recorder
 ;       TL FB
-        12, 6,
+        13, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 2, 2, 1, 1, 4, 0, 0, 0, 0, 0,
   15, 1, 0, 6, 0, 4, 1, 1, 1, 0, 1 }
 
 @v18 = { ; @m67 Feed Keyboard
 ;       TL FB
-         0, 5,
+         0, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-  13, 5, 0, 6, 0, 3, 1, 0, 1, 0, 0 }
+  15, 2, 2, 1, 0, 1, 0, 0, 0, 0, 0,
+  13, 5, 0, 6, 0, 4, 1, 0, 1, 0, 0 }
 
 @v19 = { ; @m66 Feed Electric Guiter
 ;       TL FB
-         0, 6,
+         1, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   14, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1,
-  15, 5, 2, 1, 0, 3, 0, 0, 1, 0, 1 }
+  15, 5, 2, 1, 0, 3, 1, 0, 1, 0, 1 }
 
 ;--FM envelope
 @e20 = {1, 0, fedcb }
@@ -89,7 +89,7 @@
 19 l8
 19 [aaaaaaaa aaaaaagg+]3
 19 aaaaaaaa aaaaaag+g
-19 [f+2.a4>c+2f+2 f2.c4<a2f2]8
+19 [f+2.a4>c+2f+2 f2.c4<a2f2]7
 
 ;--- TR1,2 back
 ; @backC
@@ -127,7 +127,7 @@ AB ]2
 AB [
 A   <a& >a& 
 B    e&  e& 
-AB ]16
+AB ]14
 
 ;--- TR3,4 melody
 ;   @melo q4 o5 P#6 MD24 MP2,8,12
@@ -159,8 +159,8 @@ D   v09 @16
 2CD c_d4&d2.& d1 r1 r1 r16
 ;  _0 D0
 ;  o5 P* q4 @guiter
-C   v13 @19 >
-D   v11 @19 >
+C   v13 @19 > 
+D   v11 @19 > 
 2   v10 @10 q6k5 
 2CD [
 2CD  a4c4<b4>a8g4c8<b8>c4d8e8 f4<a4g+8>d8e8f8e4c8<b8>c8^2
@@ -178,7 +178,7 @@ D   v11 @0  o6q2so
 2CD  aaf+f+ aaf+f+ aaf+f+ aaf+f+
 2CD  aaff aaff aaff aaff
 2CD  aaff aaff aaff aaff
-2CD ]8
+2CD ]7
 
 ;--- TR5 arpeggeo
 ;  @arp l16 q1 EC1,32,-8,1
@@ -240,18 +240,18 @@ E   c+c+<aa> c+c+<aa> c+c+<aa> c+c+<aa>
 E   c+c+<aa> c+c+<aa> c+c+<aa> c+c+<aa> 
 E   cc<aa> cc<aa> cc<aa> cc<aa> 
 E   cc<aa> cc<aa> cc<aa> cc<aa> 
-E  ]8 
+E  ]7 
 ; 00: c c+ d d+ e f f+ g g+ a a+ b
 ; 05: f f+ g g+ a a+ b c c+ d d+ e
 ; 07: g g+ a a+ b c c+ d d+ e f f+
 
 ;--- TR6 Drum
 ;  @P"drumD" o0 l16 KM
-@e1={3,31,d.*1.ca860=60}
-@e2={3,25,d.*1.ca860=60}
-@e5={3,16,fe.*2.8=5.0=60}
-;@e5={3,16,fe.*2.n17.8=5.n18.7=8.n19.6=8.n20.0=44}
-3 v13 o2 l16 k3 p22 
+@e1={3,31,e.*1.ba860=60}
+@e2={3,25,e.*1.ba860=60}
+;@e5={3,20,fe.*2.8=5.0=60}
+@e5={3,16,f.n17.e.*2.n18.8=6.n19.7=8.n20.6=8.n21.5=8.n22.0=36}
+3 v12 o2 l16 k3 p22 @\512
 3  [ 
 3    @1c8@2g  (@1c8@2g (@1c8@2g (@1c8@2g 
 3   (@1c8@2g  (@1c8@2g (@1c8@2g (@1c8@2g 
@@ -260,23 +260,22 @@ E  ]8
 ;(0) 2*4 = 8
 3  [ 
 3   [ 
-3    @1c8.@1c8.@1c8r8@1c8@5d4 
-3    @1c8.@1c8.@1c8r8@1cv-2@1cv+2@5d4 
+3    @1c8.@1c8.@1c8^8@1c8@5d8^8 
+3    @1c8.@1c8.@1c8^8@1cv-2@1cv+2@5d8^8 
 3   ]3 
-3    @1c8.@1c8.@5d8r8@1c8@5d4 
-3    @1c8.@1c8.@5d8r8@1cv-2@1cv+2@5d8@1c8 
+3    @1c8.@1c8.@5d8^8@1c8@5d8^8 
+3    @1c8.@1c8.@5d8^8@1cv-2@1cv+2@5d8@1c8 
 3  ]2 
 ;(1) (2*3+2)*2 = 8*2 = 16
 3  [ 
-3   @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c8r8@5d8 
-3   r8@1c8r8@5d8r8@1c8@5d8.v-2@5dv+2 
+3   @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c8^8@5d8 ^8@1c8^8@5d8^8@1c8@5d8.v-2@5dv+2 
 3  ]6 
 ;(2) 2*6 = 12
-3  @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c8r8@5d8 
-3  @1c8@5d8@5d8@5d8 @5d@5d@1c@1c@5d8r8 
+3  @1c8v-2@1c8v+2@1c8@1c8.v-2@1cv+2@1c4@5d8 
+3  @1c8@5d8@5d8@5d8 @5d@5d@1c@1c@5d8^8 
 ;(3) 2
-*20={@1c4@5d4@1c8@1c8@5d8@1c8 r8@1c8@5d4@1c8@1c8@5d4};S5
-*21={@1c4@5d4@1c8@1c8@5d8@1c8 r8@1c8@5d4@1c8@1c8@5d8@5d@5d};S6
+*20={@1c4@5d4@1c8@1c8@5d8@1c8^ 8@1c8@5d4@1c8@1c8@5d4};S5
+*21={@1c4@5d4@1c8@1c8@5d8@1c8^ 8@1c8@5d4@1c8@1c8@5d8@5d@5d};S6
 3  [*20]4 *21 
 ;(4) 2*4+2 = 10
 3  [*20]5 *21 *20 
@@ -284,7 +283,7 @@ E  ]8
 3 [ 
 3  [*20]3 *21 *20 
 3 ]3 
-3  *20 
+;3  *20
 ;(6) (2*3+2+2)*3+2 = 32
 ;end
 
@@ -341,16 +340,16 @@ E  ]8
 ;F  [
 ;F    h16vh-2h16vh+2h16vh-2h16vh+2  h16vh-2h16vh+2h16vh-2h32h32vh+2
 ;F    h16vh-2h16vh+2h16vh-2h16vh+2  h16vh-2h16vh+2c8
-;F  ]32
+;F  ]28
 ;;(F) 32
 ;; end
 
 ;--- TR7 hut/cynbal/bass/snare
 ;  @P"drumA" o0 l16 KM
-F   y38,3 y22,161 
-F   y39,4 y23,191 
+F   y38,3 y22,185 
+F   y39,4 y23,148 
 F   y40,4 y24,068 
-*90={vb14 vs12 vh09 vc10 vm14}
+*90={vb14 vs11 vh09 vc10 vm13}
 F  *90 
 F [[ 
 ;     @1c8@2g ((@1c8@2g (@1c8@2g (@1c8@2g
@@ -383,7 +382,7 @@ F   ]3
 F    bh16vh-2h16vh+2h16vh-2bh16vh+2          h16vh-2h16vh+2smh16vh-2h32h32vh+2 
 F    h16vh-2h16vh+2bh16vh-2h16vh+2           smh16vh-2h16vh+2c8 
 ;    @1c8.@1c8.@5d8r8@1cv-2@1cv+2@5d8@1c8
-F    bh16vh-2h16vh+2h16vh-2bh16vh+2          h16vh-2h16vh+2bh16vh-2h32h32vh+2 
+F    bh16vh-2h16vh+2h16vh-2bh16vh+2          h16vh-2h16vh+2smh16vh-2h32h32vh+2 
 F    h16vh-2h16vh+2bh16vb-2vh-2bh16vb+2vh+2  smh16vh-2h16vh+2bc8 
 F ]2 
 ;(1) (2*3+2)*2 - (2*3+2)*2 = 16 - 16 = 0
@@ -474,19 +473,19 @@ F    *30
 ;    r8@1c8@5d4@1c8@1c8 @5d4};S5
 F    *31 
 F  ]3 
-;    *20={@1c4@5d4@1c8@1c8@5d8@1c8
-F    *30 
-;    r8@1c8@5d4@1c8@1c8 @5d4};S5
-F    *31 
+;;    *20={@1c4@5d4@1c8@1c8@5d8@1c8
+;F    *30
+;;    r8@1c8@5d4@1c8@1c8 @5d4};S5
+;F    *31
 ;(6) ((2*3+2+2)*3+2) - (2*4+2)*3+2 = 32 - 32 = 0
 ;(F) 32 - (2*4+2)*3+2 = 32 - 32 = 0
 ; end
 
-;osmake
-3  *21 r1 ;osmake 
-;    *20={@1c4@5d4@1c8@1c8@5d8@1c8
-F    *30 
-;    r8@1c8@5d4@1c8@1c8 @5d4};S5
-F    *31 
+;;osmake
+;3  *21 r1 ;osmake
+;;    *20={@1c4@5d4@1c8@1c8@5d8@1c8
+;F    *30
+;;    r8@1c8@5d4@1c8@1c8 @5d4};S5
+;F    *31
 
 
