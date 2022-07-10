@@ -10,22 +10,29 @@
 #tempo 150
 #title {"SALAMANDER 'FLY HIGH' -stage2- (素YM2413 / by uniskie)"}
 
-@v16 = { ; @m60 Feedreed
+@v16 = {
 ;       TL FB
-        12, 6,
+        12, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 4, 3, 1, 0, 1, 0, 0, 0, 0, 0,
-  15, 5, 1, 4, 0, 3, 1, 0, 1, 0, 0 }
-@v17 = { ; @m60 Feedreed
+  15, 5, 1, 4, 0, 4, 1, 0, 1, 0, 0 }
+@v17 = {
 ;       TL FB
-        18, 7,
+         8, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   8, 3, 4, 1, 0, 1, 0, 0, 0, 0, 1,
-  15, 4, 1, 3, 0, 1, 1, 0, 1, 0, 0 }
+   8, 3, 3, 1, 0, 1, 0, 0, 1, 0, 0,
+  13, 2, 1, 3, 0, 4, 1, 0, 1, 0, 0 }
+@v18 = {
+;       TL FB
+         6, 4,
+; AR DR SL RR KL MT AM VB EG KR DT
+   9, 3, 3, 1, 0, 2, 0, 0, 0, 0, 0,
+  12, 3, 1, 3, 0, 2, 1, 0, 1, 0, 1 }
 
-9 @11 v13 @\5  q7 o5
-A @16 v13 @\0  q7 o5
-C @16 v12 @\12 q7 o4
+
+9 @11 v13 q7 o5
+A @16 v13 q7 o5
+C @16 v12 q7 o4
 9AC l12 
 9AC c6.g6.>d<g>de6.<  c6.g6.>f<g>fe6c 
 9AC g6.f6.e6.d6. c<g+d+>c<g+d+>d<a+f>d<a+f 
@@ -37,20 +44,19 @@ C   @17 v13
 9AC   g>deceg3..   agfg3^3r 
 9AC   <a+>fgd+ga+3..       g+gfgd+<a+3.. 
 9AC    a+>fgd+ga+3>c<a+g+  a+3.
-A                               >c3.<
-9C                              c3.
+9C                             >c3.<
+A                              c3.
 9   @11 v12
 AC  @17 
 9AC   d3.<g3.> f6.e6.d6.c6. 
 9AC   d3.<g3.& g6>r3&r3. 
 9AC   c3.<f3.> d+6.d6.c6.<b6.> 
 9AC   c3.f3. 
-AC           <@16 
+AC           @18 
 9AC          c6.d6.d+6.f6. <
-AC   >
 9AC ]0 
 
-B @8 v11 @\5 q6so o7 
+B @8 v11 q6so o7 
 B l12 
 B c<b>c<bge>c<b>c<bge> 
 B c<b>c<bge>c<b>c<bge> 
@@ -58,21 +64,21 @@ B c<b>c<bgf>c<b>c<bgf
 B d+g+>c<d+g+>c<fa+>d<fa+>d 
 B << 
 B [
-B  @17 q7sf
+B  @17 v12 q7sf
 B  r3. 
 B  g>deceg3..  fedec<g3.. 
 B  g>deceg     fede3.^6r 
 B  r3. 
 B   <a+>fgd+ga+3..      g+gfgd+<a+3..> 
 B   d+ga+g+gf           g3.a3. >
-B  @17 q7sf
+B  @8 v11 q6so
 B  [c<b>c<bgf>c<b>c<bgf>]3  c<bg>c<bgfgb>c<bg 
 B  [a+aa+afd+a+aa+afd+]3    c<af>d<bg>d+c<g+>fd<a+ 
 B ]0 
 
 ; ==== base ====
-D @6 v13 @\5 q7so o3 
-E @6 v13 @\5 q1so o4 @\9 
+D @6 v13 q7so o3 
+E @6 v13 q1so o4
 DE l12
 D c3&c3&c6<g>c
 E c3&c3&c6 <@12bg@6>
@@ -97,7 +103,7 @@ DE  f>cf<g>dg<g+>d+g+<a+>fa+
 DE ]0
 
 ; * c6. = c4
-F vh10 vb14 vs13 vm13
+F vh11 vb14 vs14 vm13
 F l12
 F  b3r3.m12m12
 F  b3r3.m12m12
