@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+沙羅曼蛇AC ステージ2 「Fly High」[素YM2413]
+[SALAMV02.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV02.MUS)
+
 Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG ver]
 [SENXIN01.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXIN01.MUS)
 

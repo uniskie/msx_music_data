@@ -1,0 +1,115 @@
+;[gain=1.0 name=SALAMV02 duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 1
+#tempo 150
+#title {"SALAMANDER 'FLY HIGH' -stage2- (素YM2413 / by uniskie)"}
+
+@v16 = { ; @m60 Feedreed
+;       TL FB
+        12, 6,
+; AR DR SL RR KL MT AM VB EG KR DT
+  10, 4, 3, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 5, 1, 4, 0, 3, 1, 0, 1, 0, 0 }
+@v17 = { ; @m60 Feedreed
+;       TL FB
+        18, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+   8, 3, 4, 1, 0, 1, 0, 0, 0, 0, 1,
+  15, 4, 1, 3, 0, 1, 1, 0, 1, 0, 0 }
+
+9 @11 v13 @\5  q7 o5
+A @16 v13 @\0  q7 o5
+C @16 v12 @\12 q7 o4
+9AC l12 
+9AC c6.g6.>d<g>de6.<  c6.g6.>f<g>fe6c 
+9AC g6.f6.e6.d6. c<g+d+>c<g+d+>d<a+f>d<a+f 
+9AC [ 
+9   @8  v11 
+A   @17 v13 
+C   @17 v13 
+9AC   g>deceg3..   fedec<g3.. 
+9AC   g>deceg3..   agfg3^3r 
+9AC   <a+>fgd+ga+3..       g+gfgd+<a+3.. 
+9AC    a+>fgd+ga+3>c<a+g+  a+3.
+A                               >c3.<
+9C                              c3.
+9   @11 v12
+AC  @17 
+9AC   d3.<g3.> f6.e6.d6.c6. 
+9AC   d3.<g3.& g6>r3&r3. 
+9AC   c3.<f3.> d+6.d6.c6.<b6.> 
+9AC   c3.f3. 
+AC           <@16 
+9AC          c6.d6.d+6.f6. <
+AC   >
+9AC ]0 
+
+B @8 v11 @\5 q6so o7 
+B l12 
+B c<b>c<bge>c<b>c<bge> 
+B c<b>c<bge>c<b>c<bge> 
+B c<b>c<bgf>c<b>c<bgf 
+B d+g+>c<d+g+>c<fa+>d<fa+>d 
+B << 
+B [
+B  @17 q7sf
+B  r3. 
+B  g>deceg3..  fedec<g3.. 
+B  g>deceg     fede3.^6r 
+B  r3. 
+B   <a+>fgd+ga+3..      g+gfgd+<a+3..> 
+B   d+ga+g+gf           g3.a3. >
+B  @17 q7sf
+B  [c<b>c<bgf>c<b>c<bgf>]3  c<bg>c<bgfgb>c<bg 
+B  [a+aa+afd+a+aa+afd+]3    c<af>d<bg>d+c<g+>fd<a+ 
+B ]0 
+
+; ==== base ====
+D @6 v13 @\5 q7so o3 
+E @6 v13 @\5 q1so o4 @\9 
+DE l12
+D c3&c3&c6<g>c
+E c3&c3&c6 <@12bg@6>
+D <a+3&a+3&a+6ga+
+E <a+3&a+3&a+6 @12bg@6
+D a3.f3&fg
+E a3&a@12g@6f3&f@12g@6
+D g+6.g+6.a+6.a+6.
+E @12>ggg<bbbgggeee
+D @13 v13 q2so >
+E @9  v13 q1so 
+DE [
+DE  [c6cc6cc6c<ggg>]3
+DE  c6cc6ccccddd
+DE  [d+6d+d+6d+d+6d+<a+a+a+>]3
+D  d+6d+d+d+d+f6ffff
+E  @12>ggg<bbbgggeee @9
+DE  [<g6gg>dg<g6gg>dg]3
+DE  <g>dg<g>dg6.d<f+f+f+
+DE  [f6ff>cf<f6ff>cf<]3
+DE  f>cf<g>dg<g+>d+g+<a+>fa+
+DE ]0
+
+; * c6. = c4
+F vh10 vb14 vs13 vm13
+F l12
+F  b3r3.m12m12
+F  b3r3.m12m12
+F [bh6.h12m12m12]2
+F  bm12m12m12 bm12m12m12 bm12m12m12 bm12m12m12
+F [
+F  [bh6bh12s6bh12]7
+F   bh12s12sh12bs12s12hs12
+F  [bh6bh12s6bh12]6
+F   bm12m12m12 bm12m12m12 bm12m12m12 bm12m12m12
+F  [bh6bh12s6bh12]6
+F   b12s12bs12b12s12bs12b12b12b12b6b12
+F  [bh6bh12s6bh12]6
+F   bs12s12sh12sh12s12bs12sh12s12sh12sh12s12sh12
+F ]0
