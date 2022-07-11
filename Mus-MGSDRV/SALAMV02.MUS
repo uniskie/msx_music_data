@@ -18,10 +18,10 @@
   15, 5, 1, 4, 0, 4, 1, 0, 1, 0, 0 }
 @v17 = {
 ;       TL FB
-         8, 5,
+         7, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
    8, 3, 3, 1, 0, 1, 0, 0, 1, 0, 0,
-  13, 2, 1, 3, 0, 4, 1, 0, 1, 0, 0 }
+  13, 2, 1, 3, 0, 2, 1, 0, 1, 0, 0 }
 @v18 = {
 ;       TL FB
          6, 4,
@@ -38,8 +38,7 @@ C @16 v12 q7 o4
 9AC g6.f6.e6.d6. c<g+d+>c<g+d+>d<a+f>d<a+f 
 9AC [ 
 9   @8  v11 
-A   @17 v13 
-C   @17 v13 
+AC  @18
 9AC   g>deceg3..   fedec<g3.. 
 9AC   g>deceg3..   agfg3^3r 
 9AC   <a+>fgd+ga+3..       g+gfgd+<a+3.. 
@@ -47,12 +46,12 @@ C   @17 v13
 9C                             >c3.<
 A                              c3.
 9   @11 v12
-AC  @17 
+AC  @17 (
 9AC   d3.<g3.> f6.e6.d6.c6. 
 9AC   d3.<g3.& g6>r3&r3. 
 9AC   c3.<f3.> d+6.d6.c6.<b6.> 
 9AC   c3.f3. 
-AC           @18 
+AC           @18 )
 9AC          c6.d6.d+6.f6. <
 9AC ]0 
 
