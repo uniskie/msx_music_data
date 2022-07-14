@@ -1,0 +1,94 @@
+;[gain=1.0 name=SALAMV01 duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 1
+#tempo 150
+#title {"SALAMANDER 'POWER OF ANGER' -stage1- (YM2413 / by uniskie)"}
+
+@v16 = {
+;       TL FB
+         5, 5,
+; AR DR SL RR KL MT AM VB EG KR DT
+  10, 3, 1, 1, 1, 1, 0, 0, 0, 0, 0,
+   9, 4, 1, 3, 0, 2, 1, 0, 1, 0, 1 }
+@v17 = {
+;       TL FB
+        10, 3,
+; AR DR SL RR KL MT AM VB EG KR DT
+  11, 3, 3, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 4, 2, 5, 0, 4, 1, 0, 1, 0, 1 }
+@v18 = {
+;       TL FB
+         3, 2,
+; AR DR SL RR KL MT AM VB EG KR DT
+   9, 3, 3, 1, 0, 1, 0, 1, 0, 0, 0,
+  12, 3, 1, 5, 0, 4, 1, 0, 1, 0, 1 }
+
+;--- melo
+9 @16 v14 q5 o5
+B @16 v14 q5 o6; @\8
+9B l12 
+9B a+3fa+g+6d+6g6 f3.cdd+g+a+>c<
+9B a+3fa+g+6d+6g6 f3.g3.
+9B q8 a1& a3&a3.r6
+9B [
+9B  @17 q6 
+9B  [defgfefededc <a3.>d3.
+9B   r d+6d+3d+6d+3 d+6d+6ff+6f+f+fd+
+9B  ]2
+9B  @18 <<
+9B  f6.g6.g+6.a+>c<a+
+9B  g+6.gg+gf6ef6.
+9B  e3.ef+gagf
+9B  e3.>ef+gagf+
+9B  f6.g6.g+6.a+>c<a+
+9B  g+6.gg+gf6ef6.e& e3&e3c6.
+9B  q8 
+9B  f3&f3&fr6.>
+9B ]0
+
+;--- sub melo
+A @16 v14 q5 o6
+C @16 v14 q5 o7; @\8
+AC l12
+AC d3<a+a+>c6<g+6>c6 <a+3fa+g+6.>cd+g+
+AC d3<a+a+>c6<g+6>c6 <a+6.fa+>dc6.<g>ce
+AC q8 f+1& f3&f3&fr6.
+AC [
+AC  @0 q6so
+AC  [r1 defgfefededc
+AC   r <a+6a+3a+6a+3 a+6a+6>cc+6c+c+c<a+>
+AC  ]2
+AC  <<
+AC  d6.e6.f6.gg+g
+AC  f6.efed6cd6.
+AC  <ab>cdc<ba3.>
+AC   ab>cdc<ba3.>
+AC  d6.e6.f6.gg+g
+AC  f6.efed6cd6.
+AC  <ab>cdc<ba3.
+AC  q8
+AC  >d3&d3&dr6.
+AC ]0
+
+;--- base
+D @16 v14 q5 o2
+E @6  v11 q1 o2; @\8
+DE l12
+DE [a+>a+<a+>a+6.<]3 f6.>fc<f
+DE [a+>a+<a+>a+6.<]2 a+>fa+3cg>c3<
+D @13 v13 q1
+E @9  v11 q1
+DE [dad>c<d>d<]4 
+DE [
+DE  [[dad>c<d>d<]4 [cgca+c>c<]4 ]2
+DE  [<a+f<g+>f<f>f>]4 [<a>e<g>e<e>e]4
+DE  [<a+>f<g+>f<f>f]4 [<a>e<g>e<e>e]2
+DE  [<dad>c<d>d]2 
+DE ]0
+

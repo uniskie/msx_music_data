@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+沙羅曼蛇AC ステージ2 「Fly High」[YM2413] 【作業中】
+[SALAMV01.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV01.MUS)
+
 沙羅曼蛇AC ステージ2 「Fly High」[YM2413 MGSDRV]
 [SALAMA02.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMA02.MUS)
 
