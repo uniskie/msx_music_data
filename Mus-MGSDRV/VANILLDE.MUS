@@ -10,12 +10,12 @@
 
 @v15 = {
 ;       TL FB
-         8, 6,
+        12, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 6, 2, 1, 2, 1, 0, 0, 0, 0, 0,
-  14, 5, 2, 6, 0, 1, 0, 0, 0, 0, 0 }
+  10, 3, 3, 1, 1, 1, 0, 0, 0, 0, 0,
+  14, 5, 2, 6, 0, 1, 0, 0, 1, 0, 0 }
 
-@e0 = {3,31,/3.fb/1.80=34}
+@e0 = {3,31,/3.fb/1.70=34}
 @e1 = {3,0,f/2.d0=34}
 @e2 = {2,0,d8=3.0=20}
 @e3 = {2,0,db0=40}
@@ -77,9 +77,9 @@
 1 v10@10o4q4 k2
 9 v12@15o5q4 l8 
 b v9 @15o5q4 l8 \2 r
-a v11@10o5q4 l8 \10
-c v8 @10o5q4 l8 \12 r
-19bac h30,5,2,1
+a v11@15o5q4 l8 \10
+c v8 @15o5q4 l8 \12 r
+19bac h20,1,2,-3
 
 19b *a0 r8 *a0 r8
 ac  *b0 r8 *b0 r8
@@ -91,12 +91,12 @@ a   r8
 1 )
 19b *a2 r8 *a2
 19  r8
-ac  v11@8 q4so
+ac  v11@8 q6so
 a   *b2    *b2 
 c   *c2    *c2 
 
 ;-- sequance
-d v9 @11o6 q4so l8 
+d v9 @11o6 q4 l8 
 d [ bb-aa-gg-fe ]4
 d [ aaaa>a<aga aaaa>a<aaa ]8
 d [ bb-aa-gg-fe ]4
@@ -107,7 +107,7 @@ d   <b->b-<b->b-c>c<e>e< f>f<f>f<f>f<f>f<
 d ]2
 
 ;-- base
-e v13 @15o3 l8
+e v13 @15o3 l8 q4
 3 v11 @11o2 l8 k2
 3  v-2 @10q4o4\8 *b0 r8 *b0 r8 v+2 @11q8o2\0
 de [ r1 ]4
@@ -121,8 +121,8 @@ de [ r1 ]4
 
 ;--  rhythm opll
 f v15vc10vh8vs11
-f y38,3 y22,108
-f y39,4 y23,121
+f y38,3 y22,198
+f y39,3 y23,121
 f y40,3 y24,138
 *20 = { b4b4b4b4 b4b4b4b4 b4b4b4b4 b4b4b4b8c8 }
 *21 = { b16h16c16h16bs16h16c16h16 }
@@ -130,7 +130,7 @@ f *r0 [ *r1 *r1 ]16
 f *r0 [ b16h16c16h16b16 h16c16h16 *r1 ]16
 
 ;-- rhythm psg
-2 v12 o2 l8 p10
+2 v12 o1 l8 p10
 *30 = { l4 @0aaaa aaaa aaaa aaa@1>c< }
 2 *s0 [
 2  l8 [ @0a@2>d16d16>@3a<@2d16|d16< ]2
