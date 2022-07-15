@@ -12,32 +12,33 @@
 
 @v16 = {
 ;       TL FB
-         9, 6,
+        11, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  10, 3, 1, 1, 1, 1, 0, 0, 1, 0, 0,
-   9, 4, 1, 3, 0, 1, 1, 0, 1, 0, 1 }
+  10, 1, 5, 1, 1, 1, 0, 0, 1, 0, 0,
+  12, 4, 1, 3, 0, 3, 0, 0, 1, 0, 1 }
 @v17 = {
 ;       TL FB
          4, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  11, 3, 4, 1, 0, 1, 0, 0, 1, 0, 0,
-  15, 5, 2, 5, 0, 4, 1, 0, 1, 0, 1 }
+  12, 3, 4, 1, 0, 1, 0, 0, 1, 0, 0,
+  15, 5, 2, 5, 0, 4, 0, 0, 1, 0, 1 }
 @v18 = {
 ;       TL FB
-         0, 2,
+         0, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 3, 4, 1, 0, 1, 0, 1, 0, 0, 0,
-  12, 3, 1, 5, 0, 4, 1, 0, 1, 0, 1 }
+   9, 3, 3, 1, 0, 1, 0, 1, 0, 0, 0,
+  14, 4, 1, 5, 0, 4, 0, 0, 1, 0, 1 }
 
 ;--- melo
-9 @16 v14 q5 o5
-B @16 v13 q5 o7
-9B l12 
+9 @16 v12 q5 o5 
+B @16 v12 q5 o7 
+9B l12
 9B a+3fa+g+6d+6g6 f3.cdd+g+a+>c<
 9B a+3fa+g+6d+6g6 f3.g3.
 9B q8 a1& a3&a3.r6
+9B )
 9B [
-9B  @17 q6 
+9B  @17 q6
 9B  [defgfefededc <a3.>d3.
 9B   r d+6d+3d+6d+3 d+6d+6ff+6f+f+fd+
 9B  ]2
@@ -48,18 +49,18 @@ B @16 v13 q5 o7
 9B  e3.>ef+gagf+
 9B  f6.g6.g+6.a+>c<a+
 9B  g+6.gg+gf6ef6.e& e3&e3c6.
-9B  q8 
+9B  q8
 9B  f3&f3&fr6.>
 9B ]0
 
 ;--- sub melo
-A @16 v14 q5 o5
-C @16 v14 q5 o6
+A @16 v12 q5 o5 
+C @16 v12 q5 o6 
 AC l12
 AC d3<a+a+>c6<g+6>c6 <a+3fa+g+6.>cd+g+
 AC d3<a+a+>c6<g+6>c6 <a+6.fa+>dc6.<g>ce
 AC q8 f+1& f3&f3&fr6.
-AC >
+AC >)
 AC [
 AC  @0 q6so
 AC  [r1 defgfefededc
@@ -92,37 +93,37 @@ AC ]0
 *34={f96(e96(e-96(d96(d-96(c96<(b96(b-96>v+7}
 
 ;--- base
-D @13 v13 q1so o2
-E @9  v12 q1so o2
+D @13 v13 q1so o2 
+E @9  v12 q1so o2 
 DE l12
-DE [a+>a+<a+>a+6.<]3 
-D                    f6.>fc<f
-E                    *0>>*g0r<*b0r*g0r<*1
+DE [a+>a+<a+>a+6.<]3
+D                    f6.>fc<f 
+E                    *0>>*g0r<*b0r*g0r<*1 
 DE [a+>a+<a+>a+6.<]2 a+>fa+3
-D                           cg>c3<
-E                           *0>*g0r<*b0r*g0r*1
-D @13 v13 q3sf
-E @9  v12 q1so
-DE [dad>c<d>d<]4 
+D                           cg>c3< 
+E                           *0>*g0r<*b0r*g0r*1 
+D @13 v13 q2sf 
+E @9  v12 q1so 
+DE [dad>c<d>d<]4
 DE [
 DE  [[dad>c<d>d<]4
-D    [cgca+c>c<]4
-E    [cgca+c>c<]3 c*2>*g0r<*b0r*g0*3
+D    [cgca+c>c<]4 
+E    [cgca+c>c<]3 c*2>*g0r<*b0r*g0*3 
 DE  ]2
 DE  [<a+f<g+>f<f>f>]4 [<a>e<g>e<e>e]4
 DE  [<a+>f<g+>f<f>f]4 [<a>e<g>e<e>e]2
-DE  [<dad>c<d>d]2 
+DE  [<dad>c<d>d]2
 DE ]0
 
-F vb15 vs12 vm10
-F l12
-F [B12S12S12B12S12S12B6B6B6
-F  B12S12S12B12S12S24S24M6M6M6]2
-F  [B6B12S6B12]4
-F [
-F  [[B6B12S6B12]4
-F   B12S6S6S12B12S6S6S12
-F   B12S12S12S12S12S12B12M6M6M12
-F  ]2
-F  [B6B12S6B12]16
-F ]0
+F vb15 vs12 vm10 
+F l12 
+F [B12S12S12B12S12S12B6B6B6 
+F  B12S12S12B12S12S24S24M6M6M6]2 
+F  [B6B12S6B12]4 
+F [ 
+F  [[B6B12S6B12]4 
+F   B12S6S6S12B12S6S6S12 
+F   B12S12S12S12S12S12B12M6M6M12 
+F  ]2 
+F  [B6B12S6B12]16 
+F ]0 
