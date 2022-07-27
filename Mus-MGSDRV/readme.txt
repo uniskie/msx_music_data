@@ -51,7 +51,10 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 ファイナルファンタジー5 タイトルBGM
 [FFVMAINT.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS)
 
-グラディウス2(MSX) 空中戦
+グラディウス2(MSX) 空中戦 (素YM2413)
+[GRA2_S03.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_S03.MUS)
+
+グラディウス2(MSX) 空中戦 (素YM2413 & 内蔵音色縛り)
 [GRA2_I03.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_I03.MUS)
 
 バニラで高収入
