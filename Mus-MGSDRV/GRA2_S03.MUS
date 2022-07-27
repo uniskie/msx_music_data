@@ -11,24 +11,24 @@
 
 @v15 = { ; Brass
 ;       TL FB
-         5, 7,
+         7, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15,15, 3, 3, 0, 1, 0, 0, 0, 0, 1,
   15, 8, 2, 1, 0, 1, 1, 0, 0, 0, 0 }
 
 @v16 = { ; Brass
 ;       TL FB
-        10, 7,
+        14, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   7, 2, 2, 3, 0, 1, 0, 1, 0, 0, 1,
+   7, 3, 2, 2, 0, 1, 1, 0, 0, 0, 1,
    9, 1, 2, 6, 0, 1, 1, 0, 1, 0, 1 }
 
 @v17 = { ; Brass
 ;       TL FB
-         3, 7,
+        16, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  10, 7, 3, 1, 0, 5, 0, 1, 0, 0, 1,
-  15, 6, 4, 6, 0, 1, 1, 0, 1, 0, 0 }
+  10, 7, 3, 1, 0, 3, 0, 1, 0, 0, 1,
+  15, 6, 4, 7, 0, 1, 1, 0, 1, 0, 0 }
 
 9 o5 v14 
 9 l8 [
@@ -37,7 +37,7 @@
 9  v-1 @16 q7sf
 9  [>e<a>c<a>e<a>cer< q2 a>c<a>aec<a q7 ]2 
 9   >e<g>c<g>e<g>cer< q2 g>c<g>gec<g q5 
-9   >ec+<a>a q2 ec+<a>c+<   q7 >e4.d+4.&d+4 < 
+9   >ec+<a>a q3 ec+<a>c+<   q7 >e4.d+4.&d+4 < 
 9  v+1 @0 q7so
 9  [r2a4.b &b1 
 9  |a4a4 q6 a q4 a4b &b1]4 
@@ -49,10 +49,10 @@ A o5 v14
 A l8 [ 
 A  @15 q7sf
 A  [a+1 a+a+a+a+ra+4. b1 bbrbrb4.]2 
-A  v-3 @16 q7sf r 
+A  v-2 @16 q7sf r 
 A  [>e<a>c<a>e<a>c<er q4 a>c<a>aec<a q7 ]2 
 A   >e<g>c<g>e<g>c<er q4 g>c<g>gec<g q5 
-A   >ec+<a>a q2 ec+<a    v+2q7 b4.b4.&b4 
+A   >ec+<a>a q3 ec+<a    v+1q7 b4.b4.&b4 
 A  v+1 @0 q7so 
 A  [r2f+4.g &g1 
 A  |f+4f+4 q6 f+ q4 f+4g &g1]4 
@@ -67,7 +67,7 @@ B  [f+1 f+f+f+f+rf+4. g1 ggrgrg4.]2
 B  @0 q7sf
 B  [>e<a>c<a>e<a>cer< q4 a>c<a>aec<a q7]2 
 B   >e<g>c<g>e<g>cer< q4 g>c<g>gec<g q5 
-B   >ec+<a>a q2 ec+<a>c+< q7 >e4.d+4.&d+4< 
+B   >ec+<a>a q3 ec+<a>c+< q7 >e4.d+4.&d+4< 
 B  @17 q7sf v-2
 B  [r2>a4.b &b1 a4a4aa4b &b1<
 B  |r2>>d4.e &e2<< l16 >ef+gab>cde<< l8 
@@ -83,19 +83,19 @@ C l8 [
 C  v-2 @0 q6so 
 C  >[c+1 c+c+c+c+rc+4. d1 ddrdrd4.]2< 
 ;C  [a+1 a+a+a+a+ra+4. b1 bbrbrb4.]2
-C  v-3 @0 q7sf r4 
+C  v- @0 q7sf r4 
 C  [>e<a>c<a>e<a>cq3sfer< q4 a>c<a>aec<a q7 ]2 
 C   >e<g>c<g>e<g>cq3sfer< q4 g>c<g>gec<g q5 
-C   >ec+<a>a q2 ec+< v+3  q7 b4.b4.&b4 
+C   >ec+<a>a q3 ec+< v+2  q7 b4.b4.&b4 
 C  @17 q7sf v-2
 C  [r2>f+4.g& g1 f+4f+4f+f+4g &g1<
 C  |r2>a4.b &b2< v-1 l16 r>ef+gab>cd<< l8 v+1
 C   >a4a4aa4b &b1< 
 C  ]2 
 C   r2>a4.b &b1< 
-C  v+2 @11 q1so
+C  v+0 @11 q1so
 C  >ec+<aec+ea>c+ r<arerc+4<a> 
-C  v+3
+C  v+5
 C ]0 
 
 D o4 @12 v11 q7   ;@e0 
