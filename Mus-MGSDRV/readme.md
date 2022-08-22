@@ -6,88 +6,88 @@
 --
 MSXPLAYで聞く場合：
 
-沙羅曼蛇AC ステージ1 「OWER OF ANGER」[素YM2413]
+沙羅曼蛇AC ステージ1 「OWER OF ANGER」[素YM2413]  
 [SALAMV01.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV01.MUS)
 
-沙羅曼蛇AC ステージ2 「Fly High」[YM2413 MGSDRV]
+沙羅曼蛇AC ステージ2 「Fly High」[YM2413 MGSDRV]  
 [SALAMA02.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMA02.MUS)
 
-沙羅曼蛇AC ステージ2 「Fly High」[素YM2413]
+沙羅曼蛇AC ステージ2 「Fly High」[素YM2413]  
 [SALAMV02.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV02.MUS)
 
-Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG ver]
+Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG ver]  
 [SENXIN01.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXIN01.MUS)
 
-Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG simple ver]
+Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG simple ver]  
 [SENXI_01.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXI_01.MUS)
 
-HARD DRIVIN' - CRASH REPLAY BGM v2 多音色切り替え (素YM2413)
+HARD DRIVIN' - CRASH REPLAY BGM v2 多音色切り替え (素YM2413)  
 [HARDDR_1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDR_1.MUS)
 
-HARD DRIVIN' - CRASH REPLAY BGM (素YM2413)
+HARD DRIVIN' - CRASH REPLAY BGM (素YM2413)  
 [HARDDRV1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
 
-HARD DRIVIN' - MAIN THEME (素YM2413)
+HARD DRIVIN' - MAIN THEME (素YM2413)  
 [HARDDRV0.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV0.MUS)
 
-デンジャラスシードMD 「Tube」 (Stage 1&8)
+デンジャラスシードMD 「Tube」 (Stage 1&8)  
 [DSEED_1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
 
-デンジャラスシードMD 「Tube」 (Stage 1&8) (素YM2413)
+デンジャラスシードMD 「Tube」 (Stage 1&8) (素YM2413)  
 [DSEED_1Y.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1Y.MUS)
 
-デンジャラスシードMD 「Jupiter」 (Stage 6&10) (YM2413+PSG)
+デンジャラスシードMD 「Jupiter」 (Stage 6&10) (YM2413+PSG)  
 [DSEED_5.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5.MUS)
 
-デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413+素PSG)
+デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413+素PSG)  
 [DSEED_5S.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5S.MUS)
 
-デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413)
+デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413)  
 [DSEED_5Y.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5Y.MUS)
 
-ファイナルファンタジー3 BOSS1
+ファイナルファンタジー3 BOSS1  
 [FF3BOSS1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS)
 
-ファイナルファンタジー5 タイトルBGM
+ファイナルファンタジー5 タイトルBGM  
 [FFVMAINT.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS)
 
-グラディウス2(MSX) 空中戦 (素YM2413)
+グラディウス2(MSX) 空中戦 (素YM2413)  
 [GRA2_S03.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_S03.MUS)
 
-グラディウス2(MSX) 空中戦 (素YM2413 & 内蔵音色縛り)
+グラディウス2(MSX) 空中戦 (素YM2413 & 内蔵音色縛り)  
 [GRA2_I03.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_I03.MUS)
 
-バニラで高収入
+バニラで高収入  
 [VANILLDE.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FVANILLDE.MUS)
 
-イース 「Dreaming」(イースオリジン風アレンジ)(※作成作業中)
+イース 「Dreaming」(イースオリジン風アレンジ)(※作成作業中)  
 [YS1DREA2.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREA2.MUS)
 
-イース 「Dreaming」(ドラムエコーが流行ってた時代の遺物アレンジ)
+イース 「Dreaming」(ドラムエコーが流行ってた時代の遺物アレンジ)  
 [YS1DREAM.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREAM.MUS)
 
 --OLD
 
-ドラゴンスピリット ステージ3 ジャングル
+ドラゴンスピリット ステージ3 ジャングル  
 [DS-3JUNG.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-3JUNG.MGS)
 
-ドラゴンスピリット ステージ7 深海
+ドラゴンスピリット ステージ7 深海  
 [DS-7DEEP.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-7DEEP.MGS)
 
-ガンフロンティア 1面 （超スロー版）
+ガンフロンティア 1面 （超スロー版）  
 [G-F-1.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FG-F-1.MGS)
 
-イース FAIRWIND (未完成)
+イース FAIRWIND (未完成)  
 [YS1FAIR.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FAIR.MUS)
 
-イース FEENA (未完成)
+イース FEENA (未完成)  
 [YS1FEENA.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FEENA.MGS)
 
-イース モーニンググロー (未完成)
+イース モーニンググロー (未完成)  
 [YS1MORNI.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1MORNI.MGS)
 
-イース2 NOBLE DIRECT OF TOAL
+イース2 NOBLE DIRECT OF TOAL  
 [YS2NOBLE.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2NOBLE.MGS)
 
-イース2 RUINS OF MOONDORIA
+イース2 RUINS OF MOONDORIA  
 [YS2RUINS.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2RUINS.MGS)
