@@ -1,93 +1,93 @@
-å‚É [MSXPLAY] (https://msxplay.com/editor.html) ‚Åì¬‚µ‚½MGSDRV—pƒf[ƒ^‚Å‚·B
-‘¼‚É‚àAÌì¬‚µ‚½ƒf[ƒ^‚ğÄ’²®‚µ‚½‚à‚Ì‚Í‚±‚¿‚ç‚É‚ ‚è‚Ü‚·B
+ä¸»ã« [MSXPLAY] (https://msxplay.com/editor.html) ã§ä½œæˆã—ãŸMGSDRVç”¨ãƒ‡ãƒ¼ã‚¿ã§ã™ã€‚
+ä»–ã«ã‚‚ã€æ˜”ä½œæˆã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’å†èª¿æ•´ã—ãŸã‚‚ã®ã¯ã“ã¡ã‚‰ã«ã‚ã‚Šã¾ã™ã€‚
 
-[OLD] (./OLD)ƒtƒHƒ‹ƒ_‚Í‚»‚êˆÈ‘O‚ÌŒÃ‚¢MGSDRVŠÂ‹«‚Åì¬‚µ‚½‚Ü‚Ü‚Ìƒf[ƒ^‚Å‚·B
+[OLD] (./OLD)ãƒ•ã‚©ãƒ«ãƒ€ã¯ãã‚Œä»¥å‰ã®å¤ã„MGSDRVç’°å¢ƒã§ä½œæˆã—ãŸã¾ã¾ã®ãƒ‡ãƒ¼ã‚¿ã§ã™ã€‚
 
 --
-MSXPLAY‚Å•·‚­ê‡F
+MSXPLAYã§èãå ´åˆï¼š
 
-¹—…™ÖÖAC ƒXƒe[ƒW1 uOWER OF ANGERv[‘fYM2413]
-[SALAMV01.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV01.MUS)
+æ²™ç¾…æ›¼è›‡AC ã‚¹ãƒ†ãƒ¼ã‚¸1 ã€ŒOWER OF ANGERã€[ç´ YM2413]
+[SALAMV01.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV01.MUS)
 
-¹—…™ÖÖAC ƒXƒe[ƒW2 uFly Highv[YM2413 MGSDRV]
-[SALAMA02.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMA02.MUS)
+æ²™ç¾…æ›¼è›‡AC ã‚¹ãƒ†ãƒ¼ã‚¸2 ã€ŒFly Highã€[YM2413 MGSDRV]
+[SALAMA02.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMA02.MUS)
 
-¹—…™ÖÖAC ƒXƒe[ƒW2 uFly Highv[‘fYM2413]
-[SALAMV02.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV02.MUS)
+æ²™ç¾…æ›¼è›‡AC ã‚¹ãƒ†ãƒ¼ã‚¸2 ã€ŒFly Highã€[ç´ YM2413]
+[SALAMV02.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV02.MUS)
 
 Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG ver]
-[SENXIN01.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXIN01.MUS)
+[SENXIN01.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXIN01.MUS)
 
 Senxin-Aleste // ACES -Array of Stars-(Stage01) [OPLL+PSG simple ver]
-[SENXI_01.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXI_01.MUS)
+[SENXI_01.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSENXI_01.MUS)
 
-HARD DRIVIN' - CRASH REPLAY BGM v2 ‘½‰¹FØ‚è‘Ö‚¦ (‘fYM2413)
-[HARDDR_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDR_1.MUS)
+HARD DRIVIN' - CRASH REPLAY BGM v2 å¤šéŸ³è‰²åˆ‡ã‚Šæ›¿ãˆ (ç´ YM2413)
+[HARDDR_1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDR_1.MUS)
 
-HARD DRIVIN' - CRASH REPLAY BGM (‘fYM2413)
-[HARDDRV1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
+HARD DRIVIN' - CRASH REPLAY BGM (ç´ YM2413)
+[HARDDRV1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV1.MUS)
 
-HARD DRIVIN' - MAIN THEME (‘fYM2413)
-[HARDDRV0.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV0.MUS)
+HARD DRIVIN' - MAIN THEME (ç´ YM2413)
+[HARDDRV0.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV0.MUS)
 
-ƒfƒ“ƒWƒƒƒ‰ƒXƒV[ƒhMD uTubev (Stage 1&8)
-[DSEED_1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
+ãƒ‡ãƒ³ã‚¸ãƒ£ãƒ©ã‚¹ã‚·ãƒ¼ãƒ‰MD ã€ŒTubeã€ (Stage 1&8)
+[DSEED_1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
 
-ƒfƒ“ƒWƒƒƒ‰ƒXƒV[ƒhMD uTubev (Stage 1&8) (‘fYM2413)
-[DSEED_1Y.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1Y.MUS)
+ãƒ‡ãƒ³ã‚¸ãƒ£ãƒ©ã‚¹ã‚·ãƒ¼ãƒ‰MD ã€ŒTubeã€ (Stage 1&8) (ç´ YM2413)
+[DSEED_1Y.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1Y.MUS)
 
-ƒfƒ“ƒWƒƒƒ‰ƒXƒV[ƒhMD uJupiterv (Stage 6&10) (YM2413+PSG)
-[DSEED_5.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5.MUS)
+ãƒ‡ãƒ³ã‚¸ãƒ£ãƒ©ã‚¹ã‚·ãƒ¼ãƒ‰MD ã€ŒJupiterã€ (Stage 6&10) (YM2413+PSG)
+[DSEED_5.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5.MUS)
 
-ƒfƒ“ƒWƒƒƒ‰ƒXƒV[ƒhMD uJupiterv (Stage 6&10) (‘fYM2413+‘fPSG)
-[DSEED_5S.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5S.MUS)
+ãƒ‡ãƒ³ã‚¸ãƒ£ãƒ©ã‚¹ã‚·ãƒ¼ãƒ‰MD ã€ŒJupiterã€ (Stage 6&10) (ç´ YM2413+ç´ PSG)
+[DSEED_5S.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5S.MUS)
 
-ƒfƒ“ƒWƒƒƒ‰ƒXƒV[ƒhMD uJupiterv (Stage 6&10) (‘fYM2413)
-[DSEED_5Y.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5Y.MUS)
+ãƒ‡ãƒ³ã‚¸ãƒ£ãƒ©ã‚¹ã‚·ãƒ¼ãƒ‰MD ã€ŒJupiterã€ (Stage 6&10) (ç´ YM2413)
+[DSEED_5Y.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5Y.MUS)
 
-ƒtƒ@ƒCƒiƒ‹ƒtƒ@ƒ“ƒ^ƒW[3 BOSS1
-[FF3BOSS1.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS)
+ãƒ•ã‚¡ã‚¤ãƒŠãƒ«ãƒ•ã‚¡ãƒ³ã‚¿ã‚¸ãƒ¼3 BOSS1
+[FF3BOSS1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS)
 
-ƒtƒ@ƒCƒiƒ‹ƒtƒ@ƒ“ƒ^ƒW[5 ƒ^ƒCƒgƒ‹BGM
-[FFVMAINT.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS)
+ãƒ•ã‚¡ã‚¤ãƒŠãƒ«ãƒ•ã‚¡ãƒ³ã‚¿ã‚¸ãƒ¼5 ã‚¿ã‚¤ãƒˆãƒ«BGM
+[FFVMAINT.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS)
 
-ƒOƒ‰ƒfƒBƒEƒX2(MSX) ‹ó’†í (‘fYM2413)
-[GRA2_S03.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_S03.MUS)
+ã‚°ãƒ©ãƒ‡ã‚£ã‚¦ã‚¹2(MSX) ç©ºä¸­æˆ¦ (ç´ YM2413)
+[GRA2_S03.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_S03.MUS)
 
-ƒOƒ‰ƒfƒBƒEƒX2(MSX) ‹ó’†í (‘fYM2413 & “à‘ ‰¹F”›‚è)
-[GRA2_I03.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_I03.MUS)
+ã‚°ãƒ©ãƒ‡ã‚£ã‚¦ã‚¹2(MSX) ç©ºä¸­æˆ¦ (ç´ YM2413 & å†…è”µéŸ³è‰²ç¸›ã‚Š)
+[GRA2_I03.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_I03.MUS)
 
-ƒoƒjƒ‰‚Å‚û“ü
-[VANILLDE.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FVANILLDE.MUS)
+ãƒãƒ‹ãƒ©ã§é«˜åå…¥
+[VANILLDE.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FVANILLDE.MUS)
 
-ƒC[ƒX uDreamingv(ƒC[ƒXƒIƒŠƒWƒ“•—ƒAƒŒƒ“ƒW)(¦ì¬ì‹Æ’†)
-[YS1DREA2.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREA2.MUS)
+ã‚¤ãƒ¼ã‚¹ ã€ŒDreamingã€(ã‚¤ãƒ¼ã‚¹ã‚ªãƒªã‚¸ãƒ³é¢¨ã‚¢ãƒ¬ãƒ³ã‚¸)(â€»ä½œæˆä½œæ¥­ä¸­)
+[YS1DREA2.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREA2.MUS)
 
-ƒC[ƒX uDreamingv(ƒhƒ‰ƒ€ƒGƒR[‚ª—¬s‚Á‚Ä‚½‘ã‚Ìˆâ•¨ƒAƒŒƒ“ƒW)
-[YS1DREAM.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREAM.MUS)
+ã‚¤ãƒ¼ã‚¹ ã€ŒDreamingã€(ãƒ‰ãƒ©ãƒ ã‚¨ã‚³ãƒ¼ãŒæµè¡Œã£ã¦ãŸæ™‚ä»£ã®éºç‰©ã‚¢ãƒ¬ãƒ³ã‚¸)
+[YS1DREAM.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREAM.MUS)
 
 --OLD
 
-ƒhƒ‰ƒSƒ“ƒXƒsƒŠƒbƒg ƒXƒe[ƒW3 ƒWƒƒƒ“ƒOƒ‹
-[DS-3JUNG.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-3JUNG.MGS)
+ãƒ‰ãƒ©ã‚´ãƒ³ã‚¹ãƒ”ãƒªãƒƒãƒˆ ã‚¹ãƒ†ãƒ¼ã‚¸3 ã‚¸ãƒ£ãƒ³ã‚°ãƒ«
+[DS-3JUNG.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-3JUNG.MGS)
 
-ƒhƒ‰ƒSƒ“ƒXƒsƒŠƒbƒg ƒXƒe[ƒW7 [ŠC
-[DS-7DEEP.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-7DEEP.MGS)
+ãƒ‰ãƒ©ã‚´ãƒ³ã‚¹ãƒ”ãƒªãƒƒãƒˆ ã‚¹ãƒ†ãƒ¼ã‚¸7 æ·±æµ·
+[DS-7DEEP.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FDS-7DEEP.MGS)
 
-ƒKƒ“ƒtƒƒ“ƒeƒBƒA 1–Ê i’´ƒXƒ[”Åj
-[G-F-1.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FG-F-1.MGS)
+ã‚¬ãƒ³ãƒ•ãƒ­ãƒ³ãƒ†ã‚£ã‚¢ 1é¢ ï¼ˆè¶…ã‚¹ãƒ­ãƒ¼ç‰ˆï¼‰
+[G-F-1.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FG-F-1.MGS)
 
-ƒC[ƒX FAIRWIND (–¢Š®¬)
-[YS1FAIR.MUS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FAIR.MUS)
+ã‚¤ãƒ¼ã‚¹ FAIRWIND (æœªå®Œæˆ)
+[YS1FAIR.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FAIR.MUS)
 
-ƒC[ƒX FEENA (–¢Š®¬)
-[YS1FEENA.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FEENA.MGS)
+ã‚¤ãƒ¼ã‚¹ FEENA (æœªå®Œæˆ)
+[YS1FEENA.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FEENA.MGS)
 
-ƒC[ƒX ƒ‚[ƒjƒ“ƒOƒOƒ[ (–¢Š®¬)
-[YS1MORNI.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1MORNI.MGS)
+ã‚¤ãƒ¼ã‚¹ ãƒ¢ãƒ¼ãƒ‹ãƒ³ã‚°ã‚°ãƒ­ãƒ¼ (æœªå®Œæˆ)
+[YS1MORNI.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1MORNI.MGS)
 
-ƒC[ƒX2 NOBLE DIRECT OF TOAL
-[YS2NOBLE.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2NOBLE.MGS)
+ã‚¤ãƒ¼ã‚¹2 NOBLE DIRECT OF TOAL
+[YS2NOBLE.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2NOBLE.MGS)
 
-ƒC[ƒX2 RUINS OF MOONDORIA
-[YS2RUINS.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2RUINS.MGS)
+ã‚¤ãƒ¼ã‚¹2 RUINS OF MOONDORIA
+[YS2RUINS.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2RUINS.MGS)
