@@ -1,9 +1,8 @@
-# Auto detect text files and perform LF normalization
-#* text=auto
-
-# don't change!! no more
-#* binary
-
-# Auto detect text files and not modify line feed
-* text=false
-
+*.bas		diff=sjis encoding=sjis eol=CRLF
+*.asm		diff=sjis encoding=sjis eol=CRLF
+*.asf		diff=sjis encoding=sjis eol=CRLF
+*.mus		diff=sjis encoding=sjis eol=CRLF
+*.msd		diff=sjis encoding=sjis eol=CRLF
+*.txt		diff=sjis encoding=sjis eol=CRLF
+;*.c			diff=sjis encoding=sjis eol=CRLF
+;*.h			diff=sjis encoding=sjis eol=CRLF
