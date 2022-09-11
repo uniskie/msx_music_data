@@ -1,4 +1,4 @@
-主に [MSXPLAY] (https://msxplay.com/editor.html) で作成したMGSDRV用データです。
+﻿主に [MSXPLAY] (https://msxplay.com/editor.html) で作成したMGSDRV用データです。
 他にも、昔作成したデータを再調整したものはこちらにあります。
 
 [OLD] (./OLD)フォルダはそれ以前の古いMGSDRV環境で作成したままのデータです。
@@ -29,6 +29,9 @@ HARD DRIVIN' - CRASH REPLAY BGM (素YM2413)
 
 HARD DRIVIN' - MAIN THEME (素YM2413)  
 [HARDDRV0.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FHARDDRV0.MUS)
+
+デンジャラスシードMD 「Triple-Eye」(Stage 1&9 BOSS)  
+[DSEED_1B.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1B.MUS)
 
 デンジャラスシードMD 「Tube」 (Stage 1&8)  
 [DSEED_1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
