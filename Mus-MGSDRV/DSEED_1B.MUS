@@ -1,0 +1,125 @@
+;[gain=1.0 name=DSEED_1B duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 1
+#tempo 112
+#title {"Dangerous Seed (MD) Triple-Eye (Stage 1&9 BOSS) *working* | uniskie"}
+#alloc { 0=100, 1=500,2=500,3=500, 9=500,A=500,B=500,C=500,D=500,E=500, F=1500}
+
+@v15 = { ; E-BASE
+;       TL FB
+         3, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15, 5, 2, 2, 0, 1, 0, 1, 0, 0, 1,
+  15, 6, 5, 6, 0, 1, 0, 0, 1, 0, 0 }
+
+@v16 = { ; E-LEAD
+;       TL FB
+         4, 5,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15,12, 2, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 5, 0, 6, 0, 1, 1, 0, 1, 0, 0 }
+
+@v17 = { ; Brass
+;       TL FB
+        19, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  10, 7, 3, 0, 0, 1, 0, 1, 1, 0, 0,
+  15, 7, 1, 5, 0, 1, 1, 0, 1, 0, 0 }
+
+@e1 = {1,0,fed:50 [c:3.b:3.a:3.b:3]0 }
+@e2 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
+
+;@e10 = {1,0,@10f:8@11[f]}
+
+9 @15 q8 v13 
+9 o4
+9 l16 <[16 d+d+d+d+]>
+9 [0 l8
+9 @16 v12 q8 h20,2,1,1
+9 [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+
+9    f+8.>c+8^32f32f+4ed+c+ d+1
+9 ]
+9 @17 ))
+9 < q4 l16 
+9 ddrdrdrdrdddddrd
+9 d+d+rd+rd+rd+rd+d+d+d+d+rd+
+9 ffrfrfrfrfffffrf
+9 ggrgrgrgrgggggrg
+9 @16 ((
+9 g+d+g+>c+<b a+bd+
+9 g+d+g+>c+<b f+bd+
+9 g+d+g+>c+<b a+b>c+
+9 d+d+rd+rd+d+d+rd+d+d+d+d+d+d+
+9 <<
+9 ]
+
+A r1r1r1r1
+A o4 
+A [0 l8
+A @16 v10 @\5 q8 h20,2,1,1
+A r8
+A [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+
+A    f+8.>c+8^32f32f+4ed+c+ | d+1
+A ]                           d+2..
+A @17 ))))
+A <q3 l16
+A  bbrbrbrbrbbbbbrb
+A  bbrbrbrbrbbbbbrb
+A >ddrdrdrdrdddddrd
+A  d+d+rd+rd+rd+rd+d+d+d+d+rd+
+A @16 ((
+A <
+A g+d+g+d+ba+ba+
+A g+d+g+d+ba+bd+
+A g+d+g+d+b>c+<ba+
+A >d+d+rd+r<d+a+>d+<
+A a+>d+ga+>d+ga+>d+
+A <<<<
+A ]
+
+B v13 @15 o4
+C v13 @15 o3
+BC [2
+BC  l16
+BC  d+r((((d+))))d+r((((d+))))d+r
+BC  ((((d+))))d+d+rc+rd+r<
+BC  br((((b))))br((((b))))br
+BC  ((((b))))bbrbr>c+r
+BC ] 
+B @11 v10        ;@e10
+C @10 v8  r8 @\8 ;@e10
+BC [0
+BC  [4
+BC   f+fed+ dc+c<b a+ag+g f+fed+
+BC   dd+ef f+gg+a a+b>cc+ dd+ef
+BC  ]
+BC  [6
+BC   gf+fe d+dc+c< ba+ag+ gf+fe>
+BC  ]
+BC  <d+dc+c<ba+ag+
+BC  >>
+BC ]
+
+D @15 v13 q5
+E @15 v12 q5 
+DE o2
+DE l16 >[16 d+d+d+d+]<
+DE [0
+D  @13 q5 )
+E  @10 q2 ((
+DE  [[g+g+g+g+]14 g+g+d+d+ba+g+d+]2
+DE  @6 q8 h24,4,4,1
+D   (
+E   @\10 ))
+DE  f1 d+1
+DE  d1 d+1
+DE  e2d+2d2
+DE  d+1
+DE ]
+
