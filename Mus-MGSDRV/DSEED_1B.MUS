@@ -1,4 +1,4 @@
-;[gain=1.0 name=DSEED_1B duration=120s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=DSEED_1B duration=120s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -11,37 +11,36 @@
 #title {"Dangerous Seed (MD) Triple-Eye (Stage 1&9 BOSS) | uniskie"}
 #alloc { 0=200, 
          1=200,2=200,3=200,
-         9=290,A=320,B=120,C=110,D=100,E=100,
+         9=300,A=320,B=130,C=130,D=100,E=100,
          F=800}
+
 
 @v15 = { ; E-BASE
 ;       TL FB
-         8, 7,
+        12, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 5, 2, 2, 0, 1, 0, 0, 0, 0, 1,
-  15, 6, 5, 7, 0, 1, 0, 0, 1, 0, 0 }
+  15, 3, 8, 1, 0, 5, 0, 0, 0, 1, 0,
+  15, 6, 5,10, 0, 1, 0, 0, 1, 1, 0 }
 
 @v16 = { ; E-LEAD
 ;       TL FB
-         9, 6,
+        18, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15,15, 0, 1, 1, 1, 0, 0, 0, 0, 0,
-  15, 5, 0, 6, 0, 3, 0, 0, 1, 0, 0 }
+  15, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 5, 0, 7, 0, 3, 0, 0, 1, 0, 1 }
 
-;@v17 = { ; Brass
-;;       TL FB
-;        13, 6,
-;; AR DR SL RR KL MT AM VB EG KR DT
-;   8, 6, 2, 1, 0, 1, 0, 0, 1, 0, 0,
-;  15, 7, 1, 7, 0, 1, 0, 0, 1, 0, 0 }
+@v17 = { ; Brass
+;       TL FB
+        18, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+   8, 5, 2, 0, 0, 1, 0, 0, 1, 0, 0,
+  15, 6, 1, 7, 0, 1, 0, 0, 1, 0, 1 }
 
 @e1 = {1,0,fed:50 [c:3.b:3.a:3.b:3]0 }
 @e2 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
 
-@e10 = {1,0,@10f@11[f]}
-
-9 v13 @15 o4 
-A v12 @15 o5 
+9 v9 @6  o5 h20,1,2,2
+A v9 @10 o6 h20,1,2,2
 9A [2
 9A  l16
 9A  d+r((d+))d+r((d+))d+r ((d+))d+d+rc+rd+r<
@@ -54,7 +53,7 @@ A v12 @15 o5
 9 [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
 9    f+8.>c+8^32f32f+4ed+c+ d+1 
 9 ] 
-9 @9 ) 
+9 @17 )
 9  q3 l16 
 9 ddrdrdrdrdddddrd 
 9 d+d+rd+rd+rd+rd+d+d+d+d+rd+ 
@@ -71,12 +70,12 @@ A v12 @15 o5
 
 A o4 
 A [0 l8 
-A @16 v9 @\10 q8 h24,1,2,2 
+A @16 v09 @\13 q8 h24,1,2,2 
 A r8 
 A [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
 A    f+8.>c+8^32f32f+4ed+c+ | d+1 
 A ]                           d+2.. 
-A @9 ))) @\0 
+A @17 ))) @\0 
 A <q3 l16 
 A  bbrbrbrbrbbbbbrb 
 A  bbrbrbrbrbbbbbrb 
@@ -116,11 +115,11 @@ A ]
 2 r > (( 
 12 ]
 
-B @15 v10 q5 o3 @\5 
+B @15 v10 q3 o3
 B l16 >[16 d+d+d+d+]< 
 C [r1]4 
-B @11 o5 v10        ;@e10 
-C @10 o5 v8  @\8 r8 ;@e10 
+B @11 o5 q1so v8 
+C @10 o5 q3so v7  @\8 ;r8
 BC [0
 BC  [4
 BC   f+fed+ dc+c<b a+ag+g f+fed+
@@ -129,24 +128,25 @@ BC  ]
 BC  [6
 BC   gf+fe d+dc+c< ba+ag+ gf+fe>
 BC  ]
-BC  <d+dc+c<ba+ag+
+BC  ) <d+dc+c<ba+ag+ (
 BC  >>
 BC ]
 
-D @15 v13 q5 o2 
-E @15 v11 q5 o3 
+D @13 v11 q3 o2
+E @10 v8  q2 o2 
 DE l16 >[16 d+d+d+d+]<
 DE [0
-D  @13 v11 q5 
-E  @10 v10 q2 @e1 
+D  @13 v11 q5 o2
+E  @10 v9 q2 o2
+DE h24,1,3,2
 DE  [[g+g+g+g+]14 g+g+d+d+ba+g+d+]2
-DE  @16 q8 h24,1,3,2
-D   v10 
-E   v10 @\10 
+;DE  @16 q8 h24,1,3,2
+D   @6  v12 q8
+E   @10 v10 q8 >
 DE  f1 d+1
 DE  d1 d+1
-DE  e2d+2d2
-DE  d+1
+DE  e2d+2d2 d+1
+E  <
 DE ]
 
 #macro_offset { b=0, s=20, m=21, n=22, l=23 }
