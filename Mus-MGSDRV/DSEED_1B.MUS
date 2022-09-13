@@ -7,40 +7,39 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
-#tempo 112
+#tempo 114
 #title {"Dangerous Seed (MD) Triple-Eye (Stage 1&9 BOSS) | uniskie"}
-#alloc { 0=200, 
-         1=200,2=200,3=200,
-         9=300,A=320,B=130,C=130,D=100,E=100,
-         F=800}
-
+#alloc { 0=110,
+         1=110,2=128,3=120,
+         9=290,A=310,B=120,C=110,D=100,E=100,
+         F=760}
 
 @v15 = { ; E-BASE
 ;       TL FB
-        12, 7,
+         0, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 3, 8, 1, 0, 5, 0, 0, 0, 1, 0,
-  15, 6, 5,10, 0, 1, 0, 0, 1, 1, 0 }
+  15, 2, 5, 1, 0, 1, 0, 0, 0, 1, 0,
+  15, 6, 5, 7, 0,10, 0, 0, 1, 1, 0 }
 
 @v16 = { ; E-LEAD
 ;       TL FB
         16, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0,
-  15, 5, 0, 7, 0, 3, 0, 0, 1, 0, 1 }
+  15, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+  15, 5, 0, 7, 0, 2, 0, 0, 1, 0, 1 }
 
 @v17 = { ; Brass
 ;       TL FB
-        18, 7,
+        27, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   8, 4, 2, 0, 0, 1, 0, 0, 1, 0, 0,
-  15, 6, 1, 7, 0, 1, 0, 0, 1, 0, 1 }
+   9, 8, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+  15, 6, 0, 7, 0, 1, 1, 0, 1, 0, 1 }
 
 @e1 = {1,0,fed:50 [c:3.b:3.a:3.b:3]0 }
 @e2 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
 
-9 v9 @6  o5 h20,1,2,2
-A v9 @10 o6 h20,1,2,2
+9 v9 @6  o5 h28,1,2,3 
+A v9  @10 o6 h28,1,2,3 
 9A [2
 9A  l16
 9A  d+r((d+))d+r((d+))d+r ((d+))d+d+rc+rd+r<
@@ -49,18 +48,18 @@ A v9 @10 o6 h20,1,2,2
 
 9 o4 
 9 [0 l8 
-9 @16 @\0 v11 q8 h24,1,2,2 
+9 @16 v12 q8 h24,1,2,2 
 9 [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
 9    f+8.>c+8^32f32f+4ed+c+ d+1 
 9 ] 
-9 @17 )
+9 @17 
 9  q3 l16 
 9 ddrdrdrdrdddddrd 
 9 d+d+rd+rd+rd+rd+d+d+d+d+rd+ 
 9 ffrfrfrfrfffffrf 
 9 ggrgrgrgrgggggrg 
 9 < 
-9 @16 ( 
+9 @16 
 9 g+d+g+>c+<b a+bd+ 
 9 g+d+g+>c+<b f+bd+ 
 9 g+d+g+>c+<b a+b>c+ 
@@ -70,7 +69,7 @@ A v9 @10 o6 h20,1,2,2
 
 A o4 
 A [0 l8 
-A @16 v10 @\13 q8 h24,1,2,2 
+A @16 v10 @\10 q8 h24,1,2,2 
 A r8 
 A [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
 A    f+8.>c+8^32f32f+4ed+c+ | d+1 
@@ -82,7 +81,7 @@ A  bbrbrbrbrbbbbbrb
 A >ddrdrdrdrdddddrd< 
 A >d+d+rd+rd+rd+rd+d+d+d+d+rd+< 
 A < 
-A @16 ( @\4 
+A @16 @\3 
 A g+d+g+d+b a+ba+ 
 A g+d+g+d+b a+bd+ 
 A g+d+g+d+b >c+<ba+ 
@@ -93,7 +92,7 @@ A ]
 
 12 o5 @e1 q8 h24,1,3,2
 1  v7 
-2  v6 r8 @\5 
+2  v5 r8 @\5 
 12 [4 r1 ]
 12 [0 l16
 12  [2 d+1 e1 f+2.e4 d+1 ]
@@ -106,48 +105,47 @@ A ]
 1 g+d+g+>c+<b a+b>c+< 
 1 >d+d+rd+rd+d+d+rd+d+d+d+d+d+;d+ 
 1 ;< 
-2 < ) 
+2 < )) 
 2 g+d+g+d+b a+ba+ 
 2 g+d+g+d+b a+bd+ 
 2 g+d+g+d+b >c+<ba+ 
 2 >d+d+rd+r<d+a+>d+< 
 2 a+>d+ga+>d+ga+>d+<<< 
-2 r > (
+2 r > (( 
 12 ]
 
-B @15 v10 q3 o3
-B l16 >[16 d+d+d+d+]< 
+BC l16
+B @15 v11 q3 o3 @\2
+B >[16 d+d+d+d+]< 
 C [r1]4 
-B @11 o5 q1so v8 
-C @10 o5 q3so v7  @\8 ;r8
+B @11 o5 q4so v8 @\4
+C @10 o5 q1so v9 @\0
 BC [0
 BC  [4
 BC   f+fed+ dc+c<b a+ag+g f+fed+
 BC   dd+ef f+gg+a a+b>cc+ dd+ef
 BC  ]
-BC  )
 BC  [6
 BC   gf+fe d+dc+c< ba+ag+ gf+fe>
 BC  ]
-BC  ) <d+dc+c<ba+ag+ (
-BC  >> (
+BC  <d+dc+c<ba+ag+
+BC  >>
 BC ]
 
-D @13 v11 q3 o2
-E @10 v8  q2 o2 
+D @13 v11 q3 o2 
+E @10 v9  q1 o2 @\1
 DE l16 >[16 d+d+d+d+]<
 DE [0
-D  @13 v11 q5 o2
-E  @10 v9 q2 o2
-DE h24,2,4,1
+D  @13 v11 q3 o2 
+E  @10  v9 q1 o2 
+DE h24,1,3,2
 DE  [[g+g+g+g+]14 g+g+d+d+ba+g+d+]2
-;DE  @16 q8 h24,1,3,2
-D   @6  v12 q8
-E   @10 v10 q8 >
+D   @6  v12 q8 
+E   @10 v10 q8 > 
 DE  f1 d+1
 DE  d1 d+1
 DE  e2d+2d2 d+1
-E  <
+E  < 
 DE ]
 
 #macro_offset { b=0, s=20, m=21, n=22, l=23 }
@@ -155,13 +153,13 @@ DE ]
 F y38,3 y22,106 ; bass-drum 
 *04={b64 y22,94b64 y22,82b64 y22,70r64 y22,58r64 y22,46r64 y22,34r64 y22,22r64 y22,106r8}
 *08={b64 y22,94b64 y22,82b64 y22,70r64 y22,58r64 y22,46r64 y22,34r64 y22,22r64 y22,106}
-*16={b64 y22,94b64 y22,82b64 y22,70r64 y22,106}
+*16={b64 y22,94b64 y22,82r64 y22,70r64 y22,106}
 ; s8,s16
 F y39,3 y23,90  ; snare,hi-hut 
 F y40,2 y24,132 ; cynbal,tom-tom 
 *28={sm64 y24,120m64 y24,108m64 y24,96r64 y24,84r64 y24,72r64 y24,60r64 y24,48r64 y24,132}
 *36={sm64 y24,120m64 y24,108m64 y24,96r64 y24,132}
-F vb13 vs10 vm12 kf 
+F vb12 vs8vm11 kf 
 F [4 *b8r16*b8r16 | *b4*b8*b8*b8 ] 
 F                   *b8r16*b16*s16*s16*s16*s16*s16*s16 
 F [0 
@@ -176,7 +174,7 @@ F  ]
 F  *s16*b16*s16*s16 
 F ] 
 
-@e4={3,31,*3.c.*1.ca865.0=20}
+@e4={3,31,*3.c.*1.ba865.0=20}
 @e5={3,1,*3,f.n0.*2.ee.0=20}
 @e6={2,0,c8520=6}
 3 v12 o2 \8 p12 
