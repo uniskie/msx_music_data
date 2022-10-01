@@ -33,20 +33,23 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 デンジャラスシードMD 「Triple-Eye」(Stage 1&9 BOSS)  
 [DSEED_1B.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1B.MUS)
 
+デンジャラスシードMD 「Triple-Eye」(Stage 1&9 BOSS) (素YM2413)  
+[DSEEDV1B.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEEDV1B.MUS)
+
 デンジャラスシードMD 「Tube」 (Stage 1&8)  
 [DSEED_1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1.MUS)
 
 デンジャラスシードMD 「Tube」 (Stage 1&8) (素YM2413)  
-[DSEED_1Y.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_1Y.MUS)
+[DSEEDV1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEEDV1.MUS)
 
 デンジャラスシードMD 「Jupiter」 (Stage 6&10) (YM2413+PSG)  
 [DSEED_5.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5.MUS)
 
 デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413+素PSG)  
-[DSEED_5S.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5S.MUS)
+[DSEEDS5.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEEDS5.MUS)
 
 デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413)  
-[DSEED_5Y.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEED_5Y.MUS)
+[DSEEDV5.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEEDV5.MUS)
 
 ファイナルファンタジー3 BOSS1  
 [FF3BOSS1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS)
