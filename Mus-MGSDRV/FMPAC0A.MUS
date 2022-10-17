@@ -1,4 +1,4 @@
-;[gain=1.0 name=fmpac0a duration=300s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=FMPAC0A duration=300s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -17,12 +17,19 @@
    9, 0, 0, 4, 2, 1, 0, 0, 0, 0, 0,
   10, 4,15, 5, 0, 3, 0, 0, 0, 0, 0 }
 
+;@v17 = { ; electric brass
+;;       TL FB
+;         2, 7,
+;; AR DR SL RR KL MT AM VB EG KR DT
+;  12, 4, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+;  14, 5, 0, 4, 0, 1, 0, 0, 1, 0, 1 }
+
 @v17 = { ; electric brass
 ;       TL FB
-         2, 7,
+        26, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 4, 1, 1, 0, 1, 0, 0, 0, 0, 1,
-  14, 5, 0, 4, 0, 1, 0, 0, 1, 0, 1 }
+   8, 4, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+  12, 7, 0, 4, 0, 1, 0, 0, 1, 0, 0 }
 
 123F9ABCDE [0
 
@@ -30,9 +37,9 @@
 F y38,3 y22,148 ; bass-drum (y38,32+3 -> sustain on) 
 F y39,5 y23,64  ; snare,hi-hut (y39,32+3 -> sustain on) 
 F y40,1 y24,192 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
-F L16V12VB15VS12VM12VC13VH9 
-F H:H:H:H8H:H:H:H8.S:S:S:S8 H:H:H:H8H:H:H:H8.S:S:S:S8 
-F BC8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S8H:H: 
+F L16V12VB14VS12VM12VC13VH9 
+F H:H:H:H8H:H:H:H8.S:S:S:S8 H:H:H:H8H:H:H:H8.S:S:S:S8
+F BC8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S8H:H:
 F B8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S8H:H: 
 F B8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S8H:H: 
 F B8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S:S:BS:S: 
@@ -47,45 +54,46 @@ F BC8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S:S:BH8
 *4={@4o2 p80}
 ;snare
 ;@e5={3,0,n0*3.fe.*2.n2.dn4.cn6.bn8.an10.9n12.8n14.7n16.6n18.5n20.4n22.33n24.0=20}
-@e5={3,0,n0*3.fe.*1.4=9.0=20}
-*5={@5o3 p80}
+@e5={3,10,n0*3.fe4=9.0=20}
+*5={@5o3 p100}
 ; hi-hut
-@e6={3,0,c950=7}
+@e6={3,0,*3.b*2.730}
 *6={@6o7 p0}
 ; cynbal
 @e7={3,0,c0=40}
 *7={@7o7 p1}
 
 3 l16 v12 o3 
-3 *6eeee8eeee8.*5gggg8 
-3 *6eeee8eeee8.*5gggg8
-3 *7f8*6ee*5g8*6ee*4c8*6ee*5g8*6ee
+3 *6aaaa8aaaa8.*5eeee8 
+3 *6aaaa8aaaa8.*5gec<a8>
+3  *7f8.*6a*5e8*6aa*4c8*6aa*5e8*6aa
 3 [7 
-3  *4c8*6ee*5g8*6ee*4c8*6ee | *5g8*6ee
+3  *4c8*6aa*5e8*6aa*4c8*6aa | *5e8*6aa
 3 ] 
-3                             *5gggg 
+3                             *5eeee 
 3 ;VC-3VH+1 
 3 [4 
-3  *4c*6e*7f8*5g*6e*7f8*4c*6e*7f8*5g*6e*7f8 
+3  *4c*6a*7f8*5e*6a*7f8*4c*6a*7f8*5e*6a*7f8 
 3 ] 
 3 ;VC+3VH-1 
-3 *7f8*6ee*5g8*6ee*4c8*6ee*5g8*6ee 
-3 *4c8*6ee*5g8*6ee*4c8*6ee*5gg*4c8 
+3 *7f8.*6a*5e8*6aa*4c8*6aa*5e8*6aa 
+3 *4c8*6aa*5e8*6aa*4c8*6aa*5ee*4c8 
 
-@e1={1,0,feed:30 [c:3.b:3]0}
-@e2={1,0,cf8=7.0=30}
+@e1={1,0,feed:30[c:3.b:3]0}
+@e2={1,0,cfedcba90=30}
+@e3={1,0,defe:30[d:3.e:3]0}
 
 ;--- Melody #0 ---
 9 @16v12o5 hf 
 E @16v8 o5 r8 hf @\60 
 9E l16
 9E gggar<gggar8>>cccdr gggar<gggar8ccc
-9 dr @17 v+3 
-E    @17 v+3 r8 @\40 
+9 dr @17 v+2 
+E    @17 v+4 r8 @\30 
 9E d2a2 g4f4e4f4
-9E h60,0,4,4
+9E h60,0,4,3
 9E e4.d8d1 &d2
-9E h100,0,4,4
+9E h100,0,4,3
 9E d2a2 g4.f4.>c4
 9E <a1 &a1
 9E d4.e4.f4 e4.c4.g4
@@ -93,21 +101,21 @@ E    @17 v+3 r8 @\40
 9 d1 
 E d2.. 
 
-2 @2 v10 o3 @\0 hf
+2 @2 v10 o4 @\0 hf
 2 l16 
 2 gggar<gggar8>>cccdr gggar<gggar8cccdr 
-2 @1 
+2 @1 o3
 2 h60,0,4,1
 2 d2a2 g4f4e4f4 
 2 e4.d8d1 &d2 
 2 h100,0,4,1
 2 d2a2 g4.f4.>c4 
 2 <a1 &a1 
-2 @1 v10 o4 @\0 
+2 @3 v10 o4 @\0 
 2 a+1 >c1 <a+1 >c1 d1 &d1 
 
 ;--- Melody #4 ---
-1 v10 o4 hf k5 
+1 v10 o4 hf k5 @\4
 1 l16 
 1 r1 r1 
 1 @2 
@@ -116,13 +124,13 @@ E d2..
 1 drdr4cc+rdr4d drdr4fgrfr4d 
 1 drdr4c+crdr4d drdr4fgrfr4r 
 1 h100,0,4,1 
-1 @1 v10 k0 
+1 @3 v10 k0 @\0
 1 d1 e1 d1 e1 f1 &f1 
 
 ;--- Melody #2 ---
 ;@e14={1,0,@10fe@13f}
-B v11@13o2 
-D v11@10o2 q1 
+B v11@13o2
+D v11@10o2 q1
 BD l16r1 r1
 BD dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defd
 BD a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+ <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+>cd<a+
