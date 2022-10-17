@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+FMPAC BGM 1（アシュギーネ ステージ1） OPLL＋PSGアレンジ
+[FMPAC0A.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFMPAC0A.MUS)
+
 沙羅曼蛇AC ステージ1 「OWER OF ANGER」[素YM2413]  
 [SALAMV01.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSALAMV01.MUS)
 
