@@ -6,7 +6,10 @@
 --
 MSXPLAYで聞く場合：
 
-FMPAC BGM 1（アシュギーネ ステージ1） OPLL＋PSGアレンジ 音色違い  
+FMPAC BGM 1（アシュギーネ ステージ1） OPLL＋PSGアレンジ3 音色&ドラム違い  
+[FMPAC0C.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFMPAC0C.MUS)
+
+FMPAC BGM 1（アシュギーネ ステージ1） OPLL＋PSGアレンジ2 音色違い  
 [FMPAC0B.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFMPAC0B.MUS)
 
 FMPAC BGM 1（アシュギーネ ステージ1） OPLL＋PSGアレンジ  
