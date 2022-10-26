@@ -6,7 +6,16 @@
 --
 MSXPLAYで聞く場合：
 
-太陽の神殿 ～ Templo del Sol ～ | 素TM2413  
+太陽の神殿 ～ Templo del Sol ～ | PSG  
+[TMPSOLP.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FTMPSOLP.MUS)
+
+太陽の神殿 ～ Templo del Sol ～ | PSG + YM2413  
+[TMPSOLC.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FTMPSOLC.MUS)
+
+太陽の神殿 ～ Templo del Sol ～ | YM2413 arrange  
+[TMPSOLA.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FTMPSOLA.MUS)
+
+太陽の神殿 ～ Templo del Sol ～ | 素YM2413  
 [SOLTEMP.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FSOLTEMP.MUS)
 
 FMPAC BGM 1（アシュギーネ ステージ1） SCC＋PSGアレンジ  

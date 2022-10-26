@@ -1,0 +1,55 @@
+;[gain=1.0 name=TMPSOLP duration=300s fade=5s cpu=0 lpf=0]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.5MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 0
+#tempo 100
+#title {"太陽の神殿 - Templo del Sol (PSG)"}
+
+@e0={1,,dfea=10.d7=10.[9:3.8:3]}
+@e1={1,,bfedc8=90.[8:3.9:3]}
+
+1 v10 o4 @0 k2
+1 h46,1,2,1
+1 l16 a(2a)2>c(2c)2 l8
+1 [0
+1  d2.f4 e2.c<g g4.a2^8 ^8rr2a>c
+1  d2.f4 e2.cd  e2.g4 g4.f4.<a>c
+1  d2.a4 g(2g)2e(2e)2r4c(2c)2 c4.d2^8 ^8rr2<a>c
+;1  d2.a4 grerr4cr c4.d2^8 8rr2<a>c
+1 ]
+
+2 v8 o4 @0 k3 \-1
+2 h32,1,2,1
+2 l8 r4
+2 [0 l16
+2  a(2a)2f(2a)2d(2f)2f(2d)2a(2f)2f(2a)2d(2f)2f(2d)2
+2  >c(2<f>)2<g(2>c<)2e(2g)2g(2e)2>c(2<g>)2<g(2>c<)2e(2g)2c(2e)2
+2  e(2c)2c(2e)2<a(2>c<)2>f(2<a>)2d(2f)2<a(2>d<)2f(2a)2a(2f)2
+2   d(2a)2a(2d)2>e(2<a>)2d(2e(d(d)4<a(5d)5>f(2<a>)2d(2f)2
+2  a(2a)2f(2a)2d(2f)2f(2d)2a(2f)2f(2a)2d(2f)2f(2d)2
+2  >c(2<f>)2<g(2>c<)2e(2g)2g(2e)2>c(2<g>)2<g(2>c<)2e(2g)2c(2e)2
+2  >c(2<f>)2<g(2>c<)2e(2g)2g(2e)2>c(2<g>)2<g(2>c<)2e(2g)2c(2e)2
+2  e(2c)2c(2e)2<a(2>c<)2>d(2<a>(d(d)4<a(5<d>)5>f(2<a>)2d(2f)2
+2  a(2a)2f(2a)2d(2f)2f(2d)2a(2f)2f(2a)2d(2f)2f(2d)2
+2  e(2f)2l8(2e)2c(2c)2r4<a(2a)2> l16
+2  e(3<a>)3c(2e)2<a(2>c<)2>f(2<a>)2d(2f)2<a(2>d<)2f(2a)2a(2f)2
+2  d(2a)2e(2d)2f(2e)2a(2f)2>d(2<a>)2e(2d)2f(2e)2a(2f)2
+2 ]
+;2 [0
+;2  [afdf]2 >c<geg>c<gec  ec<a>fd<afa da>ed4<a>fd
+;2  [afdf]2 >c<geg>c<gec >c<geg>c<gec ec<a>d4<a>fd
+;2  [afdf]2 ercrr4<ar> ec<a>fd<afa defa>defa
+;2 ]
+
+3 @1 v10 o2
+3 h45,1,2,1
+3 l8 r4
+3 [0
+3  [a+4.a+]4 [d4.d]4 [a+4.a+]4
+3  [a4.a]2 d4.dd4>dc< [a+4.a+]2 ararr4ar [d4.d]4
+3 ]
