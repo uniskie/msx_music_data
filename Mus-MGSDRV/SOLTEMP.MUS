@@ -1,0 +1,37 @@
+;[gain=1.0 name=SOLTEMP duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com 
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.5MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 0
+#tempo 100
+#title {"太陽の神殿 ～ Templo del Sol ～ | 素TM2413"}
+
+9 @13 v13 so o4
+C @2  v12 so o4
+9C l8 a>c
+9C [0
+9C  d2.f4 e2.c<g g4.a2&a r2r4a>c
+9C  d2.f4 e2.cd  e2.g4 g4.f4.<a>c
+9C  d2.a4 grerr4cr c4.d&d2 r2r4<a>c
+9C ]
+
+A @13 v12 so o4
+D @2  v11 so o4
+AD l8 r4
+AD [0
+AD  [afdf]2 >c<geg>c<gec  ec<a>fd<afa da>ed4<a>fd
+AD  [afdf]2 >c<geg>c<gec >c<geg>c<gec ec<a>d4<a>fd
+AD  [afdf]2 ercrr4<ar> ec<a>fd<afa defa>defa
+AD ]
+
+B @13 v13 sf o3
+E @8  v13 so o2
+BE l8 r4
+BE [0
+BE  [a+4.a+]4 [d4.d]4 [a+4.a+]4
+BE  [a4.a]2 d4.dd4>dc< [a+4.a+]2 ararr4ar [d4.d]4
+BE ]
