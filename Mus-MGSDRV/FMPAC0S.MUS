@@ -11,23 +11,23 @@
 #title { "FMPAC BGM0 (ASHGUINE2 STAGE1) PSG+SCC arrange | uniskie" }
 
 ; SCC: SQUARE
-@s00={ 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60
-       A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 }
+@s00={ 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50
+       B0 B0 B0 B0 B0 B0 B0 B0 B0 B0 B0 B0 B0 B0 B0 B0 }
 ;; SCC: SQUARE 2
 ;@s01={ 60 60 60 60 60 60 60 60 A0 A0 A0 A0 A0 A0 A0 A0 
 ;       60 60 60 60 60 60 60 60 A0 A0 A0 A0 A0 A0 A0 A0 }
 ; SCC: SAW
-@s02={ 00 F8 F0 E8 E0 D8 D0 C8 C0 B8 B0 A8 A0 98 90 88 
-;       80 78 70 68 60 58 50 48 40 38 30 28 20 18 10 08 }
-       00 78 70 68 60 58 50 48 40 38 30 28 20 18 10 08 }
+;@s02={ 00 F8 F0 E8 E0 D8 D0 C8 C0 B8 B0 A8 A0 98 90 88 
+;;       80 78 70 68 60 58 50 48 40 38 30 28 20 18 10 08 }
+;       00 78 70 68 60 58 50 48 40 38 30 28 20 18 10 08 }
 ; SCC: SAW 2
 @s03={ 78 70 68 60 58 50 48 40 38 30 28 20 18 10 08 00 
        78 70 68 60 58 50 48 40 38 30 28 20 18 10 08 00 }
 ;; SCC: SIN
 ;@s04={ 00 19 31 47 5A 6A 75 7D 7F 7D 75 6A 5A 47 31 19
 ;       00 E7 CF B9 A6 96 8B 83 80 83 8B 96 A6 B9 CF E7 }
-;; SCC: ELGIZA
-;@s05={ 00 40 7F 40 01 C0 81 C0 01 40 7F 40 01 C0 01 40 
+; SCC: ELGIZA
+;@s05={ 00 40 70 40 01 C0 90 C0 01 40 70 40 01 C0 01 40 
 ;       01 E0 01 20 01 F0 01 10 01 FF FF FF FF 40 40 00 }
 ; SCC: BASE
 @s06={ 80 8E A0 C0 E0 00 20 4F 3E 3C 3A 37 31 29 20 1C 
@@ -40,7 +40,7 @@
        C0 C4 C8 CC D0 D4 D8 DC E0 E4 E8 EC F0 F4 F8 FC }
 ;; SCC: STRINGS
 ;@s09={ 50 5A 60 58 40 30 10 E0 D0 F0 10 20 F0 10 40 20 
-;       00 E0 C0 B0 20 30 F0 20 60 20 E0 B0 80 A0 E0 00 }
+;       80 E0 C0 B0 20 30 F0 20 60 20 E0 B0 80 A0 e0 00 }
 ;; SCC: SQUARE LARGE
 ;@s10={ 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F
 ;       80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 }
@@ -83,28 +83,29 @@
 @e10={1,0,fedcb:30[a:3.b:3]0}
 @e11={1,0,cf9=6.0=200}
 @e12={1,0,cfca0=90}
+@e13={1,0,af9=8.0=200}
 
 ;--- Melody ---
 7 @3@e11v13o3 k0
-8 @3@e11v4o3 k0 r8 @\8 
+8 @3@e11v4 o3 k0 r8 @\8 
 78 l16 hf
 78 gggar<gggar8>>cccdr gggar<gggar8ccc
 7 dr @7@e10 v15
 8    @7@e10 v13 r8 @\5
 78 d2a2 g4f4e4f4
-78 h60,1,3,2
+78 h60,2,3,2
 78 e4.d8d1 &d2
 78 d2a2 g4.f4.>c4
-78 h90,1,3,2
+78 h90,2,3,2
 78 <a1 &a1
 78 d4.e4.f4 e4.c4.g4
-78 h90,1,3,2
+78 h90,2,3,2
 78 f4.g4.a4 g4.e4.c4 d1 &
 7 d1 
 8 d2.. 
 
 ;--- cutting ---
-1 v11 o4 hf k3 \-1
+1 v12 o4 hf k3 \-1
 1 l16 
 1 r1 r1 
 1 @e11 
@@ -112,7 +113,7 @@
 1 ddrd4c+crdr4d drdr4fgrfr4d 
 1 drdr4cc+rdr4d drdr4fgrfr4d 
 1 drdr4c+crdr4d drdr4fgrfr4r 
-1 h100,1,3,2 
+1 h100,2,3,1 
 1 @10 v10 o4 @\0
 1 d1 e1 d1 e1 f1 &f1 
 
@@ -121,7 +122,7 @@
 2 l16 gggar<gggar8>>cccdr gggar<gggar8cccdr 
 4 l16 r1 r1
 2 v13@e12o2 k3
-4 v12@6@e12o2 k3
+4 v13@6@e12o2 k3
 42 dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defd
 42 a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+ <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+>cd<a+
 42 gr>gg<gr>gg<gr>gg<gr>gg <gr>gg<gr>gg<gr>gg<gaa+g
@@ -130,26 +131,26 @@
 4 a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+ cr>cc<cr>cc<cr>cc<cdec<
 4 dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defa
 2 @10 v11 o4 @\0
-2 h100,1,3,2 
+2 h100,2,3,1 
 2 a+1 >c1 <a+1 >c1 d1 &d1 
 
 ;--- backing a ---
-5 @8@e11 v12 o4 hf k0
+5 @8@e11 v12 o4 k0 hf
 5 l16 ddder<ddder8>>cccdr ddder<ddder8cccdr> 
-5 @8@e11 v9
+5 @8@e13 v7 o5 k3
 5 [4 rcdrcrdrfrdrdrcd rcdrcrdrargrfg8. ]
-5 h80,1,3,2
-5 f1 g2.e4 d1 e1 f1 
-5 @7@e11 v13 hf <
+5 h80,2,3,1 v+2
+5 f1 g2.e4 d1 e1 f1
+5 @7@e11 v13 hf o4 k0
 5 argrfgrfrfdrcrdr 
 
 ;--- backing b ---
 6 l16 
 6 r1 r1 
-6 @8@e11 v8o3 hf k0
+6 @8@e13 v7 o5 k3
 6 [4 rgargrar>cr<ararga rgargrar>drcr<a+>c8.< ]
-6 h80,1,3,2
-6 @0@e10 v8 >
+6 h80,2,3,1
+6 @0@e10 v6 o4
 6 f1 g1 f1 g1 a1 &a1 
 
 
