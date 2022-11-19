@@ -1,0 +1,58 @@
+;[gain=1.0 name=ZANAC_a duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com 
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 1
+#tempo 120
+#title {"ZANAC -TITLE- | OPLL"}
+
+@v15 = { ; clarinet
+;       TL FB
+        10, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15, 8, 2, 0, 2, 3, 0, 0, 1, 0, 1,
+  12, 7, 2, 5, 0, 1, 1, 0, 1, 0, 0 }
+
+@v16 = { ; Brass
+;       TL FB
+        13, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15, 3, 1, 1, 2, 1, 0, 0, 0, 0, 0,
+  12, 7, 1, 5, 0, 1, 0, 0, 1, 0, 0 }
+
+9 o5 v14 @16 q6
+A o5 v12 @16 q6 r16
+9A l16 [0 [2
+9A  a<a>e<a> c+<a>d<a> a<a>e<a> c+dea
+9A  b<a>>c+<<a>> d<<a>b<a>> c+<<a>a<a> e<a>c+<a>
+9A  e<ebe g+eae> e<ebe g+eae>
+9A  e<e>f+<e> g+<e>e<e> f+<e>g+<e> a<e>b<e>>
+9A  d<<g>b<g> g<g>b<g>> d<<g>b<g> g<g>b<g>>
+9A  d<<g>>e<<g>> f+<<g>>d<<g>> e<<g>>f+<<g>> g<<g>>a<<g>>
+9A  f+<<d>>e<<d>> d<<d>>c+<<d>> d<<d>>c+<<d> b<d>a<d>
+9A  gf+g<d> f+<d>g<d> agf+ e gf+ed
+9A @15] @16 ]
+
+B o5 @16
+B l16 [0
+B  v15 [16 >>f+_<<f+>>f+_<<f+ v-1 ]
+B ]
+
+C @16 v13 o3
+C l16 [0 [2
+C  [2 aaaa >aa<aa aaaa >aaa<a ]
+C  [2 eeee >ee<ee eeee >eee<e ]
+C  [2 gggg >ggg<g gggg >ggg<g ]
+C  dddd >ddd<d dddd >ddd<d
+C  dddd >dd<dd dddd >dddd<
+C ] ]
+
+F V12 VH10
+F l16 [0 [2
+F  [15 BH:H:H:H: BH:r:H:r:]
+F  BH:H:r:H: BH:H:r:H:
+F ] ]
