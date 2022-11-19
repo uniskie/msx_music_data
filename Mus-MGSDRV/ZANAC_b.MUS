@@ -10,46 +10,33 @@
 #tempo 128
 #title {"ZANAC -BGM 1- | OPLL"}
 
-@v16 = { ; Brass
+@v16 = { ; Brass2
 ;       TL FB
-        14, 7,
+        10, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   8, 3, 3, 1, 2, 1, 0, 0, 0, 0, 0,
-  12, 4, 1, 5, 1, 2, 1, 0, 1, 0, 0 }
+   8, 5, 1, 1, 1, 1, 0, 0, 0, 0, 0,
+  10, 4, 2, 5, 1, 1, 0, 0, 1, 0, 0 }
 
-@v17 = { ; Brass2
-;       TL FB
-        17, 7,
-; AR DR SL RR KL MT AM VB EG KR DT
-  10, 4, 3, 1, 2, 1, 0, 0, 0, 0, 0,
-  12, 4, 1, 5, 1, 2, 1, 0, 1, 0, 0 }
-
-
-9 o5 v15 @16 q8
-A o5 v13 @16 q8 r8 @\16
+9 o5 v15 @16
+A o5 v13 @16 r8
 9A l8 
 9A ea>ed16e16&e16e16gf+de2&e2 <
 9A [0
-9  @16
-A  @16
 9A  ab>c<a16b16&b16>c16<bab ab>c<a16b16&b16>c16<b
 9A  ab>cdec16d16&d16e16dcd cdec16d16&d16e16dcd
 9A  fgaf16g16&g16a16gfg fgaf16g16&g16a16gfg
 9A  ef+g+e16f+16&f+16g+16f+ef+ ef+g+ab>cde
-9   @17
-A   @17
 9A  a2g2 f16ed16e4&e2
 9A  g2f2 e2d4e4
 9A  f2e2 d2c2
 9A  l16<b>c<b>c<b>c<b>c <b>c<b>c<b>c<b>c<l8 b2&b2 <
 9A ]
 
-B o4 v13 @16 q8so
-C o4 v11 @16 q8so r8 @\16
+B o4 v13 @16
+C o4 v11 @16 r8
 BC l16 
 BC [erar]8 <
-B v13 @16
-C v11 @16
+BC )
 BC [0
 BC  [a>a<a>e >e<a<aa]4
 BC  >
@@ -66,7 +53,7 @@ BC  <
 BC ]
 
 D o3 v13 @16
-E o3 v14 @13 @\8
+E o3 v14 @13
 DE a4&a8g8&g4d4
 DE l16e8gae8gae8gagf+ed 
 DE [0
@@ -81,7 +68,7 @@ DE  f& f
 DE  e& e <
 DE ]
 
-F vh10 vb14 vc12 vs11
+F vh10 vb14 vc13 vs11
 F l16
 F bH:H:r:H: H:r:H:H: b:H:H:r: H:H:r:H:
 F bH:r:H:H: bH:r:H:H: bH:r:H:H: bH:H:H:H:
