@@ -8,6 +8,7 @@ MSXPLAYで聞く場合：
 
 ZANAC BGM1 [OPLL ver.]  
 [ZANAC_b.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FZANAC_b.MUS)
+
 ZANAC title [OPLL ver.]  
 [ZANAC_a.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FZANAC_a.MUS)
 
