@@ -7,44 +7,45 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
-#tempo 132
+#tempo 135
 #title {"ZANAC -BGM 1- | OPLL"}
 
-@v15 = { ; keyboard
+@v15 = { ; harpsichord
 ;       TL FB
         16, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  10, 5, 1, 1, 1, 3, 0, 0, 0, 0, 0,
-  12, 5, 3, 1, 1, 1, 0, 0, 0, 0, 0 }
+   9, 5, 2, 1, 1, 3, 0, 0, 0, 0, 0,
+  12, 5, 2, 1, 1, 1, 0, 0, 0, 0, 0 }
 
 @v16 = { ; Brass2
 ;       TL FB
-        15, 7,
+        10, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 4, 2, 1, 1, 1, 0, 0, 0, 1, 0,
-  14, 4, 2, 1, 1, 2, 0, 1, 0, 1, 0 }
+  15, 6, 2, 1, 2, 1, 0, 0, 0, 1, 0,
+  15, 4, 2, 1, 1, 2, 0, 0, 0, 0, 0 }
 
-9A o5 @15 h36,0,3,2
-9 v14
-A v12 r8 @\9
+9A o5 @15 h24,0,4,2
+9 v15
+A v13 r8 @\9
 9A l8
 9A ea>ed16e16&e16e16gf+de2&e2 <
-9A [0
 9A @16
+9A [0 [2
 9A  ab>c<a16b16&b16>c16<bab ab>c<a16b16&b16>c16<b
 9A  ab>cdec16d16&d16e16dcd cdec16d16&d16e16dcd
 9A  fgaf16g16&g16a16gfg fgaf16g16&g16a16gfg
 9A  ef+g+e16f+16&f+16g+16f+ef+ ef+g+ab>cde
-9a @15
 9A  a2g2 f16ed16e4&e2
 9A  g2f2 e2d4e4
 9A  f2e2 d2c2
 9A  l16<b>c<b>c<b>c<b>c <b>c<b>c<b>c<b>c<l8 b2&b2 <
+9a  |@15 ]
+9A  @16
 9A ]
 
 BC o4 @15 so l16
-B v12    @\8 
-C v10 r8 @\16 
+B v12    @\1
+C v10 r8 @\9
 BC [erar]8 <
 BC )
 BC [0
@@ -63,7 +64,7 @@ BC  <
 BC ]
 
 D o3 v14 @13 
-E o2 v14 @8  @\3
+E o2 v13 @6  @\2 h30,1,3,2
 DE a4&a8g8&g4d4
 DE l16e8gae8gae8gagf+ed
 DE [0
@@ -78,7 +79,7 @@ DE  f& f
 DE  e& e <
 DE ]
 
-F vh10 vb14 vc13 vs11 
+F vh9 vb14 vc13 vs11 
 F l16 
 F bH:H:r:H: H:r:H:H: b:H:H:r: H:H:r:H: 
 F bH:r:H:H: bH:r:H:H: bH:r:H:H: bH:H:H:H: 
