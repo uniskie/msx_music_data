@@ -1,0 +1,158 @@
+;[gain=1.0 name=DS-7DEEP duration=300s fade=5s]
+;decompiler: mgsrc-js v1.4.1
+;mgs_version: MGS300 
+#opll_mode 1
+#lfo_mode 0
+#machine_id 0
+#title { "namco   DRAGON SPIRIT  AREA7 ｢DEEP SEA｣         By Uniskie" }
+#tempo 75
+#alloc { 0=229, 1=198, 2=202, 3=360, 4=199, 5=70, 6=232, 7=154, 8=195, 9=153, A=226, B=70, C=88, D=71, E=199, F=383 }
+
+@v22 = {
+;       TL FB
+        18, 2,
+; AR DR SL RR KL ML AM PM EG KR WF
+  10, 3, 4, 4, 1, 3, 0, 0, 0, 1, 0,
+  12, 6, 1, 3, 1, 2, 0, 0, 0, 0, 0 }
+
+
+@s0={ 60606060606060606060606060606060a0 a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0 }
+@s1={ 0010203040506070001020304050607000 1020304050607000f0e0d0c0b0a090 }
+@s2={ 008ea0c0e000203f3e3c3a373129201c10 00e6c0d000203f10e080c000200090 }
+@s3={ 00315a757f755a3100cfa68b808ba6c700 000000000000000000000000000000 }
+
+@e0={ 1, 0, efffeed }
+@e1={ 1, 0, fed }
+@e2={ 1, 0, df9=30. }
+@e3={ 3, 8, e90=40. }
+@e4={ 3, 16, /3.df/1.eeddc0=80. }
+@e10={ 1, 0, fd8=28.0=170. }
+@e11={ 1, 0, f8=23.0=200. }
+@e13={ 2, 0, f0=3. }
+@e13={ 1, 0, f9=30. }
+
+1 l%10@10o6h4,0,3,1v7
+1 [0[4r%20c%20g%40c%40g%40]o5r%40d+%20dcr%20o4a+%40o5c%20
+1 d%20o4g%60o5v8fedco4bab
+1 gv7o5o6r%20e%20g%40g%40g%40r%20c%20g%40v8fed
+1 co5babgv7r%40e%20dc
+1 r%20o4a+%40o5c%20d%20o4g%60o5v8fedco4b
+1 abgo5o6[2r%20c%20g%40|c%40g%40]g%160
+1 r%40rg%30&g%80&[2g%40&gg%30&g%80&]
+1 g%40&gg%30fedco5a+g
+1 feo6v7]
+
+2 l%10@10o6h4,0,3,1v5r%15
+2 [0[4r%20c%20g%40c%40g%40]o5r%40d+%20dcr%20o4a+%40o5c%20
+2 d%20o4g%60o5v6fedco4bab
+2 gv5o5o6rc%20c%40c%40c%20d%20g%20c%20g%40rv6f
+2 edco5babgv5r%40e%20
+2 dcr%20o4a+%40o5c%20d%20o4g%60o5v6fed
+2 co4babgo5o6[2r%20c%20g%40|c%40g%40]
+2 g%160r%40rg%30&g%80&[2g%40&
+2 gg%30&g%80&]g%40&gg%30fed
+2 co5a+gfeo6v5]
+
+3 l%10v11o3k6
+3 [0[2o2o3@4p137[2r%60e%20]o2@3p140[2b]r%40o3@4p137e%20r%20e%20ro2@3p140bo3@4p137f
+3 f][2[2o2@3p140bbo3@4p137e%20r%20e%20o2@3p140bbo3@4p137e%20ro2@3p140bo3@4p137
+3 e|o2@3p140bo3]e]o2@3p140bbo3@4p137e%20r%20e%20o2@3p140b%20o3@4p137e%20ro2@3p140
+3 bo3@4p137eo2@3p140bb%20o3@4p137e%20r%20e%20o2@3p140b%20o3@4p137e%20o2@3p140bo3@4
+3 p137eeeo2@3p140b%20o3@4p137e%20r%20eo2@3p140bb%20o3@4p137e%20r%20eo2@3p140
+3 bb%20o3@4p137e%20r%20eo2@3p140b[4b%20][2b%20]o3@4p137ffe
+3 c[4e%5c%5o2@3p140b%30bo3@4p137|e%30g%20gfrfe%20]
+3 er%20ggffeef%5e%5c%5o2@3p140b%5]
+
+4 l%10@3@e13v7o2h12,4,0,1
+4 [0[2c%80o1a+%40a+%40o2d+%80f%40o1g%40o2][2[2cc%30]o1
+4 [2a+a+%30]o2[2d+d+%30]ff%30gg%30][2[2cc%30]o1
+4 [2a+a+%30]o2[2d+d+%30]|f%80]f%160
+4 c%40c%40c%20cdrec%20[2o1a+%40a+%40
+4 a+o2a+o1g+o2g+o1go2go1a+o2a+|c%40
+4 c%40ccd%30ec%20]]
+
+5 l%80@1@e10o5h12,2,1,2v2
+5 [0[5edd+|f%40f%40]fd+dd+
+5 f%160v3[4g%40g%40f%20f%10e%10r%20d%20]v2]
+
+6 l%10@2@e10h13,4,0,2o5v3k4q5
+6 [0v4[2[2o4go5c%30o4go5c|e%20o4ga+%30ga+o5d%20]
+6 d+%20o4ao5c%30o4bo5df%20]v3[3[2o4go5cd+%20o4go5c|
+6 eco4ga+o5d%20o4ga+o5do4a+o5]
+6 d+o4a+ao5cf%20o4bo5dfd]o4
+6 go5cd+%20o4go5cd+co4ga+o5
+6 d%20o4ga+o5do4a+ga+o5d+%20o4ga+o5
+6 d+o4a+r%80r%40v4fco3g+fo4o5v3
+6 r%40gg%30&g%80&[2g%40&fg%30&g%80&]
+6 g%40&gg%30o6agfed+co5
+6 a+e]
+
+7 l%10@e11v5o5h12,4,0,2
+7 [0[4r%160][2r%20e%20dc%30|o4a+%40o5c%20d%20o4g%80
+7 g+%80o5]g%40o6c%20d%20g%80o5g+%80[2r%20e%20d
+7 c%30o4a+%40o5c%20d%20|o4g%80g+%80o5]g%80c%160
+7 r%40rd%30&d%80&[2d%40&dd%30&d%80&]
+7 d%40&dd%30agfed+co4
+7 a+go5]
+
+8 l%10@0@e11o6v3
+8 [0[4r%20c%20g%40c%40g%40]o5r%40d+%20dcr%20o4a+%40o5c%20
+8 d%20o4g%60o5v4fedco4bab
+8 gv3o5o6r%20e%20g%40g%40g%40r%20c%20g%40v4fed
+8 co5babgv3r%40e%20dc
+8 r%20o4a+%40o5c%20d%20o4g%60o5v4fedco4b
+8 abgo5o6[2r%20c%20g%40|c%40g%40]g%160
+8 r%40rg%30&g%80&[2g%40&gg%30&g%80&]
+8 g%40&gg%30fedco5a+g
+8 feo6v3]
+
+9 l%10@22v13o6h12,4,0,2
+9 [0[4r%160][2r%20e%20dc%30|o5a+%40o6c%20d%20o5g%80
+9 g+%80o6]g%40o7c%20d%20g%80o6g+%80[2r%20e%20d
+9 c%30o5a+%40o6c%20d%20|o5g%80g+%80o6]g%80c%160
+9 r%40rd%30&d%80&[2d%40&dd%30&d%80&]
+9 d%40&dd%30agfed+co5
+9 a+go6]
+
+A l%10@22h13,4,0,2o5v11
+A [0v12[2[2o4go5c%30o4go5c|e%20o4ga+%30ga+o5d%20]
+A d+%20o4ao5c%30o4bo5df%20]v11[3[2o4go5cd+%20o4go5c|
+A eco4ga+o5d%20o4ga+o5do4a+o5]
+A d+o4a+ao5cf%20o4bo5dfd]o4
+A go5cd+%20o4go5cd+co4ga+o5
+A d%20o4ga+o5do4a+ga+o5d+%20o4ga+o5
+A d+o4a+r%80r%40v12fco3g+fo4o5v11
+A r%40gg%30&g%80&[2g%40&fg%30&g%80&]
+A g%40&gg%30o6agfed+co5
+A a+e]
+
+B l%80@9@e2o6h12,2,1,2v12
+B [0[5edd+|f%40f%40]fd+dd+
+B f%160v13[4g%40g%40f%20f%10e%10r%20d%20]v12]
+
+C l%80@9@e2o6h12,2,1,2v12\1
+C [0[5co5[2a+]o6|c%40d%40]cco5[2a+]o6c%160
+C [4d%40d%40d%20d%10d%10r%20d%20]]
+
+D l%80@9@e2o6h12,2,1,2v12o5
+D [0[5ggg|g+%40a+%40]g+ggg
+D g+%160o6[4c%40c%40c%20c%10c%10r%20c%20]o5]
+
+E l%10@14@e1v14o3h12,4,0,1
+E [0[2c%80o2a+%40a+%40o3d+%80f%40o2g%40o3][2[2cc%30]o2
+E [2a+a+%30]o3[2d+d+%30]ff%30gg%30][2[2cc%30]o2
+E [2a+a+%30]o3[2d+d+%30]|f%80]f%160
+E c%40c%40c%20cdrec%20[2o2a+%40a+%40
+E a+o3a+o2g+o3g+o2go3go2a+o3a+|c%40
+E c%40ccd%30ec%20]]
+
+F vb15vm14vs14vh9y38,3y22,170y39,4y40,2
+F [0y23,155y24,165[2[2r%60sm%20]b%10b%10r%40sm%20r%20sm%20r%10b%10y23,170y24,180sm%10
+F sm%10][2[2b%10b%10y23,155y24,165sm%20r%20sm%20b%10b%10sm%20r%10b%10sm%10|b%10]sm%10
+F ]b%10b%10sm%20r%20sm%20b%20sm%20r%10b%10sm%10b%10b%20sm%20r%20sm%20b%20sm%20b%10
+F [3sm%10]b%20sm%20r%20sm%10b%10b%20sm%20r%20sm%10b%10b%20sm%20r%20sm%10b%10[4b%20
+F ][2b%20]y23,170y24,180sm%10sm%10y23,155y24,165sm%10y23,120y24,130sm%10[4y23,155y24,165
+F sm%5y23,120y24,130sm%5b%30b%10|y23,155y24,165sm%30y23,190y24,200sm%20sm%10y23,170
+F y24,180sm%10r%10sm%10y23,155y24,165sm%20]sm%10r%20y23,190y24,200sm%10sm%10y23,170
+F y24,180sm%10sm%10y23,155y24,165sm%10sm%10y23,170y24,180sm%5y23,155y24,165sm%5y23,120
+F y24,130sm%5b%5]

@@ -1,0 +1,159 @@
+;[gain=1.0 name=YS1FEENA duration=300s fade=5s]
+;decompiler: mgsrc-js v1.4.1
+;mgs_version: MGS300 
+#opll_mode 0
+#lfo_mode 0
+#machine_id 0
+#title { "Falcom  ｲｰｽ TITLE BGM ｢FEENA｣                   By Uniskie" }
+#tempo 75
+#alloc { 0=220, 1=176, 2=229, 3=45, 4=142, 5=178, 6=230, 7=229, 8=235, 9=180, A=230, B=229, C=233, D=142, E=229, F=94, G=231, H=133 }
+
+@s6={ 6060606060606060606060606060606080 90a0b0c0d0e0f00010203040506070 }
+@s7={ 00f8f0e8e0d8d0c8c0b8b0a8a098a0b048 585e60605e582040585e60605e5848 }
+@s9={ 808ea0c0e000203f3e3c3a373129201c00 e7cfb9a6968b8380838b96a6b9c7e7 }
+
+@e0={ 2, 0, /3.n9.fn8./2.9:9.n7.8:9.n6.7:9.n7.6:9.n8.5:9.n7.0=40. }
+@e1={ 1, 0, 04=200.4=200.7=200.b=200.f=200.b=120.7=120.0=200. }
+@e3={ 1, 0, defc=30.c9=200.86=80. }
+@e4={ 1, 0, fc=12.c9=30.80=180. }
+@e6={ 1, 0, dfc=13.c }
+@e7={ 1, 0, dfb=10.9=20. }
+@e9={ 1, 0, defed }
+@e16={ 1, 0, dfd=13.b=80 }
+
+1 l8v9@6k30o4h14,0,5,1[2b4[2a4g+4f+4]e4][2e2d+2
+1 c+2d+2]
+1 [0[10r4g16gg%108][4f+1]
+1 [2o5o6[2e16d16e4.o5abo6c|d]e|[2d16e16d4.o5
+1 gabo6|c]d]d16c16d4.ga
+1 bo7cd4o6b4g4d2.r%78
+1 r16.o5o4]
+
+2 l16v9@9q7k30o4h14,0,5,1[4e1]f+%255&
+2 f+%129&f+%255&f+%129v10
+2 [0[2r1]o5[2f+ef+bf+2|
+2 e4]d4e4a1[2v-2a8.]v10r4.
+2 [2f+ef+bf+2|e4]d4[2e4o4
+2 a2o5|c4]d4o4b%255&
+2 b%129[2v-2b8.]v10r%120r1
+2 [2[8eco3afo4]|[8do3bgeo4]][4do3
+2 bgeo4]b4g4d4o3b2.
+2 r2]
+
+3 l1@0v10o8p137[8r]
+3 [0[28b2][9r]]
+
+4 l1@\2v8o5@7@e1h30,4,1,1[2r]e%255&e%129
+4 [2r]o4o3@e4v10o2o1b%255&b%129o2
+4 [0[4e][2[2f][2e]][2e][2f][2e][2f][3e]]
+
+5 l8v6@\2@6@e7o4h14,2,2,1[2b4[2a4g+4f+4]e4][2e2d+2
+5 c+2d+2]
+5 [0[10r4g16gg%108][4f+1]
+5 [2o5o6[2e16d16e4.o5abo6c|d]e|[2d16e16d4.o5
+5 gabo6|c]d]d16c16d4.ga
+5 bo7cd4o6b4g4d2.r%78
+5 r16.o5o4]
+
+6 l8@\3v4r16.@6@e7o4h14,2,2,1[2b4[2a4g+4f+4]e4][2e2d+2
+6 c+2|d+2]d+%78
+6 [0v6[4r4d16dd%108][2[2r4c16cc%108]|
+6 [2r4d16dd%108]]o3[4b1]o4
+6 r16.v4[2o5o6[2e16d16e4.o5abo6c|d]e|[2d16e16d4.o5
+6 gabo6|c]d]d16c16d4.ga
+6 bo7cd4o6b4g4d2.r%78o5o4]
+
+7 l16v6@\1@9@e9o4h14,2,1,1[4e1]f+%255&
+7 f+%129&f+%255&f+%129v7
+7 [0[2r1]o5[2f+ef+bf+2|
+7 e4]d4e4a1[2v-2a8.]v7r4.
+7 [2f+ef+bf+2|e4]d4[2e4o4
+7 a2o5|c4]d4o4b%255&
+7 b%129[2v-2b8.]v7r%120r1
+7 [2[8eco3afo4]|[8do3bgeo4]][4do3
+7 bgeo4]b4g4d4o3b2.
+7 r2]
+
+8 l16@\4v4@9@e9o4h14,2,1,1[2c+1c1]o3b%255&
+8 b%129&b%255&b%129v3
+8 r16.o4
+8 [0[2r1]o5[2f+ef+bf+2|
+8 e4]d4e4a1[2v-2a8.]v3r4.
+8 [2f+ef+bf+2|e4]d4[2e4o4
+8 a2o5|c4]d4o4b%255&
+8 b%129[2v-2b8.]v3r%120r1
+8 [2[8eco3afo4]|[8do3bgeo4]][4do3
+8 bgeo4]b4g4d4o3b2.
+8 r2]
+
+9 l8v15@\16@0@e16soo5h14,2,2,1[2b4[2a4g+4f+4]e4][2e2d+2
+9 c+2d+2]
+9 [0[10r4g16gg%108][4f+1]
+9 [2o6o7[2e16d16e4.o6abo7c|d]e|[2d16e16d4.o6
+9 gabo7|c]d]d16c16d4.ga
+9 bo8cd4o7b4g4d2.r%78
+9 r16.o6o5]
+
+A l8v13r16.@0@e16soo5h14,2,2,1[2b4[2a4g+4f+4]e4][2e2d+2
+A c+2|d+2]d+%78
+A [0v15[4r4d16dd%108][2[2r4c16cc%108]|
+A [2r4d16dd%108]]o4[4b1]o5
+A r16.v13[2o6o7[2e16d16e4.o6abo7c|d]e|[2d16e16d4.o6
+A gabo7|c]d]d16c16d4.ga
+A bo8cd4o7b4g4d2.r%78o6o5]
+
+B l16v13@\16@7@e9o5h14,2,1,2[4e1]f+%255&
+B f+%129&f+%255&f+%129v14
+B [0[2r1]o6[2f+ef+bf+2|
+B e4]d4e4a1[2v-2a8.]v14r4.
+B [2f+ef+bf+2|e4]d4[2e4o5
+B a2o6|c4]d4o5b%255&
+B b%129[2v-2b8.]v14r%120r1
+B [2[8eco4afo5]|[8do4bgeo5]][4do4
+B bgeo5]b4g4d4o4b2.
+B r2]
+
+C l16v12@7@e9o5h14,2,1,2[2c+1c1]o4b%255&
+C b%129&b%255&b%129v11
+C r16.o5
+C [0[2r1]o6[2f+ef+bf+2|
+C e4]d4e4a1[2v-2a8.]v11r4.
+C [2f+ef+bf+2|e4]d4[2e4o5
+C a2o6|c4]d4o5b%255&
+C b%129[2v-2b8.]v11r%120r1
+C [2[8eco4afo5]|[8do4bgeo5]][4do4
+C bgeo5]b4g4d4o4b2.
+C r2]
+
+D l1o5v13@5@e1soh30,4,2,1[2r]@e3e%255&e%129
+D [2r]o4o3v15o2o1b%255&b%129o2
+D [0[4e][2[2f][2e]][2e][2f][2e][2f][3e]]
+
+E l8o3@\15v13@5@e1soh30,4,2,1[2r1]@e3r1b%255&
+E b%129r1v15o2o1b%255&
+E b%129o2
+E [0[4e1][2[2f1][2e1]]
+E [2e1][2f1][2e1]
+E [2f1][3e1]][2o3o4[2e16
+E d16e4.o3abo4c|d]e|[2d16e16d4.o3
+E gabo4|c]d]d16c16d4.ga
+E bo5cd4o4b4g4d2.r%78
+
+F l4v11@\12r8@0@e16soo5h14,0,5,2[2b[2ag+f+]e][2e2d+2
+F c+2d+2]
+F [0[10rg16g8g%108][4f+1]r16.o4o3]
+
+G l16v11@\12r8@7@e9o5h14,0,5,2[4e1]f+%255&
+G f+%129&f+%255&f+%129v12
+G [0[2r1]o6[2f+ef+bf+2|
+G e4]d4e4a1[2v-2a8.]v12r4.
+G [2f+ef+bf+2|e4]d4[2e4o5
+G a2o6|c4]d4o5b%255&
+G b%129[2v-2b8.]v12r%120r1
+G [2[8eco4afo5]|[8do4bgeo5]][4do4
+G bgeo5]b4g4d4o4b2.
+G r2]
+
+H l1o3v11r16.@5@e1soh30,4,1,1[2r]rb%255&b%129
+H rv13o2o1b%255&b%129o2
+H [0[4e][2[2f][2e]][2e][2f][2e][2f][3e]]

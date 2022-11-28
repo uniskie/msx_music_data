@@ -102,6 +102,20 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 イース 「Dreaming」(ドラムエコーが流行ってた時代の遺物アレンジ)  
 [YS1DREAM.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1DREAM.MUS)
 
+
+ドラゴンスピリット ステージ3 ジャングル (MGS逆コンパイルから修正作業中)  
+[DS-3JUNG.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDS-3JUNG.MUS)
+
+ドラゴンスピリット ステージ7 深海 (MGS逆コンパイルから修正作業中)  
+[DS-7DEEP.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDS-7DEEP.MUS)
+
+ガンフロンティア 1面 (MGS逆コンパイルから修正作業中)  
+[G-F-1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FG-F-1.MUS)
+
+イース FEENA (MGS逆コンパイルから修正作業中)  
+[YS1FEENA.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1FEENA.MUS)
+
+
 --OLD
 
 ドラゴンスピリット ステージ3 ジャングル  
