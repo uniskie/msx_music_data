@@ -1,0 +1,179 @@
+;[gain=1.0 name=G-F-1 duration=300s fade=5s]
+;decompiler: mgsrc-js v1.4.1
+;mgs_version: MGS300
+#opll_mode 1
+#lfo_mode 0
+#machine_id 0
+#title { "[TAITO] GUN FRONTER -round1- 砂漠の山嵐  By Uniskie" }
+#tempo 140
+#alloc { 0=300, 1=500, 2=400, 3=300, 4=500, 5=500, 6=500, 7=300, 8=400, 9=500, A=500, B=400, C=400, D=300, E=300, F=1600 }
+
+@v16 = {
+;       TL FB
+         0, 0,
+; AR DR SL RR KL ML AM PM EG KR WF
+  14, 2, 2, 0, 0, 1, 0, 0, 1, 0, 0,
+  15, 5, 1, 6, 0, 8, 0, 0, 1, 0, 0 }
+
+@s0= { 001931475a6a757d7f7d756a5a47311900 e7cfb9a6968b8380838b96a6b9c7e7 }
+@s1= { 6060606060606060606060606060606080 90a0b0c0d0e0f00010203040506070 }
+@s6= { 808ea0c0e000203f3e3c3a373129201c00 e7cfb9a6968b8380838b96a6b9c7e7 }
+@s13={ 001931475a6a757d7f7d756a5a47311980 90a0b0c0d0e0f00010203040506070 }
+
+@e0={ 1, 0, df=4.c=10.[b:3.c:3.] }
+@e1={ 1, 0, fc=10.[b:3.c:3.] }
+@e2={ 1, 0, cdef }
+@e3={ 1, 0, f7=10.60=9. }
+
+;12 !
+;3 !
+;45678 !
+;9abcde !
+;f !
+
+;***** Cord *****
+1  v8 o3@0    k5 h16,0,3,1
+4  v6 o3@13@e0k5 h16,0,3,1 @\10
+9 v11 o4@16      h16,0,5,2
+A v10 o4@16      h16,0,5,2 @\16 r16
+
+9A   @4so
+149A >>v-6[d4&)]4 d1& d1<< v+2
+
+149A l16 r1 r1 
+9A   @16sf
+149A           [4b>f+dadf+abv-1<]
+149A r1 r1 v+1 [4v+1>dc+bagf+ed<]
+194A r1 r1 v-1 [4d<b>egegebv-1] v+5 <
+
+149A [0 l8 
+149A  <b4>d2.& d1 
+149A  <b4>d2.& d2.r8<a8>
+149A  <b4>d2.& d1
+149A  <b4>d2.& d2.r8<a8
+149A   b2a2 >d1
+149A  l2 b>c+ df+ f+e dc+ <b>c+ de d1 c+1 l8
+
+149A  v+1
+149A  [f+(f+)<b(b)bb>d<b bb>d<bb>d<bb>
+149A   f+(f+)<a(a)aa>c+<a aa>c+<aa>c+<a>c+
+149A   d4<g4ggbg gbgggggb
+149A  |r4>f+4edc+d f+c+2b>de<]
+149A   r4>f+4edc+d f+c+2.r
+149A  v-2
+149A  l4c+c+c+c+ <bbbb> eeee <bbbb l8
+149A  <a+1> c+2.ra
+149A  r>c+ge<g>ag<a> ba<a>>c+<b<a>>ce <<
+149A  v+1
+149A ]
+
+;***** Merody *****
+2 o4v09@1      h30,0,4,1
+5 o4v07@13@e1  h30,0,4,1 @\1
+6 o4v06@13@e1  h30,0,4,2 @\8 r16
+B o5v13@16     h30,0,5,2
+C o5v11@16     h30,0,5,2 @\13 r8
+
+256BC <<<v-4[b4&)]4 b1& b1>>>
+256BC r1 r1 e1 d1 
+256BC f+1& f+1 g1 f+2g2
+256BC a1 e1  b1 a1 <
+
+256BC [0 l8 
+256BC  [b(b)>d(d)<bbba bbb>dc+4<b4
+256BC   b(b)>d(d)<bbab bbb>c+c+_d&d<ba]
+256BC  b2>c+2 d2rc+<ba
+256BC  [3b(b)>d4c+<bab b>e4d4c+4<b]
+256BC  >d1 c+4c+4c+4c+c+ 
+
+256BC  v+1
+256BC  [
+256BC   [rf+2.<e> eg4f+4e4d]
+256BC   |d<b2.r r>agf+f+ef+g >d4.c+2r <a+4.f+2r] 
+256BC  [b1 | r>d4.c+4<ba+]
+256BC  a+2.
+BC     @6 ;v+1
+256BC      rf+ >c+2.r<a r>f+edc+<b>cd <a4.f+4.>dc+
+256BC  r4r<b4.l16f+a+br l4>g.f+.e r8d.c+<b
+256BC  >c+1& c+1 <<
+256BC  v-1
+BC     @16 ;v-1
+256BC ]
+
+;***** Base *****
+7 v11o2@6@e2
+8 v11o2@6@e2 @\7
+D v13o2@16
+E v13o2@6 @\21
+78DE v-8[b8&)]8 b1& b1
+78DE l1 b& b& b& b
+78DE >d& d& d& d
+78DE e& e& e& e<
+78DE [0 l8
+78DE  <b4>b2.& b1
+78DE  <b4>b2.& b2.r<b>& 
+78DE  <b4>b2.& b1
+78DE  <b4>b2.& b2.r<b>
+78DE  b2a2 b1 
+
+78    @13@e6q6
+DE    q4 (
+D     @13
+E     @16
+78DE  [16b] [16a]
+78DE  [16g] [12f+][4f+]
+78DE  [[16b] [16a] 
+78DE   [16g] [12f+]f+gaa] 
+78DE  [[8g][8a] | [8f+][8g]
+78DE   [8f+]] [8a]
+78    @6@e2q8
+D    @16 q8 )
+E    @6 q8 )
+78DE ]
+
+;***** Drums *****
+
+*1 ={vc13y24,122}
+*2 ={vc15y24,122}
+F vb15vs13vm15vh9vc13 y38,35y22,180 y39,3y23,60 y40,2*1
+F l16
+F r1r1r1
+
+F [3 smh8h8c8sh8sh8sh8cs8h8 sh8sh8c8sh8sh8sh8cs8h8
+F    smh8h8c8sh8sh8sh8cs8h8 sh8sh8c8sh8sh8sh8cs8|sh16h16] sh8
+
+F [0
+F  *2cs4cs4r2 r2s4s4
+F  *2c4c4s4s4 r2r4.s8
+
+F  *2cs4cs4bh8bh8*1cs8h8 bh8bh8cs8bh8bh8h8cs8*2cs8
+F  *2r 4cs4bh8bh8*1cs8h8 bh8bh8cs8bh8bh4cs8vs-1sh8vs+1
+F  *2cs4b8b8cs4b8b8 cs8.s16s8s8s8s8b8cs8
+
+F  [4 bh4*1cs8h8bh8bh8cs8h8 | bh8b8cs8bh8bh8h8cs8bh8]4
+F                             bh8s8*2cs4b8sh8sh8*2cs8
+
+F  [2 [2 bh4*1cs8h8bh8bh8cs8h8 | bh8b8cs8bh8bh8h8cs8bh8]
+F                                bh8s8cs8h8bh8sh8vs-1cs8vs+1*2cs8
+F        bh4*1cs8h8bh8bh8cs8h8 bh8b8cs8bh8bh8h8cs8bh8
+F  |     sh8s8*1cs8h8h8sh8c8*2cb8 hb8b8*1cs8h8sh8sh8cs8*2cs8
+F  ]     s8s4sh8h8sh8*1c8bh8 *2cs4s8h8cs8cs4cs8
+
+F  bh4*1cs8h8bh8bh8cs8h8 bh8b8cs8bh8bh8sh8cb8sh8
+F  bh8s8c8sh8h8sh8c8bh8 bh8b8cs8h8sh8sh8cs8*2cs8
+F  bh4*1cs8h8bh8bh8cs8h8 bh8b8cs8bh8bh8h8cs8bh8
+F  [2vs-1*2cs4s8s8vs+1] cs8.s16s8s8s8s8b8cs8 
+F ]
+
+@e4={ 2,25, /1.fe/3.6=8.0=30. } ;snare
+@e5={ 2, 0, /3.f/2.n4.dcn8.bn12.an16.9=8.n20.8=9.n23.7=9.n27.6=9.n31.0=90. } ;cymbal
+@e6={ 2,15, f9=6.n16.80=60. } ;
+*4={v11@4o3p48}
+*5={v15@5o3p2}
+*6={v10@6o3p48}
+3 v11 k6 o4 l8
+;3 [0 *4a4 *5c4 *6c4 r4]
+3 r1r1r1
+3 *4[d4.d8d8d8d+4 d8d4d8d8d8c+4
+3    d4.d8d8d8d+4 d8d4d8d8d8d8d8]3
+3 [*5c4c2. r1 ]4
