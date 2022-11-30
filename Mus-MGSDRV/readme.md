@@ -111,6 +111,7 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 
 ガンフロンティア 1面 (MGS逆コンパイルから修正作業中)  
 [G-F-1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FG-F-1.MUS)
+[G-F-1_WK.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FG-F-1_WK.MUS)
 
 イース FEENA (MGS逆コンパイルから修正作業中)  
 [YS1FEENA.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1FEENA.MUS)
