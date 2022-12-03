@@ -11,15 +11,15 @@
 #machine_id 0
 #title { "GUN FRONTER -round1- 砂漠の山嵐 (PSG+SCC+OPLL) By Uniskie" }
 #tempo 150
-#alloc { 0=310, 1=400, 2=400, 3=900,
-         4=410, 5=400, 6=410, 7=300, 8=300,
-         9=400, A=410, B=400, C=400, D=300, E=300, F=1800 }
+#alloc { 0=310, 1=400, 2=410, 3=960,
+         4=410, 5=410, 6=410, 7=300, 8=300,
+         9=400, A=410, B=410, C=410, D=300, E=300, F=1800 }
 
 @v16 = {
 ;       TL FB
          0, 0,
 ; AR DR SL RR KL ML AM PM EG KR WF
-  10, 1, 3, 1, 0, 1, 0, 0, 1, 0, 0,
+  10, 1, 2, 1, 0, 1, 0, 0, 1, 0, 0,
   14, 9, 0, 9, 0, 2, 0, 0, 1, 1, 1 }
 
 ;@s0={ 001931475a6a757d7f7d756a5a47311900 e7cfb9a6968b8380838b96a6b9c7e7 }
@@ -40,34 +40,34 @@
 ;@31={,, mute off }
 
 ;12 !
-;3 ! 
+;3 !
 ;45678 !
 ;9abcde !
-;f ! 
+;f !
 
 ;***** Cord *****
 1 v10 o3@0     h30,0,5,1 
-4 v10 o3@13@e1 h30,0,5,1 @\7
+4 v10 o3@13@e1 h30,0,5,1 @\7 
 9 v13 o4@16    h30,1,3,2 
-A v11 o4@16    h30,1,3,2 @\20 r16
+A v11 o4@16    h30,1,3,2 @\21 r16 
 
 14   k7
-4    @0
+4    @0 
 9A   @4 so
 149A >>v-9r4[6 d8&)] d1& d1<< v+2
 
 149A l16 r1 r1
-4    @13
-9A   @16 
+4    @13 
+9A   @16
 149A [4 b>f+dadf+abv-1<] @e30;mute
 149A c1 r1
-1    @e3
-4    @6@e3
-9A   )@11@e31 ;mute off
+1    @e3 
+4    @6@e3 
+9A   )@1@e31 ;mute off
 149A v+1 [4 v+1>dc+bagf+ed<] @e30;mute
 149A c1 r1
-1    @e0
-4    @16@e1
+1    @e0 
+4    @16@e1 
 9A   @16@e31 ;mute off
 149A v-1 [4 d<b>egegebv-1] v+5 <
 
@@ -78,19 +78,19 @@ A v11 o4@16    h30,1,3,2 @\20 r16
 149A  <b4>d2.& (d2.r)<a>
 149A  <b4>d2.& (d1)
 149A  <b4>d2.& (d2.r)<a
-149A   b2a2 >d1 
+149A   b2a2 >d1
 
-4     @6@e2
+4     @6@e2 
 9A    @6
 149A  l2 b>c+ df+ f+e dc+ <b>c+ de d1 c+1 l8
 
-4     @13@e1
+4     @13@e1 
 9A    @16
 149A  [f+4<b4bb>d<b bb>d<bb>d<bb>
 149A   f+4<a4aa>c+<a aa>c+<aa>c+<a>c+
 149A   d4<g4ggbg gbgggggb
 149A   r4>f+4edc+d | f+c+2b>de<]
-149A                 f+c+2.r 
+149A                 f+c+2.r
 
 149A  (
 149A  l4 >c+c+c+c+ <bbbb> eeee dddd l8<
@@ -100,11 +100,11 @@ A v11 o4@16    h30,1,3,2 @\20 r16
 149A ]
 
 ;***** Merody *****
-2 o4v11@0      h30,0,5,1 
-5 o4v11@13@e1  h30,0,5,1 @\2 
-6 o4v09@13@e1  h30,0,5,1 @\8 r8 
+2 o4v10@0      h30,0,5,1 
+5 o4v10@13@e1  h30,0,5,1 @\2 
+6 o4v08@13@e1  h30,0,5,1 @\8 r16 
 B o5v13@16     h30,1,3,2 
-C o5v11@16     h30,1,3,2 @\20 r8 
+C o5v12@16     h30,1,3,2 @\21 r16 
 256 k7
 
 256BC <<<v-7[7 b8&)] b8& b1& b1>>>
@@ -123,31 +123,31 @@ C o5v11@16     h30,1,3,2 @\20 r8
 256BC   b((b))>d((d))<bbab bbb>c+c+_d&d<ba]
 256BC  b2>c+2 d2((d))c+<ba
 
-256    )
+25     )
 256BC  [3 b((b))>d4c+<bab b>e4d4c+4<b]
-256BC  >d1 c+4c+4c+4c+c+ 
+256BC  >d1 c+4c+4c+4c+c+
+25     (
 
-
-BC     )>@7
+;B      )
+BC     >@6
 256BC  [[rf+2.<e> eg4f+4e4d]
 256BC   |d<b2.r r>agf+f+ef+g >d4.c+2r <a+4.f+2r]
 256BC  [b1 | r>d4.c+4<ba+]
 256BC  a+2.((a+))
 
-BC     (
 256BC            f+ >c+2.((c+))<a r>f+edc+<b>cd <a4.f+4.>dc+
-256BC  r4r<b4.l16f+a+br l4>g.f+.e r8d.c+<b
+256BC  r4r<b4.l16f+a+b((b)) l4>g.f+.e r8d.c+<b
 256BC  >c+1& c+1 <<
 BC     <@16
-256    (
+;B      (
 256BC ]
 
 ;***** Base *****
 7 v11o2@16@e2 
 8 v11o2@16@e2 @\7 
-D v13o2@16
-E v13o2@6 @\24 
-78 k6
+D v12o2@16 
+E v12o2@6so @\24 
+78 k5
 
 78DE v-8[b8&)]8 b1& b1
 78DE l1 b& b& b& b
@@ -155,9 +155,9 @@ E v13o2@6 @\24
 78DE e& e& e& e<
 
 78DE [0
-78    @6@e2q8
-D     @16 q8 
-E     @6 q8 
+78    @6@e2
+D     @16 
+E     @6so 
 78DE  l8
 78DE  <b4>b2.& (b1)
 78DE  <b4>b2.& (b2.r)<b>&
@@ -165,9 +165,9 @@ E     @6 q8
 78DE  <b4>b2.& (b2.r)<b>
 78DE  b2a2 b1
 
-78    @13@e6q8
-D     @16 q8
-E     @13 q4
+78    @e3
+D     @16q4 
+E     @13q4so 
 78DE  [16b] [16a]
 78DE  [16g] [16f+]
 78DE  [[16b] [16a]
@@ -182,37 +182,42 @@ E     @13 q4
 *2 = {y24,30  vc15}
 *3 = {y22,180}
 
+; sh8 tom
 *10={kf y38,35y22,220 b: ko
      y22,200sh:y22,180r:y22,160r:y22,140r:y22,120r:
      y22,100r: y22,80 r:y22,60 r:y22,40 r:y22,20 r:y22,0   r:}
+; cs8 tom
 *11={kf y38,35y22,220 b: ko
      y22,200cs:y22,180r:y22,160r:y22,140r:y22,120r:
      y22,100r: y22,80 r:y22,60 r:y22,40 r:y22,20 r:y22,0   r:}
+; cs8 tom high
 *12={kf y38,35y22,240 b: ko
      y22,220 cs:y22,200r: y22,180r:y22,160r:y22,140r:
      y22,120r:y22,100r: y22,80 r:y22,60 r:y22,40 r:y22,20 r:}
+; cs8 tom low
 *13={kf y38,35y22,200 b: ko
      y22,180cs:y22,160r:y22,140r:y22,120r:y22,100r:
      y22,80 r:y22,60 r:y22,40 r:y22,20 r:y22,0   r:r:}
+; h16 tom
 *14={kf y38,35y22,220 b: ko
      y22,200h:y22,180r:y22,160r:y22,140r:y22,120r:}
 
 F vb15 vs13 vh10 vc12 
-F y38,35*3
-F y39,3y23,61
-F y40,36*1
+F y38,35*3 
+F y39,3y23,61 
+F y40,36*1 
 
-F l96
+F l96 
 F r1r1r1 
 
-F vb14
+F vb13 
 F [3 *10h8c8*10*10*10*12h8 *10sh8c8*10*10*10*13h8 
 F    *10h8c8*10*10*10*12h8 *10sh8c8*10*10*10*11|*14h16] sh8 
-F vb15 y38,35*3
+F vb15 y38,35*3 
 
-F [0
+F [0 
 F  *2cs4cs4r2 r2s4s4 
-F  *2c4c4s4s4 r2r4.s8
+F  *2c4c4s4s4 r2r4.s8 
 
 F  *2cs4cs4*1bh8bh8cs8h8 bh8bh8cs8bh8bh8h8cs8*2cs8 
 F   r 4cs4*1bh8bh8cs8h8 bh8bh8cs8bh8bh4cs8vs-1sh8vs+1 
@@ -224,66 +229,70 @@ F                             bh8s8*2cs4b8*1sh8sh8*2cs8
 F  [2 [2 bh4*1cs8h8bh8bh8cs8h8 | bh8b8cs8bh8bh8h8cs8bh8] 
 F                                bh8s8cs8h8bh8sh8vs-1cs8vs+1*2cs8 
 F        bh4*1cs8h8bh8bh8cs8h8 bh8b8cs8bh8bh8h8cs8bh8 
-F  |     sh8s8*1cs8h8h8sh8c8*2cb8 hb8b8*1cs8h8sh8sh8cs8*2cs8 
-F  ]     s8s4*1sh8h8sh8c8bh8 *2cs4s8h8cs8cs4cs8 
+F  |     sh8s8cs8h8h8sh8c8*2cb8 hb8b8*1cs8h8sh8sh8cs8*2cs8 
+F  ]     s8s4sh8h8sh8c8bh8 *2cs4s8*1h8*2cs8cs4cs8 
 
-F  *1bh4cs8h8bh8bh8cs8h8  bh8b8cs8bh8bh8sh8cb8sh8
-F   hs8s8c8sh8h8sh8c8bh8 bh8b8cs8h8sh8sh8cs8*2cs8
-;F  bh8s8c8sh8h8sh8c8bh8 bh8b8cs8h8sh8sh8cs8*2cs8 
+F  *1bh4cs8h8bh8bh8cs8h8  bh8b8cs8bh8bh8sh8cb8sh8 
+F   hs8s8c8sh8h8sh8c8bh8 bh8b8cs8h8sh8sh8cs8*2cs8 
+;F  bh8s8c8sh8h8sh8c8bh8 bh8b8cs8h8sh8sh8cs8*2cs8
 
 F  *1bh4cs8h8bh8bh8cs8h8 bh8b8cs8bh8bh8h8cs8bh8 
 F  [2vs-1*2cs4s8s8vs+1] cs8.s16s8s8s8s8b8cs8 
 F ] 
 
 @e4={ 3,25, /1.c/3.7=10/2.0=60 } ;snare
-@e5={ 1,12, \-3a./3dc=8.n22.6=80.n0.0=200. } ;cymbal
-@e6={ 3,31, d/1.c7=4.0=60 } ;bass
-@e7={ 1,25, d/3.c/2n16.7=9.0=60 } ;snare2
-@e8={ 3,10, d/1.7=24.0=60 } ;tom
+@e5={ 1,12, \-3a./3ec=8.n28.6=80.n0.0=200. } ;cymbal
+@e6={ 3,31, e/1.d7=4.0=60 } ;bass
+@e7={ 1,25, e/3.d/2n16.7=9.0=60 } ;snare2
+@e8={ 3,10, e/1.7=24.0=60 } ;tom
 @e9={ 1,25, f/3d.8=200.0=200} ;vibra slap
 *4={@4o2hfp10} ;snare
 *5={@5o8p0 ho};cymbal
 *6={@6o2hfp18} ;bass
-*7={@7o3hfp4 } ;snare2 (crap) 
-*8={@8o3hfp30} ;tom
+*7={@7o3hfp4 } ;snare2 (crap)
+*8={@8o3hfp24} ;tom
 *9={@9o2p0ho }
-3 v15 k8 o4 l8
+
+3 v14 k8 o4 l8 
 ;3 [0 *4a4 *5c4 *6c4 r4]
 
-3 h0,120,0,-10
-3 r1r1r1 l8
-;3 *4[g4.g8g8g8g+4 g8g4g8g8g8f+4 
-3  [*9[63 n31d64&(((n10d64&)))] r32
-3   *4g4.g8g8g8g+4 g8g4g8g8g8g8g8]3
+3 h0,120,0,-10 
+3 r1r1r1 l8 
+;3 *4[g4.g8g8g8g+4 g8g4g8g8g8f+4
+3  [*9[31 n31f32&(((n19e32&)))] d16 
+3   *4g4.g8g8g8g+4 g8g4g8g8g8g8g8]3 
 
 3 h1,2,2,3 hf 
-3 [0
-3  *5b4b2. &b2*7d4d4
-3  *5b4b2. r2..*7d
-3  *5b4b2. *6gg*7d*6gg4*7d*5b&
-3    b4b2. *6gg*7d*6gg4*7d(d)
-3  *5b2b2  b2.*6g*7d
+3 [0 
+3  *5b4b2. &b2*7d4d4 
+3  *5b4b2. r2..*7d 
+3  *5b4b2*7d4 *6gg*7d*6gg4*7d*5b& 
+;3  *5b4b4*6gg*7d4 *6gg*7d*6gg4*7d*5b&
+3    b4b2*7d4 *6gg*7d*6gg4*7d(d) 
+;3    b4b4*6gg*7d4 *6gg*7d*6gg4*7d(d)
+3  *5b2b2  b2*7dd*6g*7d 
+;3  *5b4*6gg*5b4*6gg *5b2*7dd*6g*7d
 
-3  [*6g4*7d4*6gg*7d4 | *6gg*7d*6gg4*7d*6g]4
-3                        *6g*7dd4*6g*7ddd
+3  [*6g4*7d4*6gg*7d4 | *6gg*7d*6gg4*7d*6g]4 
+3                        *6g*7dd4*6g*7ddd 
 
-3  [[*6g4*7d4*6gg*7d4 | *6gg*7d*6gg4*7d*6g]2
-3                         *6g*7dd4*6g*7d(d)d
+3  [[*6g4*7d4*6gg*7d4 | *6gg*7d*6gg4*7d*6g]2 
+3                         *6g*7dd4*6g*7d(d)d 
 
-3   *6g4*7d4*6gg*7d4 *6gg*7d*6gg4*7d*6g
+3   *6g4*7d4*6gg*7d4 *6gg*7d*6gg4*7d*6g 
 
 ;3  |*7ddd4.d4*6g gg*7d4dddd]2
-3  |*7ddd4.d*5b4 ^4*7d4dddd ]2
+3  |*7ddd4.d*5b4 ^4*7d4dddd ]2 
 
-3   *7ddd4.d4*6g *8ccp0r*8cp0r4*5b4
+3   *7ddd4.d4*6g *8ccp0r*8cp0r4*5b4 
 
-3  *6g4*7d4*6gg*7d4 *6gg*7d*6gg*7d*6g*7d
+3  *6g4*7d4*6gg*7d4 *6gg*7d*6gg*7d*6g*7d 
 ;3  *7dd4d4d4*6g gg*7d4dddd
-3  *7dd4d4d4*6g gg*7d4dd*5b4
+3  *7dd4d4d4*6g gg*7d4dd*5b4 
 
 ;3  *6g4*7d4*6gg*7d4 *6gg*7d*6gg4*7d*6g
-3  &b4*7d4*6gg*7d4 *6gg*7d*6gg4*7d*6g
+3  &b4*7d4*6gg*7d4 *6gg*7d*6gg4*7d*6g 
 
 3  *8cp0r*8cccp0r*8cc 
-3                     *7d.d16dddd*6g*7d
-3 ]
+3                     *7d.d16dddd*6g*7d 
+3 ] 
