@@ -10,14 +10,14 @@
 #tempo 120
 #title {"G社歌"}
 
-@e0 = {1,,fb=10 [a=3.9=3]}
+@e0 = {1,,fb=15 [a=3.9=3]}
 
 @e1 = {3,10,f/2.8=12.0=20}
 @e2 = {1,31,/1f/3.d0=20}
 @e3 = {3,20,f/2.8=12.0=20}
-@e4 = {2, 8,f8=20.0=100}
+@e4 = {2,11,f8=20.0=100}
 
-1 v15@0 o4 h16,2,2,1
+1 v14@0 o4 h16,2,2,1
 1 r1 r1
 1 [0
 1  [2 c4c4d8e4.] f8f4e8d4c8.c16 d2.r4
@@ -25,18 +25,17 @@
 1  r1 r1
 1 ]
 
-2 v14@0 o3 l8
-2 r1 r1$
+2 v12@0 o3 l8
+2 r1 r1
 2 [0
-2  cccc<gggg aaaaeeee ffffffff ggggggab>
-2  cccc<gggg aaaaeeee ffffgggg >ccccc<gab>
+2  [2 cccc<gggg aaaaeeee | ffffffff ggggggab> ]
+2                          ffffgggg >ccccc<gab>
 2  r1 r1
 2 ]
 
-3 v12 o2 l4
-3 [2 @4d@3d@1d8@2g8@1d8@2g8]
+3 v11 o2 l4
+3 @4d@3d@1d8@2g8@1d8@2g8 @3dd@1d8@2g8@1d8@2g8
 3 [0
-3  [2 @4d@3dd8@1d8d4] @3dddd dddd
-3  [2 @4d@3dd8@1d8d4] @3dddd dddd
-3  [2 @4d@3dd8@1d8d4]
+3  [2 @4d@3dd8@1d8d @3ddd8@1d8d @3dddd dddd ]
+3  @4d2d8@1d8d @3ddd8@1d8d
 3 ]
