@@ -11,16 +11,23 @@
 #machine_id 0
 #title { "GUN FRONTER -round1- 砂漠の山嵐 (PSG+SCC+OPLL) By Uniskie" }
 #tempo 150
-#alloc { 0=310, 1=400, 2=410, 3=960,
-         4=410, 5=410, 6=410, 7=300, 8=300,
-         9=400, A=410, B=410, C=410, D=300, E=300, F=1800 }
+#alloc { 0=330, 1=450, 2=410, 3=960,
+         4=450, 5=410, 6=410, 7=300, 8=300,
+         9=450, A=450, B=410, C=410, D=300, E=300, F=1800 }
 
 @v16 = {
 ;       TL FB
-         0, 0,
-; AR DR SL RR KL ML AM PM EG KR WF
-  10, 1, 2, 1, 0, 1, 0, 0, 1, 0, 0,
-  14, 9, 0, 9, 0, 2, 0, 0, 1, 1, 1 }
+         9, 6,
+; AR DR SL RR KL ML AM PM EG KR DT
+  10, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0,
+  14, 9, 0, 9, 0, 2, 0, 1, 1, 0, 1 }
+
+@v17 = {
+;       TL FB
+        16, 6,
+; AR DR SL RR KL ML AM PM EG KR DT
+  10, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0,
+  14, 9, 0, 9, 0, 2, 0, 0, 1, 0, 0 }
 
 ;@s0={ 001931475a6a757d7f7d756a5a47311900 e7cfb9a6968b8380838b96a6b9c7e7 }
 @s00 = { 0009121a21272b2e2f2e2b27211a1209 00f6ede5ded8d4d1d0d1d4d8dee5eaf6 } ; rate 96/256
@@ -31,10 +38,10 @@
 ;@s13={ 001931475a6a757d7f7d756a5a47311980 90a0b0c0d0e0f00010203040506070 }
 @s13 = { 0009121a21272b2e2f2e2b27211a1209 d0d6dce2e8eef4fa00060c12181e242a } ; rate 96/256
 
-@e0={ 1, 0, fd=10.[c:4.d:4] }
-@e1={ 1, 0, fc=10.[b:4.c:4] }
-@e2={ 1, 0, cdef }
-@e3={ 1, 0, f8=8.0=30 }
+@e0={ 1, 0, dfd=8.[c:4.d:4] }
+@e1={ 1, 0, dfc=8.[b:4.c:4] }
+@e2={ 1, 0, cfd=4 }
+@e3={ 1, 0, f7=8.0=10 }
 
 @e30={ , , 0 } ; mute on
 ;@31={,, mute off }
@@ -45,91 +52,96 @@
 ;9abcde !
 ;f !
 
+
 ;***** Cord *****
-1 v10 o3@0     h30,0,5,1 
-4 v10 o3@13@e1 h30,0,5,1 @\7 
-9 v13 o4@16    h30,1,3,2 
-A v11 o4@16    h30,1,3,2 @\21 r16 
+1 v09 o3@0     h30,0,5,1 
+4 v09 o3@13@e1 h30,0,5,1 @\7 
+9 v12 o4@16    h30,0,5,1 
+A v11 o4@16    h30,0,5,1 @\23 r16 
 
 14   k7
 4    @0 
-9A   @4 so
-149A >>v-9r4[6 d8&)] d1& d1<< v+2
+9A   @3 so
+149A >>v-9r4[6 d8&)] d1& d1<< v+3
 
-149A l16 r1 r1
+149A l16
+149A r1 r1
 4    @13 
-9A   @16
-149A [4 b>f+dadf+abv-1<] @e30;mute
-149A c1 r1
+9A   @10
+149A <[4 b>f+dadf+abv-1<]> @e30;mute
+149A r1 r1
 1    @e3 
 4    @6@e3 
-9A   )@1@e31 ;mute off
-149A v+1 [4 v+1>dc+bagf+ed<] @e30;mute
-149A c1 r1
+9A   @1@e31 ;mute off
+149A >[4 v+1>dc+bagf+ed<]< @e30;mute
+149A r1 r1
 1    @e0 
-4    @16@e1 
-9A   @16@e31 ;mute off
-149A v-1 [4 d<b>egegebv-1] v+5 <
+4    @13@e1 
+9A   @10@e31 ;mute off
+149A [4 d<b>egegebv-1] v+5 <
 
-9A    (;@16
+9A    (
 149A [0
 149A  l8
-149A  <b4>d2.& (d1)
-149A  <b4>d2.& (d2.r)<a>
-149A  <b4>d2.& (d1)
-149A  <b4>d2.& (d2.r)<a
-149A   b2a2 >d1
+9A    @10
+149A  <bb>b2.& (b1)
+149A  <bb>b2.& (b2.r)<b>
+149A  <bb>b2.& (b1)
+149A  <bb>b2.& (b2.r)<b
+149A   b2a2 >b1
 
 4     @6@e2 
-9A    @6
+9A    @6q8
 149A  l2 b>c+ df+ f+e dc+ <b>c+ de d1 c+1 l8
 
 4     @13@e1 
-9A    @16
+9A    @17
 149A  [f+4<b4bb>d<b bb>d<bb>d<bb>
 149A   f+4<a4aa>c+<a aa>c+<aa>c+<a>c+
 149A   d4<g4ggbg gbgggggb
 149A   r4>f+4edc+d | f+c+2b>de<]
 149A                 f+c+2.r
 
-149A  (
-149A  l4 >c+c+c+c+ <bbbb> eeee dddd l8<
-149A  <a+1> c+2.r<a
-149A  r>c+ge<g>ag<a> ba<a>>c+<b<a>>c+e <<
-149A  )
+9A    (
+149A  l4 >c+c+c+c+ <bbbb> eeee dddd l8
+149A  <<a+1> c+2.r
+149A              a<
+149A  r>c+ge<g>ag<a> ba<a>>c+<bc+>c+e <<
+9A    )
 149A ]
 
 ;***** Merody *****
-2 o4v10@0      h30,0,5,1 
-5 o4v10@13@e1  h30,0,5,1 @\2 
-6 o4v08@13@e1  h30,0,5,1 @\8 r16 
-B o5v13@16     h30,1,3,2 
-C o5v12@16     h30,1,3,2 @\21 r16 
+2 o4v09@0      h20,2,3,1 
+5 o4v09@13@e1  h20,2,3,1
+6 o4v08@13@e1  h20,2,3,1 @\8 r8 
+B o5v13@6      h20,2,3,1 
+C o5v11@6      h20,2,3,1 @\23 r8 
 256 k7
 
 256BC <<<v-7[7 b8&)] b8& b1& b1>>>
 256BC r1 r1
-256 k7
-256BC e1 d1
-256BC f+1& f+1
-256BC g1 f+2g2
-256BC a1 e1
-256BC b1 a1 <
+BC    @16
+256   k7
+256BC <e1 d1
+256BC  f+1& f+1
+256BC  g1 f+2g2
+256BC  a1 e1
+256BC  b1 a1
 
 256BC [0
-
+BC     @16
 256BC  l8
-256BC  [b((b))>d((d))<bbba bbb>dc+4<b4
-256BC   b((b))>d((d))<bbab bbb>c+c+_d&d<ba]
-256BC  b2>c+2 d2((d))c+<ba
+256BC  [br>dr<bbba bbb>dc+4<b4
+256BC   br>dr<bbab bbb>c+c+_d&d<ba]
+256BC  b2>c+2 d2(d)c+<ba
 
-25     )
+;BC     @17
+2BC    )
 256BC  [3 b((b))>d4c+<bab b>e4d4c+4<b]
 256BC  >d1 c+4c+4c+4c+c+
-25     (
+2BC    (
 
-;B      )
-BC     >@6
+BC     >@17
 256BC  [[rf+2.<e> eg4f+4e4d]
 256BC   |d<b2.r r>agf+f+ef+g >d4.c+2r <a+4.f+2r]
 256BC  [b1 | r>d4.c+4<ba+]
@@ -138,14 +150,13 @@ BC     >@6
 256BC            f+ >c+2.((c+))<a r>f+edc+<b>cd <a4.f+4.>dc+
 256BC  r4r<b4.l16f+a+b((b)) l4>g.f+.e r8d.c+<b
 256BC  >c+1& c+1 <<
-BC     <@16
-;B      (
+BC     <
 256BC ]
 
 ;***** Base *****
-7 v11o2@16@e2 
-8 v11o2@16@e2 @\7 
-D v12o2@16 
+7 v10o2@6@e2 
+8 v10o2@6@e2 @\7 
+D v12o2@6 
 E v12o2@6so @\24 
 78 k5
 
@@ -156,24 +167,24 @@ E v12o2@6so @\24
 
 78DE [0
 78    @6@e2
-D     @16 
-E     @6so 
+D     @13q7 
+E     @6
 78DE  l8
-78DE  <b4>b2.& (b1)
-78DE  <b4>b2.& (b2.r)<b>&
-78DE  <b4>b2.& (b1)
-78DE  <b4>b2.& (b2.r)<b>
+78DE  <bb>b2.& (b1)
+78DE  <bb>b2.& (b2.r)<b>&
+78DE  <bb>b2.& (b1)
+78DE  <bb>b2.& (b2.r)<b>
 78DE  b2a2 b1
 
-78    @e3
-D     @16q4 
-E     @13q4so 
-78DE  [16b] [16a]
-78DE  [16g] [16f+]
-78DE  [[16b] [16a]
-78DE   [16g] [12f+]f+gab]
-78DE  [8g][8a] [8f+][8g]
-78DE  [8f+][8g] [16a]
+78    @e3q7
+D     @13q4 
+E     @6 q4 
+78DE  [16 b] [16 a]
+78DE  [16 g] [16 f+]
+78DE  [[16 b] [16 a]
+78DE   [16 g] [12 f+]f+gab]
+78DE  [8 g][8 a] [8 f+][8 g]
+78DE  [8 f+][8 g] [16 a]
 78DE ]
 
 ;***** Drums *****
@@ -183,23 +194,23 @@ E     @13q4so
 *3 = {y22,180}
 
 ; sh8 tom
-*10={kf y38,35y22,220 b: ko
+*10={kf y22,220 b: ko
      y22,200sh:y22,180r:y22,160r:y22,140r:y22,120r:
      y22,100r: y22,80 r:y22,60 r:y22,40 r:y22,20 r:y22,0   r:}
 ; cs8 tom
-*11={kf y38,35y22,220 b: ko
+*11={kf y22,220 b: ko
      y22,200cs:y22,180r:y22,160r:y22,140r:y22,120r:
      y22,100r: y22,80 r:y22,60 r:y22,40 r:y22,20 r:y22,0   r:}
 ; cs8 tom high
-*12={kf y38,35y22,240 b: ko
+*12={kf y22,240 b: ko
      y22,220 cs:y22,200r: y22,180r:y22,160r:y22,140r:
      y22,120r:y22,100r: y22,80 r:y22,60 r:y22,40 r:y22,20 r:}
 ; cs8 tom low
-*13={kf y38,35y22,200 b: ko
+*13={kf y22,200 b: ko
      y22,180cs:y22,160r:y22,140r:y22,120r:y22,100r:
      y22,80 r:y22,60 r:y22,40 r:y22,20 r:y22,0   r:r:}
 ; h16 tom
-*14={kf y38,35y22,220 b: ko
+*14={kf y22,220 b: ko
      y22,200h:y22,180r:y22,160r:y22,140r:y22,120r:}
 
 F vb15 vs13 vh10 vc12 
@@ -210,10 +221,10 @@ F y40,36*1
 F l96 
 F r1r1r1 
 
-F vb13 
+F vb12 
 F [3 *10h8c8*10*10*10*12h8 *10sh8c8*10*10*10*13h8 
 F    *10h8c8*10*10*10*12h8 *10sh8c8*10*10*10*11|*14h16] sh8 
-F vb15 y38,35*3 
+F vb15 *3 
 
 F [0 
 F  *2cs4cs4r2 r2s4s4 
@@ -240,29 +251,30 @@ F  *1bh4cs8h8bh8bh8cs8h8 bh8b8cs8bh8bh8h8cs8bh8
 F  [2vs-1*2cs4s8s8vs+1] cs8.s16s8s8s8s8b8cs8 
 F ] 
 
-@e4={ 3,25, /1.c/3.7=10/2.0=60 } ;snare
-@e5={ 1,12, \-3a./3ec=8.n28.6=80.n0.0=200. } ;cymbal
-@e6={ 3,31, e/1.d7=4.0=60 } ;bass
-@e7={ 1,25, e/3.d/2n16.7=9.0=60 } ;snare2
-@e8={ 3,10, e/1.7=24.0=60 } ;tom
-@e9={ 1,25, f/3d.8=200.0=200} ;vibra slap
+@e4={ 3,25, /1.b/3.6=10/2.0=60 } ;snare
+@e5={ 1,12, \-3a./3ec=8.n31.6=80.n0.0=200. } ;cymbal
+@e6={ 3,31, e/1.c7=4.0=60 } ;bass
+@e7={ 1,25, e/3.c/2n20.7=6.0=60 } ;snare2
+@e8={ 3,10, e/1.c7=24.0=60 } ;tom
+@e9={ 1,28, f/2c.7=120.0=120} ;vibra slap
 *4={@4o2hfp10} ;snare
-*5={@5o8p0 ho};cymbal
+*5={@5o8p0 ho} ;cymbal
 *6={@6o2hfp18} ;bass
 *7={@7o3hfp4 } ;snare2 (crap)
 *8={@8o3hfp24} ;tom
-*9={@9o2p0ho }
+*9={@9o2p0ho } ;vivra slap
 
-3 v14 k8 o4 l8 
+3 v14 k3 o4 l8 
 ;3 [0 *4a4 *5c4 *6c4 r4]
 
-3 h0,120,0,-10 
-3 r1r1r1 l8 
+3 h0,3,0,-4 
+3 r1r1r1 
 ;3 *4[g4.g8g8g8g+4 g8g4g8g8g8f+4
-3  [*9[31 n31f32&(((n19e32&)))] d16 
+3  [l64 *9[16 n24f32&(((n15|e32&)))]e32)))
+3               l8 *4g8g4g8g8g8f+4
 3   *4g4.g8g8g8g+4 g8g4g8g8g8g8g8]3 
 
-3 h1,2,2,3 hf 
+3 h1,2,2,3 hf
 3 [0 
 3  *5b4b2. &b2*7d4d4 
 3  *5b4b2. r2..*7d 
