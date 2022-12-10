@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+ガンフロンティア 1面 砂漠の山嵐 (PSG+SCC+OPLL)  
+[G-F-1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FG-F-1.MUS)
+
 ZANAC BGM1 [OPLL ver.]  
 [ZANAC_b.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FZANAC_b.MUS)
 
@@ -108,9 +111,6 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 
 ドラゴンスピリット ステージ7 深海 (MGS逆コンパイルから修正作業中)  
 [DS-7DEEP.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDS-7DEEP.MUS)
-
-ガンフロンティア 1面 (MGS逆コンパイルから修正作業中)  
-[G-F-1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FG-F-1.MUS)
 
 イース FEENA (MGS逆コンパイルから修正作業中)  
 [YS1FEENA.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1FEENA.MUS)
