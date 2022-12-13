@@ -1,4 +1,4 @@
-;[gain=1.0 name=G-F-1 duration=600s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=G-F-1 duration=300s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -10,24 +10,24 @@
 #lfo_mode 0
 #machine_id 0
 #title { "GUN FRONTER -round1- 砂漠の山嵐 (PSG+SCC+OPLL) By Uniskie" }
-#tempo 150
+#tempo 152
 #alloc { 0=400, 1=450, 2=410, 3=960,
          4=450, 5=410, 6=410, 7=300, 8=300,
          9=550, A=550, B=410, C=410, D=300, E=300, F=1800 }
 
 @v16 = {
 ;       TL FB
-         0, 1,
+         0, 2,
 ; AR DR SL RR KL ML AM PM EG KR DT
    9, 1, 4, 1, 1, 1, 0, 1, 1, 0, 0,
-  15, 1, 1,10, 0, 6, 0, 1, 1, 0, 1 }
+  15, 1, 0,10, 0, 6, 0, 1, 1, 0, 1 }
 
 @v17 = {
 ;       TL FB
-         1, 1,
+         2, 2,
 ; AR DR SL RR KL ML AM PM EG KR DT
-   7, 3, 1, 1, 1, 1, 0, 1, 1, 0, 0,
-  14, 7, 1,10, 0, 6, 0, 1, 1, 0, 1 }
+   8, 2, 1, 1, 1, 1, 0, 1, 1, 0, 0,
+  14, 7, 0,10, 0, 8, 0, 1, 1, 0, 1 }
 
 @v18 = {
 ;       TL FB
@@ -61,10 +61,10 @@
 ;f !
 
 ;##### Cord #####
-1 v09 o3@0     h30,2,3,1
+1 v09 o3@0     h30,2,3,1 
 4 v09 o3@13@e1 h30,2,3,1 @\7 
 9 v11 o4@3     h30,2,3,1 
-A v08 o4@3     h30,2,3,1 @\25 r4
+A v08 o4@3     h30,2,3,1 @\25 r4 
 
 14   k7
 4    @0 
@@ -77,8 +77,8 @@ A v08 o4@3     h30,2,3,1 @\25 r4
 *31 = {@e31@18 r8<[7 [8 b32]v-1]> [4 b32]v+7}
 14   r1 r1
 9A   *31
-1    @0
-4    @13@e1
+1    @0 
+4    @13@e1 
 9A   @16
 149A <[4 b>f+dadf+ab v-1<]> @e30;mute
 14   r1 r1
@@ -95,7 +95,7 @@ A v08 o4@3     h30,2,3,1 @\25 r4
 9A   @16@e31 ;mute off
 149A [4 d<b>egegeb v-1] v+4 <
 
-1    >
+1    > 
 
 149A [0
 149A  l8
@@ -134,14 +134,14 @@ A v08 o4@3     h30,2,3,1 @\25 r4
 
 ;##### Merody #####
 2 o4v09@0      h16,2,3,1 
-5 o4v10@13@e1  h16,2,3,1
+5 o4v10@13@e1  h16,2,3,1 
 6 o4v07@14@e1  h16,2,3,1 @\8 r4 
 B o5v13@5      h16,2,3,1 
-C o5v10@8      h16,2,3,1 @\25 r4
+C o5v10@8      h16,2,3,1 @\25 r4 
 256 k7
 
 256BC <<<v-7[6 b8&)] b4& b1& b1>>>
-256BC r1 r1 
+256BC r1 r1
 256BC v+1
 
 256   k7
@@ -157,12 +157,11 @@ BC     @16
 BC     v-2
 256BC  l8
 256BC  [)br>dr<(bbba bbb>dc+4<b4
-256BC   )br>dr<(bbab bbb>c+c+_d&d<ba]
+256BC   br>dr<bbab bbb>c+c+_d&d<ba]
 BC     v+1
 256BC  b2>c+2 d2(d)c+<ba
 
-2      v+1
-256BC  [3 b((b))>d4c+<bab b>e4d4c+4<b]
+256BC  [3 b(b)>d4c+<bab b>e4d4c+4<b]
 256BC  >d1 c+4c+4c+4c+c+
 
 BC     v+1
@@ -170,17 +169,16 @@ BC     >@17
 256BC  [[rf+2.<e> eg4f+4e4d]
 256BC   |d<b2.r r>agf+f+ef+g >d4.c+2r <a+4.f+2r]
 256BC  [b1 | r>d4.c+4<ba+]
-256BC  a+2.((a+))
+256BC  a+2.(a+)
 
-256BC            f+ >c+2.((c+))<a r>f+edc+<b>cd <a4.f+4.>dc+
-256BC  r4r<b4.l16f+a+b((b)) l4>g.f+.e r8d.c+<b
+256BC            f+ >c+2.(c+)<a r>f+edc+<b>cd <a4.f+4.>dc+
+256BC  r4r<b4.l16f+a+b(b) l4>g.f+.e r8d.c+<b
 256BC  >c+1& c+1 <<
-2      v-1
 BC     <
 256BC ]
 
 ;##### Base #####
-7 v10o2@6@e2 @\1
+7 v10o2@6@e2 @\1 
 8 v10o2@6@e2 @\8 
 D v11o2@14 
 E v12o2@6so @\24 
@@ -194,7 +192,7 @@ E v12o2@6so @\24
 78DE [0
 78    @6@e2
 D     @14 
-E     @6
+E     @6 
 78DE  l8
 78DE  <bb>b2.& (b1)
 78DE  <bb>b2.& (b2.r)<b>&
@@ -216,7 +214,7 @@ E     @6q4
 ;##### Drums #####
 
 *1 = {y24,122 vc13}
-*2 = {y24,30  vc15}
+*2 = {y24,30  vc14}
 *3 = {y22,180}
 
 ; sh8 tom
@@ -239,16 +237,16 @@ E     @6q4
 *14={kf y22,230 b: ko
      y22,200h: y22,170r: y22,140r: }
 
-F vb15 vs12 vh10 vc12
+F vb15 vs12 vh10 vc12 
 F y38,35*3 
 F y39,3y23,61 
 F y40,36*1 
 
-F l64
+F l64 
 F r1r1r1 
 
 F vb12 
-F [3 *10vb-2h8c8*10*10*10*12h8vb+2 *10vb-2sh8c8*10*10*10*13h8 vb+2
+F [3 *10vb-2h8c8*10*10*10*12h8vb+2 *10vb-2sh8c8*10*10*10*13h8 vb+2 
 F    *10vb-2h8c8*10*10*10*12h8vb+2 *10vb-2sh8c8*10*10*10*11vb+2|*14h16] sh8 
 F vb15 *3 
 
@@ -291,11 +289,11 @@ F ]
 *9={@9o2p0 ho} ;vivra slap
 
 3 v12 k0 o4 l8 
-3 h1,2,2,3 hf
+3 h1,2,2,3 hf 
 
 3 r1r1r1 
-3 [3*6f4.*4g8g8g8g+4 *6f8*4g4g8g8g8f+4
-3   *6f4.*4g8g8g8g+4 *6f8*4g4g8g8g8g8g8]
+3 [3*6f4.*4g8g8g8g+4 *6f8*4g4g8g8g8f+4 
+3   *6f4.*4g8g8g8g+4 *6f8*4g4g8g8g8g8g8] 
 
 3 [0 
 3  *5b4b2. &b2*7d4d4 
