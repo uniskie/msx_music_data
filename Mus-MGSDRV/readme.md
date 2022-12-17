@@ -6,6 +6,12 @@
 --
 MSXPLAYで聞く場合：
 
+ファイナルファンタジー3 BOSS1  
+[FF3BOSS1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS)
+
+ファイナルファンタジー5 タイトルBGM  
+[FFVMAINT.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS)
+
 ガンフロンティア 1面 砂漠の山嵐 (PSG+SCC+OPLL)  
 [G-F-1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FG-F-1.MUS)
 
@@ -83,12 +89,6 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 
 デンジャラスシードMD 「Jupiter」 (Stage 6&10) (素YM2413)  
 [DSEEDV5.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDSEEDV5.MUS)
-
-ファイナルファンタジー3 BOSS1  
-[FF3BOSS1.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFF3BOSS1.MUS)
-
-ファイナルファンタジー5 タイトルBGM  
-[FFVMAINT.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FFFVMAINT.MUS)
 
 グラディウス2(MSX) 空中戦 (素YM2413)  
 [GRA2_S03.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FGRA2_S03.MUS)
