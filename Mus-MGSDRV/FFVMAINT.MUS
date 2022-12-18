@@ -15,9 +15,9 @@
 
 @v16={ ; mute trumpet
      ;TL,FB
-      17, 7,
+      18, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
-      13, 3, 1, 1, 1, 1, 0, 0, 0, 0, 1,
+      11, 3, 1, 1, 1, 1, 0, 0, 0, 0, 1,
       14, 6, 0, 6, 0, 1, 0, 0, 1, 0, 0}
 
 ;* PSG Drum Voice ---------------------
@@ -33,7 +33,7 @@
 
 1239ABCDEF r4
 ;* Merody -----------------------------
-9A h35,3,1,2 o5 so
+9A h35,3,1,1 o5 so
 9 v15 
 A v13 r8. @\24 
 
@@ -60,7 +60,7 @@ A v13 r8. @\24
 12 [r1]8
 
 ;* Strings ---------------------------
-BCD @0@e10 so q3 v14 o5 l8 h35,3,1,2
+BCD @0@e10 so q3 v14 o5 l8 h35,3,1,1
 B [eeffeedd]4 
 C [gggggggg]4 
 D ([cccccccc]4 
@@ -100,7 +100,8 @@ E q5a+a+rq6fq5a+a+r4 q5g+g+rq6fq5g+g+r4 q5[f+c+]4 ffr4ffr4
 *07 = { bh8bh16h16y23,198h8y23,175bh16h16 }
 
 F vb15 vm13 vs12 vh9 vc13 
-F y22,203y38,3 *0y39,3 y24,164y40,2 
+;F y22,203y38,3 *0y39,3 y24,164y40,2 
+F y22,163y38,3 *0y39,3 y24,164y40,2 
 F [h4]16 
 F bhc8bc8h4h4h4 
 F [0 
