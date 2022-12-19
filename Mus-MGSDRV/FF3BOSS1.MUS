@@ -13,6 +13,7 @@
   "[SQUARE SOFT] FINAL FANTASY III "
         "- BATTLE2 (BOSS) -"
       " [OPLL+PSG] by Uniskie"}
+      
 @v16={
      ;TL,FB
       21, 7,
@@ -30,6 +31,7 @@
 @e13 = {1,,DEFEDDC}
 @e14 = {,,@14.F @13.F}
 
+
 ;* Brass ------------------------------
 19BD h18,2,0,1
 1 o5 v8 k5 @\2
@@ -38,28 +40,26 @@ B o6 v11 r4 @\26
 D o5 v13 @\8
 19BD [0 l8
 1     @10
-9B    @11
-D     @7
+9B    @11so
+D     @1
 19BD  [rq8d+q5ec<ag+a>c q8eq5gf+dfq8e4q5cq8]
 19BD  [rq8g+q5afdc+df q8aq5>c<bgb-q8a4q5fq8]
-D     >
 19BD  h10,4,0,3
-98    @16
-D     @3
+9B    @16sf
+D     @7
 19BD  l4 ec<af ec<af ec<af l12eg+b>eg+b>eg+b>eg+b l8
 1     @12 
 9B    @11
-D     @12((
+D     @12>((
 19BD  <dfdfag+rf dfag+fg+>c<b
 19BD  a>c<a>ced+rc< a>cgf+df>c<b
 19BD  h30,1,2,1
 1     @10 
 9B    @16
-D     @11))
+D     @11<))
 19BD  [ a2..a16b16 a2g2 a2g2& g1
 19BD  | f2..f16g16 f2d2 e1 g+1
 19BD  ] a2..a16b16 a2g2 a1 g+1
-D     <
 19BD ]
 
 ;* Strings ----------------------------
@@ -68,8 +68,9 @@ D     <
 A v12
 C v10 r4 @\26 
 2AC [0 l8
-AC   o5 @10(
+AC   o5
 2    o4 
+AC   @10(
 2AC  [q8eq4ccccccc q8cq4dd+efq8g+4q4aq8]
 2AC  [q8aq4fffffff q8fq4gg+aa+>q8c+4q4dq8<]
 2AC  h10,4,0,3
@@ -84,9 +85,8 @@ AC                f_c<b_eg_de_<a>>
 ;2AC  c1& c1
 ;2AC  e1& e2ab>c<b
 2AC  h28,3,0,1
-2    @10
-AC   @16)
-2AC  >
+2    @10>)
+AC   @16>>
 2AC  [
 2AC   [l8 c<a24b24>c24d<a>c<a>d<a>]
 2AC   [<bg24a24b-24bgagbg>]
@@ -96,7 +96,8 @@ AC   @16)
 2AC  ]
 2AC   <adfdadfd> c<dgd>c<dgd
 2AC   >d<eae>d<eae >d<bg+fl16ef+g+ab>cdel8
-AC   (
+2    <(
+AC   <<
 2AC ]
 
 ;* Bass -------------------------------
@@ -119,16 +120,16 @@ E ]
 
 ;* Drums ------------------------------
 *03 = { bh8bh:h:bms8bh:bh }
-*04 = { y23,174y24,168 }
-*05 = { y23,194y24,188 }
-*06 = { y23,154y24,148 }
-*07 = { y23,134y24,128 }
+*04 = { y23,175y24,164 }
+*05 = { y23,195y24,184 }
+*06 = { y23,155y24,144 }
+*07 = { y23,135y24,124 }
 
-F y22,162y38,3 
+F y22,163y38,3 
 F y39,3 
 F y40,2 
 F *4 
-F v15 vs12 vm15 vh9 vc12
+F vb15 vs12 vm13 vh9 vc12
 F l16 
 
 F [0 
@@ -145,7 +146,7 @@ F ]
 *01 = { o8@1p0 }
 *02 = { o2@2p16 }}
 
-3 v11 k3 \-8
+3 v10 k3 \-8
 3 [0 l8 
 3 *1g+4[3 *0gr] [3 [4 *0gr]] 
 3 [4 [4 *0gr]] 
