@@ -16,24 +16,17 @@
       
 @v16={
      ;TL,FB
-      22, 7,
+      24, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
       12, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0,
       14, 4, 3, 6, 0, 2, 0, 0, 1, 0, 0}
 
 @v17={
      ;TL,FB
-      22, 7,
+      17, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
       12, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1,
-      13, 3, 3, 6, 0, 1, 0, 1, 1, 0, 0}
-
-@v18={
-     ;TL,FB
-      18, 7,
-     ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
-      12, 2, 1, 1, 0, 1, 0, 1, 0, 0, 1,
-      14, 2, 3, 6, 0, 1, 0, 1, 1, 0, 0}
+      13, 3, 3, 6, 0, 3, 0, 1, 1, 0, 0}
 
 @e00 = {3,2,C6=7.0=16}
 @e01 = {3,2,ED0=70}
@@ -57,18 +50,18 @@ D     @2
 19BD  h15,2,0,4
 19BD  [rq8d+q5ec<ag+a>c q8eq5gf+dfq8e4q5cq8]
 19BD  [rq8g+q5afdc+df q8aq5>c<bgb-q8a4q5fq8]
-9B    @17(
-D     @11
+9B    @17
+D     @3
 19BD  l4 ec<af ec<af ec<af l12eg+b>eg+b>eg+b>eg+b l8
 1     @12(
-9B    @18)<
-D     @9
+9B    @2<
+D     @13<
 19BD  dfdfag+rf dfag+fg+>c<b
 19BD  a>c<a>ced+rc< a>cgf+df>c<b<
 19BD  h35,2,1,1
 1     @10
 9B    @16q8)
-D     @2<
+D     @2
 19BD  >
 19BD  [ a2..a16b16 a2g2 a2g2& g1
 19BD  | f2..f16g16 f2d2 e1 g+1
@@ -85,7 +78,7 @@ C v10 r8 @\27
 AC   o5
 2    o4 
 AC   @10(
-2AC  h15,2,0,4
+2AC  h20,2,0,4
 2AC  [q8eq4ccccccc q8cq4dd+efq8g+4q4aq8]
 2AC  [q8aq4fffffff q8fq4gg+aa+>q8c+4q4dq8<]
 AC   @17)
@@ -121,10 +114,10 @@ E  [4 [8 a]]
 E  >[4 [8 d]]<
 ;E  a2.>e4 a2.r4 <aarraarr b4>e4g+4b4
 E  a2.>e4 a2.r4 <aarraarr g+4>d4f4g+4
-E  (
+E  (q5
 E  dfdfag+rf dfag+fg+>c<b
 E  a>c<a>ced+rc< a>cgf+df>c<b<
-E  )
+E  )q6
 E  )
 E  [ [4 ff<b>c] [4 eedd+] 
 E  | [4 ddcc+] [8 c] eeef+f+f+g+g+ 
