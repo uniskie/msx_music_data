@@ -19,14 +19,14 @@
       24, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
       12, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0,
-      14, 4, 3, 6, 0, 2, 0, 0, 1, 0, 0}
+      14, 4, 4, 6, 0, 2, 0, 0, 1, 0, 0}
 
 @v17={
      ;TL,FB
       17, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
       12, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1,
-      13, 3, 3, 6, 0, 3, 0, 1, 1, 0, 0}
+      13, 3, 3, 6, 0, 2, 0, 1, 1, 0, 0}
 
 @e00 = {3,2,C6=7.0=16}
 @e01 = {3,2,ED0=70}
@@ -53,21 +53,20 @@ D     @2
 9B    @17
 D     @3
 19BD  l4 ec<af ec<af ec<af l12eg+b>eg+b>eg+b>eg+b l8
-1     @12(
+1     @12
 9B    @2<
-D     @13<
+D     @12<
 19BD  dfdfag+rf dfag+fg+>c<b
 19BD  a>c<a>ced+rc< a>cgf+df>c<b<
 19BD  h35,2,1,1
 1     @10
-9B    @16q8)
+9B    @16q8
 D     @2
 19BD  >
 19BD  [ a2..a16b16 a2g2 a2g2& g1
 19BD  | f2..f16g16 f2d2 e1 g+1
 19BD  ] a2..a16b16 a2g2 a1 g+1
 1     <
-9B    (
 19BD ]
 
 ;* Strings ----------------------------
@@ -81,7 +80,7 @@ AC   @10(
 2AC  h20,2,0,4
 2AC  [q8eq4ccccccc q8cq4dd+efq8g+4q4aq8]
 2AC  [q8aq4fffffff q8fq4gg+aa+>q8c+4q4dq8<]
-AC   @17)
+AC   @17
 2AC  l4 afec <afec< afec< l12 b>dfg+b>dfg+b>dfg+ l8
 AC   @12
 AC   <[4 rrf_cf_c|rrf_cr]
