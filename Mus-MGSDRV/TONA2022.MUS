@@ -11,8 +11,8 @@
 #tempo 150
 #title {"Rudolph the Red-Nosed Reindeer"}
 
-@e0 = {1,0,fedc=3[b=3.c=3]}
-@e1 = {1,0,ffeeddc=4[d=3.c=3]}
+@e0 = {1,0,fedcb=3[b=3.c=3]}
+@e1 = {1,0,efedc=3[d=3.c=3]}
 
 1 v13@0 o4
 2 v10@0 o4 r4 @\3
@@ -33,7 +33,7 @@
 12 a3a6>c4<a4 g4e4g2
 12 f3a6g3f6 e1
 12 @1 d6d12e6e12g6g12a4 b6b12b6b12b2
-12 >c6c12c6c12<b6b12a4 @0 g4f8d8^2
+12 >c6c12c6c12<b6b12a4 g4f8d8^2 @0
 12 ]
 
 3 v13@0 o3
