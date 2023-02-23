@@ -6,6 +6,9 @@
 --
 MSXPLAYで聞く場合：
 
+ラスト/ハルマゲドン オープニング組曲
+[LASTAROP.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FLASTAROP.MUS)
+
 赤鼻のトナカイ Rudolph the Red-nosed Reindeer 2022
 [TONA2022.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FTONA2022.MUS)
  

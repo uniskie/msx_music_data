@@ -2,8 +2,12 @@ MGSDRV ver2/ver3で作成した曲データです。
 基本はPSG+OPLLで、
 曲によってSCCを使っていたりいなかったります。
 
+MSXPlayで作成・調整しました。
+
+一部のものは
 ver2環境が見つからなかったり、いじるのが面倒だったりで
-約20年前のデータそのままです。
+約20年前のデータそのままのものもあります。
+バランスがおかしい場合音量バランスを調節してみてください。
 
 BlueMSXでの音量は
 sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
@@ -15,6 +19,8 @@ sound.mixerChannel.MIXER_CHANNEL_SCC.volume=85
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=77
-だと思いますが、違うかもしれません。
+あたりだったと思います。
 
-MSXDOSのコマンドプロンプトからMGSELを実行すれば聞けます。
+MGSDRVデータは
+MSXDOSのコマンドプロンプトから
+MGSELまたはMGSP2で試聴できます。
