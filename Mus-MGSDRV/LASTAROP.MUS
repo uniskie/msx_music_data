@@ -13,7 +13,7 @@
 
 @v15 = { ; E-Guiter hard
 ;       TL FB
-         0, 5,
+         4, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   14, 1, 2, 1, 1, 1, 0, 0, 1, 0, 0,
   14, 1, 1, 7, 1, 3, 0, 0, 1, 0, 0 }
