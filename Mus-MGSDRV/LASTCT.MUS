@@ -1,0 +1,224 @@
+;[gain=1.0 name=LASTARCT duration=140s fade=5s cpu=0 lpf=0]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 1
+#tempo 150
+#title {"Last Armageddon -Command tower- | uniskie"}
+#alloc { 0=300, 1=600,2=500,3=500, 9=700,A=700,B=700,C=700,D=700,E=700, F=2500}
+
+@v15 = { ; E-Guiter hard
+;       TL FB
+         1, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  11, 6, 1, 1, 0, 9, 0, 0, 0, 0, 1,
+  14, 2, 2, 1, 0, 1, 0, 0, 0, 0, 1 }
+
+@v16 = { ; E-Guiter hi
+;       TL FB
+         5, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  12, 4, 1, 1, 0, 7, 0, 0, 0, 0, 1,
+  12, 2, 1, 1, 0, 1, 0, 0, 0, 0, 1 }
+  
+@e1 = {1,0,fedc:50 [b:3.a:3.9:3.a:3]0 }
+
+;==== main ====
+1  o3 v8 @1 k3
+9  o3 v13 @15    @\0
+A  o3 v12 @15 r8 @\12
+19A h38,3,1,3
+19A l16 q8
+19A [0
+19A  [aa>a<aa>g<aa>a<aa>e<a>de8<]3
+19A  aa>a<aa>g<aa>aaaar4<
+19A  [[aa>a<aa>g<aa>a<aa>e<a>de8<]4]2
+19A  [>cc>c<cc>c<c>c<dd>d<dd>d<d>d<<
+19A  |aa>>e<<aa>>e<<aa
+9A   @16
+19A                    >>edc<b>dc<ba<
+9A   @15
+19A  ]2
+19A   bb>>e<<bb>>e<<b>>eg+<ee>g+<ee>g+r
+19A  ;<<
+19A  r2
+9A   @16
+19A  ;>>
+19A  e8e8e8e8e8dc&c4
+19A  c8c8e4g2
+9A   @15
+19A  <[gddgddgd]2>
+9A   @16
+19A  f8.e8.c4.c8<b8>
+19A  e8e8e8e8e8dc&c4
+19A  c8c8e4g2
+9A   @15
+19A  <[gddgddgd]2>
+9A   @16
+19A  f8.e8.c4.c8<b8
+19A  a2.a8b8>
+19A  c2f8.e8.c8
+19A  <a2>f8.e8.c8
+19A  <<
+9A   @15
+19A ]
+
+B o2 v13 @15    @\4
+C o2 v12 @15 r8 @\16
+BC h38,3,1,3
+BC l16 q8
+BC [0 
+BC  [aa>a<aa>g<aa>a<aa>e<a>de8<]3
+BC  aa>a<aa>g<aa>aaaar4<
+BC  [[aa>a<aa>g<aa>a<aa>e<a>de8<]4]2
+BC  [>cc>c<cc>c<c>c<dd>d<dd>d<d>d<<
+BC  |aa>>e<<aa>>e<<aa  >>gfedfedc<<]2
+BC   bb>>e<<bb>>e<<b>>eg+<ee>g+<ee>g+r
+BC ;<<
+BC  r2
+BC ;>>
+BC  e8e8e8e8e8dc&c4
+BC  c8c8e4g2
+BC  <[gddgddgd]2>
+BC  f8.e8.c4.c8<b8>
+BC  e8e8e8e8e8dc&c4
+BC  c8c8e4g2
+BC  <[gddgddgd]2>
+BC  f8.e8.c4.c8<b8
+BC  a2.a8b8>
+BC  c2f8.e8.c8
+BC  <a2>f8.e8.c8
+BC  <<
+BC ]
+
+;==== base ====
+2 o2 v8 @1 q4 k4
+D o2 v13 @13 q2 so
+E o2 v10 @10 q1
+2DE l16
+2DE [0
+2DE  [a4r2.]3 a4r4aaaar4
+2DE  [r8ar8ar8ar8ara>de<]4
+2DE  [aaga>c<bgaaagab>cde<]4
+2DE  [>cr8cr8crdr8dr8dr
+2DE  |<ar8ar8arar8ar8ar]2
+2DE   <br8br8br>g+r8g+r8g+r
+2DE  r4.q8e_<a8
+2   q4
+D   q2
+E   q1
+2DE  [aaaa]4
+2DE  >[cccc]4<
+2DE  [gggg]4
+2DE  fffeeeaaaaaa>cc<bb
+2DE  [aaaa]4
+2DE  >[cccc]4<
+2DE  [gggg]4
+2DE  fffeeeaaaaaa>cc<bb
+2DE  [aaaa]4 
+2DE  >ccccccccfffeeecc
+2DE  <aaaaaaaa>fffeeecc<
+2DE ]
+
+;==== rhythm ====
+#macro_offset { b=0, s=20, t=21 }
+; b8,b16
+F y38,35 y22,106 ; bass-drum (y38,32+3 -> sustain on) 
+*08={y38,35y22,116 b64 y22,96b64 y22,76b64 y22,56r64 y22,36r64 y22,16r64 y22,0r32}
+*16={y38,35y22,116 hb64 y22,96b64 y22,76r64 y22,56r64 y22,36}
+; s8,s16
+F y39,3 y23,210 ; snare,hi-hut (y39,32+3 -> sustain on) 
+F y40,2 y24,156 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
+*28={y38,37y22,156 hsb64 y22,116b64 y22,76r64 y22,36b64 y38,36y22,255r64 y22,215r64 y22,175r64 y22,135r64 }
+*29={y38,37y22,156 sb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255h64 y22,215r64 y22,175r64 y22,135r64 }
+*36={y38,37y22,156 hsb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255}
+F v14 vh9 vs10 kf 
+*37={y38,37y22,156 sb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255}
+F v14 vh9 vs11 kf 
+
+F l16
+F [0
+F  [*b8h4h4h4h8]3 *b8h4h8[*t16]4r4
+F  [h16h16*b16h16h16*b16*s16h16*b16h16h16*b16h16h16*s16h16]4
+F  [*b16h16*s16h16]16
+F  [*b16h16h16*b16h16h16*s16h16]6
+F  *b16h16*s16*b16h16*s16*b16h16*s16*b16*b16*s16*b16*b16*s16h16
+F  r4.*t8
+F  [*b16h16*s16h16*b16h16*s16h16*b16h16*s16*b16h16*b16*s16h16]3
+F  *s16*b16*b16*s16*b16*b16*s16h16*b16[*s16]7
+F  [*b16h16*s16h16*b16h16*s16h16*b16h16*s16*b16h16*b16*s16h16]3
+F  *s16*b16*b16*s16 *b16*b16*s16h16*b16[*s16]7
+F  *b16h16*s16h16*b16h16*s16h16*b16h16*s16*b16h16*b16*s16h16
+F  [*b16h16*s16h16*b16h16*s16h16*s16*b16*b16*s16*b16*b16*s16h16]2 
+F ]
+
+@e4={3,31,*3.c.*1.86.0=20}
+@e5={2,0,*3f.*2.n2.edn4.cbn6.aan8.99n10.88n12.77n14.66n16.55n18.44n20.33n22.22n24.0=20}
+@e6={2,0,b750=6}
+3 v12 o3 p16 
+
+3 l16
+3 [0
+3  [@4c8@6a4@6a4@6a4@6a8]3 @4c8@6a4@6a8[@5f]4r4
+3  [@6a@6a@4c@6a@6a@4c@5f@6a@4c@6a@6a@4c@6a@6a@5f@6a]4
+3  [@4c@6a@5f@6a]16
+3  [@4c@6a@6a@4c@6a@6a@5f@6a]6
+3  @4c@6a@5f@4c@6a@5f@4c@6a@5f@4c@4c@5f@4c@4c@5f@6a
+3  r4.@5f8
+3  [@4c@6a@5f@6a@4c@6a@5f@6a@4c@6a@5f@4c@6a@4c@5f@6a]3
+3  @5f@4c@4c@5f@4c@4c@5f@6a@4c[@5f]7
+3  [@4c@6a@5f@6a@4c@6a@5f@6a@4c@6a@5f@4c@6a@4c@5f@6a]3
+3  @5f@4c@4c@5f @4c@4c@5f@6a@4c[@5f]7
+3  @4c@6a@5f@6a@4c@6a@5f@6a@4c@6a@5f@4c@6a@4c@5f@6a
+3  [@4c@6a@5f@6a@4c@6a@5f@6a@5f@4c@4c@5f@4c@4c@5f@6a]2 
+3 ]
+
+
+
+
+;H l8 v15 @3 q7 
+;H [0
+;H [r8h4h4h4h8]3 r8h4h8r2
+;H [[h16h16h16h16]4]4
+;H [[h16h16h16h16]4]4
+;H [[h16h16h16h16]4]4 
+;H r2
+;H [[h16h16h16h16]4]3
+;H [h16h16h16h16]16
+;H [h16h16h16h16]16 
+;
+;F l16
+;F [0
+;F  [b1]3 b2[s16]4r4
+;F  [r8b8.b16s8b8.b8.s8]4
+;F  [b8s8]16
+;F  [b8.b8.s8]6[b8s16]3
+;F  b16b16s16b16b16s8r4.s8
+;F  [b8s8b8s8b8s16b8b16s8]3
+;F  s16b16b16s16b16b16s8b16[s16]7
+;F  [b8s8b8s8b8s16b8b16s8]3
+;F  s16b16b16s16b16b16s8b16[s16]7
+;F  b8s8b8s8b8s16b8b16s8
+;F  [b8s8b8s8s16b16b16s16b16b16s8]2 
+;F ]
+;
+;F l16
+;F [0
+;F  [b8h4h4h4h8]3 b8h4h8[s16]4r4
+;F  [h16h16bh16h16h16bh16sh16h16bh16h16h16bh16h16h16sh16h16]4
+;F  [bh16h16sh16h16]16
+;F  [bh16h16h16bh16h16h16sh16h16]6
+;F  bh16h16sh16bh16h16sh16bh16h16sh16bh16bh16sh16bh16bh16sh16h16
+;F  r4.s8
+;F  [bh16h16sh16h16bh16h16sh16h16bh16h16sh16bh16h16bh16sh16h16]3
+;F  sh16bh16bh16sh16bh16bh16sh16h16bh16[sh16]7
+;F  [bh16h16sh16h16bh16h16sh16h16bh16h16sh16bh16h16bh16sh16h16]3
+;F  sh16bh16bh16sh16 bh16bh16sh16h16bh16[sh16]7
+;F  bh16h16sh16h16bh16h16sh16h16bh16h16sh16bh16h16bh16sh16h16
+;F  [bh16h16sh16h16bh16h16sh16h16sh16bh16bh16sh16bh16bh16sh16h16]2 
+;F ]
+
