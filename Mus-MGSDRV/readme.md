@@ -9,7 +9,6 @@ MSXPLAYで聞く場合：
 ラスト・ハルマゲドン 司令塔
 [LASTARCT.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FLASTARCT.MUS)
 
-
 ラスト・ハルマゲドン オープニング
 [LASTAROP.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FLASTAROP.MUS)
 
