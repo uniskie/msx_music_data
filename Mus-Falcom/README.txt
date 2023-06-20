@@ -9,6 +9,7 @@ TOWER OF THE SHADOW OF DEATH/Ys1/Copyright(C) Nihon Falcom Corporation
 COMPANILE OF LANE/Ys2/Copyright(C) Nihon Falcom Corporation
 PALACE OF SALMON/Ys2/Copyright(C) Nihon Falcom Corporation
 TO MAKE THE END OF BATTLE/Ys2/Copyright(C) Nihon Falcom Corporation
+Ending1/Sorserian/Copyright(C) Nihon Falcom Corporation
 
 ---------------------------------------
 ※ご注意
@@ -23,13 +24,55 @@ Bluemsx.iniをテキストエディタで開いて各種音量設定を反映し
 SCCとPSGのバランスも、FM音源のバランスも実機とは異なると思います。
 
 ---------------------------------------
-ファルコム曲のMuSICAデータ
+Falcom曲のMuSICAデータ
+（ソーサリアンエンディング以外）
 ---------------------------------------
 YS*.* やvoice*.vcdファイル。
 
 MSD（MMLテキスト）
 VCD（音色バイナリ）
 BGM（演奏データ）ファイルのセット。
+
+YS1BEAT'.BGM
+YS1BEAT0.BGM
+YS1BEAT0.MSD
+YS1BEATO.BGM
+YS1BEATO.MSD
+YS1FINA2.BGM
+YS1FINAL.BGM
+YS1FINAL.MSD
+YS1FIRST.BGM
+YS1FIRST.MSD
+YS1FIRST.VCD
+YS1PODE'.BGM
+YS1POFDE.BGM
+YS1POFDE.MSD
+YS1TOWER.BGM
+YS2LANE'.BGM
+YS2LANE.BGM
+YS2LANE.MSD
+YS2LANE0.BGM
+YS2LANE0.MSD
+YS2SAL.BGM
+YS2SALM2.BGM
+YS2SALMO.BGM
+YS2SALMO.MSD
+YS2TOMA1.BGM
+YS2TOMA1.MSD
+YS2TOMAB.BGM
+YS2TOMAB.MSD
+YS2TOMAF.MSD
+YS2TOMAK.ASC
+YS2TOMAK.BGM
+YS2TOMAK.MSD
+YS2TOMAK.VCD
+SO-12-2'.BGM
+SO-12-2.BGM
+SO-12-2.MSD
+SO-12-2.VCD
+SO-END1.BGM
+SO-END1.MSD
+SO-END1.VCD
 
 BlueMSXでの音量は
 sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
@@ -42,6 +85,8 @@ sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=77
 です。
+
+一部、OpenMSXのデフォルトに合わせたデータも混じっているかもしれません。
 
 ---------------------------------------
 OMAKE
@@ -79,4 +124,7 @@ sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
 です。
 
+この曲は特に問題児で、
+音量バランスが異なる場合は良い感じに演奏できません。
 
+SCCの波形側で音量を下げる必要があるらしいですね……
