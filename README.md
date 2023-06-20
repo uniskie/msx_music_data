@@ -24,7 +24,7 @@ Ending1/Sorserian/Copyright(C) Nihon Falcom Corporation
 
 # 演奏方法
 
-## MDPlayer (MGSDRV/MuSICA)(Windows/Macintosh/Unix)
+## MDPlayer (MGSDRV/MuSICA)(Windows)
 
 https://github.com/kuma4649/MDPlayer/releases
 
@@ -36,7 +36,7 @@ MixerでSCC/PSG/OPLLの音量バランスも変更可能です。
 ただしOPLLリズム音や音量変更時の聞こえ方は実機やエミュレータに比べて癖があるようです。
 （OPLLリズム音が大きめな傾向あり）
 
-## MSXPlay (MGSDRV)(Windows)
+## MSXPlay (MGSDRV)(Windows/Macintosh/Unix)
 
 https://msxplay.com/editor.html
 
