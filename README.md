@@ -24,7 +24,7 @@ Ending1/Sorserian/Copyright(C) Nihon Falcom Corporation
 
 # 演奏方法
 
-## MDPlayer (MGSDRV/MuSICA)(Windows)
+## MDPlayer (MGSDRV/MuSICA)(Windows/Macintosh/Unix)
 
 https://github.com/kuma4649/MDPlayer/releases
 
