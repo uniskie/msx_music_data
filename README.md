@@ -19,3 +19,13 @@ COMPANILE OF LANE/Ys2/Copyright© Nihon Falcom Corporation
 PALACE OF SALMON/Ys2/Copyright© Nihon Falcom Corporation
 
 TO MAKE THE END OF BATTLE/Ys2/Copyright© Nihon Falcom Corporation
+
+Ending1/Sorserian/Copyright(C) Nihon Falcom Corporation
+
+# 演奏方法
+
+Windowsの場合、一番手軽なのはMDPlayerで聞く方法かもしれません。
+https://github.com/kuma4649/MDPlayer/releases
+
+MGSDRV、MuSICA互換(勤労5号)に対応していますし、
+MixerでSCC/PSG/OPLLの音量バランスも変更可能です。
