@@ -36,7 +36,7 @@ MixerでSCC/PSG/OPLLの音量バランスも変更可能です。
 ただしOPLLリズム音や音量変更時の聞こえ方は実機やエミュレータに比べて癖があるようです。
 （OPLLリズム音が大きめな傾向あり）
 
-## MSXPLay (MGSDRV)(Windows)
+## MSXPlay (MGSDRV)(Windows/Macintosh/Unix)
 
 https://msxplay.com/editor.html
 
