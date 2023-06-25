@@ -17,8 +17,9 @@ disk image: https://github.com/uniskie/msx_music_data/blob/master/DSK_image/musi
 ※ご注意
 ---------------------------------------
 
-BlueMSXで作成・演奏・調整しています。
+BlueMSXで作成・演奏・調整していたものが含まれます。
 音量は実機に合わせていませんので、実機での演奏については保証外です。
+該当データについては
 Bluemsx.iniをテキストエディタで開いて各種音量設定を反映してから聞いてみてください。
 （※その際、書き換え前のbluemsx.iniのバックアップをしておくと良いと思います。）
 
@@ -27,7 +28,6 @@ SCCとPSGのバランスも、FM音源のバランスも実機とは異なると
 
 ---------------------------------------
 Falcom曲のMuSICAデータ
-（ソーサリアンエンディング以外）
 ---------------------------------------
 YS*.* やvoice*.vcdファイル。
 
@@ -72,9 +72,6 @@ SO-12-2'.BGM
 SO-12-2.BGM
 SO-12-2.MSD
 SO-12-2.VCD
-SO-END1.BGM
-SO-END1.MSD
-SO-END1.VCD
 
 BlueMSXでの音量は
 sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
@@ -130,3 +127,5 @@ sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
 音量バランスが異なる場合は良い感じに演奏できません。
 
 SCCの波形側で音量を下げる必要があるらしいですね……
+
+ここに記載した物以外はOpenMSXのデフォルト設定を使用しています。
