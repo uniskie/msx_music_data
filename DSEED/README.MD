@@ -1,6 +1,8 @@
 ﻿## namco "DANGEROUS SEED for MEGADRIVE" BGM PLAYER
  ![](/img/DSEED%200002.png)
 
+[MSX DISK Image](https://github.com/uniskie/msx_music_data/blob/master/DSK_image/DSEED.dsk)
+
 ```RUN"AUTOEXEC.BAS"```
 ( install DM-SYSTEM2 -> run```DSEED.DS2```)
 
