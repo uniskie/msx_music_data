@@ -110,3 +110,6 @@ FMPACの高音域フィルタ（コンデンサのC12/C13）を外した状態�
 PSG/SCCにも影響してしまいますが高音域フィルタ(LPF)が使用できます。
 LPFを使用すると実機に近い音色が出せます。
 
+# その他
+
+MuSICA ドキュメント関連： https://github.com/uniskie/MSX_DOCUMENTS
