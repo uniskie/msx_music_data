@@ -11,6 +11,8 @@ PALACE OF SALMON/Ys2/Copyright(C) Nihon Falcom Corporation
 TO MAKE THE END OF BATTLE/Ys2/Copyright(C) Nihon Falcom Corporation
 Ending1/Sorserian/Copyright(C) Nihon Falcom Corporation
 
+disk image: https://github.com/uniskie/msx_music_data/blob/master/DSK_image/musica%20-%20falcom.dsk
+
 ---------------------------------------
 ※ご注意
 ---------------------------------------
