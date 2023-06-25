@@ -10,11 +10,11 @@ FM3 =;t,m2,b0,21,b1,22,b2,b3,21,b1,22,b2,b3,24,b4,20,b0,21,b1,22,b2,b5
 FM4 =;t,m3,c0,   c1,   c2,c3,   c1,   c2,c3,34,c4,35,c0,   c1,   c2,c5
 FM5 =;t,m4,c0,   c1,   c2,c3,   c1,   c2,c3,34,c4,35,c0,   c1,   c2,c5
 FM6 =;t,m5,d0,51,d1,52,d2,d3,51,d1,52,d2,d3,51,d4,50,d0,51,d1,52,d2,d5
-FMR =
+FMR =                                                            
 FM7 =;t,m6,d0,51,e1,52,e2,e3,51,e1,52,e2,e3,51,e4,50,d0,51,e1,52,e2,e5
 FM8 =;t,m7,f0,71,d1,72,e2,d3,71,d1,72,e2,f3,71,f4,70,f0,71,d1,72,d2,d5
 FM9 =;t,m8,a0,   a1,82,a2,a3,80,a1,82,a2,a3,84,a4,80,a0,   a1,82,a2,a5
-PSG1=t,p0,a0,   a1,x2,a2,g3,x0,a1,x2,a2,g3,   a4,x0,a0,   a1,x2,a2,a5
+PSG1=t,p0,a0,   a1,x2,a2,g3,x0,a1,x2,a2,g3,x4,a4,x0,a0,   a1,x2,a2,a5
 PSG2=t,p1,c0,   c1,   c2,c3,   c1,   c2,c3,   c4,   c0,   c1,   c2,c5
 PSG3=t,p3,b0,   b1,y2,h2,h3,y0,b1,y2,h2,h3,   h4,y0,b0,   b1,y2,h2,b5
 SCC1=
@@ -30,12 +30,12 @@ t=t83 m6
 m0=o6@77v15q7s1
 m1=o6@77v12q7s1 z16 r16
 m8=o5@77v14q7s1
-p0=o5@15v9q4
+p0=o5@15v9q5
 
 00=@77v15i
 10=@77v12i
 80=@77v14iz0
-x0=@15
+x0=@15v9i
 a0=l8<fcfcfcfc gcgcgcgc fcfcfcfc gcgcg2>
 a1=e2f.e.<b>           d4.c16<b16>c4c<b
    a2rgce              e4.f16e16d2
@@ -50,9 +50,10 @@ a2=a2b>c16d<b(g16      )g2ab-16ae(f16  )f4.edagf
    eddcc<b>cd<
 a3=>d4.(cc2 )c2.r4<
 g3=>d4.(cc2 v8c8v7c8v6c8v5)c8r2<v9
-04=@48v11m6i46
-14=@48v09m6i46
-84=@79v12m6i46z16
+04=@79v13
+14=@03v13i32
+84=@79v13
+x4=@09v8i32
 a4=<
    (b2)bab>c<       b4.a(a2
    )a4b4>c4<b4      a4bg2r
@@ -64,17 +65,18 @@ a5=>d4.(c)c2<
    ef16(g.)g2r
    a2b>c16d<b(g16   )g4>
    t78 c4
-   t76 e4
-   t71 re  
+   t73 e4
+   t68 re  
    t63 eddc
-   t55 c<b>cd
-   t47 c2c4.r8<
-   t40 q8 <e2.r4> r1
+   t58 c<b>cd
+   t53 c2
+   t48 c4.r8<
+   t43 q8 <e2.r4> r1
 
 ;***** PART 1
 
 m2=o5@77v14q7s1
-p3=o4@15v7q4z2
+p3=o4@15v7q5z2
 
 20=@77v14
 y0=@15
@@ -126,18 +128,19 @@ b5=f4.(e8)e2
    afcfafcf bgdgbgdg
    gece
    t78 gece
-   t76 a4
-   t71 l8 ra>
+   t73 a4
+   t68 l8 ra>
    t63 c<bba
-   t55 agab< 
-   t47 a-2b-4.r8
-   t40 q8 b2.r4> r1
+   t58 agab< 
+   t53 a-2
+   t48 b-4.r8
+   t43 q8 b2.r4> r1
 
 ;***** PART 2
 
 m3=o3@06v11q6s1
 m4=o3@24v10q6s1z13
-p1=o2@13v7q6z1
+p1=o2@13v7q5z4
 
 c0=l4c2..<g8> c2..<g8> c2..<g8> c1
 c1=>c2<b2 a2g2 f2e2 d2g2>
@@ -156,12 +159,13 @@ c5=>ccde<
    cccc
    <ffgg> c<
    t78 b
-   t76 a
-   t71 g
+   t73 a
+   t68 g
    t63 ff
-   t55 gg
-   t47 a-2b-4.r8
-   t40 q8 >c2.r4 r1
+   t58 gg
+   t53 a-2
+   t48 b-4.r8
+   t43 q8 >c2.r4 r1
 
 ;***** PART 3
 
@@ -174,8 +178,8 @@ d0=l4cccc cccc cccc ccc2
 71=@16v08
 d1=l8>c2<b2 a2g4ag f2re<g>c c4.d16c16<b2>
    c2ddbg (a2)ag4. f2aa16ag. g1
-52=v11
-72=v09
+52=@16v11
+72=@16v09
 d2=l4ffgg eeee dddd
    (e4)e16c16e16g16>c8<b-8a8g8 
    l4ffgg eg>c<b aagg
@@ -188,19 +192,21 @@ d4=@04q4z9 l8>
    (v07dv08dv09dv10dv11dv10dv09dv08)d 
    (v07cv08cv09cv10cv11cv10cv09cv08)c 
    (v07fv08fv09fv10fv11fv10fv09fv08)f 
-   (v07gv08gv09gv10gv11g2 g4v10gv09gv08gv07)gr4
+   (v06gv07gv08gv09gv10g2 g4v09gv08gv07gv06)gr4
    z0v11@16q6<
-d5=l4 fefg>@10
+d5=l4 fefg
+   >@78
    ffgg eeee dddd
    eeee
    ffgg e
    t78 g
-   t76 >(c
-   t71 )c<
+   t73 >(c
+   t68 )c<
    t63 aa
-   t55 gg
-   t47 f2f4.r8
-   t40 q8 e2.r4 r1<
+   t58 gg
+   t53 f2
+   t48 f4.r8
+   t43 q8 e2.r4 r1<
           ;r12(e6)e4r4 r1<
 
 ;***** PART 4
@@ -221,19 +227,21 @@ e4=z0@04q4 l8>
    (v07dv08dv09dv10dv11dv10dv09dv08)d
    (v07cv08cv09cv10cv11cv10cv09cv08)c
    (v07fv08fv09fv10fv11fv10fv09fv08)f
-   (v07gv08gv09gv10gv11g2 g4v10gv09gv08gv07)gr4
+   (v06gv07gv08gv09gv10g2 g4v09gv08gv07gv06)gr4
    v11@16q4z3<
-e5=l4ccde>@10
+e5=l4ccde
+   >@78
    ccdd ccc+c+ <aabb>
    cccc
    ccdd c
    t78 e
-   t76 (a
-   t71 )a
+   t73 (a
+   t68 )a
    t63 ff
-   t55 dd
-   t47 <g2g2
-   t40 q8 g2.r4 r1<
+   t58 dd
+   t53 <g2
+   t48 g2
+   t43 q8 g2.r4 r1<
           ;r24(g12)g2r4 r1<
 
 ;***** PART 5
@@ -252,7 +260,7 @@ f4=z0@04q4 l8>
    (v07av08av09av10av11av10av09av08)a
    >
    (v07cv08cv09cv10cv11cv10cv09cv08)c
-   (v07dv08dv09dv10dv11d2 d4v10dv09dv08dv07)dr4
+   (v06dv07dv08dv09dv10d2 d4v09dv08dv07dv06)dr4
    v10@77q6z6<
    r16
 
