@@ -1,17 +1,17 @@
 ---------------------------------------
-��������
+※ご注意
 ---------------------------------------
 
-BlueMSX�ō쐬�E���t�E�������Ă��܂��B
-���ʂ͎��@�ɍ��킹�Ă��܂���̂ŁA���@�ł̉��t�ɂ��Ă͕ۏ؊O�ł��B
-Bluemsx.ini���e�L�X�g�G�f�B�^�ŊJ���Ċe�퉹�ʐݒ�𔽉f���Ă��畷���Ă݂Ă��������B
-�i�����̍ہA���������O��bluemsx.ini�̃o�b�N�A�b�v�����Ă����Ɨǂ��Ǝv���܂��B�j
+BlueMSXで作成・演奏・調整しています。
+音量は実機に合わせていませんので、実機での演奏については保証外です。
+Bluemsx.iniをテキストエディタで開いて各種音量設定を反映してから聞いてみてください。
+（※その際、書き換え前のbluemsx.iniのバックアップをしておくと良いと思います。）
 
-���X�A�@��ȍ~�ɂƂ��Ȃ��C���r���ŉ��ʃo�����X�����󂵂Ă��܂����f�[�^��
-�����BlueMSX��Œ�����悤�ɉ��ʑ���M�邱�ƂŖ炵�����̂Ȃ̂ŁA
-SCC��PSG�̃o�����X���AFM�����̃o�����X�����@�Ƃ͑傫���قȂ�Ǝv���܂��B
+元々、機種以降にともなう修正途中で音量バランスが崩壊してしまったデータで
+それをBlueMSX上で聴けるように音量側を弄ることで鳴らしたものなので、
+SCCとPSGのバランスも、FM音源のバランスも実機とは大きく異なると思います。
 
-BlueMSX�ł̉��ʂ�
+BlueMSXでの音量は
 sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
 sound.mixerChannel.MIXER_CHANNEL_PSG.pan=50
 sound.mixerChannel.MIXER_CHANNEL_PSG.volume=66
@@ -21,6 +21,9 @@ sound.mixerChannel.MIXER_CHANNEL_SCC.volume=66
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
 sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
-�ł��B
+です。
 
-�� �����̃t�@���R���n�f�[�^�Ƃ͈قȂ�܂��B
+※ 自分のファルコム系データとは異なります。
+
+dskイメージ：
+https://github.com/uniskie/msx_music_data/blob/master/DSK_image/mus-gra2.dsk
