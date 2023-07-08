@@ -27,3 +27,13 @@ sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
 
 dskイメージ：
 https://github.com/uniskie/msx_music_data/blob/master/DSK_image/mus-gra2.dsk
+
+
+
+★MuSICA とは
+  MuSICAはアスキーMSXマガジンがDante（MSX2用RPGツクールの前身）向けにBGM作成ツールです。
+Danteで原型が作られ、Dante2の時にMuSICAとして独立して頒布されました。
+
+  高機能なマクロなどはありませんが、繰り返し回数指定付きシーケンスブロックを使用した省メモリ設計。
+エディタ環境からワンボタンで手軽に再生・早送りなどが出来ます。
+当時は唯一SCCを鳴らすことが出来る音楽制作ソフトでした。
