@@ -105,27 +105,4 @@ vanila.bas : MSX スクリーンモード2で画像＋PSG版BGM再生
 
 音量はファルコム曲と同じ
 
----------------------------------------
-OMAKE
-DragonSaber Stage1 『水没都市』
----------------------------------------
-
-SUIBOTU1、SUIBOTUはファルコム系と音量バランスが異なります。
-BlueMSXでの音量は
-sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_PSG.pan=50
-sound.mixerChannel.MIXER_CHANNEL_PSG.volume=66
-sound.mixerChannel.MIXER_CHANNEL_SCC.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_SCC.pan=50
-sound.mixerChannel.MIXER_CHANNEL_SCC.volume=66
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
-です。
-
-この曲は特に問題児で、
-音量バランスが異なる場合は良い感じに演奏できません。
-
-SCCの波形側で音量を下げる必要があるらしいですね……
-
 ここに記載した物以外はOpenMSXのデフォルト設定を使用しています。
