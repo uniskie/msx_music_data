@@ -1,4 +1,4 @@
-# reformat_mml_for_mgsdrv .jsee
+# reformat_mml_for_mgsdrv.jsee
 
 emEditor用 javascriptマクロです。
 
