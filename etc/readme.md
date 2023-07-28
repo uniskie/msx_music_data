@@ -1,55 +1,53 @@
-# MML���` for MGSDRV
+# MML整形 for MGSDRV
 
 ## File
 
-- sakura editor�p javascript�}�N��  
+- sakura editor用 javascriptマクロ  
   [reformat_mml_for_mgsdrv.js](SakuraEditor/reformat_mml_for_mgsdrv.js)
 
-- emEditor�p javascript�}�N��  
+- emEditor用 javascriptマクロ  
   [reformat_mml_for_mgsdrv.jsee](emEditor/reformat_mml_for_mgsdrv.jsee)
 
-## �@�\
+## 機能
 
-- �I�������͈͂�MML�𐮌`���܂��B
-- �I�����Ă��Ȃ��ꍇ�̓J�[�\���s��I�����Đ��`���܂��B
-- 4���������ɋ󔒂�}�����܂�
-- �w�肵��1���߂̒����ŉ��s���܂��B
+- 選択した範囲のMMLを整形します。
+- 選択していない場合はカーソル行を選択して整形します。
+- 4分音符毎に空白を挿入します
+- 指定した1小節の長さで改行します。
 
-## �w��
+## 指定
 
-- '1���߂̒����́H'  
-  �����l 4/4  
-  �y���ɂ悭����w����@�ł��B  
-  8/4�Ȃ�4��������8��  
-  6/8�Ȃ�8��������6��
+- '1小節の長さは？'  
+  初期値 4/4  
+  楽譜によくある指定方法です。  
+  8/4なら4分音符が8個  
+  6/8なら8分音符が6個
 
-- '�ȗ����̉����́H'  
-  �����l 8  
-  MML�̃m�[�g�R�}���h(cdefgab)�ŉ��ʏȗ����̒����B  
-  ���`�Ώۂ̕����񒆂�L�R�}���h�������Ƃ��ɗL���ł��B
+- '省略時の音長は？'  
+  初期値 8  
+  MMLのノートコマンド(cdefgab)で音量省略時の長さ。  
+  整形対象の文字列中にLコマンドが無いときに有効です。
 
-- '�w�b�_����H(1=����j'  
-  �����l 1  
-  MGSDRV�̏������ǂ������w�肵�܂��B  
-  (�s�̐擪�Ƀ`�����l�����w�肷��`���j  
-  ��) A @0v10ceged
-
-
-�����p�Ȃ̂ŌJ��Ԃ��Ȃǂ͔F�����܂���B
+- 'ヘッダあり？(1=あり）'  
+  初期値 1  
+  MGSDRVの書式かどうかを指定します。  
+  (行の先頭にチャンネルを指定する形式）  
+  例) A @0v10ceged
 
 
-# MML�I�N�^�[�u����
+
+# MMLオクターブ検査
 
 ## File
 
-- emEditor�p javascript�}�N��  
+- emEditor用 javascriptマクロ  
   [octave_test.jsee](emEditor/octave_test.jsee)
 
-## �@�\
+## 機能
 
-�I��͈͂̃I�N�^�[�u�ړ��L��<>�̐��𐔂��A
-�ŏI�I�Ƀv���X���}�C�i�X�ł���΂��̍�����\�����܂��B
+選択範囲のオクターブ移動記号<>の数を数え、
+最終的にプラスかマイナスであればその差分を表示します。
 
-�b��ō�������߁A���[�v�R�}���h��F�����܂���B
+暫定で作ったため、ループコマンドを認識しません。
 
-sakuraEditor�p�̂͂��̂����C����������c
+sakuraEditor用のはそのうち気が向いたら…
