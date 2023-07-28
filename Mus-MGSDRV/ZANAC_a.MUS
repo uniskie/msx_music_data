@@ -12,20 +12,20 @@
 
 @v15 = { ; clarinet
 ;       TL FB
-         8, 7,
+         9, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 8, 2, 1, 2, 3, 0, 0, 0, 0, 1,
+  14, 8, 2, 1, 2, 3, 0, 0, 0, 0, 1,
   12, 7, 2, 4, 0, 1, 1, 0, 1, 0, 0 }
 
 @v16 = { ; Brass
 ;       TL FB
-        13, 7,
+        15, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
   10, 4, 2, 1, 2, 1, 0, 0, 0, 0, 0,
   12, 7, 1, 5, 0, 1, 0, 0, 1, 0, 0 }
 
-9 o5 v15 @16 q6
-A o5 v13 @16 q6 r16 @\10
+9 o5 v14 @16 q6
+A o5 v13 @16 q6 r16 @\6
 9A l16 [0 [2
 9A  a<a>e<a> c+<a>d<a> a<a>e<a> c+dea
 9A  b<a>>c+<<a>> d<<a>b<a>> c+<<a>a<a> e<a>c+<a>
@@ -39,11 +39,11 @@ A o5 v13 @16 q6 r16 @\10
 
 B o5 @16
 B l16 [0
-B  v15 [16 >>f+_<<f+>>f+_<<f+ v-1 ]
+B  v14 [16 >>f+_<<f+>>f+_<<f+ v-1 ]
 B ]
 
-C @16 v13 o3
-D @13 v12 o3 @\8
+C @13 v12 o3
+D @16 v11 o3 @\18
 CD l16 [0 [2
 CD  [2 aaaa >aa<aa aaaa >aaa<a ]
 CD  [2 eeee >ee<ee eeee >eee<e ]

@@ -12,7 +12,7 @@
 
 @v16 = { ; electric guiter
 ;       TL FB
-         3, 5,
+         2, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
    9, 0, 0, 4, 2, 1, 0, 0, 0, 0, 0,
   10, 4,15, 5, 0, 3, 0, 0, 0, 0, 0 }
@@ -26,10 +26,10 @@
 
 @v17 = { ; electric brass
 ;       TL FB
-        26, 7,
+        22, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   8, 4, 1, 1, 0, 1, 0, 0, 0, 0, 0,
-  12, 7, 0, 4, 0, 1, 0, 0, 1, 0, 0 }
+   7, 2, 1, 1, 0, 1, 0, 0, 1, 0, 1,
+  14, 7, 0, 6, 0, 1, 1, 0, 1, 0, 0 }
 
 123F9ABCDE [0
 
@@ -84,12 +84,13 @@ F BC8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S:S:BH8
 @e3={1,0,defe:30[d:3.e:3]0}
 
 ;--- Melody #0 ---
-9 @16v12o5 hf 
-E @16v8 o5 r8 hf @\60 
+9 @16 v12o5 hf 
+E @16 v9 o5 r8 hf @\12
 9E l16
 9E gggar<gggar8>>cccdr gggar<gggar8ccc
 9 dr @17 v+2 
 E    @17 v+4 r8 @\30 
+9E h40,2,1,1
 9E d2a2 g4f4e4f4
 9E h60,0,4,3
 9E e4.d8d1 &d2
@@ -115,7 +116,7 @@ E d2..
 2 a+1 >c1 <a+1 >c1 d1 &d1 
 
 ;--- Melody #4 ---
-1 v10 o4 hf k5 @\4
+1 v10 o4 hf k5 @\8
 1 l16 
 1 r1 r1 
 1 @2 
@@ -129,8 +130,8 @@ E d2..
 
 ;--- Melody #2 ---
 ;@e14={1,0,@10fe@13f}
-B v11@13o2
-D v11@10o2 q1
+B v11 @13 o2
+D v11 @14 o2 q1
 BD l16r1 r1
 BD dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defd
 BD a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+ <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+>cd<a+
@@ -140,9 +141,9 @@ BD cr>cc<cr>cc<cr>cc<cdec <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+
 BD cr>cc<cr>cc<cr>cc<cdec <dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defa
 
 ;--- Melody #1 ---
-A l16@16@e0v12o4 hf 
+A l16 @16 @e0 v12 o4 hf 
 A ddder<ddder8>>cccdr ddder<ddder8cccdr> 
-A @10@e1 
+A @10 @e1 
 A rcdrcrdrfrdrdrcd rcdrcrdrargrfg8. 
 A rcdrcrdrfrdrdrcd rcdrcrdrargrfg8. 
 A rcdrcrdrfrdrdrcd rcdrcrdrargrfg8. 
@@ -154,10 +155,10 @@ A argrfgrfrfdrcrdr
 A q8sf 
 
 ;--- Melody #3 ---
-C v12o4 hf 
+C v12 o4 hf 
 C l16 
 C r1 r1 
-C @10@e1 
+C @10 @e1 
 C rgargrar>cr<ararga rgargrar>drcr<a+>c8.< 
 C rgargrar>cr<ararga rgargrar>drcr<a+>c8.< 
 C rgargrar>cr<ararga rgargrar>drcr<a+>c8.< 
