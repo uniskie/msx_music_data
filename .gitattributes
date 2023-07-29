@@ -1,3 +1,5 @@
+*.js		text=auto
+*.jsee		text=auto
 *.bas		diff=sjis encoding=sjis eol=CRLF
 *.asm		diff=sjis encoding=sjis eol=CRLF
 *.asf		diff=sjis encoding=sjis eol=CRLF
