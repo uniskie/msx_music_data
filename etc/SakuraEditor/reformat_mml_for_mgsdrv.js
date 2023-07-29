@@ -676,7 +676,9 @@ function proc()
 			if (lh)	// 行頭開始なら行ヘッダから開始
 			{
 				result = result + line_header;
-				for (var idi = 0; idi < l_indent; ++idi)
+				var idi = 0
+				if (c=='|') idi = 1;
+				for (; idi < l_indent; ++idi)
 				{
 					result = result + ' ';
 				}
