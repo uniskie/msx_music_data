@@ -66,6 +66,10 @@ var L1 = 96 * 4;
 var L4 = L1 / 4;
 
 //==================================
+// out:	[0] 最終位置 ( charAt用 )
+//		[1] 数値
+//		[2] ピリオドの数
+//		エラー時は [0]が-1
 function getDigits(s, si, isNote)
 {
 	var d = -1;
@@ -80,7 +84,6 @@ function getDigits(s, si, isNote)
 		var c = s.charAt(i);
 		if ((c==' ') || (c=='\t'))
 		{
-			skip_i = i;
 			continue;
 		}
 		else
@@ -144,22 +147,18 @@ function getDigits(s, si, isNote)
 		//alert(dg);
 		d = parseInt(dg);
 	}
-	return [d, skip_i, period];
+	return [skip_i, d, period];
 }
 
 //==================================
 function LoopData()
 {
 	// ループ回数
-	this.cont = -1;
+	this.loop_count = -1;
 	
 	// 時間
 	this.time = 0;
 	this.interrupt = 0;
-
-	// オクターブ変化
-	this.oct_total = 0;
-	this.oct_interrupt = 0;
 }
 
 //==================================
@@ -353,18 +352,21 @@ function proc()
 				loopData = new LoopData();
 
 				var r = getDigits(s, i + 1, false);
-				if (r[1] < 0)
+				if (-1 < r[0])
 				{
-					loopData.count = 2;	// 省略時2
+					skip_i = r[0];
+				}
+				if (-1 < r[1])
+				{
+					loopData.loop_count = r[1];
 				}
 				else
 				{
-					loopData.count = r[0];
-					skip_i = r[1];
+					loopData.loop_count = 2;	// 省略時2
 				}
-
+				
 				// 無限ループの始まり
-				if (loopData.count == 0)
+				if (loopData.loop_count == 0)
 				{
 					// 改行してから出力
 					if (!lh)
@@ -382,7 +384,7 @@ function proc()
 			}
 			case '|':	// 最終ループ脱出
 			{
-				if (-1 < loopData.count)
+				if (-1 < loopData.loop_count)
 				{
 					loopData.interrupt = loopData.time;
 				}
@@ -394,31 +396,31 @@ function proc()
 			}
 			case ']':	// ループ終了
 			{
-				if (-1 < loopData.count)
+				if (-1 < loopData.loop_count)
 				{
 					var r = getDigits(s, i + 1, false);
-					if (r[1] < 0)
+					if (-1 < r[0])
 					{
+						skip_i = r[0];
 					}
-					else
+					if (-1 < r[1])
 					{
-						loopData.count = r[0];
-						skip_i = r[1];
+						loopData.loop_count = r[1];
 					}
 
 					// 無限ループ以外ならループ処理
-					if (0 < loopData.count)
+					if (0 < loopData.loop_count)
 					{
 						// ループ中の長さ計算
 						// ループ1回目はすでに反映済みなので2周目以降を加算
-						var loopTime = loopData.time * (loopData.count - 1);
+						var loopTime = loopData.time * (loopData.loop_count - 1);
 						if (loopData.interrupt)
 						{
 							// |指定：最終カウントで中断する場合
 							loopTime -= loopData.time - loopData.interrupt;
 						}
 
-						//alert("loop count:" + loopData.count);
+						//alert("loop loop_count:" + loopData.loop_count);
 						//alert("loop time:" + loopData.time);
 						//alert("loop interrupt:" + loopData.interrupt);
 						//alert(loopTime);
@@ -441,7 +443,7 @@ function proc()
 					}
 					
 					// 無限ループの終わり
-					if (loopData.count == 0)
+					if (loopData.loop_count == 0)
 					{
 						// 改行してから出力
 						if (!lh)
@@ -565,12 +567,11 @@ function proc()
 				if (0 < j)
 				{
 					var r = getDigits(s, j, false);
-					if (r[1] < 0)
+					if (-1 < r[0])
 					{
-						break;
+						skip_i = r[0];
 					}
-					//var d = r[0];
-					skip_i = r[1];
+					//var d = r[1];
 				}
 				break;
 			}
@@ -579,12 +580,12 @@ function proc()
 			case 'l':
 			{
 				var r = getDigits(s, i + 1, false);
-				if (r[1] < 0) 
+				if (r[0] < 0) 
 				{
 					break;
 				}
-				var d = r[0];
-				skip_i = r[1];
+				skip_i = r[0];
+				var d = r[1];
 				if (d >= 0)
 				{
 					defaultL = d;
@@ -612,13 +613,12 @@ function proc()
 			case 'r':
 			{
 				var r = getDigits(s, i + 1, true);
-				if (r[1] < 0)
+				var d = r[1];
+				var period = r[2];
+				if (-1 < r[0])
 				{
-				 break;
+					skip_i = r[0];
 				}
-				var d = r[0];
-				skip_i = r[1];
-				period = r[2];
 				if (d < 0)
 				{
 					d = defaultL;
@@ -660,7 +660,7 @@ function proc()
 				}
 				
 				// ループ中処理
-				if (-1 < loopData.count)
+				if (-1 < loopData.loop_count)
 				{
 					loopData.time += ll;
 				}
