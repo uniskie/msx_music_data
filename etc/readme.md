@@ -1,11 +1,11 @@
 # スクリプト一覧
 
-1. [SCC波形加工ツール for MGSDRV](https://github.com/uniskie/msx_music_data/edit/master/etc/readme.md#scc%E6%B3%A2%E5%BD%A2%E5%8A%A0%E5%B7%A5%E3%83%84%E3%83%BC%E3%83%AB-for-mgsdrv)
+1. [SCC波形加工 for MGSDRV](https://github.com/uniskie/msx_music_data/edit/master/etc/readme.md#scc%E6%B3%A2%E5%BD%A2%E5%8A%A0%E5%B7%A5%E3%83%84%E3%83%BC%E3%83%AB-for-mgsdrv)
 2. [MML整形 for MGSDRV](https://github.com/uniskie/msx_music_data/edit/master/etc/readme.md#mml%E6%95%B4%E5%BD%A2-for-mgsdrv)
 3. [MML転調 for MGSDRV](https://github.com/uniskie/msx_music_data/edit/master/etc/readme.md#mml%E8%BB%A2%E8%AA%BF-for-mgsdrv)
 4. [MMLオクターブ検査 for MGSDRV](https://github.com/uniskie/msx_music_data/edit/master/etc/readme.md#mml%E3%82%AA%E3%82%AF%E3%82%BF%E3%83%BC%E3%83%96%E6%A4%9C%E6%9F%BB-for-mgsdrv)
 
-# SCC波形加工ツール for MGSDRV
+# SCC波形加工 for MGSDRV
 
 ## File
 
