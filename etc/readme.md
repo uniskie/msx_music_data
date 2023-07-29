@@ -2,11 +2,11 @@
 
 ## File
 
-- sakura editor用 javascriptマクロ  
-  [reformat_mml_for_mgsdrv.js](SakuraEditor/reformat_mml_for_mgsdrv.js)
+- サクラエディタ用 javascriptマクロ  
+  [mml_reformat.js](SakuraEditor/mml_reformat.js)
 
 - emEditor用 javascriptマクロ  
-  [reformat_mml_for_mgsdrv.jsee](emEditor/reformat_mml_for_mgsdrv.jsee)
+  [mml_reformat.jsee](emEditor/mml_reformat.jsee)
 
 ## 機能
 
@@ -34,30 +34,53 @@
   (行の先頭にチャンネルを指定する形式）  
   例) A @0v10ceged
 
-## 更新履歴
+  ※ 実際には行頭からスペースが1つ見つかればそれ以降を本文扱いします。
 
-- 2023.07.30 (2)
-  - 最終ループ抜けコマンド"|"の時のインデントを１つ現象
-- 2023.07.30
-  - ループ処理バグ修正
-  - 文字エンコード修正
-- 2023.07.29
-  - コメント改行バグ修正
-  - 無限ループの改行処理追加
-  - ループ階層でのインデント処理追加
-- 2023.07.28 (2)
-  - コメント処理バグ修正
-  - 改行処理修正
-  - ループコマンド対応
-- 2023.07.28 (1)
-  - 最初のアップロード
+------------------------------------
 
-# MMLオクターブ検査
+# MML転調 for MGSDRV
 
 ## File
 
+- サクラエディタ用 javascriptマクロ  
+  [mml_transpose.jsee](SakuraEditor/mml_transpose.jsee)
+
 - emEditor用 javascriptマクロ  
-  [octave_test.jsee](emEditor/octave_test.jsee)
+  [mml_transpose.jsee](emEditor/mml_transpose.jsee)
+
+## 機能
+
+- 指定した度数だけ転調します。
+- -12なら1オクターブ下げます。
+- 12なら1オクターブ上げます。
+
+## 指定
+
+- '転調は何度? (±12で1オクターブ変化)'  
+  初期値 0  
+  - -12なら1オクターブ下げます。
+  - 12なら1オクターブ上げます。  
+
+- 'ヘッダあり？(1=あり）'  
+  初期値 1  
+  MGSDRVの書式かどうかを指定します。  
+  (行の先頭にチャンネルを指定する形式）  
+  例) A @0v10ceged
+
+  ※ 実際には行頭からスペースが1つ見つかればそれ以降を本文扱いします。
+
+------------------------------------
+
+# MMLオクターブ検査 for MGSDRV
+
+## File
+
+- サクラエディタ用 javascriptマクロ  
+  [mml_octave_check.jsee](SakuraEditor/mml_octave_check.jsee)
+
+- emEditor用 javascriptマクロ  
+  [mml_octave_check.jsee](emEditor/mml_octave_check.jsee)
+
 
 ## 機能
 
@@ -66,4 +89,35 @@
 
 暫定で作ったため、ループコマンドを認識しません。
 
-sakuraEditor用のはそのうち気が向いたら…
+1行単位選択や、ループ内だけ選択で使用してみてください。
+
+------------------------------------
+
+# 更新履歴
+
+- 2023.07.30 (3)
+  - ファイル名修正
+  - mml_octave_check
+    - サクラエディタ用追加
+  - mml_transpose 追加
+
+- 2023.07.30 (2)
+- 2023.07.30 (2)
+  - mml_reformat
+    - 最終ループ抜けコマンド"|"の時のインデントを１つ現象
+- 2023.07.30
+  - mml_reformat
+    - ループ処理バグ修正
+    - 文字エンコード修正
+- 2023.07.29
+  - mml_reformat
+    - コメント改行バグ修正
+    - 無限ループの改行処理追加
+    - ループ階層でのインデント処理追加
+- 2023.07.28 (2)
+  - mml_reformat
+    - コメント処理バグ修正
+    - 改行処理修正
+  -   ループコマンド対応
+- 2023.07.28 (1)
+  - 最初のアップロード

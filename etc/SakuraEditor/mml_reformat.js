@@ -213,7 +213,7 @@ function proc()
 		if (!lh) {
 			// 行頭でなければ行頭を取得
 			var linestr = getLineText( yStart ); 
-			line_header = linestr.match(/^[^;\s][^\s]*\s/);
+			line_header = linestr.match(/^[^;\s][^\s]*[\s\=]/);
 			if (line_header)
 			{
 				s = '\n' + line_header + s;
@@ -221,11 +221,11 @@ function proc()
 		}
 		if (!line_header)
 		{
-			line_header = s.match(/^[^;\s][^\s]*\s/);
+			line_header = s.match(/^[^;\s][^\s]*[\s\=]/);
 		}
 		if (!line_header)
 		{
-			line_header = s.match(/\n[^;\s][^\s]*\s/);
+			line_header = s.match(/\n[^;\s][^\s]*[\s\=]/);
 			if (line_header)
 			{
 				line_header = (""+line_header).replace(/\n/g, '');
@@ -237,8 +237,8 @@ function proc()
 		}
 
 		// 行ヘッダ削除
-		s = s.replace(/^[^;\s][^\s]*\s/, '');
-		s = s.replace(/\n[^;\s][^\s]*\s/g, '\n');
+		s = s.replace(/^[^;\s][^\s]*[\s\=]/, '');
+		s = s.replace(/\n[^;\s][^\s]*[\s\=]/g, '\n');
 
 	}
 	//alert('"' + line_header +'"');

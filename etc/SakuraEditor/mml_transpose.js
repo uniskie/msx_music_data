@@ -5,7 +5,7 @@
 	 1分音符で改行
 */
 
-/*
+///*
 //////////// sakura editor ///////////////////
 function prompt( msg, def ) {
 	return Editor.InputBox(msg, def, 8);
@@ -36,7 +36,7 @@ function setSelectionText( s ) {
 }
 //*/
 
-///*
+/*
 //////////// emEditor ////////////////////////
 function isSelectionEmpty() {
 	return document.selection.IsEmpty;
@@ -62,10 +62,6 @@ function setSelectionText( s ) {
 //*/
 
 //==================================
-var L1 = 96 * 4;
-var L4 = L1 / 4;
-
-//==================================
 // out:	[0] 最終位置 ( charAt用 )
 //		[1] 数値
 //		[2] ピリオドの数
@@ -84,6 +80,7 @@ function getDigits(s, si, isNote)
 		var c = s.charAt(i);
 		if ((c==' ') || (c=='\t'))
 		{
+			skip_i = i;
 			continue;
 		}
 		else
@@ -151,14 +148,52 @@ function getDigits(s, si, isNote)
 }
 
 //==================================
+var notes = ['c','c+','d','d+','e','f','f+','g','g+','a','a+','b'];
+
+function getTranspose( s, t )
+//  in:	s = note
+// 		t = transpose
+//			 -12で1オクターブ下げ
+//			 +12で1オクターブ上げる
+// out: [0] = note
+//		[1] = オクターブ変化
+{
+	var idx = -1;
+	for (var i = 0; i < notes.length; ++i)
+	{
+		if (s == notes[i])
+		{
+			idx = i;
+			break;
+		}
+	}
+	if (idx < 0)
+	{
+		//alert( s + ' は音階として認識できません');
+		return ['', 0];
+	}
+
+	idx += t;
+	var oct_ofs = 0;
+	while (idx < 0)
+	{
+		idx += notes.length;
+		oct_ofs -= 1;
+	}
+	while (notes.length <= idx)
+	{
+		idx -= notes.length;
+		oct_ofs += 1;
+	}
+	return [notes[idx], oct_ofs];
+}
+
+//==================================
 function LoopData()
 {
 	// ループ回数
-	this.loop_count = -1;
-	
-	// 時間
-	this.time = 0;
-	this.interrupt = 0;
+	this.count = -1;	// -1なら無効
+	this.use_interrupt = 0;
 }
 
 //==================================
@@ -166,22 +201,9 @@ function proc()
 {
 	//---------------------------------------
 	var ps;
-	ps = prompt('1小節の長さは？','4/4');
-	//var bl = parseInt(ps);
-	var bl = Function('return (' + L1 + '*(' + ps+'));')();
-	if (isNaN(bl) || (bl <= 0)) {
-		alert('1小節の長さが不明です。');
-		return;
-	}
-	//alert(bl);
+	ps = prompt('転調は何度? (±12で1オクターブ変化)', '0');
+	var transpose_value = parseInt(ps);
 
-	ps = prompt('省略時の音長は？','8');
-	var defaultL = parseInt(ps);
-	if (isNaN(defaultL) || (defaultL <= 0)) {
-		alert('省略時の音長が不明です。');
-		return;
-	}
-	
 	ps = prompt('ヘッダあり？(1=あり）','1');
 	var use_header = (ps=='1');
 
@@ -201,55 +223,10 @@ function proc()
 	var lh = (xStart == 1); // 行の先頭かどうか
 
 	//---------------------------------------
-	// 最後が改行か？
-	lfend = (s.charAt(s.length - 1)=='\n');	//
-	//alert(lfend);
-
-	//---------------------------------------
-	// 行ヘッダ取得
-	var line_header = null;
-	if (use_header)	{
-
-		if (!lh) {
-			// 行頭でなければ行頭を取得
-			var linestr = getLineText( yStart ); 
-			line_header = linestr.match(/^[^;\s][^\s]*\s/);
-			if (line_header)
-			{
-				s = '\n' + line_header + s;
-			}
-		}
-		if (!line_header)
-		{
-			line_header = s.match(/^[^;\s][^\s]*\s/);
-		}
-		if (!line_header)
-		{
-			line_header = s.match(/\n[^;\s][^\s]*\s/);
-			if (line_header)
-			{
-				line_header = (""+line_header).replace(/\n/g, '');
-			}
-		}
-		if (!line_header)
-		{
-			line_header = '';
-		}
-
-		// 行ヘッダ削除
-		s = s.replace(/^[^;\s][^\s]*\s/, '');
-		s = s.replace(/\n[^;\s][^\s]*\s/g, '\n');
-
-	}
-	//alert('"' + line_header +'"');
-	//alert(s);
-
-	//---------------------------------------
 	//var test_s = '';
 	//---------------------------------------
 
-	var count_BL = 0;
-	var count_L4 = 0;
+	var octave_ofs = 0;
 	
 	var loopData = new LoopData();
 	var loopStack = [];
@@ -257,10 +234,9 @@ function proc()
 	//---------------------------------------
 	var result = '';
 	var add_space = false;
-	var add_lf = false;
+	var add_LF = false;
 
 	var skip_i = -1;
-	var l_indent = 0;
 
 	for (var i = 0; i < s.length; ++i) 
 	{
@@ -269,14 +245,6 @@ function proc()
 		// コメント
 		if (c == ';')
 		{
-			if (!lh && (s.charAt( i - 1) == '\n'))
-			{
-				result = result + '\n';
-				lh = true;
-				add_lf = false;
-				add_space = false;
-			}
-			
 			// コメント終端をサーチ
 			var ce = s.indexOf( '\n', i + 1 );
 			if (ce < 0)
@@ -290,181 +258,115 @@ function proc()
 
 			// コメントを出力
 			var comment = s.substring(i, skip_i);
-			if (!lh)
-			{
-				result = result + ' ';
-			}
 			result = result + comment;
 			//alert(comment);
 			
-			
-			// 改行があった場合は改行を追加
-			if (0 <= ce)
-			{
-				result = result + '\n';
-				lh = true;
-				add_lf = false;
-				add_space = false;
-			}
-
 			// 出力処理をスキップ
-			i = skip_i;	// lfも飛ばす
+			i = skip_i - 1;
 			continue;
 		}
-
+		else
+		// 改行
+		if (c == '\n')
+		{
+			lf = true;
+		}
+		else
+		// 行ヘッダ（チャンネル指定）
+		if (lh && use_header)
+		{
+			if((c==' ') || (c=='\t') || (c=='='))
+			{
+				lh = false;
+			}
+		}
+		else
+		// 本体（内容記述部）
 		if (skip_i < i)
 		{
-			// 改行・スペース追加
-			if (add_lf || add_space)
-			{
-				if (  (c=='^')
-					||(c=='&')
-					||(c=='>')
-					||(c=='<')
-					||(c==']')
-					//||(c==';')
-					)
-				{
-					// 改行・スペース追加しない
-				}
-				else
-				if (add_lf)
-				{
-					result = result + '\n';
-					lh = true;
-					add_lf = false;
-					add_space = false;
-				}
-				else
-				if (add_space)
-				{
-					result = result + ' ';
-					add_space = false;
-				}
-			}
-			
 			switch (c.toLowerCase())
 			{
 			// ループ制御
 			case '[':	// ループ開始
 			{
-				loopStack.push(loopData);
-				loopData = new LoopData();
-
-				var r = getDigits(s, i + 1, false);
-				if (-1 < r[0])
+				if (-1 < loopData.count)
 				{
-					skip_i = r[0];
+					loopStack.push(loopData);
+					loopData = new LoopData();
 				}
-				if (-1 < r[1])
+				var r = getDigits(s, i + 1, false);
+				if (r[0] < 0) 
 				{
-					loopData.loop_count = r[1];
+					loopData.count = 2;	// 省略時2
 				}
 				else
 				{
-					loopData.loop_count = 2;	// 省略時2
-				}
-				
-				// 無限ループの始まり
-				if (loopData.loop_count == 0)
-				{
-					// 改行してから出力
-					if (!lh)
-					{
-						result = result + '\n';
-						lh = true;
-						add_lf = false;
-						add_space = false;
-					}
-
-					// コマンドの後に改行
-					add_lf = true;
+					skip_i = r[0];
+					loopData.count = r[1];
 				}
 				break;
 			}
 			case '|':	// 最終ループ脱出
 			{
-				if (-1 < loopData.loop_count)
+				if (loopData.count < 0)
 				{
-					loopData.interrupt = loopData.time;
+					alert('| : ループが開始されていない');
 				}
 				else
 				{
-					alert('| : ループが開始されていない');
+					loopData.use_interrupt = 1;
+
+					// オクターブオフセットを一旦クリア
+					while (0 < octave_ofs)
+					{
+						result = result + '<';
+						octave_ofs -= 1;
+					}
+					while (0 > octave_ofs)
+					{
+						result = result + '>';
+						octave_ofs -= 1;
+					}
 				}
 				break;
 			}
 			case ']':	// ループ終了
 			{
-				if (-1 < loopData.loop_count)
+				if (-1 < loopData.count)
 				{
 					var r = getDigits(s, i + 1, false);
-					if (-1 < r[0])
+					if (-1 < r[0]) 
 					{
 						skip_i = r[0];
-					}
-					if (-1 < r[1])
-					{
-						loopData.loop_count = r[1];
+						loopData.count = r[1];
 					}
 
-					// 無限ループ以外ならループ処理
-					if (0 < loopData.loop_count)
-					{
-						// ループ中の長さ計算
-						// ループ1回目はすでに反映済みなので2周目以降を加算
-						var loopTime = loopData.time * (loopData.loop_count - 1);
-						if (loopData.interrupt)
-						{
-							// |指定：最終カウントで中断する場合
-							loopTime -= loopData.time - loopData.interrupt;
-						}
+					//// 無限ループ対策
+					//if (loop_count < 1)
+					//{
+					//	// 無限ループでは途中抜けしない
+					//	loopData.use_interrupt = 0;
+					//} 
 
-						//alert("loop loop_count:" + loopData.loop_count);
-						//alert("loop time:" + loopData.time);
-						//alert("loop interrupt:" + loopData.interrupt);
-						//alert(loopTime);
-
-						// 4分音符単位
-						count_L4 += loopTime;
-						while (L4 <= count_L4)
-						{
-							add_space = true;
-							count_L4 -= L4;
-						}
-						
-						// 1分音符単位
-						count_BL += loopTime;
-						while (bl <= count_BL)
-						{
-							add_lf = true;
-							count_BL -= bl;
-						}
-					}
-					
-					// 無限ループの終わり
-					if (loopData.loop_count == 0)
-					{
-						// 改行してから出力
-						if (!lh)
-						{
-							result = result + '\n';
-							lh = true;
-							add_lf = false;
-							add_space = false;
-						}
-
-						// コマンドの後に改行
-						add_lf = true;
-					}
-					
+					// ループブロック終了
 					// スタックがあればそれを取得
 					loopData = loopStack.pop();
 					if (!loopData)
 					{
 						loopData =  new LoopData();
 					}
-					l_indent = loopStack.length;
+
+					// オクターブオフセットを一旦クリア
+					while (0 < octave_ofs)
+					{
+						s = s + '<';
+						octave_ofs -= 1;
+					}
+					while (0 > octave_ofs)
+					{
+						s = s + '>';
+						octave_ofs -= 1;
+					}
 				}
 				else
 				{
@@ -489,7 +391,6 @@ function proc()
 						break;
 					}
 				}
-				
 				break;
 			}
 
@@ -563,38 +464,38 @@ function proc()
 					}
 				}
 
-				// parameter
+				// skip parameter
 				if (0 < j)
 				{
 					var r = getDigits(s, j, false);
-					if (-1 < r[0])
-					{
-						skip_i = r[0];
-					}
-					//var d = r[1];
+					if (r[0] < 0) break;
+					skip_i = r[0];
 				}
 				break;
 			}
 			
-			// 音長指定
-			case 'l':
+			// オクターブ指定
+			case 'o':
 			{
 				var r = getDigits(s, i + 1, false);
-				if (r[0] < 0) 
+				if (-1 < r[0])
 				{
-					break;
+					skip_i = r[0];
 				}
-				skip_i = r[0];
-				var d = r[1];
-				if (d >= 0)
-				{
-					defaultL = d;
-					//alert('L' + defaultL);
-				}
-				else
-				{
-					//alert('L?');
-				}
+
+				octave_ofs = 0;
+			}
+			break;
+
+			// オクターブ+1
+			case '>':
+			{
+			}
+			break;
+
+			// オクターブ-1
+			case '<':
+			{
 			}
 			break;
 
@@ -612,90 +513,52 @@ function proc()
 			case 'g':
 			case 'r':
 			{
-				var r = getDigits(s, i + 1, true);
-				var d = r[1];
-				var period = r[2];
+				var j = i + 1;
+				var c2 = s.charAt( j );
+				switch (c2)
+				{
+				case '+':
+				case '-':
+					// 直接スキップ + 2文字出力
+					c = c + c2;
+					next_i = j;
+					i = j;
+					j += 1;
+					break;
+				}
+
+				var r = getDigits(s, j, true);
 				if (-1 < r[0])
 				{
 					skip_i = r[0];
 				}
-				if (d < 0)
-				{
-					d = defaultL;
-				}
-				//alert(d);
 				
-				var ll = L1 / d;
-				
-				// period
-				//var ps = '';
-				var o = ll;
-				for (var pi=0; pi<period; ++pi)
-				{
-					o/=2;
-					ll += o;
-					//ps = ps + '.';
-				}
 
-				//test_s = test_s + d + ps + '(' + ll + ') ';
-
-				// 4分音符単位
-				count_L4 += ll;
-				while (L4 <= count_L4)
+				// transpose
+				var r = getTranspose( c, transpose_value );
+				if (r[0].length)
 				{
-					add_space = true;
-					count_L4 -= L4;
-					//alert('L4' + result);
-					//test_s = test_s + '(L4:' + count_L4 + ') ';
-				}
-				
-				// 1分音符単位
-				count_BL += ll;
-				while (bl <= count_BL)
-				{
-					add_lf = true;
-					count_BL -= bl;
-					//alert('L1:' + result);
-					//test_s = test_s + '(BL:' + count_BL + ') ';
-				}
-				
-				// ループ中処理
-				if (-1 < loopData.loop_count)
-				{
-					loopData.time += ll;
+					c = r[0];
+					while (r[1] > octave_ofs)
+					{
+						result = result + '>';
+						octave_ofs += 1;
+					}
+					while (r[1] < octave_ofs)
+					{
+						result = result + '<';
+						octave_ofs -= 1;
+					}
 				}
 				break;
 			}
 			}
 		}
-
-		if ((c != '\n') && (c != '\r')&&
-			(c != ' ') && (c != '\t'))
-		{
-
-			if (lh)	// 行頭開始なら行ヘッダから開始
-			{
-				result = result + line_header;
-				var idi = 0
-				if (c=='|') idi = 1;
-				for (; idi < l_indent; ++idi)
-				{
-					result = result + ' ';
-				}
-			}
-			lh = false;
-
-			result = result + c;
-			
-			//
-			l_indent = loopStack.length;
-		}
+		result = result + c;
 	}
-
-	if (lfend && !lh)
-	{
-		result = result + '\n';
-	}
+	
+	result = result.replace(/<>/g, '');
+	result = result.replace(/></g, '');
 
  	//result = result + '\n' + test_s;
 
@@ -711,17 +574,15 @@ proc();
 
 /* test
 
-19A @0 v15
 19A q8 l16
-19A [0[a+f+df+]8
+19A  [a+f+df+]8 q5
 19A  r4
 19A    >c4<b4 g4a+4f+4 q4
 19A  r8 
 19A    >c8<b8g8a+8f+8 q8
 19A    >c8<b8g8a+8f+8 q8
-;9A   @e0
 19A  [c]16 [c]8 c+8&(c+8&(c+8&(c+8)))q7
 19A  d1& d1
-19A ]
+;9A   @e0
 
 */
