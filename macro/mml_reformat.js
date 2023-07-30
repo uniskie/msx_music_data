@@ -5,72 +5,55 @@
 	 1分音符で改行
 */
 
-///*
-//////////// sakura editor ///////////////////
-function prompt( msg, def ) {
-	return Editor.InputBox(msg, def, 8);
+//=============================
+// Editor依存関数系
+function efunc(){}
+try{
+	var b = document.selection.IsEmpty;
+	// emEditor ?
+	efunc.inputBox = function( msg, def )	{	return prompt(msg, def);	}
+	efunc.alertBox = function(s)			{	alert(s);	}
+	efunc.isSelectionEmpty = function()		{	return document.selection.IsEmpty;	}
+	efunc.selectLine = function()			{	document.selection.SelectLine();	}
+	efunc.getSelectionStartY = function()	{	return document.selection.GetTopPointY( eePosLogical );	}
+	efunc.getSelectionStartX = function()	{	return document.selection.GetTopPointX( eePosLogical );	}
+	efunc.getLineText = function( l )		{	return document.GetLine( l );	}
+	efunc.getSelectionText = function()		{	return document.selection.Text;	}
+	efunc.setSelectionText = function( s )	{	document.selection.Text = s;	}
+	efunc.lf = '\n';
+}catch(e){
+	//alert('sakura editor ?');
+	efunc.inputBox = function( msg, def )	{	return Editor.InputBox(msg, def, 8);	}
+	efunc.alertBox = function(s)			{	Editor.InfoMsg(s);	}
+	efunc.isSelectionEmpty = function()		{	return (Editor.IsTextSelected == 0);	}
+	efunc.selectLine = function()			{	Editor.SelectLine();	}
+	efunc.getSelectionStartY = function()	{	return Editor.GetSelectLineFrom();	}
+	efunc.getSelectionStartX = function()	{	return Editor.GetSelectColumnFrom();	}
+	efunc.getLineText = function( l )		{	return Editor.GetLineStr( l ); 	}
+	efunc.getSelectionText = function() 	{	return Editor.GetSelectedString();	}
+	efunc.setSelectionText = function( s )	{	Editor.InsText( s );	}
+	efunc.lf = ['\r\n', '\r', '\n'][GetLineCode()];
 }
-function alert(s) {
-	Editor.InfoMsg(s);
-}
-function isSelectionEmpty() {
-	return (Editor.IsTextSelected == 0);
-}
-function selectLine() {
-	Editor.SelectLine();
-}
-function getSelectionStartY() {
-	return Editor.GetSelectLineFrom();
-}
-function getSelectionStartX() {
-	return Editor.GetSelectColumnFrom();
-}
-function getLineText( l ) {
-	return Editor.GetLineStr( l ); 
-}
-function getSelectionText() {
-	return Editor.GetSelectedString();
-}
-function setSelectionText( s ) {
-	Editor.InsText( s );
-}
-//*/
-
-/*
-//////////// emEditor ////////////////////////
-function isSelectionEmpty() {
-	return document.selection.IsEmpty;
-}
-function selectLine() {
-	document.selection.SelectLine();
-}
-function getSelectionStartY() {
-	return document.selection.GetTopPointY( eePosLogical );
-}
-function getSelectionStartX() {
-	return document.selection.GetTopPointX( eePosLogical );
-}
-function getLineText( l ) {
-	return document.GetLine( l ); 
-}
-function getSelectionText() {
-	return document.selection.Text;
-}
-function setSelectionText( s ) {
-	document.selection.Text = s;
-}
-//*/
+var lf = efunc.lf;
+//=============================
 
 //==================================
-var L1 = 96 * 4;
+var step_base = 192;	// MGSDRL L1 step
+var step_mul = 4;		// 内部倍率
+var L1 = step_base * step_mul;
 var L4 = L1 / 4;
 
 //==================================
-// out:	[0] 最終位置 ( charAt用 )
-//		[1] 数値
-//		[2] ピリオドの数
-//		エラー時は [0]が-1
-function getDigits(s, si, isNote)
+function getDigits(s, si, d_type)
+/*
+  in:	s		文字列
+		si		文字列中の参照開始位置
+		d_type	0:通常/1:音長(%あり)/2:音符音長(+-%.あり)
+ out:	[0]	最終位置 ( charAt用 )
+		[1]	数値（音長ならステップ数*倍率に変換）
+		[2]	ピリオドの数
+		エラー時は [0]が-1
+*/
 {
 	var d = -1;
 	var skip_i = -1;
@@ -78,6 +61,7 @@ function getDigits(s, si, isNote)
 
 	var found = -1;
 	var dg = '';
+	var use_step = false;	// '%'
 
 	for (var i = si; i < s.length; ++i)
 	{
@@ -87,22 +71,29 @@ function getDigits(s, si, isNote)
 			continue;
 		}
 		else
-		if (isNote && ((c=='+') || (c=='-')))
+		if ((d_type==2) && ((c=='+') || (c=='-')))
 		{
 			skip_i = i;
 			continue;
 		}
 		else
+		if ((0 < d_type) && (c=='%'))
+		{
+			skip_i = i;
+			use_step = true;
+			continue;
+		}
+		else
 		if (('0'<=c) && (c<='9'))
 		{
-			//alert('found');
+			//efunc.alertBox('found');
 			found = i + 1;
 			dg = c.toString();
 			skip_i = i;
 			break;
 		}
 		else
-		if (c=='.')
+		if ((d_type==2) && (c=='.'))
 		{
 			found = i + 1;
 			skip_i = i;
@@ -144,8 +135,23 @@ function getDigits(s, si, isNote)
 	}
 	if (dg.length)
 	{
-		//alert(dg);
+		//efunc.alertBox(dg);
 		d = parseInt(dg);
+		
+		// 音長変換
+		if (0 < d_type)
+		{
+			if (use_step)
+			{
+				// ステップ指定
+				d = d * step_mul;
+			}
+			else
+			{
+				// n分音符指定
+				d = L1 / d;
+			}
+		}
 	}
 	return [skip_i, d, period];
 }
@@ -166,44 +172,47 @@ function proc()
 {
 	//---------------------------------------
 	var ps;
-	ps = prompt('1小節の長さは？','4/4');
+	ps = efunc.inputBox('1小節の長さは？','4/4');
 	//var bl = parseInt(ps);
 	var bl = Function('return (' + L1 + '*(' + ps+'));')();
 	if (isNaN(bl) || (bl <= 0)) {
-		alert('1小節の長さが不明です。');
+		efunc.alertBox('1小節の長さが不明です。');
 		return;
 	}
-	//alert(bl);
+	//efunc.alertBox(bl);
 
-	ps = prompt('省略時の音長は？','8');
-	var defaultL = parseInt(ps);
-	if (isNaN(defaultL) || (defaultL <= 0)) {
-		alert('省略時の音長が不明です。');
+	ps = efunc.inputBox('省略時の音長は？','8');
+	var r = getDigits( ps, 0, 1);
+	if (r[0] < 0)
+	{
+		efunc.alertBox('省略時の音長が不明です。');
 		return;
 	}
+	var default_step = r[1];
 	
-	ps = prompt('ヘッダあり？(1=あり）','1');
+	
+	ps = efunc.inputBox('ヘッダあり？(1=あり）','1');
 	var use_header = (ps=='1');
 
 	//---------------------------------------
-	if (isSelectionEmpty())
+	if (efunc.isSelectionEmpty())
 	{
-		selectLine();
+		efunc.selectLine();
 	}
-	var s = getSelectionText();
+	var s = efunc.getSelectionText();
 
 	//---------------------------------------
 
-	var yStart = getSelectionStartY();
-	var xStart = getSelectionStartX();
-	//alert( xStart );
+	var yStart = efunc.getSelectionStartY();
+	var xStart = efunc.getSelectionStartX();
+	//efunc.alertBox( xStart );
 
 	var lh = (xStart == 1); // 行の先頭かどうか
 
 	//---------------------------------------
 	// 最後が改行か？
 	lfend = (s.charAt(s.length - 1)=='\n');	//
-	//alert(lfend);
+	//efunc.alertBox(lfend);
 
 	//---------------------------------------
 	// 行ヘッダ取得
@@ -212,11 +221,11 @@ function proc()
 
 		if (!lh) {
 			// 行頭でなければ行頭を取得
-			var linestr = getLineText( yStart ); 
+			var linestr = efunc.getLineText( yStart ); 
 			line_header = linestr.match(/^[^;\s][^\s]*[\s\=]/);
 			if (line_header)
 			{
-				s = '\n' + line_header + s;
+				s = lf + line_header + s;
 			}
 		}
 		if (!line_header)
@@ -241,8 +250,8 @@ function proc()
 		s = s.replace(/\n[^;\s][^\s]*[\s\=]/g, '\n');
 
 	}
-	//alert('"' + line_header +'"');
-	//alert(s);
+	//efunc.alertBox('"' + line_header +'"');
+	//efunc.alertBox(s);
 
 	//---------------------------------------
 	//var test_s = '';
@@ -271,7 +280,7 @@ function proc()
 		{
 			if (!lh && (s.charAt( i - 1) == '\n'))
 			{
-				result = result + '\n';
+				result = result + lf;
 				lh = true;
 				add_lf = false;
 				add_space = false;
@@ -295,13 +304,13 @@ function proc()
 				result = result + ' ';
 			}
 			result = result + comment;
-			//alert(comment);
+			//efunc.alertBox(comment);
 			
 			
 			// 改行があった場合は改行を追加
 			if (0 <= ce)
 			{
-				result = result + '\n';
+				result = result + lf;
 				lh = true;
 				add_lf = false;
 				add_space = false;
@@ -322,7 +331,9 @@ function proc()
 					||(c=='>')
 					||(c=='<')
 					||(c==']')
-					//||(c==';')
+					||(c=='\t')
+					||(c=='\n')
+					||(c=='\r')
 					)
 				{
 					// 改行・スペース追加しない
@@ -330,7 +341,7 @@ function proc()
 				else
 				if (add_lf)
 				{
-					result = result + '\n';
+					result = result + lf;
 					lh = true;
 					add_lf = false;
 					add_space = false;
@@ -351,7 +362,7 @@ function proc()
 				loopStack.push(loopData);
 				loopData = new LoopData();
 
-				var r = getDigits(s, i + 1, false);
+				var r = getDigits(s, i + 1, 0);
 				if (-1 < r[0])
 				{
 					skip_i = r[0];
@@ -359,6 +370,8 @@ function proc()
 				if (-1 < r[1])
 				{
 					loopData.loop_count = r[1];
+					// 数値指定の後にスペース
+					add_space = true;
 				}
 				else
 				{
@@ -371,7 +384,7 @@ function proc()
 					// 改行してから出力
 					if (!lh)
 					{
-						result = result + '\n';
+						result = result + lf;
 						lh = true;
 						add_lf = false;
 						add_space = false;
@@ -390,7 +403,7 @@ function proc()
 				}
 				else
 				{
-					alert('| : ループが開始されていない');
+					efunc.alertBox('| : ループが開始されていない');
 				}
 				break;
 			}
@@ -398,7 +411,7 @@ function proc()
 			{
 				if (-1 < loopData.loop_count)
 				{
-					var r = getDigits(s, i + 1, false);
+					var r = getDigits(s, i + 1, 0);
 					if (-1 < r[0])
 					{
 						skip_i = r[0];
@@ -406,6 +419,8 @@ function proc()
 					if (-1 < r[1])
 					{
 						loopData.loop_count = r[1];
+						// 数値指定の後にスペース
+						add_space = true;
 					}
 
 					// 無限ループ以外ならループ処理
@@ -420,10 +435,10 @@ function proc()
 							loopTime -= loopData.time - loopData.interrupt;
 						}
 
-						//alert("loop loop_count:" + loopData.loop_count);
-						//alert("loop time:" + loopData.time);
-						//alert("loop interrupt:" + loopData.interrupt);
-						//alert(loopTime);
+						//efunc.alertBox("loop loop_count:" + loopData.loop_count);
+						//efunc.alertBox("loop time:" + loopData.time);
+						//efunc.alertBox("loop interrupt:" + loopData.interrupt);
+						//efunc.alertBox(loopTime);
 
 						// 4分音符単位
 						count_L4 += loopTime;
@@ -448,7 +463,7 @@ function proc()
 						// 改行してから出力
 						if (!lh)
 						{
-							result = result + '\n';
+							result = result + lf;
 							lh = true;
 							add_lf = false;
 							add_space = false;
@@ -468,7 +483,7 @@ function proc()
 				}
 				else
 				{
-					alert('] : ループが開始されていない');
+					efunc.alertBox('] : ループが開始されていない');
 				}
 				break;
 			}
@@ -566,7 +581,7 @@ function proc()
 				// parameter
 				if (0 < j)
 				{
-					var r = getDigits(s, j, false);
+					var r = getDigits(s, j, 0);
 					if (-1 < r[0])
 					{
 						skip_i = r[0];
@@ -579,7 +594,7 @@ function proc()
 			// 音長指定
 			case 'l':
 			{
-				var r = getDigits(s, i + 1, false);
+				var r = getDigits(s, i + 1, 1);
 				if (r[0] < 0) 
 				{
 					break;
@@ -588,12 +603,12 @@ function proc()
 				var d = r[1];
 				if (d >= 0)
 				{
-					defaultL = d;
-					//alert('L' + defaultL);
+					default_step = d;
+					//efunc.alertBox('L%' +(default_step / step_mul) + '(L'+ (L1 / default_step) + ')');
 				}
 				else
 				{
-					//alert('L?');
+					efunc.alertBox('Lに数値がない');
 				}
 			}
 			break;
@@ -612,7 +627,7 @@ function proc()
 			case 'g':
 			case 'r':
 			{
-				var r = getDigits(s, i + 1, true);
+				var r = getDigits(s, i + 1, 2);
 				var d = r[1];
 				var period = r[2];
 				if (-1 < r[0])
@@ -621,11 +636,11 @@ function proc()
 				}
 				if (d < 0)
 				{
-					d = defaultL;
+					d = default_step;
 				}
-				//alert(d);
+				//efunc.alertBox(d);
 				
-				var ll = L1 / d;
+				var ll = d;
 				
 				// period
 				//var ps = '';
@@ -637,15 +652,13 @@ function proc()
 					//ps = ps + '.';
 				}
 
-				//test_s = test_s + d + ps + '(' + ll + ') ';
-
 				// 4分音符単位
 				count_L4 += ll;
 				while (L4 <= count_L4)
 				{
 					add_space = true;
 					count_L4 -= L4;
-					//alert('L4' + result);
+					//efunc.alertBox('L4' + result);
 					//test_s = test_s + '(L4:' + count_L4 + ') ';
 				}
 				
@@ -655,7 +668,7 @@ function proc()
 				{
 					add_lf = true;
 					count_BL -= bl;
-					//alert('L1:' + result);
+					//efunc.alertBox('L1:' + result);
 					//test_s = test_s + '(BL:' + count_BL + ') ';
 				}
 				
@@ -694,13 +707,13 @@ function proc()
 
 	if (lfend && !lh)
 	{
-		result = result + '\n';
+		result = result + lf;
 	}
 
- 	//result = result + '\n' + test_s;
+ 	//result = result + lf + test_s;
 
-	//alert(result);
-	setSelectionText( result );
+	//efunc.alertBox(result);
+	efunc.setSelectionText( result );
 }
 
 //==================================
@@ -716,12 +729,23 @@ proc();
 19A [0[a+f+df+]8
 19A  r4
 19A    >c4<b4 g4a+4f+4 q4
-19A  r8 
+19A  r8 ;r8 
 19A    >c8<b8g8a+8f+8 q8
 19A    >c8<b8g8a+8f+8 q8
 ;9A   @e0
 19A  [c]16 [c]8 c+8&(c+8&(c+8&(c+8)))q7
 19A  d1& d1
 19A ]
+
+1 [2 o5o6
+1  [2 e16d16e4. o5ab o6c
+1  |d
+1  ]e
+1 |
+1  [2 d16e16d4. o5ga bo6
+1  |c
+1  ]d
+1 ]
+1 d16c16 d4. g ab o7cd4 o6b4 g4 d2.
 
 */

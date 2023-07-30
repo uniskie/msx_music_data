@@ -5,61 +5,37 @@
 	 1分音符で改行
 */
 
-///*
-//////////// sakura editor ///////////////////
-function prompt( msg, def ) {
-	return Editor.InputBox(msg, def, 8);
+//=============================
+// Editor依存関数系
+function efunc(){}
+try{
+	var b = document.selection.IsEmpty;
+	// emEditor ?
+	efunc.inputBox = function( msg, def )	{	return prompt(msg, def);	}
+	efunc.alertBox = function(s)			{	alert(s);	}
+	efunc.isSelectionEmpty = function()		{	return document.selection.IsEmpty;	}
+	efunc.selectLine = function()			{	document.selection.SelectLine();	}
+	efunc.getSelectionStartY = function()	{	return document.selection.GetTopPointY( eePosLogical );	}
+	efunc.getSelectionStartX = function()	{	return document.selection.GetTopPointX( eePosLogical );	}
+	efunc.getLineText = function( l )		{	return document.GetLine( l );	}
+	efunc.getSelectionText = function()		{	return document.selection.Text;	}
+	efunc.setSelectionText = function( s )	{	document.selection.Text = s;	}
+	efunc.lf = '\n';
+}catch(e){
+	//alert('sakura editor ?');
+	efunc.inputBox = function( msg, def )	{	return Editor.InputBox(msg, def, 8);	}
+	efunc.alertBox = function(s)			{	Editor.InfoMsg(s);	}
+	efunc.isSelectionEmpty = function()		{	return (Editor.IsTextSelected == 0);	}
+	efunc.selectLine = function()			{	Editor.SelectLine();	}
+	efunc.getSelectionStartY = function()	{	return Editor.GetSelectLineFrom();	}
+	efunc.getSelectionStartX = function()	{	return Editor.GetSelectColumnFrom();	}
+	efunc.getLineText = function( l )		{	return Editor.GetLineStr( l ); 	}
+	efunc.getSelectionText = function() 	{	return Editor.GetSelectedString();	}
+	efunc.setSelectionText = function( s )	{	Editor.InsText( s );	}
+	efunc.lf = ['\r\n', '\r', '\n'][GetLineCode()];
 }
-function alert(s) {
-	Editor.InfoMsg(s);
-}
-function isSelectionEmpty() {
-	return (Editor.IsTextSelected == 0);
-}
-function selectLine() {
-	Editor.SelectLine();
-}
-function getSelectionStartY() {
-	return Editor.GetSelectLineFrom();
-}
-function getSelectionStartX() {
-	return Editor.GetSelectColumnFrom();
-}
-function getLineText( l ) {
-	return Editor.GetLineStr( l ); 
-}
-function getSelectionText() {
-	return Editor.GetSelectedString();
-}
-function setSelectionText( s ) {
-	Editor.InsText( s );
-}
-//*/
-
-/*
-//////////// emEditor ////////////////////////
-function isSelectionEmpty() {
-	return document.selection.IsEmpty;
-}
-function selectLine() {
-	document.selection.SelectLine();
-}
-function getSelectionStartY() {
-	return document.selection.GetTopPointY( eePosLogical );
-}
-function getSelectionStartX() {
-	return document.selection.GetTopPointX( eePosLogical );
-}
-function getLineText( l ) {
-	return document.GetLine( l ); 
-}
-function getSelectionText() {
-	return document.selection.Text;
-}
-function setSelectionText( s ) {
-	document.selection.Text = s;
-}
-//*/
+var lf = efunc.lf;
+//=============================
 
 //==================================
 // out:	[0] 最終位置 ( charAt用 )
@@ -92,7 +68,7 @@ function getDigits(s, si, isNote)
 		else
 		if (('0'<=c) && (c<='9'))
 		{
-			//alert('found');
+			//efunc.alertBox('found');
 			found = i + 1;
 			dg = c.toString();
 			skip_i = i;
@@ -141,7 +117,7 @@ function getDigits(s, si, isNote)
 	}
 	if (dg.length)
 	{
-		//alert(dg);
+		//efunc.alertBox(dg);
 		d = parseInt(dg);
 	}
 	return [skip_i, d, period];
@@ -169,7 +145,7 @@ function getTranspose( s, t )
 	}
 	if (idx < 0)
 	{
-		//alert( s + ' は音階として認識できません');
+		//efunc.alertBox( s + ' は音階として認識できません');
 		return ['', 0];
 	}
 
@@ -188,11 +164,26 @@ function getTranspose( s, t )
 	return [notes[idx], oct_ofs];
 }
 
+function flushOctaveOffset( result, octave_ofs, dst )
+{
+	while (dst > octave_ofs)
+	{
+		result = result + '>';
+		octave_ofs += 1;
+	}
+	while (dst < octave_ofs)
+	{
+		result = result + '<';
+		octave_ofs -= 1;
+	}
+	return result;
+}
+
 //==================================
 function LoopData()
 {
 	// ループ回数
-	this.count = -1;	// -1なら無効
+	this.loop_count = -1;	// -1なら無効
 	this.use_interrupt = 0;
 }
 
@@ -201,24 +192,24 @@ function proc()
 {
 	//---------------------------------------
 	var ps;
-	ps = prompt('転調は何度? (±12で1オクターブ変化)', '0');
+	ps = efunc.inputBox('転調は何度? (±12で1オクターブ変化)', '0');
 	var transpose_value = parseInt(ps);
 
-	ps = prompt('ヘッダあり？(1=あり）','1');
+	ps = efunc.inputBox('ヘッダあり？(1=あり）','1');
 	var use_header = (ps=='1');
 
 	//---------------------------------------
-	if (isSelectionEmpty())
+	if (efunc.isSelectionEmpty())
 	{
-		selectLine();
+		efunc.selectLine();
 	}
-	var s = getSelectionText();
+	var s = efunc.getSelectionText();
 
 	//---------------------------------------
 
-	var yStart = getSelectionStartY();
-	var xStart = getSelectionStartX();
-	//alert( xStart );
+	var yStart = efunc.getSelectionStartY();
+	var xStart = efunc.getSelectionStartX();
+	//efunc.alertBox( xStart );
 
 	var lh = (xStart == 1); // 行の先頭かどうか
 
@@ -259,7 +250,7 @@ function proc()
 			// コメントを出力
 			var comment = s.substring(i, skip_i);
 			result = result + comment;
-			//alert(comment);
+			//efunc.alertBox(comment);
 			
 			// 出力処理をスキップ
 			i = skip_i - 1;
@@ -289,7 +280,7 @@ function proc()
 			// ループ制御
 			case '[':	// ループ開始
 			{
-				if (-1 < loopData.count)
+				if (-1 < loopData.loop_count)
 				{
 					loopStack.push(loopData);
 					loopData = new LoopData();
@@ -297,48 +288,44 @@ function proc()
 				var r = getDigits(s, i + 1, false);
 				if (r[0] < 0) 
 				{
-					loopData.count = 2;	// 省略時2
+					loopData.loop_count = 2;	// 省略時2
 				}
 				else
 				{
 					skip_i = r[0];
-					loopData.count = r[1];
+					loopData.loop_count = r[1];
 				}
+
+				// オクターブオフセットを一旦クリア
+				result = flushOctaveOffset( result, octave_ofs, 0 );
+				octave_ofs = 0;
 				break;
 			}
 			case '|':	// 最終ループ脱出
 			{
-				if (loopData.count < 0)
+				if (loopData.loop_count < 0)
 				{
-					alert('| : ループが開始されていない');
+					efunc.alertBox('| : ループが開始されていない');
 				}
 				else
 				{
 					loopData.use_interrupt = 1;
 
 					// オクターブオフセットを一旦クリア
-					while (0 < octave_ofs)
-					{
-						result = result + '<';
-						octave_ofs -= 1;
-					}
-					while (0 > octave_ofs)
-					{
-						result = result + '>';
-						octave_ofs -= 1;
-					}
+					result = flushOctaveOffset( result, octave_ofs, 0 );
+					octave_ofs = 0;
 				}
 				break;
 			}
 			case ']':	// ループ終了
 			{
-				if (-1 < loopData.count)
+				if (-1 < loopData.loop_count)
 				{
 					var r = getDigits(s, i + 1, false);
 					if (-1 < r[0]) 
 					{
 						skip_i = r[0];
-						loopData.count = r[1];
+						loopData.loop_count = r[1];
 					}
 
 					//// 無限ループ対策
@@ -357,24 +344,15 @@ function proc()
 					}
 
 					// オクターブオフセットを一旦クリア
-					while (0 < octave_ofs)
-					{
-						s = s + '<';
-						octave_ofs -= 1;
-					}
-					while (0 > octave_ofs)
-					{
-						s = s + '>';
-						octave_ofs -= 1;
-					}
+					result = flushOctaveOffset( result, octave_ofs, 0 );
+					octave_ofs = 0;
 				}
 				else
 				{
-					alert('] : ループが開始されていない');
+					efunc.alertBox('] : ループが開始されていない');
 				}
 				break;
 			}
-			
 			// h?コマンド
 			// 2文字コマンドのケア
 			case 'h':
@@ -393,7 +371,6 @@ function proc()
 				}
 				break;
 			}
-
 			// s?コマンド
 			// 2文字コマンドのケア
 			case 's':
@@ -412,7 +389,6 @@ function proc()
 				
 				break;
 			}
-
 			// k?コマンド
 			// 2文字コマンドのケア
 			case 'k':
@@ -431,7 +407,6 @@ function proc()
 				
 				break;
 			}
-
 			// @?コマンド
 			// 2文字コマンドのケア
 			case '@':
@@ -473,7 +448,6 @@ function proc()
 				}
 				break;
 			}
-			
 			// オクターブ指定
 			case 'o':
 			{
@@ -482,22 +456,14 @@ function proc()
 				{
 					skip_i = r[0];
 				}
-
 				octave_ofs = 0;
+				break;
 			}
-			break;
-
 			// オクターブ+1
 			case '>':
-			{
-			}
-			break;
-
 			// オクターブ-1
 			case '<':
-			{
-			}
-			break;
+				break;
 
 			//**rythm**
 			//case'S':case'H':case'M':case'C':case'B':
@@ -539,16 +505,8 @@ function proc()
 				if (r[0].length)
 				{
 					c = r[0];
-					while (r[1] > octave_ofs)
-					{
-						result = result + '>';
-						octave_ofs += 1;
-					}
-					while (r[1] < octave_ofs)
-					{
-						result = result + '<';
-						octave_ofs -= 1;
-					}
+					result = flushOctaveOffset( result, octave_ofs, r[1] );
+					octave_ofs = r[1];
 				}
 				break;
 			}
@@ -556,14 +514,17 @@ function proc()
 		}
 		result = result + c;
 	}
+
+	result = flushOctaveOffset( result, octave_ofs, 0 );
+	octave_ofs = 0;
 	
 	result = result.replace(/<>/g, '');
 	result = result.replace(/></g, '');
 
- 	//result = result + '\n' + test_s;
+ 	//result = result + lf + test_s;
 
-	//alert(result);
-	setSelectionText( result );
+	//efunc.alertBox(result);
+	efunc.setSelectionText( result );
 }
 
 //==================================
@@ -575,7 +536,7 @@ proc();
 /* test
 
 19A q8 l16
-19A  [a+f+df+]8 q5
+19A  [>f+d<a+>d]8 q5
 19A  r4
 19A    >c4<b4 g4a+4f+4 q4
 19A  r8 

@@ -7,16 +7,14 @@
 5. [マクロの登録方法（サクラエディタ）](#%E3%83%9E%E3%82%AF%E3%83%AD%E3%81%AE%E7%99%BB%E9%8C%B2%E6%96%B9%E6%B3%95%E3%82%B5%E3%82%AF%E3%83%A9%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF)
 6. [マクロの実行（サクラエディタ）](#%E3%83%9E%E3%82%AF%E3%83%AD%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%82%B5%E3%82%AF%E3%83%A9%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF)
 7. [更新履歴](#%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)
+----------------------------------------------------------------
 
 # SCC波形加工 for MGSDRV
 
 ## File
 
-- サクラエディタ用 javascriptマクロ  
-  [SCC_WAVE_MODULATE.js](SakuraEditor/SCC_WAVE_MODULATE.js)
-
-- emEditor用 javascriptマクロ  
-  [SCC_WAVE_MODULATE.jsee](emEditor/SCC_WAVE_MODULATE.jsee)
+- サクラエディタ/emEditor共用 javascriptマクロ  
+  [scc_wave_mod.js](scc_wave_mod.js)
 
 ## 機能
 
@@ -29,18 +27,29 @@ MGSDRVの波形宣言
 ```
 @s0={ 001931475a6a757d7f7d756a5a47311900 e7cfb9a6968b8380838b96a6b9c7e7 }
 ```
-の後ろに、; 倍率 を書きそのテキストを選択して、マクロを実行します。
+を選択した状態でマクロを実行します。
 
-```
-@s0={ 001931475a6a757d7f7d756a5a47311900 e7cfb9a6968b8380838b96a6b9c7e7 } ; 128
-```
+すると入力ボックスで倍率を質問されるので入力します。  
 倍率は256分の1単位なので128だと半分になります。
 
-実行前
+実行前  
 ![実行前](image/SCC_WAVE_VOLUME_0.png)
 
-実行後
-![実行後](image/SCC_WAVE_VOLUME_1.png)
+倍率入力  
+![倍率入力](image/SCC_WAVE_VOLUME_1.png)
+
+実行後  
+![実行後](image/SCC_WAVE_VOLUME_2.png)
+
+## 指定
+
+- 'ボリュームは？(max 256)'  
+  初期値 256   
+  波形にかける音量倍率を指定します。
+  - 256で100%
+  - 512で200%
+  - 128で50%
+
 
 ----------------------------------------------------------------
 
@@ -48,11 +57,8 @@ MGSDRVの波形宣言
 
 ## File
 
-- サクラエディタ用 javascriptマクロ  
-  [mml_reformat.js](SakuraEditor/mml_reformat.js)
-
-- emEditor用 javascriptマクロ  
-  [mml_reformat.jsee](emEditor/mml_reformat.jsee)
+- サクラエディタ/emEditor共用 javascriptマクロ  
+  [mml_reformat.js](mml_reformat.js)
 
 ## 機能
 
@@ -61,15 +67,25 @@ MGSDRVの波形宣言
 - 4分音符毎に空白を挿入します。
 - 指定した1小節の長さで改行します。
 
+使用前  
+![使用前](image/mml_reform_0.png)
+
+使用後  
+![使用後](image/mml_reform_1.png)
+
 ## 指定
 
+マクロを実行すると以下の入力を求められます。
+
 - '1小節の長さは？'  
+   ![Alt text](image/mml_reform_2.png)  
   初期値 4/4  
   楽譜によくある指定方法です。  
   8/4なら4分音符が8個  
   6/8なら8分音符が6個
 
 - '省略時の音長は？'  
+  ![Alt text](image/mml_reform_3.png)  
   初期値 8  
   MMLのノートコマンド(cdefgab)で音量省略時の長さ。  
   整形対象の文字列中にLコマンドが無いときに有効です。
@@ -80,30 +96,41 @@ MGSDRVの波形宣言
   例) A @0v10ceged  
   ※ 実際には行頭からスペースが1つ見つかればそれ以降を本文扱いします。
 
+## 使用例
+
+- 自分の打ち込んだMMLが小節単位で揃っているかの確認をする。
+- 元ファイルを紛失したとき
+   [MSXPlay](https://msxplay.com/editor.html)へmgsファイルをドロップして生成されるMMLを整形して、再度MMLを修正しやすくする。
+
+
 ------------------------------------
 
 # MML転調 for MGSDRV
 
 ## File
 
-- サクラエディタ用 javascriptマクロ  
-  [mml_transpose.jsee](SakuraEditor/mml_transpose.jsee)
-
-- emEditor用 javascriptマクロ  
-  [mml_transpose.jsee](emEditor/mml_transpose.jsee)
+- サクラエディタ/emEditor共用 javascriptマクロ  
+  [mml_transpose.jsee](mml_transpose.jsee)
 
 ## 機能
 
-- 指定した度数だけ転調します。
-- -12なら1オクターブ下げます。
-- 12なら1オクターブ上げます。
+指定した度数だけ転調します。
+
+使用前  
+![使用前](image/mml_transpose_0.png)
+
+使用後  
+![Alt text](image/mml_transpose_2.png)
 
 ## 指定
 
+マクロを実行すると以下の入力を求められます。
+
 - '転調は何度? (±12で1オクターブ変化)'  
-  初期値 0  
-  - -12なら1オクターブ下げます。
-  - 12なら1オクターブ上げます。  
+   ![度数入力](image/mml_transpose_1.png)  
+   初期値 0  
+   -12なら1オクターブ下げます。  
+   12なら1オクターブ上げます。  
 
 - 'ヘッダあり？(1=あり）'  
   初期値 1  
@@ -117,17 +144,15 @@ MGSDRVの波形宣言
 
 ## File
 
-- サクラエディタ用 javascriptマクロ  
-  [mml_octave_check.jsee](SakuraEditor/mml_octave_check.jsee)
-
-- emEditor用 javascriptマクロ  
-  [mml_octave_check.jsee](emEditor/mml_octave_check.jsee)
-
+- サクラエディタ/emEditor共用 javascriptマクロ  
+  [mml_octave_check.jsee](mml_octave_check.jsee)
 
 ## 機能
 
 選択範囲のオクターブ移動記号<>の数を数え、
 最終的にプラスかマイナスであればその差分を表示します。
+
+![MMLオクターブ検査](image/mml_octave_check.png)
 
 暫定で作ったため、ループコマンドを認識しません。
 
@@ -171,6 +196,10 @@ MGSDRVの波形宣言
 
 # 更新履歴
 
+- 2023.07.30 (4)
+  - サクラエディタとemEditorのマクロを一本化
+  - SCC波形変更マクロを数値入力式に変更
+  - サクラエディタでの出力改行コード修正
 - 2023.07.30 (3)
   - ファイル名修正
   - mml_octave_check
