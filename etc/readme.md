@@ -1,4 +1,4 @@
-# スクリプト一覧
+# MML加工用 テキストエディタマクロ集
 
 1. [SCC波形加工 for MGSDRV](#scc%E6%B3%A2%E5%BD%A2%E5%8A%A0%E5%B7%A5-for-mgsdrv)
 2. [MML整形 for MGSDRV](#mml%E6%95%B4%E5%BD%A2-for-mgsdrv)
