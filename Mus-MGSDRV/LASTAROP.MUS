@@ -8,46 +8,49 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
 #tempo 160
-#title {"Last Armageddon -Openning theme- | uniskie"}
+#title {"Last Armageddon MSX2 -Openning theme- | uniskie"}
 #alloc { 0=200, 1=600,2=500,3=500, 9=700,A=700,B=700,C=700,D=700,E=700, F=1900}
 
 @v15 = { ; E-Guiter hard
 ;       TL FB
-        0, 6,
+         1, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   8, 3, 4, 1, 0, 5, 0, 0, 1, 0, 1,
-  14, 4, 2, 1, 0, 1, 0, 1, 0, 0, 1 }
+   8, 4, 1, 0, 0, 3, 0, 0, 1, 0, 1,
+  14, 4, 1, 8, 0, 1, 0, 1, 1, 0, 1 }
 
 @v16 = { ; E-Guiter hi
 ;       TL FB
-         1, 7,
+         6, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  13, 1, 1, 1, 0, 3, 1, 0, 0, 1, 1,
-  10, 4, 1, 6, 0, 1, 0, 1, 1, 0, 1 }
+  12, 1, 0, 0, 1, 2, 0, 0, 1, 0, 1,
+  14, 3, 2, 6, 0, 1, 0, 0, 1, 0, 1 }
   
-@e1 = {1,0,fed:50 [c:3.b:3.a:3.b:3]0 }
-@e2 = {1,0,fdb9}
+@e1 = {1,0,efed:20 [c:3.b:3.a:3.b:3]0 }
+@e2 = {1,0,efdbaa:30.0=200}
+
+@e10 = {1,0,f:30 [e:3.d:3.e:3.f:3]0 }
 
 ;==== main ===
-1 o4 v9 @1 k3
-9 o5 v15 @15 
-A o5 v14 @15 @\18 r8 
-1   h22,0,2,1
-9A  h22,3,1,1
-19A [0 q7
+1 o3 v7 @1 k3
+9 o5 v13 @15 
+A o5 v11 @15 @\18 r8 
+1   h20,0,2,1
+9A  h20,2,1,2
+19A [0
+9A   @15
 19A  [l8
-19A   [r4crc<a4a>  crc<a^2>]2
-19A   r4crc<b4b>  crc<b^2>
-19A   cr4d^2      <br4>c^2
+19A   [r4crc<a4a>  crc<a2r>]2
+19A   r4crc<b4b>  crc<b2r>
+19A   cr4d2r      <br4>c2r
 19A  ]2
-9A   @16 sf ;v-1
-1    h40,0,2,1
-9A   h40,3,1,1
+9A   @17
+1    h38,0,2,1
+9A   h38,2,1,2
 19A  <a4g32g+32a32a+32b32>c32c+32d+32e2 ^2g.f.e
 19A  d2^4.e c1
 19A  c4<b32>c32d32e32f32g32a32b32>c2    ^2e.d.c
 19A  <b2>c2&  c1
-19A  q8 d2^8c<ba q7
+19A  d2&d16r16c<ba
 19A  l16
 19A  >c<bagbagfagfegfed fedcedc<b>dc<ba>c<bag
 19A  agab>c<b>cdedegaga>c;<
@@ -57,9 +60,9 @@ A o5 v14 @15 @\18 r8
 19A  [ec<a>ec<a>ecec<a>gc<a>gc]2
 19A  [d<ba>d<ba>d<b>d<ba>dfdfg]2 <
 19A  r4
-9A   @15 ;v+1
-1    h22,0,2,1
-9A   h22,3,1,1
+9A   @15
+1    h20,0,2,1
+9A   h20,2,1,2
 19A  l8
 19A    crc<a4a> crc<a&a2>
 19A  r4crc<a4a> crc<a&a2>
@@ -68,45 +71,53 @@ A o5 v14 @15 @\18 r8
 19A ]
 
 ;==== sub ====
-B o4 v14 @15 
-C o4 v13 @15 @\18 r8
-BC q7 h22,2,1,1
-BC [0
-BC  l8
-BC  [r4arae4e  arae^2
-BC   r4araf4f  araf^2
-BC   r4arag4g  arag^2
-BC   ar4b^2    gr4a^2
-BC  ]2
-BC  v-2
-BC  h40,2,1,1
-BC  >a4g32g+32a32a+32b32>c32c+32d+32e2^ 2g.f.e
-BC  d2^4.e c1
-BC  c4<b32>c32d32e32f32g32a32b32>c2^    2e.d.c
-BC  <b2>c2& c1
-BC  ;<<<
-BC  r1 r1 r1 r1
-BC  ;>>>
-BC  l16
-BC  [ec<a>ec<a>ecec<a>ec<a>ec]2
-BC  [gfefededcdc<b>c<bag]2 >>
-BC  [ec<a>ec<a>ecec<a>gc<a>gc]2
-BC  [d<ba>d<ba>d<b>d<ba>dfdfg]2
-BC  <<<
-BC  r4
-BC  v+2
-BC  h22,2,1,1
-BC  l8
-BC    arae4e  arae&e2
-BC  r4araf4f  araf&f2
-BC  r4arag4g  arag&g2
-BC  ar4b&b2   gr4a&a2
-BC ]
+2 o2 v7 @1 k3
+B o4 v13 @15
+C o4 v11 @15 @\16 r8
+2   h20,0,2,1
+BC  h20,2,1,2
+2BC [0
+2BC  l8
+2BC  [r4arae4e  arae2r
+2BC   r4araf4f  araf2r
+2BC   r4arag4g  arag2r
+2BC   ar4b2r    gr4a2r
+2BC  ]2
+2BC  v-1
+2    h38,0,2,1
+BC   h38,2,1,1
+2B   @\8
+C    @\20
+2BC  a4g32g+32a32a+32b32>c32c+32d+32e2^ 2g.f.e
+2BC  d2^4.e c1
+2BC  c4<b32>c32d32e32f32g32a32b32>c2^    2e.d.c
+2BC  <b2>c2& c1
+2BC  ;<<
+2BC  r1 r1 r1 r1
+2BC  ;>>
+2BC  l16
+2BC  [ec<a>ec<a>ecec<a>ec<a>ec]2
+2BC  [gfefededcdc<b>c<bag]2 >>
+2BC  [ec<a>ec<a>ecec<a>gc<a>gc]2
+2BC  [d<ba>d<ba>d<b>d<ba>dfdfg]2
+2BC  <<
+2B   @\0
+C    @\16
+2BC  r4
+2BC  v+1
+2    h20,0,2,1
+BC   h20,2,1,2
+2BC  l8
+2BC    arae4e  arae&e2
+2BC  r4araf4f  araf&f2
+2BC  r4arag4g  arag&g2
+2BC  ar4b&b2   gr4a&a2
+2BC ]
 
 ;==== base ====
 ;2 o2 v10 @2 @\6 q4 k4
-D o3 v12 @13 q3 so 
-E o3 v13 @12 q2 so @\16
+D o2 v13 @13 q6
+E o3 v11 @12 q2 so @\16
 DE [0
 DE  l4
 DE  a1& a2.a8g8 f1& f1
@@ -122,32 +133,32 @@ DE  [a]16 [f]16
 DE  [g]16 [a]16
 DE ]
 
-;=== base chord ====
-2 v9 @1 o2 @\1 q7 k3 
-2 h40,1,2,1
-2 [0 
-2  l1 
-2  e& e f& f  g& g e& e 
-2  e& e f& f  g& g a& a 
-2  a& a f& f  a& a f& f 
-2  g& g d& d  f& f g& g 
-2  f& f d& d 
-2  e& e f& f  g& g a& a 
-2 ] 
+;;=== base chord ====
+;2 v9 @2 o2 @\1 q7 k3 
+;2 h40,1,2,1
+;2 [0 
+;2  l1 
+;2  e& e f& f  g& g e& e 
+;2  e& e f& f  g& g a& a 
+;2  a& a f& f  a& a f& f 
+;2  g& g d& d  f& f g& g 
+;2  f& f d& d 
+;2  e& e f& f  g& g a& a 
+;2 ] 
 
 ;==== rhythm ====
 #macro_offset { b=0, s=20, h=21 }
 ; b8,b16
-F y38,35 y22,106 ; bass-drum (y38,32+3 -> sustain on) 
-*08={y38,35y22,116 hb64 y22,96b64 y22,76b64 y22,56r64 y22,36r64 y22,16r64 y22,0r32}
-*16={y38,35y22,116 hb64 y22,96b64 y22,76r64 y22,56r64 y22,36}
+F y38,35 y22,156 ; bass-drum (y38,32+3 -> sustain on) 
+*08={y38,35y22,156 hb64 y22,96b64 y22,76b64 y22,56r64 y22,36r64 y22,16r64 y22,0r32}
+*16={y38,35y22,156 hb64 y22,96b64 y22,76r64 y22,56r64 y22,36}
 ; s8,s16
 F y39,3 y23,210 ; snare,hi-hut (y39,32+3 -> sustain on) 
 F y40,2 y24,156 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
-*28={y38,37y22,156 sb64 y22,116b64 y22,76r64 y22,36b64 y38,36y22,255r64 y22,215r64 y22,175r64 y22,135r64 }
-*29={y38,37y22,156 hsb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255h64 y22,215r64 y22,175r64 y22,135r64 }
+*28={y38,37y22,156 sb64 y22,116b64 y22,76b64 y22,36b64 y38,36y22,255r64 y22,215r64 y22,175r64 y22,135r64 }
+*29={y38,37y22,156 hsb64 y22,116b64 y22,76b64 y22,36r64 y38,36y22,255h64 y22,215r64 y22,175r64 y22,135r64 }
 *36={y38,37y22,156 sb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255}
-F v15 vh9 vs10 kf 
+F v14 vh9 vs10 kf
 
 ;F l8
 ;F [0
@@ -175,9 +186,10 @@ F ]
 
 
 @e4={3,31,*3.c.*1.86.0=20}
-@e5={2,0,f.*2.n2.een4.ddn6.ccn8.bbn10.aan12.99n14.88n16.77n18.66n20.55n22.44n24.0=20}
+;@e5={2,31,f.n0.een10.ddn11.ccn12.bbn13.aan14.99n15.88n16.77n17.77n18.66n19.66n20.0=30}
+@e5={2,31,f.n0.een10.ddn11.ccn12.bbn13.aan14.99n15.88n16.77n17.77n18.66n19.66n20.0=30}
 @e6={2,0,b750=6}
-3 v12 o3 p16 
+3 v10 o3 p16 
 
 3 l8 
 3 [0 
