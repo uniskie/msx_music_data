@@ -1,4 +1,4 @@
-;[gain=1.0 name=LASTAROP duration=840s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=LASTAROP duration=840s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -13,18 +13,18 @@
 
 @v15 = { ; E-Guiter hard
 ;       TL FB
-         1, 6,
+         0, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   8, 4, 1, 0, 0, 3, 0, 0, 1, 0, 1,
-  14, 4, 1, 8, 0, 1, 0, 1, 1, 0, 1 }
+  14, 5, 1, 2, 0, 5, 0, 0, 0, 0, 1,
+  14, 6, 2, 8, 0, 1, 0, 1, 1, 0, 1 }
 
-@v16 = { ; E-Guiter hi
+@v16 = { ; E-Guiter high
 ;       TL FB
-         6, 7,
+         0, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 1, 0, 0, 1, 2, 0, 0, 1, 0, 1,
-  14, 3, 2, 6, 0, 1, 0, 0, 1, 0, 1 }
-  
+  13, 6, 1, 2, 0, 2, 1, 0, 0, 0, 1,
+  12, 6, 1, 2, 0, 1, 0, 1, 0, 0, 1 }
+
 @e1 = {1,0,efed:20 [c:3.b:3.a:3.b:3]0 }
 @e2 = {1,0,efdbaa:30.0=200}
 
@@ -32,10 +32,10 @@
 
 ;==== main ===
 1 o3 v7 @1 k3
-9 o5 v13 @15 
-A o5 v11 @15 @\18 r8 
-1   h20,0,2,1
-9A  h20,2,1,2
+9 o5 v14 @15 
+A o5 v12 @15 @\18 r8 
+1    h30,0,2,1
+9A   h30,3,1,2
 19A [0
 9A   @15
 19A  [l8
@@ -43,14 +43,12 @@ A o5 v11 @15 @\18 r8
 19A   r4crc<b4b>  crc<b2r>
 19A   cr4d2r      <br4>c2r
 19A  ]2
-9A   @17
-1    h38,0,2,1
-9A   h38,2,1,2
+9A   @16
 19A  <a4g32g+32a32a+32b32>c32c+32d+32e2 ^2g.f.e
 19A  d2^4.e c1
 19A  c4<b32>c32d32e32f32g32a32b32>c2    ^2e.d.c
 19A  <b2>c2&  c1
-19A  d2&d16r16c<ba
+19A  d2&dc<ba
 19A  l16
 19A  >c<bagbagfagfegfed fedcedc<b>dc<ba>c<bag
 19A  agab>c<b>cdedegaga>c;<
@@ -61,21 +59,19 @@ A o5 v11 @15 @\18 r8
 19A  [d<ba>d<ba>d<b>d<ba>dfdfg]2 <
 19A  r4
 9A   @15
-1    h20,0,2,1
-9A   h20,2,1,2
 19A  l8
-19A    crc<a4a> crc<a&a2>
-19A  r4crc<a4a> crc<a&a2>
-19A  r4crc<b4b> crc<b&b2>
-19A  cr4d&d2    <b>r4c&c2
+19A    crc<a4a> crc<a2r>
+19A  r4crc<a4a> crc<a2r>
+19A  r4crc<b4b> crc<b2r>
+19A  cr4d2r    <b>r4c2r
 19A ]
 
 ;==== sub ====
 2 o2 v7 @1 k3
 B o4 v13 @15
 C o4 v11 @15 @\16 r8
-2   h20,0,2,1
-BC  h20,2,1,2
+2    h38,0,2,1
+BC   h38,2,1,1
 2BC [0
 2BC  l8
 2BC  [r4arae4e  arae2r
@@ -83,35 +79,30 @@ BC  h20,2,1,2
 2BC   r4arag4g  arag2r
 2BC   ar4b2r    gr4a2r
 2BC  ]2
-2BC  v-1
-2    h38,0,2,1
-BC   h38,2,1,1
 2B   @\8
-C    @\20
+C    @\24
+2BC  ;>
 2BC  a4g32g+32a32a+32b32>c32c+32d+32e2^ 2g.f.e
 2BC  d2^4.e c1
 2BC  c4<b32>c32d32e32f32g32a32b32>c2^    2e.d.c
 2BC  <b2>c2& c1
-2BC  ;<<
+2BC  ;<<<
 2BC  r1 r1 r1 r1
-2BC  ;>>
+2BC  ;>>>
 2BC  l16
 2BC  [ec<a>ec<a>ecec<a>ec<a>ec]2
 2BC  [gfefededcdc<b>c<bag]2 >>
 2BC  [ec<a>ec<a>ecec<a>gc<a>gc]2
 2BC  [d<ba>d<ba>d<b>d<ba>dfdfg]2
-2BC  <<
+2BC  <<;<
 2B   @\0
 C    @\16
 2BC  r4
-2BC  v+1
-2    h20,0,2,1
-BC   h20,2,1,2
 2BC  l8
-2BC    arae4e  arae&e2
-2BC  r4araf4f  araf&f2
-2BC  r4arag4g  arag&g2
-2BC  ar4b&b2   gr4a&a2
+2BC    arae4e  arae2r
+2BC  r4araf4f  araf2r
+2BC  r4arag4g  arag2r
+2BC  ar4b2r   gr4a2r
 2BC ]
 
 ;==== base ====
@@ -186,10 +177,10 @@ F ]
 
 
 @e4={3,31,*3.c.*1.86.0=20}
-;@e5={2,31,f.n0.een10.ddn11.ccn12.bbn13.aan14.99n15.88n16.77n17.77n18.66n19.66n20.0=30}
 @e5={2,31,f.n0.een10.ddn11.ccn12.bbn13.aan14.99n15.88n16.77n17.77n18.66n19.66n20.0=30}
+;@e5={2,31,f.n0.een10.ddn11.ccn12.bbn13.aan14.99n15.88n16.77n17.77n18.66n19.66n20.0=30}
 @e6={2,0,b750=6}
-3 v10 o3 p16 
+3 v11 o3 p16 
 
 3 l8 
 3 [0 

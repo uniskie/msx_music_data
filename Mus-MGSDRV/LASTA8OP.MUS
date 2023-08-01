@@ -15,15 +15,15 @@
 ;       TL FB
          0, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 4, 1, 0, 1, 5, 0, 0, 1, 0, 1,
-  14, 4, 1, 7, 0, 1, 0, 1, 1, 0, 1 }
+  12, 2, 1, 0, 1, 5, 0, 0, 0, 1, 1,
+  13, 6, 1, 1, 0, 1, 0, 0, 0, 0, 1 }
 
-@v16 = { ; E-Guiter hard
+@v16 = { ; E-Guiter high
 ;       TL FB
          0, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 5, 2, 1, 1, 5, 0, 0, 0, 1, 1,
-  14, 4, 3, 1, 0, 1, 0, 0, 0, 0, 1 }
+  14, 3, 1, 0, 1, 3, 0, 0, 1, 0, 1,
+  14, 9, 1, 2, 0, 1, 0, 0, 0, 0, 1 }
 
 
 @e1 = {1,0,fedc:48 [b:3.a:3.b:3.c:3]0 }
@@ -32,26 +32,24 @@
 
 ;==== main ===
 1 o3 v7 @1 k2 
-9 o4 v13 @15 
-A o4 v11 @15 @\12 r8 
+9 o4 v14 @15 
+A o4 v12 @15 @\16 r8 
 1    h24,0,3,1 
-9A   h24,3,0,2
+9A   h30,2,1,1
 19A [0
 ;9A  @e10
-19A  [l8 q7
+19A  [l8 q8
 19A   r4crc<a4a>  crc<a2r>
 19A   r4crc<a4a>  crc<a2r>
 19A   r4crc<b4b>  crc<b2r>
 19A   cr4d2r      <br4>c2r
 19A  ]2
-9A   @16
-1    h46,0,3,1 
-9A   h46,3,0,2
+9A  @16
 19A  <a4g32g+32a32a+32b32>c32c+32d+32e2 ^2g.f.e
 19A  d2^4.e c1
 19A  c4<b32>c32d32e32f32g32a32b32>c2    ^2e.d.c
 19A  <b2>c2&  c1
-19A  q8 d2&d16r16c<ba q7
+19A  q8 d2&dc<ba q7
 19A  l16
 19A  >
 19A  c<bagbagfagfegfed fedcedc<b>dc<ba>c<bag
@@ -62,10 +60,8 @@ A o4 v11 @15 @\12 r8
 19A  [d<ba>d<ba>d<b>d<ba>dfdfg]2
 19A  <
 19A  r4
-9A   @15
-1    h24,0,3,1 
-9A   h24,3,0,2
-19A  l8
+9A  @15
+19A  l8 q7
 19A    crc<a4a> crc<a&a2>
 19A  r4crc<a4a> crc<a&a2>
 19A  r4crc<b4b> crc<b&b2>
@@ -74,10 +70,10 @@ A o4 v11 @15 @\12 r8
 
 ;==== sub ====
 2 o2 v7 @1 k3
-B o3 v13 @15 
-C o3 v11 @15 @\12 r8 
-2   h20,0,3,1
-BC  q7 h20,3,0,2
+B o3 v14 @15 
+C o3 v12 @15 @\16 r8 
+2    h30,0,3,1
+BC   h30,2,1,1
 2BC [0
 2BC  l8
 2BC  [
@@ -86,10 +82,10 @@ BC  q7 h20,3,0,2
 2BC   r4arag4g  arag2r
 2BC   ar4b2r    gr4a2r
 2BC  ]2
-2BC  v-1 ;@16
-2    h46,0,3,1
-BC   h46,3,0,2
-2BC  ;>
+2B  ;@\8
+C   ;@\24
+2BC v-1
+2BC  >
 2BC  a4g32g+32a32a+32b32>c32c+32d+32e2 ^2g.f.e
 2BC  d2^4.e c1
 2BC  c4<b32>c32d32e32f32g32a32b32>c2    ^2e.d.c
@@ -97,17 +93,17 @@ BC   h46,3,0,2
 2BC  ;<<<
 2BC  r1 r1 r1 r1
 2BC  ;>>>
-2BC  l16
+2BC  l16 q7
 2BC  [ec<a>ec<a>ecec<a>ec<a>ec]2
 2BC  [gfefededcdc<b>c<bag]2 >>
 2BC  [ec<a>ec<a>ecec<a>gc<a>gc]2
 2BC  [d<ba>d<ba>d<b>d<ba>dfdfg]2
-2BC  <<;<
+2BC  <<<
+2B  ;@\0
+C   ;@\16
+2BC v+1
 2BC  r4
-2BC  v+1 ;@15
-2    h20,0,3,1
-BC   h20,3,0,2
-2BC  l8
+2BC  l8 q8
 2BC    arae4e  arae&e2
 2BC  r4araf4f  araf&f2
 2BC  r4arag4g  arag&g2
@@ -116,8 +112,8 @@ BC   h20,3,0,2
 
 ;==== base ====
 ;3 o2 v10 @2 @\6 q4 k4 
-D o2 v13 @13 q3 so
-E o2 v08 @10 q3 so @\16
+D o2 v13 @13 q6 so
+E o2 v09 @10 q2 so @\16
 DE [0
 DE  l4
 DE  a1& a2.a8g8 f1& f1
@@ -189,7 +185,7 @@ F ]
 ;@e5={2,31,f.n0.een10.ddn11.ccn12.bbn13.aan14.99n15.88n16.77n17.77n18.66n19.66n20.0=30}
 @e5={2,31,f.n0.een10.ddn11.ccn12.bbn13.aan14.99n15.88n16.77n17.77n18.66n19.66n20.0=30}
 @e6={2,0,b750=6}
-3 v10 o3 p16 
+3 v11 o3 p16 
 
 3 l8 
 3 [0 
