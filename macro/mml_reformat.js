@@ -87,17 +87,17 @@ function getDigits(s, si, d_type)
 		if (('0'<=c) && (c<='9'))
 		{
 			//efunc.alertBox('found');
-			found = i + 1;
-			dg = c.toString();
+			found = i;
 			skip_i = i;
 			break;
 		}
 		else
 		if ((d_type==2) && (c=='.'))
 		{
-			found = i + 1;
+			//efunc.alertBox('.');
+			found = i;
 			skip_i = i;
-			continue;
+			break;
 		}
 		else
 		{
@@ -651,7 +651,7 @@ function proc()
 					ll += o;
 					//ps = ps + '.';
 				}
-
+				
 				// 4分音符単位
 				count_L4 += ll;
 				while (L4 <= count_L4)
