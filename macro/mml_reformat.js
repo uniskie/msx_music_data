@@ -149,7 +149,10 @@ function getDigits(s, si, d_type)
 			else
 			{
 				// n分音符指定
-				d = L1 / d;
+				if (0 < d)
+				{
+					d = L1 / d;
+				}
 			}
 		}
 	}
