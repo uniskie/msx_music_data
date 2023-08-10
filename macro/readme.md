@@ -6,6 +6,7 @@
 4. [MMLオクターブ検査 for MGSDRV](#mml%E3%82%AA%E3%82%AF%E3%82%BF%E3%83%BC%E3%83%96%E6%A4%9C%E6%9F%BB-for-mgsdrv)
 5. [マクロの登録方法（サクラエディタ）](#%E3%83%9E%E3%82%AF%E3%83%AD%E3%81%AE%E7%99%BB%E9%8C%B2%E6%96%B9%E6%B3%95%E3%82%B5%E3%82%AF%E3%83%A9%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF)
 6. [マクロの実行（サクラエディタ）](#%E3%83%9E%E3%82%AF%E3%83%AD%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%82%B5%E3%82%AF%E3%83%A9%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF)
+8. [mml_opll_patch_nuke](#mml_opll_patch_nuke)
 7. [更新履歴](#%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)
 ----------------------------------------------------------------
 
@@ -202,6 +203,16 @@ MML整形より複雑になってきてしまいました。
 2. 「ツール(T)」→「登録済みマクロ(b)」から実行する
 
 	![「ツール(T)」→「登録済みマクロ(b)」](image/SakuraEditor_macro_set_2.png)
+
+----------------------------------------------------------------
+
+# mml_opll_patch_nuke
+
+[mml_opll_patch_nuke.js](mml_opll_patch_nuke.js)
+
+OpenMSX/src/sound/YM2413NukeYKT.cc の 固定音色定義をMGSDRV形式に変換するマクロ
+
+![mml_opll_patch_nuke](image/mml_opll_patch_nuke.png)
 
 ------------------------------------
 
