@@ -12,74 +12,76 @@
 
 @v16 = {
 ;       TL FB
-        12, 3,
+         0, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  10, 4, 4, 1, 0, 1, 0, 0, 0, 0, 0,
-  15, 5, 0, 4, 0, 2, 1, 0, 1, 0, 0 }
+  10, 4, 3, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 5, 1, 4, 0, 2, 1, 0, 1, 0, 0 }
 @v17 = {
 ;       TL FB
-        12, 4,
+         0, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 3, 3, 1, 0, 2, 0, 0, 0, 0, 1,
+   9, 4, 3, 1, 0, 1, 0, 0, 0, 0, 1,
   10, 7, 1, 4, 0, 2, 1, 0, 1, 0, 0 }
 @v18 = {
 ;       TL FB
-        11, 4,
+         0, 4,
 ; AR DR SL RR KL MT AM VB EG KR DT
    7, 3, 3, 1, 0, 1, 0, 0, 0, 0, 1,
-  11,12, 1, 5, 0, 2, 1, 0, 1, 0, 0 }
+  11, 3, 1, 5, 0, 2, 1, 0, 1, 0, 0 }
 
 9 @10 v11 q7 o5 so @\5 
 A @16 v12 q7 o5 @\0
-C @16 v12 q7 o4 @\11
+C @16 v12 q7 o4 @\12
 9AC l12 h20,1,2,3
 9AC c6.g6.>d<g>de6.<  c6.g6.>f<g>fe6c
 9AC g6.f6.e6.d6. c<g+d+>c<g+d+>d<a+f>d<a+f
 9AC [
-9   @8 
-AC  @17
+9   @10
+AC  @17 >
 9AC   g>deceg3..   fedec<g3..
 9AC   g>deceg3..   agfg3^3<r
 9AC    a+>fgd+ga+3..       g+gfgd+<a+3..
 9AC    a+>fgd+ga+3>c<a+g+  a+3.>c3.<
 9   @8 
-AC  @18 
+AC  @18 <
 9AC   d3.<g3.> f6.e6.d6.c6.
 9AC   d3.<g3.^ 6>r3&r3.
 9AC   c3.<f3.> d+6.d6.c6.<b6.>
 9AC   c3.f3.
-AC           @17 
+AC           @17 >
 9AC          c6.d6.d+6.f6.<
+AC           <
 9AC ]0
 
-B @7 v10 q6so o7 @\20 
+B @15 v10 q6so o5 @\8 
 B l12 h16,1,2,3
+B >>
 B c<b>c<bge>c<b>c<bge> 
 B c<b>c<bge>c<b>c<bge> 
 B c<b>c<bgf>c<b>c<bgf 
 B d+g+>c<d+g+>c<fa+>d<fa+>d 
 B << 
 B [ 
-B  @6 v11 q7so 
+B  @17 v10 q7so 
 B  r3. 
 B  g>deceg3..  fedec<g3.. 
 B  g>deceg     fede3.^6r 
 B  r3. 
 B   <a+>fgd+ga+3..      g+gfgd+<a+3..> 
 B   d+ga+g+gf           g3.a3. > 
-B  @7 v10 q6so 
+B  @18 v10 q6so 
 B  [c<b>c<bgf>c<b>c<bgf>]3  c<bg>c<bgfgb>c<bg 
 B  [a+aa+afd+a+aa+afd+]3    c<af>d<bg>d+c<g+>fd<a+ 
 B ]0 
 
 ; ==== base ====
-@e30={1,0,@11.f.@4.8=16.0=30}
-*0={@4@e30>)q4}
-*1={@6@e31<(q7}
-*2={@4@e30>)q4}
-*3={@6@e31<(q1}
-D @6 v13 q7so o3 @\3
-E @6 v12 q7so o4 @\20 
+@e30={1,0,@2.f.@3.8=16.0=30}
+*0={@4@e30)>q4}
+*1={@6@e31(<q7}
+*2={@4@e30)>q4}
+*3={@6@e31(<q1}
+D @6 v12 q7so o4 @\3
+E @6 v13 q7so o3 @\20 
 DE l12 h16,1,2,3
 D  c3&c3&c6<g>c 
 E  c3&c3&c6 *0b_fg_d*1@6 
@@ -89,8 +91,8 @@ D  a3.f3&fg
 E  a3&a*0>g_d<*1@6f3&f*0>g_d<*1@6 
 D  g+6.g+6.a+6.a+6. 
 E  *0>g_dg_dg_d<b_fb_fb_fg_dg_dg_df_<b>f_<b>f_<b>*1 
-D @13 v13 q4sf > 
-E @6  v12 q1so 
+D @13 v13 q4sf  
+E @6  v12 q1so >
 DE [
 DE  [c6cc6cc6c<ggg>]3
 DE   c6cc6ccccddd

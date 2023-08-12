@@ -1,4 +1,4 @@
-;[gain=1.0 name=SALAMV02 duration=300s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=SALAMA02 duration=300s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -8,9 +8,7 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
 #tempo 150
-#title {"SALAMANDER 'FLY HIGH' -stage2- (素YM2413 / by uniskie)"}
-
-#alloc { E=1300 }
+#title {"SALAMANDER 'FLY HIGH' -stage2- (MGSDRV OPLL / by uniskie)"}
 
 @v16 = {
 ;       TL FB
@@ -31,10 +29,10 @@
    7, 3, 3, 1, 0, 1, 0, 0, 0, 0, 1,
   11, 3, 1, 5, 0, 2, 1, 0, 1, 0, 0 }
 
-9 @10 v11 q7 o5 so
-A @16 v12 q7 o5
-C @16 v12 q7 o4
-9AC l12
+9 @10 v11 q7 o5 so @\5 
+A @16 v12 q7 o5 @\0
+C @16 v12 q7 o4 @\12
+9AC l12 h20,1,2,3
 9AC c6.g6.>d<g>de6.<  c6.g6.>f<g>fe6c
 9AC g6.f6.e6.d6. c<g+d+>c<g+d+>d<a+f>d<a+f
 9AC [
@@ -55,8 +53,8 @@ AC           @17 >
 AC           <
 9AC ]0
 
-B @15 v10 q6so o5
-B l12
+B @15 v10 q6so o5 @\8 
+B l12 h16,1,2,3
 B >>
 B c<b>c<bge>c<b>c<bge> 
 B c<b>c<bge>c<b>c<bge> 
@@ -77,35 +75,30 @@ B  [a+aa+afd+a+aa+afd+]3    c<af>d<bg>d+c<g+>fd<a+
 B ]0 
 
 ; ==== base ====
-*0={@3>q8v+3}
-*1={@6<q7v-3}
-*2={@3>q8v+3}
-*3={@6<q1v-3}
-#macro_offset { b=30 }
-#macro_offset { g=32 }
-#macro_offset { f=34 }
-*30={b96&(b-96&(a96&(a-96&(g96&(g-96r48v+5}
-*32={g96&(g-96&(f96&(e96&(e-96&(d96r48v+5}
-*34={f96&(e96&(e-96&(d96&(d-96&(c96r48v+5}
-D @7 v13 q7 o4
-E @6 v12 q7 o3
-DE l12
+@e30={1,0,@2.f.@3.8=16.0=30}
+*0={@4@e30)q4}
+*1={@6@e31(q7}
+*2={@4@e30)>q4}
+*3={@6@e31(<q1}
+D @6 v12 q7so o3 @\3
+E @6 v13 q7so o4 @\20 
+DE l12 h16,1,2,3
 D  c3&c3&c6<g>c 
-E  c3&c3&c6 *0*b0*g0*1 
+E  c3&c3&c6 *0b_fg_d*1@6 
 D  <a+3&a+3&a+6ga+ 
-E  <a+3&a+3&a+6 >*0*b0*g0*1<
+E  <a+3&a+3&a+6 *0>b_fg_d<*1@6 
 D  a3.f3&fg 
-E  a3&a>*0*g0*1<f3&f>*0*g0*1<
+E  a3&a*0>g_d<*1@6f3&f*0>g_d<*1@6 
 D  g+6.g+6.a+6.a+6. 
-E  >*0*g0*g0*g0<*b0*b0*b0*g0*g0*g0*f0*f0*f0*1 
-D @13 v12 q4sf 
-E @6  v12 q1so >
+E  *0>g_dg_dg_d<b_fb_fb_fg_dg_dg_df_<b>f_<b>f_<b>*1 
+D @13 v13 q4sf > 
+E @6  v12 q1so 
 DE [
 DE  [c6cc6cc6c<ggg>]3
 DE   c6cc6ccccddd
 DE  [d+6d+d+6d+d+6d+<a+a+a+>]3
-D    d+6d+d+d+d+f6ffff
-E    >*2*g0*g0*g0<*b0*b0*b0*g0*g0*g0*f0*f0*f0*3 
+D    d+6d+d+d+d+f6ffff 
+E    *2>g_dg_dg_d<b_fb_fb_fg_dg_dg_df_<b>f_<b>f_<b>*3 
 DE  [<g6gg>dg<g6gg>dg]3
 DE   <g>dg<g>dg6.d<f+f+f+
 DE  [f6ff>cf<f6ff>cf<]3
@@ -113,19 +106,27 @@ DE   f>cf<g>dg<g+>d+g+<a+>fa+
 DE ]0
 
 ; * c6. = c4
-F vh11 vb15 vs13 vm12
-F l12
-F  b3r3.m12m12
-F  b3r3.m12m12
-F [bh6.h12m12m12]2
-F  bm12m12m12 bm12m12m12 bm12m12m12 bm12m12m12
-F [
-F  [bh6bh12s6bh12]7
-F   bh12s12sh12bs12s12hs12
-F  [bh6bh12s6bh12]6
-F   bm12m12m12 bm12m12m12 bm12m12m12 bm12m12m12
-F  [bh6bh12s6bh12]6
-F   b12s12bs12b12s12bs12b12b12b12b6b12
-F  [bh6bh12s6bh12]6
-F   bs12s12sh12sh12s12bs12sh12s12sh12sh12s12sh12
-F ]0
+#macro_offset { m=50 }
+F y38,3 y22,198 ; bass-drum 
+F y39,4 y23,183 ; snare,hi-hut 
+F y40,2 y24,152 ; cynbal,tom-tom 
+*50={y24,138}
+*51={y24,152}
+*52={y24,173}
+*53={y24,194}
+F vh11 vb15 vs13 vm12 
+F l12 
+F  b3r3.*m2m12*m1m12 
+F  b3r3.*m2m12*m1m12 
+F [bh6.h12b12*m1m12]2 
+F  *m3bm12m12m12 *m2bm12m12m12 *m1bm12m12m12 *m0bm12m12m12 *m1 
+F [ 
+F  [bh6bh12s6bh12]7 
+F   bh12s12sh12bs12s12hs12 
+F  [bh6bh12s6bh12]6 
+F   *m3bm12m12m12 *m2bm12m12m12 *m1bm12m12m12 *m0bm12m12m12 *m1 
+F  [bh6bh12s6bh12]6 
+F   b12s12bs12b12s12bs12b12b12b12b6b12 
+F  [bh6bh12s6bh12]6 
+F   bs12s12sh12sh12s12bs12sh12s12sh12sh12s12sh12 
+F ]0 
