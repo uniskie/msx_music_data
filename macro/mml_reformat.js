@@ -418,6 +418,8 @@ function proc()
 			{
 				if (-1 < loopData.loop_count)
 				{
+					var loopTime = 0;
+
 					var r = getDigits(s, i + 1, 0);
 					if (-1 < r[0])
 					{
@@ -435,7 +437,7 @@ function proc()
 					{
 						// ループ中の長さ計算
 						// ループ1回目はすでに反映済みなので2周目以降を加算
-						var loopTime = loopData.time * (loopData.loop_count - 1);
+						loopTime = loopData.time * (loopData.loop_count - 1);
 						if (loopData.interrupt)
 						{
 							// |指定：最終カウントで中断する場合
@@ -485,6 +487,12 @@ function proc()
 					if (!loopData)
 					{
 						loopData =  new LoopData();
+					}
+					else
+					{
+						// 多重ループなら
+						// 今回のループ分の残り加算
+						loopData.time += loopTime;
 					}
 					l_indent = loopStack.length;
 				}
@@ -751,6 +759,12 @@ proc();
 //==================================
 
 /* test
+
+156 l8[2 b4 [2 a4 g+4 f+4]
+156  e4]
+156 [2 e2
+156  d+2 c+2
+156  d+2]
 
 19A @0 v15
 19A q8 l16
