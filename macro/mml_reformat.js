@@ -665,6 +665,7 @@ function proc()
 			case 'f':
 			case 'g':
 			case 'r':
+			case '^': // 横着して音符扱い（厳密には+-や音長省略を許容しない）
 			{
 				var r = getDigits(s, i + 1, 2);
 				var d = r[1];
