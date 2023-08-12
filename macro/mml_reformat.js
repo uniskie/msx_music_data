@@ -481,7 +481,10 @@ function proc()
 						// コマンドの後に改行
 						add_lf = true;
 					}
-					
+
+					// 今回のループ総合時間
+					loopTime += loopData.time;
+
 					// スタックがあればそれを取得
 					loopData = loopStack.pop();
 					if (!loopData)
@@ -491,7 +494,7 @@ function proc()
 					else
 					{
 						// 多重ループなら
-						// 今回のループ分の残り加算
+						// 今回のループ分加算
 						loopData.time += loopTime;
 					}
 					l_indent = loopStack.length;
@@ -754,7 +757,11 @@ function proc()
 
 //==================================
 
-proc();
+try {
+	proc();
+} catch(e) {
+	efunc.alertBox('Errorが発生しました');
+}
 
 //==================================
 
