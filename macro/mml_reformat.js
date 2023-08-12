@@ -253,6 +253,10 @@ function proc()
 		s = s.replace(/\n[^;\s][^\s]*[\s\=]/g, '\n');
 
 	}
+	else
+	{
+		line_header = '';
+	}
 	//efunc.alertBox('"' + line_header +'"');
 	//efunc.alertBox(s);
 
