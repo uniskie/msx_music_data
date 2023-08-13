@@ -1,11 +1,18 @@
-;[gain=1.0 name=YS1FEENA duration=300s fade=5s lpf=1]
-;decompiler: mgsrc-js v1.4.1
-;mgs_version: MGS300 
+;[gain=1.0 name=YS1FEENA duration=300s fade=5s cpu=0 lpf=0]
+; The line above defines extra options, works only on msxplay.com 
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Maxiumum play duration. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+; loop    : Number of global loops. (default: 2). 
+;           Note that duration takes precedence over loop.
 #opll_mode 0
 #lfo_mode 0
 #machine_id 0
-#title { "Falcom ｲｰｽ TITLE BGM ｢FEENA (ﾁｮｯﾄPCE版風)  By Uniskie" }
-#tempo 65
+#title { "Falcom ｲｰｽ TITLE BGM ｢FEENA｣ (ﾁｮｯﾄPCE版風)  By Uniskie" }
+#tempo 64
 
 ;123 !
 ;45678 !
@@ -20,7 +27,7 @@
 
 @e0={ 3, 0, fc=8.0=200. }
 @e1={ 1, 0, 8f=200.b=120.7=120.0=200. }
-@e2={ 1, 0, af=250 }
+@e2={ 1, 0, afed8=250 }
 @e3={ 1, 0, defc=30.c9=200.86=80. }
 @e4={ 1, 0, fc=12.c9=30.80=180. }
 @e6={ 1, 0, dfedc }
@@ -28,67 +35,68 @@
 @e9={ 1, 0, defed }
 @e16={ 1, 0, dfd=13.b=80 }
 
-1 o4 v9 @6 k30
-5 o4 v6 @6 @e7 @\2
-9 o5 v15 @0 @e16 so
-F o5 v12 @0 @e16 so @\16
+1 o4 v9  @6 k30 
+5 o4 v6  @6 @e6     @\1
+9 o5 v14 @0 @e16 so @\3
+F o5 v11 @0 @e16 so @\16 
+6 o4 v4  @6 @e6     @\5
+A o5 v12 @0 @e16 so @\12
+156   h30,0,5,1
+9FA   h30,0,5,1
+
 F r8
-15   h14,0,5,1
-9F   h14,0,5,2
+6A r16
+
 159F l4
-159F [2 b [2 a g+ f+] e]
-159F [2 e2 d+2 c+2 d+2]
-159F l8
-
-159F [0
-159F  [10 r4 g16gg16^2]
-159F  [4 f+1]
-159F  >> [2 [2 e16d16e4.< ab >c|d] e
-159F  |[2 d16e16d4.< ga b>|c] d]
-159F  d16c16d4. ga b>c
-159F  d4< b4 g4 d4&
-159F  d2 r2<<
-159F ]
-
-6 o5 v6  @6 @e7
-A o5 v13 @0 @e16 so
-6  h14,0,5,1
-A  h14,2,2,1
-6A r16 v-1 @\10
-6A l4
-6A [2 b [2 a g+ f+] e]
-6A [2 e2 d+2 c+2 |d+2] d+..
-6A l8
-6A [0
-6A  v+1 @\0
-6A  [4 r4 d16dd16^2]
-6A  [2 [2 r4 c16cc16^2]
-6A  |[2 r4 d16dd16^2]]
-6A  <[4 b1]>
-6A  r16
-6A  v-1 @\10
-6A  >> [2 [2 e16d16e4. <ab >c|d] e
-6A  |[2 d16e16d4. <ga b>|c] d]
-6A  d16c16d4. ga b>c
-6A  d4 <b4 g4 d2.
-6A  r4..
-6A  <<
-6A ]
+1569AF [2 b [2 a g+ f+] e]
+1569AF [2 e2 d+2 c+2 |d+2]
+159F   d+2
+6A     d+..
 
 
-2 o4 v9  @9 q7 k30
-7 o4 v6  @9 @e9 @\2
-B o5 v13 @7 @e9 
-G o5 v11 @7 @e9 @\16
+159F6A l8
+159F6A [0
+6A      v+2
+6       @\0
+A       @\3
+159F    [10 r4 g16gg16^2]
+6A      [4 r4 d16dd16^2]
+6A      [2 [2 r4 c16cc16^2]
+6A      |  [2 r4 d16dd16^2]]
+159F    [4 f+1]
+6A      <[4 b1]>
+56      >
+19FA    >>
+9FA     @3 v-1
+6A      r16 v-1
+6       @\5
+A       @\12
+159F6A  [2 [2 e16d16e4.< ab >c|d] e
+159F6A  |[2 d16e16d4.< ga b>|c] d]
+159F6A  d16c16d4. ga b>c
+9FA     v-1
+159F6A  d4< b4 g4 d4&
+159F6A  d2
+159F    r2
+6A      r4..
+56      <
+19FA    <<
+9FA     @0 v+2
+159F6A ]
+
+2 o4 v9  @9 q7 k30 
+7 o4 v6  @9 @e9 @\1
+B o5 v13 @7 @e9 @\3
+G o5 v11 @7 @e9 @\16 
 
 C o5 v12 @7 @e9 
-8 o4 v4  @9 @e9 @\4
+8 o4 v4  @9 @e9 @\3
 
-BGC    h14,2,1,2
-278    h14,0,5,1
+278    h30,0,5,1
+BGC    h30,0,5,2
 278BCG l1
 
-G      r8
+G      r8 
 27BG   e e e e
 27BG   f+& f+& f+& f+
 27BG   v+1
@@ -100,37 +108,39 @@ G      r8
 
 278BCG l16
 27BG8C [0
-27BG8C  [2 r1] >
-27BG8C  [2 f+ef+b f+2 |e4] d4
-27BG8C  e4 a2.&
-27BG8C  a4 [2 v-2a8.] v+4 r4.
-27BG8C  [2 f+ef+b f+2 |e4] d4
-27BG8C  [2 e4< a2> |c4] d8d24d-24c24
+27BG8C  r1 r2.... >f64e64
+27BG8C  [2 f+ef+b f+2 |e8..f64e64] d4
+27BG8C  e8...g+64& a2.&
+27BG8C  a4 [2 v-1a8.] v+2 r4r16.f64e64
+27BG8C  [2 f+ef+b f+2 |e8..f64e64] d8...e-64
+27BG8C  [2 e4< a2> |c8...e-64] d8^24d-24c24
 27BG8C  <b1& b1
-27BG8C  [2 v-2 b8.] v+4 r8^2
+27BG8C  [2 v-1 b8.] v+2 r8^2
 27BG8C  r1
+BGC     @11
 27BG8C  [2 [8 ec<af>]
 27BG8C  |[8 d<bge>]]
 27BG8C  [4 d<bge>]
 27BG8C  b4 g4 d4< b4&
 27BG8C  b2> r2
+BGC     @7
 27BG8C ]
 
-4 o5 v8  @7 @e1
-D o5 v13 @4 @e1 so @\2
-E o3 v12 @6 @e1 so @\17
-H o3 v10 @6 @e1 so @\12
-H r16
+4 o5 v8  @7 @e1 
+D o5 v12 @4 @e1 so @\3
+E o3 v11 @6 @e1 so @\20 
+H o3 v10 @6 @e1 so @\17 
+H r16 
 4DEH h40,1,3,1
 4DEH l1 [2 r]
 4D   e& e r r <<<
 EH   r r b& b <
 4DEH v+2
-D    @6
+D    @6 
 4DEH @e2
 4DEH <b&b>
 DE   @5
-H    @8
+H    @8 
 4DEH @e3
 4DEH [0
 4DEH  [4 e]
@@ -144,8 +154,8 @@ H    @8
 4DEH ]
 
 3 @0 v10 o8 
-3 [8 r1]
-3 [0
-3  [28 b2]
-3  [9 r1]
-3 ]
+3 [8 r1] 
+3 [0 
+3  [28 b2] 
+3  [9 r1] 
+3 ] 
