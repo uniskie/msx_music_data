@@ -71,7 +71,7 @@ var inst_name = [
 /* @v13 */ 'Acoustic Bass',
 /* @v14 */ 'Electric Guitar'
 ];
-var out_inst_base = 0;//15;
+var out_inst_base = 15;//0
 var use_inst_name = true;
 
 /* sample
@@ -100,8 +100,6 @@ constexpr std::array<YM2413::Patch, 15> YM2413::m_patches = {
 	YM2413::Patch{0x0c, 0, 5, {0, 0}, {1, 1}, {1, 0}, {0, 1}, {0x1, 0x0}, {0, 0}, {0xc, 0xf}, {0x2, 0x5}, {0x2, 0x4}, {0x0, 0x2}},
 	YM2413::Patch{0x15, 0, 3, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0x1, 0x1}, {1, 0}, {0xc, 0x9}, {0x9, 0x5}, {0x0, 0x0}, {0x3, 0x2}},
 	YM2413::Patch{0x09, 0, 3, {0, 0}, {1, 1}, {1, 0}, {0, 0}, {0x1, 0x1}, {2, 0}, {0xf, 0xe}, {0x1, 0x4}, {0x4, 0x1}, {0x0, 0x3}},
-
-
 
 */
 
@@ -220,7 +218,8 @@ try {
 		out_str = out_str + '@v' + formatNum0(out_inst_base + inst_no, 2) + ' = {';
 		if (use_inst_name)
 		{
-			out_str = out_str + ' ; ' + inst_name[inst_no];
+			out_str = out_str + ' ; ' + 
+				'@' + formatNum0(inst_no, 2) + ' ' + inst_name[inst_no];
 		}
 		out_str = out_str + lf;
 		/*
@@ -241,7 +240,7 @@ try {
 			out_str = out_str + formatNum(params[3 + 6 * 2 + j], 2) + ',';	// ar
 			out_str = out_str + formatNum(params[3 + 7 * 2 + j], 2) + ',';	// dr
 			out_str = out_str + formatNum(params[3 + 8 * 2 + j], 2) + ',';	// sl
-			out_str = out_str + formatNum(params[3 + 9 * 2 + j], 2) + ',';	// rr
+			out_str = out_str + formatNum(params[3 + 9 * 2 + j], 2) + ', ';	// rr
 			out_str = out_str + formatNum(params[3 + 5 * 2 + j], 1) + ', ';	// ksl
 			out_str = out_str + formatNum(params[3 + 4 * 2 + j], 1) + ', ';	// mt
 			out_str = out_str + formatNum(params[3 + 0 * 2 + j], 1) + ', ';	// am
