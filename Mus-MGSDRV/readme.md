@@ -125,8 +125,11 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 ドラゴンスピリット ステージ7 深海 (MGS逆コンパイルから修正作業中)
 [DS-7DEEP.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FDS-7DEEP.MUS)
 
-イース FEENA (MGS逆コンパイルから修正作業中)
+イース FEENA (ちょっとだけPCE風)(作業中)
 [YS1FEENA.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1FEENA.MUS)
+
+イース FEENA - B (もうちょっとだけPCE風)(作業中)
+[YS1FEENB.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FYS1FEENB.MUS)
 
 
 --OLD

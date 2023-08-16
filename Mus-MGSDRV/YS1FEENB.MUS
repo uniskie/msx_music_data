@@ -1,4 +1,4 @@
-;[gain=1.0 name=YS1FEENA duration=500s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=YS1FEENB duration=500s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -11,7 +11,7 @@
 #opll_mode 0
 #lfo_mode 0
 #machine_id 0
-#title { "Falcom Ys TITLE BGM -FEENA- (微妙にPCE風)  By Uniskie" }
+#title { "Falcom ｲｰｽ TITLE BGM ｢FEENA｣ (ﾁｮｯﾄPCE版風)  By Uniskie" }
 #tempo 63
 
 
@@ -62,7 +62,7 @@
 
 ;slow attack
 @e8={ 1, 0, 9abcdefec=20 }
-@e11={ 1, 0, 9abcdefec=100 }
+@e11={ 1, 0, 9abcdefec=200 }
 
 ;little softly
 @e9={ 1, 0, defed }
@@ -70,23 +70,16 @@
 ;twinkle
 @e10={1, 0, cdefedcedcbdcbacba9a0=200}
 
+1 @e10 v8 o7 k10 
+3 @e10 v6 o7 k10 @\3 r16 
+13 h18,0,3,1
+13 l4
+13 [2 re<b(e brv-3erv+4> ]
+13 <(re)br (re)br>
+13 re<b>r re<b>r8.
+1  r16 
 
-;= ver ORG
-13 [2 r1 r1 ]
-13 r1 r1
-13 r1 r1
-
-;= ver PCE
-;1 @e10 v8 o7 k10 
-;3 @e10 v6 o7 k10 @\3 r16 
-;13 h18,0,3,1
-;13 l4
-;13 [2 re<b(e brv-3erv+4> ]
-;13 <(re)br (re)br>
-;13 re<b>r re<b>r8.
-;1  r16 
-
-3 @e0 v8 o8 hf k0
+3 @e0 v6 o8 hf k0
 3 [0
 3  [28 b2]
 3  [9 r1]
@@ -109,7 +102,7 @@ F r8
 569AF  [2 b [2 a g+ f+] e]
 569AF  e2 d+2 c+2 d+2
 569AF  v+1
-;9AF    @11 ;= ver PCE
+9AF    @11
 569AF  e2 d+2 c+2d+2
 
 1 o4 v8      @e6         k10 
@@ -126,25 +119,19 @@ F r8
 1569AF  r1 r2.... >f64e64
 1569AF  [2 f+ef+b f+2 |e8..f64e64] d4
 1569AF  e8...g+64& a2.&
-1569AF  a4& ((a8.&((a8.v+4 r8 r8..f64e64
+1569AF  a4 r2 r8..f64e64
 1569AF  [2 f+ef+b f+2 |e8..f64e64] d4
 1569AF  [2 e4< a2> |c4] d8^24d-24c24<
 
-;= ver ORG
-1569AF  b1& b1&
-1569AF  ((b8.&((b8.v+4 r8r2 r1
+1569AF  b1& b1
+5       @e11 v-2 > c+1& ) c+1 < ) 
+169AF   r1 r1
 
-;= ver PCE
-;1569AF  b1& b1
-;5       @e11 v-2 > c+1& ) c+1 < ) 
-;169AF   r1 r1
-
-1569AF  v+1
-
+1569AF  v+2
 56      >
 19FA    >>
 156     @e9
-9FA     @3 @e8 v+1
+9FA     @3 @e8
 1569AF  l8 q7
 1569AF  [2 [2 e16d16e4.< ab >c|d] e
 1569AF  |[2 d16e16d4.< ga b>|c] d]
@@ -153,8 +140,7 @@ F r8
 1569AF  d2r2 q8
 19FA    <<
 56      <
-9FA     v-1
-1569AF  v-1
+1569AF  v-2
 
 1569AF ]
 
@@ -191,71 +177,49 @@ BGC     @0 @e8
 8C      [2 [2 r4 c16cc16^2]
 8C      |  [2 r4 d16dd16^2]]
 
-= ver ORG
-27BG    [4 f+1]
-8C      <[4 b1]>
+;= ver ORG
+;27BG    [4 f+1]
+;8C      <[4 b1]>
 
 ;= ver PCE
-;27BG    f+1&
-;8C      b1&
-;2       f+1& f+1& f+1 
-;7                           @e11 v+3   f+1& ) f+1& ) f+1  v-5 
-;8       b2                  @e11 v+3   a2& ) a1& ) a1     v-5 
-;;2       f+1                 @e11 v-2 > c+1& ) c+1       < v+1
-;B       f+1& f+2        @15 @e11 v-1 > e2& ) e1         < v+0 
-;C       b1& b1          @15 @e11 v-0 > g+1              < v+0 
-;G       f+2..& f+1& f+2 @15 @e11 v+3 > b2               < v-3 
-;G       &b8 
+27BG    f+1&
+8C      b1&
+2       f+1& f+1& f+1 
+7                           @e11 v+3   f+1& ) f+1& ) f+1  v-5 
+8       b2                  @e11 v+3   a2& ) a1& ) a1     v-5 
+;2       f+1                 @e11 v-2 > c+1& ) c+1       < v+1
+B       f+1& f+2        @15 @e11 v-1 > e2& ) e1         < v+1 
+C       b1& b1          @15 @e11 v-0 > g+1              < v+0 
+G       f+2..& f+1& f+2 @15 @e11 v+3 > b2               < v-3 
+G       &b8 
 
-;= ver ORG
-278     @e10 v-1
-BGC     @11 @e31
-8C      v-1 r16 
-8       @\4
-C       @\12
-2BCG    >
+2       @e10 ;v-1 
+78      @e9  v+1
+8       @\5
+BGC     @11 @e31 v-2
+278BCG  >
 278BCG  l16
-27BG8C  [2 [8 ec<af>]
-27BG8C  | [8 d<bge>]]
-27BG8C  [4 d<bge>]
+2BG     [2 [8 ec<af>]
+78      [2 e1& e1
+C       [2 [8 e4 ] 
+2BG     | [8 d<bge>]]
+78      | d1& d1 ]
+C       | [8 d4 ]] 
+2BG     [4 d<bge>]
+78      d1
+C       [4 d4 ]
+78      v-1
+8       v-2 r16
+C       v-2 r16 @\12
 278     @e6
 27BG8C  b4 g4 d4< b4&
 27BG8C  b2>
 27BG    r2
 8C      r4..
-2BCG    <
-278     v+1
-8C      v+1 @\0
-
-;= ver PCE
-;2       @e10 ;v-1 
-;78      @e9  v+1
-;8       @\5
-;BGC     @11 @e31 v-2
-;2BCG    >
-;278BCG  l16
-;2BG     [2 [8 ec<af>]
-;78      [2 e1& e1
-;C       [2 [8 e4 ] 
-;2BG     | [8 d<bge>]]
-;78      | d1& d1 ]
-;C       | [8 d4 ]] 
-;2BG     [4 d<bge>]
-;78      d1
-;C       [4 d4 ]
-;78      v-1 
-;8       v-2 r16
-;C       v-2 r16 @\12
-;278     @e6
-;27BG8C  b4 g4 d4< b4&
-;27BG8C  b2>
-;27BG    r2
-;8C      r4..
-;2BCG    <
-;2       ;v+1
-;BGC     v+2
-;8C      v+2 @\0
-
+278BCG  <
+2       ;v+1
+BGC     v+2
+8C      v+2 @\0
 27BG8C ]
 
 4 o5 v6  @7  @e1 k2 
@@ -264,9 +228,7 @@ E o3 v12 @6  @e1 so @\3
 H o3 v12 @8  @e1 so @\20 
 
 4DEH h30,0,6,1
-
 4DEH l1 [2 r]
-
 4D   e& e r r <
 EH   r r b& b <
 4       v+2 << 
@@ -285,26 +247,24 @@ H    @8  @e4
 4DEH  f f
 
 ;= ver ORG
-4DEH  e e e e
+;4DEH  e e e e
 
 ;= ver PCE
-;DEH   e& e& e& e
-;4     v-0 @9@e11e2>>d2& )d& )d& )d << @7@e3 v-3
-
+DEH   e& e& e& e
+4     e2 v-1 @9@e11 >>d2& )d& )d& )d << @7@e3 v-2
 
 ;= ver ORG
-E     @13 ;v-1
-4DEH  f f e e
-4DEH  f f e e e
-E     @3  ;v+1
+;E     @13 v-1
+;4DEH  f f e e
+;4DEH  f f e e e
+;E     @3 v+1
 
 ;= ver PCE
-;E     @13 v-1
-;4DEH  l4
-;4DEH   [2 ffff8c8 ] [2 eeee8<b8> ]
-;4DEH   [2 ffff8c8 ] eeee8<b8> e1& e2^8&(e8.&(e8. v+2
-;4DEH  l1
-;E     @3  v+1
-
+E     @13 v-1
+4DEH  l4
+4DEH   [2 ffff8c8 ] [2 eeee8<b8> ]
+4DEH   [2 ffff8c8 ] eeee8<b8> e1& e2^8&(e8.&(e8. v+2
+4DEH  l1
+E     @3 v+1
 4DEH ]
 
