@@ -372,6 +372,7 @@
                     d = Math.min(255, Math.max(1, d));
                     return d;
                 }
+                this.al     = 0;    // MuSICAは0スタート
                 this.ar     = dt_255( d[0] );
                 this.dr     = dt_255( d[1] );
                 this.sl     = Math.min(255, Math.max(0, d[2] * 255 / 15));
@@ -438,6 +439,7 @@
                 var s = '@r' + formatNum0(voice_no, 2) + ' = { '
                 s = s + formatNum(d.mode,  1) + ', ';    // mode
                 s = s + formatNum(d.noize, 2) + ', ';    // noize
+                s = s + formatNum(d.al,    3) + ',';     // al
                 s = s + formatNum(d.ar,    3) + ',';     // ar
                 s = s + formatNum(d.dr,    3) + ',';     // dr
                 s = s + formatNum(d.sl,    3) + ',';     // sl
