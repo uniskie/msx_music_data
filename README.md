@@ -80,6 +80,13 @@ http://sakuramail.net/fswold/music.html
 2. RPGコンストラクションツール Dante2 (ver.1.02)
 3. MSXマガジン永久保存版 (ver.1.02)
 
+### おまけ
+
+音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール
+
+[tool/vcd_conv.html](tool/vcd_conv.html)
+(ダウンロードしてブラウザで開いてください)
+
 # エミュレータ特性
 
 ## BlueMSX
