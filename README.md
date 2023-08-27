@@ -80,13 +80,6 @@ http://sakuramail.net/fswold/music.html
 2. RPGコンストラクションツール Dante2 (ver.1.02)
 3. MSXマガジン永久保存版 (ver.1.02)
 
-### おまけ
-
-音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール
-
-[tool/vcd_conv.html](tool/vcd_conv.html)
-(ダウンロードしてブラウザで開いてください)
-
 # エミュレータ特性
 
 ## BlueMSX
@@ -127,6 +120,14 @@ Danteで原型が作られ、Dante2の時にMuSICAとして独立して頒布さ
 当時は唯一SCCを鳴らすことが出来る音楽制作ソフトでした。
 
   現在では、ツクールシリーズで作成したデータは制作者に権利があり、公開も自由ですが、MuSICAにもその条件が適用されるかは不明です。当時の規約ではMSXマガジンへの投稿のみが許可されていました。
+
+## おまけ
+音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール
+https://uniskie.github.io/msx_music_data/tool/vcd_conv.html
+
+htmlソースコード [tool/vcd_conv.html](tool/vcd_conv.html)
+(ダウンロードしてブラウザで開いて使用できます)
+
 
 # その他
 
