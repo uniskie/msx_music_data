@@ -14,9 +14,17 @@
         }
         #title{
             padding: 4px;
-            background: gray;
+            background: #111;
             color: white;
             font-weight: bold;
+            font-size: larger;
+        }
+        #info {
+            padding: 2px;
+            box-sizing: border-box;
+            background:gray;
+            color: white;
+            font-size: smaller;
         }
         #text_area{
             padding: 8px;
@@ -31,15 +39,40 @@
 
             background:#eee;
             color: black;
-            border:3px inset #88a;
+            border:2px inset #ccc;
         }
         #text_area.dropEffect {
             border:3px solid #f88;
         }
-        #caution {
-            padding: 4px;
-            font-size: smaller;
-            color: #800;
+        span {
+            display: inline-block;
+        }
+        label {
+            display: inline-block;
+        }
+        #settings {
+            background-color: lavender;
+        }
+        .label {
+            padding: 1px;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            background: #668;
+            color: white;
+        }
+        .group {
+            padding: 2px;
+            border: dotted 1px;
+        }
+        .selector {
+            padding: 1px;
+            padding-left: 0.5em;
+        }
+        .guide {
+            padding: 2px;
+            padding-left: 1em;
+            font-size: small;
+            color: #555;
         }
     </style>
     <script type="text/javascript">
@@ -106,6 +139,21 @@
         }
 
         // ========================================================
+        // ラジオスイッチ：チェックされた値を返す
+        // ========================================================
+        function getCheckedRadioSwtchValue( name )
+        {
+            var radio_sw = document.getElementsByName( name );
+            for (var i = 0; i < radio_sw.length; ++i)
+            {
+                if (radio_sw[i].checked) {
+                    return radio_sw[i].value;
+                }
+            }
+            return '';
+        }
+
+        // ========================================================
         // テスト用：プロパティ一覧表示
         // ========================================================
         function objToString(obj)
@@ -168,11 +216,15 @@
             }
             return res;
         }
-
+        
         // ========================================================
         // vcdバイナリ読み込み
         // ========================================================
-        function loadVCD(d)
+        function loadVcdConfig() 
+        {
+            this.dt_swap = true; // MuSICAバグ対策：dtの値をC/M入れ替え
+        }
+        function loadVCD(d, config)
         {
             // voice count
             const opll_count    = 100;
@@ -207,7 +259,7 @@
             // ========================================================
             // 構造体：OPLLデータ
             // ========================================================
-            function OpllD( d )
+            function OpllD( d, config )
             {   /*
                 +0: M: AM(1) | VIB(1) | EG(1) | KSR(1) | MUL(4)
                 +1: C: AM(1) | VIB(1) | EG(1) | KSR(1) | MUL(4)
@@ -220,7 +272,7 @@
 
                 @v15 = { ; Violin
                 ;       TL FB
-                        4, 7,
+                         4, 7,
                 ; AR DR SL RR KL MT AM VB EG KR DT
                 9, 3, 1, 1, 1, 1, 0, 1, 1, 0, 1,
                 9, 1, 0, 6, 0, 1, 0, 1, 1, 0, 0 }
@@ -252,15 +304,18 @@
                     this.vb[i] = (d[0 + i] >> 6) & 1;
                     this.eg[i] = (d[0 + i] >> 5) & 1;
                     this.kr[i] = (d[0 + i] >> 4) & 1;
-                    this.dt[i] = (d[3] >> (4 - i)) & 1; // MuSICAバグ合わせ
-                    //this.dt[i] = (d[3] >> (3 + i)) & 1; // 本来
+                    if (config.dt_swap) {
+                        this.dt[i] = (d[3] >> (4 - i)) & 1; // MuSICAバグ合わせ
+                    } else {
+                        this.dt[i] = (d[3] >> (3 + i)) & 1; // 本来
+                    }
                 }
             }
 
             // ========================================================
             // 構造体：PSG/SCCデータ
             // ========================================================
-            function PsgSccD( d )
+            function PsgSccD( d, config )
             {   /*
                     +0: Attack_Rate
                     +1: Decay_Rate
@@ -322,7 +377,7 @@
             /*
                 @v15 = { ; Violin
                 ;       TL FB
-                        4, 7,
+                         4, 7,
                 ; AR DR SL RR KL MT AM VB EG KR DT
                 9, 3, 1, 1, 1, 1, 0, 1, 1, 0, 1,
                 9, 1, 0, 6, 0, 1, 0, 1, 1, 0, 0 }
@@ -331,7 +386,7 @@
             {
                 var s = '@v' + formatNum0(voice_no, 2) + ' = { ; ' + voice_name + '\n';
                 s = s + ';       TL FB \n';
-                s = s + '       ';
+                s = s + '        ';
                 s = s + formatNum(d.tl, 2) + ',';	// tl
                 s = s + formatNum(d.fb, 2) + ',';	// fb
                 s = s + '\n';
@@ -428,7 +483,7 @@
                 for (var i = 0; i < opll_count; ++i)
                 {
                     opll_name[i] = fromMSXChar( d.slice(np, np + name_length) );
-                    var dat = new OpllD( d.slice( dp, dp + opll_data_size ) );
+                    var dat = new OpllD( d.slice( dp, dp + opll_data_size ), config );
                     res = res + opllToMGSDRV( dat, i, opll_name[i] ) + '\n';
                     np += name_length;
                     dp += opll_data_size;
@@ -448,7 +503,7 @@
                 for (var i = 0; i < psg_count; ++i)
                 {
                     psg_name[i] = fromMSXChar( d.slice(np, np + name_length) );
-                    var dat = new PsgSccD( d.slice( dp, dp + psg_data_size ) );
+                    var dat = new PsgSccD( d.slice( dp, dp + psg_data_size ), config );
                     res = res + psgToMGSDRV( dat, i, psg_name[i] ) + '\n';
                     np += name_length;
                     dp += psg_data_size;
@@ -468,7 +523,7 @@
                 for (var i = 0; i < scc_count; ++i)
                 {
                     scc_name[i] = fromMSXChar( d.slice(np, np + name_length) );
-                    var dat = new PsgSccD( d.slice( dp, dp + scc_data_size ) );
+                    var dat = new PsgSccD( d.slice( dp, dp + scc_data_size ), config );
                     res = res + psgToMGSDRV( dat, i, scc_name[i] );
                     res = res + sccToMGSDRV( dat.wave, i, scc_name[i] ) + '\n';
                     np += name_length;
@@ -555,16 +610,21 @@
                     return;
                 }
 
+                // 変換設定
+                var config = new loadVcdConfig();
+                // OPLLのDT入れ替え
+                config.dt_swap =  (getCheckedRadioSwtchValue('opll_dt_swap') == 'true');
 
                 // ドロップ可能フラグを一時停止
                 drop_avilable = false;
 
+                // ========================================================
                 // ファイル読み込み
                 var reader = new FileReader();
                 reader.onload = function(f) {
                     //try {
                         var u8array = new Uint8Array(f.target.result);
-                        text_area.textContent = loadVCD(u8array);
+                        text_area.textContent = loadVCD(u8array, config);
                     //} catch (e) {
                     //    text_area.textContent = '読み込みデータに問題があります';
                     //}
@@ -594,16 +654,27 @@
             MuSICA vcd file to MGSDRV converter
         </div>
         <div>
-            MuSICAの音色定義ファイルをMGSDRVに移植する際のヘルプツールです。<br>
-            音色番号はMuSICAでの番号なので適宜変更してください。<br>
-            <br>
-            ファイル： <span id="filename_area"></span>
+            <div class="guide">
+                MuSICAの音色定義ファイルをMGSDRVに移植する際のヘルプツールです。<br>
+                音色番号はMuSICAでの番号なので適宜変更してください。
+            </div>
+            <div id="info">
+                ファイル： <span id="filename_area"></span>
+            </div>
         </div>
         <textarea id="text_area">ここにvcdファイルをドロップ</textarea>
-        <div id="caution">
-            ※注）　OPLL音色定義のDTについて<br>
-            　　　　MuSICAはDTがキャリアとモジュール反対なバグがあるのでそれに合わせています。<br> 
-            　　　　勤労シリーズの場合、DTのキャリアとモジュールを入れ替えてください。<br>
+        <div id="settings">
+            <div class="label">
+                設定：OPLL音色定義のDT（ディストーション）
+            </div>
+            <div class="selector">
+                <label><input type="radio" name="opll_dt_swap" value="true" checked>キャリアとモジュールの値を入れ替える</label>
+                <label><input type="radio" name="opll_dt_swap" value="false">入れ替えない</label>
+            </div>
+            <div class="guide">
+                MuSICAでDT値のキャリア/モジュールが反対になる問題への対策です。<br> 
+                勤労シリーズの場合、この問題は修正されています。<br>
+            </div>
         </div>
 </body>
 </html>
