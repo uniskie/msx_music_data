@@ -123,9 +123,10 @@ Danteで原型が作られ、Dante2の時にMuSICAとして独立して頒布さ
 
 ## おまけ
 音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール
+https://uniskie.github.io/msx_music_data/tool/vcd_conv.html
 
-[tool/vcd_conv.html](tool/vcd_conv.html)
-(ダウンロードしてブラウザで開いてください)
+htmlソースコード [tool/vcd_conv.html](tool/vcd_conv.html)
+(ダウンロードしてブラウザで開いて使用できます)
 
 
 # その他
