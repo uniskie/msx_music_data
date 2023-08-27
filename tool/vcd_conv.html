@@ -36,12 +36,21 @@
             white-space:pre-line;
             word-wrap:break-word;
 
-            background:#e8e8e8;
+            background:#f0f0f0;
             color: black;
             border:2px inset #888;
         }
         #text_area.dropEffect {
             border:2px solid #f88;
+        }
+        .click {
+            cursor: pointer;
+        }
+        summary {
+            cursor: pointer;
+        }
+        input {
+            cursor: pointer;
         }
         span {
             display: inline-block;
@@ -58,10 +67,6 @@
             font-weight: bolder;
             background: #668;
             color: white;
-        }
-        .group {
-            padding: 0.2em;
-            border: dotted 1px;
         }
         .selector {
             margin: 0.2em;
@@ -653,31 +658,33 @@
     </script>
 </head>
 <body id="main">
-        <div id="title">
+    <details open>
+        <summary id="title">
             MuSICA vcd file to MGSDRV converter
+        </summary>
+        <div class="guide">
+            <label>MuSICAの音色定義ファイルをMGSDRVに移植する際のヘルプツールです。</label>
+            <label>音色番号はMuSICAでの番号なので適宜変更してください。</label>
         </div>
-        <div>
-            <div class="guide">
-                MuSICAの音色定義ファイルをMGSDRVに移植する際のヘルプツールです。<br>
-                音色番号はMuSICAでの番号なので適宜変更してください。
-            </div>
-            <div id="info">
-                ファイル： <span id="filename_area"></span>
-            </div>
-        </div>
-        <textarea id="text_area">ここにvcdファイルをドロップ</textarea>
-        <div id="settings">
-            <div class="label">
+    </details>  
+    <div id="info">
+        ファイル： <span id="filename_area"></span>
+    </div>
+    <textarea id="text_area">ここにvcdファイルをドロップ</textarea>
+    <div id="settings">
+        <details open>
+            <summary class="label">
                 設定：OPLL音色定義のDT（ディストーション）
-            </div>
+            </summary>
             <div class="selector">
-                <label><input type="radio" name="opll_dt_swap" value="true" checked>キャリアとモジュールの値を入れ替える</label>
-                <label><input type="radio" name="opll_dt_swap" value="false">入れ替えない</label>
+                <label class="click"><input type="radio" name="opll_dt_swap" value="true" checked>キャリアとモジュールの値を入れ替える</label>
+                <label class="click"><input type="radio" name="opll_dt_swap" value="false">入れ替えない</label>
             </div>
             <div class="guide">
-                MuSICAでDT値のキャリア/モジュールが反対になる問題への対策です。<br> 
-                勤労シリーズの場合、この問題は修正されています。<br>
+                <label>MuSICAでDT値のキャリアとモジュールが入れ替わる問題への対策です。</label> 
+                <label>（勤労シリーズの場合、この問題は修正されています）</label>
             </div>
-        </div>
+        </details>
+    </div>
 </body>
 </html>
