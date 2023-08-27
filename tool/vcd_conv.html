@@ -393,15 +393,15 @@
             function opllToMGSDRV(d, voice_no, voice_name)
             {
                 var s = '@v' + formatNum0(voice_no, 2) + ' = { ; ' + voice_name + '\n';
-                s = s + ';       TL FB \n';
-                s = s + '        ';
+                s = s + ';        TL FB \n';
+                s = s + '         ';
                 s = s + formatNum(d.tl, 2) + ',';	// tl
                 s = s + formatNum(d.fb, 2) + ',';	// fb
                 s = s + '\n';
-                s = s + '; AR DR SL RR KL MT AM VB EG KR DT \n';
+                s = s + ';        AR DR SL RR KL MT AM VB EG KR DT \n';
                 for (var j = 0; j < 2; ++j)
                 {
-                    s = s + '  ';
+                    s = s + '         ';
                     s = s + formatNum(d.ar[j], 2) + ',';	// ar
                     s = s + formatNum(d.dr[j], 2) + ',';	// dr
                     s = s + formatNum(d.sl[j], 2) + ',';	// sl
