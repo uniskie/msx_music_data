@@ -11,7 +11,10 @@
             grid-template-rows: fit-content(100%) fit-content(100%) 1fr  fit-content(100%);
             width: 100%;
             height: 100%;
+
+            background-color: #f8f8ff;
         }
+
         #title{
             padding: 0.2em 0.5em;
             background: #111;
@@ -43,6 +46,8 @@
         #text_area.dropEffect {
             border:2px solid #f88;
         }
+
+        /* クリックで反応するアイテムのカーソル変更 */
         .click {
             cursor: pointer;
         }
@@ -55,11 +60,15 @@
         span {
             display: inline-block;
         }
+
+        /* 途中改行を抑制したい要素 */
         label {
             display: inline-block;
         }
+
+        /* 設定 */
         #settings {
-            background-color: lavender;
+            background-color: #f0f0ff;
         }
         .label {
             padding: 0.1em;
@@ -73,14 +82,40 @@
             padding-left: 0.5em;
             font-size: smaller;
         }
+
+        /* 説明書き */
         .guide {
             width:fit-content;
             box-sizing: border-box;
             border: 1px dashed;
             margin: 0.1em 1em;
-            padding: 0.1em 0.4em;
+            padding: 0.2em 0.4em;
             font-size:small;
             color: #555;
+            background-color: #f2ecfc;
+        }
+
+        /* Label Input ボタンの見た目変更 */
+        label.button {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 0.2em;
+            padding: 0em 1em;
+            border: solid 1px #aaa;
+            border-radius: 1em;
+            background: #f0e8e8;
+            color: black;
+        }
+        @media (any-hover: hover) {
+            label.button:hover {
+                background: #e8e0e0;
+            }
+        }
+        label.button:active {
+            border: solid 1px #644;
+        }
+        label.button > input[type="file"]  {
+            display: none;
         }
     </style>
     <script type="text/javascript">
@@ -434,8 +469,6 @@
             */
             function psgToMGSDRV(d, voice_no, voice_name)
             {
-                console.log(objToString(d) );
-
                 var s = '@r' + formatNum0(voice_no, 2) + ' = { '
                 s = s + formatNum(d.mode,  1) + ', ';    // mode
                 s = s + formatNum(d.noize, 2) + ', ';    // noize
@@ -545,6 +578,62 @@
         }  
 
         // ========================================================
+        // vcdファイルを開く
+        // ========================================================
+        function openVcdFile( target_file )
+        {
+            // ファイル名表示
+            var file_text = `${target_file.name} (${target_file.size}Bytes)`;
+            filename_area.textContent = file_text;
+
+            // vcd?
+            var file_type = target_file.name.split('.').pop();
+            if (file_type.toLowerCase() != 'vcd')
+            {
+                // vcdファイルでなければ無視
+                text_area.textContent = 'vcdファイルではありません。';
+                return false;
+            }
+
+            // 変換設定
+            var config = new loadVcdConfig();
+            // OPLLのDT入れ替え
+            config.dt_swap =  (getCheckedRadioSwtchValue('opll_dt_swap') == 'true');
+
+            // ドロップ可能フラグを一時停止
+            drop_avilable = false;
+
+            // ========================================================
+            // ファイル読み込み
+            var reader = new FileReader();
+            reader.onload = function(f) {
+                //try {
+                    var u8array = new Uint8Array(f.target.result);
+                    text_area.textContent = loadVCD(u8array, config);
+                //} catch (e) {
+                //    text_area.textContent = '読み込みデータに問題があります';
+                //}
+                drop_avilable = true;
+            };
+            reader.onerror = function(e) {
+                var errmes = new Array(
+                    "",
+                    "ファイルが見つかりません",
+                    "セキュリティエラーが検出されました",
+                    "ファイルの読込が中断されました",
+                    "ファイルの読み込み権限がありません",
+                    "ファイルサイズが大き過ぎます"
+                    );
+                text_area.textContent = '読み込みエラーです \n\n'
+                                        + errmes[reader.error.code];
+            };
+
+            reader.readAsArrayBuffer(target_file);
+
+            return false;
+        }
+
+        // ========================================================
         // イベント：HTMLの読み込みが完了した
         // ========================================================
         window.addEventListener('DOMContentLoaded',
@@ -598,62 +687,31 @@
 
                 text_area.classList.remove('dropEffect');   // ドラッグ受付中スタイルシート解除
 
-                // ファイル名表示
-                var target_file = e.dataTransfer.files[0];
-                var file_text = `${target_file.name} (${target_file.size}Bytes)`;
-                filename_area.textContent = file_text;
-
                 if (!drop_avilable || !isValidDropItem(e))
                 {
                     // ファイルアイテムでなければ無視
                     e.dataTransfer.dropEffect = "none"; // ドラッグしているファイルアイコンを変更
-                    return;
+                    return false;
                 }
 
-                // vcd?
-                var file_type = target_file.name.split('.').pop();
-                if (file_type.toLowerCase() != 'vcd')
+                // ファイルオープン
+                if (!openVcdFile(e.dataTransfer.files[0]))
                 {
-                    // vcdファイルでなければ無視
                     e.dataTransfer.dropEffect = "none"; // ドラッグしているファイルアイコンを変更
-                    text_area.textContent = 'vcdファイルではありません。';
-                    return;
                 }
+            });
 
-                // 変換設定
-                var config = new loadVcdConfig();
-                // OPLLのDT入れ替え
-                config.dt_swap =  (getCheckedRadioSwtchValue('opll_dt_swap') == 'true');
-
-                // ドロップ可能フラグを一時停止
-                drop_avilable = false;
-
-                // ========================================================
-                // ファイル読み込み
-                var reader = new FileReader();
-                reader.onload = function(f) {
-                    //try {
-                        var u8array = new Uint8Array(f.target.result);
-                        text_area.textContent = loadVCD(u8array, config);
-                    //} catch (e) {
-                    //    text_area.textContent = '読み込みデータに問題があります';
-                    //}
-                    drop_avilable = true;
-                };
-                reader.onerror = function(e) {
-                    var errmes = new Array(
-                        "",
-                        "ファイルが見つかりません",
-                        "セキュリティエラーが検出されました",
-                        "ファイルの読込が中断されました",
-                        "ファイルの読み込み権限がありません",
-                        "ファイルサイズが大き過ぎます"
-                        );
-                    text_area.textContent = '読み込みエラーです \n\n'
-                                            + errmes[reader.error.code];
-                };
-
-                reader.readAsArrayBuffer(target_file);
+            // ========================================================
+            // イベント：ファイルを開くボタン
+            // ========================================================
+            var file_open_button = document.getElementById("vcd_file_open");
+            file_open_button.addEventListener("change",
+            function() {
+                // ファイルオープン
+                if (!openVcdFile(file_open_button.files[0]))
+                {
+                    // error
+                }
             });
         });
 
@@ -670,7 +728,9 @@
         </div>
     </details>  
     <div id="info">
-        ファイル： <span id="filename_area"></span>
+        <label for="vcd_file_open" class="button">ファイル
+            <input type="file" id="vcd_file_open" accept=".vcd"></label>
+        <span id="filename_area"></span>
     </div>
     <textarea id="text_area">ここにvcdファイルをドロップ</textarea>
     <div id="settings">
