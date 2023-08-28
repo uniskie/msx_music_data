@@ -13,6 +13,7 @@
             height: 100%;
 
             background-color: #f8f8ff;
+            /*background-color: #24f;*/
         }
 
         #title{
@@ -68,31 +69,32 @@
 
         /* 設定 */
         #settings {
-            background-color: #f0f0ff;
+            background-color: #e8e0ff;
+            font-size:small;
         }
         .label {
             padding: 0.1em;
             padding-left: 0.5em;
             font-weight: bolder;
-            background: #668;
+            background: #768;
             color: white;
         }
         .selector {
-            margin: 0.2em;
-            padding-left: 0.5em;
-            font-size: smaller;
+            margin: 0.1em;
+            padding-left: 1em;
         }
 
         /* 説明書き */
         .guide {
             width:fit-content;
             box-sizing: border-box;
-            border: 1px dashed;
             margin: 0.1em 1em;
             padding: 0.2em 0.4em;
             font-size:small;
-            color: #555;
-            background-color: #f2ecfc;
+
+            color: #535;
+            background-color: #ddf;
+            border: 1px solid #9ab;
         }
 
         /* Label Input ボタンの見た目変更 */
@@ -103,12 +105,13 @@
             padding: 0em 1em;
             border: solid 1px #aaa;
             border-radius: 1em;
-            background: #f0e8e8;
+            background: #f0e8f8;
             color: black;
+            font-size: smaller;
         }
         @media (any-hover: hover) {
             label.button:hover {
-                background: #e8e0e0;
+                background: #e0d0e0;
             }
         }
         label.button:active {
@@ -299,6 +302,25 @@
             var psg_data         = new Array( psg_count , new Uint8Array( psg_data_size , 0 ) );
             var scc_data         = new Array( scc_count , new Uint8Array( scc_data_size , 0 ) );
 
+            // MSX-MUSIC BASICの固定音色
+            // MuSICAではユーザー音色定義無効
+            const fm_fix_inst = [];
+            fm_fix_inst[ 0 ]  = 'PIANO1  ';
+            fm_fix_inst[ 2 ]  = 'VIOLIN  ';
+            fm_fix_inst[ 3 ]  = 'FLUTE1  ';
+            fm_fix_inst[ 4 ]  = 'CLARINET';
+            fm_fix_inst[ 5 ]  = 'OBOE    ';
+            fm_fix_inst[ 6 ]  = 'TRUMPET ';
+            fm_fix_inst[ 9 ]  = 'ORGAN   ';
+            fm_fix_inst[ 10 ] = 'GUITAR  ';
+            fm_fix_inst[ 12 ] = 'E BASS  ';
+            fm_fix_inst[ 14 ] = 'HARPSIC1';
+            fm_fix_inst[ 16 ] = 'VIBRAPHO';
+            fm_fix_inst[ 23 ] = 'S BASS  ';
+            fm_fix_inst[ 24 ] = 'SYNTHE  ';
+            fm_fix_inst[ 33 ] = 'WOODBASS';
+            fm_fix_inst[ 48 ] = 'HORN    ';
+
             // ========================================================
             // 構造体：OPLLデータ
             // ========================================================
@@ -428,6 +450,11 @@
             */
             function opllToMGSDRV(d, voice_no, voice_name)
             {
+                if (fm_fix_inst[voice_no] != undefined)
+                {
+                    //voice_name = '(fixed)* ' + fm_fix_inst[voice_no];
+                    voice_name = '(fixed)* ' + voice_name;
+                }
                 var s = '@v' + formatNum0(voice_no, 2) + ' = {    ; ' + voice_name + '\n';
                 s = s + ';       TL FB \n';
                 s = s + '        ';
