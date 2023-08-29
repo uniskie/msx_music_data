@@ -76,19 +76,6 @@ function getCheckedRadioSwtchValue( name )
 }
 
 // ========================================================
-// テスト用：プロパティ一覧表示
-// ========================================================
-function objToString(obj)
-{
-    let s = '';
-    let pr = Object.entries(obj);
-    pr.forEach(function(e) {
-        s = s + '[ ' + e + ' ]\n';
-    });
-    return s;
-};
-
-// ========================================================
 // MSX ANK 文字 -> Unicode/S-JIS系変換
 // in:  d - Uint8Array
 // ========================================================
