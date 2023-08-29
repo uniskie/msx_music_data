@@ -1,16 +1,7 @@
 // ========================================================
 // ドラッグアンドドロップ受付状態
+// ========================================================
 let drop_avilable = true;
-
-// ========================================================
-// ドラッグされたアイテムがファイルかどうか検査する関数
-// in:  e - dropイベントオブジェクト
-// ========================================================
-function isValidDropItem(e)
-{
-    return (e.dataTransfer.types.indexOf("Files") >= 0)
-    && (e.dataTransfer.items.length <= 1);
-}
 
 // ========================================================
 // 空白桁埋め数値文字列
@@ -101,7 +92,7 @@ function objToString(obj)
 // MSX ANK 文字 -> Unicode/S-JIS系変換
 // in:  d - Uint8Array
 // ========================================================
-function fromMSXChar(d)
+function fromMSX_ankChar(d)
 {
     const char_table = Array.from(
         '　月火水木金土日年円時分秒百千万'
@@ -138,7 +129,7 @@ function fromMSXChar(d)
         } else
         if (c == 1) {
             graph = true;
-        } else 
+        } else
         if ((32 <= c) && (c <= 255))
         {
             res = res + char_table[c];
@@ -150,190 +141,325 @@ function fromMSXChar(d)
 }
 
 // ========================================================
+// vcd 定数定義
+// VcdData.protoypeで宣言したときにうまく参照できないので分離
+// ========================================================
+const vcd_def = new function ()
+{
+    // voice count
+	this.opll_count    = 100;
+	this.psg_count     = 30;
+	this.scc_count     = 50;
+
+	// data size
+	this.name_length    = 8;
+	this.opll_data_size = 8;
+	this.psg_data_size  = 8;
+	this.scc_wave_size  = 32;
+	this.scc_data_size  = 4 + this.scc_wave_size;
+
+	// this.name table
+	this.opll_name_s    = 0;
+	this.psg_name_s     = this.opll_name_s + this.opll_count * this.name_length;
+	this.scc_name_s     = this.psg_name_s  + this.psg_count  * this.name_length;
+
+	// data body table
+	this.opll_data_s    = this.scc_name_s  + this.scc_count  * this.name_length;
+	this.psg_data_s     = this.opll_data_s + this.opll_count * this.opll_data_size;
+	this.scc_data_s     = this.psg_data_s  + this.psg_count  * this.psg_data_size;
+
+    // MSX-MUSIC BASICの固定音色
+    // MuSICAではユーザー音色定義無効
+    this.fm_fix_inst = [];
+    this.fm_fix_inst[ 0 ]  = 'PIANO1  ';
+    this.fm_fix_inst[ 2 ]  = 'VIOLIN  ';
+    this.fm_fix_inst[ 3 ]  = 'FLUTE1  ';
+    this.fm_fix_inst[ 4 ]  = 'CLARINET';
+    this.fm_fix_inst[ 5 ]  = 'OBOE    ';
+    this.fm_fix_inst[ 6 ]  = 'TRUMPET ';
+    this.fm_fix_inst[ 9 ]  = 'ORGAN   ';
+    this.fm_fix_inst[ 10 ] = 'GUITAR  ';
+    this.fm_fix_inst[ 12 ] = 'E BASS  ';
+    this.fm_fix_inst[ 14 ] = 'HARPSIC1';
+    this.fm_fix_inst[ 16 ] = 'VIBRAPHO';
+    this.fm_fix_inst[ 23 ] = 'S BASS  ';
+    this.fm_fix_inst[ 24 ] = 'SYNTHE  ';
+    this.fm_fix_inst[ 33 ] = 'WOODBASS';
+    this.fm_fix_inst[ 48 ] = 'HORN    ';
+};
+
+// ========================================================
+// vcdバイナリ読み込み設定 構造体
+// ========================================================
+function LoadVcdConfig()
+{
+    this.dt_swap = true; // MuSICAバグ対策：dtの値をC/M入れ替え
+}
+
+// ========================================================
+// VcdData - vcd データクラス
+// in:  d - Uint8Array
+//      config - loadVcdConfig（設定オブジェクト）
+// ========================================================
+function VcdData(d, config)
+{
+    // array 先に固定サイズを確保
+    this.opll_name = new Array( this.opll_count ).fill( ''.repeat( this.name_length ) );
+    this.psg_name  = new Array( this.psg_count  ).fill( ''.repeat( this.name_length ) );
+    this.scc_name  = new Array( this.scc_count  ).fill( ''.repeat( this.name_length ) );
+    this.opll_data = new Array( this.opll_count ).fill( new this.OpllD() );
+    this.psg_data  = new Array( this.psg_count  ).fill( new this.PsgSccD() );
+    this.scc_data  = new Array( this.scc_count  ).fill( new this.PsgSccD() );
+
+    if (arguments.length == 2)
+    {
+        this.set( d, config );
+    }
+}
+// ========================================================
+// VcdData.prototype
+// ========================================================
+{
+    // ========================================================
+    // 構造体：OPLLデータ
+    // ========================================================
+    VcdData.prototype.OpllD
+    = function (d, config)
+    {
+        this.raw = new Uint8Array( vcd_def.opll_data_size );
+        this.tl = 0;
+        this.fb = 0;
+        this.ar = [ 0, 0 ];
+        this.dr = [ 0, 0 ];
+        this.sl = [ 0, 0 ];
+        this.rr = [ 0, 0 ];
+        this.kl = [ 0, 0 ];
+        this.mt = [ 0, 0 ];
+        this.am = [ 0, 0 ];
+        this.vb = [ 0, 0 ];
+        this.eg = [ 0, 0 ];
+        this.kr = [ 0, 0 ];
+        this.dt = [ 0, 0 ];
+
+        if (arguments.length == 2)
+        {
+            this.set( d, config );
+        }
+    },
+
+    // ========================================================
+    // 構造体：PSG/SCCデータ
+    // ========================================================
+    VcdData.prototype.PsgSccD =
+    function ( d, config )
+    {
+        this.raw    = new Uint8Array( vcd_def.psg_data_size );
+        this.wave   = new Uint8Array( vcd_def.scc_wave_size );
+
+        this.mode   = 1;
+        this.noize  = 0;
+        this.al     = 0;
+        this.ar     = 0;
+        this.dr     = 0;
+        this.sl     = 0;
+        this.sr     = 0;
+        this.rr     = 0;
+
+        if (arguments.length == 2)
+        {
+            this.set( d, config );
+        }
+    }
+
+	// ========================================================
+	// データ読み込み：OPLL
+	// ========================================================
+	VcdData.prototype.set =
+	function ( d, config )
+	{
+	    // ========================================================
+	    // OPLL
+	    {
+	        let np = vcd_def.opll_name_s;
+	        let dp = vcd_def.opll_data_s;
+	        for (let i = 0; i < vcd_def.opll_count; ++i)
+	        {
+	            this.opll_name[i] = fromMSX_ankChar( d.slice(np, np + vcd_def.name_length) );
+	            this.opll_data[i] = new this.OpllD( d.slice( dp, dp + vcd_def.opll_data_size ), config );
+	            np += vcd_def.name_length;
+	            dp += vcd_def.opll_data_size;
+	        }
+	    }
+
+	    // ========================================================
+	    // PSG
+	    {
+	        let np = vcd_def.psg_name_s;
+	        let dp = vcd_def.psg_data_s;
+	        for (let i = 0; i < vcd_def.psg_count; ++i)
+	        {
+	            this.psg_name[i] = fromMSX_ankChar( d.slice(np, np + vcd_def.name_length) );
+	            this.psg_data[i] = new this.PsgSccD( d.slice( dp, dp + vcd_def.psg_data_size ), config );
+	            np += vcd_def.name_length;
+	            dp += vcd_def.psg_data_size;
+	        }
+	    }
+
+	    // ========================================================
+	    // SCC
+	    {
+	        let np = vcd_def.scc_name_s;
+	        let dp = vcd_def.scc_data_s;
+	        for (let i = 0; i < vcd_def.scc_count; ++i)
+	        {
+	            this.scc_name[i] = fromMSX_ankChar( d.slice(np, np + vcd_def.name_length) );
+	            this.scc_data[i] = new this.PsgSccD( d.slice( dp, dp + vcd_def.scc_data_size ), config );
+	            np += vcd_def.name_length;
+	            dp += vcd_def.scc_data_size;
+	        }
+	    }
+	};
+
+	// ========================================================
+	// OpllD.prototype
+	// ========================================================
+	// ========================================================
+	// OPLLデータ 設定
+	// in:  d - Uint8Array
+	//      config - loadVcdConfig（設定オブジェクト）
+	// ========================================================
+	VcdData.prototype.OpllD.prototype.set =
+	function ( d, config )
+	{   /*
+	    +0: M: AM(1) | VIB(1) | EG(1) | KSR(1) | MUL(4)
+	    +1: C: AM(1) | VIB(1) | EG(1) | KSR(1) | MUL(4)
+	    +2: M: KSL(2) | TL(6)
+	    +3: C: KSL(2) | 0(1) | DC(1) | DM(1) | FB(3)
+	    +4: M: AR(4) | DR(4)
+	    +5: C: AR(4) | DR(4)
+	    +6: M: SL(4) | RR(4)
+	    +7: C: SL(4) | RR(4)
+
+	    @v15 = { ; Violin
+	    ;       TL FB
+	                4, 7,
+	    ; AR DR SL RR KL MT AM VB EG KR DT
+	    9, 3, 1, 1, 1, 1, 0, 1, 1, 0, 1,
+	    9, 1, 0, 6, 0, 1, 0, 1, 1, 0, 0 }
+	    */
+
+	    this.raw = d;
+
+	    this.tl = d[2] & 63;
+	    this.fb = d[3] & 7;
+	    this.ar = new Array(2);
+	    this.dr = new Array(2);
+	    this.sl = new Array(2);
+	    this.rr = new Array(2);
+	    this.kl = new Array(2);
+	    this.mt = new Array(2);
+	    this.am = new Array(2);
+	    this.vb = new Array(2);
+	    this.eg = new Array(2);
+	    this.kr = new Array(2);
+	    this.dt = new Array(2);
+	    for (let i = 0; i < 2; ++i) {
+	        this.ar[i] = (d[4 + i] >> 4) & 15;
+	        this.dr[i] = (d[4 + i] >> 0) & 15;
+	        this.sl[i] = (d[6 + i] >> 4) & 15;
+	        this.rr[i] = (d[6 + i] >> 0) & 15;
+	        this.kl[i] = (d[2 + i] >> 6) & 3;
+	        this.mt[i] = (d[0 + i] >> 0) & 15;
+	        this.am[i] = (d[0 + i] >> 7) & 1;
+	        this.vb[i] = (d[0 + i] >> 6) & 1;
+	        this.eg[i] = (d[0 + i] >> 5) & 1;
+	        this.kr[i] = (d[0 + i] >> 4) & 1;
+	        if (config.dt_swap) {
+	            this.dt[i] = (d[3] >> (4 - i)) & 1; // MuSICAバグ合わせ
+	        } else {
+	            this.dt[i] = (d[3] >> (3 + i)) & 1; // 本来
+	        }
+	    }
+	};
+
+	// ========================================================
+	// PsgSccD.prototype
+	// ========================================================
+	// ========================================================
+	// PSG/SCCデータ 設定
+	// in:  d - Uint8Array
+	//      config - loadVcdConfig（設定オブジェクト）
+	// ========================================================
+	VcdData.prototype.PsgSccD.prototype.set =
+	function ( d, config )
+	{   /*
+	        +0: Attack_Rate
+	        +1: Decay_Rate
+	        +2: Sustain_Level
+	        +3: Release_Rate
+	        +4: Noise Freqency
+	        +5: $01=Tone off | $08=Noise off
+	        +6: blank
+	        +7: blank
+
+	        *at/dt/rt: frame|value
+	    ... $1F -> add(or sub) 15 per 1 frame
+	    ... $11 -> add(or sub) 1 per 1 frame
+	    ... $F1 -> add(or sub) 1 per 15 frame
+
+	        @r<number> = { Mode,Noise,AL,AR,DR,SL,SR,RR }
+	            Mode:
+	            　0 ... 無指定(変化なし)
+	            　1 ... トーンのみ
+	            　2 ... ノイズのみ
+	            　3 ... トーンとノイズ
+	    */
+	    let mode_table = [ 9, 8, 1, 0 ];
+
+	    this.raw    = d;
+
+	    if (d.length == vcd_def.psg_data_size) {
+	        this.mode   = mode_table.indexOf( d[5] );
+	        this.noize  = d[4];
+	    } else {
+	        this.mode   = 1;
+	        this.noize  = 0;
+	    }
+
+	    if (d.length == vcd_def.scc_data_size) {
+	        this.wave = d.slice(4, 4+32);
+	    } else {
+	        this.wave = null;
+	    }
+
+	    function dt_255(n) {
+	        let t = Math.max(1, (n >> 4) & 15);
+	        let v = n & 15;
+	        let d = v * 255 / 15 / t;
+	        d = Math.floor(d);
+	        d = Math.min(255, Math.max(1, d));
+	        return d;
+	    }
+	    this.al     = 0;    // MuSICAは0スタート
+	    this.ar     = dt_255( d[0] );
+	    this.dr     = dt_255( d[1] );
+	    this.sl     = Math.min(255, Math.max(0, d[2] * 255 / 15));
+	    this.sr     = 0;    // MuSICAはSRが無いので常に持続音
+	    this.rr     = dt_255( d[3] );
+	};
+}
+
+// ========================================================
 // vcdバイナリ読み込み
 // in:  d - Uint8Array
 //      config - loadVcdConfig（設定オブジェクト）
 // ========================================================
-function loadVcdConfig() 
-{
-    this.dt_swap = true; // MuSICAバグ対策：dtの値をC/M入れ替え
-}
 function loadVCD(d, config)
 {
-    // voice count
-    const opll_count    = 100;
-    const psg_count     = 30;
-    const scc_count     = 50;
-
-    // data size
-    const name_length    = 8;
-    const opll_data_size = 8;
-    const psg_data_size  = 8;
-    const scc_wave_size  = 32;
-    const scc_data_size  = 4 + scc_wave_size;
-
-    // name table
-    const opll_name_s    = 0;
-    const psg_name_s     = opll_name_s + opll_count * name_length;
-    const scc_name_s     = psg_name_s  + psg_count  * name_length;
-
-    // data body table
-    const opll_data_s    = scc_name_s  + scc_count  * name_length;
-    const psg_data_s     = opll_data_s + opll_count * opll_data_size;
-    const scc_data_s     = psg_data_s  + psg_count  * psg_data_size;
-
-    // array
-    let opll_name        = new Array( opll_count, '' );
-    let psg_name         = new Array( psg_count , '' );
-    let scc_name         = new Array( scc_count , '' );
-    let opll_data        = new Array( opll_count, new Uint8Array( opll_data_size, 0 ) );
-    let psg_data         = new Array( psg_count , new Uint8Array( psg_data_size , 0 ) );
-    let scc_data         = new Array( scc_count , new Uint8Array( scc_data_size , 0 ) );
-
-    // MSX-MUSIC BASICの固定音色
-    // MuSICAではユーザー音色定義無効
-    const fm_fix_inst = [];
-    fm_fix_inst[ 0 ]  = 'PIANO1  ';
-    fm_fix_inst[ 2 ]  = 'VIOLIN  ';
-    fm_fix_inst[ 3 ]  = 'FLUTE1  ';
-    fm_fix_inst[ 4 ]  = 'CLARINET';
-    fm_fix_inst[ 5 ]  = 'OBOE    ';
-    fm_fix_inst[ 6 ]  = 'TRUMPET ';
-    fm_fix_inst[ 9 ]  = 'ORGAN   ';
-    fm_fix_inst[ 10 ] = 'GUITAR  ';
-    fm_fix_inst[ 12 ] = 'E BASS  ';
-    fm_fix_inst[ 14 ] = 'HARPSIC1';
-    fm_fix_inst[ 16 ] = 'VIBRAPHO';
-    fm_fix_inst[ 23 ] = 'S BASS  ';
-    fm_fix_inst[ 24 ] = 'SYNTHE  ';
-    fm_fix_inst[ 33 ] = 'WOODBASS';
-    fm_fix_inst[ 48 ] = 'HORN    ';
-
-    // ========================================================
-    // 構造体：OPLLデータ
-    // in:  d - Uint8Array
-    //      config - loadVcdConfig（設定オブジェクト）
-    // ========================================================
-    function OpllD( d, config )
-    {   /*
-        +0: M: AM(1) | VIB(1) | EG(1) | KSR(1) | MUL(4)
-        +1: C: AM(1) | VIB(1) | EG(1) | KSR(1) | MUL(4)
-        +2: M: KSL(2) | TL(6)
-        +3: C: KSL(2) | 0(1) | DC(1) | DM(1) | FB(3)
-        +4: M: AR(4) | DR(4)
-        +5: C: AR(4) | DR(4)
-        +6: M: SL(4) | RR(4)
-        +7: C: SL(4) | RR(4)
-
-        @v15 = { ; Violin
-        ;       TL FB
-                    4, 7,
-        ; AR DR SL RR KL MT AM VB EG KR DT
-        9, 3, 1, 1, 1, 1, 0, 1, 1, 0, 1,
-        9, 1, 0, 6, 0, 1, 0, 1, 1, 0, 0 }
-        */
-
-        this.raw = d;
-
-        this.tl = d[2] & 63;
-        this.fb = d[3] & 7;
-        this.ar = new Array(2);
-        this.dr = new Array(2);
-        this.sl = new Array(2);
-        this.rr = new Array(2);
-        this.kl = new Array(2);
-        this.mt = new Array(2);
-        this.am = new Array(2);
-        this.vb = new Array(2);
-        this.eg = new Array(2);
-        this.kr = new Array(2);
-        this.dt = new Array(2);
-        for (let i = 0; i < 2; ++i) {
-            this.ar[i] = (d[4 + i] >> 4) & 15;
-            this.dr[i] = (d[4 + i] >> 0) & 15;
-            this.sl[i] = (d[6 + i] >> 4) & 15;
-            this.rr[i] = (d[6 + i] >> 0) & 15;
-            this.kl[i] = (d[2 + i] >> 6) & 3;
-            this.mt[i] = (d[0 + i] >> 0) & 15;
-            this.am[i] = (d[0 + i] >> 7) & 1;
-            this.vb[i] = (d[0 + i] >> 6) & 1;
-            this.eg[i] = (d[0 + i] >> 5) & 1;
-            this.kr[i] = (d[0 + i] >> 4) & 1;
-            if (config.dt_swap) {
-                this.dt[i] = (d[3] >> (4 - i)) & 1; // MuSICAバグ合わせ
-            } else {
-                this.dt[i] = (d[3] >> (3 + i)) & 1; // 本来
-            }
-        }
-    }
-
-    // ========================================================
-    // 構造体：PSG/SCCデータ
-    // in:  d - Uint8Array
-    //      config - loadVcdConfig（設定オブジェクト）
-    // ========================================================
-    function PsgSccD( d, config )
-    {   /*
-            +0: Attack_Rate
-            +1: Decay_Rate
-            +2: Sustain_Level
-            +3: Release_Rate
-            +4: Noise Freqency
-            +5: $01=Tone off | $08=Noise off
-            +6: blank
-            +7: blank
-
-            *at/dt/rt: frame|value
-        ... $1F -> add(or sub) 15 per 1 frame
-        ... $11 -> add(or sub) 1 per 1 frame
-        ... $F1 -> add(or sub) 1 per 15 frame
-
-            @r<number> = { Mode,Noise,AL,AR,DR,SL,SR,RR }
-                Mode:
-                　0 ... 無指定(変化なし)
-                　1 ... トーンのみ
-                　2 ... ノイズのみ
-                　3 ... トーンとノイズ
-        */
-        let mode_table = [ 9, 8, 1, 0 ];
-
-        this.raw    = d;
-
-        if (d.length == psg_data_size) {
-            this.mode   = mode_table.indexOf( d[5] );
-            this.noize  = d[4];
-        } else {
-            this.mode   = 1;
-            this.noize  = 0;
-        }
-
-        if (d.length == scc_data_size) {
-            this.wave = d.slice(4, 4+32);
-        } else {
-            this.wave = null;
-        }
-
-        function dt_255(n) {
-            let t = Math.max(1, (n >> 4) & 15);
-            let v = n & 15;
-            let d = v * 255 / 15 / t;
-            d = Math.floor(d);
-            d = Math.min(255, Math.max(1, d));
-            return d;
-        }
-        this.al     = 0;    // MuSICAは0スタート
-        this.ar     = dt_255( d[0] );
-        this.dr     = dt_255( d[1] );
-        this.sl     = Math.min(255, Math.max(0, d[2] * 255 / 15));
-        this.sr     = 0;    // MuSICAはSRが無いので常に持続音
-        this.rr     = dt_255( d[3] );
-    }
+    v = new VcdData();
 
     // ========================================================
     // MGSDRV形式テキスト作成：OPLL
-    // in:  d - Uint8Array
-    //      voice_no - 音色番号
-    //      voice_name - 楽器名
     // ========================================================
     /*
         @v15 = { ; Violin
@@ -345,20 +471,19 @@ function loadVCD(d, config)
     */
     function opllToMGSDRV(d, voice_no, voice_name)
     {
-        if (fm_fix_inst[voice_no] != undefined)
+        if (vcd_def.fm_fix_inst[voice_no] != undefined)
         {
-            voice_name = '(*fixed:' + fm_fix_inst[voice_no] + ') '
-                       // + voice_name
-                        ;
+            //voice_name = '(fixed)* ' + VcdData.fm_fix_inst[voice_no];
+            voice_name = '(fixed)* ' + voice_name;
         }
-        let s = '@v' + formatNum0(voice_no, 2) + ' = {    ; ' + voice_name + '\n';
+        var s = '@v' + formatNum0(voice_no, 2) + ' = {    ; ' + voice_name + '\n';
         s = s + ';       TL FB \n';
         s = s + '        ';
         s = s + formatNum(d.tl, 2) + ',';	// tl
         s = s + formatNum(d.fb, 2) + ',';	// fb
         s = s + '\n';
         s = s + '; AR DR SL RR KL MT AM VB EG KR DT \n';
-        for (let j = 0; j < 2; ++j)
+        for (var j = 0; j < 2; ++j)
         {
             s = s + '  ';
             s = s + formatNum(d.ar[j], 2) + ',';	// ar
@@ -379,7 +504,7 @@ function loadVCD(d, config)
         return s;
     }
 
-    // ========================================================
+     // ========================================================
     // MGSDRV形式テキスト作成：PSG
     // @in  d - Uint8Array
     //      voice_no - 音色番号
@@ -430,7 +555,7 @@ function loadVCD(d, config)
         if (!d) return '';
 
         let s = '@s' + formatNum0(voice_no, 2) + ' = { '
-        for (let i = 0; i < scc_wave_size; ++i) {
+        for (let i = 0; i < vcd_def.scc_wave_size; ++i) {
             s = s + formatHex0(d[i], 2);
         }
         s = s + ' } ; ' + voice_name + '\n';
@@ -441,70 +566,51 @@ function loadVCD(d, config)
     // バイナリ解析開始
     // ========================================================
     let res = '';
+    let vcd_data = new VcdData( d, config );
 
     // ========================================================
-    // データ読み込み：OPLL
+    // データ書き出し：OPLL
     // ========================================================
     {
         res = res + ';--------------------\n';
         res = res + ';-    OPLL VOICE    -\n';
         res = res + ';--------------------\n';
-
-        let np = opll_name_s;
-        let dp = opll_data_s;
-        for (let i = 0; i < opll_count; ++i)
+        for (let i = 0; i < vcd_def.opll_count; ++i)
         {
-            opll_name[i] = fromMSXChar( d.slice(np, np + name_length) );
-            let dat = new OpllD( d.slice( dp, dp + opll_data_size ), config );
-            res = res + opllToMGSDRV( dat, i, opll_name[i] ) + '\n';
-            np += name_length;
-            dp += opll_data_size;
+            res = res + opllToMGSDRV( vcd_data.opll_data[i], i, vcd_data.opll_name[i] ) + '\n';
         }
     }
 
     // ========================================================
-    // データ読み込み：PSG
+    // データ書き出し：PSG
     // ========================================================
     {
         res = res + ';--------------------\n';
         res = res + ';-    PSG VOICE     -\n';
         res = res + ';--------------------\n';
-
-        let np = psg_name_s;
-        let dp = psg_data_s;
-        for (let i = 0; i < psg_count; ++i)
+        for (let i = 0; i < vcd_def.psg_count; ++i)
         {
-            psg_name[i] = fromMSXChar( d.slice(np, np + name_length) );
-            let dat = new PsgSccD( d.slice( dp, dp + psg_data_size ), config );
-            res = res + psgToMGSDRV( dat, i, psg_name[i] ) + '\n';
-            np += name_length;
-            dp += psg_data_size;
+            res = res + psgToMGSDRV( vcd_data.psg_data[i], i, vcd_data.psg_name[i] ) + '\n';
         }
     }
 
     // ========================================================
-    // データ読み込み：SCC
+    // データ書き出し：SCC
     // ========================================================
     {
         res = res + ';--------------------\n';
         res = res + ';-    SCC VOICE     -\n';
         res = res + ';--------------------\n';
-
-        let np = scc_name_s;
-        let dp = scc_data_s;
-        for (let i = 0; i < scc_count; ++i)
+        for (let i = 0; i < vcd_def.scc_count; ++i)
         {
-            scc_name[i] = fromMSXChar( d.slice(np, np + name_length) );
-            let dat = new PsgSccD( d.slice( dp, dp + scc_data_size ), config );
-            res = res + psgToMGSDRV( dat, i, scc_name[i] );
-            res = res + sccToMGSDRV( dat.wave, i, scc_name[i] ) + '\n';
-            np += name_length;
-            dp += scc_data_size;
+            let dat = vcd_data.scc_data[i];
+            res = res + psgToMGSDRV( dat, i, vcd_data.scc_name[i] );
+            res = res + sccToMGSDRV( dat.wave, i, vcd_data.scc_name[i] ) + '\n';
         }
     }
 
     return res;
-}  
+}
 
 // ========================================================
 // vcdファイルを開く
@@ -530,7 +636,7 @@ function openVcdFile( target_file )
     }
 
     // 変換設定
-    let config = new loadVcdConfig();
+    let config = new LoadVcdConfig();
     // OPLLのDT入れ替え
     config.dt_swap =  (getCheckedRadioSwtchValue('opll_dt_swap') == 'true');
 
@@ -573,6 +679,17 @@ function openVcdFile( target_file )
     return true;
 }
 
+
+// ========================================================
+// ドラッグされたアイテムがファイルかどうか検査する関数
+// in:  e - dropイベントオブジェクト
+// ========================================================
+function isValidDropItem(e)
+{
+    return (e.dataTransfer.types.indexOf("Files") >= 0)
+    && (e.dataTransfer.items.length <= 1);
+}
+
 // ========================================================
 // イベント：HTMLの読み込みが完了した
 // ========================================================
@@ -589,7 +706,7 @@ function() {
     // ========================================================
     // イベント：ドラッグ中のアイテムがドラッグ領域
     // ========================================================
-    drop_area.addEventListener('dragover', 
+    drop_area.addEventListener('dragover',
     function(e) {
         e.preventDefault(); // ブラウザで開かないようにする
         e.stopPropagation();  // イベントを伝播させない
@@ -609,7 +726,7 @@ function() {
     // ========================================================
     // イベント：ドラッグ領域の外に出た
     // ========================================================
-    drop_area.addEventListener('dragleave', 
+    drop_area.addEventListener('dragleave',
     function(e) {
         //e.preventDefault(); // ブラウザで開かないようにする
         e.stopPropagation();  // イベントを伝播させない
@@ -620,7 +737,7 @@ function() {
     // ========================================================
     // イベント：ドロップされた
     // ========================================================
-    drop_area.addEventListener("drop", 
+    drop_area.addEventListener("drop",
     function(e) {
         e.preventDefault(); // ブラウザで開かないようにする
         e.stopPropagation();  // イベントを伝播させない
@@ -656,6 +773,23 @@ function() {
         if (!openVcdFile(file_open_button.files[0]))
         {
             // error
+        }
+    });
+
+    // ========================================================
+    // イベント：ファイルを開くラベルボタン
+    // スペースキーかエンターでファイルを開く
+    // ========================================================
+    const file_open_label = this.document.getElementById("vcd_file_open_label");
+    file_open_label.addEventListener("keyup",
+    function(e) {
+        switch (e.key) {
+        case " ":
+        case "Enter":
+        {
+            file_open_button.click();
+            break;
+        }
         }
     });
 });
