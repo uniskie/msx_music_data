@@ -149,9 +149,6 @@ HARD DRIVIN' - MAIN THEME (素YM2413)
 イース FEENA (未完成)
 [YS1FEENA.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FEENA.MGS)
 
-イース モーニンググロー (未完成)
-[YS1MORNI.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1MORNI.MGS)
-
 イース2 NOBLE DIRECT OF TOAL
 [YS2NOBLE.MGS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2NOBLE.MGS)
 

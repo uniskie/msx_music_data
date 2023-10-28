@@ -32,8 +32,6 @@ MSXPLAYÇ≈ï∑Ç≠èÍçáÅF
 
 [YS1FEENA.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1FEENA.MGS)
 
-[YS1MORNI.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS1MORNI.MGS)
-
 [YS2NOBLE.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2NOBLE.MGS)
 
 [YS2RUINS.MGS] (https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FOLD%2FYS2RUINS.MGS)
