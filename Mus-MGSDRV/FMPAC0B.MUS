@@ -7,19 +7,19 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
-#tempo 150
+#tempo 146
 #title { "FMPAC BGM0 (ASHGUINE2 STAGE1) PSG+OPLL arrange2 | uniskie" }
 
 @v16 = { ; electric guiter
 ;       TL FB
-         3, 5,
+         0, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 0, 0, 4, 2, 1, 0, 0, 0, 0, 0,
-  10, 4,15, 5, 0, 3, 0, 0, 0, 0, 0 }
+   8, 0, 0, 4, 2, 1, 0, 0, 0, 0, 0,
+  15, 4,15, 5, 0, 3, 0, 0, 0, 0, 0 }
 
 @v17 = { ; electric brass
 ;       TL FB
-         2, 7,
+         0, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
   12, 4, 1, 1, 0, 1, 0, 0, 0, 0, 1,
   14, 5, 0, 4, 0, 1, 0, 0, 1, 0, 1 }
@@ -35,9 +35,9 @@
 
 ;--- Rhythm ---
 F y38,3 y22,148 ; bass-drum (y38,32+3 -> sustain on) 
-F y39,5 y23,64  ; snare,hi-hut (y39,32+3 -> sustain on) 
-F y40,1 y24,192 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
-F L16V12VB14VS12VM12VC13VH9 
+F y39,37 y23,69  ; snare,hi-hut (y39,32+3 -> sustain on) 
+F y40,1 y24,196 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
+F L16V12VB14VS12VM12VC14VH9 
 F H:H:H:H8H:H:H:H8.S:S:S:S8 H:H:H:H8H:H:H:H8.S:S:S:S8
 F BC8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S8H:H:
 F B8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S8H:H: 
@@ -63,7 +63,7 @@ F BC8H:H:S8H:H:BH8H:H:S8H:H: BH8H:H:S8H:H:BH8H:H:S:S:BH8
 @e7={3,0,c0=40}
 *7={@7o7 p1}
 
-3 l16 v12 o3 
+3 l16 v13 o3 
 3 *6aaaa8aaaa8.*5eeee8 
 3 *6aaaa8aaaa8.*5gec<a8>
 3  *7f8.*6a*5e8*6aa*4c8*6aa*5e8*6aa
@@ -101,7 +101,7 @@ E    @17 v+4 r8 @\30
 9 d1 
 E d2.. 
 
-2 @2 v10 o4 @\0 hf
+2 @2 v11 o4 @\0 hf
 2 l16 
 2 gggar<gggar8>>cccdr gggar<gggar8cccdr 
 2 @1 o3
@@ -115,7 +115,7 @@ E d2..
 2 a+1 >c1 <a+1 >c1 d1 &d1 
 
 ;--- Melody #4 ---
-1 v10 o4 hf k5 @\4
+1 v11 o4 hf k5 @\4
 1 l16 
 1 r1 r1 
 1 @2 
@@ -129,8 +129,8 @@ E d2..
 
 ;--- Melody #2 ---
 ;@e14={1,0,@10fe@13f}
-B v11@13o2
-D v11@10o2 q1
+B v11@14o2
+D v12@13o2 q1so
 BD l16r1 r1
 BD dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defd
 BD a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+ <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+>cd<a+

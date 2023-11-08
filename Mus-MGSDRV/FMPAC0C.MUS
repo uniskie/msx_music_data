@@ -8,21 +8,21 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 ;#opll_mode 1
 #opll_mode 0
-#tempo 150
+#tempo 146
 #title { "FMPAC BGM0 (ASHGUINE2 STAGE1) PSG+OPLL arrange3 | uniskie" }
 
 @v16 = { ; electric guiter
 ;       TL FB
-         3, 5,
+         0, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 0, 0, 4, 2, 1, 0, 0, 0, 0, 0,
-  10, 4,15, 5, 0, 3, 0, 0, 0, 0, 0 }
+   8, 0, 0, 4, 2, 1, 0, 0, 0, 0, 0,
+  15, 4,15, 5, 0, 3, 0, 0, 0, 0, 0 }
 
 @v17 = { ; electric brass
 ;       TL FB
-         2, 7,
+         0, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   8, 3, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+  12, 4, 1, 1, 0, 1, 0, 0, 0, 0, 1,
   14, 5, 0, 4, 0, 1, 0, 0, 1, 0, 1 }
 
 ;@v17 = { ; brass
@@ -48,6 +48,8 @@ F y14,44 ; snare & tom = mute
 1239ABCDEFGH r32
 ;===============================================
 
+;9abcdefh !
+
 1239ABCDEFGH [0
 
 @e1={1,0,feed:30[c:3.b:3]0}
@@ -60,7 +62,7 @@ E @16v8 o5 r8 hf @\60
 9E l16
 9E gggar<gggar8>>cccdr gggar<gggar8ccc
 9 dr @17 v+2 
-E    @17 v+5 r8 @\30 
+E    @17 v+5 r8 @\20 
 9E d2a2 g4f4e4f4
 9E h60,0,4,3
 9E e4.d8d1 &d2
@@ -72,7 +74,7 @@ E    @17 v+5 r8 @\30
 9 d1 
 E d2.. 
 
-2 @2 v10 o4 @\0 hf
+2 @2 v11 o4 @\0 hf
 2 l16 
 2 gggar<gggar8>>cccdr gggar<gggar8cccdr 
 2 @1 o3
@@ -86,7 +88,7 @@ E d2..
 2 a+1 >c1 <a+1 >c1 d1 &d1 
 
 ;--- Melody #4 ---
-1 v10 o4 hf k5 @\4
+1 v11 o4 hf k5 @\4
 1 l16 
 1 r1 r1 
 1 @2 
@@ -100,8 +102,8 @@ E d2..
 
 ;--- Melody #2 ---
 ;@e14={1,0,@10fe@13f}
-B v12@13o2
-D v12@10o2 q1
+B v10@10o2
+D v13@13o2 q1so
 BD l16r1 r1
 BD dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defd
 BD a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+ <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+>cd<a+
@@ -111,9 +113,9 @@ BD cr>cc<cr>cc<cr>cc<cdec <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+
 BD cr>cc<cr>cc<cr>cc<cdec <dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defa
 
 ;--- Melody #1 ---
-A l16@16@e0v12o4 hf 
+A l16@16@e0v13o4 hf 
 A ddder<ddder8>>cccdr ddder<ddder8cccdr> 
-A @10@e1 
+A @9@e1 
 A rcdrcrdrfrdrdrcd rcdrcrdrargrfg8. 
 A rcdrcrdrfrdrdrcd rcdrcrdrargrfg8. 
 A rcdrcrdrfrdrdrcd rcdrcrdrargrfg8. 
@@ -125,16 +127,16 @@ A argrfgrfrfdrcrdr
 A q8sf 
 
 ;--- Melody #3 ---
-C v12o4 hf 
+C v13o4 hf 
 C l16 
 C r1 r1 
-C @10@e1 
+C @9@e1 
 C rgargrar>cr<ararga rgargrar>drcr<a+>c8.< 
 C rgargrar>cr<ararga rgargrar>drcr<a+>c8.< 
 C rgargrar>cr<ararga rgargrar>drcr<a+>c8.< 
 C rgargrar>cr<ararga rgargrar>drcr<a+>c8. 
 C h80,0,4,4
-C @0 > 
+C @0 ;> 
 C f1 g1 f1 g1 a1 &a1 
 
 
@@ -172,14 +174,14 @@ F [4 )e(r>c<r)e()e(>c<r]
 F [3 )e(r>c<r] )e(r>c16c16<)e( 
 
 ; snare / hi-hut
-G @4v0 ;vh9 vs0
-G l16 o5
+G @5v0 ;vh9 vs0
+G l16 o3 q3so
 G [2 aaaa8aaaa8r4. ]
 G [4 r8aar8aaa8aar8aa a8aar8aaa8aa|r8aa ]
 G                                  r4 
-G @5;vh+1
+G @4;vh+1
 G [4 aar8rar8aar8rar8 ]
-G @4;vh-1
+G @6;vh-1
 G r8aar8aaa8aar8aa a8aar8aaa8aarra8 
 
 H @14v12 o2 so
@@ -206,7 +208,7 @@ H q8
 @e7={3,0,c0=40}
 *7={@7o7 p1}
 
-3 l16 v12 o3
+3 l16 v13 o3
 3 *6aaaa8aaaa8.*5eeee8 
 3 *6aaaa8aaaa8.*5gec<a8>
 3  *7f8.*6a*5e8*6aa*4c8*6aa*5e8*6aa
