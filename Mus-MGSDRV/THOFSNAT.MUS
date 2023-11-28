@@ -1,4 +1,4 @@
-;[gain=1.0 name=thofsnat duration=300s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=THofSnat duration=300s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com 
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -10,130 +10,151 @@
 ;           Note that duration takes precedence over loop.
 #opll_mode 1
 #tempo 148
-#title {"THEME OF SNATCHER | (C)Konami | OPLL+PSG ver. uniskie"}
+#title {"THEME OF SNATCHER [PART I] (C)Konami | ver. uniskie"}
 
-@v16 = { ; E-LEAD
+@v16 = { ; Mute trumpet
 ;       TL FB
-        15, 7,
+        19, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 4, 1, 1, 0, 1, 0, 0, 0, 0, 1,
-  15, 4, 3, 7, 0, 4, 0, 0, 1, 0, 0 }
+  12, 4, 1, 1, 0, 1, 0, 0, 1, 0, 1,
+  15, 5, 2, 7, 0, 2, 0, 0, 1, 0, 0 }
 
 @e11 = {1,0,cfed:50 [d:3.c:3.b:3.c:3]0 }
-@e12 = {1,0,fedc:50 [c:3.b:3.a:3.b:3]0 }
+@e12 = {1,0,cfdc:50 [c:3.b:3.a:3.b:3]0 }
 
-1 v10o4@e11 k3
-9 v14o5@16 q7so
-A v12o5@16 q7so @\18 r4
-1  h50,1,2,-1
+9 v13o5@16 q7
+A v11o5@16 q7 @\21 r4
 9A h50,1,2,-2
-19A [0
-19A  [b2. e8a8& a1
-19A   b6>c6 e6 b6g6 e6 a6f+6 d6< a8.f+8. d8]2
-19A  [e4. a32&b16.& b2& b6a6 g6 f+6g6 |d6
-19A   e1& e1]2
-19A  a6
-19A  f+1 f+_g16&g+16&a16&a+16& b2.
-19A  >[g8f+8 e8a8 r8f+8 r8e8& |e1]2
-19A  e2 r8<b8> d8e8
-19A  g8f+8 e8a8 r8b8 f+8e8& e1
-19A  <b8>c8 e8g8 b6g6 e6 a6f+6 d6< a8.f+8. d8
-19A  e1& e1&
-19A  e1& e1
-19A ]
+9A [0
+9A  [)b2.( e8a8& a1
+9A   b6>c6 e6 b6g6 e6 a6f+6 d6< a8.f+8. d8]2
+9A  [e4. a32&b16.& b2& b6a6 g6 f+6g6 |d6
+9A   e1& e1]2
+9A  a6
+9A  f+1 f+_g16&g+16&a16&a+16& b2.
+9A  >[g8f+8 e8a8 r8f+8 r8e8& |e1]2
+9A  e2 r8<b8> d8e8
+9A  g8f+8 e8a8 r8b8 f+8e8& e1
+9A  <b8>c8 e8g8 b6g6 e6 a6f+6 d6< a8.f+8. d8
+9A  e1& e1&
+9A  e1& e1
+9A ]
 
-BC v13 o5@8 q7so
-BC h50,1,2,-2
-B [0
+BC v12 o5@16
+BC h50,1,2,-2 q7
+B [0 
 B  [d2. d8c+8& c+1 e1 f+1]2
 B  g1 f+1
-B  [r4 d8.r16 d16r16d16r8. d16r16]2
+B  [r4 d8.((d16)) d16((d16))d16((d8.)) d16((d16))]2
 B  g1 f+1
-B  a1 f+8[f+8 r8]2 f+8. r16f+8
+B  a1 f+8[f+8((f+8))]2 f+8. ((f+16))f+8
 B  [r4 g4 r8f+8 r8e8& e1]3
 B  g1 f+1
-B  [r4 [f+8.r16 [f+16r16]2 r4]2 f+8g8]2
+B  [r8.(f16&) [f+8.((f+16)) [f+16r16]2 ((f+16))r8.]2 f+8g8]2
 B ]
 
 C [0
 C  [<b2. b8a8& a1 >c1 d1]2
 C  e1 d1
-C  [r4 <b8.r16 b16r16b16r8. b16r16>]2
+C  [r4 <b8.((b16)) b16((b16))b16((b8.)) b16((b16))>]2
 C  e1 d1
-C  e1 d+8[d+8r8]2 d+8.r16d+8
+C  e1 d+8[d+8((d+8))]2 d+8.((d+16))d+8
 C  [r4 e4 r8d8 r8c+8& c+1]3
 C  e1 d1
-C  [r4 [d8.r16 [d16r16]2 r4]2 d8e8]2
+C  [r8.(d-16&) [d8.((d16)) [d16r16]2 ((d16))r8.]2 d8e8]2
 C ]
 
-D v12 o5 @16 q6so
-D h50,1,2,-2
-D [0
-D   q4[<e8>e8 b8e8]15
-D  )q7f+8.f+8. f+8
-D   q6<c1 d1>
-D  (q4[<e16>e16>e16<e16> e16<e16d16e16 r16e16r16e16< e16>e16d16e16]2
-D  )q6<c1 d1>
-D  (q4[<b16>d+16f+16b16]7> d+16f+16b16>d+16<<
-D  )q8[r4 e4. f+8 g8a2. g8 f+8e8]3
-D  (q6c1 d1
-D   q4[<e8>e8 b8e8]8
-D ]
-
-2 @e12 v10 o3 k4
+2 @12 v11 o4 k1
 2 h50,1,2,-1
 2 [0
-2 q4[(e16e32e32e16e16 )>g16e16r16g16<]15 q8>e_<e2
-2 q4c8c8 >e8<c8 >g8<c8 >e8<c8
-2 d8d8 >f+8<d8 >a8<d8 >f+8<d8
-2 [e8e8 >d8<e8 >a8<e8 |>g8<e8]2
-2                      >g16q8b8.<
-2 q4c8c8 >e8<c8 >g8<c8 >e8<c8
-2 d8d8 >f+8<d8 >a8<d8 >f+8<d8
-2 q8a1
-2 q6b8b8 r8b8 r8b4 b8
-2 q8([r4 e4. f+8 g8a2. g8 f+8e8]3)
-2 <<r8[b8]3 r8b8 r4>>
-2 r1
-2 q4[(e16e32e32e16e16)>g16e16r16g16<]8
+2  (q4[<e8>e8 b8e8]15)
+2  q7f+8.f+8. f+8
+2  q6<c1 d1>
+2  (q4[<e16>e16>e16<e16> e16<e16d16e16 r16e16r16e16< e16>e16d16e16]2)
+2  q6<c1 d1>
+2  (q4[<b16>d+16f+16b16]7 >d+16f+16b16>d+16<<)
+2  <q8[r4 e4. f+8 g8a2. g8 f+8e8]3>
+2  q6(<c1 d1>)
+2  (q4[<e8>e8 b8e8]8)
 2 ]
 
-@e20={,,@14f@6fe}
-E v14o3@14@e20
-E [0
-E  [e8]56
-E  d8f+8 a8>c8 c32&d16.c8< a16f+8.
-E  [c8]8 [d8]8
-E  [<e8>e8 g8e8 a8e8 g8e8]2
-E  [c8]8 [d8]8
-E  <[b8]8 b8>d+8 f+8a8 a32&b16.f+8 d+8<b8>
-E  q7[r4 e4. f+8 g8a2. g8 f+8e8]3
-E  >c4.< g4.> c4 c_d8&d4< a4. q6d4
-E  [e8]32
-E ]
+@e21={,,f8=8}
+D v11 o4 so @14@e21
+D h50,1,2,-2
+D [0
+D q2[e16e32e32e16e16 (>g16e16r16g16<)]15 q8>e_<e2
+D q4c8c8 >e8<c8 >g8<c8 >e8<c8
+D d8d8 >f+8<d8 >a8<d8 >f+8<d8
+D [e8e8 >d8<e8 >a8<e8 |>g8<e8]2
+D                      >g16q8b8.<
+D q4c8c8 >e8<c8 >g8<c8 >e8<c8
+D d8d8 >f+8<d8 >a8<d8 >f+8<d8
+D q8a1
+D q4b8b8 r8b8 r8b4 b8
+D q8[r4 e4. f+8 g8a2. g8 f+8e8]3
+D @11
+D q6>>>c1 d1<<<
+D @14
+D (q2[e16e32e32e16e16 (>g16e16r16g16<)]8 )
+D ]
+
+@e20={,,@6f@14d}
+1 v11o3 @11 k1 @\20
+E v14o3 so @13 @e20
+1E [0 q8
+1E  [e8]56
+1E  d8f+8 a8>c8 c32&d16.c8< a16f+8.
+1E  [c8]8 [d8]8
+1E  [<e8>e8 g8e8 a8e8 g8e8]2
+1E  [c8]8 [d8]8
+1E  <[b8]8 b8>d+8 f+8a8 a32&b16.f+8 d+8<b8>
+1E  q7[r4 e4. f+8 g8a2. g8 f+8e8]3
+1E  >c4.< g4.> c4 c_d8&d4< a4. q6d4
+1E  q8[e8]32
+1E ]
 
 ;@1 b
 ;@2 s
 ;@3 h
 ;@4 c(long noise)
 ;@5 c(high tone)
-@e1={3,31,*3.e.*1.986.0=20}
-@e2={1,10,*1.f.*3n0.e0=26}
-@e3={2,0,c80=6}
-@e4={2,0,d0=45}
+@e1={3,30,*3.d.*1.86.0=16}
+@e2={1,10,*1.f.*3n0.db0=26}
+@e3={2,0,b60=6}
+@e4={2,0,c0=45}
 @e5={3,0,c0=45}
+*1={o1@1}
+*2={o3@2}
+*3={@3}
+*4={@4}
+*5={o8@5p0}
 
-3 o2v13 p15
-3 [0
-3  [@1b8@3c16c16]30
-3  @2g8g8 @3[c32]2 c16@2[g16]2
-3  [[@1b8@3c8 @2g8@3c8 @1b8b8 @2g8@4c8]2
-3  |[@2g8@1b8]7 @2g16@4c8.]2
-3  [@2g8@1b8]4 @2[g32]2 g16g16g16 @1[b16]2 @2g16g16 g16g16@1[b16]2 @2g16g16@1[b16]2
-3  [@4)c4 (@2g8@1b8 [b8@2g8 @1]2 b16@2g16g8 @1b16@2g8@3c16 @2g8@1b8 @2g16g8@1b16]2
-3  @4)c4 (@2g8@1b8 [b8@2g8 @1]2 b12@2[g12]3 @1[b12]2 [b8]2 @2g4
-3  g4. @4c4. @2g4 @1[b4]3 @2v-3g16)g16)g16)g16
-3  [@1b8@3c16c16]15
-3  @2g16@5>>>p0g+8.p15<<<
+3 o2v12
+3 [0 p17
+3  [*1b8*3c16c16]30
+3  *2g8g8 *3[c32]2 c16*2[g16]2
+3  [[*1b8*3c8 *2g8*3c8 *1b8b8 *2g8*4c8]2
+3  |[*2g8*1b8]7 *2g16*4c8.]2
+3  [*2g8*1b8]4 *2[g32]2 g16g16g16 *1[b16]2 *2g16g16 g16g16*1[b16]2 *2g16g16*1[b16]2
+3  [*4c4 *2g8*1b8 [b8*2g8 *1]2 b16*2g16g8 *1b16*2g8*3c16 *2g8*1b8 *2g16g8*1b16]2
+3  *4c4 *2g8*1b8 [b8*2g8 *1]2 b12*2[g12]3 *1[b12]2 [b8]2 *2g4
+3  g8*1b8b8 *4c4*1b8 *2g4 *1[b4]3 *2v-6g16))g16))g16))g16
+3  [*1b8*3c16c16]15 *2g16*5g+8.
 3 ]
+
+F y38,35 y22,106 ; bass-drum (y38,32+3 -> sustain on) 
+F y39,35 y23,207 ; snare,hi-hut (y39,32+3 -> sustain on) 
+F y40,34 y24,152 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
+F vb13 vc11 vh7 vs10vm12 kf
+F [0
+F  [b8h16h16]30
+F  sm8sm8 [h32]2 h16[sm16]2
+F  [[b8h8 sm8h8 b8b8 sm8h8]2
+F  |[sm8b8]7 sm16h8.]2
+F  [sm8b8]4 [sm32]2 sm16sm16sm16 [b16]2 sm16sm16 sm16sm16[b16]2 sm16sm16[b16]2
+F  [vc+1c4vc-1 sm8b8 [b8sm8 ]2 b16sm16sm8 b16sm8h16 sm8b8 sm16sm8b16]2
+F   vc+1c4vc-1 sm8b8 [b8sm8 ]2 b12[sm12]3 [b12]2 [b8]2 sm4
+F  sm8b8b8bc4b8 sm4 [b4]3 vs-3vm-3sm16vs+1vm+1sm16vs+1vm+1sm16vs+1vm+1sm16
+F  [b8h16h16]15 sm16c8.
+F ]
 
