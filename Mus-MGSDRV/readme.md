@@ -10,7 +10,7 @@ MSXPLAYで聞く場合：
 OPLL固定音色定義
 [nukeinst.txt](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2Fnukeinst.txt)
 
-THEME OF SNATCHER (PSG+OPLL)
+THEME OF SNATCHER [PART I] MSX-Like ver. (PSG+OPLL)
 [LASTARCT.MUS](https://f.msxplay.com/?id=https:%2F%2Fraw.githubusercontent.com%2Funiskie%2Fmsx_music_data%2Fmaster%2FMus-MGSDRV%2FTHOFSNAT.MUS)
 
 ラスト・ハルマゲドン 司令塔
