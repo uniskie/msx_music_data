@@ -1,4 +1,4 @@
-;[gain=1.0 name=THofSnat duration=3000s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=THofSnat duration=3000s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -14,107 +14,109 @@
 
 @v16 = { ;
 ;       TL FB
-        22, 7,
+        22, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  12, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1,
-  11, 4, 1, 7, 0, 2, 0, 0, 1, 1, 0 }
-  
-@e11 = {1,0,cfed:50 [d:3.c:3.b:3.c:3]0 }
-@e12 = {1,0,cfedc [b:3.a:3.9:3.a:3]0 }
+  15, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0,
+  11, 3, 1, 7, 0, 3, 0, 0, 1, 0, 0 }
 
-1 v08o5@11 q6k3 @\-1
-9 v13o5@16 q6so
-A v12o5@16 q6so @\19 r4
-19A h50,1,2,-2
+@e11 = {1,0,cfed:50 [d:3.c:3.b:3.c:3]0 }
+@e12 = {1,0,fedcb [a:3.9:3.8:3.9:3]0 }
+
+@e20={,,cdeffe}
+@e21={,,fed}
+@e22={,,ffeed}
+
+9A o5@16 q6so
+9 v12
+A v11 @\26 b4&
+1 v8 o4@11 q6k3 @\3 b4.&
+1   h50,1,2,-1
+9A  h50,1,2,-2
 19A [0
-19A  [
-19A   b2. e8a8& a1
-9   @l21
-19A   b6>c6 e6
-9   @l20
-19A   b6g6 e6 a6f+6 d6<
-9   @l22
-19A                             a8.f+8. d8]2
+19A  [b2. e8a8& a1
+19A   b6>c6e6 b6g6e6 a6f+6d6< a8.f+8. d8]2
 19A  [e4. a32&b16.& b2& b6a6 g6 f+6g6 |d6
 19A   e1& e1]2
 19A  a6
-19A  f+1 f+_g16&g+16&a16&a+16& b2. 
-9  @l15
+19A  f+1 f+_g16&g+16&a16&a+16& b2.
 19A  >[g8f+8 e8a8 r8f+8 r8e8& |e1]2
 19A  e2 r8<b8> d8e8
 19A  g8f+8 e8a8 r8b8 f+8e8& e1
-9  @l17
-19A  <b8>c8 e8g8 b6g6 e6 a6f+6 d6<
-9  @l20
-19A                                a8.f+8. d8
-9  @l21
+19A  <b8>c8 e8g8 b6g6 e6 a6f+6 d6< a8.f+8. d8
 19A  e1& e1&
-9  @l22
 19A  e1& e1
 19A ]
 
-@e20={,,ffeed}
-BC v13 o5@16@e20
+BC v12 o5@16@e20 @\2
 BC h50,1,2,-2
-B [0 
+B [0
 B  [d2&d8((d8)) d8c+8& c+2..((c+8)) e2..((e8)) f+2..((f+8))]2 
-B  g2..((g8)) f+2..((f+8))
+B  g2..((g8)) f+2..((f+8)) 
 B  [r4 d8.(((d16))) d16(((d16)))d16(((d8.))) d16(((d16)))]2 
-B  g2..((g8)) f+2..((f+8))
+B  g2..((g8)) f+2..((f+8)) 
 B  a2..((a8)) f+8[f+8(((f+8)))]2 f+8. (((f+16)))f+8 
 B  [r4 g4 ((g8))f+8 ((f+8))e8& e2..((e8))]3 
-B  g2..((g8)) f+2..((f+8))
-B  [r8.(f16&) [f+8.(((f+16))) [f+16((f+16))]2 (((f+16)))r8.]2 f+8g8]2 
+B  g2..((g8)) f+2..((f+8)) 
+B  [r8.e16& [e_f+16&f+8(((f+16))) [f+16((f+16))]2 (((f+16)))r8.]2 f+8g8]2 
 B ] 
 
-C [0 
+C [0
 C  [<b2&b8((b8) b8a8& a2..((a8)) >c2..((c8)) d2..((d8))]2 
 C  e2..((e8)) d2..((d8)) 
 C  [r4 <b8.((b16)) b16((b16))b16((b8.)) b16((b16))>]2 
 C  e2..((e8)) d2..((d8)) 
 C  e2..((e8)) d+8[d+8((d+8))]2 d+8.((d+16))d+8 
 C  [r4 e4 ((e8))d8 ((d8))c+8& c+2..((c+8))]3 
-C  e2..((e8)) d2..((d8)) 
-C  [r8.(d-16&) [d8.((d16)) [d16((d16))]2 ((d16))r8.]2 d8e8]2 
+C  e2..((e8)) d2..((d8))
+C  [r8.c16& [c_d16&d8((d16)) [d16((d16))]2 ((d16))r8.]2 d8e8]2 
 C ] 
 
-2 @12 v10 o4 k1 @\3
-2 h50,1,2,-1 
-2 [0 
+2 @12 v11 o3 k1 @\6 
+2 h10,1,2,-1 
+2 [0
 2  (q4[<e8>e8 b8e8]15)
 2  q7f+8.f+8. f+8 
-2  q6<c1 d1> 
-2  (q4[<e16>e16>e16<e16> e16<e16d16e16 r16e16r16e16< e16>e16d16e16]2) 
-2  q6<c1 d1> 
-2  (q4[<b16>d+16f+16b16]7 >d+16f+16b16>d+16<<) 
-2  q8[r4 e4. f+8 g8a2. g8 f+8e8]3
-2  q6c1 d1
-2  (q4[<e8>e8 b8e8]8)
+2  ;
+2  [
+2   q6<c1 d1> 
+2  |
+2   [e8e8 >d8<e8 >a8<e8 |>g8<e8]2 
+2                        >g16q8b8.< 
+2  ]
+2  q8a1 
+2  q4b8b8 r8b8 r8b4 b8 
+2  ;
+2  q8[r4 e4. f+8 g8a2. g8 f+8e8]3 
+2  q6c1 d1 
+2  ((q4[<e8>e8 b8e8]8)) 
 2 ] 
 
-D v12 o4 @16@e20
-D h50,1,2,-2 
-D [0 
-;D q4[>e16e16e16e16 g16e16<e16>g16<]15 ; pc88
-D q4[e16>e16e16<e16 >b16e16<e16>b16<]15 ;msx
-D q8>e_<e2
-D q4c8c8 >e8<c8 >g8<c8 >e8<c8 
-D d8d8 >f+8<d8 >a8<d8 >f+8<d8 
-D [e8e8 >d8<e8 >a8<e8 |>g8<e8]2 
-D                      >g16q8b8.< 
-D q4c8c8 >e8<c8 >g8<c8 >e8<c8 
-D d8d8 >f+8<d8 >a8<d8 >f+8<d8 
-D q8a1 
-D q4b8b8 r8b8 r8b4 b8 
-D @\18
-D q8[r4 e4. f+8 g8a2. g8 f+8e8]3
-D @\0
-D q6so>>c1 d1<< sf
-;D (q4[>e16e16e16e16 g16e16<e16>g16<]8 ) ;pc88
-D (q4[e16>e16e16<e16 >b16e16<e16>b16<]8 ) ;msx
+D v12 o4 @16@e21 \2
+D h8,1,2,-2 
+D [0
+;D  q4[>e16e16e16e16 g16e16<e16>g16<]15 ; pc88
+D  q4[e16>e16e16<e16 >b16e16<e16>b16<]15 ;msx 
+D  q8>e_<e2
+D  ;
+D  [2
+D   q4c8c8 >e8<c8 >g8<c8 >e8<c8 
+D   d8d8 >f+8<d8 >a8<d8 >f+8<d8 
+D  |
+D   q4[<e16>e16>e16<e16> e16<e16d16e16 r16e16r16e16< e16>e16d16e16]2
+D  ]
+D   q4[<b16>d+16f+16b16]7 >d+16f+16b16>d+16<<
+D  ;
+D  <<)
+D  q8[r4 e4. f+8 g8a2. g8 f+8e8]3 
+D  >>(
+D  @11 )
+D  q6so>>c1 d1<< sf 
+D  @16 (
+;D  (q4[>e16e16e16e16 g16e16<e16>g16<]8 ) ;pc88
+D  (q4[e16>e16e16<e16 >b16e16<e16>b16<]8 ) ;msx 
 D ] 
 
-E v14o3 so @16
+E v13o3 so @16@e22
 E [0
 E  [e8]56 
 E  d8f+8 a8>c8 c32&d16.c8< a16f+8. 
@@ -144,7 +146,8 @@ E ]
 *5={o8@5p0}
 
 3 o2v12 
-3 [0 p19
+3 [0
+3  p17 
 3  [*1g8*3g16g16]30 
 3  *2c8c8 *3[g32]2 g16*2[c16]2 
 3  [[*1g8*3g8 *2c8*3g8 *1g8g8 *2c8*4g8]2 
@@ -160,7 +163,7 @@ F y38,35 y22,146 ; bass-drum (y38,32+3 -> sustain on)
 F y39,35 y23,207 ; snare,hi-hut (y39,32+3 -> sustain on) 
 F y40,34 y24,162 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
 F vb14 vc11 vh7 vs10vm12 kf 
-F [0 
+F [0
 F  [b8h16h16]30 
 F  sm8sm8 [h32]2 h16[sm16]2 
 F  [[b8h8 sm8h8 b8b8 sm8h8]2 
@@ -171,4 +174,4 @@ F   vc+1c4vc-1 sm8b8 [b8sm8 ]2 b12[sm12]3 [b12]2 [b8]2 sm4
 F  sm8b8b8bc4b8 sm4 [b4]3 vs-3vm-3sm16vs+1vm+1sm16vs+1vm+1sm16vs+1vm+1sm16 
 F  [b8h16h16]15 sm16c8. 
 F ] 
-
+
