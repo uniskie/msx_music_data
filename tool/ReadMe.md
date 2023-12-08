@@ -4,4 +4,4 @@
 
 https://uniskie.github.io/msx_music_data/tool/vcd_conv.html
 
-htmlソースコード [tool/vcd_conv.html](tool/vcd_conv.html) (ダウンロードしてブラウザで開いて使用できます)
+htmlソースコード [vcd_conv.html](vcd_conv.html) (ダウンロードしてブラウザで開いて使用できます)
