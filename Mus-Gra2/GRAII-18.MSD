@@ -33,18 +33,18 @@ sc3=o4@14q6v7
 
 a0=m4l12(a4i50)a6ib>c6(g4i50)gi
 a1=g4<aaba6(g4i50)gi
-a2=(g4i50)gif<b>(e4i50)e4ir1
+a2=(g4i50)gifd(e4i50)e4ir1
     r1 r1
 
 ;*** part 2 ***
 
-fm2=o5@64v14m6i2
-fm3=o5@12v13r16m6i2
-sc4=o4@15q6v7
+fm2=o6@64v14m6i2
+fm3=o6@12v13r16m6i2
+sc4=o5@15q6v7
 
-b0=m4l4r2(ci50)ci
-b1=(gi50)gi<(ai50)ai>
-b2=(gi50)gi(ei50)eir
+b0=m4l4(ci50c)i<gc
+b1=gd<gc>>
+b2=l12<da>d<a>dal32efgal8b4.r1
 
 
 ;*** part 3 ***

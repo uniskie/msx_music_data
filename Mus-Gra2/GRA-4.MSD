@@ -26,7 +26,7 @@ SCC5=t,sc4,d0,x4,       d1/4,d2/4,d3/2,d4,d5/2,d6/2,d7/2,d8
 t=t136
 
 fm0=v13@98o5
-fm1=v11@98o5z20r8.
+fm1=v11@98o5z5r8.
 fm2=v13@16o4
 fm3=v11@16o4
 fm4=v14@33q6o3
@@ -34,11 +34,11 @@ fm5=v12@12q6o2 z6
 ps0=v9@4o5m4i30
 ps1=v9@4o4m4i30
 ps2=v9@4o4
-sc0=v12@15q4o5
-sc1=v12@15q4o4
-sc2=v12@15q4o4
+sc0=v08@15q4o5
+sc1=v08@15q4o4
+sc2=v08@15q4o4
 sc3=v12@6 q6o2
-sc4=v13@6 q6o1
+sc4=v12@6 q6o1
 
 a0=l8c.cc16cdd
 a1=<<<gg>>>
@@ -55,7 +55,7 @@ c3=<<<gg16gg16> z22
 x0=r4
 x1=rr4
 x2=rr4 >z22 r8.
-x3=rr4 v12
+x3=rr4 v10
 d0=l8r2.gg r2rgg16gg16
 x4=>z20
 

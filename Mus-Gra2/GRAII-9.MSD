@@ -20,18 +20,18 @@ SCC3=t,sc2,d0/4,d1/2,d0/2,d2/2,d3/2,d4
 SCC4=t,sc3,a0,a1
 SCC5=t,sc4,a0,a2
 
-t=t112
+t=t96
 
 ;**** part 1
 
 fm0=o4@6v14
 fm1=o4@6v13z10r16
 ps0=o3@11v8
-sc3=o4@15q6v9
-sc4=o4@15q6v8z3r8
+sc3=o4@15q6v8
+sc4=o4@15q6v6z3r8
 
 a0=m4l16g>cd(g8.i40)g8i0 <a>df+(a8.i40)a8i0 <b->e-f(b-8.i40)b-8i0 cfg>(c8.i40)c8i0
- <gf+ed8ef+c 8ded8<a8>d gf+ed8ef+c 8de>c8ded
+ <gf+ed8ef+c 8ded8<a8>d gf+ed8ef+c 8de>c8dec
  fec<(g8i40)g8.i0 fec<(g8i40)g8.i0>fec<g8>cd(g )g8.g32>c32f.e.c
  cde-(c8i40)c8.i0 cde-f8
 a1=d8<b- >c8.<b8.>c8.(d8i40d8m5)d8
@@ -39,23 +39,23 @@ a2=d <g8.g8.a8.(b8i40b8m5)b8
 
 ;**** part 2
 
-fm2=o4@6v13m4i1
-fm3=o4@6v11z3r16
-sc0=o4@15q6v9m6i1z1
+fm2=o4@6v12
+fm3=o4@6v11 z10r16
+sc0=o4@15q6v7
 
 b0=l16g>cdgg>cdg <<a>df+aa>df+a <<b->e-fb-b->e-fb- <cfg>ccfg>c
  <<da>d<da>d<da> d<da>d<da>d<d cg>c<cg>c<cg >c<cg>c<cg>c<c
  <b->fb->dfec<g <b->fb-<b->fec<g a>da<a>da<a>d a<a>da<a>da<a
- a->ce-a-ce-a->c <<b->dfb-dfb->d-
+ a->ce-a-ce-a->c <<b->dfb-dfb->d
  <<l32gab>c<b>cdedefgefga fgabgab>c<ab>cd<b>c
 b1=de
 
 ;**** part 3
 
-fm4=o5@2v14z3
+fm4=o5@2v14z10
 fm5=o5@9v13
-ps1=o4@20v8
-sc1=o5@8q6v9z1
+ps1=o4@20v8z1
+sc1=o5@8q6v7z3
 
 c0=m4l4(ci40)ci(di40)di(e-i40)e-i(fi40)f
  l16q5dd4d8. d8.(d)d4 cc4c8. c8.(c)c4
@@ -64,8 +64,8 @@ c0=m4l4(ci40)ci(di40)di(e-i40)e-i(fi40)f
 
 ;**** part 4
 
-fm6=o3@33q6v14m4i4
-sc2=o2@11q6v15
+fm6=o3@33q6v14
+sc2=o2@11q6v14 z1
 
 d0=l16 c8.c8c8c
 d1=d8.d8d8d
@@ -77,7 +77,7 @@ d4=a-8.a-8a-8a- b-8.b-8b-8b- g8.g8g8g gggggggg
 
 fm7=v15o1z40
 fm8=v15o1
-ps2=v12o2
+ps2=v11o2
 
 r0=l16 @91aa>@87e8e8e<@91a
 r1=aa>@87e8@90c32c32<@91a>@90c32c32<@91a

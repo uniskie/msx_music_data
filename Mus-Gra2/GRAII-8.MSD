@@ -1,162 +1,199 @@
 ;*************************************
 ;   GRADIUS II-8  ¢ Crystal World £
 ;*************************************
-FM1 =t,fm0,a0,a1,a2,a3,a4,a5,a4,a6,a7,a8,a7,a9
-FM2 =t,fm1,b0,b1,b2,b3,a4,a5,a4,a6,a7,a8,a7,a9
-FM3 =t,fm2,c0,@0,c1,a1,c2,    @0,c1,@24,c3,c4,c3,c5,c6,c7,c6,c8
-FM4 =t,fm3,d0,@0,c1,b1,b2,b3',@0,c1,@24,d3,d4,d3,d5,d6,d7,d6,d8
-FM5 =t,fm6,g0/4,g1,g2,g1,g3,g4,g5/2,g6,g7,g6,g8,g9,ga,g9,gb
-FM6 =t,fm5,f0,f1,f2,f3,f4,f3,f5,f6,f7,f6,f8
+FM1 =t,fm0,a0,     a0',a1,fm0a,b2,a3,fm0b,a4,a5,a4,a6,rr4
+FM2 =t,fm1,b0,fm1',a0',a1,fm1a,b2,a3,fm1b,a4,a5,a4,a6
+FM3 =t,fm2,c0,a1,fm2a,c1,fm2b,c2,fm2c,c3,c4,c3,c5,fm2d,c6,fm2c,c7,rr4
+FM4 =t,fm3,d0,a1,fm3a,c1,fm3b,c2,fm3c,c3,c4,c3,c5,fm3d,c6,fm3c,c7
+FM5 =t,fm6,g0/4,g1,g2,g1,g3,g4,g1,g5,g6,g7,g6,g8
+FM6 =t,fm4,e0
 FMR =
-FM7 =t,fm4,e0/4,e1,e2,e1,e3,a2,a3',e4,e4,e4,e6,e7,e8,e7,e9
-FM8 =t,fm7,r0,r1,r0,r2,r0/3,r3,r4/2,r5,r6/7,r7,r6/7,r7,r6/7,r7,r6/7,r7,r8/2,r9
-FM9 =t,fm8,r0,r1,r0,r2,r0/3,r3,r4/2,r5,r6/7,r7,r6/7,r7,r6/7,r7,r6/7,r7,r8/2,r9
-PSG1=t,ps0,a0,a1,a2,a3p,a4,a5,a4,a6,a7,a8,a7,a9
-PSG2=t,ps1,f0,f1,f2,f3,f4,f3,f5,f6,f7,f6,f8
-PSG3=t,ps2,s0,s1,s0,s2,s0/3,s3,s4/2,s5,s6/7,s7,s6/7,s7,s6/7,s7,s6/7,s7,s8/2,s9
-SCC1=t,sc0,g0/4,g1,g2,g1,g3,g4,g5/2,g6,g7,g6,g8,g9,ga,g9,gb
-SCC2=t,sc1,f0,f1,f2,f3,f4,f3,f5,f6,f7,f6,f8
-SCC3=t,sc2,d0,c1,f1,c2,c1,c3,c4,c3,c5,c6,c7,c6,c8
-SCC4=t,sc3,a0,a1,a2,a3s,a4,a5,a4,a6,a7,a8,a7,a9
-SCC5=t,sc4,g0/3,b0g,b1,b2,b3s,a4,a5,a4,a6,a7,a8,a7,a9
+FM7 =t,fm5,g0/4,g1,g2,g1,g3,g4,g1,g5,g6,g7,g6,g8
+FM8 =t,fm7,r0,r1,r0,r2,r0/3,r3,r4/2,r5,r6/7,r7,r6/7,r7,r6/7,r7,r8/2,r9
+FM9 =t,fm8,r0,r1,r0,r2,r0/3,r3,r4/2,r5,r6/7,r7,r6/7,r7,r6/7,r7,r8/2,r9
+PSG1=t,ps0,a0,     a0',a1,     a2,a3,a4,a5,a4,a6,rr4
+PSG2=t,ps1,e0
+PSG3=t,ps2,s0,s1,s0,s2,s0/3,s3,s4/2,s5,s6/7,s7,s6/7,s7,s6/7,s7,s8/2,s9
+SCC1=t,sc0,g0/4,g1,g2,g1,g3,g4,g5/2,g6,g7,g6,g8
+SCC2=t,sc1,e0
+SCC3=t,sc2,d0,a1,sc2a,c1,sc2b,c2,sc2c,c3,c4,c3,c5,c6,c7,rr4
+SCC4=t,sc3,a0,     a0',a1,sc3a,a2,a3,sc3b,a4,a5,a4,a6,rr4
+SCC5=t,sc4,b0,sc4',a0',a1,sc3a,a2,a3,sc4b,a4,a5,a4,a6
 
 t=t220
 
+rr4=r4
+
 ;part 1
 
-fm0=o5@14s1v12
-fm1=o5@14s1v12z10
-ps0=o4@11v8q6
-sc3=o4@15q6v9q6
-sc4=o2@15q6v9q6z5
+fm0=o4@24q6s1v12
+fm1=o4@24q6s1v12
+ps0=o3@11v7q7 z2
+sc3=o3@8q6v7q6 z1
+sc4=o3@8q6v7q6 z1
 
-b0g=l8adea4dea4deaa>a>dr
-a0=l1rrrrrrrr2l8ra>da
-b0=l1rrrrrrrr2l8ra>dr
-a1=m4(g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2ir<a>da (g2.i50g4 )g4.if+gf+d
-(e e2.i50e4 )e2.ir4
-b1=m4(d2.i50d4 )d4.ir rr r<(b b2.i50b4 )b2ira>dr (d2.i50d4 )d4.ir rr r<(b b2.i50b4 )b2.ir4>
-a2=(a2i50)a2i (a4i50)ai(b4i50)bi>c4 <(g2i50)g2i >(d4i50)di(c4i50)ci<b4 (a2.i50a4 )a2i
-b2=(f2i50)f2i (f4i50)fi(g4i50)gia4 (e2i50)e2i (b4i50)bi(a4i50)aig4 (e2.i50e4 )e2i
-a3=v14rgra v9rgrav4rgra r1 v13 
-a3'=v14rgra v9rgrav4rgra r1 v10
-a3p=v12rgra v6rgrav2rgra r1 v8
-a3s=v14rgra v9rgrav4rgra r1 v9
-b3=v14rdre v9rdrev4rdre r1 v12 R8
-b3'=v14rdre v8rdrev3rdre v9
-b3p=v11rdre v6rdrev4rdre r1 v8
-b3s=v13rdre v9rdrev4rdre r1 v9
-a4=l8m4(c4i50)c2icf (b-4i50)b-2i(a)f
-a5=(g4i50)gi>(cc4.i50c )c1i<
-a6=g4a(ff2i50 )f1i
-a7=(e-4i50)e-2ie-a- >(d-4i50)d-2ic<a-
-a8=(b-4i50)b-i>(e-e-4.i50e- )e-1i<
-a9=b-4>c<(a-a-4.i50a- )a-2.ie-g (g-4i50)g-4.i<b->d-g- (a-4i50)a-4.ice-a- (b-4i50)b-2ir>(c c4i50c)c2i
+fm1'=v12 z18 r4
+sc4'=v5  z4  r4
+
+fm0a=@0> v13
+fm1a=@0> v11
+sc3a=@17
+
+fm0b=@24 v13q4
+fm1b=@24 v11q4 z6
+sc3b=@8 v8>
+sc4b=@8 v6> z4
+
+a0=>r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1 <
+b0=>r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1 <
+
+a0'=l8r2ra>da 
+a1=m4(g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2ir<a>da
+   (g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2.i;r4
+
+b2=r4
+   (a2i50)a2i (a.i50)a.i(b.i50)b.i>c4
+   (g2i50)g2i <(g.i50)g.i(a.i50)a.ib4
+   >(a2.i50a4 )a2i<
+a2=r4
+   (a2i50)a2i (a.i50)a.i(b.i50)b.i>c4<
+   (g2i50)g2i (g.i50)g.i(a.i50)a.ib4
+   (a2.i50a4 )a2i
+a3=rgra r1 r1<
+
+a4=l8m4(c4.i50)c4.icf (a+4.i50)a+4.iaf
+a5=(g.i50)g.i>(c4.i50)c1i<r4
+a6=g4a(f4.i50 )f1ir4
+   (d+4.i50)d+4.id+g+ >(c+4.i50)c+4.ic<g+
+   (a+.i50)a+.i>(d+d+2i50)d+2ir4<d+f
+   (f+4i50)f+4i r4 c+f+ (g+4i50)g+4i r4 d+g+
+   (a+4..i50)a+4..i>(c4.i50)c4;r4
 
 ;part 2
 
-fm2=o6v14@16s1
-fm3=o6v14@16s1
-sc2=o4v9@10q6
+fm2=o5v10@6s1 z7
+fm3=o5v10@6s1 z7
+sc2=o4v5@15q6 z3
 
-c0=r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1
-d0=r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1
-c1=l24q4<<cc+dd+ef gg+aa+b>c cc+dd+ef f+gg+aa+b>l8q8
-@0=@14v12
-@6=@24v12
-@24=@16v11
-c2=l8<f+a>c<a>cf+cf+ af+a>c<a>cf+a<< gb>d<b>dgdg bf+b>d<b>dgb <a>ce<a>ca<a>c e<a>car2 r1< 
-c3=ffrff rff  b-b-rb-rb-b-b-
+c0=r8 >r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1 r1< r8
+d0=r8 >r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1 r1< r8
+
+fm2a=@0v10 z0
+fm3a=@0v09 z3 r4
+sc2a=@17v5 z0
+c1=<
+   l8fa>c<a>cfcf afa>c<a>cfa<<
+   gb>d<b>dgdg bgb>d<b>dgb<<
+   >>ea>d<ea>d<ae>d<ea>d<<<r2
+   r1
+   >
+
+fm2b=@0v12 q4s0>
+fm3b=@0v09 q4s0>
+sc2b=@17v5z1q4>
+;c2=l24<cc+dd+ef gg+aa+b>c cc+dd+ef f+gg+aa+bl8
+c2=l32<<<rcdef+gab>c def+gab>cd ef+gab>cde f+gab>cde<l8
+
+fm2c=@24v11 q4s1 z10 
+fm3c=@24v8  q4s1 z23
+sc2c=@2v6 q8z1
+c3=ffrff rff  a+a+ra+ra+a+a+
 d3=ccrccrcc ffrfrfff
 c4=>ccrccrcc rccrcccc<
 d4=ggrggrgg rggrgggg
 c5=ggaffrff rffrffff
-d5=ddeccr<b>c rccr<bbbb>
-c6=a-a-ra-a-ra-a- >d-d-rcrccc
-d6=e-e-re-e-re-e- a-a-ra-ra-a-a-
-c7=e-e-re-e-re-e- reereeee
-d7=a-a-ra-a-ra-a- rbbrbbbb
-c8=<b-b->c<a-a-ra-a- ra-a-ra-a-a-a- g-4rm4(g-4i50)g-4.i a-4r(a-4i50)a-4.i (b-4i50)b-2ir>(c c4i50)c2.i
-d8=f+f+ge-e-re-e- re-e-re-e-e- d-4rm4(d-4i50)d-4.i e-4r(e-4i50)e-4.i (b-4i50)b-2ir(g g4i50)g2.i
+   g+g+rg+g+rg+g+ >c+c+rc+rc+c+c+
+   d+d+rd+d+rd+d+ rd+d+rd+d+d+d+<
+   m4(f+4.i50)f+4.if+f+ (g+4.i50)g+4.ig+g+
+
+fm2d=@16v14q8
+fm3d=@16v12q8
+c6=a+<cfa+>cfa+>
+c7=(c c4i50c)c2i;r4
 
 ;part 3
 
-fm4=o4v10@24m4i4
+fm4=o6v13@9 q6s1 
+ps1=o5v3@13 z2 r4
+sc1=o4v8@18
 
-rr1=r1r1
-e0=l8adf+a4df+(a )adf+a4df+a
-e1=adea4de(a )adea4dea
-e2=bef+b4ef+(b )bef+bbef+b
-e3=>c<fg>c4<fg>(c )c<fg>cc<fg>c
-e4=cfacfacf b-cf>d<dfb-d
-e5=cegce>c<ce gce>c<cegc
-e6=fdaff>c<cf acf>c<cfac
-e7=ce-a-ce->c<ce- a-d-f>f<d-fa-d-
-e8=e-gb-e-g>e-<e-g b-e-g>e-<e-gb-e-
-e9=b-f+>c<a-e->c<c>e a-ce->c<ce-a-c g-1 a-1 b-<eb->df+b->dr r1
+e0=l8m6i20
+   r1 r2rg4. 
+   r1 r2rgg4
+   r1 r2rg4.
+   r1 r1
+   
+   g4.rr2 r1
+   e4.rr2 r1
+   rg4.r2 r1
+   c4.rr2 r1
+
+   a4.rr2 r1
+   g4.rr2 r1
+   a4.rr2 r2rg4(a)
+   a2r2 r1
+   
+   f4.rr2 a+4.rr2
+   g4.>c4.r4 r1<
+   f4.rr2 a+4.rr2
+   g4af4.r4 r1
+   d+4.rr2> c+4.rr2<
+   a+4.>d+4.r4 r1<
+   f+4.rr2 g+4.rr2
+   a+4.rr4.>c4.rr;r4
 
 ;part 4
 
-fm5=o5v14@14q6s1
-ps1=o4v8@11
-sc1=o4v9@8q6
-
-f0=r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1 r1
-f1=l1m5(gi50)gi(ei50)ei(gi50)gi(bi50)bi
-f2=(fi50)fi(gi50)gi(a i50)a2il8rgral1 r r
-f3=l2(fi50)fi(b-i50)b-i
-f4=f4.>(c8c2i50)c1i<
-f5=g4a8(f8f2i50)f1i
-f6=(a-i50)a-i>(d-i50)d-i<
-f7=b-4.>(e-8e-2i50)e-1i
-f8=b-4>c8<(a-8a-2i50)a-1i (g-i50)g-i(a-i50)a-i (b-4i50)b-2ir8(>c4i50)c2..i
-
-;part 5
-
-fm6=o3@33v14
-sc0=o2@11v15
+fm5=o3@24v12q5 
+fm6=o2@33v14q5
+sc0=o2@11v13q6
 
 g0=l8adea4dea4deaadea
-g1=adea4df+a4deaadea 
+g1=adea4dea4deaadea 
 g2=bef+b4ef+b4ef+bbef+b
 g3=>c<fg>c4<fg>c4<fg>cc<fg>c<
-g4=f<g>cf4<a>cf4<a>cff<a>cf g<a>dg4<a>dg4<b>dgg<b>dg
-g5=acea4cea4ceaacea
-g6=cfacfacf b-dfb-dfb-d
-g7=cegcegceg<b>eg<b>eg<b>
-g8=ggbffacf acfacfac
-g9=ce-a-ce-a-ce- ad-f+ad-f+ad-
-ga=e-gb-e-gb-e-g b-e-gb-e-gb-e-
-gb=b-b->c<a-e-a-ce a-ce-a-ce-a-c <b->d-g-<b->d-g-<b->d- a-ce-a-ce-a-c b-<f+b->df+b->d<(d d4m4i50)d2.i
+g4=f<a>cf4<a>cf4<a>cff<a>cf g<b>dg4<b>dg4<b>dgg<b>dg
+g5=adea4dea4agfedc<a+>
+g6=cfacfacf a+dfa+dfa+d
+g7=cegcegcegcegcegc
+g8=ggaffacf acfacfac
+   cd+gcd+gcd+ g+c+fg+c+fg+c+
+   d+ga+d+ga+d+g a+d+ga+d+ga+d+
+   <a+>c+f+<a+>c+f+<a+>c+ g+cd+g+cd+g+c
+   a+<fa+>dfa+>d<(d d4 m4i50)d2. i
 
 ;rhythm part
 
-fm7=v15o1z40
+fm7=v15o1z20
 fm8=v15o1
-ps2=v12o2q6
+ps2=v10o2q6
 
 r0=l8@91a>@87e@90c@86e<@91a>@87e@90c@86e <@91a>@87e@90c@87e<@91a>@90c@87e@90c<
 r1=@91a>@87e@90c@86e<@91a>@87e@90c@87e <@91a>@87e@90c@86e<@91a>@90ccc<
 r2=@91a>@87e@90c@86e<@91a>@87e@90c@86e <@91a>@90ccccccc<
 r3=@91a>@87e@90c@86e<@91a>@87e@90c@86e <@91a>@87e@90c@87e<@91a>@90ccc<
-r4=@91a4>@90c<@91ara>@90c<@91a> r@87e@90c@87e<@91aa>@90c@87e
-r5=<@91a4>@90c<@91ara>@90e<@91a> r@87e@90c@87e<@91a>@90crc <@91a4>@90c<@91ara>@90c<@91a> @92b16b16bbaa@90ccc<
+r4=@91a4>@90c<@91ara>@90c<@91a> r@87e@90c@87e<@91aa>@90c@87e<
+r5=@91a4>@90c<@91ara>@90e<@91a> r@87e@90c@87e<@91a>@90crc< 
+   @91a>@90ccccccc
+   ;<@91a4>@90c<@91ara>@90c<@91a>
+   @92b16b16bbaa@90ccc<
 r6=@91aa>@90c<@91a
 r7=>@90cccc<
 r8=@91aa>@90c<@91aa>@90ccc<
-r9=@91a>@90cccccc@86e Q8@92l16bbbbaaaagggg@90cccc
+r9=@91a>@90cccccc@86e @92l16>cccc<bbbbbaaaa@90cccc
 
 s0=l8@01a>@07g@00e@06g<@01a>@07g@00e@06g <@01a>@07g@00e@07g<@01a>@00e@07g@00c<
 s1=@01a>@07g@00e@06g<@01a>@07g@00e@07g <@01a>@07g@00e@06g<@01a>@00eee<
 s2=@01a>@07g@00e@06g<@01a>@07g@00e@06g <@01a>@00eeeeeee<
 s3=@01a>@07g@00e@06g<@01a>@07g@00e@06g <@01a>@07g@00e@07g<@01a>@00eee<
 s4=@01a4>@00e<@01ara>@00e<@01a r>@07g@00e@07g<@01aa>@00e@07g<
-s5=@01a4>@00e<@01ara>@00e<@01a r>@07g@00e@07g<@01a>@00ere< @01a4>@00e<@01ara>@00e<@01a >@21g16g16gg@23ff@00eee<
+s5=@01a4>@00e<@01ara>@00e<@01a r>@07g@00e@07g<@01a>@00ere<
+   @01a>@00eeeeeee<
+   ;@01a4>@00e<@01ara>@00e<@01a
+   >@21g16g16gg@23ff@00eee<
 s6=@01aa>@00e<@01a
 s7=>@00eeee<
 s8=@01aa>@00e<@01aa>@00eee<
 s9=@01a>@00eeeeee@06g l16@21gggg@23ffff@25cccc@00eeee
-
-
 
 

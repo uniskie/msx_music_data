@@ -21,15 +21,15 @@ t=t150
 
 fm0=v10@14o5
 fm2=v10@12o5
-ps0=v11o4@4
-sc0=v11@2
-sc1=v8 @2z3r32
-sc2=v11@2
-sc3=v8 @2z3r32
-sc4=v11@2
+ps0=v8o4@4
+sc0=v7@10
+sc1=v4 @7z3r32
+sc2=v7@15
+sc3=v4 @15z3r32
+sc4=v7@2
 
-a=l16b>dgbg4r1
+a=l16b>dgbg4 r1
 b=l16dgb>d<b4r1
-c=g8.>d16<g4r1
+c=g8.>d16<g4 r1
 
 

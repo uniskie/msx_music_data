@@ -20,13 +20,13 @@ SCC3=
 SCC4=
 SCC5=
 
-t=t112
+t=t96
 
 ;**** drum
 
-fm7=v15o1z255
+fm7=v15o1z18
 fm8=v15o1
-ps2=v12o2q6
+ps2=v10o2q6
 
 r0=l16q6@91a>@90ccc
 s0=l16q8@01a>@00ccc

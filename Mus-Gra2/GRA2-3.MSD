@@ -31,11 +31,11 @@ Fm2'=o4v10@33q6r16z10
 Fm3'=o4v11@2q6r8
 
 Psg=v9@11 m4i2
-Sc0=v12@2
-Sc1=v12@2
-Sc2=v11@2z3r16
-Sc3=v12@2
-Sc4=v11@2z3r16
+Sc0=v13@6
+Sc1=v09@2
+Sc2=v06@2z3r16
+Sc3=v09@15
+Sc4=v07@15z3r16
 
 ;**** part 1
 

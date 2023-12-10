@@ -24,17 +24,17 @@ t=t144
 
 ;***** part 1
 fm0=o5@24q6v14
-ps0=o4@17q6v11
-sc0=o5@14q6v14
+ps0=o4@17q6v8 z2
+sc0=o5@14q6v8
 
 a0=l16e-<a-e->d<b-f>c<a-e->c<a-e->c<e->d<f>
 
 a1=c<gdbgdafcafcafbg>c<gdbgdafcafcafbd>
 
 ;***** part 2
-fm1=o4@24q6v14
-ps1=o3@17q6v11
-sc1=o4@14q6v14
+fm1=o4@24q6v13
+ps1=o3@17q6v8 z2
+sc1=o4@14q6v8
 
 b0=l16a-e-cb-fda-e-ca-e-ca-cb-d
 
@@ -43,27 +43,29 @@ b2=ge-cfd<b->e-c<a->e-c<a->e-cfd
 
 ;***** part 3
 fm2=o4@0q6v12
-fm3=o3@4q6v8z10
-sc2=o3@14q6v13
+fm3=o3@4q6v8
+sc2=o3@14q6v8 z1
 
 c0=l16a->e-<
 c1=g>d<
 
 ;***** part 4
-fm4=@6v14o3
-fm5=@6v13o4z10r8
+fm4=@6v14o4
+fm5=@6v12o4z12r8
 fm6=@6v14o2z30
-fm7=@90o2
-fm8=@90o2z40
-ps2=@2o2q6
-sc3=@8q6v13o4
-sc4=@8q6v13o2
+sc3=@10q6v7o4 z1
+sc4=@10q6v8o2 z1
 
 d0=m4(a-4.i50)a-2ia-8>(a-4i50)a-2.i< (g4.i50)g2ig8>(g4i50)g2.i<
 d1=m4(a-4.i50)a-2ia-8>(a-4i50)a-2.i< (g4.i50)g2ig8>(g4i50g8)g2i<
 
+;***** drum
+fm7=@90o2
+fm8=@90o2z20
+ps2=@2o2q6
+
 e0=q4l8v15cv14cv13Q8l16ccccccccccl8Q4v15c8cv14cv13cv12cv11cv10cv9cv8c
-f0=l8q4v12cv11cv10q8l16ccccccccccl8q4v11c8cv12cv11v10cv9cv8cv7cv6cv5c
+f0=l8q4v10cv09cv08q8l16ccccccccccl8q4v09c8cv10cv09v08cv07cv06cv05cv04cv03c
 
 
 

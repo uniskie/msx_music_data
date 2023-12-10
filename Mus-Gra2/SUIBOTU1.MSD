@@ -63,7 +63,7 @@ f1=l8<<a-ra-ra-ra-r t152 a-a-a-ra-ra-r>>
 
 
 ;*** strings
-fm5=o3@2v12
+fm5=o4@2v12
 sc1=o4@19v12
 
 i0=z1m5i4 
@@ -91,7 +91,7 @@ fmr=v15vs12vm14vh11vc13
 
 ps2=v12
 
-r0=vh12vc11hcb8vh13h16hb16hb8h16h16hb8h16hb16hb8h16h16
+r0=vh11vc11hcb8vh10h16hb16hb8h16h16hb8h16hb16hb8h16h16
 r1=hb8cb16c16hb8h16h16hb8h16hb16hb8h16h16
 r2=hb8h16hb16hb8h16h16hb8h16hb16hb8h16h16
 r3=hb8mb16m16hb16mh16r8y24,158mb8y24,138m16b16y24,118mb16m16r8y24,178

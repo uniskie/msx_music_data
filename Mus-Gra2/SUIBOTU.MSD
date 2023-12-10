@@ -1,5 +1,5 @@
 ;**************************************
-;  DRAGON SABER  Stage1 [SUIBOTU TOSI] 
+;  DRAGON SABER  Stage1  ¢½²ÎÞÂ Ä¼£
 ;**************************************
 ;suibotu.msd suyibotu.vcd/voice.vcd
 
@@ -248,17 +248,17 @@ gh=l8b-4b->b-4b-<a-4 a->a-4a-<f>f<f>f
 
 
 ;==== drums
-fmr=v15vh11vc13vs12vm14
+fmr=v15vh10vc12vs12vm14
     y38,4y22,186 ;bassdrum
     y39,2y23,164 ;snare
     y40,2y24,178 ;tom
 ;ps2=v12
 
-r0=bc16vh13h16h16h16bms16h16h16h16bh16bh16h16h16bms16h16h16h16
-r1=vh14bh16vh13h16h16h16bms16h16h16h16bh16h16h16h16bms16h16h16h16
-r2=vh14bh16vh13h16h16h16bh16h16h16h16bm16m16m16m16y24,118bm16m16y24,98m16y24,98m16y24,178
-r3=vh14bh16vh13h16h16msh16bh16mh16y24,118mh16y24,178h16bh16h16h16h16bms16msh16y24,118mh16y24,98mh16y24,178
-r4=vh14bh16vh13h16h16h16bms16h16h16h16bh16y24,148mh16mh16mh16y24,178bms16y24,118mh16mh16mh16y24,178
+r0=bc16vh10h16h16h16bms16h16h16h16bh16bh16h16h16bms16h16h16h16
+r1=vh11bh16vh10h16h16h16bms16h16h16h16bh16h16h16h16bms16h16h16h16
+r2=vh11bh16vh10h16h16h16bh16h16h16h16bm16m16m16m16y24,118bm16m16y24,98m16y24,98m16y24,178
+r3=vh11bh16vh10h16h16msh16bh16mh16y24,118mh16y24,178h16bh16h16h16h16bms16msh16y24,118mh16y24,98mh16y24,178
+r4=vh11bh16vh10h16h16h16bms16h16h16h16bh16y24,148mh16mh16mh16y24,178bms16y24,118mh16mh16mh16y24,178
 r5=bms32ms32ms16ms16ms16bms16ms16ms16ms16bms16ms16ms16ms16bsc4 bch16hm16y24,148hm16y24,178h16bh16h16h16h16bh16h16h16h16bh16h16h16h16 bch16hm16y24,98hm16y24,178h16bh16h16h16h16y24,148bmh16mh16mc16y24,118mh16y24,178bms16y24,148mh16y24,118mh16mh16y24,178
 
 s0=v12
@@ -269,8 +269,8 @@ s3=l64r16r16r16@2e8@21(g+fe)d@22(f+ed)cr16r4@2(edc>)b<(edc<b)>@23(dc<b)a>@24(c<b
 s4=l8rr@2err16l64@23(dc<b)a>(dc<b)a>(dc<b)a>@8e16@24(c<ba)g>(c<ba)g>(c<ba)g>
 s5=l32@2eel16eeeeeeeeeeee4 rl64@21(g+f+e)d@22(f+ed)cr16r2. r16@21(g+f+e)d@22(f+ed)cr16r4@22(dc<b-)a>(dc<b-)a>(dc<b-)a>@24(c<b-a)g+>@2e16@22(f+ed)c@24(c<b-a)g+>(c<b-a)g+>
 
-r6=vh14bh16vh13h16h16h16bms16h16h16h16bh16h16hs16hs16bms16y24,118mh16mh16mh16y24,178
-r7=vh14bh16vh13h16h16msh16bms16y24,138mh16y24,118mh16y24,178h16bh16h16h16h16bms16h16y24,118mh16y24,98mh16y24,178
+r6=vh11bh16vh10h16h16h16bms16h16h16h16bh16h16hs16hs16bms16y24,118mh16mh16mh16y24,178
+r7=vh11bh16vh10h16h16msh16bms16y24,138mh16y24,118mh16y24,178h16bh16h16h16h16bms16h16y24,118mh16y24,98mh16y24,178
 r8=y24,158bm8m8b8y24,138m8bm4y24,98bm4 bm8y24,178ms8bms8y24,98m16y24,138m16y24,178ms16y24,158m16y24,138m16y24,118m16bm16m16m16r16y24,178
 
 s6=r4@2e8r4l16eeel64@24(c<b-a)g+>(c<b-a)g+>(c<b-a)g+>
