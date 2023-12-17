@@ -26,29 +26,29 @@ rr4=r4
 
 ;part 1
 
-fm0=o4@24q6s1v12
-fm1=o4@24q6s1v12
+fm0=o5@24q2s1v12
+fm1=o5@24q2s1v12
 ps0=o3@11v7q7 z2
-sc3=o3@8q6v7q6 z1
-sc4=o3@8q6v7q6 z1
+sc3=o3@8q6v8q6 
+sc4=o3@8q6v8q6 
 
-fm1'=v12 z18 r4
-sc4'=v5  z4  r4
+fm1'=v11 z9 r4
+sc4'=v5  z4 r4
 
-fm0a=@0> v13
-fm1a=@0> v11
+fm0a=@16 v13q8
+fm1a=@16 v11q8
 sc3a=@17
 
-fm0b=@24 v13q4
-fm1b=@24 v11q4 z6
-sc3b=@8 v8>
-sc4b=@8 v6> z4
+fm0b=@24 v13q2
+fm1b=@24 v12q2 z6
+sc3b=@10 v8>
+sc4b=@10 v6> z4
 
 a0=>r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1 <
 b0=>r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1 <
 
 a0'=l8r2ra>da 
-a1=m4(g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2ir<a>da
+a1=m5(g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2ir<a>da
    (g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2.i;r4
 
 b2=r4
@@ -71,15 +71,15 @@ a6=g4a(f4.i50 )f1ir4
 
 ;part 2
 
-fm2=o5v10@6s1 z7
-fm3=o5v10@6s1 z7
+fm2=o5v10@6s1 z9
+fm3=o5v10@6s1 z9
 sc2=o4v5@15q6 z3
 
 c0=r8 >r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1 r1< r8
 d0=r8 >r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1 r1< r8
 
 fm2a=@0v10 z0
-fm3a=@0v09 z3 r4
+fm3a=@0v08 z3 r4
 sc2a=@17v5 z0
 c1=<
    l8fa>c<a>cfcf afa>c<a>cfa<<
@@ -89,7 +89,7 @@ c1=<
    >
 
 fm2b=@0v12 q4s0>
-fm3b=@0v09 q4s0>
+fm3b=@0v10 q4s0>
 sc2b=@17v5z1q4>
 ;c2=l24<cc+dd+ef gg+aa+b>c cc+dd+ef f+gg+aa+bl8
 c2=l32<<<rcdef+gab>c def+gab>cd ef+gab>cde f+gab>cde<l8
@@ -113,9 +113,9 @@ c7=(c c4i50c)c2i;r4
 
 ;part 3
 
-fm4=o6v13@9 q6s1 
-ps1=o5v3@13 z2 r4
-sc1=o4v8@18
+fm4=o6v13@9 q2s1 
+ps1=o5v5@13 q4 z2 r4
+sc1=o4v9@18 q4
 
 e0=l8m6i20
    r1 r2rg4. 
@@ -130,7 +130,7 @@ e0=l8m6i20
 
    a4.rr2 r1
    g4.rr2 r1
-   a4.rr2 r2rg4(a)
+   a4.rr2 r2rg4.
    a2r2 r1
    
    f4.rr2 a+4.rr2
@@ -144,7 +144,7 @@ e0=l8m6i20
 
 ;part 4
 
-fm5=o3@24v12q5 
+fm5=o3@14v10q5 
 fm6=o2@33v14q5
 sc0=o2@11v13q6
 

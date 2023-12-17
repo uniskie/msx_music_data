@@ -24,11 +24,11 @@ t=t96
 
 ;**** part 1
 
-fm0=o4@6v14
-fm1=o4@6v13z10r16
-ps0=o3@11v8
-sc3=o4@15q6v8
-sc4=o4@15q6v6z3r8
+fm0=o5@6v12
+fm1=o5@6v10 z9r8
+ps0=o3@11v7z1
+sc3=o3@15v10
+sc4=o3@15v6z1r8
 
 a0=m4l16g>cd(g8.i40)g8i0 <a>df+(a8.i40)a8i0 <b->e-f(b-8.i40)b-8i0 cfg>(c8.i40)c8i0
  <gf+ed8ef+c 8ded8<a8>d gf+ed8ef+c 8de>c8dec
@@ -39,8 +39,8 @@ a2=d <g8.g8.a8.(b8i40b8m5)b8
 
 ;**** part 2
 
-fm2=o4@6v12
-fm3=o4@6v11 z10r16
+fm2=o4@16v12
+fm3=o4@16v11 z10r16
 sc0=o4@15q6v7
 
 b0=l16g>cdgg>cdg <<a>df+aa>df+a <<b->e-fb-b->e-fb- <cfg>ccfg>c
@@ -52,20 +52,20 @@ b1=de
 
 ;**** part 3
 
-fm4=o5@2v14z10
-fm5=o5@9v13
-ps1=o4@20v8z1
-sc1=o5@8q6v7z3
+fm4=o5@2v14
+fm5=o5@9v13 z8
+ps1=o4@20v8 z1
+sc1=o5@8v7 z3
 
 c0=m4l4(ci40)ci(di40)di(e-i40)e-i(fi40)f
  l16q5dd4d8. d8.(d)d4 cc4c8. c8.(c)c4
  <b-b-4b-8. b-8.(b-)b-4 >cc4c8. c8.(c)c4
- q8l4<(a-i50)a-i(b-i40)b-i(gi50)gi>(gi50)gi
+ l4<(a-i50)a-i(b-i40)b-i(gi50)gi>(gi50)gi
 
 ;**** part 4
 
 fm6=o3@33q6v14
-sc2=o2@11q6v14 z1
+sc2=o2@11q6v15 z1
 
 d0=l16 c8.c8c8c
 d1=d8.d8d8d
@@ -75,7 +75,7 @@ d4=a-8.a-8a-8a- b-8.b-8b-8b- g8.g8g8g gggggggg
 
 ;**** drum
 
-fm7=v15o1z40
+fm7=v15o1z20
 fm8=v15o1
 ps2=v11o2
 
