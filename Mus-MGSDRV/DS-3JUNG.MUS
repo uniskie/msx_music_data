@@ -4,13 +4,13 @@
 #opll_mode 1
 #lfo_mode 0
 #machine_id 0
-#title { "namco   DRAGON SPIRIT  AREA3 ï½¢JUNGLEï½£           By Uniskie" }
+#title { "namco   DRAGON SPIRIT  AREA3 ¢JUNGLE£           By Uniskie" }
 #tempo 75
 #alloc { 0=169, 1=253, 2=263, 3=790, 4=312, 5=278, 6=253, 7=245, 8=245, 9=255, A=256, B=251, C=259, D=237, E=303, F=533 }
 
 @v15 = {
 ;       TL FB
-        18, 2,
+        10, 1,
 ; AR DR SL RR KL ML AM PM EG KR WF
   12, 7, 3, 1, 2, 3, 0, 0, 0, 0, 0,
   10, 5, 2, 3, 1, 2, 1, 1, 0, 0, 0 }
@@ -239,3 +239,4 @@ F y24,160][2y23,130y24,140sm64y23,150y24,160sm32.]y23,130y24,140[2r16sm64sm32.]y
 F y24,160[2b64b32.][4b8sm8b16b32b32sm8][8b8.sm16b16b32b32sm8][6b8sm8b16b16sm8][4b32
 F ]sm64y23,170y24,180sm32.y23,130y24,140sm64y23,150y24,160sm32.b16b16sm8b8sm8b16b16
 F sm8b16.b32sm8b16b16sm8]
+

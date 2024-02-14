@@ -9,7 +9,7 @@
 #opll_mode 1
 #lfo_mode 0
 #machine_id 0
-#title { "GUN FRONTER -round1- Á†ÇÊº†„ÅÆÂ±±Âµê (PSG+SCC+OPLL) By Uniskie" }
+#title { "GUN FRONTER -round1- çªîôÇÃéRóí (PSG+SCC+OPLL) By Uniskie" }
 #tempo 152
 #alloc { 0=400, 1=450, 2=410, 3=960,
          4=450, 5=410, 6=410, 7=300, 8=300,
@@ -271,7 +271,7 @@ F  [2vs-1*2cs4s8s8vs+1] cs8.s16s8s8s8s8b8cs8
 F ] 
 
 @e4={ 3,25, n25/3.c.7=5/2.0=10 } ;snare1
-@e5={ 1,12, n20/1\-3b/2ec=12.n31.6=100.n0.0=200. } ;cymbal
+@e5={ 1,20, n24/1\-3b/2dc=12.n31.6=100.n0.0=200. } ;cymbal
 @e6={ 3,31, /3.e/1.d8=5.0=20} ;bass
 @e7={ 1,22, n22/1f./3.d/2n20.8=6.0=60 } ;snare2
 @e8={ 3,10, /3f/1.d8=24.0=60 } ;tom
@@ -323,3 +323,4 @@ F ]
 3  *8cp0r*8cccp0r*8cc 
 3                     *7d.d16dddd*6f*7d 
 3 ] 
+
