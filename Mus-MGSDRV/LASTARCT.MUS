@@ -13,7 +13,7 @@
 
 @v15 = { ; E-Guiter hard
 ;       TL FB
-         0, 7,
+         1, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
   11, 6, 1, 1, 0, 9, 0, 0, 0, 0, 1,
   14, 2, 2, 1, 0, 1, 0, 0, 0, 0, 1 }
@@ -98,7 +98,7 @@ BC ]
 ;==== base ====
 2 o2 v8 @1 q4 k4
 D o2 v13 @13 q2 so
-E o2 v10 @10 q1
+E o2 v11 @14 q4
 2DE l16
 2DE [0
 2DE  [a4r2.]3 a4r4aaaar4
@@ -110,7 +110,7 @@ E o2 v10 @10 q1
 2DE  r4.q8e_<a8
 2   q4
 D   q2
-E   q1
+E   q2
 2DE  [aaaa]4
 2DE  >[cccc]4<
 2DE  [gggg]4
@@ -122,6 +122,7 @@ E   q1
 2DE  [aaaa]4 
 2DE  >ccccccccfffeeecc
 2DE  <aaaaaaaa>fffeeecc<
+2    q4
 2DE ]
 
 ;==== rhythm ====
@@ -137,7 +138,7 @@ F y40,2 y24,156 ; cynbal,tom-tom (y40,32+2 -> sustain on)
 *29={y38,37y22,156 sb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255h64 y22,215r64 y22,175r64 y22,135r64 }
 *36={y38,37y22,156 hsb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255}
 *37={y38,37y22,156 sb64 y22,116b64 y22,76r64 y22,36r64 y38,36y22,255}
-F v14 vh9 vs11 kf 
+F v14 vh9 vs12 kf 
 
 F l16
 F [0
@@ -156,9 +157,9 @@ F  [*b16h16*s16h16*b16h16*s16h16*s16*b16*b16*s16*b16*b16*s16h16]2
 F ]
 
 @e4={3,31,*3.c.*1.86.0=20}
-@e5={2,0,*3f.*2.n2.edn4.cbn6.aan8.99n10.88n12.77n14.66n16.55n18.44n20.33n22.22n24.0=20}
+@e5={2,0,*3f.*2.n2.dn4.cbn6.aan8.99n10.88n12.77n14.66n16.55n18.44n20.33n22.22n24.0=20}
 @e6={2,0,b750=6}
-3 v12 o3 p16 
+3 v13 o3 p16 
 
 3 l16
 3 [0

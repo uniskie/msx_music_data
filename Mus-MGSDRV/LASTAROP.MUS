@@ -1,4 +1,4 @@
-;[gain=1.0 name=LASTAROP duration=840s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=LASTAROP duration=840s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -13,9 +13,9 @@
 
 @v15 = { ; E-Guiter hard
 ;       TL FB
-         0, 6,
+        10, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  14, 5, 1, 2, 0, 5, 0, 0, 0, 0, 1,
+  13, 6, 1, 2, 0, 5, 0, 0, 0, 0, 1,
   14, 6, 2, 8, 0, 1, 0, 1, 1, 0, 1 }
 
 @v16 = { ; E-Guiter high
@@ -108,7 +108,7 @@ C    @\16
 ;==== base ====
 ;2 o2 v10 @2 @\6 q4 k4
 D o2 v13 @13 q6
-E o3 v11 @12 q2 so @\16
+E o3 v12 @12 @\16
 DE [0
 DE  l4
 DE  a1& a2.a8g8 f1& f1
@@ -193,3 +193,4 @@ F ]
 3  [@4c8@6a8@5f8@6a8]7  [@5f16]8 
 3  [@4c8@6a8@5f8@6a8]14 [@5f16]16 
 3 ] 
+
