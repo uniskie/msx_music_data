@@ -1,4 +1,4 @@
-;[gain=1.0 name=THofSna8 duration=3000s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=THofSna8 duration=3000s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -14,16 +14,16 @@
 
 @v16 = { ;
 ;       TL FB
-        13, 6,
+        11, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  14, 7, 2, 0, 0, 1, 0, 0, 1, 0, 0,
-  15, 6, 2, 1, 0, 3, 0, 0, 0, 0, 0 }
+  15, 2, 2, 0, 0, 1, 0, 0, 1, 0, 0,
+  15, 6, 2, 1, 0, 2, 0, 0, 0, 0, 0 }
 
 @e11 = {1,0,cfed:50 [d:3.c:3.b:3.c:3]0 }
 
 9 o5 v13 @4 q6so @\3
 12 @11
-1 v12 @\3 
+1 v11 @\3 
 2 v10 @\6 b4&
 9    h50,1,2,-2
 12   h50,1,2,-1
@@ -42,7 +42,7 @@
 912  e1& e1
 912 ]
 
-AB v11 o5@6
+AB v12 o5@6
 AB h50,1,2,-2
 A [0
 A  [d2&d8((d8)) d8c+8& c+2..((c+8)) e2..((e8)) f+2..((f+8))]2 
@@ -66,7 +66,7 @@ B  e2..((e8)) d2..((d8))
 B  [r8.c16& [c_d16&d8((d16)) [d16((d16))]2 ((d16))r8.]2 d8e8]2 
 B ] 
 
-C v12 o4 @16
+C v13 o4 @16
 C h20,1,2,-2
 C [0
 C  (q4[<e8>e8 b8e8]15)
@@ -84,7 +84,7 @@ C  q6c1 d1
 C  ((q4[<e8>e8 b8e8]8)) 
 C ] 
 
-D v11 o4 @16
+D v12 o4 @16
 D h20,1,2,-2 
 D [0
 D  q4[e16e16e16e16 >g16e16<e16>g16<]15 ; pc88
