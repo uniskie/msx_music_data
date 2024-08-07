@@ -25,10 +25,10 @@ t=t110
 ;*** part 1 ***
 
 fm0=o5@6v13q6
-fm1=o5@6v12z3r8
+fm1=o5@6v12z13r8
 ps0=o4@11q6v8 z1
-sc3=o4@3q6v8z2
-sc0=o4@3q6v7z4r8
+sc3=o4@3q6v8
+sc0=o4@3q6v7z2r8
 
 a0=m4l8(b-.i50)b-i(a4i50)a.iddef.l16cdfl8(b-.i50)b-i(a4i50)a.iddef.l16fa>cl8(e.i50)ei(d4i50)d.ieede(fi50)fi(f.i50)fi(e4i50)e.i
 a1=ffef(gi50)g
@@ -38,7 +38,7 @@ a2=ffefg
 
 fm2=o5v13@6
 ps1=o4v8@11q6 z1
-sc4=o4v7@3q6 z2
+sc4=o4v7@3q6 
 
 b0=m4l8(f.i50)fi(f4i50)f.i<b-b->cd.l16<ab->dl8(f.i50)f(f4i50)f.i<b-b->cd.l16dfa>l8(c.i50)ci<(b-4i50)b-.i>cc<b->c(di50)di(d.i50)di(c4i50)c.i
 b1=l8ddcd(ei50)e
@@ -47,8 +47,8 @@ b2=l8ddcde
 ;*** part 3 ***
 
 fm3=v12@24o5q6
-fm6=v11@6o5q6z3r8
-sc2=@15v7q6o4 z1
+fm6=v11@6o5q6z13r8
+sc2=@15v7q6o4
 
 c0=l16m4(f4.i50)f8.ifcf(f4.i50)f8.icdf(f4.i50)f8.ifcf(f4.i50)f8.ifcf<(b-4.i50)b-8.ib-fb-b-4.i50b-8.ib-fb->(c4.i50)c8.ic<g>c(c4.i50)c8.ic<
 c1=g>c

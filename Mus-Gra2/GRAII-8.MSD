@@ -1,10 +1,10 @@
 ;*************************************
 ;   GRADIUS II-8  ¢ Crystal World £
 ;*************************************
-FM1 =t,fm0,a0,     a0',a1,fm0a,b2,a3,fm0b,a4,a5,a4,a6,rr4
+FM1 =t,fm0,a0,fm0',a0',a1,fm0a,b2,a3,fm0b,a4,a5,a4,a6,rr4
 FM2 =t,fm1,b0,fm1',a0',a1,fm1a,b2,a3,fm1b,a4,a5,a4,a6
-FM3 =t,fm2,c0,a1,fm2a,c1,fm2b,c2,fm2c,c3,c4,c3,c5,fm2d,c6,fm2c,c7,rr4
-FM4 =t,fm3,d0,a1,fm3a,c1,fm3b,c2,fm3c,c3,c4,c3,c5,fm3d,c6,fm3c,c7
+FM3 =t,fm2,a0,c0,a1,fm2a,c1,fm2b,c2,fm2c,c3,c4,c3,c5,fm2d,c6,fm2c,c7,rr4
+FM4 =t,fm3,b0,c0,a1,fm3a,c1,fm3b,c2,fm3c,c3,c4,c3,c5,fm3d,c6,fm3c,c7
 FM5 =t,fm6,g0/4,g1,g2,g1,g3,g4,g1,g5,g6,g7,g6,g8
 FM6 =t,fm4,e0
 FMR =
@@ -16,7 +16,7 @@ PSG2=t,ps1,e0
 PSG3=t,ps2,s0,s1,s0,s2,s0/3,s3,s4/2,s5,s6/7,s7,s6/7,s7,s6/7,s7,s8/2,s9
 SCC1=t,sc0,g0/4,g1,g2,g1,g3,g4,g5/2,g6,g7,g6,g8
 SCC2=t,sc1,e0
-SCC3=t,sc2,d0,a1,sc2a,c1,sc2b,c2,sc2c,c3,c4,c3,c5,c6,c7,rr4
+SCC3=t,sc2,b0,c0,a1,sc2a,c1,sc2b,c2,sc2c,c3,c4,c3,c5,c6,c7,rr4
 SCC4=t,sc3,a0,     a0',a1,sc3a,a2,a3,sc3b,a4,a5,a4,a6,rr4
 SCC5=t,sc4,b0,sc4',a0',a1,sc3a,a2,a3,sc4b,a4,a5,a4,a6
 
@@ -26,21 +26,22 @@ rr4=r4
 
 ;part 1
 
-fm0=o5@24q2s1v12
-fm1=o5@24q2s1v12
+fm0=o5@14q6v13
+fm1=o5@14q6v13
 ps0=o3@11v7q7 z2
 sc3=o3@8q6v8q6 
 sc4=o3@8q6v8q6 
 
-fm1'=v11 z9 r4
+fm0'=@48q6v12 
+fm1'=@48q6v11 z9 r4
 sc4'=v5  z4 r4
 
-fm0a=@16 v13q8
-fm1a=@16 v11q8
+fm0a=@16 v13q8s1
+fm1a=@16 v11q8s1
 sc3a=@17
 
-fm0b=@24 v13q2
-fm1b=@24 v12q2 z6
+fm0b=@48 v13q2
+fm1b=@48 v12q2 z6
 sc3b=@10 v8>
 sc4b=@10 v6> z4
 
@@ -49,7 +50,7 @@ b0=>r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1 <
 
 a0'=l8r2ra>da 
 a1=m5(g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2ir<a>da
-   (g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2.i;r4
+   (g2.i50g4 )g4.if+gf+d(e e2.i50e4 )e2.i
 
 b2=r4
    (a2i50)a2i (a.i50)a.i(b.i50)b.i>c4
@@ -71,15 +72,14 @@ a6=g4a(f4.i50 )f1ir4
 
 ;part 2
 
-fm2=o5v10@6s1 z9
-fm3=o5v10@6s1 z9
-sc2=o4v5@15q6 z3
+fm2=o5v10@3s1 z14 r4
+fm3=o5v10@3s1 z14 r4
+sc2=o4v5@15q6 z3 r4
 
-c0=r8 >r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1 r1< r8
-d0=r8 >r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1 r1< r8
+c0=r1
 
-fm2a=@0v10 z0
-fm3a=@0v08 z3 r4
+fm2a=@10v10 z0
+fm3a=@10v08 z3 r4
 sc2a=@17v5 z0
 c1=<
    l8fa>c<a>cfcf afa>c<a>cfa<<
@@ -113,8 +113,8 @@ c7=(c c4i50c)c2i;r4
 
 ;part 3
 
-fm4=o6v13@9 q2s1 
-ps1=o5v5@13 q4 z2 r4
+fm4=o6v14@3 q4s1 z14 
+ps1=o5v6@13 q4 z2 r4
 sc1=o4v9@18 q4
 
 e0=l8m6i20
@@ -125,7 +125,7 @@ e0=l8m6i20
    
    g4.rr2 r1
    e4.rr2 r1
-   rg4.r2 r1
+   r16g4..r2 r1
    c4.rr2 r1
 
    a4.rr2 r1
@@ -144,8 +144,8 @@ e0=l8m6i20
 
 ;part 4
 
-fm5=o3@14v10q5 
-fm6=o2@33v14q5
+fm5=o4@24v11q4s1 z10 
+fm6=o2@33v13q5
 sc0=o2@11v13q6
 
 g0=l8adea4dea4deaadea

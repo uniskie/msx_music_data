@@ -25,9 +25,9 @@ T=t184
 ;ƒƒƒ part 1 ƒƒƒ
 fm0=@6v12o6
 fm1=@6v12o5
-fm2=@6v11o6r8.z13
+fm2=@6v10o6r8.z13
 fm3=@6v10o5r8.z13
-ps0=o5@11q6v7
+ps0=o5@11q6v7 z1
 sc3=o4@8v07q6
 sc4=o3@8v07q6
 

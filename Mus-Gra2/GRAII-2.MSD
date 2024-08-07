@@ -25,11 +25,11 @@ t=t120
 
 ;*** part 1 ***
 fm0=@5v09o6 
-fm1=@6v12o5 
-fm7=@6v11o5 r8. z12
+fm1=@6v11o5
+fm7=@6v10o5 r8. z12
 ps0=v08o4@11q6
 sc3=o4v8@10q6
-sc4=o4v7@10q6z3r8.
+sc4=o4v7@10q6 r8. z3
 
 a0=m4il16(g4.i50)g2ife(f4i50f8)f2ie-dm3(e-4i50)e-4i<(b-4i50)b-4i>(d4i50)d4i(d-4i50)d-4i
 a1=>m4(d-4.i50)d-2i<bb-(b4i50b8)b2i0aa-m3(a4i50)a4i0(e4i50)e4i0(a-4i50)a-4i0

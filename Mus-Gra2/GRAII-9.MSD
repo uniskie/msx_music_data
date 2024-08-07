@@ -39,7 +39,7 @@ a2=d <g8.g8.a8.(b8i40b8m5)b8
 
 ;**** part 2
 
-fm2=o4@16v12
+fm2=o4@16v13
 fm3=o4@16v11 z10r16
 sc0=o4@15q6v7
 
@@ -52,10 +52,10 @@ b1=de
 
 ;**** part 3
 
-fm4=o5@2v14
+fm4=o5@2v15
 fm5=o5@9v13 z8
 ps1=o4@20v8 z1
-sc1=o5@8v7 z3
+sc1=o5@8v8 z3
 
 c0=m4l4(ci40)ci(di40)di(e-i40)e-i(fi40)f
  l16q5dd4d8. d8.(d)d4 cc4c8. c8.(c)c4

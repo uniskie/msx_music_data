@@ -23,27 +23,27 @@ SCC5=t,sc4,a0,sc3a,a1,sc3b,b2,b3,b2,b4,b5
 t=t114
 
 ;**** part 1
-fm0=@9v12o6q6
-fm2=@9v11o6q6z13r8
-ps0=@11v07o4q6z5
-ps1=@11v07o4q6z6
+fm0=@6v12o6q6
+fm2=@6v11o6q6z13r8.
+ps0=@11v07o4q6z0
+ps1=@11v07o4q6z1
 sc3=@10v07o4q6z1
 sc4=@10v07o4q6z2
-sc2=@10v04o4q6z4r8
+sc2=@10v04o4q6z3r8.
 
 a0=m4l16fedec<(g8i50)g8i0g>c<ga->c<a->(e-8i50)e-i0<b->d<b->(f8i50)fi0fef(g8i50)g4i0g>c<ga-e-a->(c8i50)ci0<b-fb->(d8i50)di0<
 
-fm0a=@6v13
-fm2a=@6v12
+fm0a=@2v15
+fm2a=@2v14
 sc3a=@15>
 
 a1=<(e8i50)e8i0 efg8 f8e8 f8c8 f8(a8.i50)a8.i0
    l16a-ga-(b-8i50)b-8i0r32g32a-32b-32>e-<b-gb-ab->(c8.i50)c8.i0<a>cf
 
 fm0b=@9v14
-fm2b=@9v12
-sc3b=@2v7<
-sc2b=@2v4<
+fm2b=@9v13
+sc3b=@2v8<
+sc2b=@2v5<
 
 a2=(d8i50)di0rde-(f8i50)f4i0(f8i50)fi0rfb->e-8d8<b-8
 a3=>(d-8i50)d-8i0<b-g->(d-8i50)d-i0<g-b->d-l8fc<b-afcl16

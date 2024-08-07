@@ -27,7 +27,7 @@ fm0=o5@24q6v13
 fm1=o5@6q6v12z10r16
 sc0=o5@15q6v8z1
 sc1=o5@14q6v6Z4r16
-sc2=o4@2v7q6z1
+sc2=o5@2v7q6z1
 
 a0=l16c<cfcgc>c<cfcgc>c<c
 b0=l16g<g>c<g>d<d>g<g>c<g>d<g>g<g>

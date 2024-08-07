@@ -25,16 +25,16 @@ t=t120
 ;part 1
 
 fm0=o5v12@9q6s1
-fm1=o5v11@9q6s1 z10 r8
+fm1=o5v11@9q6s1 z10 r8.
 fm2=o5v12@9q6s1 z6
-fm6=o5v11@9q6s1 z16 r8
-sc3=o4v7@10q6 z1
-sc4=o4v7@10q6 z1
+fm6=o5v11@9q6s1 z16 r8.
+sc3=o4v8@15q6 z0
+sc4=o4v8@15q6 z1
 
 fm0a=@48
 fm0b=@0>
 fm0c=@5<v11
-fm1c=@5<v10
+fm1c=@5<v09
 
 a0=m4il16g>cd(g8.i50)g4.i<g>cdg
 b0=m4il16g>cd(c8.i50)c4.i<g>cdg
@@ -56,11 +56,11 @@ b6e=<b>dd(g8.i50)g4.ig4 (f8.i50f)f4.i
 ;part 2
 
 fm3=v11o6@0s1
-fm4=v09o6@0s1r8 z10
+fm4=v09o6@0s1r8. z10
 ps0=v7o4@11 z1
 ps1=v5o4@11 z4 r8.
 sc0=v6o3@8q6
-sc1=v4o3@8q6r8 z2
+sc1=v4o3@8q6r8. z2
 
 fm3a=v12@24q4
 fm4a=v11@3q4 r8.
@@ -70,7 +70,7 @@ c1=a-8>a-<a-ra->cd<
 c2=b-8>b-<b-rb->e-f
 c3=c8>c<crcfg
 c4=d8>d<drdga
-c4e=d8>d<drd
+c4e=d8>d<dr
 
 c5=m4i0(g8.i50g)g8.ir2f (e-8.i50e-)e-4i(f8.i50)f8.ig-8
 c6=(g8.i50g)g8.ir2f (e-8.i50e-)e-4if4rf8f

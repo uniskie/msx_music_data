@@ -27,8 +27,8 @@ r=r1.
 fm0=o5@16v12
 fm1=o5@16v10r8z2
 ps0=o4@11q6v7
-sc3=o@15q6v10
-sc4=o@15q6v7z3r8
+sc3=o@15q6v9
+sc4=o@15q6v6z3r8
 
 a0=l16dgdad>d
 a1=c<babgd
@@ -44,8 +44,8 @@ sc0=o2@11v12q6 z2
 b0=m4l16(g4i50g8)g4.i (f4i50)f4iffff (e4i50)e2i (e-4i50)e-8i(f8i50)figgg
 
 ;**** part 3 ****
-fm2=o6v13@24q6s1
-fm3=o6v13@24q6s1
+fm2=o6v12@24q6s1
+fm3=o6v12@24q6s1
 fm4=o6v10@24q6s1 z10 r8
 sc1=o4v9@3q6
 sc2=o4v6@3q6
