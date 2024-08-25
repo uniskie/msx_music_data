@@ -1,5 +1,5 @@
 ;**************************************
-;* GRADIUS II^19 [Ranking] by UNISKIE *
+;* GRADIUS II_20 [Ranking] by UNISKIE *
 ;**************************************
 FM1 =
 FM2 =

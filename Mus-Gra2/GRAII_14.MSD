@@ -1,5 +1,6 @@
 ;*********************
-; GRADIUS II_13 INTRO
+; GRADIUS II_14
+; ¢Fire  Dragon£ INTRO
 ;*********************
 FM1 =T,FM0,A0
 FM2 =T,FM1,A0
