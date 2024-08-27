@@ -1,0 +1,79 @@
+#title "ヴァ〇ニラの求人"
+#tempo 150
+#programmer "uniskie 2024/08/26"
+
+@m0=24,2,6,6,0
+@n0=12 6 0
+@0=efe:2 d:2 c:2 b:2 l a:3 b:3
+
+123 l8 @m0 @r12,10 ;リリース伸ばす
+123 @n0 ;ぴろぴろ
+
+12 o4 q7
+3  o3 q6
+
+123 @l
+
+123 [
+123  v14 @0,0
+2    \-1
+3    s10,10 m+ ;ぶりぶり
+1    [
+1     b+_g+4b-_g+4b-_g+4b-_g4
+1     b+_g+4b-_ab_g4b_b+16b_g16a_g
+1     r8
+1    ]
+2    [
+2     b_g4b_g4b_g4b_g-4
+2     b_g-4b_fb+_g4b-_b+16b-_g-16a_g- r8
+2    ]
+3    [
+3     g>g<g>r<g>g<a>a<
+3     g>g<g>r<g>g<a>a<
+3    ]
+123 /
+1    [
+1     a+_b-&b-a-a-_b16r.b-a-b- a_b-&b-aga_b-4>cr<
+1     a _b-&b-ab-16r16b-ag16r16e16r16 a_b->cc_dc<b-_g-2
+1     a _b-&b-aa_b16r.b-16r16a-b- a-_b-&b-aga_b-4>cr<
+1     a _b-&b-ab-16r16b-age a_b-4b-_b.r16a_g-2
+1    ]
+2    [
+2     a-_b-&b-a-a-_b-16r.b a b- a_b 4a-ga-_b-4>cr<
+2     a-_b-&b-a-b-16r16b-ag-16r16e-16r16 a_b->cc_dc<b-_g2
+2     a-_b-&b-a-a-_b-16r.b-16r16a-b- a-_b-4a-ga-_b-4>cr<
+2     a-_b-&b-a-b-16r16b-ag-e a-_b-4b-.r16a-_f2
+2    ]
+3    [ c16e16fcf>c<fcf c16e16fcfcff>c< ]8
+123 ]
+
+2   v-3 r8
+12  [
+12   agfdc4d4 da4a_g&g4r4
+12   da4a_g&g4r4 cg4g_f&f4r4
+12   agfdc4d4 da4a_g&g4ga
+12   b-4d4fg4g_f& f2.r8
+1    r8
+2    /r8
+12  ]
+2   v+3
+3   @d0,13
+3   [
+3    frfrfrfe drdrdrdc <b-rb-r>crcr frfrfcde
+3    frfrfrfe drdrdrdc <b-rb-r>crer frfrfrfr
+3   ]2
+3   @d-
+
+@R:B = *1 :820 N31 V15 / *1 :2000 V13 
+@R:S = *1 :750 N10 V15 / *3 :950 V14 / *2 N1 V13 / V12
+@R:H = *3 :20 N0 V12
+@R:C = *3 :20 N0 V12 / V11 / v10
+
+r @l
+r @rc2
+r [b4b4b4b4 b4b4b4b4 b4b4b4b4 b4b4b4b8c8
+r /[ b16h16c16h16s16h16c16h16 ]32
+r ]
+r [ b16h16c16h16b16 h16c16h16 
+r / b16h16c16h16s16h16c16h16 ]16
+r   b16b16h16c16s16s16s16s16

@@ -1,0 +1,99 @@
+;**************************
+#title "PARODIUS BOSS"
+;**************************
+
+#tempo 180
+
+@m0=18,3,2,1
+@0=fe:2 d:2 c:2 b:2 a:6 l b:3 a:3
+@3=FEDC LB
+
+1 @0,0 v14 o5
+1 q6 @r12,10 @rd1,10 @m0
+1 l8
+1 t100 ba< ba> t120 ba< ba
+1 t150 ba ba ba ba
+1 t180 ba ba ba bb16>c+16
+1 @L
+1 dd c+<a> ee d+<b>
+1 ef+ gg+ ae a4<
+1 ed c+<a> ee d+<a>
+1 ef+ gg+ ae a4
+1 a1
+1 a.b16 ag a.b16 ag
+1 a.b16 ag a.b16 ag
+1 ba ag gf+ f+e
+1 d4 c+4 b4 a4
+1 ba ag gf+ f+e
+1 f+e dc+< gg16a16 bg>
+1 gg f+e< aa16b16> c+<b>
+1 l16 c+def+ gab>c+
+
+2 @0,0 v13 o3
+2 q6 @r12,10 @rd1,10 @m0
+2 l8
+2 t100 ba< ba> t120 ba< ba
+2 t150 ba ba ba ba
+2 t180 ba ba ba bb16>c+16
+2 @L
+2 dd c+<a> ee d+<b>
+2 ef+ gg+ ae a4
+2 dd16d16 c+<b> ee< b>e
+2 [ ed dc+ c+<b a4> ]2
+2 >
+2 c+c+16d16 c+<b> c+c+16d16 c+<b>
+2 c+c+16d16 c+<b c+16d16e16f+16 g16f+16g16a16>
+2 ed dc+ c+<b> e<b>
+2 dc+< ba b4 a4>
+2 ed dc+ c+<b> ed
+2 dc+ c+<b gg f+e<
+2 gg16a16 bg> aa gf+
+2 c+16d16e16f+16 g16a16b16>c+16
+
+3 @3,3 v15 o2 @r13,6
+3 s8 m+ @q1
+3 l8
+3 t100 ba< ba> t120 ba< ba
+3 t150 ba ba ba ba
+3 s8,2 q5 @q0
+3 t180 ba ba ba bb16>c+16
+3 @L
+3 d>d< da da da
+3 dg da da da16a16
+3 d>d< da d>e< d>e16e16<
+3 [ d>d< d>c+< db da ]2
+3 [ ae ae16e16 ae ae16e16 ]2
+3 [ a>e< a>g< a>b< a>a<
+3 / a>a< a>a< d>d< d>d<
+3 ] a>a< a>a< g>g< g>g<
+3 g>g< g>g< a>a< a>a<
+3 a>a< a>a
+
+@R:B = *3 :800 N31 V15 / *1 :2000 V14
+@R:S = *1 :450 V14 / *2 N2 
+@R:K = *1 :400 V15 / :450 V14 / :500 V13
+@R:M = *1 :500 V15 / :630 V14 / :760 V13
+@R:C = *3 :20 N2 V13 / N1 V11 / N0 V10
+@R:H = *3 :20 N1 V13
+
+r @rc3
+r l16
+r t100 b4 b4 t120 b4 h4
+r t150 b4 b4 b4 h8h8
+r t180 h4 h4 h4 h8hh
+r @L
+r b8hh b8hh b8hh b8hh
+r b8hh b8hh b8hh h8hh
+r b8ss h8ss b8ss h8ss
+r b8ss h8ss b8ss h8ss
+r b8ss h8ss b8ss h8hh
+r b8sh h8k8 b8sh h8k8
+r b8sh h8k8 b8sh h8k8
+r b8ss h8ss b8ss h8ss
+r b8ss h8ss b8ss h8ss
+r b8ss h8ss b8ss h8ss
+r b8ss h8ss bhhh b8ss
+r b8ss h8ss bhhh b8ss
+r b8ss m8bc
+
+
