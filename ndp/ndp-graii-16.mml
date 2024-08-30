@@ -39,9 +39,9 @@
 1 l16 [ bedaedgedaedbe<b>e ]
 1     > bedaedgedaedbe<b>e
 1 v14
-1 s8 m+ q7 > mk-12
+1 s8 m+ q7 > mk-12 \-1
 1 l16 ge<b>af+dbgeaf+dge>e8
-1 mk0 <
+1 mk0 < \0
 
 2 o2 @0,0 v14 q8
 2 l8 [ f+r16br16>f+4<f+b>eg+< ]4 >
@@ -68,10 +68,10 @@
 3 @2,2 o3 q8 s12 m+ *1
 3 @d0,14 v15
 3 @n12 l16 fr4..gr4.. ar4..gr4.. fr4..gr4.. ar4..br4.. @n-
-3 @d-
+3 @d- j1
 3 @4,4 s8 m- *1 o3
-3 mo2mee2&\1e2& >
-3 mo3mee2&\2e2& > \3
+3 mo2mee2&\1e2& > \2
+3 mo3mee2&\3e2& > 
 3 mo4mee2&\4e2 << \0
 3 @0,0 o2 v14 q7
 3 l16 >ge<b>af+dbgeaf+dge>e8
