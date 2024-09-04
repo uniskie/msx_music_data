@@ -1,10 +1,13 @@
-#title "ヴァ〇ニラの求人"
+;*********************************************
+#title "ヴァ〇ニラの求人 PSG"
+;*********************************************
+#programmer "uniskie 2024/09/03"
+
 #tempo 150
-#programmer "uniskie 2024/08/26"
 
 @m0=24,2,6,6,0
 @n0=12 6 0
-@0=efe:2 d:2 c:2 b:2 l a:3 b:3
+@0=efe d:2 c:2 L b:3 a:3
 
 123 l8 @m0 @r12,10 ;リリース伸ばす
 123 @n0 ;ぴろぴろ
@@ -31,10 +34,10 @@
 3    [
 ;3     g>g<g>r<g>g<a>a<
 ;3     g>g<g>r<g>g<a>a<
-3      crcr c>c<cr
+3      cccr c>c<cr
 3      <b-b-b-a& agfe- >
 3    ]
-123 /
+123 / j1
 1    [
 1     a+_b-&b-a-a-_b16r.b-a-b- a_b-&b-aga_b-4>cr<
 1     a _b-&b-ab-16r16b-ag16r16e16r16 a_b->cc_dc<b-_g-2
@@ -48,7 +51,7 @@
 2     a-_b-&b-a-b-16r16b-ag-e a-_b-4b-.r16a-_f2
 2    ]
 3    [ g16e-16fcf>c<fcf c16e-16fcfcff>c< ]8
-123 ]
+123 ] j2
 
 2   v-3 r8
 12  [
@@ -61,7 +64,7 @@
 12  ]
 2   v+3
 3   ;m+
-3   @d0,13
+3   @d0,11
 3   [
 3    frfrfrfe drdrdrdc <b-rb-r>crcr frfrfcde
 3    frfrfrfe drdrdrdc <b-rb-r>crer frfrfrfr
@@ -70,14 +73,14 @@
 
 @R:B = *1 :820 N31 V15 / *1 :2000 V13 
 @R:S = *1 :750 N10 V15 / *3 :950 V14 / *2 N1 V13 / V12
-@R:H = *3 :20 N0 V12
-@R:C = *3 :20 N0 V12 / V11 / v10
+@R:H = *3 :20 N0 V13
+@R:O = *3 :21 N0 V13 / V12 / v11
 
 r @l
 r @rc2
-r [b4b4b4b4 b4b4b4b4 b4b4b4b4 b4b4b4b8c8
-r /[ b16h16c16h16s16h16c16h16 ]32
+r [b4b4b4b4 b4b4b4b4 b4b4b4b4 b4b4b4b8o8
+r /[ b16h16o16h16s16h16o16h16 ]32
 r ]
-r [ b16h16c16h16b16 h16c16h16 
-r / b16h16c16h16s16h16c16h16 ]16
-r   b16b16h16c16s16s16s16s16
+r [ b16h16o16h16b16 h16o16h16 
+r / b16h16o16h16s16h16o16h16 ]16
+r   b16b16h16o16s16s16s16s16
