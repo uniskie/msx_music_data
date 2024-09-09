@@ -1,8 +1,8 @@
 ﻿/**
-    【MML整形 for MGSDRV】
+	【MML整形 for MGSDRV】
 	
-	 4分音符ごとにスペース挿入
-	 1分音符で改行
+	4分音符ごとにスペース挿入
+	1分音符で改行
 */
 
 //=============================
@@ -43,16 +43,42 @@ var step_mul = 4;		// 内部倍率
 var L1 = step_base * step_mul;
 var L4 = L1 / 4;
 
+var useIgnoreCase = true;	// true:MGSDRVなら大文字小文字区別なし
+							// false:MXDRVなら大文字は音符ではない
+
 //==================================
+/** 小文字へ変換 */
+//==================================
+function toLowerCase(s)
+{
+	s = '' + s;
+	if (useIgnoreCase) return s.toLowerCase();
+	return s;
+}
+
+//==========================================
+/** 文字列が数値か判定 
+ *  (先頭の余白は許容する)
+*/
+//==========================================
+function isDigits(s)
+{
+	return /\s*\d+/.test(s);
+}
+
+//==========================================
+/** 文字列を数値に変換（音長指定対応）
+ * @param		s		文字列
+ * @param		si		文字列中の参照開始位置
+ * @param		d_type	0:通常/1:音長(%あり)/2:音符音長(+-%.あり)
+ * @return	[0]	最終位置 ( charAt用 )
+ *		/	[1]	数値（音長ならステップ数*倍率に変換）
+*		/	[2]	ピリオドの数
+*		/	エラー時は [0]が-1
+*/
+//==========================================
 function getDigits(s, si, d_type)
 /*
-  in:	s		文字列
-		si		文字列中の参照開始位置
-		d_type	0:通常/1:音長(%あり)/2:音符音長(+-%.あり)
- out:	[0]	最終位置 ( charAt用 )
-		[1]	数値（音長ならステップ数*倍率に変換）
-		[2]	ピリオドの数
-		エラー時は [0]が-1
 */
 {
 	var d = -1;
@@ -177,6 +203,7 @@ function proc()
 	var ps;
 	ps = efunc.inputBox('1小節の長さは？','4/4');
 	//var bl = parseInt(ps);
+	/** 1小節の長さ */
 	var bl = Function('return (' + L1 + '*(' + ps+'));')();
 	if (isNaN(bl) || (bl <= 0)) {
 		efunc.alertBox('1小節の長さが不明です。');
@@ -185,6 +212,7 @@ function proc()
 	//efunc.alertBox(bl);
 
 	ps = efunc.inputBox('省略時の音長は？','8');
+	/** 省略時の音長 */
 	var r = getDigits( ps, 0, 1);
 	if (r[0] < 0)
 	{
@@ -193,33 +221,51 @@ function proc()
 	}
 	var default_step = r[1];
 	
+	ps = efunc.inputBox('ヘッダあり？(1=あり)','1');
+	/** 行ヘッダを使用する？ */
+	var use_header = (ps=='1'); 
 	
-	ps = efunc.inputBox('ヘッダあり？(1=あり）','1');
-	var use_header = (ps=='1');
+	ps = efunc.inputBox('大文字小文字区別なし？(1=区別しない)(MXDRVは0)','1');
+	/** 大文字小文字を区別する？ */
+	useIgnoreCase = (ps=='1');
+
+	ps = efunc.inputBox('リズムパート？(0=メロディパート/1=リズムパート/2=トラック名判定','2');
+	/** 強制的にリズムモードとして処理する？ */
+	var forceRhythmMode = (ps=='1');
+	/** リズムモードかヘッダで判定する？ */
+	var autoRhythmMode = (ps=='2');
+	/** リズムモード？ */	
+	var isRhythm = forceRhythmMode;
 
 	//---------------------------------------
+	// 選択行の状態を調べる
+	//---------------------------------------
+
 	if (efunc.isSelectionEmpty())
 	{
 		efunc.selectLine();
 	}
 	var s = efunc.getSelectionText();
 
-	//---------------------------------------
-
 	var yStart = efunc.getSelectionStartY();
 	var xStart = efunc.getSelectionStartX();
 	//efunc.alertBox( xStart );
 
-	var lh = (xStart == 1); // 行の先頭かどうか
+	/** 行の先頭？ */
+	var lh = (xStart == 1); 
 
-	//---------------------------------------
-	// 最後が改行か？
+	/** 最後が改行？ */
 	lfend = (s.charAt(s.length - 1)=='\n');	//
 	//efunc.alertBox(lfend);
 
 	//---------------------------------------
 	// 行ヘッダ取得
-	var line_header = null;
+	// 最初の行のみで判定するため、複数チャンネル混在には対応しない
+	//---------------------------------------
+
+	/** 行ヘッダ文字列 */
+	var line_header = null; 
+
 	if (use_header)	{
 
 		if (!lh) {
@@ -257,26 +303,65 @@ function proc()
 	{
 		line_header = '';
 	}
+
+	// 文字列型に補正
+	line_header = line_header.toString();
+
 	//efunc.alertBox('"' + line_header +'"');
 	//efunc.alertBox(s);
+
+
+	//---------------------------------------
+	// 行ヘッダでリズムパートか判定 (MGSDRV)
+	//---------------------------------------
+	if (autoRhythmMode)
+	{
+		if ((-1 < toLowerCase(line_header).indexOf('r'))
+			|| (-1 < toLowerCase(line_header).indexOf('f')))
+		{
+			isRhythm = true;
+		}
+	}
 
 	//---------------------------------------
 	//var test_s = '';
 	//---------------------------------------
 
+	/** 1分音符単位の合算値 */
 	var count_BL = 0;
+	/** 4分音符単位の合算値 */
 	var count_L4 = 0;
-	
+
+	/** ループブロックの文字列 */
 	var loopData = new LoopData();
+	/** ループブロックの文字列スタック（階層対応用） */
 	var loopStack = [];
 
 	//---------------------------------------
+	/** 結果出力用バッファ */
 	var result = '';
+	/** 結果出力に空白を挿入する必要があるか？ */
 	var add_space = false;
+	/** 結果出力に改行を挿入する必要があるか？ */
 	var add_lf = false;
 
+	/** スキップする文字数 */
 	var skip_i = -1;
+	/** インデント空白文字数 */
 	var l_indent = 0;
+
+	/** ノート音長処理をするかどうか（ループ毎にクリアする） */
+	var req_proc_note_length = false;
+	/** ノート音長の位置 */
+	var note_length_i = 0;
+
+	//---------------------------------------
+	// 解析ループの開始
+	//---------------------------------------
+
+	// 1文字コマンドや1文字+数字のコマンドは記述しなければスルーされる。
+	// 2文字以上のコマンドで2文字目に対象コマンドと同じ文字を含む場合は、
+	// スキップ処理を記述する必要がある。
 
 	for (var i = 0; i < s.length; ++i) 
 	{
@@ -361,64 +446,14 @@ function proc()
 				}
 			}
 			
-			switch (c.toLowerCase())
+			// 制御系共通コマンド
+			switch (toLowerCase(c))
 			{
-			// ループ制御
-			case '[':	// ループ開始
-			{
-				loopStack.push(loopData);
-				loopData = new LoopData();
-
-				var r = getDigits(s, i + 1, 0);
-				if (-1 < r[0])
+				// ループ制御
+				case '[':	// ループ開始
 				{
-					skip_i = r[0];
-				}
-				if (-1 < r[1])
-				{
-					loopData.loop_count = r[1];
-					// 数値指定の後にスペース
-					add_space = true;
-				}
-				else
-				{
-					loopData.loop_count = 2;	// 省略時2
-				}
-				
-				// 無限ループの始まり
-				if (loopData.loop_count == 0)
-				{
-					// 改行してから出力
-					if (!lh)
-					{
-						result = result + lf;
-						lh = true;
-						add_lf = false;
-						add_space = false;
-					}
-
-					// コマンドの後に改行
-					add_lf = true;
-				}
-				break;
-			}
-			case '|':	// 最終ループ脱出
-			{
-				if (-1 < loopData.loop_count)
-				{
-					loopData.interrupt = loopData.time;
-				}
-				else
-				{
-					efunc.alertBox('| : ループが開始されていない');
-				}
-				break;
-			}
-			case ']':	// ループ終了
-			{
-				if (-1 < loopData.loop_count)
-				{
-					var loopTime = 0;
+					loopStack.push(loopData);
+					loopData = new LoopData();
 
 					var r = getDigits(s, i + 1, 0);
 					if (-1 < r[0])
@@ -431,42 +466,12 @@ function proc()
 						// 数値指定の後にスペース
 						add_space = true;
 					}
-
-					// 無限ループ以外ならループ処理
-					if (0 < loopData.loop_count)
+					else
 					{
-						// ループ中の長さ計算
-						// ループ1回目はすでに反映済みなので2周目以降を加算
-						loopTime = loopData.time * (loopData.loop_count - 1);
-						if (loopData.interrupt)
-						{
-							// |指定：最終カウントで中断する場合
-							loopTime -= loopData.time - loopData.interrupt;
-						}
-
-						//efunc.alertBox("loop loop_count:" + loopData.loop_count);
-						//efunc.alertBox("loop time:" + loopData.time);
-						//efunc.alertBox("loop interrupt:" + loopData.interrupt);
-						//efunc.alertBox(loopTime);
-
-						// 4分音符単位
-						count_L4 += loopTime;
-						while (L4 <= count_L4)
-						{
-							add_space = true;
-							count_L4 -= L4;
-						}
-						
-						// 1分音符単位
-						count_BL += loopTime;
-						while (bl <= count_BL)
-						{
-							add_lf = true;
-							count_BL -= bl;
-						}
+						loopData.loop_count = 2;	// 省略時2
 					}
 					
-					// 無限ループの終わり
+					// 無限ループの始まり
 					if (loopData.loop_count == 0)
 					{
 						// 改行してから出力
@@ -481,193 +486,348 @@ function proc()
 						// コマンドの後に改行
 						add_lf = true;
 					}
-
-					// 今回のループ総合時間
-					loopTime += loopData.time;
-
-					// スタックがあればそれを取得
-					loopData = loopStack.pop();
-					if (!loopData)
+					break;
+				}
+				case '|':	// 最終ループ脱出
+				case '/':	// 最終ループ脱出(MDX等）
+				{
+					if (-1 < loopData.loop_count)
 					{
-						loopData =  new LoopData();
+						loopData.interrupt = loopData.time;
 					}
 					else
 					{
-						// 多重ループなら
-						// 今回のループ分加算
-						loopData.time += loopTime;
+						efunc.alertBox('| : ループが開始されていない');
 					}
-					l_indent = loopStack.length;
+					break;
 				}
-				else
+				case ']':	// ループ終了
 				{
-					efunc.alertBox('] : ループが開始されていない');
+					if (-1 < loopData.loop_count)
+					{
+						var loopTime = 0;
+
+						var r = getDigits(s, i + 1, 0);
+						if (-1 < r[0])
+						{
+							skip_i = r[0];
+						}
+						if (-1 < r[1])
+						{
+							loopData.loop_count = r[1];
+							// 数値指定の後にスペース
+							add_space = true;
+						}
+
+						// 無限ループ以外ならループ処理
+						if (0 < loopData.loop_count)
+						{
+							// ループ中の長さ計算
+							// ループ1回目はすでに反映済みなので2周目以降を加算
+							loopTime = loopData.time * (loopData.loop_count - 1);
+							if (loopData.interrupt)
+							{
+								// |指定：最終カウントで中断する場合
+								loopTime -= loopData.time - loopData.interrupt;
+							}
+
+							//efunc.alertBox("loop loop_count:" + loopData.loop_count);
+							//efunc.alertBox("loop time:" + loopData.time);
+							//efunc.alertBox("loop interrupt:" + loopData.interrupt);
+							//efunc.alertBox(loopTime);
+
+							// 4分音符単位
+							count_L4 += loopTime;
+							while (L4 <= count_L4)
+							{
+								add_space = true;
+								count_L4 -= L4;
+							}
+							
+							// 1分音符単位
+							count_BL += loopTime;
+							while (bl <= count_BL)
+							{
+								add_lf = true;
+								count_BL -= bl;
+							}
+						}
+						
+						// 無限ループの終わり
+						if (loopData.loop_count == 0)
+						{
+							// 改行してから出力
+							if (!lh)
+							{
+								result = result + lf;
+								lh = true;
+								add_lf = false;
+								add_space = false;
+							}
+
+							// コマンドの後に改行
+							add_lf = true;
+						}
+
+						// 今回のループ総合時間
+						loopTime += loopData.time;
+
+						// スタックがあればそれを取得
+						loopData = loopStack.pop();
+						if (!loopData)
+						{
+							loopData =  new LoopData();
+						}
+						else
+						{
+							// 多重ループなら
+							// 今回のループ分加算
+							loopData.time += loopTime;
+						}
+						l_indent = loopStack.length;
+					}
+					else
+					{
+						efunc.alertBox('] : ループが開始されていない');
+					}
+					break;
 				}
-				break;
-			}
 
-			// *コマンド
-			// マクロ展開はしないがアルファベット+数値を音符扱いしないようにスキップ
-			case '*':
-			{
-				//必ず1文字スキップ
-				var j = i + 1;
-
-				skip_i = j;
-				j = j + 1
-				var c2 = s.charAt(j); 
-
-				// 数値以外なら終了
-				while (('0' <= c2) && (c2 <= '9'))
+				// *コマンド
+				// マクロ展開はしないがアルファベット+数値を音符扱いしないようにスキップ
+				case '*':
 				{
+					//必ず1文字スキップ
+					var j = i + 1;
+
 					skip_i = j;
 					j = j + 1
-					c2 = s.charAt(j); 
-				}
-				break;
-			}
+					var c2 = s.charAt(j); 
 
-			// h?コマンド
-			// 2文字コマンドのケア
-			case 'h':
-			{
-				var j = i + 1;
-				var c2 = s.charAt(j);
-				switch (c2.toLowerCase())
-				{
-					case 'o':	// ho	start lfo
-					case 'f':	// hf	stop lfo
-					case 'i':	// hi	init lfo
+					// 数値以外なら終了
+					while (('0' <= c2) && (c2 <= '9'))
 					{
-						skip_i = j;	// 2文字目
-						break;
+						skip_i = j;
+						j = j + 1
+						c2 = s.charAt(j); 
 					}
+					break;
 				}
-				
-				break;
-			}
 
-			// s?コマンド
-			// 2文字コマンドのケア
-			case 's':
-			{
-				var j = i + 1;
-				var c2 = s.charAt(j);
-				switch (c2.toLowerCase())
+				// @?コマンド
+				// 2文字コマンドのケア
+				case '@':
 				{
-					case 'o':	// so	sustin on
-					case 'f':	// sf	sustin off
+					var j = i + 1;
+					var c2 = s.charAt(j);
+					switch (toLowerCase(c2))
 					{
-						skip_i = j;	// 2文字目
-						break;
+						case '\\':	// @\[n] detune
+						case 'e':	// @e[n] envelope
+						case 'r':	// @r[n] = @e
+						case 'p':	// @p[n] lfo timer (PSG/SCC)
+						case 'l':	// @l[n] total level
+						case 'm':	// @m[n] macro
+						case 'o':	// @o[n] macro number offset
+						{
+							skip_i = j;	// 2文字目
+							j += 1;
+							break;
+						}
+						case 'f':	// @f    MIB fadefg (fade out) *option*
+						{
+							skip_i = j;	// 2文字目
+							// no param
+							j = 0;
+						}
+						default:			// @[n]  voice
+						{
+							break;
+						}
 					}
-				}
-				
-				break;
-			}
 
-			// k?コマンド
-			// 2文字コマンドのケア
-			case 'k':
-			{
-				var j = i + 1;
-				var c2 = s.charAt(j);
-				switch (c2.toLowerCase())
-				{
-					case 'o':	// ko	rhythm normal mode
-					case 'f':	// kf	rhythm sound cut mode
+					// parameter
+					if (0 < j)
 					{
-						skip_i = j;	// 2文字目
-						break;
+						var r = getDigits(s, j, 0);
+						if (-1 < r[0])
+						{
+							skip_i = r[0];
+						}
+						//var d = r[1];
 					}
+					break;
 				}
 				
-				break;
-			}
-
-			// @?コマンド
-			// 2文字コマンドのケア
-			case '@':
-			{
-				var j = i + 1;
-				var c2 = s.charAt(j);
-				switch (c2.toLowerCase())
+				// 音長指定
+				case 'l':
 				{
-					case '\\':	// @\[n] detune
-					case 'e':	// @e[n] envelope
-					case 'r':	// @r[n] = @e
-					case 'p':	// @p[n] lfo timer (PSG/SCC)
-					case 'l':	// @l[n] total level
-					case 'm':	// @m[n] macro
-					case 'o':	// @o[n] macro number offset
-					{
-						skip_i = j;	// 2文字目
-						j += 1;
-						break;
-					}
-					case 'f':	// @f    MIB fadefg (fade out) *option*
-					{
-						skip_i = j;	// 2文字目
-						// no param
-						j = 0;
-					}
-					default:			// @[n]  voice
+					var r = getDigits(s, i + 1, 1);
+					if (r[0] < 0) 
 					{
 						break;
 					}
-				}
-
-				// parameter
-				if (0 < j)
-				{
-					var r = getDigits(s, j, 0);
-					if (-1 < r[0])
+					skip_i = r[0];
+					var d = r[1];
+					if (d >= 0)
 					{
-						skip_i = r[0];
+						default_step = d;
+						//efunc.alertBox('L%' +(default_step / step_mul) + '(L'+ (L1 / default_step) + ')');
 					}
-					//var d = r[1];
+					else
+					{
+						efunc.alertBox('Lに数値がない');
+					}
 				}
 				break;
 			}
 			
-			// 音長指定
-			case 'l':
+			// ノート音長処理フラグ クリア
+			req_proc_note_length = false;
+
+			// 発声コマンド係
+			if (isRhythm)
 			{
-				var r = getDigits(s, i + 1, 1);
-				if (r[0] < 0) 
+				// リズム楽器用
+				switch (toLowerCase(c))
 				{
-					break;
-				}
-				skip_i = r[0];
-				var d = r[1];
-				if (d >= 0)
-				{
-					default_step = d;
-					//efunc.alertBox('L%' +(default_step / step_mul) + '(L'+ (L1 / default_step) + ')');
-				}
-				else
-				{
-					efunc.alertBox('Lに数値がない');
+					//リズム音源は別処理が必要
+
+					// リズム指定音量(2文字版対応)
+					case 'v':
+					{
+						var j = i + 1;
+						while (!isDigits(s.charAt(j)))
+						{
+							// 文字ならチェック
+							// 対象は V+BSMHC
+							var c2 = s.charAt(j);
+							if (-1 < 'bsmhc'.indexOf(toLowerCase(c2)))
+							{
+								// スキップして次の文字チェック
+								skip_i = j;	// 2文字目
+								j = j + 1;
+							} else {
+								break;	// 対象外ならチェック終了（無視）
+							}
+						}
+						break;
+					}
+
+					// リズム発音 (複数同時表記あり)
+					case 's':
+					case 'h':
+					case 'm':
+					case 'c':
+					case 'b':
+					{
+						var j = i + 1;
+						req_proc_note_length = true; // ノート音長処理フラグ セット
+						note_length_i = j; // 音長指定位置
+						while (!isDigits(s.charAt(j)))
+						{
+							// ':'はMGSDRVのリズム音長省略
+							// 横着して発音コマンド扱い
+							// 音長処理をメロディーと共有してデフォルト音長扱い
+							if (-1 < 'bsmhc:'.indexOf(toLowerCase(c2))) {
+								// 次の文字チェック
+								skip_i = j;	// スキップ位置
+								j = j + 1;
+								note_length_i = j; // 音長指定位置
+							} else {
+								break;	// 対象外ならチェック終了
+							}
+						}
+						break;
+					}
 				}
 			}
-			break;
-
-			//**rythm**
-			//case'S':case'H':case'M':case'C':case'B':
-			//リズム音源は別処理が必要
-
-			// 音符
-			case 'a':
-			case 'b':
-			case 'c':
-			case 'd':
-			case 'e':
-			case 'f':
-			case 'g':
-			case 'r':
-			case '^': // 横着して音符扱い（厳密には+-や音長省略を許容しない）
+			else
 			{
-				var r = getDigits(s, i + 1, 2);
+				// メロディ楽器用
+				switch (toLowerCase(c))
+				{
+					// s?コマンド
+					// 2文字コマンドのケア
+					case 's':
+					{
+						var j = i + 1;
+						var c2 = s.charAt(j);
+						switch (toLowerCase(c2))
+						{
+							case 'o':	// so	sustin on
+							case 'f':	// sf	sustin off
+							{
+								skip_i = j;	// 2文字目
+								break;
+							}
+							// 数値なら無視
+						}
+						
+						break;
+					}
+
+					// k?コマンド
+					// 2文字コマンドのケア
+					case 'k':
+						{
+						var j = i + 1;
+						var c2 = s.charAt(j);
+						switch (toLowerCase(c2))
+						{
+							case 'o':	// ko	rhythm normal mode
+							case 'f':	// kf	rhythm sound cut mode
+							{
+								skip_i = j;	// 2文字目
+								break;
+							}
+						}
+						
+						break;
+					}
+
+					// h?コマンド
+					// 2文字コマンドのケア
+					case 'h':
+						{
+						var j = i + 1;
+						var c2 = s.charAt(j);
+						switch (toLowerCase(c2))
+						{
+							case 'o':	// ho	start lfo
+							case 'f':	// hf	stop lfo
+							case 'i':	// hi	init lfo
+							{
+								skip_i = j;	// 2文字目
+								break;
+							}
+						}
+						
+						break;
+					}
+	
+					// 音符
+					case 'a':
+					case 'b':
+					case 'c':
+					case 'd':
+					case 'e':
+					case 'f':
+					case 'g':
+					case 'r':
+					case '^': // 横着して音符扱い（厳密には+-や音長省略を許容しない）
+					{
+						req_proc_note_length = true; // ノート音長処理フラグ セット
+						note_length_i = i+1; // 音長指定位置
+						break;
+					}
+				}
+			}
+
+			// ノート音長処理
+			if (req_proc_note_length)
+			{
+				var r = getDigits(s, note_length_i, 2);
 				var d = r[1];
 				var period = r[2];
 				if (-1 < r[0])
@@ -717,9 +877,10 @@ function proc()
 				{
 					loopData.time += ll;
 				}
-				break;
 			}
-			}
+
+			// ノート音長処理フラグ クリア
+			req_proc_note_length = false;
 		}
 
 		if ((c != '\n') && (c != '\r')&&
@@ -730,7 +891,7 @@ function proc()
 			{
 				result = result + line_header;
 				var idi = 0
-				if (c=='|') idi = 1;
+				if (c=='|' || c=='/') idi = 1;
 				for (; idi < l_indent; ++idi)
 				{
 					result = result + ' ';
@@ -745,12 +906,13 @@ function proc()
 		}
 	}
 
+	// 改行の必要があれば改行追加
 	if (lfend && !lh)
 	{
 		result = result + lf;
 	}
 
- 	//result = result + lf + test_s;
+	//result = result + lf + test_s;
 
 	//efunc.alertBox(result);
 	efunc.setSelectionText( result );
