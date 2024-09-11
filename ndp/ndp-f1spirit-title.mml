@@ -1,0 +1,30 @@
+#title "F1SPIRIT - Openning - F-1 Shuffle - NDP ver."
+#programmer "uniskie 2024/09/11"
+
+#tempo 150
+
+
+@0 = f e d:3 c:5 L b:9; a:9
+@m0 = 48,5,1,8, 3,1
+
+1 o4 v13 @0 @m0
+2 o4 v10 @0 @m0 r16 
+12 l16 @m0 @md48 
+1   f+16b16>f+16  d+2.& d+4.& d+8.
+2 \3f+16b16     \0b2. & b4. & b8. r16
+1    d+16e16f+16  d2.& d4. d8<       a16
+2 \3>d+16e16<   \0b2.& b4. b8 r16 \3 a16
+1 >d8<   @md96b2.& b16&b4.& b8.&
+2 >d16<\0@md96e2.& e16&e4.& e8.&
+1 b_>b8. & b2. & b4.         v+d16
+2 e_>d+8.& d+2.& d+4. r16 \3 v+d16
+1 e16f+16b16.&b _<b16.
+2 e16f+16b16.&b _<b16.
+
+
+3 o1 v12
+3 s14,3 m+ mk12
+3 l16
+3 r8.
+3 [b8 b16>b8. /a8. f+8a16<]8
+3 d16e16f+16b16.& b_<b16.

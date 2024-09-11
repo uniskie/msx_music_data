@@ -1,7 +1,7 @@
 ;******************************************************
 #title "GRADIUS II AC - Shoot & Shoot - [NDP Arrange]"
 ;******************************************************
-#PROGRAMMER "uniskie 2024/09/03"
+#PROGRAMMER "uniskie 2024/09/10"
 
 #tempo 180
 
@@ -38,9 +38,9 @@
 1 o2 @0,0 v14
 1 l16 [ bedaedgedaedbe<b>e ]
 1     > bedaedgedaedbe<b>e
-1 v14
-1 s8 m+ q7 > mk-12 \-1
-1 l16 ge<b>af+dbgeaf+dge>e8
+1 v14 j2
+1 s8 m+ q7 > mk0 \-4
+1 l16 ge<b>af+dbgeaf+dge>mk-12e8
 1 mk0 < \0
 
 2 o2 @0,0 v14 q8
@@ -71,8 +71,8 @@
 3 @d- j1
 3 @4,4 s8 m- *1 o3
 3 mo2mee2&\1e2& >
-3 mo3mee4&\3e2.& > 
-3 mo4mee2.&\4e4 << \0
+3 mo3mee4&\2e2.& > 
+3 mo4mee2.&\3e4 << \0
 3 @0,0 o2 v14 q7
 3 l16 >ge<b>af+dbgeaf+dge>e8
 

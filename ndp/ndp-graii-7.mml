@@ -1,14 +1,14 @@
 ;********************************************************
 #title "GRADIUS II AC - Synthetic Life - [NDP Arrange]"
 ;********************************************************
-#PROGRAMMER "uniskie 2024/09/03"
+#PROGRAMMER "uniskie 2024/09/10"
 
 #jump-offset -1000
 
 #tempo 120
 
-@0=DFE:2 D:3 L C:3 D:3
-@1=FD:3 LA
+@0=DFE:2 D:3 L C:3 D:3 B:3
+@1=FD:3 L A
 @2=FD:2 C:3 B:4 A:5 9:6 8:7 7:8 6:8 5:8 4:8 3:8 2:8 1:8 L0
 
 @m0=28,3,3,0 ,2,1
