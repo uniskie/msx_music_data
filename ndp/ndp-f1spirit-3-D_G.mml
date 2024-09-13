@@ -1,0 +1,91 @@
+#title "F1SPIRIT [D/G] (MACHINE SELECT)"
+#programmer "uniskie 2024/09/14"
+
+#tempo 150
+;#timebase 24
+
+@m0 = 32,4,3,8
+
+@0 = fd ec:2 L b:3 a:3 9:3
+@2 = bfc e a:3 9:3 8:4 9 7:5 6:6 7 5:7 4:8 5 3:9 2:10 3 1:11 L 0
+@6 = fc9 8:8 7:8 6:9 5:9 4:10 3:10 2:10 1:10 0
+
+@n0 = 12 0
+
+;**** main
+
+1 v13 o4
+1 @L
+1 @r12,8 @m0,1 @q1 @rd1,16
+1 l16
+1 @2 @n0
+1 [ra8. arg+r arg+a rbra8
+1  a8r arg+r arg+/a rg+rf+]2
+1                 a rb8r
+1 j1
+1 @0 @n- @r12,6 @rd-
+1 f+2& f+8ag+ abed
+1 ag+ed2& d8> dre4.
+1 d+d<b> de<b>d< bf+a+f+
+1 af+gg+ aa+b>e< ag+ed& d4
+
+;**** sub
+
+2 v11 o4 
+2 @L
+2 @r10,6 @rd1,16 @m0
+2 l16
+2 @2
+2 >rere er<er er>ee r<ere
+2 rere erer er>ee r<err
+2 rere erer er>ee r<ere
+2 rere erer er>ee r<err
+
+/*
+; sequence ver
+2 v- \1
+2 [ra8. arg+r arg+a rbra
+2  ra8r arg+r arg+/a rg+rf+]2
+2 a rb8r
+2 v+ \0
+*/
+
+;/*
+; echo ver.
+2 @0 \1 @r9,6 @rd- @q0
+2 r8
+2 f+2& f+8ag+ abed
+2 ag+ed2& d8> dre4.
+2 d+d<b> de<b>d< bf+a+f+
+2 af+gg+ aa+b>e< ag+ed& d8
+2 > \0
+;*/
+
+;**** base ****
+
+3 o2 v14 @6 @q1 @r12,5 @rd0
+3 s14,4 m+
+3 @L
+3 l16
+3 [
+3  [eee8> de<ee ree8> de<ab
+3  eee8> de<ee /ree8> e24d+24d24<ba]2
+3               >c+<bef+ d8de
+3 ]
+
+;**** drum
+
+@R:B = *3 :920 N1 V14 / *1 :2000 V12
+@R:S = *1 :540 V15 / *3 :700 N1 V14 / *2 N0 V13 / V12
+@R:H = *3 :20 N0 V12
+@R:O = *3 :21 N0 V12 / V11 / v10
+;@R:K = *3 :450 N8  V15 / *1 :500 V14 / :550 V13
+;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
+;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
+
+r v14 @rc2
+r @L l16
+r [ bhbb shbb hbbh shho bhbb shbb
+r / hbbh s32s32sss
+r ]2
+r   s32s32sss hhho
