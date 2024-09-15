@@ -1,6 +1,7 @@
 ;********************************************************
-#title "SALAMANDER [ POWER OF ANGER ]"
+#title "SALAMANDER [ POWER OF ANGER ] (no use H.ENV)"
 ;********************************************************
+;#file "SALAM_01.NDP"
 #programmer "uniskie 2024/09/15"
 
 ;#tempo 150
@@ -84,8 +85,8 @@
 ;======== bass
 
 3 o2 
-;3 @6 v14 @r13,3 @rd1,13 ;@p1,1
-3 s14,3 m+
+3 @6 v14 @r13,3 @rd1,13 \-1
+;3 s14,3 m+
 3 @q2
 
 3 l12
