@@ -1,0 +1,205 @@
+;********************************************************
+#title "MAZE of GALIOUS [START] ~ [CASTLE] he-base"
+;********************************************************
+; GALIOU02.NDP
+#programmer "uniskie 2024/09/14"
+
+;#tempo 224
+#timebase 16
+
+;start
+@0 = efed c:2 b:2 a:8 L 9:2 8:2 9:2 a:2 b:2 a:2
+
+;main 1&2
+@1 = fed L c:6 d:5
+@2 = fe:8 L d:4 e:4
+
+;base
+@3 = fedc L d:4 c:4
+
+;tom
+@9 = fedc:2 b:2 a:2 9:2 8:2 7:3 6:3 5:3 4:4 3:4 2:4 1:4 0
+
+@m0 = 30,4,1,8, 3,1
+
+;********************************************************
+; *** START ***
+;********************************************************
+
+;123 t224
+123 @t16
+123 @0v11 o4 @r12,4
+1 a4  >> c+2^8.r16
+2 r16.>> e4 >e2^16.r16
+3 r8. >> g2^4r16
+r r1
+123r r2
+
+
+;********************************************************
+; *** CASTLE ***
+;********************************************************
+
+;123r t150
+123r @t24
+123r l16
+123 @r12,3 @rd1,17
+
+1 j1
+
+1 v12
+1 o4 @m0
+1 @L
+1 [
+1  @1@q1
+1  [d4. fg a4> d4
+1  /c4< g2.
+1   a+4. ag a+4. ag
+1   a4 d2.
+1  ]2
+1   e4< a2.
+1   a+4. ag a+4. ag
+1   a4> d2.<
+
+1  j2
+1  [a+4 a+agf g4 a+4
+1  /a4 d2 d+fg8
+1   g+4 g+gfd+ f4 g+4
+1   g4 c2.
+1  ]2
+1   a4 agfe f4 a4
+1   g4 gfed g+4 g+gfe 
+1   a2. efga
+1  >
+
+1  j3
+1  @1
+1  [d8<a8> e8<a8> f8ed e8<a8>
+1   c8<g8> d8<g8> e8dc d8<g8>
+1   d+8<a+8> f8<a+8> g8fd+ f8<a+8>
+1   defg v-defg v-defg v-defg
+1   v+3
+1  ]2
+1  <
+1 ]2
+
+1 j4
+1 @rd-1
+;1 <
+1  [d8dd d8dd d<a>cf e<a>cd
+1   <g8gg g8gg> gdfa+ adfg]2
+1 <<
+1  j5
+
+2 v10 o3 @q1
+2 @L
+2 [
+2  @1
+2  [a4. v+ >de f4 a4
+2  /g4 e4 d4 c4
+2   v- g4. fd+ g4. fd+
+2   f4 <a2. 
+2  ]2
+2   a4 f8ed c+def g8>c8<
+2   g4. fe g4. fe
+2   f4 a2.
+
+2  [g4 r4 d+4 g4
+2  /f4 <a2 r4>
+2   d+4 r4 d4 d+4
+2   c4 <g2.>
+2  ]2
+2   f4 r4 d4 f4
+2   e4 r4 e4 r4
+2   e4 c+4 <a4 r4> v-
+
+2  @2 \1 v-
+2  [
+2   r8>d8< a8>e8< a8>f8 ed< e8
+2   a8>c8< g8>d8< g8>e8 dc< d8
+2   g8>d+8< a+8>f8< a+8>g8 fd+< f8
+2   a+8>de fg v- de fg v-de fg v-de< v+3
+2  ]2
+2  <
+2  \0 v+
+2 ]2
+
+2 <
+2 @rd-1
+2 v+
+2 [d8dd d8dd d<a>cf e<a>cd
+2  <g8gg g8gg> gdfa+ adfg
+2 ]2
+2 v-
+2 >
+
+;$base  = @q1 @3
+;$base2 = @q2 @1
+$base  = @q1 s14,1 m+
+$base2 = @q2 s10,1 m+
+$tom = *1@9@q0
+
+3 v13 o3 \-1
+3 @L
+3 [
+3  $base:
+3  [d8dd c8cc <a+8a+a+ a8aa>
+3  /
+3   c8cc <g8gg> c8cc< g8gg>
+3   d+8d+d+< a+8a+a+> d+8d+d+ <a+8a+a+>
+3   d8dd c8cc <a+8a+a+ a8aa>
+3  ]2
+3   c8cc <a+8a+a+ a8aa g8gg
+3   g8gg a8aa a+8a+a+> c8cc
+3   d8dd d8dd d8dd d8dd
+
+3  v-$base2:
+3  [d+d+d+d+  $tom:a_c8r8 $base2:d+8d+d+ d+8d+d+
+3  /d8dd c8cc <a+8a+a+ a8aa
+3   g+g+g+g+ $tom:>a_c8r8 $base2:<g+8g+g+ g+8g+g+>
+3   c8cc d8dd d+8d+d+ f8ff
+3  ]2
+3   dddd $tom:a_c8r8 $base2:d8dd d8dd
+3   <gggg>  $tom:a_c8r8 $base2:<g+g+g+g+> $tom:a _c8r8 $base2:
+3   <a>a<aa a8aa a8aa aaaa>
+3 v+
+
+3  $base:
+3  [d8dd c8cc <a+8a+a+ a8aa>
+3   c8cc <g8gg> c8cc< g8gg>
+3  /d+8d+d+ <a+8a+a+> d+8d+d+ <a+8a+a+>
+3   d8dd c8cc <a+8a+a+ a8aa>
+3  ]2
+3   d+8d+d+ d8dd c8cc <a+8a+a+>
+3   d8dd c8cc <a+8a+a+ a8aa>
+3 ]2
+
+3 @rd-1
+3 [d8dd d8dd d<a>cf e<a>cd
+3  <g8gg g8gg> gdfa+ adfg
+3 ]2
+
+@R:H = *3 :20 N0 V13
+@R:O = *3 :21 N0 V12 / V11 / v10
+
+r @rc2
+r v15
+r @L
+r [
+r  [r1
+r   r1
+r   r1
+r   r2[hhoh]2
+r  ]2
+
+r  [r4hhhhr2
+r   r2.hhoh]2
+
+r  [r4hhhhr2]2
+r  r4hhhhr4hhhh
+r  r2.ohhh
+
+r  [r2..hh]8
+r ]2
+
+r [r8hh r8hh r4 r8hh]4
