@@ -1,0 +1,75 @@
+#title "女神転生Ⅱ Labyrinth 午前２時の迷宮"
+
+@0 = { fedc dcba:8 b:8 a:8 9:8 
+       a:8 9:8 8:8  L 9:8 8:8 7:8 8:8 }
+@1 = bdfed edc dcb:9 L a:9 9:9
+@2 = { efed edc:2 b:4 a:6 9:8 8:8 7:8 
+       8:8 7:8 6:8       7:8 6:8 5:8 
+       6:8 5:8 4:8       5:8 4:8 3:8 
+       4:8 3:8 2:8       3:8 2:8 1:8 
+       2:8 1:8 0 }
+@3 = { fcb:2 a:5 9:8 
+       a:8 9:8 8:8       9:8 8:8 7:8 
+       8:8 7:8 6:8       7:8 6:8 5:8 
+       6:8 5:8 4:8       5:8 4:8 3:8 
+       4:8 3:8 2:8       3:8 2:8 1:8 
+       2:8 1:8 0 }
+@m0 = 30,5,1,8 ,2,1
+@m1 = 96,9,1,8 ,1,1
+
+
+;---- main ----
+1 o4 v11 @r13,4 @rd1,15 @q2 @m0
+1 @L @c
+1 v-3 @2 @md96 @q2 l8 <[4 r2^v-ev+a>c& c1< r2^v-ev+ga+& a+1]> v+3
+1 @0 l16 q7@q0 @md30
+1 r2.. j2 ef edc<ba8>c8^2
+1 r4r<defgaa+>cdefg fedcedc<a+>dc<a+a>c<a+ag>
+1 [4 ec8<ga8> ] <a64b64>c64d64e8.<g64a64b64>c64d+8.
+1 <defg8.fgaa+8.gaa+>c& c8<a+>cde8.defgagff+ j3
+1 g4.cca8cc8.cc a8cc8.cca4g+4
+1 q8g4.c24e24g24q7l8>c.<b.a+ a.g.fefgg+l16 j4
+1 af8dge8cfd8<a+>ec8<a >d<a+8g>c<a8fa+g8ea+f8d
+1 l6defgaa+ >cdef4g4 @md96
+1 l8g2^<v-av+>cg& g1 r2^<ga+>f& f1  r2^<v-av+>cg& g1 r2^<ga+>f& f1
+
+;---- sub ----
+2 o3 o3 l8 v10 @r12,4 @rd1,15 @q2 @m1
+2 @L
+2 @2 
+2 [4 r2^v-a>v+cg& g1< r2^v-gv+a+>f& f1<]
+2 @1 ;@c
+2 j1
+@n5 = 0 -5 0
+@n6 = 0 -6 0
+2 >> l1@n5[6g^ /f^1] f^2@n6f4f+4@n- <<
+;1 >> l1  [6c^>/a+^] a+^2g4g+4 <<
+
+;---- bass ----
+3 @3 @r10,1 \-1
+3 v12 o1 l16
+3 @L
+3 s14,1 m+ mk12
+3 [[[@q3a@q2ar4]r4] [[@q3g@q2gr4]r4]]
+3 @c
+3 s14,2 
+3 [8 
+3  [@q2aa^4@q3aa/r4@q2eff+g] g@q3ara@q1a>a<g+>g+<
+3  [@q2gg^4@q3gg/r4@q2deff+] g8>gg<g+>g+rg+<
+3 ]
+
+;---- drum ---
+@R:B = *3 :880 N0 V15 / *1 :2000 V14
+@R:S = *1 :480 N2 V15 / *2 N1 V14 / V13 / V12 / v11
+@R:H = *3 :18 N0 V15
+@R:O = *3 :18 N0 V13 / V14 / V15 / V14 / V13 / V12 / V11 / V10
+;@R:K = *3 :450 N8  V15 / *1 :500 V14 / :550 V13
+;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
+;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
+
+r v13 vh10 vo11
+r @L l16
+r [4
+r  [6 hvh+hvh-] ho8h [4 hvh+hvh-] / l24 hhhhhh l16 ho8h ]
+r  ss8ss8ss
+r [16 brrrs8.b brbrs4 bbrb/s8.b rbrbs8bb][3s8bb]
