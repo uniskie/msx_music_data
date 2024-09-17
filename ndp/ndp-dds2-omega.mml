@@ -1,0 +1,104 @@
+#title "女神転生Ⅱ - OMEGA 聖戦 -"
+;#BIN-NAME DDS2-OMG.NDP
+#programmer "uniskie 2024/09/17"
+
+#tempo 120
+;#timebase 30
+
+@0 = fed dc:2 b:3 L c:3 b:3 c:3 d:3
+@1 = bcde fed:2 c:3 L d:4 c:4 b:4 c:4
+@2 = { efedc dcba:6 ,
+       9:8 8:8 7:8       8:8 7:8 6:8 ,
+       7:8 6:8 5:8       6:8 5:8 4:8 ,
+       5:8 4:8 3:8       4:8 3:8 2:8 ,
+       3:8 2:8 1:8       2:8 1:8 0 }
+/*
+@3 = { fcb:4 [2 a:8 9:8 8:8 ] ,
+       [2 9:8 8:8 7:8 ] [2 8:8 7:8 6:8 ] ,
+       7:8 6:8 5:8       6:8 5:8 4:8 ,
+       5:8 4:8 3:8       4:8 3:8 2:8 ,
+       3:8 2:8 1:8       2:8 1:8 0 }
+*/
+
+@4 = *0 s10 *1 s14 rrrrrrr *0 r
+@m0 = 30,5,1,8 ,2,1
+@m1 = 96,5,1,8
+
+;---- main ----
+1 o4 v13
+2 o4 v12 \-1 @as1
+12 @0 @r12,1 @rd1,12 @q2
+
+12 @L 
+
+12 @1 
+1 @m0 @q2
+1 l1 >[d^4 c+^4 c^4 <b^4>] [a^4 g+^4 g^4 f^4]<
+;2 l1 [a^4 a^4 a^4 g^4] [>f^4 f^4 d^4 d^4<]
+;2 l1 [f^4 f^4 f^4 d^4] [>d^4 d^4 <b^4 a^4]
+2 l1 la32  ["af"^4 "af"^4 "af"^4 "gd"^4] [>"fd"^4 "fd"^4 "d<b>"^4 "d<a>"^4<]
+
+1 j1
+1 @2 l16
+1  [afda+fd>c<ge>d<af>ecge<    gecafca+fd>c<ge>d<a>ec+<]
+1  >c<af>d<a+f>ec<g>fd<a>gea+g c<ge>c<af>d<a+f>ec<g>afge
+1  ec<g>fd<a>ge<a>afda+g>c<a   c<ge>c<af>d<a+f>ec<g >afge<
+
+2 @0
+2  l8 [4d.c+.c.<b.a+a>c. <b.a+.a.g+a>]
+
+1 j2
+1 @0 @m0 @q3 v+ @r13,1
+1  d_>d8.&d4..&  d4^&d_<d8.c+d  c+4.^8&c_a+8&             a4.&a_c4
+1  ceg>c<bagfec  <a>ceagfbg>c<b a_b&b8v-2a_b&b8v+2[a_b&b] g4.^8&g_c8
+1  dc+d<aa>cdfeg rga>c<bafdec   c+<a>c+<a>c+efdge         c+<a>c+c+efgeaf
+1  a4.^8&a_<a8&  a4.&a_>a4      gfed<bg>d<b>da            <b>dgdbgbg>d<a>
+
+2 @1
+2  la24 >["d<af>"1^4 "c+<af>"1^4 "c<af>"1^4 <"bgd"1^4>]
+
+1 j3
+1  d4.^4   @q0f48g48r48r@q3f8@q0g48f+48f48&@q0fd8f8
+1  r4.^8df @q0f48g48r48r@q3f8g8d8f8
+1  g4.^8&g_d8& d4.^8<a+8> fd<a>d<afadfd <a>dfdfaf>d<a>f @q2
+;1  [`afdfd<a>afdd<af>fd<a>`2^8] [`g+fdfd<g+>g+fdd<g+f>fd<g+>`2^8]
+1  l120[a^30f^30d^30f^30d^30<a^30>a^30f^30d^30d^30<a^30f^30>f^30d^30<a^30>]
+1      [g+^30f^30d^30f^30d^30<g+^30>g+^30f^30d^30d^30<g+^30f^30>f^30d^30<g+^30>]
+1  l16  ;2^8*15=30^120
+1 @q3 @m1 g4.^8&g_>g8& g4.&g_<g4 @m0 d<af>c<gea+fdf afdgecfd<a+>f @q2 @m-
+1 @r12,1 v-
+
+2   ["afd"1^4 "g+fd"1^4 "gd<b>"1^4 "fd<a>"1^4]<
+
+1 j4
+1 @2 l16 
+1  [afda+fd>c<ge>d<af>ecge<  gecafca+fd>c<ge>d<a>ec+<]
+1  >c<af>d<a+f>ec<g>fd<a>gea+g c<ge>c<af>d<a+f>ec<g>afge
+1  ec<g>fd<a>ge<a>afda+g>c<a   c<ge>c<af>d<a+f>ec<g >afge<
+
+2 @0
+2  l8 [4d.c+.c.<b.a+a>c. <b.a+.a.g+a>]
+
+;---- bass ----
+3 @4 @r11,1 \1
+3 v12 o2 l8 @q3 @r12,1
+3 m+ mk12
+3 @L
+3 [[32 d.d.cc+] [4<a.a+.>c.d.ef <g.a.a+.>c.de]]
+
+;---- drum ---
+@R:B = *3 :880 N0 V15 / *1 :1360 V13 / :2000 V13 
+@R:S = *3 :620 V15 / *2 N1 V15 / *3 :920 V14 / :1070 V13 / *1 :1220 v12 / :1620 v11
+@R:H = *3 :18 N0 V15
+;@R:O = *3 :18 N0 V13 / V14 / V15 / V14 / V13 / V12 / V11 / V10
+;@R:K = *3 :450 N8  V15 / *1 :500 V14 / :550 V13
+;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
+;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
+
+r @rc2
+r v15 vh12
+r @L l16
+r [
+r  [32 [bhh] s8bh]
+r  [8 bbhbs8bb hbs8bbs8]
+r ]

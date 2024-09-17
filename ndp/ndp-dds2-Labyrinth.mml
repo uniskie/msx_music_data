@@ -1,58 +1,64 @@
 #title "女神転生Ⅱ Labyrinth 午前２時の迷宮"
+;#BIN-NAME DDS2-LAB.NDP
+#programmer "uniskie 2024/09/17"
 
-@0 = { fedc dcba:8 b:8 a:8 9:8 
-       a:8 9:8 8:8  L 9:8 8:8 7:8 8:8 }
-@1 = bdfed edc dcb:9 L a:9 9:9
-@2 = { efed edc:2 b:4 a:6 9:8 8:8 7:8 
-       8:8 7:8 6:8       7:8 6:8 5:8 
-       6:8 5:8 4:8       5:8 4:8 3:8 
-       4:8 3:8 2:8       3:8 2:8 1:8 
-       2:8 1:8 0 }
-@3 = { fcb:2 a:5 9:8 
-       a:8 9:8 8:8       9:8 8:8 7:8 
-       8:8 7:8 6:8       7:8 6:8 5:8 
-       6:8 5:8 4:8       5:8 4:8 3:8 
-       4:8 3:8 2:8       3:8 2:8 1:8 
-       2:8 1:8 0 }
+@0 = { fdcb cba9 b:4 a:4 9:4 8:4 L a:4 9:4 8:4 9:4 }
+@1 = bcde fedc edcb:15 a:15 L 9:8 8:8
+@2 = { efedc dcba:6 ,
+       9:8 8:8 7:8       8:8 7:8 6:8 ,
+       7:8 6:8 5:8       6:8 5:8 4:8 ,
+       5:8 4:8 3:8       4:8 3:8 2:8 ,
+       3:8 2:8 1:8       2:8 1:8 0 }
+/*
+@3 = { fcb:4 [2 a:8 9:8 8:8 ] ,
+       [2 9:8 8:8 7:8 ] [2 8:8 7:8 6:8 ] ,
+       7:8 6:8 5:8       6:8 5:8 4:8 ,
+       5:8 4:8 3:8       4:8 3:8 2:8 ,
+       3:8 2:8 1:8       2:8 1:8 0 }
+*/
 @m0 = 30,5,1,8 ,2,1
-@m1 = 96,9,1,8 ,1,1
+@m1 = 96,9,1,8
 
+@n5 = 0 -5 0
+@n6 = 0 -6 0
+@n12 = 12 0
 
 ;---- main ----
-1 o4 v11 @r13,4 @rd1,15 @q2 @m0
+1 o4 v11
 1 @L @c
-1 v-3 @2 @md96 @q2 l8 <[4 r2^v-ev+a>c& c1< r2^v-ev+ga+& a+1]> v+3
-1 @0 l16 q7@q0 @md30
+1 @r12,2 @rd-
+1 v-2 @2 @m1 @md96 @q0 l8 <[4 r2^v-ev+a>c& c1< r2^v-ev+ga+& a+1]> v+2
+1 @0 l16 @m0 @md30
+1 @r13,3 @rd1,15 @q1
 1 r2.. j2 ef edc<ba8>c8^2
 1 r4r<defgaa+>cdefg fedcedc<a+>dc<a+a>c<a+ag>
 1 [4 ec8<ga8> ] <a64b64>c64d64e8.<g64a64b64>c64d+8.
 1 <defg8.fgaa+8.gaa+>c& c8<a+>cde8.defgagff+ j3
 1 g4.cca8cc8.cc a8cc8.cca4g+4
-1 q8g4.c24e24g24q7l8>c.<b.a+ a.g.fefgg+l16 j4
-1 af8dge8cfd8<a+>ec8<a >d<a+8g>c<a8fa+g8ea+f8d
-1 l6defgaa+ >cdef4g4 @md96
+1 g4.c24e24g24l8>c.<b.a+ a.g.fefgg+l16 j4
+1 af8dge8cfd8<a+>ec8<a >d<a+8g>c<a8fa+g8e@n12a+@n-f8d
+1 l6defgaa+ >cdef4g4 @md92
 1 l8g2^<v-av+>cg& g1 r2^<ga+>f& f1  r2^<v-av+>cg& g1 r2^<ga+>f& f1
 
 ;---- sub ----
-2 o3 o3 l8 v10 @r12,4 @rd1,15 @q2 @m1
+2 o3 o3 l8 v11 @r12,2 @m1 @md96
 2 @L
 2 @2 
 2 [4 r2^v-a>v+cg& g1< r2^v-gv+a+>f& f1<]
-2 @1 ;@c
 2 j1
-@n5 = 0 -5 0
-@n6 = 0 -6 0
+2 @1 v-2 ;@c
 2 >> l1@n5[6g^ /f^1] f^2@n6f4f+4@n- <<
 ;1 >> l1  [6c^>/a+^] a+^2g4g+4 <<
+2 v+2
 
 ;---- bass ----
-3 @3 @r10,1 \-1
+;3 @3 @r11,1 \-1
 3 v12 o1 l16
 3 @L
-3 s14,1 m+ mk12
+3 s14,2 m+ mk12
 3 [[[@q3a@q2ar4]r4] [[@q3g@q2gr4]r4]]
 3 @c
-3 s14,2 
+3 s14,3 
 3 [8 
 3  [@q2aa^4@q3aa/r4@q2eff+g] g@q3ara@q1a>a<g+>g+<
 3  [@q2gg^4@q3gg/r4@q2deff+] g8>gg<g+>g+rg+<
