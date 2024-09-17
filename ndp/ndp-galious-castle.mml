@@ -1,8 +1,8 @@
 ;********************************************************
 #title "MAZE of GALIOUS [START] ~ [CASTLE] he-base"
 ;********************************************************
-; GALIOU02.NDP
-#programmer "uniskie 2024/09/14"
+; GALIOH02.NDP
+#programmer "uniskie 2024/09/17"
 
 ;#tempo 224
 #timebase 16
@@ -43,7 +43,7 @@ r r1
 ;123r t150
 123r @t24
 123r l16
-123 @r12,3 @rd1,17
+123 @r13,3 @rd1,17
 
 1 j1
 
@@ -73,13 +73,14 @@ r r1
 1  >
 
 1  j3
-1  @1
+1  @1 @rd-
 1  [d8<a8> e8<a8> f8ed e8<a8>
 1   c8<g8> d8<g8> e8dc d8<g8>
 1   d+8<a+8> f8<a+8> g8fd+ f8<a+8>
 1   defg v-defg v-defg v-defg
 1   v+3
 1  ]2
+1 @rd1,17
 1  <
 1 ]2
 
@@ -96,9 +97,9 @@ r r1
 2 [
 2  @1
 2  [a4. v+ >de f4 a4
-2  /g4 e4 d4 c4
+2  /g4 v+ e4 d4 c4
 2   v- g4. fd+ g4. fd+
-2   f4 <a2. 
+2   f4 <a2. v-
 2  ]2
 2   a4 f8ed c+def g8>c8<
 2   g4. fe g4. fe
@@ -113,13 +114,14 @@ r r1
 2   e4 r4 e4 r4
 2   e4 c+4 <a4 r4> v-
 
-2  @2 \1 v-
+2  @2 \1 v- @rd-
 2  [
 2   r8>d8< a8>e8< a8>f8 ed< e8
 2   a8>c8< g8>d8< g8>e8 dc< d8
 2   g8>d+8< a+8>f8< a+8>g8 fd+< f8
 2   a+8>de fg v- de fg v-de fg v-de< v+3
 2  ]2
+2  @rd1,17
 2  <
 2  \0 v+
 2 ]2
