@@ -1,7 +1,7 @@
 ;********************************************************
 #title "MAZE of GALIOUS [START] ~ [CASTLE] normal-base"
 ;********************************************************
-; GALIO-02.NDP
+#bsave-name "GALIO-02"
 #programmer "uniskie 2024/09/17"
 
 ;#tempo 224
@@ -181,8 +181,8 @@ $tom = *1@9@q0
 3  <g8gg g8gg> gdfa+ adfg
 3 ]2
 
-@R:H = *3 :20 N0 V13
-@R:O = *3 :21 N0 V12 / V11 / v10
+@R:H = *2 :20 N0 V11
+@R:O = *2 :21 N0 V11 / V10 / V9
 
 r @rc2
 r v15

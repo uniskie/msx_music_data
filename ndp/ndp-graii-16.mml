@@ -1,6 +1,7 @@
 ;******************************************************
 #title "GRADIUS II AC - Shoot & Shoot - [NDP Arrange]"
 ;******************************************************
+#bsave-name "GRAII-16"
 #PROGRAMMER "uniskie 2024/09/10"
 
 #tempo 180

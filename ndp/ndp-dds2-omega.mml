@@ -1,6 +1,6 @@
 #title "女神転生Ⅱ - OMEGA 聖戦 -"
-;#BIN-NAME DDS2-OMG.NDP
-#programmer "uniskie 2024/09/17"
+#bsave-name "DDS2OMEG"
+#programmer "uniskie 2024/09/18"
 
 #tempo 120
 ;#timebase 30
@@ -20,19 +20,19 @@
        3:8 2:8 1:8       2:8 1:8 0 }
 */
 
-@4 = *0 s10 *1 s14 rrrrrrr *0 r
+@4 = f e:12 c:30 d:40 c
 @m0 = 30,5,1,8 ,2,1
 @m1 = 96,5,1,8
 
 ;---- main ----
 1 o4 v13
 2 o4 v12 \-1 @as1
-12 @0 @r12,1 @rd1,12 @q2
+12 @r12,2 @rd1,12 
 
 12 @L 
 
-12 @1 
-1 @m0 @q2
+12 @1 @q1
+1 @m0
 1 l1 >[d^4 c+^4 c^4 <b^4>] [a^4 g+^4 g^4 f^4]<
 ;2 l1 [a^4 a^4 a^4 g^4] [>f^4 f^4 d^4 d^4<]
 ;2 l1 [f^4 f^4 f^4 d^4] [>d^4 d^4 <b^4 a^4]
@@ -54,7 +54,8 @@
 1  dc+d<aa>cdfeg rga>c<bafdec   c+<a>c+<a>c+efdge         c+<a>c+c+efgeaf
 1  a4.^8&a_<a8&  a4.&a_>a4      gfed<bg>d<b>da            <b>dgdbgbg>d<a>
 
-2 @1
+2 @1 \2
+;2  l1 >[d^4 c+^4 c^4 <b^4>]
 2  la24 >["d<af>"1^4 "c+<af>"1^4 "c<af>"1^4 <"bgd"1^4>]
 
 1 j3
@@ -68,6 +69,7 @@
 1 @q3 @m1 g4.^8&g_>g8& g4.&g_<g4 @m0 d<af>c<gea+fdf afdgecfd<a+>f @q2 @m-
 1 @r12,1 v-
 
+;2   [a^4 g+^4 g^4 f^4]<
 2   ["afd"1^4 "g+fd"1^4 "gd<b>"1^4 "fd<a>"1^4]<
 
 1 j4
@@ -82,7 +84,7 @@
 ;---- bass ----
 3 @4 @r11,1 \1
 3 v12 o2 l8 @q3 @r12,1
-3 m+ mk12
+;3 m+ mk12
 3 @L
 3 [[32 d.d.cc+] [4<a.a+.>c.d.ef <g.a.a+.>c.de]]
 

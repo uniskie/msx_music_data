@@ -1,7 +1,8 @@
 ;********************************************************
 #title "F1SPIRIT [Hot Summer Riding] (STOCK CAR RACE)"
 ;********************************************************
-#programmer "uniskie 2024/09/14"
+#bsave-name "F1SP-4"
+#programmer "uniskie 2024/09/19"
 
 ;#tempo 224 ;端数アリ
 #timebase 16
@@ -12,20 +13,16 @@
 
 ; bunbun
 @0 = fd ec dc db cb L a 9:2 8:3
-
 ; lead
 @1 = fedc edc L b:4 a:4 9:4
-
 ; pyonpyon
 @2 = cf eb:2 a:3 9:3 a 8:4 7:5 8 6:6 5:7 6 4:8 3:9 2:10 1:11 L 0
 @n0 = 12 0
-
 ;base
 @6 = fceba 9:4 8:8 L 7:5 8:5  
-
 ;tom
 @4 = fedcba9876:2 5:2 4:2 3:2 2:2 1:3 L0
-@p2 = 64 L -22
+@p2 = 64 L -24
 
 
 

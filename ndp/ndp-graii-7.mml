@@ -1,6 +1,7 @@
 ;********************************************************
 #title "GRADIUS II AC - Synthetic Life - [NDP Arrange]"
 ;********************************************************
+#bsave-name "GRAII-7"
 #PROGRAMMER "uniskie 2024/09/10"
 
 #jump-offset -1000

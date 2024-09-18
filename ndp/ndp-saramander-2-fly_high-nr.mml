@@ -1,8 +1,8 @@
 ;********************************************************
-#title "SALAMANDER [ FLY HIGH ]"
+#title "SALAMANDER [ FLY HIGH ] (No H.Env)"
 ;********************************************************
-#bsave-name "SALA_M02"
-#programmer "uniskie 2024/09/18"
+#bsave-name "SALA_P02"
+#programmer "uniskie 2024/09/14"
 
 ;#tempo 150
 #timebase 24
@@ -77,8 +77,8 @@
 ;======== bass
 
 3 o3
-;3 @6 v14 @r13,1
-3 s10,3 m+
+3 @6 v14 @r13,1
+;3 s10,3 m+
 3 @q2
 
 3 l12

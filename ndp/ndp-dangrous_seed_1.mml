@@ -2,7 +2,7 @@
 #title "DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8)"
 ;*************************************************
 #programmer "uniskie 2004/09/12"
-
+#bsave-name "DSEED-1"
 ; ndp v0.49 ベースがパワーを出せるようになったので全体にボリューム+1
 
 #tempo 156
@@ -18,8 +18,8 @@
 @1 = fedc:3 edcb:7 l a:1 9:3 a:1 b:3
 @2 = fe d c:10 l b:3 a:3 c:3
 @3 = FEDCB:2 A:2 9:3 8:3 7:4 6:4 5:4 4:4 3:4 2:5 1:5 L0
-;@6 = f d:4 b:5 a:6 L 9
-@6 = *1 f *0 s10 rrrr *1 d
+@6 = f d:2 c:4 b:5 a:6 L 9
+;@6 = *0 s10 rrrr *1 d c b
 @n0 = -1 0
 
 1 o3 v13
@@ -47,7 +47,6 @@
 ; sequence
 ;********************************
 
-
 2 o4 v12 \-1
 2 @r12,20 @rd1,8
 2 @l 
@@ -73,16 +72,16 @@
 ; base
 ;********************************
 
-3 v13 o2 @6 @r13,4 @q1
+3 v13 o2 @6 @r13,4
 3 @l
-3 l16
-3 m+ mk12 
-3  [[aaaa]8 [g+g+g+g+]8 [f+f+f+f+]8 [dddd]3 
-3   >d<ddd [eeee]2 eeee a>cde<
+3 l16 @q1
+3 s14,4 m+ mk12 
+3  [m\0 \-2 [aaaa]8 \-3 m\-1[g+g+g+g+]8 \-4 m\-2[f+f+f+f+]8 m\-1 [dddd]3 
+3   >d<ddd [eeee]2 eeee a>cde< 
 3  ]2 
-3  [[frff>fr<ff]4 [g+rg+g+>g+r<g+g+]4 
-3   [eree>er<ee]4 / [araa>a</raa]3 
-3                            aaa
+3  [\-1 m\-1[frff>fr<ff]4 [g+rg+g+>g+r<g+g+]4 
+3   [m\-1eree>m\0er<m\-1ee]4 m\0 /  [araa>a</raa]3 
+3                                 aaa
 3   aa>e<aa>e<aa 
 3 ]2 
 3  a+ra+ra+ra+r brbrbrbr >crcrcrcr c+rc+rc+c+c+c+<
