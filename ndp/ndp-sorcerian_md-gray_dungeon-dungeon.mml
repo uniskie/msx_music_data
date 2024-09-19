@@ -1,0 +1,142 @@
+#title "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON"
+#bsave-name "SORMD-01"
+
+#tempo 76
+
+@R:B = *3 :920 N1 V14 / *1 :2000 V12
+@R:S = V15 *1 :460 N0 / V14 *2 N4 / N1 
+@R:H = *3 :20 N0 V15
+@R:O = *3 :21 N0 V15 / N1
+@R:K = V15 *3 :450 N2 / *1 V13 :500 / V12 :550
+@R:M = V15 *3 :500 N2 / *1 V13 :630 / V12 :760
+@R:N = V15 *3 :700 N2 / *1 V13 :850 / V12 :0
+
+@m0 = 40,4,1,8 ,3,1
+@m1 = 24,5,1,8 ,3,1
+
+@0 = fed edc ba L c:3 b:3 a:3 
+@1 = fedcb edcb:2 c:3 d:4 [3 c:4 b:4 a:4 ] L c:3 b:3 a:3 b:3
+@2 = efedcb edcba L c:2 b:2 a:2 9:2
+@3 = { efedc dcba:6 ,
+       9:8 8:8 7:8       8:8 7:8 6:8 ,
+       7:8 6:8 5:8       6:8 5:8 4:8 ,
+       5:8 4:8 3:8       4:8 3:8 2:8 ,
+       3:8 2:8 1:8       2:8 1:8 0 }
+@6 = FCLB:3 A:3 B:3 C:3
+
+123r l32
+1 @0 o4 v13 @m0 @r14,1 @rd1,13 @q1
+2 @0 o5 v11 @m0 @r13,1 @rd1,13 @q1
+3 @6 o2 v14 @r12,1 
+r v14 vh12 vk15 vm15 vn15 @rc2
+
+;---- intro
+1 v-2 a+2&\1a+2\0 a+2&\1a+2\0 v+2
+2 d1 > d1 <
+3 [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
+
+r [7 hhhhshhh ] hkks smmn
+
+;---- main
+123r @L
+
+3 j1
+
+123r [
+
+1    @1 @m1
+1     [[g4>d2^32@q0c<a+g32>@q1c16<a+16 ]3
+1      a4^16.br>crc+ d12^%1<d12^%1>d12^4-%2<
+1     ]
+
+2    @0 
+2     [g4 a+4^%2 a+12>c12-%1 d12^4-%1
+2      d4 a+4^%1 d12^%1c12-%1< a+12^4-%1
+2      g4 a+4^%2 a+12>c12-%1 d12^4-%1
+2      c4 d+4< a12^%1f+12^%1 a12^4-%2
+2     ] 
+
+3    @6
+3     [
+3      [gggg16ggg gggg16ggg gga+a+>ccc+c+ d<dddfff+f+ ]
+3      >d+d+d+d+16d+d+d+ d+d+d+d+16d+d+d+ d+d+<ggg+g+aa a+a+aaggd+d+
+3      aaaa16aaa aaa+a+>ccc+c+ dddd16ddd dddd16d<ad
+3     ]
+
+r     [[16 hhhh/shhh ] shss]
+
+123r /
+
+3 j2
+
+1   @1
+1    <g4^%1>g4a12^%2f12^%2d12^4-%5
+1    c4g4a+12^%2f+12^%2d+12^4-%4<
+1    g4>g4a12^%2f12^%2d12^4-%4
+1    c4g4ffff16.ff16ff16f8
+
+;2    d+4 d+4 f12^%2d12^%2<a+12^4-%4
+;2    g4> d+4 f+12^%2d+12^%2<b12^4-%4>
+;2    d+4 d+4 f12^%2d12^%2<a+12^4-%4
+;2    g4> d+4 cccc16.cc16cc16c8
+
+;2    @3
+;2    d+2 d2 c2 <b4> f4
+;2    d+2 d2 c2 cccc16.c c16cc16c8
+
+@n0 = L 0 0 0 12 12 12
+2   @2 la%2 @as1
+2    "d+>d+<"4 "d+>d+<"4 "f>d<"12^%2"d>d<"12^%2<"a+>>d<<"12^4-%4
+2    "g>>c<<"4> "d+>c<"4 "f+b"12^%2"d+b"12^%2<"b>b<"12&"b>>f<<"4-%4>
+2    "d+>d+<"4 "d+>d+<"4 "f>d<"12^%2"d>d<"12^%2<"a+>>d<<"12^4-%4
+2    "g>>c<<"4> "d+>c<"4 @n0 cccc16.cc16cc16c8 @n-
+
+3     > 
+3     [cccc16ccc cccc16ccc< a+a+a+a+16a+a+a+ a+a+a+a+16a+a+a+
+3      g+g+g+g+16g+g+g+ g+g+g+g+16g+g+g+
+3     /g+g+g+g+16g+g+g+> c+c+c+c+16c+c+c+
+3     ]
+3      dddd8d d16dd16d16.
+
+r     [14 hhhhshhh ] sssshhss hsshssmm
+
+123r ]
+
+3 j3
+
+
+;--- last
+1 @2
+1 <
+1 r4.^ dga+>c16<a+g>cr<a+4^16
+1 r4.^ dga+>c16< a+g>cr<a+4^16
+1 r4.^ cfa a+16 afa+r a4^16
+
+1 rr cd d+fgb> d<b>cd+ gb>d<b>
+1 c<gd+c f<g+a+>c d+fg+a+> cd+fg+-%1
+1 a8g.d.<a+24a4>
+1 g8f.c.<g+24g4>
+1 f8d+.<a+.f+24f4
+1 d+fr16.d+fd4^%1
+
+2 >
+2 d2. c8c+8 d2.d8c+8 c2a4c4 
+2 <<<
+2 a2>c2< a+2>d2 c+2c2
+
+3 ggr8 <g2.^16> ggr8 <g2.^16>
+3 ffr8 <f2.^16>
+
+3 s10 m+ mk0 
+3 a2d4d8dd <ef+gg \-3
+3 r8>g8.<g16>a16<a+a+>
+3 r8a+8.<a+16e16d+d+ \6
+3 r8>d+4<d+16>c+16d8.d4
+3 @6 \0
+
+r j4
+r [4 [6 h8 ]]
+r j5
+r    h16h8r16 s8r8 h8r8 ssss ssss
+r [4 h16h8r16 /h16h16 ssss] kkss mmnn
+
