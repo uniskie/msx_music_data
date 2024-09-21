@@ -179,16 +179,16 @@ r     [14 hhhhshhh ] sssshhss hsshssmm
 ;--- last
 1 @2 @q2 @n1
 1 <
-1 r4.^ dga+>c16<a+g>cr<a+4^16
-1 r4.^ dga+>c16< a+g>cr<a+4^16
-1 r4.^ cfa a+16 afa+r a4^16
+1 r4.^ dga+>c16<a+g>cr<a+16^4
+1 r4.^ dga+>c16< a+g>cr<a+16^4
+1 r4.^ cfa a+16 afa+r a16^4
 1 @2 @n- 
-1 rr-%2 cd v+ d+fgb> d<b>cd+ gb>d<b>
+1 rr-%1 cd v+ d+fgb> d<b>cd+ gb>d<b>
 1 c<gd+c f<g+a+>c d+fg+a+> cd+fg+
-1 a8g.d.<a+24a4>
-1 g8f.c.<g+24g4>
-1 f8d+.<a+.f+24f4^%2
-1 d+fr16.d+f v- d4
+1 a8g24d24<a+24a4>
+1 g8f24c24<g+24g4>
+1 f8d+24<a+24f+24f4^%1
+1 d+fr16r24d+24f24d4 v-
 
 2 @1
 2 >d2. c8c+8
