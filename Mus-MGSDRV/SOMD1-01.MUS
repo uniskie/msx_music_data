@@ -1,7 +1,7 @@
 ;[gain=1.0 name=SOMD1-01 duration=840s fade=5s cpu=0 lpf=0]
 #opll_mode 0
 #tempo 75
-#title {"[SORCERIAN MD] 灰色のダンジョン - DUNGEON (C)Nihon Falcom | OPLL+PSG ver edit by uniskie"}
+#title {"[SORCERIAN MD] 灰色のダンジョン - DUNGEON (C)SEGA/Falcom | OPLL+PSG ver edit by uniskie"}
 
 ; flute
 @e0 = {1,0,8acefed edc:2 b:2 a:2 [ c:2 b:2 a:2 b:2 ]0}
