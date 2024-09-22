@@ -1,8 +1,10 @@
 #TITLE "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON"
-#PROGRAMMER "uniskie 2014/09/21"
-#BSAVE-NAME "SORMD-01"
+#PROGRAMMER "uniskie 2014/09/22"
+#BSAVE-NAME "SOMD1-01"
 
-;#TEMPO 77
+; メインベースがH.ENV三角波だと他のシーンに負けるので矩形波に戻した
+
+;#TEMPO 75
 #TIME-BASE 48
 
 #JUMP-OFFSET -1000
@@ -33,7 +35,7 @@
       [4 5:8 4:8 3:8 ]  [4 4:8 3:8 2:8 ],
       [4 3:8 2:8 1:8 ]  [1 2:8 1:8 0 ] }
 ; bass
-@6 = FB:2LB:3 A:3 B:3 C:3
+@6 = FBLB:3 A:3 B:3 C:3
 @7 = FC:3LC:4 B:4 C:4 D:4
 
 ;==== PITCH VIBRATO ====
@@ -49,12 +51,12 @@
 ;==== MACRO ====
 
 ; SQUARE BASE
-;$base = @6 @q0
+$base = @6 @q0
 ;$base2 = @7 @q0
 ;$base3 = @7 @q0
 
 ; TRIANGLE BASE
-$base  = s14,5 m+ mk0 @q1
+;$base  = s14,5 m+ mk0 @q1
 $base2 = s8,1 m+ mk0 @q1
 $base3 = s10 m+ mk0 @q1
 
@@ -211,11 +213,13 @@ r     [14 hhhhshhh ] sssshhss hsshssmm
 3 ffr8 <f2.^16>
 
 3 $base3:
-3 a2d4d8dd <ef+gg       \-4 ;ユニゾン揺れ周期調整
+3 a2d4d8dd <ef+gg          \-4 ;ユニゾン揺れ周期調整
+;3 $base2:
 3 r8-%1>g8.<g16>a16<a+a+>  \-5 ;ユニゾン揺れ周期調整
-3 r8a+8.<a+16e16d+d+    \6  ;ユニゾン揺れ周期調整
+3 r8a+8.<a+16e16d+d+       \6  ;ユニゾン揺れ周期調整
 3 r8>d+8.<d+16>c+16d4d4^%1
-3 $base: \0
+3 $base:
+3 <
 
 r [4 [6 h8 ]]
 

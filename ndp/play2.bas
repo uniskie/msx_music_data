@@ -36,13 +36,14 @@
 360 ' ON ERROR
 370 A=USR1(0):ON ERROR GOTO 0:RESUME
 380 '
-381 DATA 8bit255,"8bit Sensation 255"
-382 DATA DGuitar,"Distortion Guitar Sample"
-383 DATA FZ-BBlue,"F-ZERO (NDP arrange) BIG BLUE [by peita]"
-384 DATA FMiss-1,"Final Mission: Stage1 Newyork City Ruins [by peita]"
-385 DATA ZANARKAN,"inalFantasyX: To ZANARKAND [by peita]"
-386 DATA ParoGirl,"Parodius: Beautiful Girls V2 [by peita]"
-387 DATA Tw3EveGr,"Twinbee3: Evening Grow [by peita]"
-390 DATA Sch-COWA,"the SCHEME: COWARAD! [by peita]"
-590 DATA *
+390 DATA bm2holic,"bm2dx holic psg [by @merge99]"
+400 DATA 8bit255,"8bit Sensation 255 [by @merge99]"
+410 DATA DGuitar,"Distortion Guitar Sample"
+420 DATA FZ-BBlue,"F-ZERO (NDP arrange) BIG BLUE [by peita]"
+430 DATA FMiss-1,"Final Mission: Stage1 Newyork City Ruins [by peita]"
+440 DATA ZANARKAN,"inalFantasyX: To ZANARKAND [by peita]"
+450 DATA ParoGirl,"Parodius: Beautiful Girls V2 [by peita]"
+460 DATA Tw3EveGr,"Twinbee3: Evening Grow [by peita]"
+470 DATA Sch-COWA,"the SCHEME: COWARAD! [by peita]"
+480 DATA *
 
