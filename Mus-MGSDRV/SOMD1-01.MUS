@@ -4,13 +4,13 @@
 #title {"[SORCERIAN MD] ŠDF‚Ìƒ_ƒ“ƒWƒ‡ƒ“ - DUNGEON (C)SEGA/Falcom | OPLL+PSG ver edit by uniskie"}
 
 ; flute
-@e0 = {1,0,8acefed edc:2 b:2 a:2 [ c:2 b:2 a:2 b:2 ]0}
+@e0 = {1,0,8acefed edc:2 b:2 a:2 };‰¹—Ê‚Í—h‚ç‚³‚È‚¢•û‚ªãY—í‚Á‚Û‚¢ [ c:2 b:2 a:2 b:2 ]0}
 ; lead
-@e1 = {1,0,dfedc:2 dcb:2 a:2 [4 c:2 b:2 a:2 b:2 ] [ c:3 b:3 a:3 b:3 ]0}
+@e1 = {1,0,dfedc:2 dcb:2 };‰¹—Ê‚Í—h‚ç‚³‚È‚¢•û‚ªãY—í‚Á‚Û‚¢ [ c:3 b:3 ]0}
 ;; brass
 ;@e2 = {1,0,cfedc:2 edc:2 b:2 a:2 [ c:2 b:2 a:2 9:2 ]0}
 ; echo electone
-@e3 = {1,0,fedc:2 b:2 edc:2 b:2 dcb:2 a:2 [ b:2 a:2 9:2 8:2 ]0}
+@e3 = {1,0,fedc:2 b:2 edc:2 b:2 dcb:2 a:2 };‰¹—Ê‚Í—h‚ç‚³‚È‚¢•û‚ªãY—í‚Á‚Û‚¢ [ b:2 a:2 9:2 8:2 ]0}
 ;; piano
 ;@e4 = {1,0,acefedc dcb:2  [2 a:8 8:8 7:8 ]
 ;      [2 9:8 8:8 7:8 ]  [3 8:8 7:8 6:8 ]
@@ -46,7 +46,7 @@
 ; rhythm
 FG y14,32 v15 l32
 ; bass drum -> tom tom
-F h1,64,0,-16 o4 q1;so
+F h1,32,0,-16 o4 q1;so 
 ; hi-hut (@) & snare (v)
 #macro_offset { s=10,h=12 }
 *10 = { v11 @14 o2 q3so } ; snare
@@ -57,19 +57,22 @@ F h1,64,0,-16 o4 q1;so
 ;==== intro ===
 1239abcdefg l32
 
-9ABC  h24,1,4,2
-;123   h45,0,4,1
+9ABC  h28,1,4,2
+123   h38,0,4,1
 
-123  @0 v11 o4
+123  @0 v10 o4
 9ab  @4 v6  o5 @\12
-19 >d1 >d1
-2a  a+1 >a+1
-3b <<c1 c1
+1 >d1 >d1
+9 r16>d1 >d2...
+2  a+1 >a+1
+a  r16a+1 >a+2...
+3 <<c1 c1
+b r16<<c1 c2...
 
-c r1 r1
+c r1 r1 
 
 D  v13 @13 o2 
-E  v10 @14 o2 q2 @\19 
+E  v10 @14 o2 q2 @\17
 DE l32
 DE [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
 
@@ -79,32 +82,31 @@ G [7 *h0bbbb*s0g*h0bbb ] brr*s0g g*h0rrr
 ;==== main ===
 
 A3  r16
-C   r8
 
 1239ACBDEFG [0
 
 1239ACBDEFG  [
 
 123  @0 o4
-12   v11
-3    v8 @2
+12   v10
+3    v8 @2 
 9ABC  @16 o5
-9    v13
-B    v12
-A    v12  @\16
-C    v10  @\24
-D    V13 @13 o2 @\0
-E    V11 @12 o3 @\19
-E    v10 @14 o2 q2 @\19
+9    v12
+B    v11
+A    v10  @\16 
+C    v9   @\14 > ; ‘«‚è‚È‚¢”{‰¹‚ð•â‚¤
+D    V13 @13 o2 @\0 
+E    V11 @12 o3 @\19 
+E    v10 @14 o2 q2 @\19 
 
 9AC   [
 9AC    [g4>d2^c<a+g>c16<a+16 ]3
 9AC     a4^16.br>crc+ d12<d12>d3<
 9AC    ]
-B     [ r1 ]4
+B     [ r1 ]4 
 B     ;r16 @\16 
 B     ;[g4>d2^32c<a+g>c16<a+16 ]3 
-B     ;a4^16.br>crc+ d12<d12>d12^8.< @\0
+B     ;a4^16.br>crc+ d12<d12>d12^8.< @\0 
 B     [d4a+2^agda16g16 ]3 
 B     d+4^16.grgrgf+12<f+12>f+3 
 DE    [
@@ -117,73 +119,69 @@ DE    ]
 13     d4 a+4  d12c12<  a+3
 13     g4 a+4  a+12>c12 d3
 13     c4 d+4< a12f+12  a3
-2      d4  g4  g12a12 a+3
-2      a+4>g4< a+12a12 g3
-2      d+4 g4  g12a12 a+3
-2      a4 >c4< f+12d12 f+3
+2      d4  g4  g12a12 a+3 
+2      a+4>g4< a+12a12 g3 
+2      d+4 g4  g12a12 a+3 
+2      a4 >c4< f+12d12 f+3 
 123   ]
 
-F [[16 rrrr|grrr ] grgg]
-G [[16 *h0bbbb|*s0g*h0bbb ] *s0g*h0b*s0gg]
+F [[16 rrrr|grrr ] grgg] 
+G [[16 *h0bbbb|*s0g*h0bbb ] *s0g*h0b*s0gg] 
 
 1239ABCDEFG  |
 
-9ABC  v-1
 9AC   @17
 9AC   g4> g4 a12f12 d3
 9AC   c4 g4 a+12f+12 d+3<
 9AC   g4> g4 a12f12  d3
 9AC   c4 g4 ffff16.ff16ff16f8<
 B     @17
-B     d+4 d+4 f12d12   <a+3 
+B     >d+4 d+4 f12d12   <a+3 
 B     g4> d+4 f+12d+12 <b3> 
 B     d+4 d+4 f12d12<   a+3 
-B     g4> d+4 cccc16.cc16cc16c8 
-9ABC  v+1
+B     g4> d+4 cccc16.cc16cc16c8<
 DE    >
 DE    [cccc16ccc cccc16ccc< a+a+a+a+16a+a+a+ a+a+a+a+16a+a+a+
 DE     g+g+g+g+16g+g+g+ g+g+g+g+16g+g+g+
 DE    |g+g+g+g+16g+g+g+> c+c+c+c+16c+c+c+
-DE    ]
-DE     dddd8d d16dd16d16.
-13    @3 
+DE    ]dddd8d d16dd16d16.
+13    @3
 13    >>d+2 d2
 13    c2 <b4 v-1 >f4 v+1
 13    d+2 d2
 13    c2 @1 <<f+f+f+f+16.f+f+16f+f+16f+8
-13    @0 
-2    l8 ;v-1
-2     >c&g& a+&g& <a+&>f& a&f&<
-2     g+&>d+& gd+& f+4& f4&
-2     c&g& a+&g& <a+&>f& a&f&<
-2     g+&>d+& g&d+& c2
-2    l32 ;v+1
+13    @0
+2    l8 
+2     >c&g& a+&g& <a+&>f& a&f&< 
+2     g+&>d+& gd+& f+4& f4& 
+2     c&g& a+&g& <a+&>f& a&f&< 
+2     g+&>d+& g&d+& c2 
+2    l32 
 
-F [14 rrrrgrrr ]          ggggrrgg rggrggsoeesf
-G [14 *h0bbbb*s0g*h0bbb ] *s0gggg*h0bb*s0gg *h0b*s0gg*h0b*s0ggrr
+F [14 rrrrgrrr ]          ggggrrgg rggrggsoeesf 
+G [14 *h0bbbb*s0g*h0bbb ] *s0gggg*h0bb*s0gg *h0b*s0gg*h0b*s0ggrr 
 
 1239ACBDEFG  ]
 
 9AC  @17
-AC   v-1
+9AC  ;v-1
 9AC  r4.^dga+> c16<a+g>cr<a+16^4
 9AC  r4.^dga+> c16<a+g>cr<a+16^4
 9AC  r4.^cfa   a+16af  a+ra16^4
-123 o4 v-2
+123  o4 v-2 @1
 13   >d2.c8c+8
 13    d2.d8c+8
 13    c2a4c4<
-2     a+2.g+8a8
-2     a+2.a+8a+8
-2     a2>f4<a4
-B    @6 o3 q8 @\18
+2     a+2.g+8a8 
+2     a+2.a+8a+8 
+2     a2>f4<a4 
+B    @17 o3 q8 @\18 
 D    @6 o3 q8 
 E    @6 o2 q8 @\0 
 BDE  [ggr8<g2.^16>]
 BDE  ffr8<f2.^16>
-F [3 r1 ]
-G *h0[4 [6 b8 ]]
-
+F [3 r1 ] 
+G *h0[4 [6 b8 ]] 
 
 9AC  rrcd d+fgb> d<b>cd+ gb>d<b>
 9AC  c<gd+c f<g+a+>c d+fg+a+> cd+fg+
@@ -191,32 +189,32 @@ G *h0[4 [6 b8 ]]
 9AC  g8f24c24<g+24g4>
 9AC  f8d+24<a+24f+24f4
 9AC  d+fr16r24d+24f24d4
-AC   v+1
-B    @4 o5 @\0 v-3
+9AC  ;v+1
+B    @4 o5 @\0 v-3 
 B    d2 f2 
 B    d2 g2 
 B    f2 f2 
-B    v+3
+B    v+3 
 123 o4
 13   a2> c2<
 13   a+2> d2
 13   c+2 c2
-2   <d+2 f+2
-2    g2 g+2
-2    g2 f+2
+2   <d+2 f+2 
+2    g2 g+2 
+2    g2 f+2 
 123  v+2
-D    @9 @\0
-D    @9 o3 @\18
+D    @9 o3 @\0 
+E    @9 o3 @\18 
 DE   v+
 DE   a2d4d8dd <ef+gg
 DE   r8>g8.<g16>a16<a+a+>
 DE   r8a+8.<a+16e16d+d+
 DE   r8>d+8.<d+16>c+16d4d4
 DE   v-
-F    r16r8r16 g8r8 r8r8 g+g+g+g+ g+g+aa
-F [4 r16r8r16|r16r16 gggg] sobbsfgg soeeccsf
-G    *h0b16*h1b8r16 *s0g16r8. *h1b8r8 *s0g+g+g+g+ g+g+aa
-G [4 *h0b16*h1b8r16|*h0b16b16 *s0gggg] *s0rrgg rrrr
+F    r16r8r16 g8r8 r8r8 g+g+g+g+ g+g+aa 
+F [4 r16r8r16|r16r16 gggg] sobbsfgg soeeccsf 
+G    *h0b16*h1b8r16 *s0g16r8. *h1b8r8 *s0g+g+g+g+ g+g+aa 
+G [4 *h0b16*h1b8r16|*h0b16b16 *s0gggg] *s0rrgg rrrr 
 
 1239ACBDEFG ];0
 
