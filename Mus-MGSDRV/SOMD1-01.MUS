@@ -24,20 +24,20 @@
 ; OPLL VOICE
 
 ; @6でミュートブラスを代用できなかったので内蔵音色のみは諦め
-@v16 = { ; mute Brass
+@v16 = { ; distortion guiter
 ;       TL FB
-        20, 7,
+        14, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 2,15, 0, 1, 0, 1, 1, 0, 0,
-  10, 1, 2,15, 0, 2, 0, 0, 1, 0, 0 }
+  15, 1, 0,15, 0, 1, 0, 1, 1, 0, 0,
+   9, 5, 1,15, 0, 2, 0, 0, 1, 0, 0 }
 
 ; @9でも代用可能だけど、ミュートブラスっぽさを出すならこんな感じで
-@v17 = { ; blessy Brass
+@v17 = { ; loud Brass
 ;       TL FB
-        25, 7,
+        26, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   7, 3, 2, 1, 0, 1, 0, 1, 0, 0, 0,
-   9, 3, 2,15, 0, 1, 0, 1, 1, 0, 0 }
+   10, 4, 1, 1, 0, 1, 0, 1, 0, 0, 0,
+    9, 3, 1,15, 0, 1, 0, 1, 1, 0, 0 }
 
 ;1239abcde ! ; rhythm only
 
@@ -46,10 +46,11 @@
 ; rhythm
 FG y14,32 v15 l32
 ; bass drum -> tom tom
-F h1,32,0,-16 o4 q1;so 
+F h1,32,0,-16 o4 q1sf \-32
 ; hi-hut (@) & snare (v)
+G  y38,255 ; cy/tom off
 #macro_offset { s=10,h=12 }
-*10 = { v11 @14 o2 q3so } ; snare
+*10 = { v10 @14 o2 q4so } ; snare
 *12 = { v0 @6 o3 q8sf }  ; close hi-hut
 *13 = { v0 @6 o3 q1so }  ; open hi-hut
 
@@ -60,8 +61,8 @@ F h1,32,0,-16 o4 q1;so
 9ABC  h28,1,4,2
 123   h38,0,4,1
 
-123  @0 v10 o4
-9ab  @4 v6  o5 @\12
+123  @0 v11 o4
+9ab  @4 v7  o5 @\12
 1 >d1 >d1
 9 r16>d1 >d2...
 2  a+1 >a+1
@@ -71,13 +72,13 @@ b r16<<c1 c2...
 
 c r1 r1 
 
-D  v13 @13 o2 
-E  v10 @14 o2 q2 @\17
+D  v14 @13 o2 
+E  v11 @14 o2 q2 @\17
 DE l32
 DE [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
 
 F [7 rrrrgrrr ] rsobbsfg gsoeecsf 
-G [7 *h0bbbb*s0g*h0bbb ] brr*s0g g*h0rrr 
+G [7 *h0bbbb*s0f*h0bbb ] brr*s0f f*h0rrr 
 
 ;==== main ===
 
@@ -88,16 +89,15 @@ A3  r16
 1239ACBDEFG  [
 
 123  @0 o4
-12   v10
-3    v8 @2 
+12   v11
+3    v9 @2 
 9ABC  @16 o5
-9    v12
-B    v11
-A    v10  @\16 
-C    v9   @\14 > ; 足りない倍音を補う
-D    V13 @13 o2 @\0 
-E    V11 @12 o3 @\19 
-E    v10 @14 o2 q2 @\19 
+9    v13
+B    v12
+A    v11  @\16 
+C    v07  @\10 > ; 足りない倍音を補う
+D    V14 @13 o2 @\0 
+E    v11 @14 o2 q2 @\19 
 
 9AC   [
 9AC    [g4>d2^c<a+g>c16<a+16 ]3
@@ -164,7 +164,7 @@ G [14 *h0bbbb*s0g*h0bbb ] *s0gggg*h0bb*s0gg *h0b*s0gg*h0b*s0ggrr
 1239ACBDEFG  ]
 
 9AC  @17
-9AC  ;v-1
+9C   v-1
 9AC  r4.^dga+> c16<a+g>cr<a+16^4
 9AC  r4.^dga+> c16<a+g>cr<a+16^4
 9AC  r4.^cfa   a+16af  a+ra16^4
@@ -175,7 +175,7 @@ G [14 *h0bbbb*s0g*h0bbb ] *s0gggg*h0bb*s0gg *h0b*s0gg*h0b*s0ggrr
 2     a+2.g+8a8 
 2     a+2.a+8a+8 
 2     a2>f4<a4 
-B    @17 o3 q8 @\18 
+B    @17 o3 q8 @\18 v-
 D    @6 o3 q8 
 E    @6 o2 q8 @\0 
 BDE  [ggr8<g2.^16>]
@@ -189,12 +189,12 @@ G *h0[4 [6 b8 ]]
 9AC  g8f24c24<g+24g4>
 9AC  f8d+24<a+24f+24f4
 9AC  d+fr16r24d+24f24d4
-9AC  ;v+1
-B    @4 o5 @\0 v-3 
+9C   v+1
+B    @4 o5 @\0 v-2
 B    d2 f2 
 B    d2 g2 
 B    f2 f2 
-B    v+3 
+B    v+3
 123 o4
 13   a2> c2<
 13   a+2> d2
@@ -205,13 +205,13 @@ B    v+3
 123  v+2
 D    @9 o3 @\0 
 E    @9 o3 @\18 
-DE   v+
+DE   ;v+
 DE   a2d4d8dd <ef+gg
 DE   r8>g8.<g16>a16<a+a+>
 DE   r8a+8.<a+16e16d+d+
 DE   r8>d+8.<d+16>c+16d4d4
-DE   v-
-F    r16r8r16 g8r8 r8r8 g+g+g+g+ g+g+aa 
+DE   ;v-
+F    r16r8r16 g8r8 r8r8 gggg gggg 
 F [4 r16r8r16|r16r16 gggg] sobbsfgg soeeccsf 
 G    *h0b16*h1b8r16 *s0g16r8. *h1b8r8 *s0g+g+g+g+ g+g+aa 
 G [4 *h0b16*h1b8r16|*h0b16b16 *s0gggg] *s0rrgg rrrr 
