@@ -8,26 +8,26 @@
 ; sharp tone
 @e1 = {1,0,dfed:3 edc:30 b:30 a:30   }
 ; echo piano
-@e3 = {1,0,fed:2 c:2 b:2 c:2  edc:2 b:2 a:2 b:2  dcb:2 a:2 9:2 a:2  [2 cba:2 9:2 a:2 9:2 ]
-       [3 ba9:2 8:2 7:2 ] [4 a98:2 7:2 8:2 ] [5 987:2 6:2 7:2 ] [0 876:2 5:2 6:2 ] }
+@e3 = {1,0,fedcdc [2 edcbcb ] [2 dcbaba ] [2 cba9a9 ]
+       [2 ba9898 ] [3 a98787 ] [4 987676] [0 876565 ] }
 
 ; OPLL VOICE
 
-; @6でミュートブラスを代用できなかったので内蔵音色のみは諦め
-@v16 = { ; distortion guiter
+; ロックオルガンっぽい音が欲しい
+@v16 = {
 ;       TL FB
-        15, 6,
+        10, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15, 1, 0,15, 0, 1, 0, 0, 1, 0, 0,
-  10, 5, 1,15, 0, 1, 0, 0, 1, 0, 0 }
+  10, 5, 1,15, 0, 4, 0, 0, 1, 0, 0 }
 
 ; @9でも代用可能だけど、ミュートブラスっぽさを出すならこんな感じで
 @v17 = { ; loud Brass
 ;       TL FB
-        22, 7,
+        23, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 4, 1, 1, 0, 1, 0, 1, 0, 0, 0,
-  10, 2, 1,15, 0, 1, 0, 1, 1, 0, 0 }
+   9, 5, 1, 1, 0, 1, 0, 1, 0, 0, 0,
+  10, 3, 1,15, 0, 1, 0, 1, 1, 0, 0 }
 
 ;1239abcde ! ; rhythm only
 
@@ -37,8 +37,8 @@
 *08 = { v14 q1so } ;tom
 *10 = { v14 q8sf } ;snare body
 *12 = { v12 @14 o2 q4so } ; snare noise
-*14 = { v0 @5 o3 q8sf }  ; close hi-hut
-*15 = { v0 @5 o3 q1so }  ; open hi-hut
+*14 = { v0 @6 o3 q8sf }  ; close hi-hut
+*15 = { v0 @6 o3 q1so }  ; open hi-hut
 FG y14,32 l32            ; change to rhythm mode
 FG y38,255               ; cy/tom off
 F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom
@@ -77,11 +77,11 @@ A3  r16
 123  @0 o4
 12   v10
 3    v8 @\2 
-9ABC  @16 o5
-9    v13
+9ABC @16 o5
+9    v13 
 B    v12
 A    v11 @\16 
-C    v9  @7>> @\6 ; 足りない倍音を補う
+C    v10 @6> @\4 
 D    V14 @13 o2 @\0 
 E    v11 @14 o2 q1 @\19 
 
@@ -115,14 +115,12 @@ G     [[16 *h0bbbb|*n0g*h0bbb ] *n0g*h0b*n0gg]
 
 1239ABCDEFG  |
 
-9A    @17
-C     @8 ;倍音を追加
+9A    @17$
+C     @7< 
 9AC   g4> g4 a16. f16.  d16^4
 9AC   c4  g4 a+16.f+16. d+16^4<
 9AC   g4> g4 a16. f16.  d16^4
-9AC   c4
-C     @13<
-9AC      g4 ffff16.ff16ff16f8<
+9AC   c4  g4 ffff16.ff16ff16f8<
 B     @17 
 B     >d+4 d+4 f16. d16.  <a+16^4 
 B     g4>  d+4 f+16.d+16. <b16^4> 
@@ -152,7 +150,7 @@ G    [14 *h0bbbb*n0g*h0bbb ] *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0ggrr
 
 9AC  r4.^
 9A   @17 
-C    @8 ;倍音を追加
+C    @7< 
 9AC  v-1
 9AC      dga+> c16<a+g>cr<a+16^4
 9AC  r4.^dga+> c16<a+g>cr<a+16^4
@@ -165,7 +163,7 @@ C    @8 ;倍音を追加
 2     a+2.a+8a+8 
 2     a2>f4<a4 
 B    @6 o3 q8 @\18
-D    @6 o3 q8 
+D    @6 o3 q8 v-
 E    @6 o2 q8 @\0
 BDE  [ggr8<g2.^16>]
 BDE  ffr8<f2.^16>
@@ -197,6 +195,7 @@ DE   a2d4d8dd <ef+gg
 DE   r8>g8.<g16>a16<a+a+>
 DE   r8a+8.<a+16e16d+d+
 DE   r8>d+8.<d+16>c+16d4d4
+D    v+
 F    r16r8r16 g8r8 r8r8 \-28gggg gg\-24gg*b0
 F [4 r16r8r16|r16r16 gggg] *m0bb*s0gg *m0eecc*s0 
 G    *h0b16*h1b8r16 *n0g16r8. *h1b8r8 *n0gggg gggg
