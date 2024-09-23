@@ -1,84 +1,70 @@
-;[gain=1.0 name=SOMD1-01 duration=840s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=SOMD1-01 duration=840s fade=5s cpu=0 lpf=1]
 #opll_mode 0
 #tempo 75
 #title {"[SORCERIAN MD] 灰色のダンジョン - DUNGEON (C)SEGA/Falcom | OPLL+PSG ver edit by uniskie"}
 
-; flute
-@e0 = {1,0,8acefed edc:2 b:2 a:2 };音量は揺らさない方が綺麗っぽい [ c:2 b:2 a:2 b:2 ]0}
-; lead
-@e1 = {1,0,dfedc:2 dcb:2 };音量は揺らさない方が綺麗っぽい [ c:3 b:3 ]0}
-;; brass
-;@e2 = {1,0,cfedc:2 edc:2 b:2 a:2 [ c:2 b:2 a:2 9:2 ]0}
-; echo electone
-@e3 = {1,0,fedc:2 b:2 edc:2 b:2 dcb:2 a:2 };音量は揺らさない方が綺麗っぽい [ b:2 a:2 9:2 8:2 ]0}
-;; piano
-;@e4 = {1,0,acefedc dcb:2  [2 a:8 8:8 7:8 ]
-;      [2 9:8 8:8 7:8 ]  [3 8:8 7:8 6:8 ]
-;      [3 7:8 6:8 5:8 ]  [3 6:8 5:8 4:8 ]
-;      [4 5:8 4:8 3:8 ]  [4 4:8 3:8 2:8 ]
-;      [4 3:8 2:8 1:8 ]  [1 2:8 1:8 0 ] }
-;; bass
-;@e6 = {1,0,FB:2 [ B:3 A:3 B:3 C:3 ]0}
-;@e7 = {1,0,FC:3 [ C:4 B:4 C:4 D:4 ]0}
+; slow long tone
+@e0 = {1,0,acefe:10 d:12 c:14 b8=80 }
+; sharp tone
+@e1 = {1,0,dfed:3 edc:30 b:30 a:30   }
+; echo piano
+@e3 = {1,0,fed:2 c:2 b:2 c:2  edc:2 b:2 a:2 b:2  dcb:2 a:2 9:2 a:2  [2 cba:2 9:2 a:2 9:2 ]
+       [3 ba9:2 8:2 7:2 ] [4 a98:2 7:2 8:2 ] [5 987:2 6:2 7:2 ] [0 876:2 5:2 6:2 ] }
 
 ; OPLL VOICE
 
 ; @6でミュートブラスを代用できなかったので内蔵音色のみは諦め
 @v16 = { ; distortion guiter
 ;       TL FB
-        14, 6,
+        15, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 0,15, 0, 1, 0, 1, 1, 0, 0,
-   9, 5, 1,15, 0, 2, 0, 0, 1, 0, 0 }
+  15, 1, 0,15, 0, 1, 0, 0, 1, 0, 0,
+  10, 5, 1,15, 0, 1, 0, 0, 1, 0, 0 }
 
 ; @9でも代用可能だけど、ミュートブラスっぽさを出すならこんな感じで
 @v17 = { ; loud Brass
 ;       TL FB
-        26, 7,
+        22, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   10, 4, 1, 1, 0, 1, 0, 1, 0, 0, 0,
-    9, 3, 1,15, 0, 1, 0, 1, 1, 0, 0 }
+   9, 4, 1, 1, 0, 1, 0, 1, 0, 0, 0,
+  10, 2, 1,15, 0, 1, 0, 1, 1, 0, 0 }
 
 ;1239abcde ! ; rhythm only
 
-;C ! ;Ch.Cは余ってるのでエコーを余分に追加してある。エコーを一つ減らしたい時無効化してください
+;==== rhythm settings ====
+#macro_offset { b=6,m=8,s=10,n=12,h=14 }
+*06 = { \-32 } ;snare/tom
+*08 = { v14 q1so } ;tom
+*10 = { v14 q8sf } ;snare body
+*12 = { v12 @14 o2 q4so } ; snare noise
+*14 = { v0 @5 o3 q8sf }  ; close hi-hut
+*15 = { v0 @5 o3 q1so }  ; open hi-hut
+FG y14,32 l32            ; change to rhythm mode
+FG y38,255               ; cy/tom off
+F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom
+G v0@14                  ; hi-hut (@) & snare noise (v)
 
-; rhythm
-FG y14,32 v15 l32
-; bass drum -> tom tom
-F h1,32,0,-16 o4 q1sf \-32
-; hi-hut (@) & snare (v)
-G  y38,255 ; cy/tom off
-#macro_offset { s=10,h=12 }
-*10 = { v10 @14 o2 q4so } ; snare
-*12 = { v0 @6 o3 q8sf }  ; close hi-hut
-*13 = { v0 @6 o3 q1so }  ; open hi-hut
-
-
-;==== intro ===
+;==== intro ====
 1239abcdefg l32
 
-9ABC  h28,1,4,2
-123   h38,0,4,1
+9ABC  h24,0,4,2
+123   h24,0,4,1
 
-123  @0 v11 o4
-9ab  @4 v7  o5 @\12
+123  @0 v9 o4
+9ab  @4 v6  o5 @\12
 1 >d1 >d1
 9 r16>d1 >d2...
-2  a+1 >a+1
-a  r16a+1 >a+2...
+2 a+1 >a+1
+a r16a+1 >a+2...
 3 <<c1 c1
 b r16<<c1 c2...
-
 c r1 r1 
-
 D  v14 @13 o2 
-E  v11 @14 o2 q2 @\17
+E  v11 @14 o2 q1 @\17
 DE l32
 DE [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
-
-F [7 rrrrgrrr ] rsobbsfg gsoeecsf 
-G [7 *h0bbbb*s0f*h0bbb ] brr*s0f f*h0rrr 
+F [7 rrrrgrrr ] r*m0bb*s0g g*m0eec*s0
+G [7 *h0bbbb*n0f*h0bbb ] brr*n0f f*h0rrr 
 
 ;==== main ===
 
@@ -89,83 +75,86 @@ A3  r16
 1239ACBDEFG  [
 
 123  @0 o4
-12   v11
-3    v9 @2 
+12   v10
+3    v8 @\2 
 9ABC  @16 o5
 9    v13
 B    v12
-A    v11  @\16 
-C    v07  @\10 > ; 足りない倍音を補う
+A    v11 @\16 
+C    v9  @7>> @\6 ; 足りない倍音を補う
 D    V14 @13 o2 @\0 
-E    v11 @14 o2 q2 @\19 
+E    v11 @14 o2 q1 @\19 
 
 9AC   [
 9AC    [g4>d2^c<a+g>c16<a+16 ]3
-9AC     a4^16.br>crc+ d12<d12>d3<
+9AC     a4^16.br>crc+ d16.<d16.>d16^4<
 9AC    ]
 B     [ r1 ]4 
 B     ;r16 @\16 
 B     ;[g4>d2^32c<a+g>c16<a+16 ]3 
 B     ;a4^16.br>crc+ d12<d12>d12^8.< @\0 
 B     [d4a+2^agda16g16 ]3 
-B     d+4^16.grgrgf+12<f+12>f+3 
+B     d+4^16.grgrgf+16.<f+16.>f+16^4 
 DE    [
 DE     [gggg16ggg gggg16ggg gga+a+>ccc+c+ d<dddfff+f+ ]
 DE     >d+d+d+d+16d+d+d+ d+d+d+d+16d+d+d+ d+d+<ggg+g+aa a+a+aaggd+d+
 DE     aaaa16aaa aaa+a+>ccc+c+ dddd16ddd dddd16d<ad
 DE    ]
 123   [
-13     g4 a+4  a+12>c12 d3
-13     d4 a+4  d12c12<  a+3
-13     g4 a+4  a+12>c12 d3
-13     c4 d+4< a12f+12  a3
-2      d4  g4  g12a12 a+3 
-2      a+4>g4< a+12a12 g3 
-2      d+4 g4  g12a12 a+3 
-2      a4 >c4< f+12d12 f+3 
+13     g4 a+4  a+16.>c16. d16^4
+13     d4 a+4  d16.c16.<  a+16^4
+13     g4 a+4  a+16.>c16. d16^4
+13     c4 d+4< a16.f+16.  a16^4
+2      d4  g4  g16.a16. a+16^4 
+2      a+4>g4< a+16.a16. g16^4 
+2      d+4 g4  g16.a16. a+16^4 
+2      a4 >c4< f+16.d16. f+16^4 
 123   ]
-
-F [[16 rrrr|grrr ] grgg] 
-G [[16 *h0bbbb|*s0g*h0bbb ] *s0g*h0b*s0gg] 
+F     [[16 rrrr|grrr ] grgg] 
+G     [[16 *h0bbbb|*n0g*h0bbb ] *n0g*h0b*n0gg] 
 
 1239ABCDEFG  |
 
-9AC   @17
-9AC   g4> g4 a12f12 d3
-9AC   c4 g4 a+12f+12 d+3<
-9AC   g4> g4 a12f12  d3
-9AC   c4 g4 ffff16.ff16ff16f8<
-B     @17
-B     >d+4 d+4 f12d12   <a+3 
-B     g4> d+4 f+12d+12 <b3> 
-B     d+4 d+4 f12d12<   a+3 
-B     g4> d+4 cccc16.cc16cc16c8<
+9A    @17
+C     @8 ;倍音を追加
+9AC   g4> g4 a16. f16.  d16^4
+9AC   c4  g4 a+16.f+16. d+16^4<
+9AC   g4> g4 a16. f16.  d16^4
+9AC   c4
+C     @13<
+9AC      g4 ffff16.ff16ff16f8<
+B     @17 
+B     >d+4 d+4 f16. d16.  <a+16^4 
+B     g4>  d+4 f+16.d+16. <b16^4> 
+B     d+4  d+4 f16. d16.  <a+16^4 
+B     g4>  d+4 cccc16.cc16cc16c8<
 DE    >
 DE    [cccc16ccc cccc16ccc< a+a+a+a+16a+a+a+ a+a+a+a+16a+a+a+
 DE     g+g+g+g+16g+g+g+ g+g+g+g+16g+g+g+
 DE    |g+g+g+g+16g+g+g+> c+c+c+c+16c+c+c+
 DE    ]dddd8d d16dd16d16.
-13    @3
+13    @3 v+
 13    >>d+2 d2
 13    c2 <b4 v-1 >f4 v+1
 13    d+2 d2
 13    c2 @1 <<f+f+f+f+16.f+f+16f+f+16f+8
-13    @0
-2    l8 
-2     >c&g& a+&g& <a+&>f& a&f&< 
-2     g+&>d+& gd+& f+4& f4& 
-2     c&g& a+&g& <a+&>f& a&f&< 
-2     g+&>d+& g&d+& c2 
-2    l32 
-
-F [14 rrrrgrrr ]          ggggrrgg rggrggsoeesf 
-G [14 *h0bbbb*s0g*h0bbb ] *s0gggg*h0bb*s0gg *h0b*s0gg*h0b*s0ggrr 
+13    @0 v-
+2    l8 v-2
+2     >cg a+g <a+>f af< 
+2     g+>d+ gd+ f+4 f4 
+2     cg a+g <a+>f af< 
+2     g+>d+ gd+ c2 
+2    l32 v+2
+F    [14 rrrrgrrr ]          ggggrrgg rggrgg*m0ee*s0
+G    [14 *h0bbbb*n0g*h0bbb ] *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0ggrr 
 
 1239ACBDEFG  ]
 
-9AC  @17
-9C   v-1
-9AC  r4.^dga+> c16<a+g>cr<a+16^4
+9AC  r4.^
+9A   @17 
+C    @8 ;倍音を追加
+9AC  v-1
+9AC      dga+> c16<a+g>cr<a+16^4
 9AC  r4.^dga+> c16<a+g>cr<a+16^4
 9AC  r4.^cfa   a+16af  a+ra16^4
 123  o4 v-2 @1
@@ -175,46 +164,43 @@ G [14 *h0bbbb*s0g*h0bbb ] *s0gggg*h0bb*s0gg *h0b*s0gg*h0b*s0ggrr
 2     a+2.g+8a8 
 2     a+2.a+8a+8 
 2     a2>f4<a4 
-B    @17 o3 q8 @\18 v-
+B    @6 o3 q8 @\18
 D    @6 o3 q8 
-E    @6 o2 q8 @\0 
+E    @6 o2 q8 @\0
 BDE  [ggr8<g2.^16>]
 BDE  ffr8<f2.^16>
-F [3 r1 ] 
-G *h0[4 [6 b8 ]] 
+F    [3 r1 ] 
+G    *h0[4 [6 b8 ]] 
 
-9AC  rrcd d+fgb> d<b>cd+ gb>d<b>
+9AC  rrcd v+ d+fgb> d<b>cd+ gb>d<b>
 9AC  c<gd+c f<g+a+>c d+fg+a+> cd+fg+
 9AC  a8g24d24<a+24a4>
 9AC  g8f24c24<g+24g4>
 9AC  f8d+24<a+24f+24f4
 9AC  d+fr16r24d+24f24d4
-9C   v+1
-B    @4 o5 @\0 v-2
-B    d2 f2 
-B    d2 g2 
-B    f2 f2 
-B    v+3
-123 o4
+B    @4 o3 @\0 v-5
+B    d+2 f+2 
+B    g2 g+2 
+B    g2 f+2 
+B    v+5
+123  o4 v+
 13   a2> c2<
 13   a+2> d2
 13   c+2 c2
-2   <d+2 f+2 
-2    g2 g+2 
-2    g2 f+2 
-123  v+2
+2    d2 f2 
+2    d2 g2 
+2    f2 f2 
+123  v+
 D    @9 o3 @\0 
 E    @9 o3 @\18 
-DE   ;v+
 DE   a2d4d8dd <ef+gg
 DE   r8>g8.<g16>a16<a+a+>
 DE   r8a+8.<a+16e16d+d+
 DE   r8>d+8.<d+16>c+16d4d4
-DE   ;v-
-F    r16r8r16 g8r8 r8r8 gggg gggg 
-F [4 r16r8r16|r16r16 gggg] sobbsfgg soeeccsf 
-G    *h0b16*h1b8r16 *s0g16r8. *h1b8r8 *s0g+g+g+g+ g+g+aa 
-G [4 *h0b16*h1b8r16|*h0b16b16 *s0gggg] *s0rrgg rrrr 
+F    r16r8r16 g8r8 r8r8 \-28gggg gg\-24gg*b0
+F [4 r16r8r16|r16r16 gggg] *m0bb*s0gg *m0eecc*s0 
+G    *h0b16*h1b8r16 *n0g16r8. *h1b8r8 *n0gggg gggg
+G [4 *h0b16*h1b8r16|*h0b16b16 *n0gggg] *n0rrgg rrrr 
 
 1239ACBDEFG ];0
 
