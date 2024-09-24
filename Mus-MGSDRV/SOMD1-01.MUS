@@ -16,18 +16,18 @@
 ; ロックオルガンっぽい音が欲しい
 @v16 = {
 ;       TL FB
-        10, 5,
+        23, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 0,15, 0, 1, 0, 0, 1, 0, 0,
-  10, 5, 1,15, 0, 4, 0, 0, 1, 0, 0 }
+  15, 0, 0,15, 0, 1, 0, 0, 1, 0, 0,
+  10, 5, 1,15, 0, 1, 0, 0, 1, 0, 1 }
 
 ; @9でも代用可能だけど、ミュートブラスっぽさを出すならこんな感じで
 @v17 = { ; loud Brass
 ;       TL FB
         23, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   9, 5, 1, 1, 0, 1, 0, 1, 0, 0, 0,
-  10, 3, 1,15, 0, 1, 0, 1, 1, 0, 0 }
+   9, 6, 1, 1, 0, 1, 0, 1, 0, 0, 0,
+  10, 3, 2, 5, 0, 1, 0, 1, 1, 0, 0 }
 
 ;1239abcde ! ; rhythm only
 
@@ -41,8 +41,8 @@
 *15 = { v0 @6 o3 q1so }  ; open hi-hut
 FG y14,32 l32            ; change to rhythm mode
 FG y38,255               ; cy/tom off
-F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom
-G v0@14                  ; hi-hut (@) & snare noise (v)
+F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom 
+G v0@14                  ; hi-hut (@) & snare noise (v) 
 
 ;==== intro ====
 1239abcdefg l32
@@ -52,18 +52,18 @@ G v0@14                  ; hi-hut (@) & snare noise (v)
 
 123  @0 v9 o4
 9ab  @4 v6  o5 @\12
-1 >d1 >d1
-9 r16>d1 >d2...
-2 a+1 >a+1
-a r16a+1 >a+2...
-3 <<c1 c1
-b r16<<c1 c2...
+1 >d1 >d1 
+9 r16>d1 >d2... 
+2 a+1 >a+1 
+a r16a+1 >a+2... 
+3 <<c1 c1 
+b r16<<c1 c2... 
 c r1 r1 
 D  v14 @13 o2 
-E  v11 @14 o2 q1 @\17
+E  v11 @14 o2 q1 @\17 
 DE l32
 DE [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
-F [7 rrrrgrrr ] r*m0bb*s0g g*m0eec*s0
+F [7 rrrrgrrr ] r*m0bb*s0g g*m0eec*s0 
 G [7 *h0bbbb*n0f*h0bbb ] brr*n0f f*h0rrr 
 
 ;==== main ===
@@ -79,9 +79,9 @@ A3  r16
 3    v8 @\2 
 9ABC @16 o5
 9    v13 
-B    v12
+B    v12 
 A    v11 @\16 
-C    v10 @6> @\4 
+C    v10 @9>> @\4 
 D    V14 @13 o2 @\0 
 E    v11 @14 o2 q1 @\19 
 
@@ -115,8 +115,8 @@ G     [[16 *h0bbbb|*n0g*h0bbb ] *n0g*h0b*n0gg]
 
 1239ABCDEFG  |
 
-9A    @17$
-C     @7< 
+9A    @17
+C     @9<
 9AC   g4> g4 a16. f16.  d16^4
 9AC   c4  g4 a+16.f+16. d+16^4<
 9AC   g4> g4 a16. f16.  d16^4
@@ -125,7 +125,7 @@ B     @17
 B     >d+4 d+4 f16. d16.  <a+16^4 
 B     g4>  d+4 f+16.d+16. <b16^4> 
 B     d+4  d+4 f16. d16.  <a+16^4 
-B     g4>  d+4 cccc16.cc16cc16c8<
+B     g4>  d+4 cccc16.cc16cc16c8< 
 DE    >
 DE    [cccc16ccc cccc16ccc< a+a+a+a+16a+a+a+ a+a+a+a+16a+a+a+
 DE     g+g+g+g+16g+g+g+ g+g+g+g+16g+g+g+
@@ -137,20 +137,20 @@ DE    ]dddd8d d16dd16d16.
 13    d+2 d2
 13    c2 @1 <<f+f+f+f+16.f+f+16f+f+16f+8
 13    @0 v-
-2    l8 v-2
+2    l8 v-2 
 2     >cg a+g <a+>f af< 
 2     g+>d+ gd+ f+4 f4 
 2     cg a+g <a+>f af< 
 2     g+>d+ gd+ c2 
-2    l32 v+2
-F    [14 rrrrgrrr ]          ggggrrgg rggrgg*m0ee*s0
+2    l32 v+2 
+F    [14 rrrrgrrr ]          ggggrrgg rggrgg*m0ee*s0 
 G    [14 *h0bbbb*n0g*h0bbb ] *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0ggrr 
 
 1239ACBDEFG  ]
 
 9AC  r4.^
-9A   @17 
-C    @7< 
+9A   @17
+C    @9< 
 9AC  v-1
 9AC      dga+> c16<a+g>cr<a+16^4
 9AC  r4.^dga+> c16<a+g>cr<a+16^4
@@ -162,9 +162,9 @@ C    @7<
 2     a+2.g+8a8 
 2     a+2.a+8a+8 
 2     a2>f4<a4 
-B    @6 o3 q8 @\18
-D    @6 o3 q8 v-
-E    @6 o2 q8 @\0
+B    @6 o3 q8 @\16
+D    @6 o3 q8 v- 
+E    @6 o2 q8 @\0 
 BDE  [ggr8<g2.^16>]
 BDE  ffr8<f2.^16>
 F    [3 r1 ] 
@@ -175,12 +175,12 @@ G    *h0[4 [6 b8 ]]
 9AC  a8g24d24<a+24a4>
 9AC  g8f24c24<g+24g4>
 9AC  f8d+24<a+24f+24f4
-9AC  d+fr16r24d+24f24d4
-B    @4 o3 @\0 v-5
+9AC  d+f16rr24d+24f24d4
+B    @4 o3 @\0 v-5 
 B    d+2 f+2 
 B    g2 g+2 
 B    g2 f+2 
-B    v+5
+B    v+5 
 123  o4 v+
 13   a2> c2<
 13   a+2> d2
@@ -195,10 +195,10 @@ DE   a2d4d8dd <ef+gg
 DE   r8>g8.<g16>a16<a+a+>
 DE   r8a+8.<a+16e16d+d+
 DE   r8>d+8.<d+16>c+16d4d4
-D    v+
-F    r16r8r16 g8r8 r8r8 \-28gggg gg\-24gg*b0
+D    v+ 
+F    r16r8r16 g8r8 r8r8 \-28gggg gg\-24gg*b0 
 F [4 r16r8r16|r16r16 gggg] *m0bb*s0gg *m0eecc*s0 
-G    *h0b16*h1b8r16 *n0g16r8. *h1b8r8 *n0gggg gggg
+G    *h0b16*h1b8r16 *n0g16r8. *h1b8r8 *n0gggg gggg 
 G [4 *h0b16*h1b8r16|*h0b16b16 *n0gggg] *n0rrgg rrrr 
 
 1239ACBDEFG ];0
