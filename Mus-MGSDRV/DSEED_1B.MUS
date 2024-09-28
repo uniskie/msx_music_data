@@ -10,8 +10,8 @@
 #tempo 114
 #title {"Dangerous Seed (MD) Triple-Eye (Stage 1&9 BOSS) | uniskie"}
 #alloc { 0=110,
-         1=110,2=128,3=132,
-         9=320,A=360,B=130,C=130,D=100,E=100,
+         1=260,2=260,3=132,
+         9=330,A=360,B=130,C=130,D=100,E=100,
          F=900}
 
 @v15 = { ; E-BRASS
@@ -38,13 +38,17 @@
 @e1 = {1,0,fed:50 [c:3.b:3.a:3.b:3]0 }
 @e2 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
 
+1 v5 @1 o5 @\1
+2 v5 @1 o4 @\1
 9 v11 @15 o6 h28,1,4,3 
 A v11 @15 o5 h28,1,4,3 
-9A [2
-9A  l16
-9A  d+r(((d+)))d+r(((d+)))d+r (((d+)))d+d+rc+rd+r<
-9A  br(((b)))br(((b)))br (((b)))bbrbr>c+r
-9A ]
+129A  l16
+12   r8
+129A [2
+129A  d+r(((d+)))d+r(((d+)))d+r (((d+)))d+d+rc+rd+r<
+129A  br(((b)))br(((b)))br (((b)))bbrbr> | c+r
+129A ]
+9A   c+r
 
 9 [0 l8 
 9 o4
@@ -86,7 +90,6 @@ A >d+d+rd+r<d+a+>d+<
 A a+>d+ga+>d+ga+>d+<<
 A ] 
 
-12 [4 r1 ]
 12 [0 l16
 12 o5 @e1 q8 h24,1,2,1
 1  v8
@@ -109,9 +112,9 @@ A ]
 12 ]
 
 BC l16
-B @15 v14 o4 q3 @\1
-B [16 d+d+d+d+] 
-C [r1]4 
+B @15 v13 o4 q3 
+C [4 r1 ]
+BC [16 d+d+d+d+] 
 B @10 o5 q1so v9 @\0 
 C @11 o5 q5so v8 @\8 r16
 BC [0
@@ -126,8 +129,8 @@ BC  <d+dc+c<ba+ag+
 BC  >>
 BC ]
 
-D @13 v13 q1 o2
-E @10 v10 q1 o2 
+D @13 v13 q3 o2
+E @10 v9 q1 o2 
 DE l16 >[16 d+d+d+d+]<
 DE [0
 D  @13 q3 o2sf v13 

@@ -102,7 +102,7 @@ D l16
 D @15 v13 q3 o4 
 D [16 d+d+d+d+] 
 D [0 
-D @10 o5 q8 v9 
+D @10 o5 q8 v8
 D  [4 
 D   f+fed+ dc+c<b a+ag+g f+fed+ 
 D   dd+ef f+gg+a a+b>cc+ dd+ef 
@@ -116,7 +116,7 @@ D ]
 E @13 v13 q3 o2 
 E l16 [16 d+d+d+d+] 
 E [0 
-E  @13 q3 o2 
+E  @13 q3sf o2 
 E  [[g+g+g+g+]14 g+g+d+d+ba+g+d+]2 
 E  @6 q7so v+ 
 E  f1 d+1 
