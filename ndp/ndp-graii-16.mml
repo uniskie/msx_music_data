@@ -26,21 +26,22 @@
 
 1 s8,10 m+ <
 1 b>cc+d l8<b>cc+dl16<b<b>>c<c>c+<c+>d<d
-2 f+gg+a l8f+gg+al16f+rgrg+rar
+2 f+gg+a l8f+gg+al16f+rgrg+rar 
 
-12 @l
+12 @l 
 
-1 o2 @0,0 v14 q8
-1 s14 m+ *1
-1 l8 
-1 [ br16>f+.b4<b>eg+b< ]4 >
+1 o2 @0,0 v14 q8 j1
+1 s14 m+ *1 
+1 l8 \2
+1 [4 br16>f+.b4<b>eg+b< ]
+1 >
 ;1 @0,0
 1 [ >cr16dr16e dr16cr16d cr16<br16>c <br16/ar16b ] >cr16d
 1 o2 @0,0 v14
 1 l16 [ bedaedgedaedbe<b>e ]
 1     > bedaedgedaedbe<b>e
-1 v14 j2
-1 s8 m+ q7 > mk0 \-4
+1 v14 j3 
+1 s8 m+ q7 > mk0 \3
 ;1 l16 ge<b>af+dbgeaf+dge>e8
 1 l16 ge<b>af+dbgeaf+dgee8 ; H.ENVのO4限界対策
 1 mk0 < \0
@@ -70,7 +71,7 @@
 3 @2,2 o3 q8 s12 m+ *1
 3 @d0,14 v15
 3 @n12 l16 fr4..gr4.. ar4..gr4.. fr4..gr4.. ar4..br4.. @n-
-3 @d- j1
+3 @d- j2
 3 @4,4 s8 m- *1 o3
 3 mo2mee2&\1e2& >
 3 mo3mee4&\2e2.& > \3

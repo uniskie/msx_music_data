@@ -5,8 +5,8 @@
 #tempo 120
 ;#timebase 30
 
-@0 = fed ed:2 L c:3 b:3 c:3 d:3
-@1 = bcde fed:2 c:3 L d:4 c:4 b:4 c:4
+@0 = fed ed:2 L c:4 d:4
+@1 = bcde fed:2 c:3 L d:4 c:4
 @2 = { efedc dcba:6 ,
        9:8 8:8 7:8       8:8 7:8 6:8 ,
        7:8 6:8 5:8       6:8 5:8 4:8 ,
