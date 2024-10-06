@@ -21,11 +21,11 @@
 
 ;==== VOICE (VOLUE/AMP ENVELOPE) ====
 ; flute
-@0 = 9cfed ed L c:2 b:2 
+@0 = 9cfed ed L c:2 b:2 a:2
 ; lead
-@1 = bdfedc:2 edc:2 L b:4 a:4
+@1 = bdfedc:2 edc:2 L b:3 c:3
 ; brass 
-@2 = e fed:2 c:4 edc:2 b:4 dcb:2 a:4 L d:2 c:2 b:2 a:2
+@2 = e fed:4 c:4 edc:4 b:4 dcb:4 a:4 L c:3 b:4 a:4
 ; echo electone
 @3 = fedc:2 b:2 edc:2 b:2 dcb:2 a:2 L b:2 a:2 9:2 8:2
 ; tril piano
@@ -47,7 +47,7 @@
 ;==== NOTE ENVELOPE ====
 @n0 = L 0 0 0 12 12 12
 @n1 = 1 0
-@n11 = L -11 -11 0 0
+@n12 = L -12 0 0
 
 ;==== MACRO ====
 
@@ -82,13 +82,13 @@ r [7 hhhhshhh ] hkks smmn
 ;---- main
 123r @L
 
-1 @r13,2 @rd1,18
 
 3 j1
 
 123r [
 
-1    @1 @m1q8@q1
+1    @1 @m1 @q1
+1    @r13,2 @rd1,18
 1     [
 1      [g4>d2^@q0c<a+g>@q1c16<a+16 ]3
 1      a4^16.br>crc+ d16.<d16.>d16^4< 
@@ -98,7 +98,8 @@ r [7 hhhhshhh ] hkks smmn
 ;4    <[d4a+2^agda16g16 ]3
 ;4     d+4^16.grgrgf+16.<f+16.>f+16^4>
 
-2    @0 @m0q8@q1
+2    @0 @m0 @q1
+2    @r13,2 @rd1,18
 ;2     [
 2      g4 a+4  a+16.>c16.  d16^4
 2      d4 a+4  d16.  c16.< a+16^4
@@ -112,10 +113,10 @@ r [7 hhhhshhh ] hkks smmn
 ;5      a4> c4< f+16. d16. f+16^4
 ;5    ] >>
 2     la%4 @m-
-2     "<<d>>g"4   "<<a+>>a+"4 a+16.>c16.  @m0 d16^4 @m-
-2     "<d>d"4     "<<a+>>a+"4 d16.  c16.< @m0 a+16^4 @m-
-2     "<d>g"4     "<a+>a+"4   a+16.>c16.  @m0 d16^4 @m-
-2     "<<d+>>c"4  "<<g>>d+"4< "<f+>a"16.  "<f+>f+"16. "<f+>a"16^4
+2     v+ "<<d>>g"4   "<<a+>>a+"4 v- a+16.>c16.  @m0 d16^4 @m-
+2     v+ "<d>d"4     "<<a+>>a+"4 v- d16.  c16.< @m0 a+16^4 @m-
+2     v+ "<d>g"4     "<a+>a+"4   v- a+16.>c16.  @m0 d16^4 @m-
+2     v+ "<<d+>>c"4  v-"<<g>>d+"4< v+ "<f+>a"16.  "<f+>f+"16. "<f+>a"16^4 v-
 
 3    $base:
 3     [
@@ -130,7 +131,7 @@ r     [[16 hhhh/shhh ] shss]
 
 3 j2
 
-1   @2 @q2 @r13,5 @rd1,80
+1   @2 @q3 @r13,3 @rd1,20 
 /*
 1    [<g4>g4a16.f16.d16^4
 1     c4g4/a+16.f+16.d+16^4]
@@ -138,7 +139,8 @@ r     [[16 hhhh/shhh ] shss]
 */
 1    [d+%1&<g4-%1> d+%1&g4-%1 f%1&a16.-%1 d%1&f16.-%1 <a+%1&>d16^4-%1
 1     <g%1&>c4-%1 d+%1&g4-%1 / f+%1&a+16.-%1 d+%1&f+16.-%1 <b%1&>d+16^4-%1]
-1     @rd1,15 @rd- q8@q2 ffff16.ff16ff16f8
+1     @r13,2 @rd1,15 @rd-1 @q2
+1     ffff16.ff16ff16f8 
 /*
 4    d+4 d+4 f16.d16.<a+16^4
 4    g4> d+4 f+16.d+16.<b16^4>
@@ -159,11 +161,12 @@ r     [[16 hhhh/shhh ] shss]
 5                  c2
 5    l32 <
 */
-2    l8 > la%2 v- @5
-2     ["c>d+<" v-3 "g>d+<" v+2 a+ g "<a+>>d<" "f>d<" a f v+
-2      "<g+>>c<" v-3 "d+>c<" v+2 g d+ / "f+b" f+ "f>f<" f v+ ]
-2    l32  v+2
-2        @2@q2 cccc16.cc16cc16c8 < 
+2    l8 > la%2 @5 @q2 @rd-
+2     ["c>d+<" & "g>d+<" v- a+ g v+ "<a+>>d<" & "f>d<" v- a f v+
+2      "<g+>>c<" & "d+>c<" v- g d+ v+ / "f+b" v- f+ "f>f<" f v+ ]
+2    @2 @r13,2 @rd1,15 @rd-1 @q2v+ @n12 j4
+2    l32 cccc16.cc16cc16c8 <
+2    @n- v- 
 
 /*
 7   @0 l8 ([cga+g<a+>faf< g+>d+gd+/f+4f4] )c2 l32
@@ -191,11 +194,11 @@ r     [14 hhhhshhh ] sssshhss hsshssmm
 1 r4.^ cfa a+16 afa+r a16^4
 1 @2 @n- 
 1 rr-%1 cd d+fgb> d<b>cd+ gb>d<b>
-1 c<gd+c f<g+a+>c d+fg+a+> cd+fg+
+1 c<gd+c f<g+a+>c d+fg+a+> cd+fg+ 
 1 a8g24d24<a+24a4>
 1 g8f24c24<g+24g4>
-1 f8d+24<a+24f+24f4^%1
-1 v+d+v-f16.r24d+24f24d4 
+1 f8d+24<a+24f+24f4
+1 d+f16rr24d+24^%1f24d4
 
 2 @1
 2 >d2. c8c+8
