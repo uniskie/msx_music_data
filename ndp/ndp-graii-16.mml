@@ -72,10 +72,10 @@
 3 @d0,14 v15
 3 @n12 l16 fr4..gr4.. ar4..gr4.. fr4..gr4.. ar4..br4.. @n-
 3 @d- j2
-3 @4,4 s8 m- *1 o3
-3 mo2mee2&\1e2& >
-3 mo3mee4&\2e2.& > \3
-3 mo4mee2.&\4e4 << \0
+3 @4,4 s8 m- *1 o3 \0
+3 mo2mee2&\1e2& > \2
+3 mo3mee2&\0e2& > \3
+3 mo4mee2&\3e2 << \0
 3 @0,0 o2 v14 q7
 3 l16 >ge<b>af+dbgeaf+dge>e8
 

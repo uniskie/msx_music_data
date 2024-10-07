@@ -8,13 +8,13 @@
 
 #tempo 114
 
-@m0 = 26,6,3,8, 3,1
+@m0 = 26,5,3,8, 3,1
 @m1 = 26,5,2,8, 1,1
 @m2 = 4,3,2,1 
-@0 = fed:2 c:7 l d:3 c b:3 c
-@3 = FEDC:2 B:3 A:3 9:4 8:4 7:5 6:5 5:5 4:5 3:5 2:6 1:6 L0
+@0 = efedc edc:10 L d:3 c:3 
+@3 = FEDC DCBA B:2 A:3 9:4 8:4 7:5 6:5 5:5 4:5 3:5 2:6 1:6 L0
 @6 = f d b:2 a:3 9:4 0=16
-@n1 = -1 0
+@n1 = 1 0
 @n3 = 0 -3 0 
 @n4 = 0 -4 0 
 @n12 = -12 0
@@ -24,41 +24,41 @@
 ;********************************
 
 1 o3 v14
-1 @3,3 @m0 @r12,9 @d1,11
-1 @n12 v+1 
+1 @3,3 @m0 @r12,9 @q0 @d1,11
+1 v+1 
 1 [2
 1  l16 @md6
-1  d+rv-1d+v+1d+rv-1d+v+1d+r v-1d+v+1d+d+rc+rd+r<
-1  brv-1bv+1brv-1bv+1br v-1bv+1bbrbr>c+r
+1  d+rv-2d+v+2d+rv-2d+v+2d+r v-2d+v+2d+d+rc+rd+r<
+1  brv-2bv+2brv-2bv+2br v-2bv+2bbrbr>c+r
 1 ] 
 1 v-1 @d- 
 
 1 @l j1
 
 1 l8
-1 @0 @r14,18 @rd1,20
+1 @0 @r14,5 @rd1,16
 1 @m0 @n1
-1  q8 @q4
+1  @0 q8
 1  @md14d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
-1  f+8.>c+8^32@q0f32@q4f+4ed+c+ @md45d+1
+1  f+8.>c+8^32f32f+4ed+c+ @md45d+1
 ; <
 1  @m1 j5
 1  @md14d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
-1  f+8.>c+8^32f32@q0f+4@q4ed+c+ @md45d+1
+1  f+8.>c+8^32f32f+4ed+c+ @md45d+1
 ;1 <
 1 @m-
-1 @3,3 @q0 q7 @r12,10
+1 @3,3 q7 @r12,8
 1 l16 j2 @d1,12
 1 @n3 ddrdrdrdrdddddrd 
 1 @n4 d+d+rd+rd+rd+rd+d+d+d+d+rd+ 
 1 @n3 ffrfrfrfrfffffrf 
 1 @n4 ggrgrgrgrgggggrg 
 1 < j3
-1 @n- @d- @r13,20 q5
+1 @n- @d- @r13,20 q5 v-
 1 g+d+g+>c+<b a+bd+  
 1 g+d+g+>c+<b f+bd+  
 1 g+d+g+>c+<b a+b>c+
-1 j4 @r13,4 @n12
+1 j4 @r14,6 q7 @n12 v+
 1 d+d+rd+ rd+d+d+ rd+d+d+ d+d+d+d+ 
 1 <<
 
@@ -87,13 +87,13 @@
 ;2 >ddrdrdrdrdddddrd< 
 ;2 >d+d+rd+rd+rd+rd+d+d+d+d+rd+< >
 
-2 @r13,10 v+1 q5
+2 @r13,10 v+ q5
 2 g+d+g+d+ ba+ba+ 
 2 g+d+g+d+ ba+bd+ 
 2 g+d+g+d+ b>c+<ba+ 
-2 @r13,4 @0 v+1
+2 @r13,6 @0 q7 
 2  d+d+rd+ r<d+a+>d+< a+>d+ga+> d+ga+>d+<
-2 v-2 @3 q7
+2 v- @3 q7
 
 ;********************************
 ; base
@@ -109,10 +109,11 @@
 3 @7
 3; s10,1 m+ mk12 q8 @q2
 3  [[g+g+g+g+]14 g+g+d+d+ba+g+d+]2
-3 s14,48
-3  f1 d+1
-3  d1 d+1 mk12
-3  e2d+2d2 d+1
+3  s10 m+ mk0
+3;  s14,48 
+3  \-3 f1 \3 d+1
+3  \0 d1 \2 d+1 
+3  \1 e2 \-3 d+2 \3 d2 \9 d+1
 
 ;********************************
 ; rhythm 
