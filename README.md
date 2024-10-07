@@ -22,7 +22,41 @@ TO MAKE THE END OF BATTLE/Ys2/Copyright© Nihon Falcom Corporation
 
 Ending1/Sorserian/Copyright(C) Nihon Falcom Corporation
 
+# ファイルの種類
+
+演奏データ系
+
+- .BGM ... MuSICA データバイナリ
+- .MGS ... MGSDRV データバイナリ
+- .KSS ... KSSファイル。演奏用エミュレーションデータ。
+
+> KSSはdpドライバエディタも出力をサポート
+
+データソース：音色データ
+
+- .VCD ... MuSICA音色データ
+
+データソース：MML
+
+- .MSD ... MuSICA MML
+- .mml ... 特に決まっていないが大体MML
+- .MUS ... 特に決まっていないが大体MML。時々データバイナリ
+
 # 演奏方法
+
+## M3disp (KSS/MGSDRV/MuSICA/OPLLDriver/MPK/MoonBlaster)(Web Browser)
+
+https://m3.ym2413.com/
+
+ChromeやFirefoxで動作します。スマホでもどこでも扱えます。  
+ピアノロール表示などもあり、データチェックにも使用できます。  
+(スマホの場合、横画面にするとピアノロールが選べます）
+
+多様なフォーマットに対応しているのも特徴です。  
+MuSICAはMDPlayerと同じく勤労5号で演奏されます。
+
+[ndpドライバデータ](/ndp)もKSSファイルであれば演奏できます。
+
 
 ## MDPlayer (MGSDRV/MuSICA)(Windows)
 
