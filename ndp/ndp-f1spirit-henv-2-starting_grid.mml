@@ -1,8 +1,8 @@
 ;********************************************************
-#title "F1SPIRIT [Starting Grid] (START)"
+#title "F1SPIRIT (H.ENV arr.) [Starting Grid] (START)"
 ;********************************************************
 #bsave-name "F1SP-2"
-#programmer "uniskie 2024/09/19"
+#programmer "uniskie 2024/10/13"
 
 #tempo 200
 ;#timebase 18
@@ -15,14 +15,14 @@
 @n0= L 0 0 12
 @n1= L 0 0 0 -12
 
-1 v12 o4
-2 v11 o4
-3 v12 o3
+1 v13 o4
+2 v12 o4
+3 v13 o3
 123 @0 @m0
 1   c4f4  a+1 @n0 a+4>d+4g+1 &v-2[g+24&v-]12
 ;2 @2 v-9>>[a+16c16f16]8 <<v+9 @0
-2 < c4f4@n1>f1     f4a+4>d+1  &v-2[d+24&v-]12
-3 < c2 >@n1 c1  v- c4f4a+1    &v-2[a+24&v-]12
+2 < c4f4@n1>f1    f4a+4>d+1  &v-2[d+24&v-]12
+3 < s14mo3mc c2 > c1 @0@n1 v- c4f4a+1    &v-2[a+24&v-]12
 
 
 ;**** base ****

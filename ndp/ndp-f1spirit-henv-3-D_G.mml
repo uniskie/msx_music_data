@@ -1,8 +1,8 @@
 ;********************************************************
-#title "F1SPIRIT [D/G] (MACHINE SELECT)"
+#title "F1SPIRIT (H.ENV arr.) [D/G] (MACHINE SELECT)"
 ;********************************************************
 #bsave-name "F1SP-3"
-#programmer "uniskie 2024/09/14"
+#programmer "uniskie 2024/10/13"
 
 #tempo 150
 ;#timebase 24
@@ -73,7 +73,7 @@
 ;**** base ****
 
 3 o2 v14 @6 @q2 @r12,5 @rd0
-3 s10,6 m+
+3 s10,6 m+ ; ** H.ENV (TRIANGLE WAVE)
 3 @L
 3 l16
 3 [
