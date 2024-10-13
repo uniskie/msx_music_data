@@ -1,0 +1,172 @@
+;********************************************************
+#title "F1SPIRIT [Random Approach] (RALLY RACE)"
+;********************************************************
+#bsave-name "F1SP-5"
+#programmer "uniskie 2024/10/13"
+
+;#tempo 224 ;端数アリ
+#timebase 16
+
+
+@m0 = 38,4,1,8 ,3,1
+;@p1 = w3  [6 1 0_4 -1 0_4 ] L 2 1 0_2 -1 -2 0_3 ;これだと微妙
+
+; pon
+@0 = fedc dcb L a:2 9:2 8:2  
+; too
+@1 = fedc edcb L a:3 9:3 a:3 b:3
+; pin
+@2 = cf eb:2 a:3 9:4 a 8:5 l 9:4 8:4
+@n12 = -12 0
+@n2 = 12 0
+;base
+@6 = fceba 9:4 8:8 L 7:5 8:5 
+;@6 = s12r cba 9:4 8:8 L 7:5 8:5  
+;tom
+@4 = fedcba9876:2 5:2 4:2 3:2 2:2 1:3 L0
+@p2 = 64 L -24
+
+
+
+123 l8 
+
+;**** main
+
+12 v13 o4 @0 @m0
+12 @r13,4 @rd1,18
+
+12 @L
+
+12 @0 @q4
+1  l8
+1 [
+1   [br ra2 /g+ ra2..]2
+1            @1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16 v+@q4@0
+1   [dr rc2 /<b> rc c2.]2
+1            @1 e  re d4 c4< / b4 @0
+1 ]2
+1 @1@q1v- a16b16>c16<a16 v+@q4
+
+2  [g+r rf+2 /e rf+2..]2
+2             @1\1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16< v+\0@q4@0
+2  <[br ra2 /g ra a2.]2>
+2            e re d4 c4 <b4>
+2  [g+r rf+2 /e rf+4. @q1v-2<g+16a16b16>c16 <a16b16>c16<a16>v+2@q4]2
+2             @1\1>c+ rc+< b4 a4 v-@q1a+16b16>c16c+16< v+\0@q4@0
+2  [br ra2 /g ra a2.]2
+2         @1e re d4 c4
+2 @1@q1v- <f16f+16a16f16> v+@q4 
+
+1 j1
+12 [
+12  @1@q4
+1   b4.> d4. g4. d4.< b4 >d4<
+2   g4. b4. >d4.<  b4. g4 b4
+12  @0@q2
+12 /
+2   r v-2 \1
+12  [c<a> ce]2
+12  ae de ce <a>
+1               e
+2   v+2 \0
+12 ]2 j2
+2   r v-2 \1
+12  ab> ce e<a b>
+1                c 
+2   v+2
+12  @q1 ed eg ed4.<
+
+12 @0 @q2 j3
+12 a<a4 b r>c rd
+
+12 @1 @q4 
+1  @n12 >e4 d4 cd4.< @n-
+2  \0   >c4< b4 ab4. \1
+12 @0
+12  e4. d4. <a4.>
+12  e4. d4 <b4>
+
+12 @q2 
+12  c<a rb r>c rg
+
+12 @1 @q4 j4
+1 >e4 d4 cd4.<
+2  e4 d4 cd4.
+2  < \0
+12 @0
+1  e4. d4. <a4.>
+1  e4. dc <b>c
+2  <a4.> e4. a4.
+2  >c4.< ba ga
+
+12 @1
+1 <a4 b>c2^8
+1 <b4> cg2^8
+2 f4 ga2^8
+2 g4 a>d2^8
+
+12 @2@q2 j5
+1 ra g+g rf+ fe
+1 rd+ dc+2^8
+2 re d+d rc+ c<b
+2 ra+ ag+2^8>
+
+
+;**** base ****
+
+3 o2 v13 @6 @q0 @r12,2 @rd0
+3 s10,3  @q1
+;3 m+ mk12
+
+3 @L 
+
+3 [ef+> c+<b ag+ f+e]3
+3 ef+ f+g+ g+a ab
+3 [g+a aa aa aa]3
+3 g+a b>c+< ba f+>c+<
+3 [ef+> c+<b ag+ f+e]3
+3 ef+ f+b ba ae
+3 [g+a aa aa aa]3
+3 g+a aa a+16b16>c16c+16 d16d+16e16f16
+3 [[fg gf gg fg]2
+3 /[ga ag a/a ga]2
+3  >d+16c+16 c16<a+16g+16g16]2
+3 ef ff ff ff
+3 fg gg gg gg
+3 [ga aa aa aa
+3  ga aa a>c< ag
+3  ef ff ff ff
+3  fg gg /ga bg]2
+3 >d<b ag
+3 ef ff fg af
+3 fg gg ga bg
+3 a a g+g rf+ fe
+3 rd+ dc+2^8
+
+
+;**** drum
+
+@R:B = *3 :980 N0 V14 / *1 :2000 V12
+;@R:S = *1 :540 V15 / *3 :700 N1 V14 / *2 N0 V13 / V12
+@R:S = *1 :540 V15 / *2 :700 N1 V14 
+@R:H = *3 :20 N0 V12
+@R:O = *3 :21 N0 V12 / V11 / v10
+;@R:K = *3 :450 N8  V15 / *1 :500 V14 / :550 V13
+;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
+;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
+
+r v14 @rc2
+r l8 
+
+r @L
+
+r [[bh sh bb sh]3 bh s/b hb sb ]2
+r b16b16 hb16b16 bs16s16
+r [[bh sh bb sh]3 bh s/b hb sb ]2
+r                      b16b16 hs16s16 b16b16s16s16
+r [[bh sh bb sh bh s/b hb sh]4
+r                    b16b16 hs16s16 b16b16s16s16]2
+r bh sh bb sh
+r bh sb hb sh
+r [bs ss]3 [s16]8
+
