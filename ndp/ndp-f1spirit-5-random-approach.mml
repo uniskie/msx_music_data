@@ -37,25 +37,29 @@
 
 12 @L
 
-12 @0 @q4
+12 v-
+
+12 @0 @q4 
 1  l8
 1 [
 1   [br ra2 /g+ ra2..]2
-1            @1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16 v+@q4@0
+1         @1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16 v+@q4@0
 1   [dr rc2 /<b> rc c2.]2
-1            @1 e  re d4 c4< / b4 @0
+1          @1 e  re d4 c4< / b4 @0
 1 ]2
 1 @1@q1v- a16b16>c16<a16 v+@q4
 
 2  [g+r rf+2 /e rf+2..]2
-2             @1\1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16< v+\0@q4@0
+2        @1\1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16< v+\0@q4@0
 2  <[br ra2 /g ra a2.]2>
-2            e re d4 c4 <b4>
+2         @1 e re d4 c4 <b4> @0
 2  [g+r rf+2 /e rf+4. @q1v-2<g+16a16b16>c16 <a16b16>c16<a16>v+2@q4]2
-2             @1\1>c+ rc+< b4 a4 v-@q1a+16b16>c16c+16< v+\0@q4@0
+2        @1\1>c+ rc+< b4 a4 v-@q1a+16b16>c16c+16< v+\0@q4@0
 2  [br ra2 /g ra a2.]2
-2         @1e re d4 c4
+2        @1 e re d4 c4 
 2 @1@q1v- <f16f+16a16f16> v+@q4 
+
+12 v+
 
 1 j1
 12 [
@@ -75,6 +79,8 @@
 1                c 
 2   v+2
 12  @q1 ed eg ed4.<
+
+12 v-
 
 12 @0 @q2 j3
 12 a<a4 b r>c rd
@@ -98,6 +104,8 @@
 1  e4. dc <b>c
 2  <a4.> e4. a4.
 2  >c4.< ba ga
+
+12 v+
 
 12 @1
 1 <a4 b>c2^8

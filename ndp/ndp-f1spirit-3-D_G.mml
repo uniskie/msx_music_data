@@ -7,42 +7,48 @@
 #tempo 150
 ;#timebase 24
 
-@m0 = 32,4,3,8
+@m1 = 10,4,4,0
+@m0 = 28,4,3,8
 
-@0 = fd ec:2 L b:3 a:3 9:3
-@2 = cfd ec db cba 9:3 8:4 7:5 6:6 5:7 4:8 5 3:9 2:10 3 1:11 L 0
+@0 = fd ec d L b:3 a:3 9:3
+@1 = cfdb db9 L b:2 a:2 9:2
+@2 = fdb:2 ec L a:3 9:3
 @6 = fc9 8:8 7:8 6:9 5:9 4:10 3:10 2:10 1:10 0
-
-@n0 = -12 0
 
 ;**** main
 
 1 v12 o4
-1 @L
-1 @m0,1 @q0 @d1,12
-1 l16
-1 @2 @n0
+2 v12 o4 
+
+12 @L
+
+12 @d1,11 @m1,1 
+1 @1 @r12,6 q
+2 @2 @r12,6 q4
+
+12 l16
+
 1 [ra8. arg+r arg+a rbra8
-1  a8r arg+r arg+/a rg+rf+]2
+1   a8r arg+r arg+/a rg+rf+]2
 1                 a rb8r
-1 j1
-1 @0 @n- @q0 @d- 
-1 f+2& f+8ag+ abed
-1 ag+ed2& d8> dre4.
-1 d+d<b> de<b>d< bf+a+f+
-1 af+gg+ aa+b>e< ag+ed& d4
 
-;**** sub
-
-2 v10 o4 
-2 @L
-2 @r11,6 @q0 @rd1,16 @m0 @n0
-2 l16
-2 @2
+/*
 2 >rere er<er er>ee r<ere
 2 rere erer er>ee r<err
 2 rere erer er>ee r<ere
 2 rere erer er>ee r<err
+*/
+
+2 [r<a8>>e< <ar>>e<r <ar>>ee< r<br>>e<
+2  r<a8>>e< <ar>>e<r <ar>>e/e  re<<rf+>]2
+2                           e< r<b8>r
+
+1 j1
+1 @0 @m0 @n- @d- q
+1 f+2& f+8ag+ abed
+1 ag+ed2& d8> dre4.
+1 d+d<b> de<b>d< bf+a+f+
+1 af+gg+ aa+b>e< ag+ed& d4
 
 /*
 ; sequence ver
@@ -55,19 +61,19 @@
 
 ;/*
 ; echo ver.
-2 @0 \1 @rd- @q0 @n-
-2 r8
+2 @0 @m0 @n- @d- q
+2 r8 \2 v-2
 2 f+2& f+8ag+ abed
 2 ag+ed2& d8> dre4.
 2 d+d<b> de<b>d< bf+a+f+
 2 af+gg+ aa+b>e< ag+ed& d8
-2 > \0
+2 > \0 v+2
 ;*/
 
 ;**** base ****
 
-3 o2 v14 @6 @q1 @r12,5 @rd0
-3 s14,4 m+
+3 o2 v14 @6 @q2 @r12,5 @rd0
+3 s10,6 m+
 3 @L
 3 l16
 3 [
@@ -78,7 +84,7 @@
 
 ;**** drum
 
-@R:B = *3 :920 N1 V14 / *1 :2000 V12
+@R:B = *3 :920 N0 V14 / *1 :2000 V12
 ;@R:S = *1 :540 V15 / *3 :700 N1 V14 / *2 N0 V13; / V12
 @R:S = *1 :540 V15 / *2 :700 N1 V14 
 @R:H = *3 :20 N0 V12
