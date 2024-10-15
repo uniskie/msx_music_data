@@ -1,6 +1,6 @@
-#TITLE "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV]"
+#TITLE "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std]"
 #PROGRAMMER "uniskie 2014/10/1"
-#BSAVE-NAME "SOMD1-01"
+#BSAVE-NAME "SOMD1_01"
 
 ;#TEMPO 75
 #TIME-BASE 48
@@ -51,14 +51,14 @@
 ;==== MACRO ====
 
 ; SQUARE BASE
-;$base = @6 @q0
-;$base2 = @7 @q0
-;$base3 = @7 @q0
+$base = @6 @q0
+$base2 = @7 @q0
+$base3 = @7 @q0
 
 ; TRIANGLE BASE
-$base  = s10,5 m+ mk0 @q0
-$base2 = s8,1 m+ mk0 @q1
-$base3 = s10 m+ mk0 @q1
+;$base  = s10,5 m+ mk0 @q0
+;$base2 = s8,1 m+ mk0 @q1
+;$base3 = s10 m+ mk0 @q1
 
 ;==== SCORE ====
 
