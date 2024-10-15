@@ -2,8 +2,6 @@
 #PROGRAMMER "uniskie 2014/09/22"
 #BSAVE-NAME "SOMD1-01"
 
-; メインベースがH.ENV三角波だと他のシーンに負けるので矩形波に戻した
-
 ;#TEMPO 75
 #TIME-BASE 48
 
@@ -11,7 +9,7 @@
 
 ;==== RHYTHM VOICE ====
 ;@R:B = *3 :920 N1 V14 / *1 :2000 V12
-@R:S = V15 *1 :480 N3 / V14 *2 N4 ;/ V13 N1 *3 :520 / V12 :590
+@R:S = V15 *1 :480 N4 / V14 *2 N3 ;/ V13 N1 *3 :520 / V12 :590
 @R:H = *3 :20 N0 V15                               ;-- Close Hi-hut
 ;@R:E = *3 :920 N0 V15 / *1 :2000 V12              ;-- Close Hi-hut + Bass drum
 ;@R:O = *3 :21 N0 V15 / N1                         ;-- Open Hi-hut
@@ -25,9 +23,9 @@
 ; lead
 @1 = bdfedc:2 edc:2 L b:3 c:3
 ; brass 
-@2 = e fed:4 c:4 edc:4 b:4 dcb:4 a:4 L c:3 b:4 a:4
+@2 = fe d:4 c:4 edc:4 b:4 dcb:4 a:4 L c:3 b:4 a:4
 ; echo electone
-@3 = fedc:2 b:2 edc:2 b:2 dcb:2 a:2 L b:2 a:2 9:2 8:2
+@3 = fedcb:3 edcb3 dcba:3 L b:2 a:2 9:2 8:2
 ; tril piano
 @5 = {fed:2 c:2 d:2 c:2  ;edc:2 b:2 c:2 b:2
       dcb:2 a:2 9:2 8:2 L b:2 a:2 9:2 a:2 }
@@ -41,8 +39,9 @@
 
 ;==== PITCH VIBRATO ====
 ;@mdで開始ディレイを上書きできる(@m定義パラメータ自体を書き換えるので複数chでの使用時は注意)
-@m0 = 38,4,1,8 ,3,1
+@m0 = 36,4,1,8 ,3,1
 @m1 = 38,5,1,8 ,4,1
+@m2 = 28,4,1,8 ,4,1
 
 ;==== NOTE ENVELOPE ====
 @n0 = L 0 0 0 12 12 12
@@ -52,12 +51,12 @@
 ;==== MACRO ====
 
 ; SQUARE BASE
-$base = @6 @q0
+;$base = @6 @q0
 ;$base2 = @7 @q0
 ;$base3 = @7 @q0
 
 ; TRIANGLE BASE
-;$base  = s14,5 m+ mk0 @q1
+$base  = s10,5 m+ mk0 @q0
 $base2 = s8,1 m+ mk0 @q1
 $base3 = s10 m+ mk0 @q1
 
@@ -131,16 +130,16 @@ r     [[16 hhhh/shhh ] shss]
 
 3 j2
 
-1   @2 @q3 @r13,3 @rd1,20 
-/*
+1   @2 @q3 @r13,3 @rd1,20 @m2
 1    [<g4>g4a16.f16.d16^4
 1     c4g4/a+16.f+16.d+16^4]
 1          @rd1,15 @rd- @q2 ffff16.ff16ff16f8
-*/
+/*
 1    [d+%1&<g4-%1> d+%1&g4-%1 f%1&a16.-%1 d%1&f16.-%1 <a+%1&>d16^4-%1
 1     <g%1&>c4-%1 d+%1&g4-%1 / f+%1&a+16.-%1 d+%1&f+16.-%1 <b%1&>d+16^4-%1]
 1     @r13,2 @rd1,15 @rd-1 @q2
 1     ffff16.ff16ff16f8 
+*/
 /*
 4    d+4 d+4 f16.d16.<a+16^4
 4    g4> d+4 f+16.d+16.<b16^4>
@@ -161,9 +160,9 @@ r     [[16 hhhh/shhh ] shss]
 5                  c2
 5    l32 <
 */
-2    l8 > la%2 @5 @q2 @rd-
-2     ["c>d+<" & "g>d+<" v- a+ g v+ "<a+>>d<" & "f>d<" v- a f v+
-2      "<g+>>c<" & "d+>c<" v- g d+ v+ / "f+b" v- f+ "f>f<" f v+ ]
+2    l8 > la%3 @5 @q2 @rd-
+2     ["c>d+<"   & v- "g>d+<" a+ g v+ "<a+>>d<" & v- "f>d<" a f v+
+2      "<g+>>c<" & v- "d+>c<" g d+ v+ / "f+b" v- f+ "f>f<" f v+ ]
 2    @2 @r13,2 @rd1,15 @rd-1 @q2v+ @n12 j4
 2    l32 cccc16.cc16cc16c8 <
 2    @n- v- 
@@ -187,7 +186,7 @@ r     [14 hhhhshhh ] sssshhss hsshssmm
 
 
 ;--- last
-1 @2 @q2 @n1
+1 @2 @q2 @n1 @m2
 1 <
 1 r4.^ dga+>c16<a+g>cr<a+16^4
 1 r4.^ dga+>c16< a+g>cr<a+16^4
@@ -195,11 +194,11 @@ r     [14 hhhhshhh ] sssshhss hsshssmm
 1 @2 @q3 @n- 
 1 rr-%1 cd d+fgb> d<b>cd+ gb>d<b>
 1 c<gd+c f<g+a+>c d+fg+a+> cd+fg+
-1 @q2 
+1 @q1
 1 a8g24d24<a+24a4>
 1 g8f24c24<g+24g4>
 1 f8d+24<a+24f+24f4
-1 d+f16rr24d+24^%1f24d4
+1 d+fr16r24d+24r%1f24d4
 
 2 @1
 2 >d2. c8c+8
