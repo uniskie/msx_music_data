@@ -1,0 +1,37 @@
+#title "ちくわ帝国 コンペ曲 うにすきー版"
+
+#tempo 150
+
+1 o3 s10 m+ @q3
+1 l8
+1 @l
+1 g+g+rg+d+d+rd+ g+g+rg+[d+]4
+1 a+a+ra+ffrf a+a+[f]6 
+1 d+d+rd+<a+a+ra+> d+d+rd+<[a+]4> 
+1 d+d+rd+<a+a+ra+> d+<a+>cdd+fgd+
+
+1 g+g+>g+<g+d+d+>d+<d+ g+g+>g+<g+[d+]4
+1 a+a+>a+<a+ff>f<f a+a+[f]6 
+1 d+d+>d+<d+<a+a+>a+<a+> d+d+>d+<d+<[a+]4> 
+1 d+d+>d+<d+<a+a+>a+<a+> d+<a+>cdd+fgd+
+
+2 o4 v13 @0 @r12,3 @rd1,30 q6
+2 l8
+2 @l
+
+2 c4.d+2c g+g+4f2d+
+2 f4g+4a+2 >cc4<a+2f
+2 d+ed+fa+fd+e d+>c<ba+&a+2
+2 >c4<b4a+4g+4 d+fefg+2
+
+2 j1
+2 c4d+fcrd+f ccd+c a+fed+
+2 c4efd+e4f& f2. r4
+2 d+4.e4.g+4 a+4.b4.>c4<
+2 >c2<b2 a+f4e4.d+4
+
+r v15 @rc3
+r l8
+r @l
+r [bbsh bbss]15
+r bhsh ssss
