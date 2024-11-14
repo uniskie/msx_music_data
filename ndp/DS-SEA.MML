@@ -1,0 +1,91 @@
+;********** DRAGON SPIRIT *************
+;             -- SEA --
+;**************************************
+FM1 =T,FM1,A0,a1
+FM2 =T,FM1,B0
+FM3 =T,FM1,C0
+FM4 =T,FM4,a0
+FM5 =T,FM5,E0/64
+FM6 =T,FM6,F0/6,F1,F0/15,F1,F0/15,F1,F0/15,F1,F0/8,F2
+FMR =T,FMR,G1/6,G2,G1/6,G2,G1/6,G2,G1/6,G2,G1/6,G2,G1/6,G2,G1/6,G2,G1/6,G3
+FM7 =
+FM8 =
+FM9 =
+PSG1=T,PS1,D0,D1,D0,D2,D0,D1,D0,D2,D0,D1,D0,D2,D0,D1,D0,D2
+PSG2=T,PS2,D0,D1,D0,D2,D0,D1,D0,D2,D0,D1,D0,D2,D0,D1,D0,D2
+PSG3=T,PSR,H1/6,H2,H1/6,H2,H1/6,H2,H1/6,H2,H1/6,H2,H1/6,H2,H1/6,H2,H1/6,H3
+SCC1=
+SCC2=
+SCC3=
+SCC4=
+SCC5=
+
+T=T140
+
+R2=R2
+
+;****** KEY BORD
+
+FM1=@61 V12 O5 M4
+fm4=@61 v11 o5 m4 r8.z20
+
+1 l8 e2.e(d d1 d1 )d1
+1 d2.d(c c1 c1 )c1
+1 e2<g>ce(d d1 d1 )d1
+1 d2<fb->d(c c1 c1   )c2
+1 l16cdefdefg
+
+2 l8c2.c<(b- b-1 b-1 )b-1
+2 b-2.b-(g g1 g1 )g1
+2 >c2<g>ce<(b- b-1 b-1 )b-1
+2 b-2fb->d<(g g1 g1 )g2
+2 l16>cdefdefg
+
+3 l8<g2.g(f f1 f1 )f1
+3 f2.f(e e1 e1 )e1
+3 g2g>ce<(f f1 f1 )f1
+3 f2fb->d<(e e1 e1 )e2
+3 l16efgafgab
+
+;****** ARP.
+
+ps1=@24 v10 o5
+PS2=@24 V11 O5 z10
+
+3 L16
+3 C<CC>C<CCC>C<C>CC<C>CC<C>C
+3 C<CCCC>CCC<CC>CC<CC>CC
+3 C<CCCC>CCC<<C>C>C>C<<<C>C>C>C<
+
+;****** BELL
+
+FM5=@14 V12 O7 M3I40 Q6S1
+ps3=@24 v9 o7 m2i40 q4z10
+
+E0=C4
+
+;****** BASS
+
+FM6=@33 V14 O3 Q4S1 Z20
+
+F0=C8R8
+F1=L16CCR8
+F2=C4
+
+;****** RYTHUM
+
+FMR=V15Vs13
+    Y38,5 Y22,36  ;B
+    Y39,4 Y23,167 ;H S
+    Y40,4 Y24,60  ;C M
+PSR=V10L16
+
+G0=B16MSB16MSB16MSB16MSB8MSB8
+H0=R@7DDDD8D8
+G1=B4
+H1=R4
+G2=B8B8Msb4
+H2=R4@7D4
+G3=y23,187y24,80B16MsB16sMB16sMB16sMB16sMB16y23,167y24,60sMB8
+H3=@6RDDDDD@7D8
+
