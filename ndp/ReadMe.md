@@ -46,6 +46,9 @@ https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/maste
 ndp-dragon-spirit-sea.kss  
 https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dragon-spirit-sea.kss
 
+ndp-dragon-spirit-area1-The_Paleozoic_Era.kss  
+https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dragon-spirit-area1-The_Paleozoic_Era.kss
+
 ndp-dragon-spirit-zawel.kss  
 https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dragon-spirit-zawel.kss
 
