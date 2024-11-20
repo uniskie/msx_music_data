@@ -1,59 +1,63 @@
 #title "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
 #bsave-name "DRSP-AR1"
-#programmer "uniskie 2024/11/15"
+#programmer "uniskie 2024/11/22"
 
-#tempo 182
+#tempo 180
 
 @R:A = *1 :18 V12 / :1650 N0 V13 / :2200 V12
 @R:B = *3 :850 N2 V13 / *1 /* b:1280 V14 */ :2200 V13
 ;@R:S = *3 :520 N2 V15 / *2 N1 V14 / *1 :670 V13 / :820 V12 / :970 v11
 @R:H = *3 :20 N0 V12
 @R:C = *3 :21 N1 V12 / V11 / v10
-@R:K = *3 :420 N2 V15 / *1 /* :480 V14 */ :550  V13 / :620 V12
-@R:M = *3 :550 N3 V15 / *1 /* :600 V14 */ :700  V13 / :850 V12
-@R:N = *3 :700 N4 V15 / *1 /* :850 V14 */ :1000 V13 / :1450 V12
+@R:K = *3 :420 N2 V15 / *1 /* :480 V14 */ :550  V14 / :620  V13
+@R:M = *3 :550 N3 V15 / *1 /* :600 V14 */ :700  V14 / :850  V13
+@R:N = *3 :700 N4 V15 / *1 /* :850 V14 */ :1000 V14 / :1450 V13
 
 ;lead
-@0 = c d:16 e:16 d:16 c:32 L b:3 d:3 c:3 
-;long tone
-@1 = { fed ed:2 c:2 dcb:2 a:2
-        c:8 b:16 a:32,
-      l 9:3 b:3 a:3,
-     ;  c:3 b:6 a:8, 9:16 8:40 7:80 6:100 5:120 4:140 3:160 2:180 1:200 0,
+@0 = e d:12 e:16 d:16 c:34 L b:4 a:4 c:4
+;guitar
+@1 = { efed edc dcb 
+		ed:2 c:2 b:2,
+        c:8 b:16 a:34,
+      l 9:4 b:4 a:4,
      }
-;piano echo
-@2 = { fedc ,
-     ; e d:2 c:3 b:4,
+;xylophone
+@2 = { efedc ,
+     ;   e d   c   b,
        d c:2 b:3 a:4,
-       c:2 b:3 a:4 9:5,
+     ;  c:2 b:3 a:4 9:5,
        b:3 a:4 9:5 8:6,
-       a:4 9:8 8:8,
-       9:4 8:8 7:8       8:4 7:8 6:8,
-       7:4 6:8 5:8       6:4 5:8 4:8,
-       5:4 4:8 3:8       4:4 3:8 2:8,
-       3:4 2:8 1:8       2:4 1:8 0 }
-       
-;click tone
-@3 = fedcb:2 a:8 9:54 l a:2 9:2 8:2
+       a:4 [2 9:4 8:8], 
+       9:4 [2 8:4 7:8].  8:4 [2 7:4 6:4],
+       7:4 [2 6:4 5:4],  6:4 [2 5:4 4:4],
+       5:4 [2 4:4 3:4],  4:4 [2 3:4 2:4],
+       3:4 [2 2:4 1:4],  2:4 [2 1:8 0:8], }
+
+;guiter cutting
+@3 = fedcb dcba cba98 a:55 l b:4 a:4 9:4
+
+;wind chimes
+@4 = { f edcba dcba9 cba98 a987 l 8:2 7:2 6:2
+ }
 
 ;fade in
-@4 = 0a=40 f=30 e:40 d:40 c:40
+@9 = 0a=40 f=30 e:40 d:40 c:40
 
 ;base
 @6 = fecba 
 ;@6 = fecb:2 a:4 9:6 8:8 7:10 6:12 5:15 4:20 3:20 2:20 1:20 0 
 
 
-@m0 = 45,5,1,8, 1,2
+@m0 = 54,5,1,8, 1,3
+@m1 = 2,4,4,8
+@m2 = 2,4,4,8
 
-$cong1 = {
-    g>c ec ef ec< g>c ec ef ec<
-    g>c ec ef ec< g>c ec ef ec&
-    c<a> ce ge c<a4 a> ce ge c<a
-    }
-$cong2 = {
-    fa> ed4 c< b>c c<b g>c< bg> c<g
-    }
+$congs = @2 v-2
+$conge = v+2
+$cong1 = g>c ec ef ec< g>c ec ef ec<
+$cong2 = g>c ec ef ec< g>c ec ef ec&
+$cong3 = c<a> ce ge c<a4 a> ce ge c<a
+$cong4 = fa> ed4 c< b>c c<b g>c< bg> c<g
 
 $base1={
   ccc<c> ccc>c< cc<cc> c>c<gc<
@@ -65,15 +69,16 @@ $base1={
 ;==== main ====
 
 123 l8
-12 la24 @as1 @r13,2 @rd1,30 
+12 la32 @as1 @r12,1 @rd1,30 
 
 ; **** intro
-12 o2 v13 @4
+12 o2 v13 @9
 2 \-3 
-12 a1 ^4
+12 v+1 a1 ^4
+12 v-1
 12 @1\0
 1 >b-aa-gf+f
-2 >>fed+dc+c&
+2 >>fed+dc+c
 
 12 o3 @0 @m0
 12 v13 @f0
@@ -82,7 +87,7 @@ $base1={
 
 ; **** A part
 1 j1
-2  \2v-3 c4
+2  \2v-3 r4
 12 @0 @r11,2
 12 l4
 12 g1 ^4> cde d1 ^2^8f8e8f8
@@ -90,7 +95,7 @@ $base1={
 12 g1^ 4>gfe d1
 12 l8defgefga >c1^ 2<ed
 1                      ef
-12 @1
+12 @1 j2
 2  \0 v+3
 1  l4ab>cd c<bab @0v-2 a4&v+ a4&v+ a1.
 2  l4cd ef e dcd @0v-2 e4&v+ e4&v+ e1.&
@@ -99,7 +104,7 @@ $base1={
 1 j2
 12 [
 12  @1
-2   \2v-3 e4
+2   \2v-3 r4
 12  e%4e2-%4d%4d2-%4 c%4c2-%4d4e4^ 8<a2..^ 1>
 12  @2
 12  l8>rec<a>d<bgd er>c<aebg4 d1 ^1
@@ -110,14 +115,12 @@ $base1={
 2   \0v+3
 12  @2 @q2 @rd1,30
 1   ffr4. ccc  eer4. cc16c16c
-2   ccr4.<ccc> ccr4.<cc16c16c>
+2   r%1ccr4.<ccc> ccr4.<cc16c16c8-%1>
 12  @rd- q
 
 12 /
 
 ; **** C part
-1 j3
-
 ;12   @2
 ;1   c4.< b4.> c4& c1  d4. c4. d4& d1
 ;2   e4. d4. e4& e1    f4. e4. f4& f1
@@ -126,34 +129,34 @@ $base1={
 
 1   @1 
 1   e%4e4.-%4d4.e4^ 1 f4.e4.f4^ 1
-1   e%4e4.-%4d4.e4^ 1 e1 <>d1 
+1   e%4e4.-%4d4.e4^ 1 e1 d1 
 
-2   @2 @q2 v-1 $cong1:$cong2: v+1
+2   $congs: $cong1:$cong2:$cong3:$cong4: $conge:
 
 
 ; **** D part
-1 j4
-1   @2 q
-1   <"gc">ce<gb>d"ec"4^ 1
-1   <"b-d">df<b->cefd <b->d<b->d"fd"2
-1   <"a>c<">ce<ab>d"ec"4^ 1
-1   <"a>c<">cec<a>ec<a "g<a>"b>d<bg>dgb
+1   @2 v-1
+1   <g>ce<gb>de4^ 1
+1   <b->df<b->cefd <b->d<b->df2
+1   <a>ce<ab>de4^ 1
+1   <a>cec<a>ec<a gb>d<bg>dgb
+1   v+1
 ;2   @3 @q2
 ;2   "cg"4."cg"4."cg"4^ 1 
 ;2   "b-d"4."b-d"4."b-d"4 ^1
 ;2   "ac"4."a<b>"4."ac"4^ 1
 ;2   "fc"4."fc"4."fc"4 "g<b>"4."g<b>"4."gd"4
 
-2   @2 @q2 v-1 $cong1:$cong2: v+1
+2   $congs: $cong1:$cong2:$cong3:$cong4: $conge:
 
+1 j4
 ; **** E part
-1 j5
-1   @1 @q0
-2   @3 @q0
-1   ragede4c^ 8d4e<a4>cd <b->dagcb-ae e_b-16b-_>c16&c2^8<cd
-2   r4"ce"r4"ce"4r r4"ce"r4"ce"4r r4"df"r4"df"4r r4"df"r4"fa"4r r4"ce"r4"ce"4r
-1   e4.d4a4g^ 8ga4c4.e d1 f_>c16c_d16&d2.^8<
-2   r4"ce"r4"ce"4r "df"4."fa"4.>"ce"4 "<b>d"4."<a>c"4."<b>d"4<
+1   @0  
+2   @3 
+1   ragede4c^ 8d4e<a4>cd <b->dagcb-ae e_b-8&b-_>c8&c2<cd
+2   r4"ce"r4"ce"4r r4"ce"r4"ce"4r r4"df"r4"df"4r r4"df"r4"fa"4
+1   e4.d4a4g^ 8ga4c4.e d1 @m1 f+_>c8&c_d8&d2. < @m0
+2   r r4"ce"r4"ce"4r r4"ce"r4"ce"4r "df"4."fa"4.>"ce"4 "<b>d"4."<a>c"4."<b>d"4<
 
 ; **** F part
 1   c4.g4.a4^ 8e4.gd4. e4.f4.e4^ 8f4.e4f4
@@ -163,71 +166,85 @@ $base1={
 2   r4"ce"r4"ce"4r r4"ce"r4"ce"4r
 1   fg> ed4 c< b>c d4.< b4. b_>f16&f_g16&g8 ;o5
 ;2   fg< fd4> c< b>c d4.< b4.> g4
-2    "<a>c"1 "<b>d"1
+2    "<a>c"1 "<b>d"2.g4
 
 ; **** G part
-1   @2 @q2
-2   @3 @q2
-1   edcdr<arb_>c12&c24 ^4 <<ga>dedc
+2   @2 v+1
+1   edcdr<arb_>c8& c4 <<ga>dedc
 2   "ce"4."<b>d"4. "<a>c"4^ 1>
-2   @1
-1   e4. d4. c4 d4. c4. d4>
+2   v-2
+1   e4. d4. c4 d4. c4. d4> 
 2   ag eg4 e d4 ed cd4 c< a4>
-1   d+_e12&e4^24 a4. g4 e4. d4. e4
-2   a1& a1
-12  q
+1   d+_e8&e4 a4. g4 e4. d4. e4
+2   a1& a1<
+2   v+1
+12  @2  
 1   fe ff4 e f4 g<g ab> cd ef< ;o4
-2   dd dd4 d d4 e<e fg ab> cd ;o4
+2   dd dd4 d d4 e<e fg ab> cd< ;o4
 
+1 j3
 ; **** H part
-1   @2 @q2
-2   @3 
-1   eceg>ceg>c ec<gec<gec
-2   <<"gc"4.> "gc"4.> "cg"2 "cg"4.< "cg"4.<
-1   adab->dab->d ad<b-ad<b-ad
-2   "b->b-<"4.> "b-"4.> "b-<b->"2 "b-<b->"4.< "b-"4.<
-1   ecea>cea>c ec<aec<aec
-2   "a>a<"4.> "a"4.> "a<a>"2 "a<a>"4.< "a"4.<
-1   efa>cefa>c <<dgb>dgb>dg< ;o5
-2   "fa">f4.>"<f>e"4.> "<<f>>c" <<<"g>g<">"g"4.> "g<g>"4.> "g<<g>>"< ;o5
+1   @2 v-1
+2   @2 v-4 \1 
+1    e
+2    c4
+12    ceg>ceg>c ec<gec<gec
+1    a
+2    d
+12    dab->dab->d ad<b-ad<b-ad
+12   ecea>cea>c ec<aec<aec
+12   efa>cefa>c <<dgbd>gbd>
+1                           g<;o5
+1   v+1
+2   v+4 \0
+
+;2   $congs: $cong1:$cong2:$cong3:$cong4: $conge: >
 
 ; **** I part
 
-1   @3 q @rd1,20
-;2   @3 q @rd1,20
-1   l8 e"ec" <g>r "ec"<g> r"ec" r"ec" <g>r "ec"<g> r"ec"
+1   @2 q @rd1,20 v-1 \-1
+;2   @2 q @rd1,20 v-1 \-1
+1   l8 r"ec" <g>r "ec"<g> r"ec" r"ec" <g>r "ec"<g> r"ec"
 ;2   l8 rc4 r c4 rc rc4 r c4 rc
-1   d"fd" <b->r "fd"<b-> r"fd" r"fd" <b->r "fd"<b-> r"fd"
+1   r"fd" <b->r "fd"<b-> r"fd" r"fd" <b->r "fd"<b-> r"fd"
 ;2   rd4 r d4 rd rd4 r d4 rd
-1   c"ec" <a>r "ec"<a> r"ec" r"ec" <a>r "ec"<a> r"ec" ;o5
+1   r"ec" <a>r "ec"<a> r"ec" r"ec" <a>r "ec"<a> r"ec" ;o5
 ;2   rc4 r c4 rc rc4 r c4 rc& ;o5
 
-2   v-1 @2 @q2 < $cong1: q v+1
+2   < $congs: $cong1:$cong2:$cong3: $conge:
 
-1   @1 @rd-
-2   @1 @rd-
-1   e4. d4. c4 d4. c4. d4 ;o5
-2   c4.<b4. a4 b4. a4. b4> ;o4
-;1   "ec"4. "d<b>"4. "c<a>"4 "d<b>"4. "c<a>"4. "d<b>"4 ;o5
-;2   v-1 @2 @q2 $cong2: q v+1
+1   v+1
+1    @2 @rd- \0
+;2   @2 @rd- \0
+;1   e4. d4. c4 d4. c4. d4 ;o5
+;2  c4.<b4. a4 b4. a4. b4> ;o4
+1   c%1e4.-%1 <b%1>d4.-%1 <a%1>c4-%1 d4. c4. d4 ;o5
+2   $congs: $cong4: $conge:
 
 
-
+1 j5
 ; **** J part
-1   @3 q
-1   "gc"<"fc">"ec"<"fc">"gc"<"dc">"ec"<"gc">
-1   "gc"<"gc">"ec""ec""fc"<"fc">"dc""ec"
+1   @4 v-2 \-1 @m2
+;2   @4 v-2 \-1 @m2
+1   g <f >e <f >g <d >e <g >g <g >e  e  f <f >d  e  ;o5
+;2   c <c >c <c >c <c >c <c >c <c >c  c  c <c >c  c  ;o5
+;1   "gc" <"fc" >"ec" <"fc" >"gc" <"dc" >"ec" <"gc" >"gc" <"gc" >"ec"  "ec"  "fc" <"fc" >"dc"  "ec" ;o5 
 
-1   "fd""ec"<"fd">"fd""ec"<"af""ec""fd"
-1   "ge""f<a>""ge""af""bg">"c<a>""d<b>""ec"&
+1   f  e <f >f  e <a  a  e  a  f  g  a  b >c  d  e& ;o5
+;2   d  c &c  d  c &c <d &a  e  d  e  f  g  a  b >c& ;o5
+;1   "fd"  "ec" <f >"fd"  "ec" <a  "ad"  e  "ae"  "fd"  "ge"  "af"  "bg" >"c<a>"  "d<b>"  "ec"& ;o5
 
-1   "ec""ec"<"g>e<"4>"ec""g>g<"&g"ec"
-1   "ec"4<"g>g<">g"ec"<g>"ec"4
+1   e  e <g &g >e  g &g  e &e  e <g >g  g <g >g &g  ;o5
+;2   c  c &c &c  c &c &c  c &c  c <g &g >e &e  e &e  ;o5
+;1   "ec"  "ec" <"g>c<" &"g>c<" >"ec"  "gc" &"c"  "ec" &"ec" "ec" <g >"g<g>"  "ge" <"g>e<" >g &"ge"  ;o5
 
-1   "ec"<"f>g<""a>f<">"ec""f<a>"<"a>f<">"ec"<"fa"
-1   "bg""fa""bd""fd""bd">"fd""db""bg"
+1   e  g <a >e <f  a >e <f >d <f  b >d  f  g  b  b  ;o5
+;2   c <f  r >c &c &c  c &c <b &d &g &b  f&>d  d &g  ;o5
+;1   "ec"  "g<f>" <a >"ec" <"fc"  "ac" >"e<c>" <"fc" >"d<b>" <"fd"  "bg" >"d<b>"  "f<f>"  "gd"  "bd"  "bg"  ;o5
+1   v+2 q \0 @n- @m0
+;2   v+2 q \0 @n- @m0
 
-2   @2 @q2 v-1 $cong1:$cong2: v+1
+2   $congs: $cong1:$cong2:$cong3:$cong4: $conge:
 
 12  ] 
 
