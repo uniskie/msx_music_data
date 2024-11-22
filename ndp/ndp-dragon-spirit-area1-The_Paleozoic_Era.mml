@@ -1,6 +1,6 @@
 #title "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
 #bsave-name "DRSP-AR1"
-#programmer "uniskie 2024/11/22"
+#programmer "uniskie 2024/11/23"
 
 #tempo 180
 
@@ -14,11 +14,11 @@
 @R:N = *3 :700 N4 V15 / *1 /* :850 V14 */ :1000 V14 / :1450 V13
 
 ;lead
-@0 = e d:12 e:16 d:16 c:34 L b:4 a:4 c:4
+@0 = d:5 e d:6 e:16 d:16 c:34 L b:4 a:4 c:4
 ;guitar
 @1 = { efed edc dcb 
 		ed:2 c:2 b:2,
-        c:8 b:16 a:34,
+        c:8 b:16 a:32,
       l 9:4 b:4 a:4,
      }
 ;xylophone
@@ -193,7 +193,7 @@ $base1={
 2    d
 12    dab->dab->d ad<b-ad<b-ad
 12   ecea>cea>c ec<aec<aec
-12   efa>cefa>c <<dgbd>gbd>
+12   efa>cefa>c <<dgb>dgb>d
 1                           g<;o5
 1   v+1
 2   v+4 \0
@@ -204,11 +204,11 @@ $base1={
 
 1   @2 q @rd1,20 v-1 \-1
 ;2   @2 q @rd1,20 v-1 \-1
-1   l8 r"ec" <g>r "ec"<g> r"ec" r"ec" <g>r "ec"<g> r"ec"
+1   l8 r"ce" <g>r "ce"<g> r"ce" r"ce" <g>r "ce"<g> r"ce"
 ;2   l8 rc4 r c4 rc rc4 r c4 rc
-1   r"fd" <b->r "fd"<b-> r"fd" r"fd" <b->r "fd"<b-> r"fd"
+1   r"df" <b->r "df"<b-> r"df" r"df" <b->r "df"<b-> r"df"
 ;2   rd4 r d4 rd rd4 r d4 rd
-1   r"ec" <a>r "ec"<a> r"ec" r"ec" <a>r "ec"<a> r"ec" ;o5
+1   r"ce" <a>r "ce"<a> r"ce" r"ce" <a>r "ce"<a> r"ce" ;o5
 ;2   rc4 r c4 rc rc4 r c4 rc& ;o5
 
 2   < $congs: $cong1:$cong2:$cong3: $conge:
@@ -226,21 +226,21 @@ $base1={
 ; **** J part
 1   @4 v-2 \-1 @m2
 ;2   @4 v-2 \-1 @m2
-1   g <f >e <f >g <d >e <g >g <g >e  e  f <f >d  e  ;o5
+;1   g <f >e <f >g <d >e <g >g <g >e  e  f <f >d  e  ;o5
 ;2   c <c >c <c >c <c >c <c >c <c >c  c  c <c >c  c  ;o5
-;1   "gc" <"fc" >"ec" <"fc" >"gc" <"dc" >"ec" <"gc" >"gc" <"gc" >"ec"  "ec"  "fc" <"fc" >"dc"  "ec" ;o5 
+1    g <f >e <f >g <d >e <g >g <g >e  e  f <f >d  e  ;o5
 
-1   f  e <f >f  e <a  a  e  a  f  g  a  b >c  d  e& ;o5
+;1   f  e <f >f  e <a  a  e  a  f  g  a  b >c  d  e& ;o5
 ;2   d  c &c  d  c &c <d &a  e  d  e  f  g  a  b >c& ;o5
-;1   "fd"  "ec" <f >"fd"  "ec" <a  "ad"  e  "ae"  "fd"  "ge"  "af"  "bg" >"c<a>"  "d<b>"  "ec"& ;o5
+1    f  e <f >d  e <a  a  e  a  f  g  a  b >c  d  e& ;o5
 
-1   e  e <g &g >e  g &g  e &e  e <g >g  g <g >g &g  ;o5
+;1   e  e <g &g >e  g &g  e &e  e <g >g  g <g >g &g  ;o5
 ;2   c  c &c &c  c &c &c  c &c  c <g &g >e &e  e &e  ;o5
-;1   "ec"  "ec" <"g>c<" &"g>c<" >"ec"  "gc" &"c"  "ec" &"ec" "ec" <g >"g<g>"  "ge" <"g>e<" >g &"ge"  ;o5
+1    e  e <g &g >e  g &g  e &e  e <g >g  e <g >g &g  ;o5
 
-1   e  g <a >e <f  a >e <f >d <f  b >d  f  g  b  b  ;o5
+;1   e  g <a >e <f  a >e <f >d <f  b >d  f  g  b &b  ;o5
 ;2   c <f  r >c &c &c  c &c <b &d &g &b  f&>d  d &g  ;o5
-;1   "ec"  "g<f>" <a >"ec" <"fc"  "ac" >"e<c>" <"fc" >"d<b>" <"fd"  "bg" >"d<b>"  "f<f>"  "gd"  "bd"  "bg"  ;o5
+1    e  g <a >e <f  a >e <f  a  f  b >d  f  g  d  b  ;o5
 1   v+2 q \0 @n- @m0
 ;2   v+2 q \0 @n- @m0
 
