@@ -39,13 +39,20 @@
 *12 = { v12 @14 o2 q4so } ; snare noise
 *14 = { v0 @6 o3 q8sf }  ; close hi-hut
 *15 = { v0 @6 o3 q1so }  ; open hi-hut
-FG y14,32 l32            ; change to rhythm mode
-FG y38,255               ; cy/tom off
+FGH v0@14
+F Y54,255 ; mute:  --(@) / BD(v)
+G y55,255 ; mute:  HH(@) / SD(v)
+H y56,255 ; mute: TOM(@) / CY(v)
+; y22/23/24 ... F-Num7-0(8)
+F y38,0 ;     BD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+G y39,0 ;  HH/SD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+H y40,0 ; TOM/CY ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+F y14,32 l32 ; change to rhythm mode: 0(2),RMODE(1),B(1),S(1),M(1),C(1),H(1)
 F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom 
-G v0@14                  ; hi-hut (@) & snare noise (v) 
+1239abcdefgh r32 ;wait
 
 ;==== intro ====
-1239abcdefg l32
+1239abcdefgh l32
 
 9ABC  h24,0,4,2
 123   h24,0,4,1
