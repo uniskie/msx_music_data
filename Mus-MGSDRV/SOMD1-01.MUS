@@ -1,4 +1,4 @@
-;[gain=1.0 name=SOMD1-01 duration=840s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=SOMD1-01 duration=840s fade=5s cpu=0 lpf=0]
 #opll_mode 0
 #tempo 75
 #title {"[SORCERIAN MD] 灰色のダンジョン - DUNGEON (C)SEGA/Falcom | OPLL+PSG ver edit by uniskie"}
@@ -16,18 +16,18 @@
 ; ロックオルガンっぽい音が欲しい
 @v16 = {
 ;       TL FB
-        23, 5,
+        11, 5,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 0, 0,15, 0, 1, 0, 0, 1, 0, 0,
-  10, 5, 1,15, 0, 1, 0, 0, 1, 0, 1 }
+  15, 1, 0,15, 0, 1, 0, 1, 1, 0, 0,
+  10, 5, 1,15, 0, 4, 0, 1, 1, 0, 1 }
 
 ; @9でも代用可能だけど、ミュートブラスっぽさを出すならこんな感じで
 @v17 = { ; loud Brass
 ;       TL FB
-        23, 7,
+        22, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
    9, 6, 1, 1, 0, 1, 0, 1, 0, 0, 0,
-  10, 3, 2, 5, 0, 1, 0, 1, 1, 0, 0 }
+  10, 3, 2, 6, 0, 1, 0, 1, 1, 0, 0 }
 
 ;1239abcde ! ; rhythm only
 
@@ -90,7 +90,7 @@ B    v12
 A    v11 @\16 
 C    v10 @9>> @\4 
 D    V14 @13 o2 @\0 
-E    v11 @14 o2 q1 @\19 
+E    v10 @14 o2 q1 @\19 
 
 9AC   [
 9AC    [g4>d2^c<a+g>c16<a+16 ]3
