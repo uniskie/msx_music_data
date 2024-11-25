@@ -1,0 +1,752 @@
+;[gain=1.0 name=DS-1PALE duration=300s fade=5s cpu=0 lpf=0]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Length of the song. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+#opll_mode 0
+#lfo_mode 0
+#machine_id 0
+#title { "namco DRAGON SPIRIT [AREA1] The Paleozoic Era / Code By Uniskie" }
+#tempo 180
+
+;lead
+@e0 = { 1,0, c d:16 e:16 d:16 c:32 [0 b:3 d:3 c:3 ]}
+;long tone
+@e1 = { 1,0, fed ed:2 c:2 dcb:2 a:2 c:8 b:16 a:32
+      [0 9:3 b:3 a:3 ]     }
+;piano echo
+@e2 = { 1,0,
+       fedc
+       d c:2 b:3 a:4
+       c:2 b:3 a:4 9:5
+       b:3 a:4 9:5 8:6
+       a:4 9:8 8:8
+       9:4 8:8 7:8       8:4 7:8 6:8
+       7:4 6:8 5:8       6:4 5:8 4:8
+       5:4 4:8 3:8       4:4 3:8 2:8
+       3:4 2:8 1:8       2:4 1:8 0 }
+;click tone
+@e3 = { 1,0, fedcb:2 a:8 9:54 [0 a:2 9:2 8:2 ] }
+;fade in
+@e4 = { 1,0, 0a=40 f=30 e:40 d:40 c:40 }
+
+;base
+@e6 = { 1,0, fecba }
+;@e6 = ( 1,0,
+;        fecb:2 a:4 9:6 8:8 7:10 6:12 5:15 4:20 3:20 2:20 1:20 0 }
+
+;NONE
+;@e8 = {1,0,}
+
+;LFO
+@e9 = {1,0, f:120 [0 e:3 d:3 c:3 d:3 ]}
+
+
+;fade in metal synth
+@v15 = {
+;       TL FB
+         1, 0,
+; AR DR SL RR KL MT AM VB EG KR DT
+   1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1,
+   1, 2, 0, 1, 0, 5, 0, 0, 0, 0, 1 }
+
+;synth leed
+@v16 = {
+;       TL FB
+         0, 6,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15,15, 3, 1, 1, 1, 0, 0, 0, 0, 0,
+  15,15, 0, 7, 0, 1, 0, 0, 1, 0, 1 }
+
+;synth guitar
+@v17 = {
+;       TL FB
+         0, 6,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15,14, 4, 1, 0, 1, 0, 0, 0, 0, 0,
+  15,15, 0, 3, 0, 1, 0, 0, 0, 0, 1 }
+
+
+;metallophone
+@v18 = {
+;      TL FB
+       31, 0,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15, 9, 6, 2, 0,11, 0, 0, 0, 0, 1,
+  15, 5, 5, 2, 0, 4, 0, 0, 0, 0, 0 }
+
+;elepi
+@v19 = {
+;       TL FB
+        26, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15, 6,15, 4, 1, 1, 0, 0, 0, 0, 0,
+  15, 4,15, 4, 0, 1, 0, 0, 0, 0, 1 }
+
+;wind chimes
+@v20 = {
+;       TL FB
+         3, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15,14, 5, 2, 2,10, 1, 1, 0, 0, 1,
+  15, 4, 7, 3, 0, 1, 0, 1, 0, 0, 1 }
+
+;==== rhythm settings ====
+#macro_offset { b=8,k=9,m=10,n=11 }
+;#macro_offset { b=24,k=25,m=26,n=27 }
+
+*16 = { <f+8> } ; *b8 = b8
+*17 = {  b-8  } ; *k8 = k8
+*18 = {  f+8  } ; *m8 = m8
+*19 = {  c+8  } ; *n8 = n8
+*20 = { <f+64 f+16..> } ; *b12 = b64b16..
+*21 = {  b-64 b-16..  } ; *k12 = k64k16..
+*22 = {  f+64 f+16..  } ; *m12 = m64m16..
+*23 = {  c+64 c+16..  } ; *n12 = n64n16..
+*24 = { <f+16> } ; *b16 = b16
+*25 = {  b-16  } ; *k16 = k16
+*26 = {  f+16  } ; *m16 = m16
+*27 = {  c+16  } ; *n16 = n16
+*28 = { <f+64 f+32.> } ; *b20 = b64b32.
+*29 = {  b-64 b-32.  } ; *k20 = k64k32.
+*30 = {  f+64 f+32.  } ; *m20 = m64m32.
+*31 = {  c+64 c+32.  } ; *n20 = n64n32.
+
+*32 = {  f+8 } ; *b8 = b8
+*33 = {  f+8  } ; *k8 = k8
+*34 = {  f+8  } ; *m8 = m8
+*35 = {  f+8  } ; *n8 = n8
+*36 = {  f+64 f+16..  } ; *b12 = b64b16..
+*37 = {  f+64 f+16..  } ; *k12 = k64k16..
+*38 = {  f+64 f+16..  } ; *m12 = m64m16..
+*39 = {  f+64 f+16..  } ; *n12 = n64n16..
+*40 = {  f+16  } ; *b16 = b16
+*41 = {  f+16  } ; *k16 = k16
+*42 = {  f+16  } ; *m16 = m16
+*43 = {  f+16  } ; *n16 = n16
+*44 = {  f+64 f+32.  } ; *b20 = b64b32.
+*45 = {  f+64 f+32.  } ; *k20 = k64k32.
+*46 = {  f+64 f+32.  } ; *m20 = m64m32.
+*47 = {  f+64 f+32.  } ; *n20 = n64n32.
+
+FGH v0@14
+; y22/23/24 ... F-Num7-0(8)
+;F y38,0 ;     BD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+;G y39,0 ;  HH/SD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+;H y40,0 ; TOM/CY ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+;F y54,255 ; mute:  --(@) / BD(v)
+;G y55,255 ; mute:  HH(@) / SD(v)
+;H y56,255 ; mute: TOM(@) / CY(v)
+
+1239abcdefgh r32 ;wait
+F y14,32 l32 ; change to rhythm mode: 0(2),RMODE(1),B(1),S(1),M(1),C(1),H(1) 
+
+
+F o4 v15 q1so ; bass-drum / synth tom 
+F h1,32,0,-16 
+G o3 v8  \-29 
+
+;=============================================
+; main
+;=============================================
+; **** intro
+9ABC l8 v14 o4
+9A @15 h50,2,1,2
+9 @\0 h33,2,2,2 
+A @\0 h32,2,2,2 @e9 
+B @\18 
+C @\12 @e9 
+9 v-3 <a2& v+1 a4.& v+1 a4.> v+1 ;o4 
+A v-3  a2& v+1 a4.& v+1 a4.  v+1 ;o4 
+BC  r1& r4
+9ABC @16
+9B  b-aa-gf+f  ;o4
+AC  fed+dc+c   ;o4
+
+9ABC [0
+
+; **** A part
+9 @16v14@\0  h33,3,2,1     ;o4 
+A @16v12@\6  h31,3,2,1 @e9 ;o4 
+B @14v11@\12     ;o4 
+C @14v11@\12 @e8 ;o4 
+
+A               r4 ;delay 4 
+
+9 g1& g4> c4 d4 e4 ;o5 
+A g1& g4> c4 d4 e4 ;o5 
+B c1& c1           ;o4 
+C e1& e1           ;o4 
+
+9 d1& d2^8 f ef ;o5 
+A d1& d2^8 f ef ;o5 
+B <b-1& b-1>    ;o4 
+C d1& d1        ;o4 
+
+9 c1& c2< ab> cd ;o5 
+A c1& c2< ab> cd ;o5 
+B c1& c1         ;o4 
+C e1& e1         ;o4 
+
+9 c4< a4 e2> c4.< b a4. b ;o4 
+A c4< a4 e2> c4.< b a4. b ;o4 
+B <f1 a4 g2 g4>           ;o4 
+C a1 c4< b2 b4>           ;o4 
+
+9 g1& g4> g4 f4 e4 ;o5 
+A g1& g4> g4 f4 e4 ;o5 
+B c1& c1           ;o4 
+C e1& e1           ;o4 
+
+9 d1 de fg ef ga ;o5 
+A d1 de fg ef ga ;o5 
+B <b-1& b-1>     ;o4 
+C d1& d1         ;o4 
+
+9 >c1& c2< ed ef     ;o5 
+A >c1& c2< ed ef     ;o5 
+B e1& @16v14 e1      ;o4 
+C a1& @16v12 @e9 a1& ;o4 
+
+9 a4 b4> c4 d4 c4< b4 a4 b4 ;o5 
+A a4 b4> c4 d4 c4< b4 a4 b4 ;o5 
+B >>c4 d4 e4 f4 e4 d4 c4 d4 ;o6 
+C a4                        ;o4 ;delay 4. 
+C >>c4 d4 e4 f4 e4 d4 c4 d4 ;o6 
+
+9 a1& a1   ;o5 
+A a1& a2.  ;o5 ;end delay 4 
+B e1& e1 < ;o5 
+C e1& e2.< ;o5 ;end delay 4 
+
+
+9ABC [
+
+; **** B part
+9 @17v14     ;o5 
+A @17v12 @e9 ;o5 
+B @17v14     ;o6 
+C @17v12 @e9 ;o6 
+
+A         r4 ;delay 4 
+C         r4 ;delay 4 
+
+9 e2 d2 c2 d4 e4.    ;o5 
+A e2 d2 c2 d4 e4.    ;o5 
+B <c2 <b2 a2 b4> c4& ;o4 
+C <c2 <b2 a2 b4> c4& ;o4 
+
+B                  c> ;delay 8 
+C                  c> ;delay 8 
+
+9 <e1& e1> ;o5 
+A <e1& e1> ;o5 
+B <a1& a1> ;o5 
+C <a1& a1> ;o5 
+
+9 >e c<a> d<b gd er> c<a eb g4 ;o5 
+A >e c<a> d<b gd er> c<a eb g4 ;o5 
+B >c< ae bg d<b ar> ae cg d4   ;o5 ;end delay 8 
+C >c< ae bg d<b ar> ae cg d4   ;o5 ;end delay 8 
+
+9 d1& d1    ;o5 
+A d1& d1    ;o5 
+B <b1& b1>  ;o5 
+C <b1& b1>  ;o5 
+
+9 c1 g2> c2< ;o5 
+A c1 g2> c2< ;o5 
+B f2> c2< e1 ;o5 
+C f2> c2< e1 ;o5 
+
+9 a-2 d+4 a-4 b-1  ;o5 
+A a-2 d+4 a-4 b-2. ;o5 ;end delay 4 
+B f1 g1            ;o5 
+C f1 g2.           ;o5 ;end delay 4 
+
+9 cc r4. c cc cc r4. c c16c16c16r16         ;o5 
+A >c4r2. c4r2.<                             ;o5 
+B ff r4.< c cc> ee r4. <<<c c16c16c16r16>>> ;o5 
+C f4 r2. e4 r2.                             ;o5 
+
+9ABC |
+
+; **** C part
+9 @17v13     ;o5 
+A @17v13 @e8 ;o5 
+B @17v13     ;o5 
+C @17v13 @e8 ;o5 
+
+9 << ;o3 
+A < ;o4 
+
+9 c4. c4. c4& c1   ;o3 
+A g4. g4. g4& g1   ;o4 
+B c4.< b4.> c4& c1 ;o5 
+C e4. d4. e4& e1   ;o5 
+
+9 b-4. b-4. b-4& b-1 ;o3 
+A b-4. b-4. b-4& b-1 ;o4 
+B d4. c4. d4& d1     ;o5 
+C f4. e4. f4& f1     ;o5 
+
+9 a4. a4. a4& a1   ;o3 
+A a4. a4. a4& a1   ;o4 
+B c4.< b4.> c4& c1 ;o5 
+C e4. d4. e4& e1   ;o5 
+
+9 f1 g1   ;o3 
+A a1 g1<  ;o3 
+B c1< b1  ;o4 
+C e1 d1<  ;o4 
+
+; **** D part
+9 @18v13 ;o3 
+A @18v11 ;o3 
+B @18v11 ;o4 
+C @18v11 ;o4 
+
+9ABC >
+
+B r   ;delay 8 
+C r4  ;delay 4 
+
+9  c4. c4. c4& c1    ;o3 
+A  g4. g4. g4& g1    ;o3 
+B   c4.< b4> c4.& c1 ;o4 
+C   e4. d e2& e1     ;o4 
+;9  o3 c &c &c  c &c &c  c &c &c &c &c &c &c &c &c &c  ;o3
+;A  o3 g &g &g  g &g &g  g &g &g &g &g &g &g &g &g &g  ;o3
+;B  o4 r  c &c &c <b &b >c &c &c &c &c &c &c &c &c &c  ;o4
+;C  o4 r &r  e &e &e  d  e &e &e &e &e &e &e &e &e &e  ;o4
+;1 o3 g >c  e <g  b >d  e &e &e &e &e &e &e &e &e &e  ;o4
+
+9 b-4. b-4. b-4& b-1      ;o3 
+A b-4. b-2& b-   b-4 b-2. ;o3 
+B   d4. c4. d4 d4 d2.     ;o4 
+C    f4. e f2. f2.        ;o4 
+;9  o3  b-&b-&b- b-&b-&b- b-&b-&b-&b-&b-&b-&b-&b-&b-&b- ;o3
+;A  o3  b-&b-&b- b-&b-&b-&b-&b- b-&b- b-&b-&b-&b-&b-&b- ;o3
+;B  o4 &c  d &d &d  c &c &c  d &d  d &d  d &d &d &d &d  ;o4
+;C  o4 &e &e  f &f &f  e  f &f &f &f &f &f  f &f &f &f  ;o4
+;1 o4 <b->d  d <b->c  e  f  d <b->d <b->d  f &f &f &f  ;o4
+
+9 a4. a4. a4& a1     ;o3 
+A a4. a4. a4& a1     ;o3 
+B   c4.< b4> c4.& c1 ;o4 
+C    e4. d e2& e1    ;o4 
+;9  o3  a &a &a  a &a &a  a &a &a &a &a &a &a &a &a &a  ;o3
+;A  o3  a &a &a  a &a &a  a &a &a &a &a &a &a &a &a &a  ;o3
+;B  o4 &d  c &c &c <b &b >c &c &c &c &c &c &c &c &c &c  ;o4
+;C  o4 &f &f  e &e &e  d  e &e &e &e &e &e &e &e &e &e  ;o4
+;1 o4 <a> c  e <a  b >d  e &c &c &c &c &c &c &c &c &c  ;o4
+
+9 f1 g1 >>                  ;o5 
+A a2 a4. a g2 g4. >b>       ;o5 
+B   c4 c4. c4.< b4 b4.> g4> ;o5 ;end delay 8 
+C    e4. e2& e d4. d4.>     ;o5 ;end delay 4 
+;9  o3  f &f &f &f &f &f &f &f  g &g &g &g &g &g &g &g  ;o3
+;A  o3  a &a &a &a  a &a &a  a  g &g &g &g  g &g &g >b  ;o4
+;B  o4 &c  c &c  c &c &c  c &c &c <b &b  b &b &b >g &g  ;o4
+;C  o4 &e &e  e &e &e  e &e &e &e &e  d &d &d  d &d &d  ;04
+;1 o4 <a >c  e  c <a >e  c <a  g  b >d <b  g <d  g  b
+
+9ABC <
+
+; **** E part
+9 @16v14     ;o5 
+A @16v13 @e9 ;o5 
+B @14v11     ;o5 
+C @14v11     ;o5 
+
+A r ;delay 8 
+
+9 ra ge de4 c4 d4 e<a4> cd ;o5 
+A ra ge de4 c4 d4 e<a4> cd ;o5 
+B r4 cr4 c4 r r4c r4 c4 r  ;o5 
+C r4 er4 e4 r r4e r4 e4 r  ;o5 
+
+9 <b->d ag cb- ae h51,2,2,3 e_b-8&b-_>c8&c2 hf <cd ;o5 
+A  b- d ag c+b-ae h51,2,2,3 e_b-8&b-_>c8&c2 hf <cd ;o5 
+B r4 dr4 d4 r r4 dr4 f4 r                                    ;o5 
+C r4 fr4 f4 r r4 fr4 a4 r                                    ;o5 
+
+9 e4. d4 a4 g4 g a4 c4. e ;o5 
+A e4. d4 a4 g4 g a4 c4. e ;o5 
+B r4c r4 c4 r r4 cr4 c4 r ;o5 
+C r4e r4 e4 r r4 er4 e4 r ;o5 
+
+B @16v13 
+C @16v12
+9 d1 h51,2,2,3 f+_>c8&c_d8&d2.< ;o5 
+A d1 h51,2,2,3 f_b8&b_>d8&d2.<  ;o5 
+B f4. a4.> e4 d4. c4. d4<       ;o5 
+C d4. f4.> c4< b4. a4. b4       ;o5 
+
+; **** F part
+9 hf     ;o5 
+A hf     ;o5 
+B @14v11 ;o5 
+C @14v11 ;o5 
+
+9 c4. g4. a4. e4. gd4.  ;o5 
+A c4. g4. a4. e4. gd4.  ;o5 
+B r4cr4 c4 r4. cr4 c4 r ;o5 
+C r4er4 e4 r4. er4 e4 r ;o5 
+
+9 e4. f4. e4. f4. e4 f4 ;o5 
+A e4. f4. e4. f4. e4 f4 ;o5 
+B r4dr4 f4 r4. dr4 d4 r ;o5 
+C r4fr4 a4 r4. fr4 f4 r ;o5 
+
+9 ec<a>gc<a>gc ec<a>gc<a>gd  ;o5 
+A ec<a>gc<a>gc ec<a>gc<a>gd  ;o5 
+B r4cr4 c4 r4. cr4 c4 r      ;o5 
+C r4er4 e4 r4. er4 e4 r      ;o5 
+
+9 <fg> ed4 c< b>c d4.< b4. b_>f12&f_g12&g12 ;o5 
+A fg< fd4> c< b>c d4.< b4.> g4              ;o5 
+B <a1 b1                                    ;o4 
+C c1 d1<                                    ;o4 
+
+; **** G part
+B @11v15 
+C @11v14 @e9 
+
+9 ed cd r<a rb_>c8&c4 <<ga> de dc     ;o4 
+A ed cd r<a r>c^ 4 <<ga> de dc        ;o4 
+B c4.< b4. a1& a4>                    ;o4 
+C e4. d4. c4& c1&                     ;o4 
+
+C                c                    ;o4 ;delay 8 
+
+9 e4. d4. c4 d4. c4. d4              ;o4 
+A e4. d4. c4 d4. c4. dr              ;o4 
+B  ag eg4 e d4 ed cd4 c <a4>         ;o4 
+C  ag eg4 e d4 ed cd4 c <a4>         ;o4 
+
+9 >d+_e8&e4 a4. g4 e4. d4. e4 ;o5 
+A >e4. a4. g4 e4. d4. e4          ;o5 
+B a1& a1                          ;o4 
+C a1& a2..                        ;o4 ;end delay 8 
+
+9 fe ff4 e f4 g<g ab>cd  ef< ;o4 
+A fe ff4 e fg <ef ga b>c d < ;o4 ;end delay 8 
+B fe ff4 e f4 g<g ab cd> ef  ;o4 
+C dd dd4 d d4 e<e fg ab> cd  ;o4 
+
+; **** H part
+9 @19v14     ;o4 
+A @19v13 @e8 ;o4 
+B @19v13     ;o4 
+C @19v13 @e8 ;o4 
+
+9ABC >
+
+9 <c1&        c1              ;o3 
+A <g4.>g4.> g2   g4.<g4.<     ;o3 
+B  c c4.>c4.>c4 c4.<c4.<c     ;o4 
+C  e4 e4.>e4.>e4.<e4.<e4      ;o4 
+;9 o4 <c &c &c &c &c &c &c &c &c &c &c &c &c &c &c &c  ;o3
+;A o4 <g &g &g >g &g &g >g &g &g &g  g &g &g <g &g &g< ;o3
+;B o4  c  c &c &c >c &c &c >c &c  c &c &c <c &c &c <c  ;o4
+;C o4  e &e  e &e &e >e &e &e >e &e &e <e &e &e <e &e  ;o4
+;1 e  c  e  g >c  e  g >c  e  c <g  e  c <g  e  c  ;o4
+
+9 <b-1&        b-1            ;o2 
+A  b-4.>b-4.>b-2 b-4.<b-4.<   ;o3 
+B  d d4.>d4.> d4d4.<d4.<d     ;o4 
+C  a4 a4.>a4.> a4.<a4.<a4     ;o4 
+;9 o3 <b-&b-&b-&b-&b-&b-&b-&b-&b-&b-&b-&b-&b-&b-&b-&b- ;o2
+;A o3  b-&b-&b->b-&b-&b->b-&b-&b-&b- b-&b-&b-<b-&b-&b-<;o3
+;B o4  d  d& d& d >d& d& d >d& d  d& d& d <d& d& d <d  ;o4
+;C o4  a& a  a& a& a >a& a& a >a& a& a <a& a& a <a& a  ;o4
+;1 a  d  a  b->d  a  b->d  a  d <b- a  d <b- a  d  ;o4
+
+9 a1& a1                      ;o2 
+A a4.>a4.>a2   a4.< a4.<      ;o3 
+B cc4.>c4.>c4 c4.< c4.< c     ;o4 
+C e4 e4.>e4.>e4.< e4.< e4     ;o4 
+;9 o2  a &a &a &a &a &a &a &a &a &a &a &a &a &a &a &a  ;o2
+;A o3  a &a &a >a &a &a >a &a &a &a  a &a &a <a &a &a< ;o3
+;B o4  c  c &c &c >c &c &c >c &c  c &c &c <c &c &c <c  ;o4
+;C o4  e &e  e &e &e >e &e &e >e &e &e <e &e &e <e &e  ;o4
+;1 e  c  e  a >c  e  a >c  e  c <a  e  c <a  e  c  ;o4
+
+9 f1 g1 >>>                       ;o5 
+A a>f4.> e4.> c <<<g>g4.> g4.> g< ;o5 
+B c4 a4.> f4.< <b4> b4.> b4.      ;o5 
+C e4.> c4. a4< d4. d4.> d4        ;o5 
+;9 o2  f &f &f &f &f &f &f &f   g &g &g &g &g &g &g &g   ;o2
+;A o3  a >f &f &f >e &e &e >c<<<g >g &g &g >g &g &g >g   ;o6
+;B o4  c &c  a &a &a >f &f &f< <b &b >b &b &b >b &b &b   ;o5
+;C o4  e &e &e >c &c &c  a &a  <d &d &d  d &d &d >d &d   ;o5
+;1 e  f  a >c  e  f  a >c <<d  d  g  b >d  g  b >d g<  ;o5
+;9 o2 >>>;o5
+;A o6 <  ;o5
+;B o5    ;o5
+;C o5    ;o5
+
+9ABC <
+
+; **** I part
+9 @16v13     ;o5 
+A @16v12 @e9 ;o5 
+B @16v13     ;o5 
+C @16v12 @e9 ;o5 
+
+A e4 ;o5 ;delay 4 
+
+9 e1& e1                              ;o5 
+A e1& e1                              ;o5 
+B re <gr >e<g r>e re <gr >e<g r>e     ;o5 
+C rc4 r c4 rc rc4 r c4 rc             ;o5 
+;B  r  e <g  r >e <g  r >e  r  e <g  r >e <g  r >e  ;o5
+;C  r  c& c  r  c& c  r  c  r  c& c  r  c& c  r  c  ;o5
+
+9 d1& d1                              ;o5 
+A d1& d1                              ;o5 
+B rf <b-r >f<b- r>f rf <b-r >f<b- r>f ;o5 
+C rd4 r d4 rd rd4 r d4 rd             ;o5 
+;B  r  f <b- r >f <b- r >f  r  f <b- r >f <b- r >f  ;o5
+;C  r  d& d  r  d& d  r  d  r  d& d  r  d& d  r  d  ;o5
+
+9 c1& c1                              ;o5 
+A c1& c2.&                            ;o5 ;end delay 4 
+B re <ar >e<a r>e re <ar >e<a r>e     ;o5 
+C rc4 r c4 rc rc4 r c4 rc&            ;o5 
+;B  r  e <a  r >e <a  r >e  r  e <a  r >e <a  r >e  ;o5
+;C  r  c& c  r  c& c  r  c  r  c& c  r  c& c  r  c& ;o5
+
+9 v13 
+A v11 
+B v13 
+C v13 
+A         c4                          ;o5 ;delay 4 
+
+9 e4. d4. c4 d4. c4. d4               ;o5 
+A   e4. d4. c4 d4. c4.                ;o5 ;end delay 4 
+B c4.< b4. a4 b4. a4. b4              ;o4 
+C c4 c4.< b4. a4 b4. a4.              ;o4 
+
+; **** J part
+9 @20v11     ;o5 
+A @20v11 @e8 ;o5 
+B @20v11     ;o4 
+C @20v11 @e8 ;o4 
+
+B r                                   ;o4 ;delay 8 
+C r                                   ;o4 ;delay 8 
+
+9ABC >
+
+9 c4 c4 c4 c4 c4 c4 c4 c4   ;o5 
+A g4 e4 g4 e4 g4 e4 f4 d4   ;o5 
+B  c4 c4 c4 c4 c4>c4<c4>c4  ;o5 
+C  f4 f4 d4 g4 g4>e4<f4>e4  ;o5 
+;9  o5   c &c  c &c  c &c  c &c  c &c  c &c  c &c  c &c  ;o5
+;A  o5   g &g  e &e  g &g  e &e  g &g  e &e  f &f  d &d  ;o5
+;B  o4   r  c &c  c &c  c &c  c &c  c &c >c &c <c &c >c  ;o5
+;C  o4   r  f &f  f &f  d &d  g &g  g &g >e &e <f &f >e  ;o5
+;1 o5   g <f >e <f >g <d >e <g >g <g >e  e  f <f >d  e  ;o5
+;2 o5   c <c >c <c >c <c >c <c >c <c >c  c  c <c >c  c  ;o5
+
+9 d2    c2   <c4 e4 g4 b4>  ;o5 
+A f4<f4>e4<de e4 g4 b4>d4   ;o5 
+B  c4 d4<aa4 a d4 f4 a4>c4& ;o5 
+C  e4 f2.     <f4 a4>c4 e4& ;o5 
+;9  o5   d &d &d &d  c &c &c &c <c &c  e &e  g &g  b &b> ;o5
+;A  o5   f &f <f &f >e &e <d  e  e &e  g &g  b &b >d &d  ;o5
+;B  o5  &c  c &c  d &d <a  a &a  a  d &d  f &f  a &a >c  ;o5
+;C  o5  &e  e &e  f &f &f &f &f &f <f &f  a &a >c &c  e  ;o5
+;1 o5   f  e <f >f  e <a  a  e  a  f  g  a  b >c  d  e& ;o5
+;2 o5   d  c &c  d  c &c <d &a  e  d  e  f  g  a  b >c& ;o5
+;  o4                           c
+
+9  rc4. c4. c  4c4.  c4 c4   ;o5 
+A  re4. e4. e  4e4.  e4 e4   ;o5 
+B   c<g4.>g2&   g<g4. g2     ;o4 
+C   e1&         e<g>gg4 g4.  ;o5 
+;9  o5   r  c &c &c  c &c &c  c &c  c &c &c  c &c  c &c  ;o5
+;A  o5   r  e &e &e  e &e &e  e &e  e &e &e  e &e  e &e  ;o5
+;B  o5  &c &c <g &g &g >g &g &g &g &g <g &g &g  g &g &g  ;o4
+;C  o5  &e &e &e &e &e &e &e &e &e &e <g >g  g &g  g &g  ;o5
+;1 o5   e  e <g &g >e  g &g  e &e  e <g >g  g <g >g &g  ;o5
+;2 o5   c  c &c &c  c &c &c  c &c  c <g &g >e &e  e &e  ;o5
+;  o5                                       c &c  c &c
+
+9 c4. c4. c4< g2>  f2       ;o5 
+A e4. e4. e4< b4 b2> b4     ;o5 
+B  f4.  f4.  faf4. f> g4.   ;o5 ;end delay 8 
+C  g<a4. a4.>d& d4 d4. db   ;o5 ;end delay 8 
+;9  o5   c &c &c  c &c &c  c &c <g &g &g &g >f &f &f &f  ;o5
+;A  o5   e &e &e  e &e &e  e &e <b &b  b &b &b &b >b &b &;o5
+;B  o4  &g  f &f &f  f &f &f  f  a  f &f &f  f >g &g &g  ;o5
+;C  o5  &g  g <a &a &a  a &a &a >d &d &d  d &d &d  d  b &;o5
+;1 o5   e  g <a >e <f  a >e <f >d <f  b >d  f  g  b  b  ;o5
+;2 o5   c <f  r >c &c &c  c &c <b &d &g &b  f&>d  d &g  ;o5
+;  o4                           a
+;  o4                           g
+
+9ABC <
+
+9ABC ] <
+9ABC ]
+
+
+;=============================================
+; sequence
+;=============================================
+12 o2 v13 @4
+1  \-3 
+2  \-1 
+12 a1&a1
+
+12 l8 @2 o3
+1  v10 
+2  v9 r8 
+12 [0
+; **** A part
+12  [
+12   [g>c ec ef e|c<]4
+12                c&
+12   c<a> ce ge c<a4 a> ce ge c<a
+12   fa> ed4 c< b>c c<b g>c< bg> c<g
+12  ]
+12  >a1& a1<
+
+; **** B part
+12  [
+12   e2 d2 c2 d4 e4.<
+12   e1& e1
+12   >> ;o5
+12   e4. d2< e4> c4.< b4.
+12   d1& d1
+12   c1 g2> c2<
+12   a-2 d+4 a-4 b-1>
+12   cc2> c cc< cc4.< c>c16c16 c16<c16>c16>c16
+12   << ;o4
+12  |
+; **** C part - J part
+12   [8
+12    g>c ec ef ec< g>c ec ef ec<
+12    g>c ec ef ec< g>c ec ef ec&
+12    c<a> ce ge c<a4 a> ce ge c<a
+12    fa> ed4 c< b>c c<b g>c< bg> c<g
+12   ]
+12  ]
+12 ]
+
+;=============================================
+; base
+;=============================================
+D @14 v12 \-6 o2 q4 
+E @13 v15 \-5 o2 
+DE l8
+DE aaaaaaaaaaaaa-gf+f
+DE [0
+DE  [
+DE   >cc c<c> cc c>c< cc< cc> c>c< gc<
+DE   b->b-< ff b->b-< b->b-< b->b-< ff b->a gf<
+DE   aa a>a< a>a< aa a>a< aa a>a< aa
+DE   ff a>c dd c<b gg b>g< dd ef
+DE  ]
+
+DE  [aa aa aa aa aa aa |aa aa ]4
+DE                      a>a< a>a<
+DE  gg gg gg gg gg gg gg gg
+DE  f>f< f>f< f>f< f>f< g>g< g>g< g>g< g>g<
+DE  a->a-< a->a-< a->a-< a->a-< b->b-< b->b-< b->b-< b->b-
+DE  cc2< c cc> cc2< c c16c16c>
+
+DE  [8
+DE   cc c<c> cc c>c< cc< cc> c>c< gc<
+DE   b->b-< ff b->b-< b->b-< b->b-< ff b->a gf<
+DE   aa a>a< a>a< aa a>a< aa a>a< aa
+DE   ff a>c dd c<b gg b>g< dd ef>
+DE  ]
+
+DE  <aa> a<a a>a< eg aa4> a< a>a< a>a<
+DE  a>a< aa> a<a a>a< aa eg aa a>a
+DE  <aa> a<a aa aa aa aa a>a< a>a
+DE  <gg> g<g g>g< gg g>g< gg gg f+g
+DE  f>f ef< f>f ef< g>g f+g< g>g f+g<
+DE  a->a- ga-< a->g a-a-< b->b- ab-< b->a b-b-
+DE  cc2< c cc> cc2< c c16c16c
+DE ]
+
+
+
+;==== rhythm ====
+
+F l8 
+F r1 *k8rrr*m16*m16*m16*m16*m16*m16*n16*n16 
+F [0 
+F  [ *b8r*m8r*b8r*m8r *b8r*m8r|*b8*n8*m8r ]4 *k8*k8*m8*n8 
+F  [ *b8r*m8r*b8r*m8r *b8r*m8r *b8*n8*m8r ]2 
+F  *b8r*m8r*b8*n8*m8r 
+F  *b8r*m8r*b8*b8*m8r 
+F  *k12*b8*b8*m12*b8*b8*n12*b8 
+F  *m12*b8*m12*b8*m12*b8*m12*b8 
+F  *b8r*b8r*b8r*b8r 
+F  *b8r*b8r*k12*b8*m12*b8 
+F  [ 
+F   [[ *b8*b8*m8r*b8r*m8*b8 ]3 *b8*b8*m8r*b8*b8*m8*b8 
+F   |[ *b8*b8*m8r*b8r*m8*b8 ]2 *b8r*m8r*b8r*m8*b8 *b8*b8*m8r*b8*b8*m8*b8 
+F   ] 
+F   *m12*m12rhfr4ho*k12*m12*n12 
+F   *m12*m12rhfr4ho*k12*m20*m20*n12 
+F  | 
+F   [ *b8*b8*m8r*b8r*m8r *b8r*m8r|*b8*b8*m8r ]4 *b8*b8*m8*n8 
+F   [ *b8*b8*b8r*b8r*b8r *b8r*b8r*b8|*b8*m8r ]4 *k8*m8*n8 
+F   [ *b8r*m8r*b8r*m8r *b8r*m8r|*b8r*m8*b8 ]4 *k8*k8*m8*n8 
+F   *b8r*m8r*b8r*m8*b8 
+F   [[ *b8r*m8r|*b8r*m8r *b8r*m8r*b8r*m8*n8 ]4 | *k8*k8*m8*n8 ] 
+F   *b8r*m8r *b8r*m8*m8*k8*k8*m8*n8 
+F   [ *b8*b8*m8r*b8*b8*m8*b8 | [*b8*b8*m8r] ]4 
+F   *b8*b8*m8r*m8*b8*m8*b8 
+F   [ *b8r*m8r*b8r*m8r *b8r*m8r*b8r*m8*m8 ]3 
+F   *b8r*m8r*b8r*n8r *b8r*m8r*b8*m8*m8*m8 
+F   [ *b8r*m8r*b8r|*m8*m8 *b8r*m8r*b8r*m8r ]4 *n8*m8 
+F   *b8r*m8r*b8*k8*m8*n8 
+F  ] 
+F ] 
+
+#macro_offset { b=24,k=25,m=26,n=27 }
+
+G l8 
+G r1 *k8rrr*m16*m16*m16*m16*m16*m16*n16*n16 
+G [0 
+G  [ *b8r*m8r*b8r*m8r *b8r*m8r|*b8*n8*m8r ]4 *k8*k8*m8*n8 
+G  [ *b8r*m8r*b8r*m8r *b8r*m8r *b8*n8*m8r ]2 
+G  *b8r*m8r*b8*n8*m8r 
+G  *b8r*m8r*b8*b8*m8r 
+G  *k12*b8*b8*m12*b8*b8*n12*b8 
+G  *m12*b8*m12*b8*m12*b8*m12*b8 
+G  *b8r*b8r*b8r*b8r 
+G  *b8r*b8r*k12*b8*m12*b8 
+G  [ 
+G   [[ *b8*b8*m8r*b8r*m8*b8 ]3 *b8*b8*m8r*b8*b8*m8*b8 
+G   |[ *b8*b8*m8r*b8r*m8*b8 ]2 *b8r*m8r*b8r*m8*b8 *b8*b8*m8r*b8*b8*m8*b8 
+G   ] 
+G   *m12*m12rhfr4ho*k12*m12*n12 
+G   *m12*m12rhfr4ho*k12*m20*m20*n12 
+G  | 
+G   [ *b8*b8*m8r*b8r*m8r *b8r*m8r|*b8*b8*m8r ]4 *b8*b8*m8*n8 
+G   [ *b8*b8*b8r*b8r*b8r *b8r*b8r*b8|*b8*m8r ]4 *k8*m8*n8 
+G   [ *b8r*m8r*b8r*m8r *b8r*m8r|*b8r*m8*b8 ]4 *k8*k8*m8*n8 
+G   *b8r*m8r*b8r*m8*b8 
+G   [[ *b8r*m8r|*b8r*m8r *b8r*m8r*b8r*m8*n8 ]4 | *k8*k8*m8*n8 ] 
+G   *b8r*m8r *b8r*m8*m8*k8*k8*m8*n8 
+G   [ *b8*b8*m8r*b8*b8*m8*b8 | [*b8*b8*m8r] ]4 
+G   *b8*b8*m8r*m8*b8*m8*b8 
+G   [ *b8r*m8r*b8r*m8r *b8r*m8r*b8r*m8*m8 ]3 
+G   *b8r*m8r*b8r*n8r *b8r*m8r*b8*m8*m8*m8 
+G   [ *b8r*m8r*b8r|*m8*m8 *b8r*m8r*b8r*m8r ]4 *n8*m8 
+G   *b8r*m8r*b8*k8*m8*n8 
+G  ] 
+G ] 
+
