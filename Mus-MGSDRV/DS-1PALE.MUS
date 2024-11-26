@@ -1,4 +1,4 @@
-;[gain=1.0 name=DS-1PALE duration=300s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=DS-1PALE duration=300s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -56,35 +56,35 @@
 ;synth leed
 @v16 = {
 ;       TL FB
-         0, 6,
+        13, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15,15, 3, 1, 1, 1, 0, 0, 0, 0, 0,
-  15,15, 0, 7, 0, 1, 0, 0, 1, 0, 1 }
+  15, 3, 8, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 8, 0, 7, 0, 1, 0, 0, 1, 0, 1 }
 
 ;synth guitar
 @v17 = {
 ;       TL FB
-         0, 6,
+        12, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15,14, 4, 1, 0, 1, 0, 0, 0, 0, 0,
+  15,13, 1, 1, 0, 1, 0, 0, 0, 0, 0,
   15,15, 0, 3, 0, 1, 0, 0, 0, 0, 1 }
 
 
 ;metallophone
 @v18 = {
 ;      TL FB
-       31, 0,
+       38, 0,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 9, 6, 2, 0,11, 0, 0, 0, 0, 1,
-  15, 5, 5, 2, 0, 4, 0, 0, 0, 0, 0 }
+  15, 8, 6, 6, 0,15, 0, 0, 0, 0, 1,
+  15, 5, 3, 3, 0, 4, 1, 0, 0, 0, 0 }
 
 ;elepi
 @v19 = {
 ;       TL FB
         26, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 6,15, 4, 1, 1, 0, 0, 0, 0, 0,
-  15, 4,15, 4, 0, 1, 0, 0, 0, 0, 1 }
+  15, 7,10, 1, 1, 1, 0, 0, 0, 0, 0,
+  15, 4,15, 4, 0, 1, 1, 0, 0, 0, 1 }
 
 ;wind chimes
 @v20 = {
@@ -154,25 +154,25 @@ G o3 v8  \-29
 ;=============================================
 ; **** intro
 9ABC l8 v14 o4
-9A @15 h50,2,1,2
-9 @\0 h33,2,2,2 
-A @\0 h32,2,2,2 @e9 
-B @\18 
-C @\12 @e9 
+9A @15
+9 @\0  h53,2,1,20 
+A @\0  h52,2,1,20 @e9 
+B @\8 
+C @\8            @e9 
 9 v-3 <a2& v+1 a4.& v+1 a4.> v+1 ;o4 
 A v-3  a2& v+1 a4.& v+1 a4.  v+1 ;o4 
 BC  r1& r4
-9ABC @16
+9ABC @16 
 9B  b-aa-gf+f  ;o4
 AC  fed+dc+c   ;o4
 
 9ABC [0
 
 ; **** A part
-9 @16v14@\0  h33,3,2,1     ;o4 
-A @16v12@\6  h31,3,2,1 @e9 ;o4 
-B @14v11@\12     ;o4 
-C @14v11@\12 @e8 ;o4 
+9 @16v14 @\0 h25,1,3,1     ;o4 
+A @16v12 @\4 h24,1,3,1 @e9 ;o4 
+B @14v11 @\8 h24,1,3,1     ;o4 
+C @14v11 @\8 h23,1,3,1 @e8 ;o4 
 
 A               r4 ;delay 4 
 
@@ -226,10 +226,14 @@ C e1& e2.< ;o5 ;end delay 4
 9ABC [
 
 ; **** B part
-9 @17v14     ;o5 
-A @17v12 @e9 ;o5 
-B @17v14     ;o6 
-C @17v12 @e9 ;o6 
+9 @17v14     @\0  ;o5 
+A @17v12 @e9 @\4  ;o5 
+B @17v14     @\8 ;o6 
+C @17v12 @e9 @\12 ;o6 
+9 h25,1,3,1 
+A h24,1,3,1 
+B h24,1,3,1 
+C h23,1,3,1 
 
 A         r4 ;delay 4 
 C         r4 ;delay 4 
@@ -305,11 +309,11 @@ C e1 d1<  ;o4
 
 ; **** D part
 9 @18v13 ;o3 
-A @18v11 ;o3 
-B @18v11 ;o4 
-C @18v11 ;o4 
+A @18v12 ;o3 
+B @18v12 ;o4 
+C @18v12 ;o4 
 
-9ABC >
+9ABC > 
 
 B r   ;delay 8 
 C r4  ;delay 4 
@@ -357,20 +361,23 @@ C    e4. e2& e d4. d4.>     ;o5 ;end delay 4
 9ABC <
 
 ; **** E part
-9 @16v14     ;o5 
-A @16v13 @e9 ;o5 
-B @14v11     ;o5 
-C @14v11     ;o5 
+
+9ABC r
+
+9 @16v13     ;o5 
+A @16v11 @e9 ;o5 
+B @6 v11     ;o5 
+C @6 v11     ;o5 
 
 A r ;delay 8 
 
-9 ra ge de4 c4 d4 e<a4> cd ;o5 
-A ra ge de4 c4 d4 e<a4> cd ;o5 
-B r4 cr4 c4 r r4c r4 c4 r  ;o5 
-C r4 er4 e4 r r4e r4 e4 r  ;o5 
+9  a ge de4 c4 d4 e<a4> cd ;o5 
+A  a ge de4 c4 d4 e<a4> cd ;o5 
+B  r cr4 c4 r r4c r4 c4 r  ;o5 
+C  r er4 e4 r r4e r4 e4 r  ;o5 
 
-9 <b->d ag cb- ae h51,2,2,3 e_b-8&b-_>c8&c2 hf <cd ;o5 
-A  b- d ag c+b-ae h51,2,2,3 e_b-8&b-_>c8&c2 hf <cd ;o5 
+9 <b->d ag cb- ae h22,2,1,2 e_b-8&b-_>c8&c2 hf <cd ;o5 
+A  b- d ag c+b-ae h22,2,1,2 e_b-8&b-_>c8&c2 hf <cd ;o5 
 B r4 dr4 d4 r r4 dr4 f4 r                                    ;o5 
 C r4 fr4 f4 r r4 fr4 a4 r                                    ;o5 
 
@@ -380,17 +387,17 @@ B r4c r4 c4 r r4 cr4 c4 r ;o5
 C r4e r4 e4 r r4 er4 e4 r ;o5 
 
 B @16v13 
-C @16v12
-9 d1 h51,2,2,3 f+_>c8&c_d8&d2.< ;o5 
-A d1 h51,2,2,3 f_b8&b_>d8&d2.<  ;o5 
+C @16v12 
+9 d1 ho f+_>c8&c_d8&d2.< ;o5 
+A d1 ho f_b8&b_>d8&d2.<  ;o5 
 B f4. a4.> e4 d4. c4. d4<       ;o5 
 C d4. f4.> c4< b4. a4. b4       ;o5 
 
 ; **** F part
 9 hf     ;o5 
 A hf     ;o5 
-B @14v11 ;o5 
-C @14v11 ;o5 
+B @6 v11 ;o5 
+C @6 v11 ;o5 
 
 9 c4. g4. a4. e4. gd4.  ;o5 
 A c4. g4. a4. e4. gd4.  ;o5 
@@ -413,15 +420,15 @@ B <a1 b1                                    ;o4
 C c1 d1<                                    ;o4 
 
 ; **** G part
-B @11v15 
-C @11v14 @e9 
+B @11v14 
+C @11v13 @e9 
 
 9 ed cd r<a rb_>c8&c4 <<ga> de dc     ;o4 
 A ed cd r<a r>c^ 4 <<ga> de dc        ;o4 
 B c4.< b4. a1& a4>                    ;o4 
 C e4. d4. c4& c1&                     ;o4 
 
-C                c                    ;o4 ;delay 8 
+C                c  v-1               ;o4 ;delay 8 
 
 9 e4. d4. c4 d4. c4. d4              ;o4 
 A e4. d4. c4 d4. c4. dr              ;o4 
@@ -431,7 +438,7 @@ C  ag eg4 e d4 ed cd4 c <a4>         ;o4
 9 >d+_e8&e4 a4. g4 e4. d4. e4 ;o5 
 A >e4. a4. g4 e4. d4. e4          ;o5 
 B a1& a1                          ;o4 
-C a1& a2..                        ;o4 ;end delay 8 
+C a1& a2.. v+1                    ;o4 ;end delay 8 
 
 9 fe ff4 e f4 g<g ab>cd  ef< ;o4 
 A fe ff4 e fg <ef ga b>c d < ;o4 ;end delay 8 
@@ -524,13 +531,14 @@ C rc4 r c4 rc rc4 r c4 rc&            ;o5
 9 v13 
 A v11 
 B v13 
-C v13 
+C v11 
 A         c4                          ;o5 ;delay 4 
+C         c4                          ;o5 ;delay 4 
 
 9 e4. d4. c4 d4. c4. d4               ;o5 
 A   e4. d4. c4 d4. c4.                ;o5 ;end delay 4 
 B c4.< b4. a4 b4. a4. b4              ;o4 
-C c4 c4.< b4. a4 b4. a4.              ;o4 
+C   c4.< b4. a4 b4. a4.               ;o4 ;end delay 4 
 
 ; **** J part
 9 @20v11     ;o5 
