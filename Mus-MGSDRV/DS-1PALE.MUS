@@ -12,14 +12,14 @@
 #title { "namco DRAGON SPIRIT [AREA1] The Paleozoic Era / Code By Uniskie" }
 #tempo 180
 
-;lead
-@e0 = { 1,0, c d:16 e:16 d:16 c:32 [0 b:3 d:3 c:3 ]}
-;long tone
-@e1 = { 1,0, fed ed:2 c:2 dcb:2 a:2 c:8 b:16 a:32
-      [0 9:3 b:3 a:3 ]     }
+;;lead
+;@e0 = { 1,0, c d:16 e:16 d:16 c:32 [0 b:3 d:3 c:3 ]}
+;;long tone
+;@e1 = { 1,0, fed ed:2 c:2 dcb:2 a:2 c:8 b:16 a:32
+;      [0 9:3 b:3 a:3 ]     }
 ;piano echo
 @e2 = { 1,0,
-       fedc
+       efedc
        d c:2 b:3 a:4
        c:2 b:3 a:4 9:5
        b:3 a:4 9:5 8:6
@@ -28,13 +28,13 @@
        7:4 6:8 5:8       6:4 5:8 4:8
        5:4 4:8 3:8       4:4 3:8 2:8
        3:4 2:8 1:8       2:4 1:8 0 }
-;click tone
-@e3 = { 1,0, fedcb:2 a:8 9:54 [0 a:2 9:2 8:2 ] }
+;;click tone
+;@e3 = { 1,0, fedcb:2 a:8 9:54 [0 a:2 9:2 8:2 ] }
 ;fade in
-@e4 = { 1,0, 0a=40 f=30 e:40 d:40 c:40 }
+@e4 = { 1,0, 0a=40 f=30 e:30 d:30 c:30 b:40 a:40}
 
 ;base
-@e6 = { 1,0, fecba }
+@e6 = { 1,0, fe2 }
 ;@e6 = ( 1,0,
 ;        fecb:2 a:4 9:6 8:8 7:10 6:12 5:15 4:20 3:20 2:20 1:20 0 }
 
@@ -44,21 +44,20 @@
 ;LFO
 @e9 = {1,0, f:120 [0 e:3 d:3 c:3 d:3 ]}
 
-
 ;fade in metal synth
 @v15 = {
 ;       TL FB
-         1, 0,
+        15, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
-   1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1,
-   1, 2, 0, 1, 0, 5, 0, 0, 0, 0, 1 }
+   2, 1, 2, 1, 0, 4, 0, 1, 0, 0, 0,
+   1, 2,15, 5, 0, 1, 0, 0, 1, 0, 1 }
 
 ;synth leed
 @v16 = {
 ;       TL FB
-        13, 6,
+        14, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 3, 8, 1, 0, 1, 0, 0, 0, 0, 0,
+  15, 3, 2, 1, 0, 1, 0, 0, 0, 0, 0,
   15, 8, 0, 7, 0, 1, 0, 0, 1, 0, 1 }
 
 ;synth guitar
@@ -73,10 +72,10 @@
 ;metallophone
 @v18 = {
 ;      TL FB
-       38, 0,
+       33, 0,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 8, 6, 6, 0,15, 0, 0, 0, 0, 1,
-  15, 5, 3, 3, 0, 4, 1, 0, 0, 0, 0 }
+  15, 8, 4, 2, 0,15, 0, 0, 0, 0, 1,
+  15, 6, 4, 2, 0, 4, 1, 0, 0, 0, 0 }
 
 ;elepi
 @v19 = {
@@ -155,16 +154,16 @@ G o3 v8  \-29
 ; **** intro
 9ABC l8 v14 o4
 9A @15
-9 @\0  h53,2,1,20 
-A @\0  h52,2,1,20 @e9 
+9 @\0  h53,1,1,2 
+A @\0  h52,1,1,2 @e9 
 B @\8 
 C @\8            @e9 
-9 v-3 <a2& v+1 a4.& v+1 a4.> v+1 ;o4 
-A v-3  a2& v+1 a4.& v+1 a4.  v+1 ;o4 
-BC  r1& r4
-9ABC @16 
-9B  b-aa-gf+f  ;o4
-AC  fed+dc+c   ;o4
+9 <r2 a4.& a4. &a2.> ;o4 
+A  r2 a4.& a4. &a2.  ;o4 
+BC r1& r4
+BC @6
+B  b-aa-gf+f  ;o4
+C  fed+dc+c   ;o4
 
 9ABC [0
 
@@ -174,7 +173,7 @@ A @16v12 @\4 h24,1,3,1 @e9 ;o4
 B @14v11 @\8 h24,1,3,1     ;o4 
 C @14v11 @\8 h23,1,3,1 @e8 ;o4 
 
-A               r4 ;delay 4 
+A r4 ;delay 4 
 
 9 g1& g4> c4 d4 e4 ;o5 
 A g1& g4> c4 d4 e4 ;o5 
@@ -308,12 +307,12 @@ B c1< b1  ;o4
 C e1 d1<  ;o4 
 
 ; **** D part
-9 @18v13 ;o3 
-A @18v12 ;o3 
-B @18v12 ;o4 
-C @18v12 ;o4 
+9 @18v11 ;o3 
+A @18v10 ;o3 
+B @18v10 ;o4 
+C @18v10 ;o4 
 
-9ABC > 
+9ABC >
 
 B r   ;delay 8 
 C r4  ;delay 4 
@@ -608,13 +607,13 @@ C  g<a4. a4.>d& d4 d4. db   ;o5 ;end delay 8
 ;=============================================
 ; sequence
 ;=============================================
-12 o2 v13 @4
-1  \-3 
-2  \-1 
-12 a1&a1
+12 o2 v11 @4
+1  \-1 
+2  \-2
+12 r2a2&a1
 
 12 l8 @2 o3
-1  v10 
+1  v10
 2  v9 r8 
 12 [0
 ; **** A part
@@ -651,42 +650,41 @@ C  g<a4. a4.>d& d4 d4. db   ;o5 ;end delay 8
 ;=============================================
 ; base
 ;=============================================
-D @14 v12 \-6 o2 q4 
-E @13 v15 \-5 o2 
-DE l8
-DE aaaaaaaaaaaaa-gf+f
-DE [0
-DE  [
-DE   >cc c<c> cc c>c< cc< cc> c>c< gc<
-DE   b->b-< ff b->b-< b->b-< b->b-< ff b->a gf<
-DE   aa a>a< a>a< aa a>a< aa a>a< aa
-DE   ff a>c dd c<b gg b>g< dd ef
-DE  ]
+3 !@6 v10 o2
+E @13 v15 \-5 o2
+D @14 v11 \-6 o2 q2
+3DE l8
+3DE aaaaaaaaaaaaa-gf+f
+3DE [0
+3DE  [
+3DE   >cc c<c> cc c>c< cc< cc> c>c< gc<
+3DE   b->b-< ff b->b-< b->b-< b->b-< ff b->a gf<
+3DE   aa a>a< a>a< aa a>a< aa a>a< aa
+3DE   ff a>c dd c<b gg b>g< dd ef
+3DE  ]
 
-DE  [aa aa aa aa aa aa |aa aa ]4
-DE                      a>a< a>a<
-DE  gg gg gg gg gg gg gg gg
-DE  f>f< f>f< f>f< f>f< g>g< g>g< g>g< g>g<
-DE  a->a-< a->a-< a->a-< a->a-< b->b-< b->b-< b->b-< b->b-
-DE  cc2< c cc> cc2< c c16c16c>
+3DE  [aa aa aa aa aa aa |aa aa ]4
+3DE                      a>a< a>a<
+3DE  gg gg gg gg gg gg gg gg
+3DE  f>f< f>f< f>f< f>f< g>g< g>g< g>g< g>g<
+3DE  a->a-< a->a-< a->a-< a->a-< b->b-< b->b-< b->b-< b->b-
+3DE  cc2< c cc> cc2< c c16c16c>
 
-DE  [8
-DE   cc c<c> cc c>c< cc< cc> c>c< gc<
-DE   b->b-< ff b->b-< b->b-< b->b-< ff b->a gf<
-DE   aa a>a< a>a< aa a>a< aa a>a< aa
-DE   ff a>c dd c<b gg b>g< dd ef>
-DE  ]
+3DE  [8
+3DE   cc c<c> cc c>c< cc< cc> c>c< gc<
+3DE   b->b-< ff b->b-< b->b-< b->b-< ff b->a gf<
+3DE   aa a>a< a>a< aa a>a< aa a>a< aa
+3DE   ff a>c dd c<b gg b>g< dd ef>
+3DE  ]
 
-DE  <aa> a<a a>a< eg aa4> a< a>a< a>a<
-DE  a>a< aa> a<a a>a< aa eg aa a>a
-DE  <aa> a<a aa aa aa aa a>a< a>a
-DE  <gg> g<g g>g< gg g>g< gg gg f+g
-DE  f>f ef< f>f ef< g>g f+g< g>g f+g<
-DE  a->a- ga-< a->g a-a-< b->b- ab-< b->a b-b-
-DE  cc2< c cc> cc2< c c16c16c
-DE ]
-
-
+3DE  <aa> a<a a>a< eg aa4> a< a>a< a>a<
+3DE  a>a< aa> a<a a>a< aa eg aa a>a
+3DE  <aa> a<a aa aa aa aa a>a< a>a
+3DE  <gg> g<g g>g< gg g>g< gg gg f+g
+3DE  f>f ef< f>f ef< g>g f+g< g>g f+g<
+3DE  a->a- ga-< a->g a-a-< b->b- ab-< b->a b-b-
+3DE  cc2< c cc> cc2< c c16c16c
+3DE ]
 
 ;==== rhythm ====
 
