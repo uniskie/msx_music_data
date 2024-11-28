@@ -9,7 +9,7 @@
 #opll_mode 0
 #lfo_mode 0
 #machine_id 0
-#title { "namco DRAGON SPIRIT [AREA1] The Paleozoic Era / Code By Uniskie" }
+#title { "namco DRAGON SPIRIT [AREA1] The Paleozoic Era / port by Uniskie" }
 #tempo 180
 
 ;;lead
@@ -42,7 +42,10 @@
 ;@e8 = {1,0,}
 
 ;LFO
-@e9 = {1,0, f:120 [0 e:3 d:3 c:3 d:3 ]}
+@e9 = {,, f:120 [0 e:3 d:3 c:3 d:3 ]}
+
+;fade out
+@e10 = {,, fc=46 8=90 }
 
 ;fade in metal synth
 @v15 = {
@@ -68,19 +71,18 @@
   15,13, 1, 1, 0, 1, 0, 0, 0, 0, 0,
   15,15, 0, 3, 0, 1, 0, 0, 0, 0, 1 }
 
-
 ;metallophone
 @v18 = {
 ;      TL FB
-       33, 0,
+       60, 0,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 8, 4, 2, 0,15, 0, 0, 0, 0, 1,
-  15, 6, 2, 3, 0, 4, 1, 0, 0, 0, 0 }
+  15, 7,12, 1, 0,12, 0, 1, 0, 0, 0,
+  15, 3, 3, 3, 0, 4, 1, 0, 0, 0, 0 }
 
-;elepi
+;xylophone
 @v19 = {
 ;       TL FB
-        26, 7,
+        24, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15, 7,10, 1, 1, 1, 0, 0, 0, 0, 0,
   15, 4,15, 4, 0, 1, 1, 0, 0, 0, 1 }
@@ -156,22 +158,22 @@ G o3 v8  \-29
 9A @15 v12
 9 @\0  h53,1,1,2 
 A @\2  h52,1,1,2 @e9 
-B @\8 
-C @\8            @e9 
+B @\8
+C @\8
 9  r4.  a4.& a4 &a1  ;o4 
 A  r4.  a4.& a4 &a1  ;o4 
 BC r1& r4
-BC @6 v14
-B  b-aa-gf+f  ;o4
-C  fed+dc+c   ;o4
+BC @6 v13 
+B  b-aa-gf+f  ;o4 
+C  fed+dc+c   ;o4 
 
 9ABC [0
 
 ; **** A part
-9 @16v14 @\0 h25,1,3,1     ;o4 
+9 @16v14 @\0 h35,1,3,1     ;o4 
 A @16v12 @\4 h24,1,3,1 @e9 ;o4 
-B @9 v13 @\8 h24,1,3,1     ;o4 
-C @9 v13 @\8 h23,1,3,1 @e8 ;o4 
+B @0 v15 @\8 h24,1,3,1 @e10 ;o4 
+C @0 v15 @\8 h23,1,3,1 @e10 ;o4 
 
 A r4 ;delay 4 
 
@@ -207,8 +209,8 @@ C d1& d1         ;o4
 
 9 >c1& c2< ed ef     ;o5 
 A >c1& c2< ed ef     ;o5 
-B e1& @16v14 e1      ;o4 
-C a1& @16v12 @e9 a1& ;o4 
+B e1& @16v13 @e8 e1  ;o4 
+C a1& @16v11 @e9 a1& ;o4 
 
 9 a4 b4> c4 d4 c4< b4 a4 b4 ;o5 
 A a4 b4> c4 d4 c4< b4 a4 b4 ;o5 
@@ -227,9 +229,9 @@ C e1& e2.< ;o5 ;end delay 4
 ; **** B part
 9 @17v14     @\0  ;o5 
 A @17v12 @e9 @\4  ;o5 
-B @17v14     @\8 ;o6 
+B @17v14 @e8 @\8  ;o6 
 C @17v12 @e9 @\12 ;o6 
-9 h25,1,3,1 
+9 h35,1,3,1 
 A h24,1,3,1 
 B h24,1,3,1 
 C h23,1,3,1 
@@ -307,10 +309,10 @@ B c1< b1  ;o4
 C e1 d1<  ;o4 
 
 ; **** D part
-9 @18v11 ;o3 
-A @18v10 ;o3 
-B @18v10 ;o4 
-C @18v10 ;o4 
+9 @18v12 ;o3 
+A @18v11 ;o3 
+B @18v11 ;o4 
+C @18v11 ;o4 
 
 9ABC >
 
@@ -363,10 +365,11 @@ C    e4. e2& e d4. d4.>     ;o5 ;end delay 4
 
 9ABC r
 
-9 @16v13     ;o5 
-A @16v11 @e9 ;o5 
-B @6 v11     ;o5 
-C @6 v11     ;o5 
+9 @16v14      ;o5 
+A @16v12 @e9  ;o5 
+B @0 v14 @e10 ;o5 
+C @0 v14 @e10 ;o5 
+BC h18,1,3,1
 
 A r ;delay 8 
 
@@ -385,18 +388,18 @@ A e4. d4 a4 g4 g a4 c4. e ;o5
 B r4c r4 c4 r r4 cr4 c4 r ;o5 
 C r4e r4 e4 r r4 er4 e4 r ;o5 
 
-B @16v13 
-C @16v12 
+B @16v14 @e8
+C @16v12 @e8
 9 d1 ho f+_>c8&c_d8&d2.< ;o5 
 A d1 ho f_b8&b_>d8&d2.<  ;o5 
 B f4. a4.> e4 d4. c4. d4<       ;o5 
 C d4. f4.> c4< b4. a4. b4       ;o5 
 
 ; **** F part
-9 hf     ;o5 
-A hf     ;o5 
-B @6 v11 ;o5 
-C @6 v11 ;o5 
+9 hf          ;o5 
+A hf          ;o5 
+B @0 v14 @e10 ;o5 
+C @0 v14 @e10 ;o5 
 
 9 c4. g4. a4. e4. gd4.  ;o5 
 A c4. g4. a4. e4. gd4.  ;o5 
@@ -419,7 +422,7 @@ B <a1 b1                                    ;o4
 C c1 d1<                                    ;o4 
 
 ; **** G part
-B @11v14 
+B @11v14 @e9
 C @11v13 @e9 
 
 9 ed cd r<a rb_>c8&c4 <<ga> de dc     ;o4 
@@ -445,10 +448,12 @@ B fe ff4 e f4 g<g ab cd> ef  ;o4
 C dd dd4 d d4 e<e fg ab> cd  ;o4 
 
 ; **** H part
-9 @19v14     ;o4 
-A @19v13 @e8 ;o4 
-B @19v13     ;o4 
-C @19v13 @e8 ;o4 
+9 @19v15     ;o4 
+A @19v14 @e8 ;o4 
+B @19v14     ;o4 
+C @19v14 @e8 ;o4 
+B h24,1,3,1 
+C h23,1,3,1 
 
 9ABC >
 
@@ -503,6 +508,7 @@ C e4.> c4. a4< d4. d4.> d4        ;o5
 A @16v12 @e9 ;o5 
 B @16v13     ;o5 
 C @16v12 @e9 ;o5 
+BC h18,1,3,1
 
 A e4 ;o5 ;delay 4 
 
@@ -544,6 +550,8 @@ C   c4.< b4. a4 b4. a4.               ;o4 ;end delay 4
 A @20v11 @e8 ;o5 
 B @20v11     ;o4 
 C @20v11 @e8 ;o4 
+B h24,1,3,1 
+C h23,1,3,1 
 
 B r                                   ;o4 ;delay 8 
 C r                                   ;o4 ;delay 8 
@@ -609,11 +617,11 @@ C  g<a4. a4.>d& d4 d4. db   ;o5 ;end delay 8
 ;=============================================
 12 o2 v12 @4
 1  \-1 
-2  \-2
+2  \-2 
 12 r2a2&a1
 
 12 l8 @2 o3
-1  v10
+1  v10 
 2  v9 r8 
 12 [0
 ; **** A part
@@ -650,9 +658,9 @@ C  g<a4. a4.>d& d4 d4. db   ;o5 ;end delay 8
 ;=============================================
 ; base
 ;=============================================
-3 !@6 v10 o2
-E @13 v15 \-5 o2
-D @14 v11 \-6 o2 q2
+3 !@6 v10 o2 
+E @13 v15 \-5 o2 
+D @14 v11 \-6 o2 q2 
 3DE l8
 3DE aaaaaaaaaaaaa-gf+f
 3DE [0
