@@ -1,8 +1,8 @@
 *.bas		diff=sjis encoding=sjis eol=CRLF
 *.asm		diff=sjis encoding=sjis eol=CRLF
 *.asf		diff=sjis encoding=sjis eol=CRLF
-;*.mus		diff=sjis encoding=sjis eol=CRLF
-*.mus		text eol=CRLF	;utf-8 on MSXPlay
+*.mus		diff=sjis encoding=sjis eol=CRLF
+;*.mus		diff=sjis encoding=sjis eol=CRLF ;utf-8 on MSXPlay
 *.mml		text eol=CRLF	;utf-8 on NDP
 *.msd		diff=sjis encoding=sjis eol=CRLF
 *.txt		diff=sjis encoding=sjis eol=CRLF
