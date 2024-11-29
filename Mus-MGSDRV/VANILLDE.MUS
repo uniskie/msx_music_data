@@ -6,7 +6,7 @@
 ; fade    : The time of fade out.
 #opll_mode 1
 #tempo 150
-#title { "ãƒ´ã‚¡ãƒ‹ãƒ©ã§é«˜åå…¥çš„ãªã‚„ã¤ for OPLL/PSG"}
+#title { "ƒ”ƒ@ƒjƒ‰‚Å‚û“ü“I‚È‚â‚Â for OPLL/PSG"}
 
 @v15 = {
 ;       TL FB

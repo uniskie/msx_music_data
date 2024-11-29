@@ -7,7 +7,7 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 #opll_mode 1
 #tempo 218
-#title {"GRADIUS2(MSX) ç©ºä¸­æˆ¦ | ç´ YM2413 by uniskie"}
+#title {"GRADIUS2(MSX) ‹ó’†í | ‘fYM2413 by uniskie"}
 
 @v15 = { ; Brass
 ;       TL FB

@@ -8,7 +8,7 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
 #tempo 240
-#title {"HARD DRIVIN' - MAIN THEME | ç´ YM2413 | MML by uniskie"}
+#title {"HARD DRIVIN' - MAIN THEME | ‘fYM2413 | MML by uniskie"}
 
 ; GUITER
 @v16 = {

@@ -4,7 +4,7 @@
 #opll_mode 1
 #lfo_mode 0
 #machine_id 0
-#title { "namco   DRAGON SPIRIT  AREA7 ï½¢DEEP SEAï½£         By Uniskie" }
+#title { "namco   DRAGON SPIRIT  AREA7 ¢DEEP SEA£         By Uniskie" }
 #tempo 75
 #alloc { 0=229, 1=198, 2=202, 3=360, 4=199, 5=70, 6=232, 7=154, 8=195, 9=153, A=226, B=70, C=88, D=71, E=199, F=383 }
 
