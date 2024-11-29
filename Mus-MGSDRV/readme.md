@@ -11,6 +11,10 @@
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
 
+- DRAGON SPIRIT [AREA1] The Paleozoic Era (OPLL only)  
+  [MSXPlay: DS-1PALO.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-1PALO.MUS)  
+  [M3disp: DS-1PALO.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-1PALO.MGS)  
+
 - DRAGON SPIRIT [AREA1] The Paleozoic Era (PSG+OPLL)  
   [MSXPlay: DS-1PALE.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-1PALE.MUS)  
   [M3disp: DS-1PALE.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-1PALE.MGS)  
