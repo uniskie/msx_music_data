@@ -645,12 +645,12 @@ D r4.a2^8& a1
 ; MUL 1:1‚È‚Ì‚ªviolin‚Ì—Ç‚¢Š
 ; https://github.com/uniskie/msx_music_data/blob/master/Mus-MGSDRV/nukeinst.txt
 
-D l8 o5 v11 @\0 so
-*1 = {};v-1 @11 q1}
-*2 = {};v+1 @11 q1}
-D @11 q1 so
+D l8 o5 v12 @\0 so
+*1 = {v-1}; @11 q1}
+*2 = {v+1}; @11 q1}
+D @11 q1 so *1
 D h35,1,3,1
-D [0 $
+D [0 
 ; **** A part
 ;*99={
 ;    [g>c ec ef e|c<]4
@@ -660,17 +660,17 @@ D [0 $
 ;  }
 *99={
     l16
-    [gv-3>c<v+3>cv-3<g>v+3 ev-3cv+3cv-3ev+3 ev-3cv+3fv-3ev+3 ev-3fv+3|cv-3ev+3<]4
-                                                        cv-3ev+3
-    r8<av-3>c<v+3> cv-3<a>v+3ev-3cv+3 gv-3ev+3ev-3gv+3
-    cv-3ev+3<av-3>c<v+3r8 av-3av+3> cv-3<a>v+3ev-3cv+3 gv-3ev+3ev-3gv+3 cv-3ev+3<av-3>c<v+3
-    fv-3av+3av-3fv+3> ev-3<a>v+3dv-3ev+3r8 cv-3dv+3< bv-3>c<v+3>cv-3<b>v+3
-    cv-3cv+3<bv-3>c<v+3 gv-3bv+3>cv-3<g>v+3< bv-3>c<v+3gv-3bv+3> cv-3<g>v+3<gv-3>c<v+3
+    [gv-4>c<v+4>cv-4<g>v+4 ev-4cv+4cv-4ev+4 ev-4cv+4fv-4ev+4 ev-4fv+4|cv-4ev+4<]4
+                                                        cv-4ev+4
+    r8<av-4>c<v+4> cv-4<a>v+4ev-4cv+4 gv-4ev+4ev-4gv+4
+    cv-4ev+4<av-4>c<v+4r8 av-4av+4> cv-4<a>v+4ev-4cv+4 gv-4ev+4ev-4gv+4 cv-4ev+4<av-4>c<v+4
+    fv-4av+4av-4fv+4> ev-4<a>v+4dv-4ev+4r8 cv-4dv+4< bv-4>c<v+4>cv-4<b>v+4
+    cv-4cv+4<bv-4>c<v+4 gv-4bv+4>cv-4<g>v+4< bv-4>c<v+4gv-4bv+4> cv-4<g>v+4<gv-4>c<v+4
     l8
   }
 D  [2 *99 ] 
 ;D  >a1& a1< 
-D  l16>a((a))<r2.. r1
+D  *2 l16>a((a))<r2.. r1 *1
 
 ; **** B part
 D  [ 
@@ -684,11 +684,13 @@ D   c1 g2> c2<
 D   a-2 d+4 a-4 b-1> 
 ;D   cc2> c cc< cc4.< c>c16c16 c16<c16>c16>c16 
 D   *1
-D   l16 cv-3cv+3cv-3c4..v+3> cv-3cv+3 cv-3cv+3cv-3cv+3< cv-3cv+3cv-3c^4v+3< cv-3cv+3>cc c<c>c>c l8 
+D   l16 cv-4cv+4cv-4cv+4r4.> cv-4cv+4 cv-4cv+4cv-4cv+4< cv-4cv+4cv-4cv+4r4< cv-4cv+4>cc c<c>c>c l8 
 D   << ;o4 
 D  | 
 ; **** C part - J part
+D   v-1
 D   [8 *99 ] 
+D   v+1
 D  ] 
 D ] 
 
