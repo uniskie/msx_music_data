@@ -10,15 +10,53 @@
 - 面倒な処理を簡略化できる様々なコマンド
   例） ハードウェアエンベロープの音程制御、アルペジオ展開、セルフエコー
 
+
+> NDP (PSG Driver for MSX) version 0.9.64     Programmed by naruto2413  
+> NDP.BINは許諾を得て同梱しているものです。
+
+
 ## 視聴方法
 
 NDP.BINとNDPファイルをロードしてBASICから再生する方法もありますが
 KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生可能です
 
-1. ブラウザで https://m3.ym2413.com/ を開く
-2. M3dispにkssをドロップして再生を実行
+1. Windows等で聞く
 
-m3dispはMGSファイルなども直接再生可能です。
+   ブラウザで https://m3.ym2413.com/ を開き、
+   M3dispにkssをドロップして再生を実行。
+
+   m3dispはMGSファイルなども直接再生可能です。
+
+2. MSXで聞く
+   
+   MSXで演奏する際に使用するファイル
+
+   - play.bas
+   - NDP.BIN
+   - USRGETA.BIN
+   - *.NDP
+
+   PLAY.BASは簡易プレイヤーになっています。
+   - "L"キー：1曲演奏/2ループオートプレイの切り替え
+   - その他のキーやジョイボタン：次の曲へ
+   
+   ![ndp-play](img/ndp-play.png)
+
+   ディスクイメージ [../DSK_image/ndp.dsk](../DSK_image/ndp.dsk) もあります。
+   
+   ![ndp.dsk](img/ndp_dsk.png)
+
+
+   > Windowsからディスクイメージの内容を操作したい場合は、DiskExplorerが便利です。
+   >
+   > https://www.vector.co.jp/soft/win95/util/se107750.html  
+   >
+   > - 2DD/FAT12はそのまま使えます
+   > - HDDイメージは  
+   >   (Manual HD)→  
+   >   フォーマット「AT形式」→  
+   >   パーティション「基本領域(FAT)」  
+   >   を選択すると操作できます。
 
 ## N3disp 直再生リンク
 
@@ -39,7 +77,7 @@ m3dispはMGSファイルなども直接再生可能です。
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dangrous_seed_5.kss
 
 - "女神転生Ⅱ Labyrinth 午前２時の迷宮"  
- [ndp-dds2-Labyrinth.kss]  
+  [ndp-dds2-Labyrinth.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dds2-Labyrinth.kss
 
 - "女神転生Ⅱ - OMEGA 聖戦 -" [ndp-dds2-omega.kss]  
