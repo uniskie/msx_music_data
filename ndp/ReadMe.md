@@ -10,6 +10,11 @@
 - 面倒な処理を簡略化できる様々なコマンド
   例） ハードウェアエンベロープの音程制御、アルペジオ展開、セルフエコー
 
+
+> NDP (PSG Driver for MSX) version 0.9.64     Programmed by naruto2413  
+> NDP.BINは許諾を得て同梱しているものです。
+
+
 ## 視聴方法
 
 NDP.BINとNDPファイルをロードしてBASICから再生する方法もありますが
@@ -39,7 +44,7 @@ m3dispはMGSファイルなども直接再生可能です。
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dangrous_seed_5.kss
 
 - "女神転生Ⅱ Labyrinth 午前２時の迷宮"  
- [ndp-dds2-Labyrinth.kss]  
+  [ndp-dds2-Labyrinth.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dds2-Labyrinth.kss
 
 - "女神転生Ⅱ - OMEGA 聖戦 -" [ndp-dds2-omega.kss]  
