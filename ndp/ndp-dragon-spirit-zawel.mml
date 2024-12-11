@@ -106,7 +106,7 @@
 
 ;---- drum ---
 
-r v14 @rc2
+r v14 @c2
 r l16
 
 r b8r4 r4.r4. bmmmmm

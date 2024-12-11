@@ -2,6 +2,11 @@
 #bsave-name "DDS2LABY"
 #programmer "uniskie 2024/09/18"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
+#tempo 120
+
 ;piano
 @0 = { fec dcb:2 a:2 9:2 b:2 a:3 9:3 8:3 [3 a:3 9:3 8:3 ]
        [3 9:3 8:3 7:3 ] [2 8:3 7:3 6:3 ] L 7:3 6:3 5:3

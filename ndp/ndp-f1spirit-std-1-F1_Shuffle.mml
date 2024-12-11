@@ -4,8 +4,10 @@
 #bsave-name "F1SP_1"
 #programmer "uniskie 2024/10/13"
 
-#tempo 150
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
 
+#tempo 150
 
 @0 = f e d:3 c:5 L b:9 c:9
 @6 = fdcb L a:5 9:5
@@ -42,7 +44,7 @@
 ;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
 ;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
-r @rc2
+r @c2
 r v14 l16
 r l16
 r r8

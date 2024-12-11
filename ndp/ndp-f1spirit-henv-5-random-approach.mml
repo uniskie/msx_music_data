@@ -4,6 +4,9 @@
 #bsave-name "F1SP-5"
 #programmer "uniskie 2024/10/13"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 ;#tempo 224 ;端数アリ
 #timebase 16
 
@@ -172,7 +175,7 @@
 ;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
 ;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
-r v14 @rc2
+r v14 @c2
 r l8 
 
 r @L

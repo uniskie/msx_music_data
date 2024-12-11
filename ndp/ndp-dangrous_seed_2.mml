@@ -4,7 +4,8 @@
 #programmer "uniskie 2004/09/12"
 #bsave-name "DSEED-2"
 
-; ndp v0.49 ベースがパワーを出せるようになったのでリズムボリューム+1
+;#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
 
 #tempo 128
 
@@ -93,7 +94,7 @@
 @R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
 r v15
-r @rc2
+r @c2
 r @l
 r l16
 r [[ bbbbssrb b8bk sssn

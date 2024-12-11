@@ -4,6 +4,9 @@
 #bsave-name "PAROCRIS"
 #PROGRAMMER "uniskie 2024/09/03"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 #tempo 180
 
 @m0=18,3,3,8
@@ -78,7 +81,7 @@
 @R:C = *3 :20 N2 V12 / N1 V11 / N0 V10
 @R:H = *3 :20 N1 V12
 
-r @rc3
+r @c3
 r l16
 r t100 b4 b4 t120 b4 h4
 r t150 b4 b4 b4 h8h8

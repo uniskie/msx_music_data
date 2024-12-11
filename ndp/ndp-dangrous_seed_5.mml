@@ -4,8 +4,8 @@
 #programmer "uniskie 2004/09/19"
 #bsave-name "DSEED-5"
 
-; ndp v0.49 ベースがパワーを出せるようになったので全体にボリューム+1
-; @m指定での揺れ調整
+;#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
 
 #tempo 154
 
@@ -97,7 +97,7 @@
 @R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
 r v15
-r @rc2
+r @c2
 r @l
 r l16
 r [[b4b4b4/b4]2 b8b16b16]4 

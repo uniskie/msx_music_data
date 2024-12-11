@@ -2,6 +2,9 @@
 #bsave-name "DDS2OMEG"
 #programmer "uniskie 2024/09/18"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 #tempo 120
 ;#timebase 30
 
@@ -100,10 +103,11 @@
 ;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
 ;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
-r @rc2
+r @c2
 r v15 vh12
 r @L l16
 r [
-r  [32 [bhh] s8bh]
+;r  [32 [bhh] s8bh ] ; repeat-mode 1/2でおかしくなる
+r  [32 bhhbhhs8bh ]	; repeat-mode 1/2対策
 r  [8 bbhbs8bb hbs8bbs8]
 r ]

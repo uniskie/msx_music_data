@@ -4,6 +4,9 @@
 #bsave-name "SALA_O01"
 #programmer "uniskie 2024/09/15"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 ;#tempo 150
 #timebase 24
 
@@ -120,7 +123,7 @@
 @R:M = *3 :500 N10 V14 / *1 :630 V14 / :760 V13
 @R:N = *3 :720 N12 V14 / *1 :870 V14 / :1020 V13
 
-r v15 @rc2
+r v15 @c2
 r l12 
 r [B12S12S12B12S12S12B6B6B6 
 r  B12S12S12B12S12S24S24K6M6N6]2 

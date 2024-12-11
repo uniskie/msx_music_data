@@ -1,6 +1,9 @@
 #title "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
 #bsave-name "DRSP-AR1"
-#programmer "uniskie 2024/11/23"
+#programmer "uniskie 2024/12/12"
+
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
 
 #tempo 180
 
@@ -276,7 +279,7 @@ $base1={
 
 
 ;==== rhythm ====
-r v14 @rc3
+r v14 @c3
 r l8
 
 r r1 k4r4l16mmmmmmnn l8

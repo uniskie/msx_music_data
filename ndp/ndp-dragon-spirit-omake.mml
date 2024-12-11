@@ -99,7 +99,7 @@ $t2 = t80
 ;@R:H = *2 :14  N0 V15 
 @R:M = *3 :20 N1 V15
 
-r vh12vm13 @rc3
+r vh12vm13 @c3
 r @l
 r l4 [rmrm]8
 ;r [hmhm]5

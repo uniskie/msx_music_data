@@ -4,6 +4,9 @@
 #bsave-name "GRAII-16"
 #PROGRAMMER "uniskie 2024/09/10"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 #tempo 180
 
 @n12=l-12,0,12

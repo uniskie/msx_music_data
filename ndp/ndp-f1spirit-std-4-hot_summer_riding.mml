@@ -4,9 +4,11 @@
 #bsave-name "F1SP_4"
 #programmer "uniskie 2024/09/19"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 ;#tempo 224 ;端数アリ
 #timebase 16
-
 
 @m0 = 11,4,3,8 ,3,1
 @m1 = 28,4,3,8 ,3,1
@@ -108,7 +110,6 @@
 
 3 @L j1
 
-;3 s8,1 m+ mk0
 ;3 s10,8 m+ mk0 ; ** H.ENV (TRIANGLE WAVE)
 
 3 @q2
@@ -156,7 +157,7 @@
 ;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
 ;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
-r v14 @rc2
+r v14 @c2
 r l8
 
 r h16[s16]3 bb sbss
@@ -165,12 +166,12 @@ r @L
 
 r [[sb]6 [s]4]4
 
-r @rc3
+r @c3
 r [[[bhsh/bbsh]4
 r         hhs/h]2
 r             s]2
 
-r @rc2
+r @c2
 r [shhs/bv-2b v+2sh]4
 r       [s16]8
 

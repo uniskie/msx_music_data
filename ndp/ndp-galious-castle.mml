@@ -4,6 +4,9 @@
 #BSAVE-NAME "GALIOH02"
 #programmer "uniskie 2024/09/17"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 ;#tempo 224
 #timebase 16
 
@@ -184,7 +187,7 @@ $tom = *1@9@q0
 @R:H = *2 :20 N0 V11
 @R:O = *2 :21 N0 V11 / V10 / V9
 
-r @rc2
+r @c2
 r v15
 r @L
 r [

@@ -2,6 +2,9 @@
 #PROGRAMMER "uniskie 2014/10/1"
 #BSAVE-NAME "SOMD1-01"
 
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
 ;#TEMPO 75
 #TIME-BASE 48
 
@@ -10,7 +13,7 @@
 ;==== RHYTHM VOICE ====
 ;@R:B = *3 :920 N1 V14 / *1 :2000 V12
 @R:S = V15 *1 :480 N4 / V14 *2 N3 ;/ V13 N1 *3 :520 / V12 :590
-@R:H = *3 :20 N0 V15                               ;-- Close Hi-hut
+@R:H = *3 :19 N0 V15                               ;-- Close Hi-hut
 ;@R:E = *3 :920 N0 V15 / *1 :2000 V12              ;-- Close Hi-hut + Bass drum
 ;@R:O = *3 :21 N0 V15 / N1                         ;-- Open Hi-hut
 @R:K = V15 *3 :450 N2 / *1 V13 :500 / V12 :550
@@ -76,7 +79,7 @@ $d3=\7  ;ユニゾン揺れ周期調整
 1 @0 o4 v14
 2 @0 o5 v11
 3 $base: $d: o2 v15 @r10,1 
-r vs14 vh12 vk14 vm14 vn14 @rc2
+r vs14 vh11 vk14 vm14 vn14 @c2
 
 12 @m0 @r13,2 @rd1,18 @q2
 12  la%2 @as1

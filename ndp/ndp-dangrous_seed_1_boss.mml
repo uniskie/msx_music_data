@@ -4,7 +4,8 @@
 #programmer "uniskie 2004/09/05"
 #bsave-name "DSEED-1B"
 
-; ndp v0.49 ベースがパワーを出せるようになったので全体にボリューム+1
+;#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
 
 #tempo 114
 
@@ -127,7 +128,7 @@
 @R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
 @R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
-r @rc2
+r @c2
 r v15
 r l16
 r [4 b8r16b8r16 / b4b8b8b8 ] 
