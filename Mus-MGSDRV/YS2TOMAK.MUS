@@ -1,4 +1,4 @@
-;[gain=1.0 name=YS2TOMAK duration=300s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=YS2TOMAK duration=300s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com 
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -10,7 +10,7 @@
 ;           Note that duration takes precedence over loop.
 #opll_mode 0
 #tempo 112
-#title {"YS II - TO MAKE THE END OF BATTLE / OPLL+PSG / coding by uniskie"}
+#title {"YS II - TO MAKE THE END OF BATTLE / OPLL+PSG arrange by uniskie"}
 
 #alloc {f=1200, g=1200, h=1200}
 
@@ -42,10 +42,10 @@
 
 @16 = { ;@v29 distortion guitar (high)
 ;       TL FB 
-         1, 5,
+        14, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT 
-  14, 1, 4, 0, 0, 1, 0, 0, 1, 0, 0,
-  15, 8, 1, 7, 0, 1, 0, 0, 1, 0, 1 } 
+  14, 1, 4, 0, 0, 1, 0, 1, 1, 0, 0,
+  15, 8, 1, 1, 0, 1, 0, 1, 0, 0, 1 } 
 
 @17 = { ;@v29 distortion guitar
 ;       TL FB 
@@ -72,8 +72,8 @@
 ;       TL FB 
          7, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT 
-  15, 0, 0, 5, 0, 3, 0, 0, 1, 0, 0,
-  15, 7, 3, 1, 0, 3, 0, 0, 0, 0, 0 } 
+  15, 0, 0, 5, 0, 3, 0, 1, 1, 0, 0,
+  15, 7, 3, 1, 0, 3, 0, 1, 0, 0, 0 } 
 
 @21 = { ;@v35 brass
 ;       TL FB 
@@ -184,10 +184,10 @@ F y14,32 ; chgange to rhythm mode (BSMCH all off)
 ; MAIN
 ;=============================================
 #macro_offset {v = 0}
-*0 = { @17 q8sf v+2 } ;guiter main
-*2 = { v-2 } ;end - guiter main
-*1 = { @13 q8sf v-1 } ;guiter sub
-*3 = { v+1 } ;end - guiter sub
+*0 = { @17 q8sf v+3 } ;guiter main
+*2 = { v-3 } ;end - guiter main
+*1 = { @13 q8sf v-0 } ;guiter sub
+*3 = { v+0 } ;end - guiter sub
 
 #macro_offset {h = 4}
 *4 = { h21,2,1,2 }
@@ -204,8 +204,8 @@ BC   r16
 
 9     v12 o4
 A     v12 o5 \-1
-B     v10 o4 @\13
-C     v10 o5 @\10
+B     v10 o4 @\14
+C     v10 o5 @\9
 
 ;**** part a
 9B    *v0 ;distortion guitar
@@ -214,8 +214,8 @@ AC    *v1
 9A    <a>
 BC    ;r
 
-9B    @20 ;shtar
-AC    @1  ;guitar
+9B    < @20 ;shtar
+AC    v-1 @1  ;guiter
 BC    r
 9B    *v2
 AC    *v3
@@ -224,6 +224,8 @@ AC    *v3
 9ABC  ab->c+<b-ab->c+
 9A    d<
 BC    < ;r
+9B    >
+AC    v+1
 
 9B    *v0 ;distortion guitar
 AC    *v1
@@ -232,11 +234,10 @@ BC    r
 9ABC  >c+<ab-gafge b-gafgefd 
 9ABC  c+defgab->c+ ec+<b->fc+<b-< ef
 9ABC  *h1 g4.ab- >c+4.ef
-9ABC  gfefgab->c+ *h0 q6 e8e8f8g8< q8
+9ABC  gfefgab->c+ *h0 q6e8q8e8f8g8<
 
 ;**** part b
 ; distortion guitar
-9ABC  [
 9ABC   >
 9ABC   fecd^4^ 4     <a>cdc
 9ABC   fecd^4^ 8&d_<d8><agfe
@@ -246,7 +247,7 @@ BC    r
 9ABC   a8.f8.d8
 9ABC   e8.g8.b-8
 9ABC   a2> defgagfe
-9ABC  |
+
 9ABC   g8.e8^32&e_c32c8
 
 9ABC   <g8.>c8.e8
@@ -255,8 +256,8 @@ BC    r
 9ABC   dfa>c+dfa 
 
 9B     @16 ;distortion guitar high
-9A     >c+d4.  &d_<d8><<
-BC     >c+d4^16&d_<d8><< ;r
+9A     >c+d4..&d_<d><<
+BC     >c+d4. &d_<d><< ;r
 9B     *v2
 AC     *v3
 
@@ -265,17 +266,16 @@ AC     *v3
 9ABC   @19 q6so ;electric piano
 BC     r 
 BC     v+1
-9ABC  ]
 
-;9ABC  >
-;9ABC  fecd^4^ 4<a>cdc
-;9ABC  fecd^4^ 4<agfe
-;
-;9ABC  f8.d8.f8
-;9ABC  g8.e8.g8
-;9ABC  a8.f8.d8
-;9ABC  e8.g8.b-8
-;9ABC  a2> defgagfe
+9ABC  >
+9ABC  fecd^4^ 4<a>cdc
+9ABC  fecd^4^ 4<agfe
+
+9ABC  f8.d8.f8
+9ABC  g8.e8.g8
+9ABC  a8.f8.d8
+9ABC  e8.g8.b-8
+9ABC  a2> defgagfe
 
 9ABC  g8.e8.c8 
 
@@ -417,16 +417,16 @@ AC   *v1 ;distortion guitar sub
 ;=============================================
 
 #macro_offset {b = 6}
-*6 = { <<<  @13@e0 q6 v-1 hf       } ;base 1
-*7 = { <<<< @10@e0 q1 v-1 hf       } ;base 2
-*8 = { >>>  @14@e9 q8 v+1 h4,0,4,6 } ;hit
-*9 = { >>>> @14@e9 q8 v+1 h4,0,4,6 } ;hit
-@e9 = {,,fed}
+*6 = { <<<  @13@e0 q6sf v-2 hf       } ;base 1
+*7 = { <<<< @10@e0 q1sf v-2 hf       } ;base 2
+*8 = { >>>  @e9 q8sf v+2 h4,0,4,6 } ;hit
+*9 = { >>>> @e9 q8sf v+2 h4,0,4,6 } ;hit
+@e9 = {,,@13f@7ed}
 
 DE r8.
 
 DE [3
-D   @13q6 v12 o2
+D   @13q6 v13 o2
 E   @10q1 v12 o2
 
 DE  l16 
@@ -483,14 +483,14 @@ DE &d_<d8.r16v0r8.
 ;=============================================
 
 ; bass drum & snare & tom
-*10={q3    <a>   } ;bass drum
-*11={q1 v-1 c v+1} ;snare drum
-*12={q1    >c<   } ;tom high
-*13={q1     g    } ;tom mid.
-*99={@14v-6 &c v+6}
+*10={q3    <g>   } ;bass drum
+*11={q2 v-3 c v+3} ;snare drum
+*12={q1 v-1>c<v+1} ;tom high
+*13={q1 v-1 g v+1} ;tom mid.
+*99={@14v-3 &c v+3}
 #macro_offset {b=10,s=11,m=12,n=13,h=99,r=99}
-F h1,32,0,-16 ;音程を下げる効果の代用（※4分音符長以上になる時は止める事） 
-F l16 v14 so o4
+F h0,32,0,-16 ;音程を下げる効果の代用（※4分音符長以上になる時は止める事） 
+F l16 v15 so o4
 F *b*s*r 
 F [3
 F  [*b*b*s*r]8 
@@ -508,12 +508,12 @@ F ]
 F *s*b*b *s*b*b *s*b*b hf r8.
 
 ; noise & hi-hut
-*15={q1sf v8 <g>} ;bass drum
-*16={q2so v13 c} ;snare drum
+*15={q1sf v10 c} ;bass drum
+*16={q2so v13 g} ;snare drum
 *17={q8sf v0 @4 c @14} ;hi-hut
 *18={q1sf v13 c} ;tom
 #macro_offset {b=15,s=16,m=18,m=18,h=17,r=99}
-G H1,32,0,0
+G H1,32,0,-8
 G l16 @14v0 o2
 G *b*s*r 
 G [3
