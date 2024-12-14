@@ -17,6 +17,11 @@ VGMファイルもあります。
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
 
+- YS II TO MAKE THE END OF BATTLE (OPLL+PSG)  
+  [MSXPlay: YS2TOMAK.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS2TOMAK.MUS)  
+  [M3disp: YS2TOMAK.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS2TOMAK.MUS)  
+  [VGM file: YS2TOMAK.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/YS2TOMAK.vgm)  
+
 - DRAGON SPIRIT [AREA1] The Paleozoic Era (OPLL only)  
   [MSXPlay: DS-1PALO.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-1PALO.MUS)  
   [M3disp: DS-1PALO.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-1PALO.MUS)  

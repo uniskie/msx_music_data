@@ -1,0 +1,534 @@
+;[gain=1.0 name=YS2TOMAK duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com 
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Maxiumum play duration. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+; loop    : Number of global loops. (default: 2). 
+;           Note that duration takes precedence over loop.
+#opll_mode 0
+#tempo 112
+#title {"YS II - TO MAKE THE END OF BATTLE / OPLL+PSG / coding by uniskie"}
+
+#alloc {f=1200, g=1200, h=1200}
+
+;9abcde !
+
+;=============================================
+; PSG VOICEs
+;=============================================
+
+;  { Mode,Noise, AL, AR, DR, SL, SR, RR }
+@r14 = { 1,  3,   0,255, 17,212,  0,  2 }
+
+;=============================================
+; OPLL VOICEs
+;=============================================
+;@15 = { ;@v28 distortion guitar High
+;;       TL FB 
+;         4, 3,
+;; AR DR SL RR KL MT AM VB EG KR DT 
+;  14, 1, 4, 1, 0, 1, 0, 0, 1, 0, 0,
+;  15, 3, 1, 1, 0, 5, 0, 0, 0, 0, 1 } 
+
+;@17 = { ;@v29 distortion guitar Normal
+;;       TL FB 
+;         0, 2,
+;; AR DR SL RR KL MT AM VB EG KR DT 
+;  14, 1, 4, 1, 0, 1, 0, 0, 1, 0, 0,
+;  15, 8, 1, 6, 0, 5, 0, 0, 1, 0, 1 } 
+
+@16 = { ;@v29 distortion guitar (high)
+;       TL FB 
+         1, 5,
+; AR DR SL RR KL MT AM VB EG KR DT 
+  14, 1, 4, 0, 0, 1, 0, 0, 1, 0, 0,
+  15, 8, 1, 7, 0, 1, 0, 0, 1, 0, 1 } 
+
+@17 = { ;@v29 distortion guitar
+;       TL FB 
+         0, 5,
+; AR DR SL RR KL MT AM VB EG KR DT 
+  14, 1, 4, 0, 0, 1, 0, 0, 1, 0, 0,
+  15, 8, 1, 7, 0, 1, 0, 0, 1, 0, 1 } 
+
+@18 = { ;@v31 Harpsicode
+;       TL FB 
+        42, 6,
+; AR DR SL RR KL MT AM VB EG KR DT 
+  13, 2,14, 6, 1, 7, 0, 0, 1, 0, 0,
+  15, 7,15, 6, 1, 2, 0, 0, 1, 0, 0 } 
+
+@19 = { ;@v32 electric piano
+;       TL FB 
+        18, 3,
+; AR DR SL RR KL MT AM VB EG KR DT 
+  14, 9, 1, 5, 0, 2, 0, 0, 1, 1, 0,
+  14, 7, 3, 1, 0, 2, 0, 0, 0, 0, 0 } 
+
+@20 = { ;@v34 shtar
+;       TL FB 
+         7, 3,
+; AR DR SL RR KL MT AM VB EG KR DT 
+  15, 0, 0, 5, 0, 3, 0, 0, 1, 0, 0,
+  15, 7, 3, 1, 0, 3, 0, 0, 0, 0, 0 } 
+
+@21 = { ;@v35 brass
+;       TL FB 
+        16, 5,
+; AR DR SL RR KL MT AM VB EG KR DT 
+  15, 3, 1, 5, 0, 1, 0, 0, 1, 0, 0,
+  11,15, 0, 5, 1, 2, 1, 0, 1, 0, 0 } 
+
+;=============================================
+; RHYTHM mode Setup
+;=============================================
+; ドライバは9音メロディモードのまま、
+; OPLLチップだけ6音+リズム音源に切り替え
+; ドラムはメロディモードのMMLで鳴らす。
+;
+; メロディ用MMLを使ってリズム音源を鳴らすので、
+; シンセタムなどは楽に記述できる。
+;
+; ただし、定められた使用法と異なるため、
+; 切り替え時に異音がほぼ必ず発生する。
+;
+; ハイハットとスネアを同時、または、
+; タムとシンバルを同時に鳴らしたい場合は、
+; リズム音源MMLよりかなり面倒な事になる。
+;
+; 本来、リズム音源モード場合、
+;       レジスタ38～40のノートキーはON固定して、
+;       レジスタ14のリズムビットで発声制御をする。
+;
+; この裏技を使用した場合、
+;       レジスタ14のリズム発声ビットはOFFで固定して、
+;       レジスタ38～30ノートキーON/OFFで発声制御する。
+;
+; リズム音源モードでQやLFOが楽に記述できるなら、使いたくない裏技。
+
+;--- VOICE/VOLUME register ----------------------------------
+;reg.$28 ~ $2A ... ch.7 ~ 9
+;------------------------------------------------------------
+;bit|  7 6 5 4 | 3 2 1 0 |
+;-------------------------
+;   | VOICE(@) | VOLUME  |
+;-------------------------
+;F y54,255 ; mute:  --(@) / BD(v)
+;G y55,255 ; mute:  HH(@) / SD(v)
+;H y56,255 ; mute: TOM(@) / CY(v)
+;           HH,TOMは@14がv0に相当、@0がv14相当。
+;                    v15相当は面倒なので諦める。
+;------------------------------------------------------------
+
+;--- TONE/KEY/SUS register ----------------------------------
+;reg.$16 ~ $18 ... ch.7 ~ 9
+;------------------------------------------------------------
+;F y22,0 ;     BD ... F-Num7-0(8)
+;G y23,0 ;  HH/SD ... F-Num7-0(8)
+;H y24,0 ; TOM/CY ... F-Num7-0(8)
+; -- reg.$24 ~ $26 ... ch.7 ~ 9
+;F y38,0 ;     BD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+;G y39,0 ;  HH/SD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+;H y40,0 ; TOM/CY ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
+;------------------------------------------------------------
+
+; 異音対策の悪あがき
+;           まずはリズムパートを全てミュート
+FGH v0@14
+h y24,190 y40,3 
+
+;--- RHYTHM register ----------------------------------------
+;reg.$0E
+;------------------------------------------------------------
+;bit | 7 | 6 |  5    | 4 | 3 | 2 | 1 | 0 |
+;-----------------------------------------
+;    | 0 | 0 | RMODE | B | S | M | C | H |
+;----------------------------------------
+;Num |       |  32   |16 | 8 | 4 | 2 | 1 |
+;-----------------------------------------
+; RMODEビットがON(1)の時、OPLLはリズム音源モードになる
+;------------------------------------------------------------
+
+F y14,32 ; chgange to rhythm mode (BSMCH all off) 
+
+;--- wait ---------------------------------------------------
+;異音対策の悪あがきで少し待つ
+1239ABCdefgh r16 ;wait
+
+;異音はどうやっても鳴る。ある程度まで抑える程度しか方法が見つかっていない。
+;諦めて使う。
+
+;=============================================
+;MGSDRV ROM音色番号 音色名
+;     0  1          バイオリン
+;     1  2          ギター
+;     2  3          ピアノ
+;     3  4          フルート
+;     4  5          クラリネット
+;     5  6          オーボエ
+;     6  7          トランペット
+;     7  8          オルガン
+;     8  9          ホルン
+;     9 10          シンセ
+;    10 11          ハープシコード
+;    11 12          ビブラフォン
+;    12 13          シンセベース
+;    13 14          ウッドベース
+;    14 15          エレキベース
+;=============================================
+
+;=============================================
+; MAIN
+;=============================================
+#macro_offset {v = 0}
+*0 = { @17 q8sf v+2 } ;guiter main
+*2 = { v-2 } ;end - guiter main
+*1 = { @13 q8sf v-1 } ;guiter sub
+*3 = { v+1 } ;end - guiter sub
+
+#macro_offset {h = 4}
+*4 = { h21,2,1,2 }
+*5 = { h6,1,1,6 }
+
+9ABC l16
+9ABC r8.
+
+BC   r16
+
+9ABC *h0
+
+9ABC [3
+
+9     v12 o4
+A     v12 o5 \-1
+B     v10 o4 @\13
+C     v10 o5 @\10
+
+;**** part a
+9B    *v0 ;distortion guitar
+AC    *v1
+9ABC  e-ega8<aaa> c+<a>d<a>e<a>d
+9A    <a>
+BC    ;r
+
+9B    @20 ;shtar
+AC    @1  ;guitar
+BC    r
+9B    *v2
+AC    *v3
+
+9ABC  l32a&b-a&b-a&b-a&b->a&b-a&b-a&b-a&b-< l16
+9ABC  ab->c+<b-ab->c+
+9A    d<
+BC    < ;r
+
+9B    *v0 ;distortion guitar
+AC    *v1
+BC    r 
+
+9ABC  >c+<ab-gafge b-gafgefd 
+9ABC  c+defgab->c+ ec+<b->fc+<b-< ef
+9ABC  *h1 g4.ab- >c+4.ef
+9ABC  gfefgab->c+ *h0 q6 e8e8f8g8< q8
+
+;**** part b
+; distortion guitar
+9ABC  [
+9ABC   >
+9ABC   fecd^4^ 4     <a>cdc
+9ABC   fecd^4^ 8&d_<d8><agfe
+
+9ABC   f8.d8.f8
+9ABC   g8.e8.g8
+9ABC   a8.f8.d8
+9ABC   e8.g8.b-8
+9ABC   a2> defgagfe
+9ABC  |
+9ABC   g8.e8^32&e_c32c8
+
+9ABC   <g8.>c8.e8
+9ABC   fd<afda>df ec<gecg>ce<
+
+9ABC   dfa>c+dfa 
+
+9B     @16 ;distortion guitar high
+9A     >c+d4.  &d_<d8><<
+BC     >c+d4^16&d_<d8><< ;r
+9B     *v2
+AC     *v3
+
+;**** part c
+; elepi
+9ABC   @19 q6so ;electric piano
+BC     r 
+BC     v+1
+9ABC  ]
+
+;9ABC  >
+;9ABC  fecd^4^ 4<a>cdc
+;9ABC  fecd^4^ 4<agfe
+;
+;9ABC  f8.d8.f8
+;9ABC  g8.e8.g8
+;9ABC  a8.f8.d8
+;9ABC  e8.g8.b-8
+;9ABC  a2> defgagfe
+
+9ABC  g8.e8.c8 
+
+9ABC  <g8.>c8.e8
+9ABC  fd<afda>df ec<gecg>c
+9A    e<
+BC    < ;r
+
+;**** part d
+9B    @21 q8sf ;brass
+AC    @6  q8sf ;brass
+BC    r
+
+9ABC  e-8.&<b-32&>e-32g8.&e-32&g32 b-8.&g32&b-32 >e-8&
+9ABC |e-8<
+
+9ABC  >a4dfga^ 8g8fg8>d&
+9ABC  d8<a8gf8e^ 8f8.g8.<
+
+;**** part e
+9ABC  @19 q6so ;electric piano
+
+9ABC  >a4dfga^  8g8fg8>d&
+9ABC   d8d8e8d8 d4c+4<<
+
+;**** part f
+9B    v-1 @2  q4sf ;piano
+AC        @18 q6so ;harpsicode
+
+9ABC  [>>dfadfadf adfae-gb-g
+9ABC    dfadfadf adfacceg<<]
+
+9B    v+1
+BC    v-1
+
+9ABC ]
+9A    e-8
+BC    e-16
+9ABC  <
+
+;**** part g
+9B   *v0 ;distortion guitar
+AC   *v1 ;distortion guitar sub
+9ABC v+1
+9ABC sf dr8dr8 dd8 d_<d8r4 
+9ABC r2. r2.
+
+
+;=============================================
+; SUB
+;=============================================
+
+123 r8.
+
+123 h21,2,1,1
+
+123 [3
+
+123  @14 v10 o4 q8
+
+1    l4>e2 g2<
+1    l16>>b-gec+<a+gec+   efg+fefg+a< 
+2    l4>c+2 e2<
+2    l16>>gec+<a+gec+<b-> c+dedc+def<
+3    @\4 l4>e2 g2<
+3    @\0 l16>>ec+<a+gec+<a+g> @\4 efg+fefg+a< @\0
+
+123  v-1 q6
+
+1    l32 > b-2>e2 g4.f8e2<    a+2>e2 g2<  <
+2    l32 > g2a+2  >e4.d8c+2<  g2a+2  >e2< <
+3    l32 > e2g2   a+4.a8g2    e2g2   a+2  <
+
+123  v+1
+
+3    @\4
+13   l8>ec+de<
+2    l8>c+<ab>c+<
+
+123  [ q8
+3     @\9
+123   [
+13     l16>dc<ga^4 >a8g8f8e8<
+2      l16 agef^4  >f8e8d8c8<
+123   ]
+
+13    >d8.<a8.>d8
+13    e8. c8.e8
+13    f8. d8.<a8>
+13    c+8.e8.g8
+13    <f2 a4>d4
+13    e2 c2
+13    f2 e2<
+2     a8.f8.a8
+2     >c8.<g8.>c8
+2     d8.<a8.f8
+2     g8.>c+8.e8
+2     <d2 f4a4
+2     >c2 <g2
+2     >d2 c2<
+123  |
+13    >d2 d8c+8<b8>c+8<
+2     a2 a8a8r8a8
+123  ]
+13   l16v-5>b-&v+1b-&v+1b-&v+1b-&v+1b-&v+1b-8.& v+1b-4&v-1b-4<
+2    l16v-5>g &v+1g &v+1g &v+1g &v+1g &v+1g 8.& v+1g 4&v-1g 4<
+
+123 |
+
+123  v-1
+13   ffffrff8ffffrff8b-b-b-b-rb-b-8aaaaraa8
+13   >ffffrff8ffffrff8b-b-b-b-rb-b-8aaaara<
+2    ddddrdd8ccccrcc8ffffrff8eeeeree8
+2    >ddddrdd8ccccrcc8ffffrff8eeeere<
+
+123  v-1
+3    @\0
+1    q8 l64>agfedc<bal16
+2    q8 l64>edc<bagfel16
+3    q8 l64>c+<bagfedcl16
+
+123  q4
+3    @\4
+123  [l16
+13    fa>d<fa>d<fa >d<fa>d<gb->e-<b-
+13    fa>d<fa>d<fa >d<fa>d<gg>ce<
+2     ad>f<ad>f<ad >f<ad>f<b->e-ge-<
+2     ad>f<ad>f<ad >f<ad>feeg>c<<
+123  ]
+123  v+2
+123 ]
+
+1   ar8ar8aa8.r8v0r4
+2   fr8fr8ff8.r8v0r4
+3   dr8dr8dd8.r8v0r4
+
+;=============================================
+; BASS
+;=============================================
+
+#macro_offset {b = 6}
+*6 = { <<<  @13@e0 q6 v-1 hf       } ;base 1
+*7 = { <<<< @10@e0 q1 v-1 hf       } ;base 2
+*8 = { >>>  @14@e9 q8 v+1 h4,0,4,6 } ;hit
+*9 = { >>>> @14@e9 q8 v+1 h4,0,4,6 } ;hit
+@e9 = {,,fed}
+
+DE r8.
+
+DE [3
+D   @13q6 v12 o2
+E   @10q1 v12 o2
+
+DE  l16 
+DE  aaaa>c+<a>d<a
+DE  >e<a>f<a>g<a>f<a
+DE  >e<a>f<a>e<a>d<a
+DE  >c+<ab-gab->c+<b-
+DE  [3
+D    aaa *b2a8.*b0 >a8
+D    a<aaraa>c+d<
+E    aaa *b3e8.*b1 >a8
+E    a<aaraa>c+d<
+DE  ]
+D   aaa *b2a8.*b0 >a8
+D   <aa>a<abb>c+c+<
+E   aaa *b3e8.*b1 >a8
+E   <aa>a<abb>c+c+<
+
+DE  [4
+DE   >dddddddddddddddd<
+DE   >cccccccccccccccc<
+DE  |
+DE   b-b->fb->d<b-fb-<
+DE   >ccg>cec<g>c<<
+DE   >ddfa>d<afd<
+DE   a>age<aaaa
+DE  ]
+DE   b-b->fb->d<b-fb-<
+DE   >ccg>cec<g>c<<
+DE   >e-e-b-e-ge-ae-<
+DE   >b-e->e-<e->g<e->b-<e-<
+
+DE |
+DE  [
+DE   >dd>d<dga>cd<
+DE   ff>f<fff>f<f
+DE   b-b->b-<b-b-b->b-<b-<
+DE  |
+DE   >aa>a<a>g<a>a<a<
+DE  ]
+DE   >aa>a<a>aec+<a<
+
+DE  [
+DE   >dr8dr8>cd<rdfde-e-gb-<
+DE   >dr8dr8>cd<rdfdccec<
+DE  ]
+DE ]
+
+DE >dd>d<dga>c&d&
+DE &d_<d8.r16v0r8.
+
+;=============================================
+; RHYTHM
+;=============================================
+
+; bass drum & snare & tom
+*10={q3    <a>   } ;bass drum
+*11={q1 v-1 c v+1} ;snare drum
+*12={q1    >c<   } ;tom high
+*13={q1     g    } ;tom mid.
+*99={@14v-6 &c v+6}
+#macro_offset {b=10,s=11,m=12,n=13,h=99,r=99}
+F h1,32,0,-16 ;音程を下げる効果の代用（※4分音符長以上になる時は止める事） 
+F l16 v14 so o4
+F *b*s*r 
+F [3
+F  [*b*b*s*r]8 
+F  [*b*h*h*s*b|*s*b*b]4 *s*s*s
+F  [*b*h*h*s*b*s*b*b]3 *b*s*s*s *s*s*s*s
+F  [[*b*h*s*h]15 *s*s*s*s [*b*h*s*h]14 | *b*s*s *b*s*s *b*s ]2
+F  *b*m*s*m l32 *n*n*n*n *b*b*b*b l16
+F |
+F  [*b*h*s*h]15 *b*b*b*b
+F  [*b*h*h *b*h*h *s *r
+F  |[*b*b*s*b]2
+F  ]4
+F  *b*b*s *b*b*s *s*s
+F ]
+F *s*b*b *s*b*b *s*b*b hf r8.
+
+; noise & hi-hut
+*15={q1sf v8 <g>} ;bass drum
+*16={q2so v13 c} ;snare drum
+*17={q8sf v0 @4 c @14} ;hi-hut
+*18={q1sf v13 c} ;tom
+#macro_offset {b=15,s=16,m=18,m=18,h=17,r=99}
+G H1,32,0,0
+G l16 @14v0 o2
+G *b*s*r 
+G [3
+G  [*b*b*s*r]8 
+G  [*b*h*h*s*b|*s*b*b]4 *s*s*s
+G  [*b*h*h*s*b*s*b*b]3 *b*s*s*s *s*s*s*s
+G  [[*b*h*s*h]15 *s*s*s*s [*b*h*s*h]14 | *b*s*s *b*s*s *b*s ]2
+G  *b*m*s*m l32 *n*n*n*n *b*b*b*b l16
+G |
+G  [*b*h*s*h]15 *b*b*b*b
+G  [*b*h*h *b*h*h *s *r
+G  |[*b*b*s*b]2
+G  ]4
+G  *b*b*s *b*b*s *s*s
+G ]
+G *s*b*b *s*b*b *s*b*b hf r8.
+
+

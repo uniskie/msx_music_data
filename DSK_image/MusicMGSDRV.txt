@@ -24,3 +24,10 @@ sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=77
 MGSDRVデータは
 MSXDOSのコマンドプロンプトから
 MGSELまたはMGSP2で試聴できます。
+
+---------------------------------------
+ COPYRIGHT & THANKS
+---------------------------------------
+
+ファルコム音楽フリー宣言
+https://www.falcom.co.jp/music-use
