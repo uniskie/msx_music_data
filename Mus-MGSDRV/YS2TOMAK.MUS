@@ -487,8 +487,8 @@ DE &d_<d8.r16v0r8.
 ;=============================================
 ; bass drum & snare & tom
 *10={q3 v15 o3 g} ;bass drum
-*11={q4 v12 o4 g} ;snare drum
-*98={   v9  o3 g} ;snare drum echo
+*11={q3 v12 o4 g} ;snare drum
+*98={   v9  o3 c} ;snare drum echo
 *13={q1 v14 o5 c} ;tom high
 *14={q1 v14 o4 g} ;tom mid.
 *99={@14 v0    c} ;mute
