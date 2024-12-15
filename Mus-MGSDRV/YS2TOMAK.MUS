@@ -21,7 +21,7 @@
 ;=============================================
 
 ;  { Mode,Noise, AL, AR, DR, SL, SR, RR }
-@r14 = { 1,  3,   0,255, 17,212,  0,  2 }
+@r14 = { 1,  3,   0,255, 17,204,  0,  2 }
 
 ;=============================================
 ; OPLL VOICEs
@@ -229,12 +229,12 @@ AC    v+1
 
 9B    *v0 ;distortion guitar
 AC    *v1
-BC    r 
+BC    r
 
 9ABC  >c+<ab-gafge b-gafgefd 
 9ABC  c+defgab->c+ ec+<b->fc+<b-< ef
-9ABC  *h1 g4.ab- >c+4.ef
-9ABC  gfefgab->c+ *h0 q6e8q8e8f8g8<
+9ABC  *h1 g4.ab- >c+4.ef *h0
+9ABC  gfefgab->c+ q6e8q8e8f8g8<
 
 ;**** part b
 ; distortion guitar
@@ -256,8 +256,10 @@ BC    r
 9ABC   dfa>c+dfa 
 
 9B     @16 ;distortion guitar high
+9ABC   *h1
 9A     >c+d4..&d_<d><<
 BC     >c+d4. &d_<d><< ;r
+9ABC   *h0
 9B     *v2
 AC     *v3
 
@@ -334,29 +336,31 @@ AC   *v1 ;distortion guitar sub
 
 123 [3
 
-123  @14 v10 o4 q8
+123  @14 v11 o4 q8
 
 1    l4>e2 g2<
 1    l16>>b-gec+<a+gec+   efg+fefg+a< 
 2    l4>c+2 e2<
 2    l16>>gec+<a+gec+<b-> c+dedc+def<
-3    @\4 l4>e2 g2<
-3    @\0 l16>>ec+<a+gec+<a+g> @\4 efg+fefg+a< @\0
+3    @\6 l4>e2 g2<
+3    @\0 l16>>ec+<a+gec+<a+g> @\6 efg+fefg+a< @\0
 
 123  v-1 q6
+123  h2,2,1,2
 
 1    l32 > b-2>e2 g4.f8e2<    a+2>e2 g2<  <
 2    l32 > g2a+2  >e4.d8c+2<  g2a+2  >e2< <
 3    l32 > e2g2   a+4.a8g2    e2g2   a+2  <
 
 123  v+1
+123  h21,2,1,1
 
-3    @\4
+3    @\6
 13   l8>ec+de<
 2    l8>c+<ab>c+<
 
 123  [ q8
-3     @\9
+3     @\14
 123   [
 13     l16>dc<ga^4 >a8g8f8e8<
 2      l16 agef^4  >f8e8d8c8<
@@ -398,7 +402,7 @@ AC   *v1 ;distortion guitar sub
 3    q8 l64>c+<bagfedcl16
 
 123  q4
-3    @\4
+3    @\16
 123  [l16
 13    fa>d<fa>d<fa >d<fa>d<gb->e-<b-
 13    fa>d<fa>d<fa >d<fa>d<gg>ce<
@@ -417,10 +421,10 @@ AC   *v1 ;distortion guitar sub
 ;=============================================
 
 #macro_offset {b = 6}
-*6 = { <<<  @13@e0 q6sf v-2 hf       } ;base 1
-*7 = { <<<< @10@e0 q1sf v-2 hf       } ;base 2
-*8 = { >>>  @e9 q8sf v+2 h4,0,4,6 } ;hit
-*9 = { >>>> @e9 q8sf v+2 h4,0,4,6 } ;hit
+*6 = { <<<  @13@e0 q6sf v-3 hf       } ;base 1
+*7 = { <<<< @10@e0 q1sf v-3 hf       } ;base 2
+*8 = { >>>  @e9 q8sf v+3 h4,0,4,6 } ;hit
+*9 = { >>>> @e9 q8sf v+3 h4,0,4,6 } ;hit
 @e9 = {,,@13f@7ed}
 
 DE r8.
@@ -481,17 +485,17 @@ DE &d_<d8.r16v0r8.
 ;=============================================
 ; RHYTHM
 ;=============================================
-
 ; bass drum & snare & tom
-*10={q3    <g>   } ;bass drum
-*11={q2 v-3 c v+3} ;snare drum
-*12={q1 v-1>c<v+1} ;tom high
-*13={q1 v-1 g v+1} ;tom mid.
-*99={@14v-3 &c v+3}
-#macro_offset {b=10,s=11,m=12,n=13,h=99,r=99}
+*10={q3 v15 o3 g} ;bass drum
+*11={q4 v12 o4 g} ;snare drum
+*98={   v9  o3 g} ;snare drum echo
+*13={q1 v14 o5 c} ;tom high
+*14={q1 v14 o4 g} ;tom mid.
+*99={@14 v0    c} ;mute
+#macro_offset {b=10,s=11,m=13,n=14,h=99,r=98}
 F h0,32,0,-16 ;‰¹’ö‚ð‰º‚°‚éŒø‰Ê‚Ì‘ã—pi¦4•ª‰¹•„’·ˆÈã‚É‚È‚éŽž‚ÍŽ~‚ß‚éŽ–j 
-F l16 v15 so o4
-F *b*s*r 
+F l16 so
+F *b*s*r
 F [3
 F  [*b*b*s*r]8 
 F  [*b*h*h*s*b|*s*b*b]4 *s*s*s
@@ -500,7 +504,7 @@ F  [[*b*h*s*h]15 *s*s*s*s [*b*h*s*h]14 | *b*s*s *b*s*s *b*s ]2
 F  *b*m*s*m l32 *n*n*n*n *b*b*b*b l16
 F |
 F  [*b*h*s*h]15 *b*b*b*b
-F  [*b*h*h *b*h*h *s *r
+F  [*b*h*h *b*h*h *s*r
 F  |[*b*b*s*b]2
 F  ]4
 F  *b*b*s *b*b*s *s*s
@@ -508,13 +512,15 @@ F ]
 F *s*b*b *s*b*b *s*b*b hf r8.
 
 ; noise & hi-hut
-*15={q1sf v10 c} ;bass drum
-*16={q2so v13 g} ;snare drum
-*17={q8sf v0 @4 c @14} ;hi-hut
-*18={q1sf v13 c} ;tom
-#macro_offset {b=15,s=16,m=18,m=18,h=17,r=99}
-G H1,32,0,-8
-G l16 @14v0 o2
+*15={q2sf v10   o1g    } ;bass drum
+*16={q2so v13   o1g    } ;snare drum
+*97={  hf  v9   o1c ho } ;snare drum echo
+*19={q2sf v12   o2c    } ;tom high
+*20={q2sf v12   o2g    } ;tom mid.
+*21={q8sf v0 @4 o2g @14} ;hi-hut
+#macro_offset {b=15,s=16,m=19,n=20,h=21,r=97}
+G H1,32,0,-12
+G l16 
 G *b*s*r 
 G [3
 G  [*b*b*s*r]8 
@@ -524,7 +530,7 @@ G  [[*b*h*s*h]15 *s*s*s*s [*b*h*s*h]14 | *b*s*s *b*s*s *b*s ]2
 G  *b*m*s*m l32 *n*n*n*n *b*b*b*b l16
 G |
 G  [*b*h*s*h]15 *b*b*b*b
-G  [*b*h*h *b*h*h *s *r
+G  [*b*h*h *b*h*h *s*r
 G  |[*b*b*s*b]2
 G  ]4
 G  *b*b*s *b*b*s *s*s
