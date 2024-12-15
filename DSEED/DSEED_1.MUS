@@ -8,19 +8,19 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
 #tempo 156
-#title {"Dangerous Seed (MD) Tube (Stage 1&8) | uniskie"}
+#title {"Dangerous Seed (MD) 1st Tube (Stage 1&8) | uniskie"}
 #alloc { 0=200, 1=500,2=500,3=500, 9=500,A=500,B=500,C=500,D=500,E=500, F=1900}
 
 @v15 = { ; E-Guiter
 ;       TL FB
-         7, 3,
+         3, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0,
   15, 7, 0, 7, 0, 8, 0, 0, 1, 0, 1 }
 
 @v16 = { ; Brass
 ;       TL FB
-         3, 2,
+         2, 2,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0,
   15, 8, 1, 7, 0, 2, 0, 0, 1, 0, 1 }
@@ -150,8 +150,8 @@ F   *b16h16*s16*b16*s16|*s16*s16*b16]2
 F                     *b16*s16*s16 
 F ]0 
 
-@e4={3,31,*3.c.*1.86.0=20}
-@e5={2,0,f.*2.n2.een4.ddn6.ccn8.bbn10.aan12.99n14.88n16.77n18.66n20.55n22.44n24.0=20}
+@e4={3,31,*3.c.*1.75.0=20}
+@e5={2,0,f.*2n0.ed.cb.n2.bb.aa.n3.99.88n20.77.66n22.55.44n24.0=10}
 @e6={2,0,b750=6}
 3 v12 o3 p16
 3 [ l16 
@@ -166,3 +166,4 @@ F ]0
 3   @4c@6a@5f@4c@5f|@5f@5f@4c]2 
 3                   @4c@5f@5f 
 3 ]0 
+
