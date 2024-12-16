@@ -191,7 +191,7 @@ F y14,32 ; chgange to rhythm mode (BSMCH all off)
 
 #macro_offset {h = 4}
 *4 = { h21,2,1,2 }
-*5 = { h6,1,1,6 }
+*5 = { h6,1,0,2 }
 
 9ABC l16
 9ABC r8.
@@ -346,7 +346,7 @@ AC   *v1 ;distortion guitar sub
 3    @\0 l16>>ec+<a+gec+<a+g> @\6 efg+fefg+a< @\0
 
 123  v-1 q6
-123  h2,2,1,2
+123  h3,2,2,-1
 
 1    l32 > b-2>e2 g4.f8e2<    a+2>e2 g2<  <
 2    l32 > g2a+2  >e4.d8c+2<  g2a+2  >e2< <
@@ -423,9 +423,9 @@ AC   *v1 ;distortion guitar sub
 #macro_offset {b = 6}
 *6 = { <<<  @13@e0 q6sf v-3 hf       } ;base 1
 *7 = { <<<< @10@e0 q1sf v-3 hf       } ;base 2
-*8 = { >>>  @e9 q8sf v+3 h4,0,4,6 } ;hit
-*9 = { >>>> @e9 q8sf v+3 h4,0,4,6 } ;hit
-@e9 = {,,@13f@7ed}
+*8 = { >>>     @e9 q4so v+3 h4,0,1,2 } ;hit
+*9 = { >>>>    @e9 q4so v+3 h4,0,1,2 } ;hit
+@e9 = {,,@13f@7edc}
 
 DE r8.
 
@@ -485,16 +485,18 @@ DE &d_<d8.r16v0r8.
 ;=============================================
 ; RHYTHM
 ;=============================================
+@e1={,,fde}
+
 ; bass drum & snare & tom
-*10={q3 v15 o3 g} ;bass drum
-*11={q3 v12 o4 g} ;snare drum
-*98={   v9  o3 c} ;snare drum echo
-*13={q1 v14 o5 c} ;tom high
-*14={q1 v14 o4 g} ;tom mid.
-*99={@14 v0    c} ;mute
+*10={q2 v14 o3 g} ;bass drum
+*11={q1 v12 o4 d} ;snare drum
+*98={   v9  o3 d} ;snare drum echo
+*13={@e0 q1 v14 o5 c @e1} ;tom high
+*14={@e0 q1 v14 o4 g @e1} ;tom mid.
+*99={@e0 @14 v1    c @e1} ;mute
 #macro_offset {b=10,s=11,m=13,n=14,h=99,r=98}
 F h0,32,0,-16 ;‰¹’ö‚ð‰º‚°‚éŒø‰Ê‚Ì‘ã—pi¦4•ª‰¹•„’·ˆÈã‚É‚È‚éŽž‚ÍŽ~‚ß‚éŽ–j 
-F l16 so
+F l16 so @e1
 F *b*s*r
 F [3
 F  [*b*b*s*r]8 
@@ -513,14 +515,14 @@ F *s*b*b *s*b*b *s*b*b hf r8.
 
 ; noise & hi-hut
 *15={q2sf v10   o1g    } ;bass drum
-*16={q2so v13   o1g    } ;snare drum
+*16={q2so v13   o2e    } ;snare drum
 *97={  hf  v9   o1c ho } ;snare drum echo
 *19={q2sf v12   o2c    } ;tom high
 *20={q2sf v12   o2g    } ;tom mid.
-*21={q8sf v0 @4 o2g @14} ;hi-hut
+*21={@e0 q8sf v0 @4 o2g @14 @e1} ;hi-hut
 #macro_offset {b=15,s=16,m=19,n=20,h=21,r=97}
-G H1,32,0,-12
-G l16 
+G h1,32,0,-12
+G l16 @e1
 G *b*s*r 
 G [3
 G  [*b*b*s*r]8 
