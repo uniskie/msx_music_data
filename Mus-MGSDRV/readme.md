@@ -281,3 +281,19 @@ MGSDRC v1など、MUSではなくBASICで入力していたバージョン等含
 - イース2 RUINS OF MOONDORIA  
   [MSXPlay: YS2RUINS.MGS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS2RUINS.MGS)  
   [M3disp: YS2RUINS.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS2RUINS.MGS)  
+
+
+---
+
+##  COPYRIGHT & THANKS
+
+ファルコム音楽フリー宣言
+https://www.falcom.co.jp/music-use
+
+
+MGSP by HRA!
+配布サイト
+http://hraroom.s602.xrea.com/msx/software/mgsp.html
+
+MGSDRV by Ain/MSX Club Gigamix
+https://www.gigamix.jp/mgsdrv/
