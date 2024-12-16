@@ -25,9 +25,27 @@ MGSDRVデータは
 MSXDOSのコマンドプロンプトから
 MGSELまたはMGSP2で試聴できます。
 
+ディスクイメージはMGSPと互換MSX-DOS2を使用していますので、
+メモリマッパ―BIOS対応RAMを必要とします。
+
+MSX-DOS1で聞きたい場合はMGSELなどをご使用ください。
+https://gigamix.hatenablog.com/entry/mgsdrv/
+
 ---------------------------------------
  COPYRIGHT & THANKS
 ---------------------------------------
 
 ファルコム音楽フリー宣言
 https://www.falcom.co.jp/music-use
+
+
+MGSP by HRA!
+配布サイト
+http://hraroom.s602.xrea.com/msx/software/mgsp.html
+
+MGSDRV by Ain/MSX Club Gigamix
+https://www.gigamix.jp/mgsdrv/
+
+似非DOS for MSX by tablcus
+https://github.com/tablacus/dosformsx
+
