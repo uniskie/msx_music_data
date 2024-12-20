@@ -12,33 +12,36 @@ TO MAKE THE END OF BATTLE/Ys2/Copyright(C) Nihon Falcom Corporation
 Ending1/Sorserian/Copyright(C) Nihon Falcom Corporation  
 
 ---------------------------------------
-## ※ご注意
+## 音量バランスについて
 
-BlueMSXで作成・演奏・調整していたものが含まれます。
-音量は実機に合わせていませんので、実機での演奏については保証外です。
-該当データについては
-Bluemsx.iniをテキストエディタで開いて各種音量設定を反映してから聞いてみてください。
-（※その際、書き換え前のbluemsx.iniのバックアップをしておくと良いと思います。）
-
-元々音量バランスの崩壊したデータをBlueMSX上で聴けるように弄ったもので、
-SCCとPSGのバランスも、FM音源のバランスも実機とは異なると思います。
-
-- [falcom曲](#falcom曲のmusicaデータ)
-- [omake2曲](#omake)
+Mus-Falcomフォルダの中の楽曲データは、全体にOpenMSXのデフォルト音量に合わせて再調整しました。
 
 ---------------------------------------
 ## MSX用ディスクイメージ
 
  https://github.com/uniskie/msx_music_data/blob/master/DSK_image/musica%20-%20falcom.dsk
 
-簡易プレイヤー
+
+## ファイル説明
+
+### 簡易プレイヤー
 ```
  HEAR80.BAS
  HEAR40.BAS
+ MUSICED.BIN
 ```
-ファイル名に'がついている物はイントロです。  
-RETURNでイントロを選択。
-メインループをスペースで選択すると再生が始まります。  
+
+### BGMファイル
+
+MuSICA楽曲データバイナリです。
+
+> [!CAUTION]
+> 独自ルール: ファイル名に'がついている物はイントロです。  
+> HEAR80.BAS/HEAR40.BASでイントロ＋ループ部をつなげて聞くことができます。
+>
+> 操作：
+> 1. リターンキーでイントロを選択
+> 2. スペースキーでメインループを選択すると再生
 
 ---------------------------------------
 
@@ -97,84 +100,3 @@ MixerでSCC/PSG/OPLLの音量バランスも変更可能です。
 （OPLLリズム音が大きめな傾向あり）
 
 ---------------------------------------
-
-
-### Falcom曲のMuSICAデータ
-
-YS*.* やvoice*.vcdファイル  
-  MSD（MMLテキスト）
-  VCD（音色バイナリ）
-  BGM（演奏データ）ファイルのセット。
-
-- YS1BEAT'.BGM
-- YS1BEAT0.BGM
-- YS1BEAT0.MSD
-- YS1BEATO.BGM
-- YS1BEATO.MSD
-- YS1FINA2.BGM
-- YS1FINAL.BGM
-- YS1FINAL.MSD
-- YS1FIRST.BGM
-- YS1FIRST.MSD
-- YS1FIRST.VCD
-- YS1PODE'.BGM
-- YS1POFDE.BGM
-- YS1POFDE.MSD
-- YS1TOWER.BGM
-- YS2LANE'.BGM
-- YS2LANE.BGM
-- YS2LANE.MSD
-- YS2LANE0.BGM
-- YS2LANE0.MSD
-- YS2SAL.BGM
-- YS2SALM2.BGM
-- YS2SALMO.BGM
-- YS2SALMO.MSD
-- YS2TOMA1.BGM
-- YS2TOMA1.MSD
-- YS2TOMAB.BGM
-- YS2TOMAB.MSD
-- YS2TOMAF.MSD
-- YS2TOMAK.ASC
-- YS2TOMAK.BGM
-- YS2TOMAK.MSD
-- YS2TOMAK.VCD
-- SO-12-2'.BGM
-- SO-12-2.BGM
-- SO-12-2.MSD
-- SO-12-2.VCD
- BlueMSXでの音量は
- ```
- sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
- sound.mixerChannel.MIXER_CHANNEL_PSG.pan=50
- sound.mixerChannel.MIXER_CHANNEL_PSG.volume=100
- sound.mixerChannel.MIXER_CHANNEL_SCC.enable=yes
- sound.mixerChannel.MIXER_CHANNEL_SCC.pan=50
- sound.mixerChannel.MIXER_CHANNEL_SCC.volume=85
- sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
- sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
- sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=77
- ```
- です。
-
-> 一部、OpenMSXのデフォルトに合わせたデータも混じっているかもしれません。
-
-### OMAKE
-
-- 『Relics Openning Theme(SCC ver)』
-
-  relicsop.bgm
-
-  > 音量はファルコム曲と同じ
-
-- 『高収入求人情報バニラ(VANILLA)の広告宣伝カーの曲』
-
-  vanila.bgm : OPLL+PSG  
-  vanilap.bgm : PSG  
-  vanila.bas : MSX スクリーンモード2で画像＋PSG版BGM再生  
-
-  > 音量はファルコム曲と同じ  
-
-### それ以外
-
-ここに記載した物以外はOpenMSXのデフォルト設定を使用しています。
