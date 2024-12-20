@@ -28,17 +28,17 @@
 ;=============================================
 ;@15 = { ;@v28 distortion guitar High
 ;;       TL FB
-;         4, 3,
+;         7, 3,
 ;; AR DR SL RR KL MT AM VB EG KR DT
 ;  14, 1, 4, 1, 0, 1, 0, 0, 1, 0, 0,
-;  15, 3, 1, 1, 0, 5, 0, 0, 0, 0, 1 }
+;  15, 3, 1, 1, 0,15, 0, 0, 0, 0, 1 }
 
 ;@17 = { ;@v29 distortion guitar Normal
 ;;       TL FB
 ;         0, 2,
 ;; AR DR SL RR KL MT AM VB EG KR DT
 ;  14, 1, 4, 1, 0, 1, 0, 0, 1, 0, 0,
-;  15, 8, 1, 6, 0, 5, 0, 0, 1, 0, 1 }
+;  15, 8, 1, 6, 0,15, 0, 0, 1, 0, 1 }
 
 @16 = { ;@v29 distortion guitar (high)
 ;       TL FB
