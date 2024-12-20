@@ -85,3 +85,51 @@ sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
 とりあえず作ってみただけのごみデータ  
 作りが雑なので消すか、最初から作り直しの予定（そのうち）
 
+## MSXでの演奏方法
+
+### 勤労5号 (MuSICA)(MSX)
+
+http://sakuramail.net/fswold/music.html
+
+本家MuSICA自体はライセンスフリーではないので、互換ドライバを使用して演奏可能です。  
+勤労シリーズはMuSICAの上位互換ドライバとなっています。
+
+（勤労4号はMMLコンパイラです。）
+
+### MuSICA (MuSICA)(MSX)
+
+本家アスキー製MuSICAドライバ・コンパイラセット
+
+入手方法
+1. 1990年10月発売のMSXディスク通信創刊号 (ver.1.0)
+2. RPGコンストラクションツール Dante2 (ver.1.02)
+3. MSXマガジン永久保存版 (ver.1.02)
+
+## MSX以外での演奏方法
+
+### M3disp (KSS/MGSDRV/MuSICA/OPLLDriver/MPK/MoonBlaster)(Web Browser)
+
+https://m3.ym2413.com/
+
+ChromeやFirefoxで動作します。スマホでもどこでも扱えます。  
+ピアノロール表示などもあり、データチェックにも使用できます。  
+(スマホの場合、横画面にするとピアノロールが選べます）
+
+多様なフォーマットに対応しているのも特徴です。  
+MuSICAはMDPlayerと同じく勤労5号で演奏されます。
+
+[ndpドライバデータ](/ndp)もKSSファイルであれば演奏できます。
+
+
+### MDPlayer (MGSDRV/MuSICA)(Windows)
+
+https://github.com/kuma4649/MDPlayer/releases
+
+Windowsの場合MDPlayerで聞く方法があります。
+
+MGSDRV、MuSICA互換(勤労5号)に対応していますし、  
+MixerでSCC/PSG/OPLLの音量バランスも変更可能です。
+
+ただしOPLLリズム音や音量変更時の聞こえ方は実機やエミュレータに比べて癖があるようです。
+（OPLLリズム音が大きめな傾向あり）
+
