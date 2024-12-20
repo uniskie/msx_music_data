@@ -73,8 +73,9 @@ function isDigits(s)
  * @param		d_type	0:通常/1:音長(%あり)/2:音符音長(+-%.あり)
  * @return	[0]	最終位置 ( charAt用 )
  *		/	[1]	数値（音長ならステップ数*倍率に変換）
-*		/	[2]	ピリオドの数
-*		/	エラー時は [0]が-1
+ *		/	[2]	ピリオドの数
+ *		/	エラー時は [0]が-1
+ *		/	'_'（ポルタメント）は [0]が-2
 */
 //==========================================
 function getDigits(s, si, d_type)
@@ -95,6 +96,12 @@ function getDigits(s, si, d_type)
 		if ((c==' ') || (c=='\t'))
 		{
 			continue;
+		}
+		else
+		if (c=='_')
+		{
+			// ポルタメントなので音長として評価しない
+			return [-2, 0, 0];
 		}
 		else
 		if ((d_type==2) && ((c=='+') || (c=='-')))
@@ -834,6 +841,8 @@ function proc()
 				{
 					skip_i = r[0];
 				}
+				if (r[0] != -2) // ポルタメントではない
+				{
 				if (d < 0)
 				{
 					d = default_step;
@@ -876,6 +885,7 @@ function proc()
 				if (-1 < loopData.loop_count)
 				{
 					loopData.time += ll;
+					}
 				}
 			}
 

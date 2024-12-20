@@ -23,6 +23,7 @@ try{
 
 var o = 0;
 var s;
+var is_abs = false;
 
 if (efunc.isSelectionEmpty())
 {
@@ -34,11 +35,37 @@ s = efunc.getSelectionText();
 for (var i = 0; i < s.length; ++i) {
 	switch (s.charAt(i))
 	{
+		case 'o': {
+			var os = ''
+			var c;
+			for (var j = i + 1; j < s.length; ++j) {
+				c = s.charAt(j);
+				if (c == ' ') continue;
+				if (c >= '0' && c <= '9') {
+					os = os + c;
+				} else {
+					break;
+				}
+			}
+			if (os.length) {
+				is_abs = true;
+				o = Number(os);
+			}
+			break;
+		}
 		case '<': --o; break;
 		case '>': ++o; break;
 	}
 }
-if (o != 0)
+//if (o != 0)
 {
-	efunc.alertBox ("音階:" + o);
+	if (is_abs) {
+		efunc.alertBox ("音階: o" + o);
+	} else {
+		if (o < 0) {
+			efunc.alertBox ("音階: " + o);
+		} else {
+			efunc.alertBox ("音階: +" + o);
+		}
+	}
 }
