@@ -4,7 +4,7 @@ set src=utf8
 set dst=sjis
 set filter="*.mus"
 
-set SakuraPath=F:\SAKURAEDITOR\
+rem set SakuraPath=F:\SAKURAEDITOR\
 
 @echo ドロップしたフォルダのテキストファイルを全て%src%から%dst%に変換
 
