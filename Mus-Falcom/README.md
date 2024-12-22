@@ -84,6 +84,8 @@ MuSICAはMDPlayerと同じく勤労5号で演奏されます。
 
 - [M3disp: SO-END1.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/SO-END1.BGM)  
 - [M3disp: SO-END1P.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/SO-END1P.BGM)  
+- [M3disp: YS2LANE.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/YS2LANE.BGM)  
+- [M3disp: YS2TOMAK.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/YS2TOMAK.BGM)  
 
 
 

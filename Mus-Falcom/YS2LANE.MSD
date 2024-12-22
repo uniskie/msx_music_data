@@ -33,7 +33,7 @@ SCC5=
 
 t=y14,32
   t250r64
-  t156;t158
+  t146
 a0=r2
 
 ;==BASE
@@ -77,7 +77,7 @@ b2=v8ddrd16d16ddrd16d16 ddrd16d16r2v9
 c2=v8z0ddrd16d16ddrd16d16 ddrd16d16r2z4v9
 d2=v8<ggrg16g16ggrg16g16 ggrg16g16ggrg16g16
    ggrg16g16ggrg16g16>
-   L64o3v8
+   L64o3v10
    @16(c<p13)c32.p>@20>(c<p13)c32.p@19(g<p13)c32.p>@18(e<p13)e32.p>
    @20>(c<p13)cp>(c<p13)cp>(c<p13)c32.p@19(g<p13)c32.p>@18(e<p13)e32.p>
    @16(c<p13)c32.p>(c<p13)c32.p>v6@3o8r16v8@16o3(c<p13)c32.p>
@@ -103,7 +103,7 @@ c8=>(gi60)gi (gi60)gi<
 c9=>(gi60)gi (gi60)g4..iL16<
 d8=>(di60)di (di60)di<
 d9=>(di60)di (d4i60)d4iL16<
-   v9L64o3m1
+   v10L64o3m1
    >@20(c<p13)c32.p>(c<p13)c32.p>(c<p13)c32.p>(c<p13)c32.p>
    <@18(g<p13)c32.p>(g<p13)c32.p>(g<p13)c32.p>(g<p13)c32.p>
    v10L16o3m5
@@ -174,106 +174,106 @@ gb= fee-8. (d16d d2.i60d )d2.;r4
 ;==RHYTHM
 
 ;fmr=l16v13vb15vm13y22, 92y38,3y23, 92y39,1y24, 92y40,2
-fmw=L64q2s1z1o3@12v14
-fmx=L64q6s1z1o2@12v13
-fmy=L64q6s1z1o2@12v0
+fmw=L64q2s1o3
+fmx=L64s1o3
+fmy=L64q2s0o2
 
 ;r0=bsssssss
-w0=(g<p40)c32.r4..>p
-x0=r16q3v13@12(b<p40)d32.p>(b<p40)d32.p>(b<p40)d32.p>
-   (b<p40)d32.p>(b<p40)d32.p>(b<p40)d32.p>(b<p40)d32.p>L16
-y0=v0@5(c<p40)c32.p>@12v13(o4eo2p40)e32.p(o4eo2p40)e32.p(o4eo2p40)e32.p
-   (o4eo2p40)e32.p(o4eo2p40)e32.p(o4eo2p40)e32.p(o4eo2p40)e32.p
+w0=(g<p18)c32.r4..>p
+x0=r16q2@5v12q2(c<p18)c32.p>(b<p18)d32.p>(b<p18)d32.p>
+   (b<p18)d32.p>(b<p18)d32.p>(b<p18)d32.p>(b<p18)d32.p>L16
+y0=v0@5(r<p18)r32.p>@5v12(c<p10)c32.>p(c<p10)c32.>p(c<p10)c32.>p
+   (c<p10)c32.>p(c<p10)c32.>p(c<p10)c32.>p(c<p10)c32.>p
 
 ;r1=bhhh s8bh bhhh shbh
-w1=(g<p40)c32.r8.p> r8(g<p40)c32.r16p>
-   (g<p40)c32.r8.p> r8(g<p40)c32.r16p>
-x1=v0@2>>r16g16g16g16<< @12v13(b<p40)e32.r16p>v0@2>>r16g16<<
-   v0@2>>r16g16g16g16<< @12v13(b<p40)e32.p>v0@2>>g16r16g16<<
-y1=v0@5(c<p40)c32.r8.p> @12v13(o4eo2p40)e32.r16pv0@5(c<p40)c32.r16p>
-   v0@5(c<p40)c32.r8.p> @12v13(o4eo2p40)e32.r16pv0@5(c<p40)c32.r16p>
+w1=(g<p18)c32.r8.p> r8(g<p18)c32.r16p>
+   (g<p18)c32.r8.p> r8(g<p18)c32.r16p>
+x1=v0@3q8>r16g16g16g16< @5v12q2(c<p18)c32.r16p>v0@3q8>r16g16<
+   v0@3q8>r16g16g16g16< @5v12q2(c<p18)c32.p>v0@3q8>g16r16g16<
+y1=v0@5(r<p18)r32.r8.p> @5v12(c<p10)c32.>r16pv0@5(r<p18)r32.r16p>
+   v0@5(r<p18)r32.r8.p> @5v12(c<p10)c32.>r16pv0@5(r<p18)r32.r16p>
 
 ;r2=bhhh s8bh bhhh shss
-w2=(g<p40)c32.p>r8. r8(g<p40)c32.r16p>
-   (g<p40)c32.p>r8. r4
-x2=v0@2>>r16g16g16g16<< @12v13(b<p40)e32.r16p>v0@2>>g16g16<<
-   v0@2>>r16g16g16g16<< @12v13(b<p40)e32.p>v0@2>>g16<<@12v13(b<p40)e32.p>(b<p40)e32.p>
-y2=v0@5(c<p40)c32.p>r8. @12v13(o4eo2p40)e32.r16pv0@5(c<p40)c32.r16p>
-   v0@5(c<p40)c32.p>r8. @12v13(o4eo2p40)e32.r16p(o4eo2p40)e32.p(o4eo2p40)e32.p
+w2=(g<p18)c32.p>r8. r8(g<p18)c32.r16p>
+   (g<p18)c32.p>r8. r4
+x2=v0@3q8>r16g16g16g16< @5v12q2(c<p18)c32.r16p>v0@3q8>g16g16<
+   v0@3q8>r16g16g16g16< @5v12q2(c<p18)c32.p>v0@3q8>g16<@5v12q2(c<p18)c32.p>(c<p18)c32.p>
+y2=v0@5(r<p18)r32.p>r8. @5v12(c<p10)c32.>r16pv0@5(r<p18)r32.r16p>
+   v0@5(r<p18)r32.p>r8. @5v12(c<p10)c32.>r16p(c<p10)c32.>p(c<p10)c32.>p
 
 ;r3=bhhh s8.b bhbh s8hh
-w3=(g<p40)c32.r8.p> r8.(g<p40)c32.p>
-   (g<p40)c32.r16p>(g<p40)c32.r16p> r4
-x3=v0@2>>r16g16g16g16<< @2v13(b<p40)e32.r16p>r8
-   v0@2>>r16g16r16g16<< @2v13(b<p40)e32.r16p>v0@2>>g16g16<<
-y3=v0@5(c<p40)c32.r8.p> @12v13(o4eo2p40)e32.r8pv0@5(c<p40)c32.p>
-   v0@5(c<p40)c32.r16p>(c<p40)c32.r16p> @12v13(o4eo2p40)e32.r8.p
+w3=(g<p18)c32.r8.p> r8.(g<p18)c32.p>
+   (g<p18)c32.r16p>(g<p18)c32.r16p> r4
+x3=v0@3q8>r16g16g16g16< @3v12q1(c<p18)c32.r16p>r8
+   v0@3q8>r16g16r16g16< @3v12q1(c<p18)c32.r16p>v0@3q8>g16g16<
+y3=v0@5(r<p18)r32.r8.p> @5v12(c<p10)c32.>r8pv0@5(r<p18)r32.p>
+   v0@5(r<p18)r32.r16p>(c<p18)c32.r16p> @5v12(c<p10)c32.>r8.p
 
 ;r4=c>c<ge >c32c32c<ge cc hc ec ss
-w4=q2(g<p40)c32.p>>(g<p40)c32.p>(c<p40)g32.p(a+<p40)e32.p>
-   q4>(g<p40)cp>(g<p40)cp>q2(g<p40)c32.p>(c<p40)g32.p(a+<p40)e32.p>
-   (g<p40)c32.p>(g<p40)c32.pr16>(g<p40)c32.p>
-   (a+<p40)e32.p>(g<p40)c32.p>r8q2
-x4=v0@2>>r16g16g16g16<< @12v13(b<p40)e32.r16p>r8
-   r8v0@2>>g16<<r16 r8@12v13(b<p40)e32.p>(b<p40)e32.p>
-y4=v0@5(c<p40)c32.p>>(c<p40)c32.p(g<p40)g32.>p(e<p40)e32.p>
-   >(c<p40)cp>(c<p40)cp>(c<p40)c32.p(g<p40)g32.>p(e<p40)e32.p>
-   (c<p40)c32.p>(c<p40)c32.r16p>(c<p40)c32.p>
-   (e<p40)e32.p>(c<p40)c32.p>@12v13(o4eo2p40)e32.(o4eo2p40)e32.p
+w4=q2(g<p18)c32.p>>(g<p18)c32.p>(c<p18)g32.p(a+<p18)e32.p>
+   q3>(g<p18)cp>(g<p18)cp>q1(g<p18)c32.p>(c<p18)g32.p(a+<p18)e32.p>
+   (g<p18)c32.p>(g<p18)c32.pr16>(g<p18)c32.p>
+   (a+<p18)e32.p>(g<p18)c32.p>r8q2
+x4=v0@3q8>r16g16g16g16< @5v12q2(c<p18)c32.r16p>r8
+   r8v0@3q8>g16<r16 r8@5v12q2(c<p18)c32.p>(c<p18)c32.p>
+y4=v0@5(r<p18)r32.p>>(c<p18)c32.p(g<p18)g32.>p(e<p18)e32.p>
+   >(c<p18)cp>(c<p18)cp>(c<p18)c32.p(g<p18)g32.>p(e<p18)e32.p>
+   (c<p18)c32.p>(c<p18)c32.r16p>(c<p18)c32.p>
+   (e<p18)e32.p>(c<p18)c32.p>@5v12(c<p10)c32.>(c<p10)c32.>p
 
 ;r5=bhhh bhhh bhhh ssss
-w5=(g<p40)c32.p>r8. (g<p40)c32.p>r8.
-   (g<p40)c32.p>r8. r4
-x5=v0@2>>r16g16g16g16 r16g16g16g16
-   r16g16g16g16<< @12v13(b<p40)e32.p>(b<p40)e32.p>(b<p40)e32.p>(b<p40)e32.p>
-y5=v0@5(c<p40)c32.r8.p> (c<p40)c32.r8.p>
-   (c<p40)c32.r8.p> @12v13(o4eo2p40)e32.p(o4eo2p40)e32.p(o4eo2p40)e32.p(o4eo2p40)e32.p
+w5=(g<p18)c32.p>r8. (g<p18)c32.p>r8.
+   (g<p18)c32.p>r8. r4
+x5=v0@3q8>r16g16g16g16 r16g16g16g16
+   r16g16g16g16< @5v12q2(c<p18)c32.p>(c<p18)c32.p>(c<p18)c32.p>(c<p18)c32.p>
+y5=v0@5(r<p18)r32.r8.p> (c<p18)c32.r8.p>
+   (c<p18)c32.r8.p> @5v12(c<p10)c32.>p(c<p10)c32.>p(c<p10)c32.>p(c<p10)c32.>p
 
 ;r6=bhbh s8bh
-w6=(g<p40)g32.r16p>(g<p40)g32.r16p> r8(g<p40)g32.r16p>
-x6=v0@2>>r16g16r16g16<< @12v13(b<p40)e32.r16p>v0@2>>g16g16<<
-y6=v0@5(c<p40)c32.r16p>(c<p40)c32.r16p> @12v13(o4eo2p40)e32.r16pv0@5(c<p40)c32.r16p>
+w6=(g<p18)c32.r16p>(g<p18)c32.r16p> r8(g<p18)c32.r16p>
+x6=v0@3q8>r16g16r16g16< @5v12q2(c<p18)c32.r16p>v0@3q8>g16g16<
+y6=v0@5(r<p18)r32.r16p>(c<p18)c32.r16p> @5v12(c<p10)c32.>r16pv0@5(r<p18)r32.r16p>
 
 ;r7=bhbh shss
-w7=(g<p40)c32.r16p>(g<p40)c32.r16p> r4
-x7=v0@2>>r16g16g16g16<< @12v13(b<p40)e32.r16p>@12v13(b<p40)e32.p>@12v13(b<p40)e32.p>
-y7=v0@5(c<p40)c32.r16p>(c<p40)c32.r16p> @12v13(o4eo2p40)e32.r16p(o4eo2p40)e32.p(o4eo2p40)e32.p
+w7=(g<p18)c32.r16p>(g<p18)c32.r16p> r4
+x7=v0@3q8>r16g16g16g16< @5v12q2(c<p18)c32.r16p>@5v12q2(c<p18)c32.p>@5v12q2(c<p18)c32.p>
+y7=v0@5(r<p18)r32.r16p>(c<p18)c32.r16p> @5v12(c<p10)c32.>r16p(c<p10)c32.>p(c<p10)c32.>p
 
 ;r8=>cccc<gggg
-w8=q2>(g<p40)c32.p>(g<p40)c32.p>(g<p40)c32.p>(g<p40)c32.p>
-  (c<p40)g32.p>(c<p40)g32.p>(c<p40)g32.p>(c<p40)g32.pq2
+w8=q1>(g<p18)c32.p>(g<p18)c32.p>(g<p18)c32.p>(g<p18)c32.p>
+  (c<p18)g32.p>(c<p18)g32.p>(c<p18)g32.p>(c<p18)g32.pq2
 x8=r4 r4
-y8=v0@5>(c<p40)c32.p>(c<p40)c32.p>(c<p40)c32.p>(c<p40)c32.p
-   (g<p40)g32.p>(g<p40)g32.p>(g<p40)g32.p>(g<p40)g32.p>
+y8=v0@5>(c<p18)c32.p>(c<p18)c32.p>(c<p18)c32.p>(c<p18)c32.p
+   (g<p18)g32.p>(g<p18)g32.p>(g<p18)g32.p>(g<p18)g32.p>
 
 ;r9=bhs8 bhs8 cc>ec8<g8e
-w9=(g<p40)c32.r8.p> (g<p40)c32.r8.p>
-   q2(g<p40)c32.p>(g<p40)c32.p>>(a+<p40)e32.p>
-   (g<p40)c32.r16p>(c<p40)g32.r16p(a+<p40)e32.p>q2
-x9=v0@2>>r16g16<<@12v13(b<p40)e32.r16p> v0@2>>r16g16<<@12v13(b<p40)e32.r16p> r2
-y9=v0@5(c<p40)c32.r16p>@12v13(o4eo2p40)e32.r16p
-   v0@5(c<p40)c32.r16p>@12v13(o4eo2p40)e32.r16p
-   v0@5(c<p40)c32.p>(c<p40)c32.p>>(e<p40)e32.p>
-   v0@5(c<p40)c32.r16p(g<p40)g32.r16p>(e<p40)e32.p>
+w9=(g<p18)c32.r8.p> (g<p18)c32.r8.p>
+   q1(g<p18)c32.p>(g<p18)c32.p>>(a+<p18)e32.p>
+   (g<p18)c32.r16p>(c<p18)g32.r16p(a+<p18)e32.p>q2
+x9=v0@3q8>r16g16<@5v12q2(c<p18)c32.r16p> v0@3q8>r16g16<@5v12q2(c<p18)c32.r16p> r2
+y9=v0@5(r<p18)r32.r16p>@5v12(c<p10)c32.>r16p
+   v0@5(r<p18)r32.r16p>@5v12(c<p10)c32.>r16p
+   v0@5(r<p18)r32.p>(c<p18)c32.p>>(e<p18)e32.p>
+   v0@5(r<p18)r32.r16p(g<p18)g32.r16p>(e<p18)e32.p>
 
 ;ra=bhs8 bhs8 cc>e (cy)&4
 ;   br8. r8br br8. r8ss
 ;   br8. r8br br8. rsss
-wa=(g<p40)c32.r8.p> (g<p40)c32.r8.p>
-   q2(g<p40)c32.p>(g<p40)c32.p>>(a+<p40)e32.pq2
+wa=(g<p18)c32.r8.p> (g<p18)c32.r8.p>
+   q1(g<p18)c32.p>(g<p18)c32.p>>(a+<p18)e32.pq2
    r16r4
-   (g<p40)c32.r8.p> r8(g<p40)c32.r16p> (g<p40)c32.r8.p> r4
-   (g<p40)c32.r8.p> r8(g<p40)c32.r16p> (g<p40)c32.r8.p> r4
-xa=v0@2>>r16g16<<@12v13(b<p40)e32.r16p> v0@2>>r16g16<<@12v13(b<p40)e32.r16p>
-   r8.v13q1(bp40<)d32. r4p>v13q3
-   r2. r8(b<p40)e32.p>(b<p40)e32.p>
-   r2. r16(b<p40)e32.p>(b<p40)e32.p>(b<p40)e32.p>
-ya=v0@5(c<p40)c32.r16p>@12v13(o4eo2p40)e32.r16p
-   v0@5(c<p40)c32.r16p>@12v13(o4eo2p40)e32.r16p
-   v0@5(c<p40)c32.p>(c<p40)c32.p>(e<p40)e32.p>
-   @12v13o4q1g16r4o2q6
-   v0@5(c<p40)c32.r8.p> r8(c<p40)c32.r16p>
-   (c<p40)c32.r8.p> r8@12v13(o4eo2p40)e32.p(o4eo2p40)e32.p
-   v0@5(c<p40)c32.r8.p> r8(c<p40)c32.r16p>
-   (c<p40)c32.r8.p> r16@12v13(o4eo2p40)e32.p(o4eo2p40)e32.p(o4eo2p40)e32.p
+   (g<p18)c32.r8.p> r8(g<p18)c32.r16p> (g<p18)c32.r8.p> r4
+   (g<p18)c32.r8.p> r8(g<p18)c32.r16p> (g<p18)c32.r8.p> r4
+xa=v0@3q8>r16g16<@5v12q2(c<p18)c32.r16p> v0@3q8>r16g16<@5v12q2(c<p18)c32.r16p>
+   r8.v12(c<p18)c32. r4p>v12
+   r2. r8(c<p18)c32.p>(c<p18)c32.p>
+   r2. r16(c<p18)c32.p>(c<p18)c32.p>(c<p18)c32.p>
+ya=v0@5(r<p18)r32.r16p>@5v12(c<p10)c32.>r16p
+   v0@5(r<p18)r32.r16p>@5v12(c<p10)c32.>r16p
+   v0@5(r<p18)r32.p>(c<p18)c32.p>(e<p18)e32.p>
+   @5v11o4g16r4o2
+   v0@5(r<p18)r32.r8.p> r8(c<p18)c32.r16p>
+   (c<p18)c32.r8.p> r8@5v12(c<p10)c32.>p(c<p10)c32.>p
+   v0@5(r<p18)r32.r8.p> r8(c<p18)c32.r16p>
+   (c<p18)c32.r8.p> r16@5v12(c<p10)c32.>p(c<p10)c32.>p(c<p10)c32.>p
 
