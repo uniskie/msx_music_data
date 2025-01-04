@@ -82,12 +82,13 @@ MuSICAはMDPlayerと同じく勤労5号で演奏されます。
 
 例
 
-- [M3disp: SO-END1.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/SO-END1.BGM)  
-- [M3disp: SO-END1P.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/SO-END1P.BGM)  
-- [M3disp: YS2LANE.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/YS2LANE.BGM)  
-- [M3disp: YS2TOMAK.BGM](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/YS2TOMAK.BGM)  
+- [M3disp: SO-END1.BGM] https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/SO-END1.BGM  
+- [M3disp: SO-END1P.BGM] https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/SO-END1P.BGM  
+- [M3disp: YS2LANE.BGM] https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/YS2LANE.BGM  
+- [M3disp: YS2TOMAK.BGM] https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-Falcom/YS2TOMAK.BGM  
 
-
+古いバージョンのものをM3dispで聞く場合  
+https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/raw/81609e5f75061f2835e6d9c5ddf9d73ad09e1ec9/Mus-Falcom/YS2LANE.BGM  
 
 ### MDPlayer (MGSDRV/MuSICA)(Windows)
 
