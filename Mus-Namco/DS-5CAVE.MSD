@@ -38,7 +38,7 @@ t=t112
 a0=l8 @09v12 m5 a>
 a1=c16<(b16i60)b4i>(ci60)ci(ei60)ei <(ai60)a2i>c16<a16(ei60)ei (bi60)b4.i(ei60)e4.i (ai60)a4.i(c)c4.i
 a2=<a>>
-a=@06q6v07 m5i40 >l16
+a=@06q6v05 m5i40 >l16
 a3=a>cefec<a>cefec<a>efa <gb>ded<bgb>ded<bgb>dei0
 
 ;  -- b --
@@ -64,14 +64,16 @@ d1=c16<(b16)b>ce <(a.i60)ai>c16<a16e (b8i60)b.i(e8i60)e.i (a8i60)a.i(c8i60)c.i
 d10=c16<(b16)b>ce <(a.i60)ai>c16<a16e (b8i60)b.i(e8i60)e.i (a8i60)a.i(c8i60)c8.i
 d2=<a8>>
 
+; PSG
 d=o6@23 l16
-ds=v7
-dt=v9<
+ds=v5
+dt=v3<
 d3=i30a>ee<a>ee<a>f <g>dd<g>dd<g>di
 d4=i30r16>cfccfcea <b>e<bb>e<bb>e16i
 
-dx=@01q6s1v11
-dy=@01q6s1v9
+; FM
+dx=@16q6s1v12
+dy=@16q6s1v10
 d5=m6i10 l4 (ai60)ai10>(ei60)ei10 <(bi60)bi10>(gi60)gi10 (ei60)ei10ce (di60)di10<g.a16b16 >(c2.i60c )c2i10<b6>c6d6 (e1i60
 d6=)e1i0
 d7=)e2.i0
