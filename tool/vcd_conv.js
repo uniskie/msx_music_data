@@ -556,6 +556,15 @@ function loadVCD(d, config)
     let vcd_data = new VcdData( d, config );
 
     // ========================================================
+    // データ書き出し：ファイル名
+    // ========================================================
+    {
+    	res = res + '; MuSICA Voice to MGSDRV\n';
+    	res = res + ';  convert from [' + config.filename + ']\n';
+    	res = res + '\n';
+    }
+
+    // ========================================================
     // データ書き出し：OPLL
     // ========================================================
     {
@@ -624,6 +633,10 @@ function openVcdFile( target_file )
 
     // 変換設定
     let config = new LoadVcdConfig();
+    
+    // ファイル名
+    config.filename = target_file.name;
+    
     // OPLLのDT入れ替え
     config.dt_swap =  (getCheckedRadioSwtchValue('opll_dt_swap') == 'true');
 
