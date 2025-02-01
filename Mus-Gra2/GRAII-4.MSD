@@ -17,33 +17,34 @@ PSG3=t,ps2,h0/3,h1,h2/3,h3,h4/3,h5,h4/3,h6
 SCC1=t,sc0,e0,e1,e2,e1,e3
 SCC2=t,sc1,f0,f1,f2,f1,f3
 SCC3=t,sc2,a0,sc3a,a1,sc2b,a2,a3,a2,a4
-SCC4=t,sc3,a0,sc3a,a1,sc3b,a2,a3,a2,a4,a5
-SCC5=t,sc4,a0,sc3a,a1,sc3b,b2,b3,b2,b4,b5
+SCC4=t,sc3,a0,sc2a,a1,sc3b,a2,a3,a2,a4,a5
+SCC5=t,sc4,a0,sc2a,a1,sc3b,b2,b3,b2,b4,b5
 
 t=t114
 
 ;**** part 1
 fm0=@6v12o6q6
-fm2=@6v11o6q6z13r8.
-ps0=@11v07o4q6z0
-ps1=@11v07o4q6z1
-sc3=@10v07o4q6z1
-sc4=@10v07o4q6z2
-sc2=@10v04o4q6z3r8.
+fm2=@6v11o6q6z10r8.
+ps0=@11v08o4q6z0
+ps1=@11v08o4q6z1
+sc3=@23v08o4q6z0
+sc4=@23v08o4q6z1
+sc2=@23v05o4q6z2r8.
 
 a0=m4l16fedec<(g8i50)g8i0g>c<ga->c<a->(e-8i50)e-i0<b->d<b->(f8i50)fi0fef(g8i50)g4i0g>c<ga-e-a->(c8i50)ci0<b-fb->(d8i50)di0<
 
-fm0a=@2v15
-fm2a=@2v14
-sc3a=@15>
+fm0a=@5v12q4s1
+fm2a=@5v11q4s1
+sc2a=@2>v9
+sc3a=@2>v6
 
-a1=<(e8i50)e8i0 efg8 f8e8 f8c8 f8(a8.i50)a8.i0
-   l16a-ga-(b-8i50)b-8i0r32g32a-32b-32>e-<b-gb-ab->(c8.i50)c8.i0<a>cf
+a1=<(e8i50)e8i2 efg8 f8e8 f8c8 f8(a8.i50)a8.i2
+   l16a-ga-(b-8i50)b-8i2r32g32a-32b-32>e-<b-gb-ab->(c8.i50)c8.i2<a>cfi0
 
-fm0b=@9v14
-fm2b=@9v13
-sc3b=@2v8<
-sc2b=@2v5<
+fm0b=@9v13q6s0
+fm2b=@9v12q6s0
+sc3b=@10v9
+sc2b=@10v6
 
 a2=(d8i50)di0rde-(f8i50)f4i0(f8i50)fi0rfb->e-8d8<b-8
 a3=>(d-8i50)d-8i0<b-g->(d-8i50)d-i0<g-b->d-l8fc<b-afcl16
@@ -74,8 +75,8 @@ d2=d-8d-d-d-d-d-8d-d-d-d-f8a8>c8>l32c<afafcfc<a>c<afl16
 d3=d8ddddd8ddddrd-d-d-8.re-e-e-8.
 
 ;**** part 3
-fm6=o5@3v12q6s1 z1
-sc0=o4@2v6q6
+fm6=o5@3v13q6s1 z1
+sc0=o4@23v8q6
 
 e0=m4l16(c8i50)c4.i0rccc<(a-8i50)a-4i0(b-8i50)b-4i0>(c8i50)c4.i0rccc<(a-8i50)a-4i0(b-8i50)b-4i0>
    (e8i50)e4i0l8eg>c<(f8i50)f4i0>(c8i50)c4i0<(b-8i50)b-4i0(e-8i50)e-4i0>(c8i50)c4i0<(f8i50)f4i0<
@@ -84,9 +85,9 @@ e2=g-8g-r8.g-8g-rg-g-l8ffffff
 e3=g8gr8.g8grggrg-8(g-8i50)g-i0ra-a-(a-8i50)a-i0
 
 ;**** part 4
-fm7=@33q3s1v14o3
+fm7=@33q2s1v14o3
 ;ps1=@17q6v12o2 z4
-sc1=@06q6v13o3
+sc1=@11q6v14o2
 
 f0=l16c8ccccc8ccccc8ccccccc<ab-b>c8ccccc8ccccc8ccccccc<ab-bb-8b-b-fb-b-8b-b-fb-a8aafaa8afa>ce-8e-e-<b->e-e-8e-e-<b->e-f8ffcff8ffc<f
 f1=b->b-<b->f<b->b-<b->b-<b->f<b->b-<a->a-<a->e-<a->a-<a->a-<a->e-<a->a-<
@@ -94,9 +95,9 @@ f2=g->g-<g->d-<g->g-<g->g-<g->d-<g->g-<f>f<f>c<f>f<f>f<ffga
 f3=g>g<g>d<g>g<g>g<g>d<g>g<a->e-a-<a-8.b->fb-<b-8.
 
 ;**** part 5 (drum)
-fm3=v15o2z20
+fm3=v15o2z10
 fm8=v15o2
-ps2=v11o2q6
+ps2=v11o2q5
 
 g0=l16<@91a>@87e<@91a>@90c<@91a>@87e<@91a>@87e<@91a>@90c<@91a>@86e
 g1=<@91a>@87e<@91a>@90c<@91a>@87e<@91a>@90ccccc

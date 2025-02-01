@@ -25,11 +25,11 @@ t=t120
 ;part 1
 
 fm0=o5v12@9q6s1
-fm1=o5v11@9q6s1 z10 r8.
-fm2=o5v12@9q6s1 z6
-fm6=o5v11@9q6s1 z16 r8.
-sc3=o4v8@15q6 z0
-sc4=o4v8@15q6 z1
+fm1=o5v11@9q6s1 z16 r8.
+fm2=o5v12@9q6s1 z2
+fm6=o5v11@9q6s1 z18 r8.
+sc3=o4v9@15q6 z0
+sc4=o4v9@15q6 z1
 
 fm0a=@48
 fm0b=@0>
@@ -59,10 +59,10 @@ fm3=v11o6@0s1
 fm4=v09o6@0s1r8. z10
 ps0=v7o4@11 z1
 ps1=v5o4@11 z4 r8.
-sc0=v6o3@8q6
+sc0=v7o3@8q6
 sc1=v4o3@8q6r8. z2
 
-fm3a=v12@24q4
+fm3a=v13@24q4
 fm4a=v11@3q4 r8.
 
 c0=q3l16g8>g<grg>cd<
@@ -79,7 +79,7 @@ c6e=(g8.i50g)g8.ir2f (e-8.i50e-)e-4if4r
 ;part 3
 
 fm5=o2@24v14q6s1
-sc2=o2@6v13q6
+sc2=o2@6v14q6
 
 d0=<g>g<g>g<g>g<g>g<g>g<g>g<g>g<g>g <e->e-<e->e-<e->e-<e->e-<f>f<f>f<f>f<f>f
 

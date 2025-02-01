@@ -27,9 +27,9 @@ fm0=@6v12o6
 fm1=@6v12o5
 fm2=@6v10o6r8.z13
 fm3=@6v10o5r8.z13
-ps0=o5@11q6v7 z1
-sc3=o4@8v07q6
-sc4=o3@8v07q6
+ps0=o5@11q6v8 z1
+sc3=o4@8v08q6
+sc4=o3@8v08q6
 
 fm0a=@24
 fm0b=@9
@@ -77,7 +77,7 @@ d2=<g>d-d-<g>d-d-<g>d-d-<g>d-d-
 ;ƒƒƒ part 4 ƒƒƒ
 fm6=@6v15q6s1o3
 ps1=v11@17q6o2 z2
-sc1=v12@11q6o2
+sc1=v13@11q6o2
 
 e0=l8c1...f16g16>c2<b-2a4.d16e16f.d.g
    c1...f16g16>c2<b-2a4.d16e16f.d.g16d16

@@ -18,25 +18,25 @@ PSG2=t,ps1,b0,b1,b2,b3, b4,b5
        ;psd,s0,          s1/6,s2/2,s3/2,s4
 PSG3=t,ps2,c0,c1,c2,c3, d1/4,d2/4,d3/2,d4,d5/2,d6/2,d7/2,d8
 SCC1=t,sc0,a0,x0,a2,x1, a4,a5
-SCC2=t,sc1,b0,x0,b2,x3, b4,b5
-SCC3=t,sc2,c0,x0,c2,x2, a4
+SCC2=t,sc1,b0,x0,b2,x1, b4,b5
+SCC3=t,sc2,c0,x0,c2,x3, a4
 SCC4=t,sc3,d0,          d1/4,d2/4,d3/2,d4,d5/2,d6/2,d7/2,d8
 SCC5=t,sc4,d0,x4,       d1/4,d2/4,d3/2,d4,d5/2,d6/2,d7/2,d8
 
 t=t136
 
-fm0=v13@98o5
-fm1=v11@98o5z5r8.
+fm0=v13@6o5
+fm1=v11@6o5 z16 r8
 fm2=v13@16o4
 fm3=v11@16o4
 fm4=v14@33q6o3
-fm5=v12@12q6o2 z6
+fm5=v12@12q6o2 z19
 ps0=v9@4o5m4i30
 ps1=v9@4o4m4i30
 ps2=v9@4o4
-sc0=v08@15q4o5
-sc1=v08@15q4o4
-sc2=v08@15q4o4
+sc0=v08@10q4o5
+sc1=v08@10q4o4
+sc2=v08@10q4o4
 sc3=v12@6 q6o2
 sc4=v12@6 q6o1
 
@@ -54,10 +54,10 @@ c2=a-.a-.b-b-
 c3=<<<gg16gg16> z22
 x0=r4
 x1=rr4
-x2=rr4 >z22 r8.
-x3=rr4 v10
+x2=rr4 >z11 r8
+x3=rr4 >z1 r8 v6
 d0=l8r2.gg r2rgg16gg16
-x4=>z20
+x4=>z10
 
 a4=(g8m4i40g4m5)g8i0 l16 fec<(gm4i40)g4i0 fec<(gm4i40)g4i0>l8e.g.>c
    (g8m4i40g4m5)g8i0 l16 fec<(gm4i40)g4i0 fec<(gm4i40)g4i0>l8g.>c.e
@@ -90,8 +90,8 @@ fmr=v15vs13vm13vc13vh13
     y38,3y22,220
     y40,1y24,120
 
-r0=bh8h8r8h8hb8bc8h8c8 bc8hsm8h8h8bms16csm8bsm8sm8sm16 
-r1=bh8h8smb8h8h16b8h16sm8c8
+r0=bh8h8r8h8hb8bc8h8c8 b8h8h8h8b8bms16csm16bsm8sm16sm16 
+r1=bh8h8sm8h8b8h8sm8c8
 r2=b16h8h16sm8h8hb16h16bh8smh4
 r3=b8c4hb8bsm8sm4bc8
 r4=bh8smh16h16sm8sm16sm16b16sm16sm16sm4

@@ -1,5 +1,5 @@
 ;**************************************
-;*      GRADIUS II-11 STAGE 5-2       *
+;*      GRADIUS II-10 STAGE 5-2       *
 ;*     ¢ The Old Stone Age -2- £      *
 ;**************************************
 FM1 =t,FM1,A0,V14,A1
@@ -91,8 +91,8 @@ B1'=L16<DG>C<FB->E-<A->D-G-D<A-D
 
 ;****** BASS
 
-FM6=@33Q4 V14 O2
-FM7=@33Q4 V13 O3
+FM6=@33Q6 V14 O2
+FM7=@33Q4 V13 O3 z1 
 PS1=@16Q6 V10 O2
 SC5=@11Q6 v14 O2
 

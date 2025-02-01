@@ -25,10 +25,10 @@ t=t120
 
 ;**** part 1
 fm0=o4v13@6s1
-fm1=o4v11@6s1z3r6
+fm1=o4v11@6s1 z16 r6
 ps0=o3v7@10
 sc3=o3@4v9
-sc4=o3@4v7z1r6
+sc4=o3@4v7 z1 r6
 
 a0=l6m5(a4i50a4)ai>d(a a8i50)a4.ieg>c (d4i50d4)die(f f8i50)f4.i<fga >(c4i50c4)cide(e4i50)e4id4<a4 >(e4i20)e4id<a>(c c4i40)c2.i
 a1=(c4i40)c4ifg>
@@ -39,7 +39,7 @@ a3=(c2i40)c2 r1
 
 ;**** part 2
 fm2=o5v11@0s1
-fm3=o5v09@0s1z10r16
+fm3=o5v09@0s1 z16 r16
 ps1=o4v7@4
 sc0=o4v7@15
 sc1=o4v5@15z2r16
@@ -50,7 +50,7 @@ b2=b>cdfb>cdf<<
 b3=b->cdfb->cdf
 b3e=<<b->cdfb->cd
 
-ff2=<v11@14z0
+ff2=<v11@14 z0
 ff3=<v11@14
 ss0=v6@8
 ss1=v6@8
@@ -63,8 +63,8 @@ c5=m4(f2i50)f2i (e2i50)e2i r1
 ;**** part 3 & 4
 fm4=o5@9v15q5s1
 fm5=o3@12v14
-fm6=o5@9v13z10r8.
-sc2=o2@6v13
+fm6=o5@9v13s1 z16 r4
+sc2=o2@6v14
 
 d0=m4l2 (di50)di (ci50)ci <(bi50)bi (b-i50)b-i l4aaaa b-b-b-b- bbbb >cde
 d0'=<a>

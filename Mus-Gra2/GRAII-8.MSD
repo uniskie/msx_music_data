@@ -26,24 +26,24 @@ rr4=r4
 
 ;part 1
 
-fm0=o5@14q6v13
-fm1=o5@14q6v13
-ps0=o3@11v7q7 z2
-sc3=o3@8q6v8q6 
-sc4=o3@8q6v8q6 
+fm0=o5@12q6v12
+fm1=o5@12q6v12
+ps0=o4@11v8q7 z1
+sc3=o3@8q6v9q6 
+sc4=o3@8q6v9q6 
 
-fm0'=@48q6v12 
-fm1'=@48q6v11 z9 r4
-sc4'=v5  z4 r4
+fm0'=@3q6v11 
+fm1'=@3q6v9 z16 r4
+sc4'=v6  z1 r4
 
-fm0a=@16 v13q8s1
-fm1a=@16 v11q8s1
+fm0a=@16 v14q8s1
+fm1a=@16 v12q8s1
 sc3a=@17
 
-fm0b=@48 v13q2
-fm1b=@48 v12q2 z6
-sc3b=@10 v8>
-sc4b=@10 v6> z4
+fm0b=@33 v13q4
+fm1b=@33 v11q4
+sc3b=@10 v9>
+sc4b=@10 v6> z1
 
 a0=>r1 r2l8rgrg r1 r2rggg r1 r2rgrg r1 <
 b0=>r1 r2l8rdrd r1 r2rddd r1 r2rdrd r1 <
@@ -94,8 +94,8 @@ sc2b=@17v5z1q4>
 ;c2=l24<cc+dd+ef gg+aa+b>c cc+dd+ef f+gg+aa+bl8
 c2=l32<<<rcdef+gab>c def+gab>cd ef+gab>cde f+gab>cde<l8
 
-fm2c=@24v11 q4s1 z10 
-fm3c=@24v8  q4s1 z23
+fm2c=@24v12 q4s1
+fm3c=@24v9  q4s1 z16
 sc2c=@2v6 q8z1
 c3=ffrff rff  a+a+ra+ra+a+a+
 d3=ccrccrcc ffrfrfff
@@ -113,9 +113,9 @@ c7=(c c4i50c)c2i;r4
 
 ;part 3
 
-fm4=o6v14@3 q4s1 z14 
-ps1=o5v6@13 q4 z2 r4
-sc1=o4v9@18 q4
+fm4=o6v14@3 q4s1 z6  
+ps1=o5v6@13 q4 z1 r4
+sc1=o5v9@18 q4
 
 e0=l8m6i20
    r1 r2rg4. 
@@ -144,9 +144,9 @@ e0=l8m6i20
 
 ;part 4
 
-fm5=o4@24v11q4s1 z10 
+fm5=o4@24v11q4s1 
 fm6=o2@33v13q5
-sc0=o2@11v13q6
+sc0=o2@11v13q6 z1
 
 g0=l8adea4dea4deaadea
 g1=adea4dea4deaadea 

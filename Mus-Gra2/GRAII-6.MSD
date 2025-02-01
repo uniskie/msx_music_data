@@ -26,11 +26,11 @@ r=r1.
 
 ;**** PART 1 ****
 fm0=o6@16v14q7s1 
-fm1=o6@9v12q7s1 z13 r8
-ps0=o5@11q7v07 
-ps1=o5@11q7v05 z2 r8
+fm1=o6@9v12q7s1 z16 r8
+ps0=o5@11q7v08 
+ps1=o5@11q7v05 z1 r8
 sc3=o5@3q4v10
-sc4=o5@3q4v07 z2 r8
+sc4=o5@3q4v07 z1 r8
 
 a3=m5l16gf+d(c8.i50)c8.id<bg ab>cdc<b(a8i50)aiab>c
 a4=(d8i50)d8i<b-f(g8.i50)g4i r8gab-ab->cde-f gf+d(c8.i50)c8.id<bg ab>cdc<bab>cd<b>g
@@ -41,8 +41,8 @@ a6e=r16bagfagdgedc (d8i40)d8iga>(d8i40)d8i
 
 ;**** part 2 ****
 fm5=o3@33q6s1v13
-fm6=o3@12q6s1v10z3
-sc0=o2@6q6v13 z1
+fm6=o3@12q6s1v10 z16
+sc0=o2@6q6v14 z1
 
 b1=l16crcccc
 b2=e-re-e-e-e-
@@ -52,10 +52,10 @@ b5=m4(g4i50)g2i(g4i50)g8i(g8i50)giggg
 b5e=m4(g4i50)g2i(g4i50)g8i(g8i50)gigg
 
 ;**** part 3 ****
-fm2=v13@24o4
-sc1=v11@6o3 z3
+fm2=v13@6o4
+sc1=v11@6o3 z1
 fm2a=o6v11
-sc1a=@10o5v7
+sc1a=@10o5v8
 
 c1=l16 crcc<g>c
 c2=e-re-e-<b->e-
@@ -65,10 +65,10 @@ c5=<g>c<g>d<g>g
 c6=dc<gdc<g
 
 ;**** part 4 ****
-fm3=v11@6o6q4s1
-fm4=v10@6o6q4s1 z16r8
+fm3=v13@3o6q4s1
+fm4=v12@3o6q4s1 z16r8
 ;ps1=v7@13o5q4z1
-sc2=v5@3o5q4
+sc2=v7@3o5q4
 
 d0=l16 m4
    c8(c8.i50)c4i c8(c4i50)c4.i c8. 

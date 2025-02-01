@@ -51,10 +51,10 @@ c1=g>d<
 
 ;***** part 4
 fm4=@6v14o4
-fm5=@6v12o4z12r8
-fm6=@6v14o2z30
-sc3=@10q6v7o4 z1
-sc4=@10q6v8o2 z1
+fm5=@6v12o4 z12 r8
+fm6=@6v14o2
+sc3=@10q6v8o4 z1
+sc4=@10q6v10o2 z1
 
 d0=m4(a-4.i50)a-2ia-8>(a-4i50)a-2.i< (g4.i50)g2ig8>(g4i50)g2.i<
 d1=m4(a-4.i50)a-2ia-8>(a-4i50)a-2.i< (g4.i50)g2ig8>(g4i50g8)g2i<
