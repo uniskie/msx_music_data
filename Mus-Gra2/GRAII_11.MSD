@@ -1,41 +1,41 @@
-;******** GRADIUS II-11 **********
+;******** GRADIUS II_11 **********
 ;*      -- Maximum Speed --      *
 ;*********************************
-FM1 =;T,FM1,A0/4       
-     T,FM1,               A1/2,A2/2,A3,A4
-FM2 =;T,FM2,A0/3,A0'   
-     T,FM2,               A1/2,A2/2,A3
-FM3 =;T,FM3,B0/4       
-     T,FM3,               B1/2,B2/2,B3,B4
-FM4 =;T,FM4,A0/4       
-     T,FM4,               A1/2,A2/2,C3
-FM4 =;T,FM5,D0/2,D1/2  
-     T,FM5,               D0/2,D1/2,D2,D3,D2,D4,D5,D6,D5,D7
-FM5 =;T,FM6,E0/2,E1/2  
-     T,FM6,               E0/2,E1/2,E2,E3,E2,E4,E5,E6,E5,E7
+FM1 =T,FM1,A0/4       
+     ;T,FM1,               A1/2,A2/2,A3,A4
+FM2 =T,FM2,A0/3,A0'   
+     ;T,FM2,               A1/2,A2/2,A3
+FM3 =T,FM3,B0/4       
+     ;T,FM3,               B1/2,B2/2,B3,B4
+FM4 =T,FM4,A0/4       
+     ;T,FM4,               A1/2,A2/2,C3
+FM4 =T,FM5,D0/2,D1/2  
+     ;T,FM5,               D0/2,D1/2,D2,D3,D2,D4,D5,D6,D5,D7
+FM5 =T,FM6,E0/2,E1/2  
+     ;T,FM6,               E0/2,E1/2,E2,E3,E2,E4,E5,E6,E5,E7
 FMR =      
-FM6 =;T,FM7,F0         
-     T,FM7,               F1/8,F2/8,F3/16,F4/6,F5/6,F4/6,F1/5,F5
-FM7 =;T,FM8,H0,H1,H0,H2
-     T,FM8,               H3/3,H4,H5/7,H6,H7/7,H8
-FM9 =;T,FM9,H0,H1,H0,H2
-     T,FM9,               H3/3,H4,H5/7,H6,H7/7,H8
-PSG1=;T,PS1,A0/4       
-     T,PS1,               A1/2,A2/2,A3,A4
-PSG2=;T,PS2,D0/2,D1/2  
-     T,PS2,               D0/2,D1/2,D2,D3,D2,D4,D5,D6,D5,D7
-PSG3=;T,PS3,I0,I1,I0,I2
-     T,PS3,               I3/3,I4,I5/7,I6,I7/7,I8
-SCC1=;T,SC1,A0/4       
-     T,SC1,               A1/2,A2/2,A3,A4
-SCC2=;T,SC2,B0/4       
-     T,SC2,               B1/2,B2/2,B3,B4
-SCC3=;T,SC3,D0/2,D1/2  
-     T,SC3,               D0/2,D1/2,D2,D3,D2,D4,C3
-SCC4=;T,SC4,E0/2,E1/2  
-     T,SC4,               E0/2,E1/2,E2,E3,E2,E4,E5,E6,E5,E7
-SCC5=;T,SC5,F0         
-     T,SC5,               F1/8,F2/8,F3/16,F4/6,F5/6,F4/6,F1/5,F5
+FM6 =T,FM7,F0         
+     ;T,FM7,               F1/8,F2/8,F3/16,F4/6,F5/6,F4/6,F1/5,F5
+FM7 =T,FM8,H0,H1,H0,H2
+     ;T,FM8,               H3/3,H4,H5/7,H6,H7/7,H8
+FM9 =T,FM9,H0,H1,H0,H2
+     ;T,FM9,               H3/3,H4,H5/7,H6,H7/7,H8
+PSG1=T,PS1,A0/4       
+     ;T,PS1,               A1/2,A2/2,A3,A4
+PSG2=T,PS2,D0/2,D1/2  
+     ;T,PS2,               D0/2,D1/2,D2,D3,D2,D4,D5,D6,D5,D7
+PSG3=T,PS3,I0,I1,I0,I2
+     ;T,PS3,               I3/3,I4,I5/7,I6,I7/7,I8
+SCC1=T,SC1,A0/4       
+     ;T,SC1,               A1/2,A2/2,A3,A4
+SCC2=T,SC2,B0/4       
+     ;T,SC2,               B1/2,B2/2,B3,B4
+SCC3=T,SC3,D0/2,D1/2  
+     ;T,SC3,               D0/2,D1/2,D2,D3,D2,D4,C3
+SCC4=T,SC4,E0/2,E1/2  
+     ;T,SC4,               E0/2,E1/2,E2,E3,E2,E4,E5,E6,E5,E7
+SCC5=T,SC5,F0         
+     ;T,SC5,               F1/8,F2/8,F3/16,F4/6,F5/6,F4/6,F1/5,F5
 
 
 T=T150

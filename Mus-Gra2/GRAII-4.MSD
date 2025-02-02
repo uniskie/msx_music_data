@@ -24,25 +24,25 @@ t=t114
 
 ;**** part 1
 fm0=@6v12o6q6
-fm2=@6v11o6q6z10r8.
+fm2=@6v10o6q6z10r8.
 ps0=@11v08o4q6z0
 ps1=@11v08o4q6z1
-sc3=@23v08o4q6z0
-sc4=@23v08o4q6z1
-sc2=@23v05o4q6z2r8.
+sc3=@2v08o4q6z0
+sc4=@2v08o4q6z1
+sc2=@2v05o4q6z2r8.
 
 a0=m4l16fedec<(g8i50)g8i0g>c<ga->c<a->(e-8i50)e-i0<b->d<b->(f8i50)fi0fef(g8i50)g4i0g>c<ga-e-a->(c8i50)ci0<b-fb->(d8i50)di0<
 
-fm0a=@5v12q4s1
-fm2a=@5v11q4s1
-sc2a=@2>v9
-sc3a=@2>v6
+fm0a=@6v13q3s1
+fm2a=@6v11q3s1 z20
+sc2a=@23>v8
+sc3a=@23>v5
 
-a1=<(e8i50)e8i2 efg8 f8e8 f8c8 f8(a8.i50)a8.i2
-   l16a-ga-(b-8i50)b-8i2r32g32a-32b-32>e-<b-gb-ab->(c8.i50)c8.i2<a>cfi0
+a1=<(e8i50)e8i8 efg8 f8e8 f8c8 f8(a8.i50)a8.i8
+   l16a-ga-(b-8i50)b-8i8r32g32a-32b-32>e-<b-gb-ab->(c8.i50)c8.i8<a>cfi0
 
 fm0b=@9v13q6s0
-fm2b=@9v12q6s0
+fm2b=@9v11q6s0 z16
 sc3b=@10v9
 sc2b=@10v6
 
@@ -57,8 +57,8 @@ b4=(g8i50)gi0rgb->(d8i50)d4i0rb-b-(b-8i50)b-i0>rcc
 b5=l32c<a-e-c<a-e-
 
 ;**** part 2
-fm4=o5@16v12q4s1
-fm5=o5@16v12q4s1
+fm4=o5@16v13q4s1
+fm5=o5@16v13q4s1
 
 c0=l16c8ccccc8cccc<a-8a-a-a-a-b-8b-b-b-b->c8ccccc8cccc<a-8a-a-a-a-b-8b-b-b-b-
  >cecgc>c<cecgc>c<cfcac>c<cfcac>c<e-ge-b-e->e-<e-ge-b-e->e-faf>c<f>f<faf>c<f>f<
@@ -75,7 +75,7 @@ d2=d-8d-d-d-d-d-8d-d-d-d-f8a8>c8>l32c<afafcfc<a>c<afl16
 d3=d8ddddd8ddddrd-d-d-8.re-e-e-8.
 
 ;**** part 3
-fm6=o5@3v13q6s1 z1
+fm6=o5@9v13q6s1 z1
 sc0=o4@23v8q6
 
 e0=m4l16(c8i50)c4.i0rccc<(a-8i50)a-4i0(b-8i50)b-4i0>(c8i50)c4.i0rccc<(a-8i50)a-4i0(b-8i50)b-4i0>

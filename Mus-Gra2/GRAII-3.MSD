@@ -22,14 +22,14 @@ SCC5=t,sc4,b0,b1,sc3b,b2,sc3c,b3,b4
 
 T=t184
 
-;ƒƒƒ part 1 ƒƒƒ
+;*** part 1 ***
 fm0=@6v12o6
 fm1=@6v12o5
 fm2=@6v10o6r8.z13
 fm3=@6v10o5r8.z13
 ps0=o5@11q6v8 z1
-sc3=o4@8v08q6
-sc4=o3@8v08q6
+sc3=o4@8v09q6
+sc4=o3@8v09q6
 
 fm0a=@24
 fm0b=@9
@@ -51,7 +51,7 @@ a4=ee-dd-c<)b
 b3=r<g-g-rffreere-(e-4i50)e-4.i0reere-e-rddrd-(d-4i50)d-il32(c<bi50
 b4=b-aa-gg-)f
 
-;ƒƒƒ part 2 ƒƒƒ
+;***part 2 ***
 fm4=@16o5v9
 sc0=@15o4v6q6
 
@@ -61,20 +61,20 @@ c2=>r2e-fgcr>m1p29(c4m4i50c)c2i<<
 
 fm4c=@14
 
-;ƒƒƒ part 3 ƒƒƒ
+;*** part 3 ***
 fm5=o5@12v12 z10
-sc2=o4@8v07 z2
+sc2=o4@8v08 z2
 
 d0=m4l8c4r<(b-2i50b-)b-2iagfar(g4i50)gi(c4i50)c4i(g4i50)gi>(c4.i50)c4i
    c4r<(b-2i50b-)b-2iagfar(g4i50)gi(c4i50)c4i<(g4i50)gi>(c4.i50)c4i>
-fm5a=@16
+fm5a=@16 v13
 d1=(b-2.i50)b-2.i>(f4i50)f4i(e2i50)e2i<(g2i50)g2i(a-4.i50)a-2>c16d16
    (e-4i50)e-4d4c4
-fm5b=@2
+fm5b=@9 v12
 d2=<g>d-d-<g>d-d-<g>d-d-<g>d-d-
    l16(fee-dd-c<b)b-l8<g>d-d-<g>d-d-<g>d-g>d-d-<g>d-d-<g>d-
 
-;ƒƒƒ part 4 ƒƒƒ
+;*** part 4 ***
 fm6=@6v15q6s1o3
 ps1=v11@17q6o2 z2
 sc1=v13@11q6o2
@@ -88,7 +88,7 @@ e3=a->a-16a-16<
 e4=g>gg<g>gg<g>d-<
 e5=g>gg<g>d-d-<g>gg<g>g<g>e-<g>d-<g
 
-;ƒƒƒ part 5 (drums) ƒƒƒ
+;*** part 5 (drums) ***
 fm7=v15o1z10
 fm8=v15o1
 ps2=v11o2q6

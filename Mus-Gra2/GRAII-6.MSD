@@ -25,12 +25,12 @@ t=t120
 r=r1.
 
 ;**** PART 1 ****
-fm0=o6@16v14q7s1 
-fm1=o6@9v12q7s1 z16 r8
-ps0=o5@11q7v08 
-ps1=o5@11q7v05 z1 r8
+fm0=o6@16v13q7s1 
+fm1=o6@9v13q7s1 z16
+ps0=o5@11q7v10 
+ps1=o5@11q7v08 z1 r8
 sc3=o5@3q4v10
-sc4=o5@3q4v07 z1 r8
+sc4=o5@3q4v08 z1 r8
 
 a3=m5l16gf+d(c8.i50)c8.id<bg ab>cdc<b(a8i50)aiab>c
 a4=(d8i50)d8i<b-f(g8.i50)g4i r8gab-ab->cde-f gf+d(c8.i50)c8.id<bg ab>cdc<bab>cd<b>g

@@ -46,16 +46,16 @@ b0=m4l16(g4i50g8)g4.i (f4i50)f4iffff (e4i50)e2i (e-4i50)e-8i(f8i50)figgg
 ;**** part 3 ****
 fm2=o6v12@24q6s1
 fm3=o6v12@24q6s1
-fm4=o6v10@24q6s1 z10 r8
-sc1=o4v9@3q6
-sc2=o4v6@3q6
+fm4=o6v11@6q6s1 z16 r8
+sc1=o5v10@10q6
+sc2=o5v10@10q6
 
 c0=l16m4 (g8i50)g8ir4rgggi(f8i50)f8r4rifffi(e8i50)e8r4rieeei(e-8i50)e-8r8i(f8i50)f8
 d0=l16m4 (d8i50)d8ir4rdddi(c8i50)c8r4riccci<(b8i50)b8r4ribbbi(b-8i50)b-8r8i(b8i50)b8
 
 
 ;**** part 4(drum) ****
-fm7=v15o2Z40
+fm7=v15o2 z20
 fm8=v15o2
 ps2=v11o2q6
 
