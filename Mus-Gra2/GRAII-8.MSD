@@ -26,8 +26,8 @@ rr4=r4
 
 ;part 1
 
-fm0=o5@12q6v12
-fm1=o5@12q6v12
+fm0=o5@12q6s1v12
+fm1=o5@12q6s1v12
 ps0=o4@11v8q7 z1
 sc3=o3@8q6v9q6 
 sc4=o3@8q6v9q6 
@@ -36,12 +36,12 @@ fm0'=@3q6v11
 fm1'=@3q6v9 z16 r4
 sc4'=v6  z1 r4
 
-fm0a=@16 v14q8s1
-fm1a=@16 v12q8s1
+fm0a=@16 v14q8
+fm1a=@16 v12q8
 sc3a=@17
 
 fm0b=@33 v13q4
-fm1b=@33 v11q4
+fm1b=@33 v11q4 z12
 sc3b=@21 v9>
 sc4b=@21 v6> z1
 

@@ -24,9 +24,9 @@ t=t120
 r=r1.
 
 ;**** PART 1 ****
-fm0=o5@16v12
-fm1=o5@16v10r8z2
-ps0=o4@11q6v7
+fm0=o5@16v13
+fm1=o5@16v11r8z2
+ps0=o4@11q6v8
 sc3=o@15q6v9
 sc4=o@15q6v6z3r8
 

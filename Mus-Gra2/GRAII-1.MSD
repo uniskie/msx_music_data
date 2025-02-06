@@ -96,7 +96,7 @@ ps1=v11o1
 
 g0=l16@91(c64p16)<c16..prr>(c64p16)<c16..prr>(c64p16<)c16..pr>(c64p16<)c64p>(c64p16<)c64p>@90e12e12e12@91(c64p16<)c16..prr>(c64p16<)c16..prr>(c64p16<)c16..pr>(c64p16<)c64p>(c64p16<)c64p>@90eeee
 g1=l12<@91a6a>@90e<@91aa>
-g2=l16<@91a>@90eeeeeee<@91a1>@86b1r1r1
+g2=l16<@91a>@90eeeeeee<@91a1>@86b2r1r1r1
 
 f0=l16@25(b64p16)c8...p(b64p16)c8...p(b64p16c32.)c8p(b64p16)c64p(b64p16)c64p>@00c12c12c12<@25(b64p16)c8...p(b64p16)c8...p(b64p16c32.)c8p(b64p16)c64p(b64p16)c64p>@00cccc<
 f1=l12r4@00crr

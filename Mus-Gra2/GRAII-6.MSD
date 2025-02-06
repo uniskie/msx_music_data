@@ -26,7 +26,7 @@ r=r1.
 
 ;**** PART 1 ****
 fm0=o6@16v13q7s1 
-fm1=o6@9v13q7s1 z16
+fm1=o6@0v14q7s1 z16
 ps0=o5@11q7v10 
 ps1=o5@11q7v08 z1 r8
 sc3=o5@3q4v10

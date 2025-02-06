@@ -9,14 +9,14 @@ FM3 =T,FM3,B0/4
      ;T,FM3,               B1/2,B2/2,B3,B4
 FM4 =T,FM4,A0/4       
      ;T,FM4,               A1/2,A2/2,C3
-FM4 =T,FM5,D0/2,D1/2  
+FM5 =T,FM5,D0/2,D1/2  
      ;T,FM5,               D0/2,D1/2,D2,D3,D2,D4,D5,D6,D5,D7
-FM5 =T,FM6,E0/2,E1/2  
+FM6 =T,FM6,E0/2,E1/2  
      ;T,FM6,               E0/2,E1/2,E2,E3,E2,E4,E5,E6,E5,E7
 FMR =      
-FM6 =T,FM7,F0         
+FM7 =T,FM7,F0         
      ;T,FM7,               F1/8,F2/8,F3/16,F4/6,F5/6,F4/6,F1/5,F5
-FM7 =T,FM8,H0,H1,H0,H2
+FM8 =T,FM8,H0,H1,H0,H2
      ;T,FM8,               H3/3,H4,H5/7,H6,H7/7,H8
 FM9 =T,FM9,H0,H1,H0,H2
      ;T,FM9,               H3/3,H4,H5/7,H6,H7/7,H8
@@ -43,7 +43,7 @@ T=T150
 ;****** MAIN
 
 FM1=@24 V12 O5 Q5S1
-FM2=@24 V10 O5 Q5S1 Z13 R8
+FM2=@24 V10 O5 Q5S1 Z14 R8
 PS1=@17 V09 O4 Q4 z1
 SC1=@15 V08 O4 Q4 z2
 
@@ -100,11 +100,12 @@ C3=<GR>CR<(A4I60)A4I
 
 ;------ CHORUS 1
 
-FM5=@03 V11 O5 q5
-PS2=@13 v08 o4 q6 z1
-SC3=@15 V07 O4 Q6 z2
+FM5=@06 V12 O5 q5
+PS2=@13 v07 O4 q6 z1
+SC3=@15 V08 O4 Q6 z2
 
-D0=m6L16AARAARAARAARARAR
+D0=m6L16
+   AARAARAARAARARAR
 D1=GGRGGRGGRGGRGRGR
 D2=(E4I60)E4I(F+4I60)F+4I
 D3=(G4I60)G4I(F+4I60)F+4I
@@ -118,21 +119,21 @@ D7=FRFRFRFFRFFR
 
 ;------ CHORUS 2
 
-FM6=@03 V11 O5 Q5 z6
-SC4=@15 V07 O4 Q6 z2
+FM6=@06 V11 O5 Q5 z6
+SC4=@15 V06 O4 Q6 z2
 
 E0=m6L16
-   AARAARAARAARARAR
-E1=GGRGGRGGRGGRGRGR
+   R AARAARAARAARARA
+E1=R GGRGGRGGRGGRGRG
 E2=(A4I60)A4I(B4I60)B4I
 E3=>(C4I60)C4I<(B4I60)B4I
 E4=>(C4I60)C4I(D4I60)D4I<
-E5=CRCRCRCCRCCR
-   CCCRCRCCRCCR
-E6=FRFRFRFFRFFR
-   FFFRFRFFRFFR
-E7=FRFRFRFFRFFR
-   >FGA(G)GAB(A)AB>C8
+E5=R CRCRCRCCRCCR
+     CCCRCRCCRCC
+E6=R FRFRFRFFRFFR
+     FFFRFRFFRFF
+E7=R FRFRFRFFRFFR
+    >FGA(G)GAB(A)AB>C
 
 ;****** BASS
 
@@ -156,16 +157,16 @@ FM9=v15o2
 PS3=v11o2q6
 
 
-H0=L16<@91a8>@87ee <@91a8>@87ee <@91a8>@87ee <@91a8>@87e@86e
-H1=<@91a8>@87ee <@91a8>@87ee <@91a8>@87ee @90c8@87e@86c
+H0=L16<@91a8>@87ee <@91a8>@87ee <@91a8>@87ee <@91a8>@87e@86g
+H1=<@91a8>@87ee <@91a8>@87ee <@91a8>@87ee @90c8@87e@86g
 H2=<@91a8>@87ee <@91a8>@87ee <@91a>@92c-32c-32c-c-@90cccc 
 
-H3=L16<@91aaaa> @90c@87e@86e<@91a> @87e<@91a@91a>@86e @90c@87ee@86e ;*3
-H4=<@91aaaa> @90c@87e@86e<@91a> @87e<@91a@91a@91a> @90cc@86e8
-H5=<@91aa>@86e8@90c@87e@86e8 ;*7
-H6=<@91aa>@86e8@90c8
-H7=<@91a>@87e<@91a>@87e@90c@87e<@91a@91a>@87e<@91a@91a>@86e ;*7
-H8=<@91a>@87e<@91a>@87e@90c@87e@90cc@87e@90cc@86e
+H3=L16<@91aaaa> @90c@87e@86g<@91a> @87e<@91a@91a>@86g @90c@87ee@86g ;*3
+H4=<@91aaaa> @90c@87e@86g<@91a> @87e<@91a@91a@91a> @90cc@86g8
+H5=<@91aa>@86g8@90c@87e@86g8 ;*7
+H6=<@91aa>@86g8@90c8
+H7=<@91a>@87e<@91a>@87e@90c@87e<@91a@91a>@87e<@91a@91a>@86g ;*7
+H8=<@91a>@87e<@91a>@87e@90c@87e@90cc@87e@90cc@86g
 
 I0=L16<@1a8>@7ee <@1a8>@7ee <@1a8>@7ee <@1a8>@7e@6e
 I1=<@1a8>@7ee <@1a8>@7ee <@1a8>@7ee @0c8@7e@6c
