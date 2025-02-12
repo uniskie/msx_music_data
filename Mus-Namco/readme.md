@@ -1,94 +1,94 @@
-## ������
+## ご注意
 
-OpenMSX�ō쐬�E���t�E�������Ă��܂��B  
-���ʂ͎��@�ɍ��킹�Ă��܂���̂ŁA���@�ł̉��t�ɂ��Ă͕ۏ؊O�ł��B  
+OpenMSXで作成・演奏・調整しています。  
+音量は実機に合わせていませんので、実機での演奏については保証外です。  
 
-## ���ʐݒ�
+## 音量設定
 
-�@ FS-A1+FMPAC / HB-F1XDJ / FS-A1WX
+① FS-A1+FMPAC / HB-F1XDJ / FS-A1WX
 set "PSG_Volume"=100
 set "MSX Music_volume"=100
-�����@�ł�OK
+※実機でもOK
 
-�A FS-A1GT / FS-A1ST
+② FS-A1GT / FS-A1ST
 set "PSG_Volume"=72
 set "MSX Music_volume"=100
-�� ���@�͔񐄏�
+※ 実機は非推奨
 
-## �h���S���Z�C�o�[ STAGE1 ���v�s�s
+## ドラゴンセイバー STAGE1 水没都市
 
- �� ���v�s�s�̂�����
+ ※ 水没都市のご注意
 
-�����@���G�~�����[�^�̕W���I�ȉ��ʃo�����X�ł͂܂Ƃ��ɉ��t�ł��܂���B
+内蔵機種やエミュレータの標準的な音量バランスではまともに演奏できません。
 
-> SONY HB-F1XDmk2 + FMPAC(���ʑ�) + SCC�J�[�g���b�W�ō쐬���Ă������̂܂܂ł��B  
-> SCC�̉��ʔ͈͂����̑g�ݍ��킹�łȂ���Ύg�p�ł��Ȃ��ׁA����������󋵂ł��B  
-> ��͍l���Ă��܂����A�Ȃ��Ȃ��v�����悤�ɍs�����A�摗��ɂȂ��Ă��܂��B
+> SONY HB-F1XDmk2 + FMPAC(音量大) + SCCカートリッジで作成していたそのままです。  
+> SCCの音量範囲がこの組み合わせでなければ使用できない為、調整が難しい状況です。  
+> 手は考えていますが、なかなか思ったように行かず、先送りになっています。
 
-## ���F�t�@�C��
-MSD�t�@�C���Ɠ����t�@�C��������������NAMCO.VCD���g�p���܂��B
+## 音色ファイル
+MSDファイルと同じファイル名が無い物はNAMCO.VCDを使用します。
 
-## BGM�t�@�C��
-"'"�i�N�I�[�e�[�V�����j�����Ă�����̂�����ꍇ�̓C���g���Ȃ̂Ń��C�����[�v�I��O�ɁiENTER�őI��)
-"-"�i�n�C�t���j�����C�����[�v�iSPACE�Ō��艉�t�j�ɂȂ�܂��B
+## BGMファイル
+"'"（クオーテーション）がついているものがある場合はイントロなのでメインループ選択前に（ENTERで選択)
+"-"（ハイフン）がメインループ（SPACEで決定演奏）になります。
 
-## �e�y��
-�f�[�^�͍�ƒ��̂��̂��܂݂܂��B
+## 各楽曲
+データは作業中のものも含みます。
 
-HEAR40.BAS�F�v���C���[(WIDTH40)
-HEAR80.BAS�F�v���C���[(WIDTH80)
-BGM.BIN�F�v���C���[�p�}�V����t�@�C��
-BGM�t�@�C���F���t�f�[�^
+HEAR40.BAS：プレイヤー(WIDTH40)
+HEAR80.BAS：プレイヤー(WIDTH80)
+BGM.BIN：プレイヤー用マシン語ファイル
+BGMファイル：演奏データ
 
-���܂�
-MSD�t�@�C���FMuSICA MML
-VCD�t�@�C���FMuSICA ���F
+おまけ
+MSDファイル：MuSICA MML
+VCDファイル：MuSICA 音色
 
-## MSX�ł̉��t���@
+## MSXでの演奏方法
 
-### �ΘJ5�� (MuSICA)(MSX)
+### 勤労5号 (MuSICA)(MSX)
 
 http://sakuramail.net/fswold/music.html
 
-�{��MuSICA���̂̓��C�Z���X�t���[�ł͂Ȃ��̂ŁA�݊��h���C�o���g�p���ĉ��t�\�ł��B  
-�ΘJ�V���[�Y��MuSICA�̏�ʌ݊��h���C�o�ƂȂ��Ă��܂��B
+本家MuSICA自体はライセンスフリーではないので、互換ドライバを使用して演奏可能です。  
+勤労シリーズはMuSICAの上位互換ドライバとなっています。
 
-�i�ΘJ4����MML�R���p�C���ł��B�j
+（勤労4号はMMLコンパイラです。）
 
 ### MuSICA (MuSICA)(MSX)
 
-�{�ƃA�X�L�[��MuSICA�h���C�o�E�R���p�C���Z�b�g
+本家アスキー製MuSICAドライバ・コンパイラセット
 
-������@
-1. 1990�N10��������MSX�f�B�X�N�ʐM�n���� (ver.1.0)
-2. RPG�R���X�g���N�V�����c�[�� Dante2 (ver.1.02)
-3. MSX�}�K�W���i�v�ۑ��� (ver.1.02)
+入手方法
+1. 1990年10月発売のMSXディスク通信創刊号 (ver.1.0)
+2. RPGコンストラクションツール Dante2 (ver.1.02)
+3. MSXマガジン永久保存版 (ver.1.02)
 
-## MSX�ȊO�ł̉��t���@
+## MSX以外での演奏方法
 
 ### M3disp (KSS/MGSDRV/MuSICA/OPLLDriver/MPK/MoonBlaster)(Web Browser)
 
 https://m3.ym2413.com/
 
-Chrome��Firefox�œ��삵�܂��B�X�}�z�ł��ǂ��ł������܂��B  
-�s�A�m���[���\���Ȃǂ�����A�f�[�^�`�F�b�N�ɂ��g�p�ł��܂��B  
-(�X�}�z�̏ꍇ�A����ʂɂ���ƃs�A�m���[�����I�ׂ܂��j
+ChromeやFirefoxで動作します。スマホでもどこでも扱えます。  
+ピアノロール表示などもあり、データチェックにも使用できます。  
+(スマホの場合、横画面にするとピアノロールが選べます）
 
-���l�ȃt�H�[�}�b�g�ɑΉ����Ă���̂������ł��B  
-MuSICA��MDPlayer�Ɠ������ΘJ5���ŉ��t����܂��B
+多様なフォーマットに対応しているのも特徴です。  
+MuSICAはMDPlayerと同じく勤労5号で演奏されます。
 
-[ndp�h���C�o�f�[�^](/ndp)��KSS�t�@�C���ł���Ή��t�ł��܂��B
+[ndpドライバデータ](/ndp)もKSSファイルであれば演奏できます。
 
 
 ### MDPlayer (MGSDRV/MuSICA)(Windows)
 
 https://github.com/kuma4649/MDPlayer/releases
 
-Windows�̏ꍇMDPlayer�ŕ������@������܂��B
+Windowsの場合MDPlayerで聞く方法があります。
 
-MGSDRV�AMuSICA�݊�(�ΘJ5��)�ɑΉ����Ă��܂����A  
-Mixer��SCC/PSG/OPLL�̉��ʃo�����X���ύX�\�ł��B
+MGSDRV、MuSICA互換(勤労5号)に対応していますし、  
+MixerでSCC/PSG/OPLLの音量バランスも変更可能です。
 
-������OPLL���Y�����≹�ʕύX���̕��������͎��@��G�~�����[�^�ɔ�ׂĕȂ�����悤�ł��B
-�iOPLL���Y�������傫�߂ȌX������j
+ただしOPLLリズム音や音量変更時の聞こえ方は実機やエミュレータに比べて癖があるようです。
+（OPLLリズム音が大きめな傾向あり）
 
