@@ -17,6 +17,13 @@ VGMファイルもあります。
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
 
+
+- Ys - Beat of Terror - (YM2413 ver.)  
+  [MSXPlay: YS1BEATY.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS1BEATY.MUS)  
+  [M3disp: YS1BEATY.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS1BEATY.MUS)  
+  [VGM file: YS1BEATY.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/YS1BEATY.vgm)  
+
+
 - YS II TO MAKE THE END OF BATTLE (OPLL+PSG)  
   [MSXPlay: YS2TOMAK.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS2TOMAK.MUS)  
   [M3disp: YS2TOMAK.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS2TOMAK.MUS)  
