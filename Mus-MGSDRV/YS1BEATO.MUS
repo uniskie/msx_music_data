@@ -1,0 +1,152 @@
+;[gain=1.0 name=ys1beato duration=3000s loop=2 fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Maxiumum play duration. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+; loop    : Number of global loops. (default: 2).
+;           Note that duration takes precedence over loop.
+#opll_mode 0
+#tempo 217
+#title {"[Ys] Beat of Terror (YM2413+PSG arrange ver.) / (C) Nihon Falcom"}
+
+@v16 = {    ; YS1 heavy brass
+;       TL FB
+        19, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  13, 4, 3, 1, 0, 1, 0, 0, 0, 0, 1,
+   7, 1, 0, 6, 0, 1, 0, 0, 1, 0, 1 }
+
+@v15 = {    ; YS1 heavy brass 2
+;       TL FB
+        28, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  13, 6, 3, 1, 0, 5, 0, 1, 0, 0, 1,
+   7, 1, 0, 6, 0, 1, 0, 1, 1, 0, 1 }
+
+@v17 = {    ; YS1 bot keyboad
+;       TL FB
+        28, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+  14, 4, 3, 1, 0, 1, 0, 0, 0, 0, 1,
+  13, 3, 1, 2, 0, 1, 0, 0, 0, 0, 1 }
+
+;@r = { Mode,Noise, AL, AR, DR, SL, SR, RR }
+;@r0 = { 1,   0,    128, 48, 16,255,  2,  3 };
+@e0 = {1,0,df e:16 d:16 c:16 b:16 a:16 9:16 8:16 7:16 6:16 5:16 4:16 3:16 2:16 1:16}
+;@r1 = { 1,   0,    255,255, 16,223,  1,  2 };
+@e1 = {1,0,df e:3 d:32 c:32 b:32 a:32 9:32 8:32 7:32 6:32 5:32 4:32 3:32 2:32 1:32}
+
+9 @14 o2 v11 
+c @13 o2 v10 
+
+9c l4
+9c v-7 b-b-v+1b-b-v+1b-b-v+1b-b- v+1b-b-v+1b-b-v+1b-b-v+1b-b-
+9c [0
+9c   [[b]16 [b-]16]3
+9c   [[b-]16]3 [b-]2 [v-1 [b-]3]2 [b-]8
+9c   [b]32 >[c]32<
+9c   v+1 [b]32 v+1 [b-]32
+9c ]
+
+abde [r1&r1]2
+abde [0
+abde  o5l8 h60,2,1,2
+ab    @16 q8sf v12 \0
+de    @10 q8sf v8  \-1
+abde  [l8
+ad     [b-4.a-r4b-4.a-r4b-b-a-r]2
+be     [f4.e-r4f4.e-r4ffe-r]2
+ad     b-4.a-r4b-4&b-1& | b-1&b-1
+be     f4.e-r4f4&f1&   | f1&f1
+abde  ]3 so
+ad    b-1r1
+be    f1r1
+
+abde  h78,2,1,2
+a     @17 q8 v13 
+d     @11 q8 v9  \-1 
+b     @17 q8 v11 r4 @\10 
+e     @17 q8 v9  r2 @\20 
+abde  l4 ffb->d-c<a-e-f d-e-cd-<b->c<a-e- f1&f1> r1&r1
+abde     ffb->d-cd-e-f d-e-cd-<b->c<a-b-&
+ad      b-1&b-1
+b       b-1&b-2. v+2 
+e       B-1&B-2  v+4 
+
+abde  h32,2,1,2
+ad    r1&r1
+a     @15 v10 q8sf \0 
+d     @5  v9  q8sf \0 
+ad    [b-2a-e-&e-1 rb-a-e-b-a-e-2]2
+ad    b2ae&e1 rbaebae2 b2ae&e1 rbaebaef+
+ad    [d<f+>c+<f+>d<f+>c+<f+>]2
+ad    [f+<b>e<b>d<b>e<b>]2
+ad    [f<b->e-<b->d-<b->e-<b->]4
+b     @0 v13 q1so @\8 
+e     @1 v10 q8so \-1 
+be    v-7>f v+1e-v+1b- v+1fv+1e- v+1b-v+1f v+1e-
+be    [b-f e-]9 b- fe- b-f
+be    [bf+ e]9  b  f+e bf+
+be    [bf+ d]9  b  f+d bf+
+be    l8
+b     q2 
+be    [b-v-2b-v+2fv-2f v+2c+v-2c+v+2]5 b-v-2b-
+be    v+2fv-2fv+2c+v-2c+ v+2b-v-2b-v+2fv-2f v+1c+v-2c+v+2b-v-2b- v+2fv-2fv+2c+v-2c+
+be    v+1b-v-2b-v+2fv-2f v+1c+v-2c+v+2b-v-2b- v+1fv-2fv+2c+v-2c+ v+1b-v-2b-v+2fv-2f
+
+abde ]
+
+123 l4 h44,1,1,1
+123 [r1&r1]2
+123 [0
+
+1  @0k7 v9 o3 \0 
+1  l8 
+1  [[b4.b r4b4. br4 bbbr]2 
+1   b-4.b- r4b-4&b-1& |b-1&b-2. r4]3 
+1                    b-1 r1 
+1  l4 
+
+23  [r1&r1]3
+23  @1k7 v10 o4
+2      \0 
+3   r4 @\5 v-2 
+23  b-.a-8rb-2. l16b-v-4b-v+1>cv+1c+v+1e-v+1fv+1ga- l4
+23  b-1&b-1 a-1 e-1
+23  f2f+f2.&f2& f1&f2&l16fv-4<b-v+1>cv+1c+v+1e-v+1fga- l4
+23  b-1&b-1 a-1> c+1<
+23  b-1&b-1& b-1r2.
+2                  r4 
+
+123 v9 @1
+3   v-4 
+1   >[e-1&e-1 e-1&e-1]4> 
+2   <[f1&f1 f1&f1]4> 
+3   r4<[f1&f1 | f1&f1]4 f1&f2.> 
+
+23  @1k7 v9 \-1
+
+2   [f2 e-<b-& b-1 r>f e-<b-> fe-< b-2>]2 
+3   [b-2 a-e-& e-1 rb- a-e- b-a- e-2]2 
+2   [f+2 e<b& b1 r>f+ e<b> f+e< b2>]2 
+3   [b2 ae& e1 rb ae ba |e2]2 ef+ 
+2   [f+<b> e<b> d<b> e<b>]2 
+3   [d<f+> c+<f+ bf+> c+<f+>]2 
+3   v-2 r4 @\5 
+23  [d<f+> c+<f+ bf+> c+<f+>]2
+23  [c+<f> c<f b-f> c|<f>]4
+2                     <f> 
+
+1   @1 v8 r8 
+1   [b-f e-]9 b- fe- b-f 
+1   [bf+ e]9  b  f+e bf+ 
+1   [bf+ d]9  b  f+d bf+8 
+1   @1 k7 v11 
+1   <b-1&b-2.b-8>c8 c+1&c+2.c+8e-8 
+1   f1&f1 r1&r1 
+
+123 ]
+
