@@ -1,0 +1,75 @@
+;[gain=1.0 name=DDS2LABY duration=3000s loop=2 fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Maxiumum play duration. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+; loop    : Number of global loops. (default: 2).
+;           Note that duration takes precedence over loop.
+#opll_mode 1
+#tempo 115
+#title {"—_“]¶II Labyrinth Œß‘O‚QŽž‚Ì–À‹{ (‘fYM2413)/ (C) ATLUS/namco"}
+
+;**** base ****
+9  V15 @13 o2
+e  V8  @14 o2
+9e [0 l16
+9e  [[[q4aq5\-1a\0r4]r4] [[q4gq5\-1g\0r4]r4]]
+9e  [8
+9e   [q6aa^4q5aa|r4q6eff+g] gq5araq7a>a<g+>g+<
+9e   [q6gg^4q5gg|r4q6deff+] g8>gg<g+>g+rg+<
+9e  ]
+9e ]
+
+;**** main ****
+b  r16
+ab [0
+;ab  [16r1] 
+ab  @11 o5  v8
+a   r8 
+b   r16
+ab  l8
+a   [4r2^a>cg& g1<  r2^ga+>f& f1<]
+b   [4r2^ea>c& c1<  r2^ega+& a+1]
+;ab  r2..
+a   r2.
+b   r2.r16
+ab  @10 o6 v13
+b   @10 o6 v10
+ab  l16
+ab      ef edc<ba8>c8^2
+ab  r4r<defgaa+>cdefg fedcedc<a+>dc<a+a>c<a+ag
+ab  [4>ec8<ga8]a64b64>c64d64e8.<g64a64b64>c64d+8.
+ab  <defg8.fgaa+8.gaa+>c& c8<a+>cde8.defgagff+
+ab  g4.cca8cc8.cc a8cc8.cca4g+4
+ab  g4.l8c24e24g24>c.<b.a+ a.g.fefgg+l16
+ab  af8dge8cfd8<a+>ec8<a >d<a+8g>c<a8fa+g8ea+f8d
+ab  d6e6f6g6a6a+6 >c6d6e6f4g4
+ab  l8g2^<a>cg& g1 r2^<ga+>f& f1  r2^<a>cg& g1 r2^<ga+>f& f1
+ab ]
+
+;**** sub ****
+cd @11o5 v11
+cd [0 l8
+c   [4r2^a>cg& g1<  r2^ga+>f& f1<]
+d   [4r2^ea>c& c1<  r2^ega+& a+1]
+c   v-1>[6g1&g1|f1&f1] f1&f2f4f+4<v+1
+d   v-1[6>c1&c1<|a+1&a+1] a+1&a+2g4g+4v+1
+cd ]
+
+;**** drums ****
+f v14 vs12 vh7 vc8
+f [0 l16
+f  [4
+f   [6 h16 vh+1 h16 vh-1] h16c8h16
+f   [4 h16 vh+1 h16 vh-1] | h24h24h24h24h24h24 h16c8h16
+f  ] s16s8s16s8s16s16
+f  [16 b16r8.s8.b16 b16r16b16r16s4
+f      b16b16r16b16|s8.b16 r16b16r16b16s8b16b16]
+f                   [3s8b16b16]
+f ]
+
+
+
