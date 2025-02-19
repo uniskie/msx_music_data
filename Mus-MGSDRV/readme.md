@@ -17,6 +17,11 @@ VGMファイルもあります。
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
 
+- 女神転生II Labyrinth 午前２時の迷宮 (YM2413+PSG)  
+  [MSXPlay: DDS2LAB2.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DDS2LAB2.MUS)  
+  [M3disp: DDS2LAB2.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DDS2LAB2.MUS)  
+  [VGM file: DDS2LAB2.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/DDS2LAB2.vgm)  
+
 - 女神転生II Labyrinth 午前２時の迷宮 (素YM2413)  
   [MSXPlay: DDS2LABY.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DDS2LABY.MUS)  
   [M3disp: DDS2LABY.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DDS2LABY.MUS)  
