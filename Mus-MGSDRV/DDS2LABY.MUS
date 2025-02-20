@@ -13,7 +13,7 @@
 #title {"—_“]¶II Labyrinth Œß‘O‚QŽž‚Ì–À‹{ (‘fYM2413)/ (C) ATLUS/namco"}
 
 ;**** base ****
-9  V15 @13 o2
+9  V13 @13 o2
 e  V8  @14 o2
 9e [0 l16
 9e  [[[q4aq5\-1a\0r4]r4] [[q4gq5\-1g\0r4]r4]]
@@ -24,18 +24,17 @@ e  V8  @14 o2
 9e ]
 
 ;**** main ****
-b  r16
+b  r8
 ab [0
 ;ab  [16r1] 
-ab  @11 o5  v8
+ab  @11 o5  v10
 a   r8 
-b   r16
 ab  l8
 a   [4r2^a>cg& g1<  r2^ga+>f& f1<]
 b   [4r2^ea>c& c1<  r2^ega+& a+1]
 ;ab  r2..
 a   r2.
-b   r2.r16
+b   r2..
 ab  @10 o6 v13
 b   @10 o6 v10
 ab  l16
@@ -51,7 +50,7 @@ ab  l8g2^<a>cg& g1 r2^<ga+>f& f1  r2^<a>cg& g1 r2^<ga+>f& f1
 ab ]
 
 ;**** sub ****
-cd @11o5 v11
+cd @11o5 v13
 cd [0 l8
 c   [4r2^a>cg& g1<  r2^ga+>f& f1<]
 d   [4r2^ea>c& c1<  r2^ega+& a+1]
