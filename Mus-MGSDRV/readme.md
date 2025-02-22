@@ -17,6 +17,12 @@ VGMファイルもあります。
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
 
+- DRAGON BUSTER 岩山 (YM2413/PSG)  
+  [MSXPlay: DBUS03.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DBUS03.MUS)  
+  [M3disp: DBUS03.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DBUS03.MUS)  
+  [VGM file: DBUS03.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/DBUS03.vgm)  
+
+
 - 女神転生II Labyrinth 午前２時の迷宮 (YM2413+PSG)  
   [MSXPlay: DDS2LAB2.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DDS2LAB2.MUS)  
   [M3disp: DDS2LAB2.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DDS2LAB2.MUS)  

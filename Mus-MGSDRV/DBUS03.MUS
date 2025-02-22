@@ -1,0 +1,89 @@
+;[gain=1.0 name=DBUS03 duration=300s fade=5s loop=2 cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com 
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Maxiumum play duration. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+; loop    : Number of global loops. (default: 2). 
+;           Note that duration takes precedence over loop.
+#opll_mode 1
+#tempo 120
+#title {"DRAGON BUSTER ŠâŽR"}
+
+@v15 = { ; Brass
+;       TL FB
+        11, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+   7, 1, 3, 1, 0, 1, 0, 0, 1, 0, 1,
+  10, 7, 1, 1, 0, 1, 0, 1, 0, 0, 0 }
+
+@e1 = {1, 0, fdb0=60 }
+@e2 = {1, 0, bfdc6=20.\2.a4=20.82=16.70=14.60=12 }
+@e3 = {1, 0, adfdb0=30 }
+
+;9abcde !
+;123 !
+
+1239abcde t142
+
+123 \-1
+
+12 @2 v9 o4 k4 h42,0,6,4
+3 @2 v10 o2 k4
+9 @11 v12 o5 so
+bcd @11 v12 o5 so
+a @13 v12 o3 so
+e @12 v10 o3 so
+b1 >  l12 rc6<a+a+a+ g+6g6f+6 g1
+c2    l12 rg+6ggg d+6d6c+6 d1
+d9    l12 rd+6ddd c6<b6a+6 b1
+3ae   l24 c1 g>g<g>g<g>g v-1 <g>g<g v-1 >g<g>g vv+1 <g>g<g v+1 >g<g>g r4
+
+1239abcde t142
+
+1 @1 v9 o3 k3 hf
+b @12 v10 o4 q2so 
+c @13 v10 o3 q2so 
+cb1 l8 [
+cb1 [ cg>c<gcg>c<g <a+>fa+f<a+>fa+f
+cb1   <g+>d+g+d+<g+>d+g+d+ <g>dgd<g>dgd
+cb1 ]2
+cb1 [ <f+f+f+f+f+f+f+f+> <g>dgd<g>dgd
+cb1 ]2
+cb1 r1 r<f+gf+gg+ab>
+cb1 ]0
+
+2 @2 v9 o4 k3 
+9 @11 v12 o5 so 
+d @11 v9 o5 so r16.
+2 h42,0,6,4 
+d92 l8 [
+d92 [  g4g4gf+gg+ f4f4fefg | d+4d+4d+dd+f d1
+d92 ]2                       d+4d+4d+cd+f g1
+d92 g+g+g+g+g+g+g+g+ g1 >cccccccc< b1
+2 @3 v-2 
+d9 @10 v-2 q4
+d92 l32 >ggggffffdddd<bbbbggggffffdddd<bbbb ggggr2.. > l8
+2 v+2 @2 
+d9 v+2 @11 q8
+d92 ]0
+
+3 @2 v9 o4 k3 
+a @11 v12 o5 so 
+e @11 v9 o5 so r16.
+3 h42,0,6,4 
+ea3 l8 [
+ea3 [  e4e4ed+ef d4d4dc+dd+ | c4c4c<b>cd <b1>
+ea3 ]2                        c4c4c<g+>cd <b1>
+ea3 cccccccc <b1> g+g+g+g+g+g+g+g+ g1
+3 @3 v-5  
+a @10 v-5 
+e @12 v-5 
+ea3 >gfd<bgfd<b g>;r2..
+ea3 <<f+gf+gg+ab>>
+3 @2 v+5 
+a @11 v+5 
+e @11 v+5 
+ea3 ]0
