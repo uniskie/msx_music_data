@@ -87,55 +87,55 @@ b   v+1b-v-2b-v+2fv-2f v+1c+v-2c+v+2b-v-2b- v+1fv-2fv+2c+v-2c+ v+1b-v-2b-v+2fv-2
 
 ab ]
 
-def l4 h64,1,2,1
-def [r1&r1]2
-def [0
+cde l4 h64,1,2,1
+cde [r1&r1]2
+cde [0
 
-d   v12 o4 @8 q8sf;\-1 
-d   l8 
-d   [[b4.b r4b4. br4 bbbr]2 
-d   b-4.b- r4b-4&b-1& |b-1&b-2. r4]3 
-d                    b-1 r1 
-d   l4 
+c   v12 o4 @8 q8sf;\-1 
+c   l8 
+c   [[b4.b r4b4. br4 bbbr]2 
+c   b-4.b- r4b-4&b-1& |b-1&b-2. r4]3 
+c                    b-1 r1 
+c   l4 
 
-ef  [r1&r1]3
-ef  @7@e1 so v12 o5
-e      \-1 
-f   r4 @\10 v-2 
-ef  b-.a-8rb-2. l16b-v-4b-v+1>cv+1c+v+1e-v+1fv+1ga- l4
-ef  b-1&b-1 a-1 e-1
-ef  f2f+f2.&f2& f1&f2&l16fv-4<b-v+1>cv+1c+v+1e-v+1fga- l4
-ef  b-1&b-1 a-1> c+1<
-ef  b-1&b-1& b-1r2.
-e           r4 
+de  [r1&r1]3
+de  @7@e1 so v12 o5
+d      \-1 
+e   r4 @\10 v-2 
+de  b-.a-8rb-2. l16b-v-4b-v+1>cv+1c+v+1e-v+1fv+1ga- l4
+de  b-1&b-1 a-1 e-1
+de  f2f+f2.&f2& f1&f2&l16fv-4<b-v+1>cv+1c+v+1e-v+1fga- l4
+de  b-1&b-1 a-1> c+1<
+de  b-1&b-1& b-1r2.
+d           r4 
 
-def @11@e0 v10 \0
-d   >[e-1&e-1 e-1&e-1]4> 
-e   <[f1&f1 f1&f1]4> 
-f   [r1&r1 r1&r1]4
+cde @11@e0 v10 \0
+c   >[e-1&e-1 e-1&e-1]4> 
+d   <[f1&f1 f1&f1]4> 
+e   [r1&r1 r1&r1]4
 
-e   @11sf v10 \-1
-f   @15sf v10 r4 @\16
+d   @11sf v10 \-1
+e   @15sf v10 r4 @\16
 
-e   [f2 e-<b-& b-1 r>f e-<b-> fe-< b-2>]2 
-f   <[b-2 a-e-& e-1 rb- a-e- b-a- e-2]2 
-e   [f+2 e<b& b1 r>f+ e<b> f+e< b2>]2 
-f   [b2 ae& e1 rb ae ba |e2]2 e;f+ 
-f   @11
-e   [f+<b> e<b> d<b> e<b>]2 
-f   [d<f+> c+<f+ bf+> c+<f+>]2 
-f   r v-2 
-ef  [d<f+> c+<f+ bf+> c+<f+>]2
-ef  [c+<f> c<f b-f> c|<f>]4
-e                     <f> 
+d   [f2 e-<b-& b-1 r>f e-<b-> fe-< b-2>]2 
+e   <[b-2 a-e-& e-1 rb- a-e- b-a- e-2]2 
+d   [f+2 e<b& b1 r>f+ e<b> f+e< b2>]2 
+e   [b2 ae& e1 rb ae ba |e2]2 e;f+ 
+e   @11
+d   [f+<b> e<b> d<b> e<b>]2 
+e   [d<f+> c+<f+ bf+> c+<f+>]2 
+e   r v-2 
+de  [d<f+> c+<f+ bf+> c+<f+>]2
+de  [c+<f> c<f b-f> c|<f>]4
+d                     <f> 
 
-d   @0 q1so v12 r8 @\12
-d   [b-f e-]9 b- fe- b-f 
-d   [bf+ e]9  b  f+e bf+ 
-d   [bf+ d]9  b  f+d bf+8 
-d   @3 q8so v11 \0
-d   <b-1&b-2.b-8>c8 c+1&c+2.c+8e-8 
-d   f1&f1 r1&r1
+c   @0 q1so v12 r8 @\12
+c   [b-f e-]9 b- fe- b-f 
+c   [bf+ e]9  b  f+e bf+ 
+c   [bf+ d]9  b  f+d bf+8 
+c   @3 q8so v11 \0
+c   <b-1&b-2.b-8>c8 c+1&c+2.c+8e-8 
+c   f1&f1 r1&r1
 
-def ]
+cde ]
 
