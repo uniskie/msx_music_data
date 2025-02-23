@@ -312,13 +312,17 @@ MGSDRC v1など、MUSではなくBASICで入力していたバージョン等含
 
 ##  COPYRIGHT & THANKS
 
-ファルコム音楽フリー宣言
-https://www.falcom.co.jp/music-use
+ファルコム音楽フリー宣言  
+https://www.falcom.co.jp/music-use  
+※ MMLは現状黙認なので問い合わせ等は先方にも迷惑が掛かります。
 
+MGSP by HRA!  
+配布サイト  
+https://github.com/hra1129/mgsp2/releases  
+※ 配布サイトが移動しました。
 
-MGSP by HRA!
-配布サイト
-http://hraroom.s602.xrea.com/msx/software/mgsp.html
-
-MGSDRV by Ain/MSX Club Gigamix
+MGSDRV by Ain/MSX Club Gigamix  
 https://www.gigamix.jp/mgsdrv/
+
+似非DOS for MSX by tablcus  
+https://github.com/tablacus/dosformsx

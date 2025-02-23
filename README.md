@@ -88,10 +88,13 @@ http://sakuramail.net/fswold/music.html
 
 本家アスキー製MuSICAドライバ・コンパイラセット
 
-入手方法
+入手方法  
 1. 1990年10月発売のMSXディスク通信創刊号 (ver.1.0)
 2. RPGコンストラクションツール Dante2 (ver.1.02)
 3. MSXマガジン永久保存版 (ver.1.02)
+
+発表当時のライセンスはMマガ投稿作品に限定した利用許諾となっています。  
+永久保存版にて利用を推奨する記事はありますが、実際に利用ライセンスが緩和されているのかどうかはは不明です。
 
 # エミュレータ特性
 
@@ -120,25 +123,25 @@ FMPACの高音域フィルタ（コンデンサのC12/C13）を外した状態�
 1. 互換性が高い
 2. 高音域フィルタは簡易的に選択可能
 
-PSG/SCCにも影響してしまいますが高音域フィルタ(LPF)が使用できます。
+PSG/SCCにも影響してしまいますが高音域フィルタ(LPF)が使用できます。  
 LPFを使用すると実機に近い音色が出せます。
 
 # MuSICA とは
   MuSICAはアスキーMSXマガジンがDante（MSX2用/RPGツクールの前身）から派生したBGM作成ツールです。
-Danteで原型が作られ、Dante2の時にMuSICAとして独立して頒布されました。
+Danteで原型が作られ、Dante2の時にMuSICAとして独立して頒布されました。  
 作成したデータはDante2で使用することが出来ました。（※Dante2ではSCC音源は鳴りません）
 
   高機能なマクロなどはありませんが、繰り返し回数指定付きシーケンスブロックを使用した省メモリ設計。
-エディタ環境からワンボタンで手軽に再生・早送りなどが出来ます。
+エディタ環境からワンボタンで手軽に再生・早送りなどが出来ます。  
 当時は唯一SCCを鳴らすことが出来る音楽制作ソフトでした。
 
   現在では、ツクールシリーズで作成したデータは制作者に権利があり、公開も自由ですが、MuSICAにもその条件が適用されるかは不明です。当時の規約ではMSXマガジンへの投稿のみが許可されていました。
 
 ## おまけ
-音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール
+音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール  
 https://uniskie.github.io/msx_music_data/tool/vcd_conv.html
 
-htmlソースコード [tool/vcd_conv.html](tool/vcd_conv.html)
+htmlソースコード [tool/vcd_conv.html](tool/vcd_conv.html)  
 (ダウンロードしてブラウザで開いて使用できます)
 
 
@@ -149,7 +152,7 @@ MuSICA ドキュメント関連： https://github.com/uniskie/MSX_DOCUMENTS
 
 # COPYRIGHT & THANKS
 
-ファルコム音楽フリー宣言
+ファルコム音楽フリー宣言  
 https://www.falcom.co.jp/music-use
 
 BEAT OF TERROR/Ys1/Copyright© Nihon Falcom Corporation

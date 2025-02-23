@@ -25,11 +25,10 @@ Mus-Falcomフォルダの中の楽曲データは、全体にOpenMSXのデフォ
 ## ファイル説明
 
 ### 簡易プレイヤー
-```
- HEAR80.BAS
- HEAR40.BAS
- MUSICED.BIN
-```
+
+- HEAR80.BAS
+- HEAR40.BAS
+- MUSICED.BIN
 
 ### BGMファイル
 
@@ -64,6 +63,9 @@ http://sakuramail.net/fswold/music.html
 1. 1990年10月発売のMSXディスク通信創刊号 (ver.1.0)
 2. RPGコンストラクションツール Dante2 (ver.1.02)
 3. MSXマガジン永久保存版 (ver.1.02)
+
+発表当時のライセンスはMマガ投稿作品に限定した利用許諾となっています。  
+永久保存版にて利用を推奨する記事はありますが、実際に利用ライセンスが緩和されているのかどうかは不明です。
 
 ## MSX以外での演奏方法
 
