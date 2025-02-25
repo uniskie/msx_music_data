@@ -7,7 +7,7 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
-#tempo 114
+#tempo 115
 #title {"Dangerous Seed (MD) Triple-Eye (Stage 1&9 BOSS) | for FM-BIOS | uniskie"}
 
 @v15 = { ; E-BRASS
@@ -19,17 +19,17 @@
 
 @v16 = { ; E-LEAD
 ;       TL FB
-        13, 6,
+         0, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 1, 1, 0, 3, 0, 1, 0, 0, 1,
-  15,14, 0, 6, 0, 1, 1, 0, 1, 0, 1 }
+  15, 3, 1, 2, 0, 1, 0, 0, 0, 0, 1,
+  15, 5, 1, 8, 0, 2, 0, 1, 1, 0, 1 }
 
 @v17 = { ; Brass
 ;       TL FB
         18, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
    9,14, 1, 1, 0, 1, 0, 0, 1, 0, 0,
-  15, 6, 1, 7, 0, 1, 0, 0, 1, 0, 0 }
+  15, 6, 1, 8, 0, 1, 0, 0, 1, 0, 0 }
 
 9 v11 @15 o6 
 A v11 @15 o5 
@@ -40,41 +40,41 @@ A v11 @15 o5
 9A ]
 
 9 [0 l8 
-9 o4 @16 v12 q8 
-9 [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
+9  o4 @16 v12 q8 
+9  [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
 9    f+8.>c+8^32f32f+4ed+c+ d+1 ] 
-9 @17 
-9  q3 l16 
-9 ddrdrdrdrdddddrd 
-9 d+d+rd+rd+rd+rd+d+d+d+d+rd+ 
-9 ffrfrfrfrfffffrf 
-9 ggrgrgrgrgggggrg 
-9 < 
-9 @16 
-9 g+d+g+>c+<b a+bd+ 
-9 g+d+g+>c+<b f+bd+ 
-9 g+d+g+>c+<b a+b>c+ 
-9 d+d+rd+rd+d+d+rd+d+d+d+d+d+d+ 
+9  @17 
+9  q4 l16 
+9  ddrdrdrdrdddddrd 
+9  d+d+rd+rd+rd+rd+d+d+d+d+rd+ 
+9  ffrfrfrfrfffffrf 
+9  ggrgrgrgrgggggrg 
+9  < 
+9  @16 q4 v-1
+9  g+d+g+>c+<b a+bd+ 
+9  g+d+g+>c+<b f+bd+ 
+9  g+d+g+>c+<b a+b>c+ 
+9  d+d+rd+rd+d+d+rd+d+d+d+d+d+d+ 
 9 ] 
 
 A [0 l8 
-A o4 @16 v11 q8 
-A r16 
-A [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
-A    f+8.>c+8^32f32f+4ed+c+ | d+1 ] d+2... 
-A @17 
-A <q3 l16 
-A  bbrbrbrbrbbbbbrb 
-A  bbrbrbrbrbbbbbrb 
-A >ddrdrdrdrdddddrd< 
-A >d+d+rd+rd+rd+rd+d+d+d+d+rd+< 
-A < 
-A @16 
-A g+d+g+d+b a+ba+ 
-A g+d+g+d+b a+bd+ 
-A g+d+g+d+b >c+<ba+ v+ 
-A >d+d+rd+r<d+a+>d+< v+ 
-A a+>d+ga+>d+ga+>d+<<< 
+A  o4 @16 v11 q8 
+A  r16 
+A  [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
+A     f+8.>c+8^32f32f+4ed+c+ | d+1 ] d+2... 
+A  @17 v+1
+A  <q4 l16 
+A   bbrbrbrbrbbbbbrb 
+A   bbrbrbrbrbbbbbrb 
+A  >ddrdrdrdrdddddrd< 
+A  >d+d+rd+rd+rd+rd+d+d+d+d+rd+< 
+A  < 
+A  @16 q4 v-1
+A  g+d+g+d+b a+ba+ 
+A  g+d+g+d+b a+bd+ 
+A  g+d+g+d+b >c+<ba+ v+ 
+A  >d+d+rd+r<d+a+>d+< v+ 
+A  a+>d+ga+>d+ga+>d+<<< 
 A ] 
 
 B l16 [4 r1] 
@@ -82,16 +82,16 @@ C @10 q1 o2 v9
 C l16 [16 d+d+d+d+]< 
 BC @13 q3 o3
 BC [0
-B  v9 
+B  v10 
 C  v8 r16 
 BC o6 @11 q8
 BC  [2 d+1 e1 f+2.e4 d+1 ]
-BC  @10 <<< ))
+BC  @10 v+1 <<<
 BC  f1 d+1
 BC  d1 d+1
 B  e2d+2d2 d+1 
-B  v-2 
-C  @9 >> v-2 
+B  v-1 
+C  @9q4 >> v-1 
 C  g+d+g+>c+<b a+bd+ 
 C  g+d+g+>c+<b f+bd+ 
 C  g+d+g+>c+<b a+b>c+ 
@@ -102,7 +102,7 @@ D l16
 D @15 v13 q3 o4 
 D [16 d+d+d+d+] 
 D [0 
-D @10 o5 q8 v8
+D  @10 o5 q8 v8
 D  [4 
 D   f+fed+ dc+c<b a+ag+g f+fed+ 
 D   dd+ef f+gg+a a+b>cc+ dd+ef 
@@ -110,6 +110,7 @@ D  ]
 D  [6 
 D   gf+fe d+dc+c< ba+ag+ gf+fe> 
 D  ] 
+d  v+1
 D  <d+dc+c<ba+ag+ 
 D ] 
 

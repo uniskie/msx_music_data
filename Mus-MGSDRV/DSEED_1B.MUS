@@ -7,7 +7,7 @@
 ; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 #opll_mode 1
-#tempo 114
+#tempo 115
 #title {"Dangerous Seed (MD) Triple-Eye (Stage 1&9 BOSS) | uniskie"}
 #alloc { 0=110,
          1=260,2=260,3=132,
@@ -23,26 +23,26 @@
 
 @v16 = { ; E-LEAD
 ;       TL FB
-        11, 6,
+         0, 3,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 1, 1, 1, 0, 6, 0, 0, 0, 0, 1,
-  15,12, 1, 6, 0, 1, 0, 0, 1, 0, 1 }
+  15, 3, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+  15, 5, 1, 8, 0, 2, 0, 0, 1, 0, 1 }
 
 @v17 = { ; Brass
 ;       TL FB
         19, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
    9,14, 1, 1, 0, 1, 0, 0, 1, 0, 0,
-  15, 6, 1, 7, 0, 1, 0, 0, 1, 0, 0 }
+  15, 6, 1, 8, 0, 1, 0, 0, 1, 0, 0 }
 
 @e1 = {1,0,fed:50 [c:3.b:3.a:3.b:3]0 }
 @e2 = {1,0,fed:50 [d:3.c:3.b:3.c:3]0 }
 
 
-1 v5 @1 o5 @\1
-2 v5 @1 o4 @\1
-9 v11 @15 o6 h28,1,4,3 
-A v11 @15 o5 h28,1,4,3 
+1 v6 @1 o5 \-1
+2 v6 @1 o4 \-1
+9 v12 @15 o6 h28,1,4,3 
+A v12 @15 o5 h28,1,4,3 
 129A  l16
 12   r8
 129A [2
@@ -53,17 +53,17 @@ A v11 @15 o5 h28,1,4,3
 
 9 [0 l8 
 9 o4
-9 @16 v12 q8 h24,1,2,2 
+9 @16 v13 q8 h24,1,2,2
 9 [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
 9    f+8.>c+8^32f32f+4ed+c+ d+1 ] 
-9 @17 
-9 q3 l16 
+9 @17
+9 q4 l16 
 9 ddrdrdrdrdddddrd 
 9 d+d+rd+rd+rd+rd+d+d+d+d+rd+ 
 9 ffrfrfrfrfffffrf 
 9 ggrgrgrgrgggggrg 
 9 < 
-9 @16 
+9 @16q4 v-1
 9 g+d+g+>c+<b a+bd+ 
 9 g+d+g+>c+<b f+bd+ 
 9 g+d+g+>c+<b a+b>c+ 
@@ -73,17 +73,17 @@ A v11 @15 o5 h28,1,4,3
 A [0 l8
 A v0 r16
 A o4
-A @16 v11 @\11 q8 h24,1,2,2 
+A @16 v11 @\19 q8 h24,1,2,2 
 A [2 d+8.g+8.>c+4<ba+f+ e8.g+8.>d+4c+<ba+ 
 A    f+8.>c+8^32f32f+4ed+c+ | d+1 ] d+2...
-A @17  @\0 
-A <q3 l16 
+A @17 @\0 
+A <q4 l16 
 A  bbrbrbrbrbbbbbrb 
 A  bbrbrbrbrbbbbbrb 
 A >ddrdrdrdrdddddrd< 
 A >d+d+rd+rd+rd+rd+d+d+d+d+rd+< 
 A <
-A @16 @\11
+A @16q4 v-1 @\16
 A g+d+g+d+b a+ba+ 
 A g+d+g+d+b a+bd+ 
 A g+d+g+d+b >c+<ba+ 
@@ -92,13 +92,14 @@ A a+>d+ga+>d+ga+>d+<<
 A ] 
 
 12 [0 l16
-12 o5 @e1 q8 h24,1,2,1
-1  v8
-2  v7 r16 @\5 
+12 o5 @e1k6 q8 h24,1,2,1
+1  v10
+2  v8 r16 @\5 
 12  [2 d+1 e1 f+2.e4 d+1 ]
 12  d1 d+1 f1
 1   g1 
 2   g2... 
+12 q4k3
 1 r < 
 1 g+d+g+>c+<b a+bd+ 
 1 g+d+g+>c+<b f+bd+ 
@@ -113,33 +114,35 @@ A ]
 12 ]
 
 BC l16
-B @15 v13 o4 q3 
+B @15 v14 o4 q3 
 C [4 r1 ]
 BC [16 d+d+d+d+] 
-B @10 o5 q1so v9 @\0 
-C @11 o5 q5so v8 @\8 r16
+B @10 o5 q1so v11 @\0 
+C @11 o5 q5so v9 @\8 r16
 BC [0
 BC  [4
 BC   f+fed+ dc+c<b a+ag+g f+fed+
 BC   dd+ef f+gg+a a+b>cc+ dd+ef
 BC  ]
+BC  v-1
 BC  [6
 BC   gf+fe d+dc+c< ba+ag+ gf+fe>
 BC  ]
+BC  v+1
 BC  <d+dc+c<ba+ag+
 BC  >>
 BC ]
 
-D @13 v13 q3 o2
-E @10 v9 q1 o2 
+D @13 v12 q3 o2
+E @10 v9 q2 o2 
 DE l16 >[16 d+d+d+d+]<
 DE [0
-D  @13 q3 o2sf v13 
-E  @10 q1 o2 v11 
+D  @13 q3 o2sf v14
+E  @10 q1 o2 v11
 DE h24,1,3,2
 DE  [[g+g+g+g+]14 g+g+d+d+ba+g+d+]2
-D   @6  q8 
-E   @10 q8 > 
+D   @6  v+1 q8 
+E   @10 v+1 q8 > 
 DE  )
 DE  f1 d+1
 DE  d1 d+1
@@ -159,7 +162,7 @@ F y39,35 y23,130 ; snare,hi-hut (y39,32+3 -> sustain on)
 F y40,34 y24,132 ; cynbal,tom-tom (y40,32+2 -> sustain on) 
 *28={y24,132 sm64 y24,120m64 y24,108m64 y24,96r64 y24,84r64 y24,72r64 y24,60r64 y24,48r64}
 *36={y24,132 sm64 y24,120m64 y24,108m64 y24,96r64 y24,84}
-F vb13 vh9 vs9vm13 kf 
+F vb14 vh9 vs10vm13 kf 
 F [4 *b8r16*b8r16 | *b4*b8*b8*b8 ] 
 F                   *b8r16*b16*s16*s16*s16*s16*s16*s16 
 F [0 
@@ -177,7 +180,7 @@ F ]
 @e4={3,18,*3.d*1.a9860=20}
 @e5={2,1,f.n0.e0=26}
 @e6={2,0,c8520=6}
-3 v12 o2 \8 p24 
+3 v13 o2 \8 p24 
 3 [4 @4d8.d8. | d4d8d8d8 ] 
 3               d8.d16 @5f16f16f16f16f16f16
 3 [0 
