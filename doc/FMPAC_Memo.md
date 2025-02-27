@@ -1,4 +1,4 @@
-﻿# ■ FMPACのバンク選択
+# ■ FMPACのバンク選択
 
 http://bifi.msxnet.org/msxnet/utils/saverom
 
