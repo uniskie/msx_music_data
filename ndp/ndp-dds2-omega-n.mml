@@ -1,5 +1,5 @@
-#title "女神転生Ⅱ - OMEGA 聖戦 -"
-#bsave-name "DDS2OMEG"
+#title "女神転生Ⅱ - OMEGA 聖戦 - non-h.env"
+#bsave-name "DDS2NOMG"
 #programmer "uniskie 2024/09/18"
 
 #repeat-mode 1	; メモリ節約 端数エラーあり
@@ -88,8 +88,8 @@
 
 ;---- bass ----
 3 v12 o2 l8 @q3 @r12,1
-;3 @4 @r11,1 \2
-3 s10,3 k12  @r- ;HENVのリリースディレイに正式対応したので使用しない場合はrを消す
+3 @4 @r11,1 \2
+;3 s10,3 k12 @r- ;HENVのリリースディレイに正式対応したので使用しない場合はrを消す
 ;3 @5 m+ mk0 k12 \-1
 3 @L
 3 [[32 d.d.cc+] [4<a.a+.>c.d.ef <g.a.a+.>c.de]]

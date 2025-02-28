@@ -13,6 +13,15 @@
 - [ndp.dsk](ndp.dsk)  
   ... [PSG][NDP] なるとさん開発中のNDPで作ったもの色々。（実験場）
 
+その他：
+
+- [m3disp-ndp.zip](m3disp-ndp.zip)  
+  ... M3Disp用のndpデータパック。  
+  https://m3.ym2413.com/ を開いてドロップすると全曲視聴可能。  
+  
+  ※ M3Dispの直接URLを開く機能で、このリポジトリから直接読み込み：  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/m3disp-ndp.zip
+
 ---
 
 ## COPYRIGHT & THANKS

@@ -10,7 +10,7 @@
 ;#tempo 150
 #timebase 24
 
-@0 = fed edc dcb a:2 9:3 L b:5 a:5
+@0 = fed edc dcb a:2 L b:5 a:5
 @1 = fed edc dcb L a:4 b:4
 @2 = c fed ed:2 c:3 b:4 a:6 L b:2 a:5 b:2 c:5
 

@@ -60,6 +60,9 @@ KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生
 
 ## N3disp 直再生リンク
 
+- ndpデータ全曲まとめパック  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/m3disp-ndp.zip
+
 - "DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8)"  
   [ndp-dangrous_seed_1.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dangrous_seed_1.kss

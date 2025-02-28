@@ -67,8 +67,8 @@
 ; sequence
 ;********************************
 
-2 o4 v12
-2 @r13,20 @rd1,6 @m2 q7
+2 o4 v13
+2 @r12,10 @rd1,6 @m2 q7
 2 @6
 2 l16
 2 \-3 <[16 d+d+d+d+]> \-1
@@ -82,33 +82,33 @@
 ;2  [gf+fe d+dc+c <ba+ag+ gf+fe>]6
 ;2 ba+ag+ gf+fe> <d+dc+c< ba+ag+>>
 
+2 
 2 [gf+fe d+dc+c <ba+ag+ gf+fe>]4
 ;2 <bbrbrbrbrbbbbbrb 
 ;2  bbrbrbrbrbbbbbrb 
 ;2 >ddrdrdrdrdddddrd< 
 ;2 >d+d+rd+rd+rd+rd+d+d+d+d+rd+< >
 
-2 @r13,10 v+ q5
+2 @r11,10 q5 v-
 2 g+d+g+d+ ba+ba+ 
 2 g+d+g+d+ ba+bd+ 
 2 g+d+g+d+ b>c+<ba+ 
-2 @r13,6 @0 q7 
+2 @r11,6 @0 q7 
 2  d+d+rd+ r<d+a+>d+< a+>d+ga+> d+ga+>d+<
-2 v- @3 q7
+2 @3 q7 v+
 
 ;********************************
 ; base
 ;********************************
 
 @7 = *1 f *0 s14 rrr *1 L a:3 9:3
-3 v15 o2 @7 @r13,4
+3 v15 o2 @7 @r10,4 @q1
 3 m+ mk12
 3 l16 [16 d+d+d+d+]
 ;3 @d0,13 l32 [16 d+rd+rd+rd+r] l16
 3 \0
 3 @l
 3 @7
-3; s10,1 m+ mk12 q8 @q2
 3  [[g+g+g+g+]14 g+g+d+d+ba+g+d+]2
 3  s10 m+ mk0
 3;  s14,48 

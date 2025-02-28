@@ -1,5 +1,5 @@
-#title "女神転生Ⅱ Labyrinth 午前２時の迷宮"
-#bsave-name "DDS2LABY"
+#title "女神転生Ⅱ Labyrinth 午前２時の迷宮 no-h.env"
+#bsave-name "DDS2NLAB"
 #programmer "uniskie 2024/09/18"
 
 #repeat-mode 1	; メモリ節約 端数エラーあり
@@ -63,10 +63,10 @@
 3 @3 @r11,2
 3 v12 o2 l16
 3 @L
-3 s14,1 m+ @r- ;HENVのリリースディレイに正式対応したので使用しない場合はrを消す
+;3 s14,1 m+ @r- ;HENVのリリースディレイに正式対応したので使用しない場合はrを消す
 3 [[[@q3a@q2\-1a\0r4]r4] [[@q3g@q2\-1g\0r4]r4]]
 ;3 @c
-3 s14,1
+;3 s14,1
 3 [8 
 3  [@q2a\-1a^4\0@q3aa/r4@q2eff+g] g@q3ara@q1a>a<g+>g+<
 3  [@q2g\-1g^4\0@q3gg/r4@q2deff+] g8>gg<g+>g+rg+<
