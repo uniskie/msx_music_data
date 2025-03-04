@@ -98,7 +98,8 @@
 
 r v14 @c2
 r @L l16
-r [ bhbb shbb hbbh shho bhbb shbb
-r / hbbh s32s32sss
-r ]2
+r [[ bhbb shbb hbbh shho bhbb shbb
+r  / hbbh s32s32sss
+r  ]2
 r   s32s32sss hhho
+r ]

@@ -20,7 +20,7 @@
   https://m3.ym2413.com/ を開いてドロップすると全曲視聴可能。  
   
   ※ M3Dispの直接URLを開く機能で、このリポジトリから直接読み込み：  
-  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/m3disp-ndp.zip
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/ndp-m3disp.zip
 
 ---
 
