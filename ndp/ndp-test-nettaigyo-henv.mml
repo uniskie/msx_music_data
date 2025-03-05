@@ -23,14 +23,15 @@
 @R:N = *3 V15 :720 N10/ *1 :870 V14 / :1020 V13 / :1220 V12 ;/ :1480 V11 / :1740 V10
 
 @0=FE D:2 C:4 B:4 L A:4 B:4 C:4 B:4 
-@1=EFE D:2 C:3 B:4 A:5 L B:4 C:4 B:4 A:4 
+@1=EFED:2 C:3 L B:4 C:4 B:4 A:4 
 @2=FD:2 C:3 B:4 A:5 9:6 8:7 7:8 6:8 5:8 4:8 3:8 2:8 1:8 L0
 @3=FC:3 L B:3 A:3 ;B:3 C:3
 @6=FDC L B:4 C:4
 @7=A:6 B:6 C:5 D:5 E:4 FE:4 D:5 C:6 LB
 
 ;ビブラート
-@m0=42,3,2,8
+;   wait,interval,depth,type
+@m0=42,3,2,1
 
 ;ノートエンベロープ
 @n9=0 -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11 -12
@@ -38,6 +39,9 @@
 @n5=[0 -5]2 0 
 @n2=[-12 0 12]3 0 
 @n3=[0 4]2 0
+
+$drmOn  = @2@n9
+$drmOff = @n-
 
 ;*****************************************
 ; NDP 0.9.79の仕様変更：
@@ -53,8 +57,8 @@
 ; ※ リリースにソフトウェアエンベロープをかけたい場合、セルフディレイを使用する
 
 ;$baseVoice = @6q4 @r11,9 @rd- @m-    ;矩形波ベース
-$baseVoice = s14,1 q6 m+ \9 @r- @m-  ; H.ENV 三角波ベース → ベース割り込みドラムがもたつき＆ひずみ
-;$baseVoice = s14,6 q6 m+ \9 @r- @m-  ; H.ENV 三角波ベース → ベース割り込みドラムが多少改善
+$baseVoice = s14,1 q6 m+ \9 @r- @m-  ; H.ENV 三角波ベース → ベース割り込みドラムがもたつき＆ひずみ → 解決
+;$baseVoice = s14,6 q6 m+ \9 @r- @m-  ; H.ENV 三角波ベース → ベース割り込みドラムが多少改善 → 解決
                                      ; TIME-BASE 28: L16=%7
 
 $volmodn = v+1  ;リズム以外の音量調整(H.ENVベース使用時は+1が望ましい)
@@ -69,7 +73,7 @@ $cdef = @c3
 ; ※ 切替自体はあまり関係ない
 ; ※ Sコマンド第2パラメータで指定するH.ENVの音量減衰タイミングがかぶるとドラムが途切れる
 $c2 = @c2 ; ** 切り替えない場合は@cをコメントアウトする。 ** こちらだけ有効にすると常時Ch.2へ割り込む
-$c3 = ;@c3 ; ** 切り替えない場合は@cをコメントアウトする。 ** H.ENV使用時はCh.3割り込みをしない方が良いかも
+$c3 = @c3 ; ** 切り替えない場合は@cをコメントアウトする。 ** H.ENV使用時はCh.3割り込みをしない方が良いかも
 
 ;*****************************************
 ; 動作検証テスト用
@@ -128,7 +132,7 @@ r  r1 r1
 3  [a8r8a8ra8ggrg8.r a8a8a8aa8ggrg8.r]2
 2  [c8r8c8rc8<bbrb8.>r c8c8c8c/c8<bbrb8.>r]2
 2                              c
-2       v+2@2@n9 <<g8g8e16c8.>> @n-v-2 $subVoice1:
+2       v+2$drmOn: <<g8g8e16c8.>> $drmOff:v-2 $subVoice1:
 r  b4b4b4b4   b4b4b4b8hh
 r  b4b8h8b4b8h8 b8h8b4k8k8mn8.
 
@@ -138,7 +142,7 @@ r  b4b8h8b4b8h8 b8h8b4k8k8mn8.
 3  $subVoice3:
 1   a2. r8.<a> e2.r4
 2   d2. r4     d2;^8r4.
-2      v+2@2@n9 <<e16e16e8e8e16e16>> @n-v-2
+2      v+2$drmOn: <<e16e16e8e8e16e16>> $drmOff:v-2
 3  <a4 <a>de<a8v-1a>de<a8r8 v-2a>de<a8v-1a>de<a8v-2a>de<a8>>rv+6
 r  b4b4b8hhb8h8 bhh8b4sss8s8ss
 
@@ -151,7 +155,7 @@ r  b4b4b8hhb8h8 bhh8b4sss8s8ss
 123r [
 
 1  v12 o4
-2  v10 o5
+2  v9  o5
 3  v13 o2
 r  v14 $cdef: $c2:
 123 $volmodn:
@@ -186,6 +190,7 @@ r [[[b8h8m8h8 / b8h8m8h8]2 / b8hh mhh8 ]
 r                          / b8b8 mv-nnnv+ ]
 r                            b8bb mmv-nnv+
 
+1 j2
 1 j="M3"
 1 [r4agr4ag rabe4g4./r4agab4-%2&b+%1&g%1e& eg4ed4r4]
 1                    r4agab4b-& b2-%2&b+%1a%1&f+%1&e2-%1
@@ -199,7 +204,7 @@ r [[b8h8m8h8 b8h8m8hh / b8o8m8h8 b8b8mv-mv-mv-mv+3]
 r                     / b8o8m8h8 b8m8h8nv-nv+]
 r                       b8m8v-m8v+h8 b8m8rmmm
 
-1 j2
+1 j3
 1 j="M4"
 1 aa4a&a2 r1 gg4a4g4. r1
 1 f4fcfg4g& g2g+2
@@ -209,7 +214,8 @@ r                       b8m8v-m8v+h8 b8m8rmmm
 2 @n4[rf]4@n- rede<b>$c2:l16edrderl8$c3:
 3 [a>a<]8 [g>g<]8 
 3 [f>f<]4 [g>g<]2[a->a-<]2
-r [b8o8m8h8 b8o8m8hh bho8m8h8 b8o8m8bb]
+;r [b8o8m8h8 b8o8m8hh bho8m8h8 b8o8m8bb] ; 割り込みがひずみやすい
+r [b8o8m8h8 b8o8m8h8 b8o8m8h8 b8o8m8bb]
 r  b8o8m8h8 b8o8m8h8 bho8m8hh b8m8m16m16n16n16
 
 1 j="M5-1"; (2番で分岐)
@@ -244,14 +250,17 @@ r b4m8b8
 3 [f>f<]2[g>g<]2 [a>a<]2 b>bc>c<<
 r [b8h8m8h8 b8o8m8h8 bho8m8h8 / b8o8m8b8] b8o8k16mn8
 
+1 j5
 1 j="M7"
-1 $mainVoice3:
-1 [[a-%2&a4-%4r%2v-2]4 v+8]
-2 $subVoice0:
-2 v-2@n2\-1[r4<a4>/r2]@n-v+2
-2      \0v+3@2@n9 <<l16gec8gecc>> @n- v-3
+1 $mainVoice1:
+1 [a-_a16a8.-%4r%4r4v-5\1
+1  a-_a16a8.-%4r%4r4v+5\0]
+2 $subVoice1: @n-
+2 <[v+1r4\0a-_a16a8.-%4r%4v-1
+2  /v-4r4\1a-_a16a8.-%4r%4v+4]>\0
+2   v+4$drmOn:<<l16gec8gecc>>$drmOff:v-4
 3 [a>a<]8
-r [b8h8m8h8]3 kmn8kmnn
+r @c2[b8h8m8h8]3 kmn8kmnn@c2
 
 123r ]
 
@@ -303,7 +312,7 @@ r                       b8o8m8h8 /b8m8h8nv-nv+]
 1 j="M6e"
 1 a4>c4 
 ;2 r<a>rc
-2 v+2@2@n9 <l16eeeee8e8> @n-v-2
+2 v+4$drmOn: <l16eeeee8e8> $drmOff:v-4
 3 [a>a<]2
 r mmmmm8m8 
 
@@ -318,13 +327,15 @@ r mmmmm8m8
 r [b8h8m8h8 b8o8m8h8 bho8m8h8 / b8o8m8b8] b8o8k16mn8
 
 1 j="M7e"
-1 $mainVoice3:
-1 [[a-%2&a4-%4r%2v-2]4 v+8]
-2 $subVoice0:
-2 v-2@n2\-1[r4<a4>/r2]@n-v+2
-2      \0v+3@2@n9 <<l16gec8gecc>> @n-v-3
+1 $mainVoice1:
+1 [a-_a16a8.-%4r%4r4v-5\1
+1  a-_a16a8.-%4r%4r4v+5\0]
+2 $subVoice1:
+2 <[v+1r4\0a-_a16a8.-%4r%4v-1
+2  /v-4r4\1a-_a16a8.-%4r%4v+4]>\0
+2   v+4$drmOn:<<l16gec8gecc>>$drmOff:v-4
 3 [a>a<]8
-r [b8h8m8h8]3 kmn8kmnn
+r @c3[b8h8m8h8]3 kmn8kmnn@c2
 
 123r [
 
@@ -338,7 +349,8 @@ r [b8h8m8h8]3 kmn8kmnn
 2 @n4[rf]4@n- rede<b>$c3:l16edrderl8$c2:
 3 [a>a<]8 [g>g<]8 
 3 [f>f<]4 [g>g<]2[a->a-<]2
-r [b8o8m8h8 b8o8m8hh bho8m8h8 b8o8m8bb]
+;r [b8o8m8h8 b8o8m8hh bho8m8h8 b8o8m8bb]
+r [b8o8m8h8 b8o8m8h8 b8o8m8h8 b8o8m8bb]
 r  b8o8m8h8 b8o8m8h8 bho8m8hh b8m8m16m16n16n16
 
 1 j="M5-1e"
@@ -357,8 +369,8 @@ r [b8o8m8h8 b8h8m8h8 / b8o8m8h8 b8h8m8mm]; b8o8m8h8 b4m8b8
 1 $mainVoice3:
 1   v-4<a8a8a8a>v+4
 2 $c2:r ; 頭合わせ
-1 $subVoice3:
-2 @n2l8r$c3:q5eeeq8 f%3&f+8-%3ef%3&f+8-%3e@n-$c2:
+2 $subVoice3:
+2 l8r$c3:q5@n4eeeq8 f%4&f+8-%4ef%4&f+8-%4e@n-$c2:
 3 [e>e<]2 ; 頭合わせ
 3 [a>a<]4
 r b8o8m8h8 b4m8b8 
@@ -371,7 +383,7 @@ r b8o8m8h8 b4m8b8
 2 $subVoice1: \0
 2 $c2:r ;頭合わせ
 2 r2.;r4
-2     @r-@2@n9v+3<<e8e16e16>>@n- v-3
+2     @r-v+4$drmOn:<<e8e16e16>>$drmOff: v-4
 3 e>e<ef& ; 頭合わせ
 3 f2.r4
 r b4v-8[cv+]8m8mm
@@ -391,13 +403,13 @@ r b4v-8[cv+]8m8mm
 r [b8h8m8h8 / b8hhm8h8]8 bhm8.m16m16m16
 
 1 j="E2"
-1 $mainVoice0: @r8,8
+1 $mainVoice0: @r8,11
 1 l16 <@n2v+a8a8r2.
 1       a8a8g8a8v-r2@n->
 2 l16 ;v+<a8a8>v-
-2     @r-@2@n9v+3<<e8e8>>@n-v-3 $subVoice2:
-2               $c3:d8e8<a8>edrer$c2:r
-2     @r-@2@n9v+3<<e8e8d8e8>>@n-v-3r2
+2        v+4$drmOn:<<e8e8>>$drmOff:v-4 $subVoice2:
+2                $c3:d8e8<a8>edrer$c2:r
+2     @r-v+4$drmOn:<<e8e8d8e8>>$drmOff:v-4r2
 3 aar2. aagar2
 r s8s8b4b4b4
 r s8s8s8s8r2
