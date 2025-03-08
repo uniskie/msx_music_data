@@ -12,13 +12,14 @@
 
 ;==== RHYTHM VOICE ====
 ;@R:B = *3 :920 N1 V14 / *1 :2000 V12
-@R:S = V15 *1 :480 N4 / V14 *2 N3 ;/ V13 N1 *3 :520 / V12 :590
+@R:S = V15 *1 :539 / V14 *2 N3 / V13 N0 *3 :719 ;/ V12 :590
 @R:H = *3 :19 N0 V15                               ;-- Close Hi-hut
 ;@R:E = *3 :920 N0 V15 / *1 :2000 V12              ;-- Close Hi-hut + Bass drum
 ;@R:O = *3 :21 N0 V15 / N1                         ;-- Open Hi-hut
-@R:K = V15 *3 :450 N2 / *1 V13 :500 / V12 :550
-@R:M = V15 *3 :500 N3 / *1 V13 :630 / V12 :760
-@R:N = V15 *3 :700 N4 / *1 V13 :850 / V12 :1000
+@R:K = V15 *3 :453 N4 / *1 V13 :509 / V12 :571 / V11 :641
+@R:M = V15 *3 :571 N6 / *1 V13 :641 / V12 :719 / V11 :807
+@R:N = V15 *3 :719 N8 / *1 V13 :807 / V12 :906 / V11 :1017
+;123 @off
 
 ;==== VOICE (VOLUE/AMP ENVELOPE) ====
 ; flute
@@ -26,7 +27,7 @@
 ; lead
 @1 = bdfedc:2 edc:2 L b:3 c:3
 ; brass 
-@2 = fe:2 d:2 c:2 dc:2 b:2 a:2 L c:2 b:3 a:3
+@2 = fed:2 c dc:2 b L c:2 b:3 a:3
 ; echo electone
 @3 = fedcb:3 edcb:3 dcba:2 L b:2 a:2 9:2 8:2
 ; tril piano
@@ -54,7 +55,7 @@
 ;==== MACRO ====
 
 ; SQUARE BASE
-;$base  = @6 @q0 @r10,1 
+;$base  = @6 @q0 @r10,1
 ;$base2 = @7 @q0 @r10,1
 ;$base3 = @7 @q0 @r10,1
 ;$d = ;音程調整
@@ -64,7 +65,7 @@
 ;$d3= ;ユニゾン揺れ周期調整
 
 ; TRIANGLE BASE
-$base  = s10,5 m+ mk0 @q0
+$base  = s10,3 m+ mk0 @q0
 $base2 = s8,1 m+ mk0 @q1
 $base3 = s10 m+ mk0 @q1
 $d =\1  ;音程調整
@@ -92,7 +93,7 @@ r vs14 vh11 vk14 vm14 vn14 @c2
 r [7 hhhhshhh ] hkks smmn
 
 ;---- main
-123r @L 
+123r @L
 123  @RL2
 
 
@@ -144,7 +145,7 @@ r     [[16 hhhh/shhh ] shss]
 
 3 j2
 
-1   @2 @q3 @r13,3 @rd1,20 @m2
+1    @2 @q3 @r13,3 @rd1,20 @m2
 1    [<g4>g4a16.f16.d16^4
 1     c4g4/a+16.f+16.d+16^4]
 1          @rd1,15 @rd- @q2 ffff16.ff16ff16f8

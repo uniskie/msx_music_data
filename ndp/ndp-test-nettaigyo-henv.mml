@@ -12,36 +12,10 @@
 
 #JUMP-OFFSET -1800
 
-;音色定義
-@R:B = *3 V15 :960 N0 / *1 :1480 V13 /  :2200 V12 / :2680 V11 ;/ V10 / V9
-@R:S = *3 V15 :520 N2 / *2 N1 V14 / *1 :670 V13 
-@R:H = *3 V12 :20  N0 
-@R:O = *3 V10 :20  N0 / V10 
-@R:C = *3 V12 :21  N1 / V11 / v10
-@R:K = *3 V15 :450 N4 / *1 :500 V14 / :550  V13 / :650  V12 ;/ :820  V11 / :1020 V10
-@R:M = *3 V15 :500 N6 / *1 :630 V14 / :760  V13 / :860  V12 ;/ :1020 V11 / :1220 V10
-@R:N = *3 V15 :720 N8 / *1 :870 V14 / :1020 V13 / :1220 V12 ;/ :1480 V11 / :1740 V10
-
-@0=FE D:2 C:4 B:4 L A:3 B:3 C:3 B:3 
-@1=EFED:2 C:3 L B:4 C:4 B:4 A:4 
-@2=FD:2 C:3 B:4 A:5 9:6 8:7 7:8 6:8 5:8 4:8 3:8 2:8 1:8 L0
-@3=FC B:2 A:2 L B:3 A:3 9:3 A:3
-@6=FDC L B:4 C:4
-@7=A:6 B:6 C:5 D:5 E:4 FE:4 D:5 C:6 L B:2 A:2 9:2 A:2
-
-;ビブラート
-;   wait,interval,depth,type
-@m0=42,3,2,1
-
-;ノートエンベロープ
-@n9=0 -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11 -12
-@n4=[0 -4]2 0 
-@n5=[0 -5]2 0 
-@n2=[-12 0 12]3 0 
-@n3=[0 4]2 0
-
-$drmOn  = @2@n9
-$drmOff = @n-
+;*****************************************
+; テスト用無限ループ
+;*****************************************
+$mugenLoop = ;@l r2
 
 ;*****************************************
 ;ベース音色
@@ -50,10 +24,6 @@ $drmOff = @n-
 $baseVoice = s14,4 q6 m+ \9 @r- @m-  ; H.ENV 三角波ベース
                                      ; TIME-BASE 28: L16=%7
 
-$volmodn = v+1  ;リズム以外の音量調整(H.ENVベース使用時は+1が望ましい)
-$volmodr = v+1  ;リズムの音量調整    (H.ENVベース使用時は+1が望ましい)
-				;リズムを下げると大人締めになるが、割り込みタイミングでの音切れが目立つ
-
 ;*****************************************
 ;ドラムチャンネル
 ;*****************************************
@@ -61,44 +31,70 @@ $cdef = @c3
 ;ドラムチャンネル途中切替
 ; ※ 切替自体はあまり関係ない
 ; ※ Sコマンド第2パラメータで指定するH.ENVの音量減衰タイミングがかぶるとドラムが途切れる
-$c2 = @c2 ; ** 切り替えない場合は@cをコメントアウトする。 ** こちらだけ有効にすると常時Ch.2へ割り込む
+$c2 = ;@c2 ; ** 切り替えない場合は@cをコメントアウトする。 ** こちらだけ有効にすると常時Ch.2へ割り込む
 $c3 = @c3 ; ** 切り替えない場合は@cをコメントアウトする。 ** H.ENV使用時はCh.3割り込みをしない方が良いかも
+
+;音色定義
+@R:B = *3 V15 :960 N0 / *1 :1480 V13 /  :2200 V12 ;/ :3080 V11 ;/ V10 / V9
+@R:S = *3 V15 :520 N2 / *2 N1 V14 / *1 :670 V13 
+@R:H = *3 V12 :20  N0 
+@R:O = *3 V10 :20  N0 / V10 
+@R:C = *3 V12 :21  N1 / V11 / v10
+@R:K = *3 V15 :450 N4 / *1 :500 V14 / :550  V13 / :650  V12 ;/ :820  V11 / :1020 V10
+@R:M = *3 V15 :500 N6 / *1 :630 V14 / :760  V13 / :860  V12 ;/ :1020 V11 / :1220 V10
+@R:N = *3 V15 :720 N8 / *1 :870 V14 / :1020 V13 / :1220 V12 ;/ :1480 V11 / :1740 V10
+
+@0=FED:2 C:3 B:3 L A:3 B:3 C:3 B:3 
+@1=FEDC L B:4 C:4 B:4 A:4 
+;@2=FD:2 C:3 B:4 A:5 9:6 8:7 7:8 6:8 5:8 4:8 3:8 2:8 1:8 L0
+@3=FC:2 B:3 A:3 L B:3 A:3 9:3 A:3
+@6=FDC L B:4 C:4
+@7=15=20 A=8
+
+;ビブラート
+;   Delay,Interval,Depth,Type(,AddDepth)(,AddCount)(,LoopMode)
+@m0=42,3,2,0
+@m1=38,3,1,2,1,3
+
+;ノートエンベロープ
+@n0=0 -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11 -12
+@n1= -2 0  0 
+@n3= -3 0  0 
+@n4= -4 0  0 
+@n5= -5 0  0 
+@n6= -6 0  0 
+@n7= -7 0  0 
+@n8= -8 0  0 
+@n9= -9 0  0 
+@n12=0 12 0 
+@n15=[2 7 0 ]
+
+;ドラム切り替えマクロ
+$drmOn  = @2@n0
+$drmOff = @n-
 
 ;*****************************************
 ; 動作検証テスト用
 ;*****************************************
-/*
-;H.ENV使用時のリリースディレイバグ
-$mainVoice0 = s12,2 m+ mk    k \-1 @r9,6 @q1 ;@m- @rd-
-$mainVoice1 = s8    m+ mk-12 k \1  @r9,6 @q1 ;@m- @rd-
-$mainVoice3 = s14   m+ mk    k \   @r9,6 @q1 ;@m- @rd-
-;$mainVoice7 = s12   m+ mk-12 k \   @r9,6 @q1 ;@m- @rd-
-;* NDPBIN_20250301.zip 11:45版 は
-; H.ENVでリリース有効にしている場合
-; @rdと@m0 両方使っていると休符でもH.ENVが発音する
-; → ver. 0.9.80で修正された
-*/
-
 ;音色設定マクロ
-$mainVoice0 = @0 @r11,12
-$mainVoice1 = @1 @r11,12
+$mainVoice0 = @0 @r12,12
+$mainVoice1 = @1 @r12,12
 $mainVoice3 = @3 @r11,12
-$mainVoice7 = @7 @r11,12
+$mainVoice7 = @7 @r11,16
 
-$subVoice0  = @0 @r11,12
-$subVoice1  = @1 @r11,12
-$subVoice2  = @2 @r11,12
+$subVoice0  = @0 @r12,12
+$subVoice1  = @1 @r12,12
+;$subVoice2  = @2 @r11,12
 $subVoice3  = @3 @r11,12
+$subVoice7  = @7 @r11,16
 
-; ***** テスト用無限ループ *****
-;123r @l r2
+123r $mugenLoop:
 
 ; ***** イントロ *****
 
-123 o5v11 \ @r- @m- q8@q0
-r   v14 l16 $cdef: $c2:
-123 $volmodn:
-r   $volmodr:
+; ** VOLUME **
+123 o5v12 \ @r- @m- q8@q0
+r   v15 l16 $cdef: $c2:
 
 123 @rd1,18 @m0 
 123 $subVoice3:
@@ -126,13 +122,15 @@ r  b4b4b4b4   b4b4b4b8hh
 r  b4b8h8b4b8h8 b8h8b4k8k8mn8.
 
 1 j="I3"
-23 \
-12 $mainVoice7: v-1
-3  $subVoice3:
-1   a2. r8.<a> e2.r4
-2   d2. r4     d2;^8r4.
+1  $mainVoice7: @m1
+1  v-2>a4.&>e4.<<r8.$mainVoice0:<a a4.>r8v+2r2
+2  $mainVoice0: @m1\0
+2  v-1 a2.r8.<e> e4.r8v+1\0;.r4
 2      v+2$drmOn: <<e16e16e8e8e16e16>> $drmOff:v-2
-3  <a4 <a>de<a8v-1a>de<a8r8 v-2a>de<a8v-1a>de<a8v-2a>de<a8>>rv+6
+3  $subVoice0:
+3  <a4
+3  $subVoice0:v-1 \1
+3     <a>de<a8a>de<a8r8 v-2a>de<a8v-1a>de<a8v-1a>de<a8>>rv+5
 r  b4b4b8hhb8h8 bhh8b4sss8s8ss
 
 ; ***** 1番 ～ 2番の途中まで1.5ループ *****
@@ -143,23 +141,23 @@ r  b4b4b8hhb8h8 bhh8b4sss8s8ss
 
 123r [
 
-1  v12 o4
-2  v9  o5
-3  v13 o2
-r  v14 $cdef: $c2:
-123 $volmodn:
-r   $volmodr:
+123 @rd1,18 @m0 
+; ** VOLUME **
+1  v14 o4
+2  v10 o5
+3  v14 o2
+r  v15 $cdef: $c2:
 
 1 j="M1"
 1 $mainVoice3: 
 1 >
-1 l16 [[q6<a8>e8d8e8d8.q8c/rcdc] C4
+1 l16 [[q6<a8>e8d8e8d8.q8c/rcdc] c4
 1       q6<a8>e8d8e8d8.q8c<rab>c q6f8g8e8c8d8.q8er4]
 1 <
-2 $subVoice2:
-2 l16
-2 <@n2[[$c3:a8.$c2:rr2raaa $c3:a8.$c2:rr4/ r4ra8a]
-2                                         $c3:a8.$c2:rr4]@n- >
+2 $subVoice0:
+2 l16 $c3:
+2 <@n12[[a8.rr2raaa a8.rr4/ r4ra8a]
+2                           a8.rr4]$c2:@n- >
 3 $baseVoice:
 3 l8
 3 [[a>a<]4 [g>g<]4 [f>f<]4 [d>d<]2[e>e<]2]
@@ -169,7 +167,7 @@ r [b8h8m8h8 / b8hhm8h8]8 bhm8.m16m16m16
 1 $mainVoice1:
 1 l8 e4   v-1\2d+16&e8.\0v+1reed& dcce-16e16ed4c& c4c<a>cd4e& e4.f16e16d4rd8
 1 d+16&e8.v-1\2d+16&e8.\0v+1reed& dg4a4g4r d4ded4<gb& b>c16&<b16&a4.>r4.
-2 $subVoice3: \1
+2 $subVoice3:
 2 l16 
 2 [q5<a8>e8d8e8<a8>q8edrder]7
 2  q5<a8>e8d8c8<a8>q8edrder
@@ -184,7 +182,7 @@ r                            b8bb mmv-nnv+
 1 [r4agr4ag rabe4g4./r4agab4-%2&b+%1&g%1e& eg4ed4r4]
 1                    r4agab4b-& b2-%2&b+%1a%1&f+%1&e2-%1
 2 l8
-2 $subVoice1: \0
+2 $subVoice0:
 2   r4     edr4ed r4.$c3:e<gab>c<   a4 $c2:r2. r4.$c3:>e<b>c<bg>
 2 q6e4q$c2:edr4ed r4.$c3:e<gab>c  q6e4q$c2:r2. r2$c3:v+1<g+l16eedeg8>v-1$c2:
 3 [[f>f<]4 [g>g<]4 [f>f<]4 / [e>e<]4 ]2
@@ -195,11 +193,12 @@ r                       b8m8v-m8v+h8 b8m8rmmm
 
 1 j3
 1 j="M4"
+;1 @n5aa4a&a2 r1 @n6gg4@n5a4@n6g4. r1@n-
 1 aa4a&a2 r1 gg4a4g4. r1
+;1 @n5f4f@n-cf@n4g4g& g2@n5g+2@n-
 1 f4fcfg4g& g2g+2
-2 $subVoice2: \0
-2 l8q5aece<a>q8 l16 edr8$c3:>cd eredrdcrl8<q5bbq8ar$c2:
-2   q5gd<b>e<gq8l16>dcr8$c3:b>c drdcrc<brl8q5aaq8gr$c2:
+2 $subVoice0:l8q5aece<a>q8 l16 edr8$subVoice3:$c3:>cd eredrdcrl8<q5bbq8ar$c2:
+2 $subVoice0:  q5gd<b>e<gq8l16>dcr8$subVoice3:$c3:b>c drdcrc<brl8q5aaq8gr$c2:
 2 @n4[rf]4@n- rede<b>$c2:l16edrderl8$c3:
 3 [a>a<]8 [g>g<]8 
 3 [f>f<]4 [g>g<]2[a->a-<]2
@@ -208,49 +207,53 @@ r [b8o8m8h8 b8o8m8h8 b8o8m8h8 b8o8m8bb]
 r  b8o8m8h8 b8o8m8h8 bho8m8hh b8m8m16m16n16n16
 
 1 j="M5-1"; (2番で分岐)
+;1 @n6aaaa&a2 gg4a4g4. @n4f4f@n8a@n4ggg@n6;a& ;a4r4;a4>c4 
 1 aaaa&a2 gg4a4g4. f4faggg;a& ;a4r4;a4>c4 
                           ;a&でループを抜けるとそれ以後ずっとスラーが続くので対策
-2 $subVoice1: \0
-2 l16[r2r8edrder]2 l8q5<f>ede<e>q8$c3:l16dcrcdr ;l8q5redeq8;r<a>rc
+2 $subVoice1:l16[r2r8edrder]2
+2 $c3:l8q5<f>ede<e>q8$subVoice3:l16dcrcdr ;l8q5redeq8;r<a>rc
 3 [a>a<]4 [g>g<]4 [d>d<]2 [e>e<]2 ;[a>a<]2;[a>a<]2
 r [b8o8m8h8 b8h8m8h8 / b8o8m8h8 b8h8m8mm];b8o8m8h8;b4m8b8 
 
 123r / ;1番 と 2番の分岐 
-
+1 j4
 1 j="M5-2"; (1番ルート）
 1 a&  ;a&でループを抜けるとそれ以後ずっとスラーが続くので対策
-1 a4r4
+1 a4@n-r4
 2 l8q5redeq8$c2:
 3 [a>a<]2
 r b8o8m8h8
 
 1 a4>c4< 
-2 r$c3:<a>$c2:r$c3:c$c2:
+2 $subVoice1: \2
+2 r$c3:<a>$c2:r$c3:c$c2:\0
 3 [a>a<]2
 r b4m8b8 
 
 1 j="M6"
 1 >[dddcd4e4]
 1  dddcdc4c& c1<
-2 $subVoice1: \0
-2 @n3<[fffef4g4]
-2     fffefe4e @n- $c3:l16>ec<ae >c<aec aec<a >ec<af>>l8$c2:
+2 $subVoice1:
+2 @n4<[fffef4g4]
+2      fffefe4e @n- $subVoice3:$c3:l16>ec<ae >c<aec aec<a >ec<af>>l8$c2:
 3 [f>f<]2[g>g<]2 [d>d<]2[e>e<]2
 3 [f>f<]2[g>g<]2 [a>a<]2 b>bc>c<<
 r [b8h8m8h8 b8o8m8h8 bho8m8h8 / b8o8m8b8] b8o8k16mn8
 
 1 j5
 1 j="M7"
-1 $mainVoice1:
-1  [a-_a16a8.-%4r%4v-3[a-_a16a8.-%4r%4/v-2]3v+6]v+2
-2 $subVoice1: 
-2 \1<
-2  [v-2r8a-_a16a8.-%4r%4v-3a-_a16a16-%4r%4v+5
-2  /v-7r8a-_a16a8.-%4r%4v-2a-_a16a16-%4r%4v+8]v+2
-2 >\0
+1 $mainVoice0:
+;1  [[a8a16r16r4/v-4\2]v+4\0]
+1  [[a8a16r16/v-2\2]4 v+6\0]
+2  $subVoice7:\1m1v-2 >e8&a4.&a4<r4 <a8&>e4.\0m0v+2
+;2  $subVoice0:
+;2 \1<v+1
+;2  [r4a16a8r16/v-3\3]v+3\1
+;2   r4a16a8r16
+;2 \0>v-1
 2   v+3$drmOn:<<l16gec8gecc>>$drmOff:v-3
 3 [a>a<]8
-r @c2[b8h8m8h8]3 kmn8kmnn@c2
+r $c3:[b8h8m8h8]3 kmn8kmnn$c2
 
 123r ]
 
@@ -260,7 +263,7 @@ r @c2[b8h8m8h8]3 kmn8kmnn@c2
 
 1 $mainVoice1:
 1 a&  ;a&でループを抜けるとそれ以後ずっとスラーが続くので対策
-1 a2r2
+1 a2@n-r2
 2 l8[q5redeq8v-1]v+2 $c2:
 3 [a>a<]4
 r b8o8m8h8 b4m8b8 
@@ -268,9 +271,11 @@ r b8o8m8h8 b4m8b8
 1 j="E1"
 1 $mainVoice3:
 1 l8
-1 @n5<arr2>e<b r2.>d<a> r2.ee& e4d4<b4g4
-; <err2 a g r2. b e  r2.aa& a4g4d4<vb4
-1 >err2<a>e r2.d<a> r4c<b>r4e<a> r1@n-
+;1 @n5<arr2>@n7e<@n4b r2.>@n3d<@n5a> r2.@n7ee& e4d4<@n9b4@n8g4
+1 <arr2>e<b r2.>d<a> r2.ee& e4d4<b4g4
+; <err2 a g r2. b e  r2.aa& a4g4 d4<b4
+;1 >@n5err2<@n9a>@n5e r2.@n7d<a> r4@n3c<@n7b>r4@n5e<a> r1@n-
+1 >err2<a>e r2.d<a> r4c<b>r4e<a> r1
 ;  arr2 c b r2.g d  r4a e r4b e r1
 2 $subVoice3:
 2 l16
@@ -290,7 +295,7 @@ r [b8h8m8h8 / b8hhm8h8]8 bhm8.m16m16m16
 1 [r4agr4ag rabe4g4. / r4agab4-%2&b+%1&g%1e& eg4ed4r4]
 1                      r4agab4-%2&b-%1&f+%1e& eg4r
 2 l8
-2 $subVoice1: \0
+2 $subVoice0: \0
 2 r4       [edr4ed r4.$c3:e<gab>c<$c2: a4r2. r4./$c3:>e<b>c<bg>
 2 q6e4q$c2:] 
 2                                          r
@@ -301,6 +306,7 @@ r                       b8o8m8h8 /b8m8h8nv-nv+]
 
 1 j="M6e"
 1 a4>c4 
+;2 $subVoice1:
 ;2 r<a>rc
 2 v+3$drmOn: <l16eeeee8e8> $drmOff:v-3
 3 [a>a<]2
@@ -308,8 +314,8 @@ r mmmmm8m8
 
 1 [dddcd4e4]
 1  dddcdc4c& c1<
-2 $subVoice1: \0
-2 l8 @n3
+2 $subVoice1: 
+2 l8 @n4
 2 [fffef4g4]
 2  fffefe4e @n- $c3:l16>ec<ae >c<aec aec<a >ec<af>>l8$c2:
 3 [f>f<]2[g>g<]2 [d>d<]2[e>e<]2
@@ -317,26 +323,29 @@ r mmmmm8m8
 r [b8h8m8h8 b8o8m8h8 bho8m8h8 / b8o8m8b8] b8o8k16mn8
 
 1 j="M7e"
-1 $mainVoice1:
-1  [a-_a16a8.-%4r%4v-3[a-_a16a8.-%4r%4/v-2]3v+6]v+2
-2 $subVoice1: 
-2 \1<
-2  [v-2r8a-_a16a8.-%4r%4v-3a-_a16a16-%4r%4v+5
-2  /v-7r8a-_a16a8.-%4r%4v-2a-_a16a16-%4r%4v+8]v+2
-2 >\0
+1 $mainVoice0:
+;1  [[a8a16r16r4/v-4\2]v+4\0]
+1  [[a8a16r16/v-2\2]4 v+6\0]
+2  $subVoice7:\1m1v-2 >e8&a4.&a4<r4 <a8&>e4.\0m0v+2
+;2  $subVoice0:
+;2 \1<v+1
+;2  [r4a8a16r16/v-3\3]v+3\1
+;2   r4a8a16r16
+;2 \0>v-1
 2   v+3$drmOn:<<l16gec8gecc>>$drmOff:v-3
 3 [a>a<]8
-r @c3[b8h8m8h8]3 kmn8kmnn@c2
+r $c3:[b8h8m8h8]3 kmn8kmnn$c2:
 
 123r [
 
 1 j="M4e"
 1 $mainVoice1: \0
+1 ;@n5aa4a&a2 r1 @n6gg4@n5a4@n6g4. r1@n-
 1 aa4a&a2 r1 gg4a4g4. r1
+1 ;@n5f4f@n-cf@n4g4g& g2@n5g+2@n-
 1 f4fcfg4g& g2g+2
-2 $subVoice2: \0
-2 l8q5aece<a>q8 l16 edr8$c3:>cd eredrdcrl8<bbar$c2:
-2   q5gd<b>e<gq8l16>dcr8$c3:b>c drdcrc<brl8aagr$c2:
+2 $subVoice0:l8q5aece<a>q8 l16 edr8$subVoice3:$c3:>cd eredrdcrl8<q5bbq8ar$c2:
+2 $subVoice0:  q5gd<b>e<gq8l16>dcr8$subVoice3:$c3:b>c drdcrc<brl8q5aaq8gr$c2:
 2 @n4[rf]4@n- rede<b>$c3:l16edrderl8$c2:
 3 [a>a<]8 [g>g<]8 
 3 [f>f<]4 [g>g<]2[a->a-<]2
@@ -345,10 +354,11 @@ r [b8o8m8h8 b8o8m8h8 b8o8m8h8 b8o8m8bb]
 r  b8o8m8h8 b8o8m8h8 bho8m8hh b8m8m16m16n16n16
 
 1 j="M5-1e"
+;1 @n6aaaa&a2 gg4a4g4. @n4f4f@n8a@n4ggg@n6;a& ;a4r4;a4>c4 
 1 aaaa&a2 gg4a4g4. f4faggg;a& ;a4r4;a4>c4 
                           ;a&でループを抜けるとそれ以後ずっとスラーが続くので対策
-2 $subVoice1: \0
-2 l16[r2r8edrder]2 $c3:l8q5<f>ede<e>q8l16dcrcd;r ;l8q5redeq8;r<a>rc
+2 $subVoice1:l16[r2r8edrder]2
+2 $c3:l8q5<f>ede<e>q8$subVoice3:l16dcrcd;r ;l8q5redeq8;r<a>rc
 3 [a>a<]4 [g>g<]4 [d>d<]2 ;[e>e<]2 ;[a>a<]2;[a>a<]2
 r [b8o8m8h8 b8h8m8h8 / b8o8m8h8 b8h8m8mm]; b8o8m8h8 b4m8b8 
 
@@ -356,7 +366,7 @@ r [b8o8m8h8 b8h8m8h8 / b8o8m8h8 b8h8m8mm]; b8o8m8h8 b4m8b8
 
 1 j="M5-2e"
 1 a&  ;a&でループを抜けるとそれ以後ずっとスラーが続くので対策
-1 a4.r;r2
+1 a4.@n-r;r2
 1 $mainVoice3:
 1   v-4<a8a8a8a>v+4
 2 $c2:r ; 頭合わせ
@@ -370,8 +380,7 @@ r b8o8m8h8 b4m8b8
 
 1 j="M5-3e"
 1 a&  ;a&でループを抜けるとそれ以後ずっとスラーが続くので対策
-1 a2.r4
-2 $subVoice1: \0
+1 a2.@n-r4
 2 $c2:r ;頭合わせ
 2 r2.;r4
 2     @r-v+3$drmOn:<<e8e16e16>>$drmOff: v-4
@@ -385,8 +394,8 @@ r b4v-8[cv+]8m8mm
 1 l16 [[q6<a8>e8d8e8d8.q8c/rcdc] r4
 1       q6<a8>e8d8e8d8.q8c<rab>c q6f8g8e8c8d8.q8er4]
 1 <
-2 $subVoice2:
-2 <@n2[[$c3:a8.$c2:rr2raaa $c3:a8.$c2:rr4/ r4ra8a]
+2 $subVoice0:
+2 <@n12[[$c3:a8.$c2:rr2raaa $c3:a8.$c2:rr4/ r4ra8a]
 2                                      $c3:a8.$c2:rr4]@n- >
 3 $baseVoice:
 3 l8
@@ -394,12 +403,12 @@ r b4v-8[cv+]8m8mm
 r [b8h8m8h8 / b8hhm8h8]8 bhm8.m16m16m16
 
 1 j="E2"
-1 $mainVoice1: @r9,11
-1 l16 <@n2v+a8a8r2.
+1 $mainVoice1: @r8,12
+1 l16 <@n12a8a8r2.
 1       a8a8g8a8v-r2@n->
 2 l16 ;v+<a8a8>v-
-2        v+3$drmOn:<<e8e8>>$drmOff:v-3 $subVoice3:
-2                $c3:d8e8<a8>edrer$c2:r
+2     v+3$drmOn:<<e8e8>>$drmOff:v-3
+2     $subVoice0$c3:d8e8<a8>edrer$c2:r
 2     @r-v+3$drmOn:<<e8e8d8e8>>$drmOff:v-3r2
 3 aar2. aagar2
 r s8s8b4b4b4

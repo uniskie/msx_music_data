@@ -1,5 +1,12 @@
+#title "おきのどくですが ぼうけんのしょ は きえてしまいました"
+#bsave-name "okinodok"
 #timebase 24
-1 o2 s14 m+ mk12 \-1
+1 o2 s12 m+ mk12 \-1
 2 o1 @6 v10
-12 l16 [b>b<b->b-<]4
+12 l16
+1 s10b>b<s12b->b-<k\1
+1 s10b>b<s12b->b-<k\2
+1 s10b>b<s12b->b-<k\3
+1 s10b>b<s12b->b-<k\4
+2 [b>b<b->b-<]4
 12 >e4f+32f32<b-8.
