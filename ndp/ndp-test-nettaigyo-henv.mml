@@ -2,6 +2,7 @@
 #MEMO "Wink 1989年7月5日 作詞：及川眠子"
 #COMPOSER "	尾関昌也"
 #ARRANGER "	船山基紀"
+#MEMO "非対応：CASIO MX-101、MSX0"
 
 #BSAVE-NAME "SAMISIIH"
 #PROGRAMMER "Uniskie"
@@ -36,13 +37,13 @@ $c3 = @c3 ; ** 切り替えない場合は@cをコメントアウトする。 **
 
 ;音色定義
 @R:B = *3 V15 :960 N0 / *1 :1480 V13 /  :2200 V12 ;/ :3080 V11 ;/ V10 / V9
-@R:S = *3 V15 :520 N2 / *2 N1 V14 / *1 :670 V13 
-@R:H = *3 V12 :20  N0 
-@R:O = *3 V10 :20  N0 / V10 
-@R:C = *3 V12 :21  N1 / V11 / v10
-@R:K = *3 V15 :450 N4 / *1 :500 V14 / :550  V13 / :650  V12 ;/ :820  V11 / :1020 V10
-@R:M = *3 V15 :500 N6 / *1 :630 V14 / :760  V13 / :860  V12 ;/ :1020 V11 / :1220 V10
-@R:N = *3 V15 :720 N8 / *1 :870 V14 / :1020 V13 / :1220 V12 ;/ :1480 V11 / :1740 V10
+@R:S = *3 V15 :520 N2 / *2 N1 V13 / *1 :670 V12
+@R:H = *3 V11 :20  N0 
+@R:O = *3 V9  :20  N0 / V9
+@R:C = *3 V11 :21  N1 / V10 / v9
+@R:K = *3 V14 :450 N4 / *1 :500 V13 / :550  V12 / :650  V11 
+@R:M = *3 V14 :500 N6 / *1 :630 V13 / :760  V12 / :860  V11 
+@R:N = *3 V14 :720 N8 / *1 :870 V13 / :1020 V12 / :1220 V11 
 
 @0=FED:2 C:3 B:3 L A:3 B:3 C:3 B:3 
 @1=FEDC L B:4 C:4 B:4 A:4 
@@ -58,8 +59,8 @@ $c3 = @c3 ; ** 切り替えない場合は@cをコメントアウトする。 **
 
 ;ノートエンベロープ
 @n0=0 -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11 -12
-@n1= -2 0  0 
-@n3= -3 0  0 
+@n1= -1 0  0 
+;@n3= -3 0  0 
 @n4= -4 0  0 
 @n5= -5 0  0 
 @n6= -6 0  0 
@@ -94,7 +95,7 @@ $subVoice7  = @7 @r11,16
 
 ; ** VOLUME **
 123 o5v12 \ @r- @m- q8@q0
-r   v15 l16 $cdef: $c2:
+r   v14 l16 $cdef: $c2:
 
 123 @rd1,18 @m0 
 123 $subVoice3:
@@ -117,16 +118,16 @@ r  r1 r1
 3  [a8r8a8ra8ggrg8.r a8a8a8aa8ggrg8.r]2
 2  [c8r8c8rc8<bbrb8.>r c8c8c8c/c8<bbrb8.>r]2
 2                              c
-2       v+2$drmOn: <<g8g8e16c8.>> $drmOff:v-2 $subVoice1:
+2       v+1$drmOn: <<g8g8e16c8.>> $drmOff:v-1 $subVoice1:
 r  b4b4b4b4   b4b4b4b8hh
 r  b4b8h8b4b8h8 b8h8b4k8k8mn8.
 
 1 j="I3"
 1  $mainVoice7: @m1
-1  v-2>a4.&>e4.<<r8.$mainVoice0:<a a4.>r8v+2r2
+1  v-3>a4.&>e4.<<r8.v+1$mainVoice0:<a a4.>r8v+2r2
 2  $mainVoice0: @m1\0
 2  v-1 a2.r8.<e> e4.r8v+1\0;.r4
-2      v+2$drmOn: <<e16e16e8e8e16e16>> $drmOff:v-2
+2      v+1$drmOn: <<e16e16e8e8e16e16>> $drmOff:v-1
 3  $subVoice0:
 3  <a4
 3  $subVoice0:v-1 \1
@@ -243,15 +244,15 @@ r [b8h8m8h8 b8o8m8h8 bho8m8h8 / b8o8m8b8] b8o8k16mn8
 1 j5
 1 j="M7"
 1 $mainVoice0:
-;1  [[a8a16r16r4/v-4\2]v+4\0]
-1  [[a8a16r16/v-2\2]4 v+6\0]
+;1  [[a8v-1a16v+1r16r4/v-4\2]v+4\0]
+1  [[@n1a8v-1a16@n-v+1r16/v-3\2]4 v+9\0]
 2  $subVoice7:\1m1v-2 >e8&a4.&a4<r4 <a8&>e4.\0m0v+2
 ;2  $subVoice0:
 ;2 \1<v+1
-;2  [r4a16a8r16/v-3\3]v+3\1
-;2   r4a16a8r16
+;2  [r4a8v-1a16v+1r16/v-3\3]v+3\1
+;2   r4a8v-1a16v+1r16
 ;2 \0>v-1
-2   v+3$drmOn:<<l16gec8gecc>>$drmOff:v-3
+2   v+2$drmOn:<<l16gec8gecc>>$drmOff:v-2
 3 [a>a<]8
 r $c3:[b8h8m8h8]3 kmn8kmnn$c2
 
@@ -308,7 +309,7 @@ r                       b8o8m8h8 /b8m8h8nv-nv+]
 1 a4>c4 
 ;2 $subVoice1:
 ;2 r<a>rc
-2 v+3$drmOn: <l16eeeee8e8> $drmOff:v-3
+2 v+2$drmOn: <l16eeeee8e8> $drmOff:v-2
 3 [a>a<]2
 r mmmmm8m8 
 
@@ -324,15 +325,15 @@ r [b8h8m8h8 b8o8m8h8 bho8m8h8 / b8o8m8b8] b8o8k16mn8
 
 1 j="M7e"
 1 $mainVoice0:
-;1  [[a8a16r16r4/v-4\2]v+4\0]
-1  [[a8a16r16/v-2\2]4 v+6\0]
+;1  [[a8v-1a16v+1r16r4/v-4\2]v+4\0]
+1  [[@n1a8v-1a16@n-v+1r16/v-3\2]4 v+9\0]
 2  $subVoice7:\1m1v-2 >e8&a4.&a4<r4 <a8&>e4.\0m0v+2
 ;2  $subVoice0:
 ;2 \1<v+1
-;2  [r4a8a16r16/v-3\3]v+3\1
-;2   r4a8a16r16
+;2  [r4a8v-1a16v+1r16/v-3\3]v+3\1
+;2   r4a8v-1a16v+1r16
 ;2 \0>v-1
-2   v+3$drmOn:<<l16gec8gecc>>$drmOff:v-3
+2   v+2$drmOn:<<l16gec8gecc>>$drmOff:v-2
 3 [a>a<]8
 r $c3:[b8h8m8h8]3 kmn8kmnn$c2:
 
@@ -383,7 +384,7 @@ r b8o8m8h8 b4m8b8
 1 a2.@n-r4
 2 $c2:r ;頭合わせ
 2 r2.;r4
-2     @r-v+3$drmOn:<<e8e16e16>>$drmOff: v-4
+2     @r-v+2$drmOn:<<e8e16e16>>$drmOff:v-2
 3 e>e<ef& ; 頭合わせ
 3 f2.r4
 r b4v-8[cv+]8m8mm
@@ -407,9 +408,9 @@ r [b8h8m8h8 / b8hhm8h8]8 bhm8.m16m16m16
 1 l16 <@n12a8a8r2.
 1       a8a8g8a8v-r2@n->
 2 l16 ;v+<a8a8>v-
-2     v+3$drmOn:<<e8e8>>$drmOff:v-3
+2     v+2$drmOn:<<e8e8>>$drmOff:v-2
 2     $subVoice0$c3:d8e8<a8>edrer$c2:r
-2     @r-v+3$drmOn:<<e8e8d8e8>>$drmOff:v-3r2
+2     @r-v+2$drmOn:<<e8e8d8e8>>$drmOff:v-2r2
 3 aar2. aagar2
 r s8s8b4b4b4
 r s8s8s8s8r2
