@@ -3,6 +3,7 @@ naruto2413氏製作のMSX PSG用音源ドライバ ndpを使用したデータ集です。
 play.basが簡易プレイヤーです。
 NDP.BINは許諾を得て同梱しているものです。
 
+KENJAISI.NDP - "CASIO 賢者の石 メドレー"
 DDS2LABY.NDP - "女神転生Ⅱ Labyrinth 午前２時の迷宮"
 DDS2OMEG.NDP - "女神転生Ⅱ - OMEGA 聖戦 -" [ndp-dds2-omega.kss]
 DRSP-AR1.NDP - "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"

@@ -89,6 +89,10 @@ Windows10以降、PowerShell2.0が入っている環境であれば使えると�
 - ndpデータ全曲まとめパック  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/ndp-m3disp.zip
 
+- "CASIO MSXソフト 「賢者の石」メドレー"  
+  [ndp-kenja_no_ishi.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-kenja_no_ishi.kss
+
 - "DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8)"  
   [ndp-dangrous_seed_1.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dangrous_seed_1.kss
