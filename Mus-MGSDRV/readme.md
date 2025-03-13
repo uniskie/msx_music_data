@@ -252,17 +252,6 @@ VGMファイルもあります。
   [M3disp: YS1DREAM.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS1DREAM.MUS)  
   [VGM file: YS1DREAM.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/YS1DREAM.vgm)  
 
-
-- ドラゴンスピリット ステージ3 ジャングル (MGS逆コンパイルから修正作業中)  
-  [MSXPlay: DS-3JUNG.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-3JUNG.MUS)  
-  [M3disp: DS-3JUNG.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-3JUNG.MUS)  
-  [VGM file: DS-3JUNG.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/DS-3JUNG.vgm)  
-
-- ドラゴンスピリット ステージ7 深海 (MGS逆コンパイルから修正作業中)  
-  [MSXPlay: DS-7DEEP.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-7DEEP.MUS)  
-  [M3disp: DS-7DEEP.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-7DEEP.MUS)  
-  [VGM file: DS-7DEEP.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/DS-7DEEP.vgm)  
-
 - イース FEENA (ちょっとだけPCE風)(作業中)  
   [MSXPlay: YS1FEENA.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS1FEENA.MUS)  
   [M3disp: YS1FEENA.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS1FEENA.MUS)  
@@ -279,33 +268,42 @@ VGMファイルもあります。
 MGSDRC v1など、MUSではなくBASICで入力していたバージョン等含む。
 （※VGMなし）
 
+- ドラゴンスピリット ステージ3 ジャングル (MGS逆コンパイルから修正作業中)  
+  [MSXPlay: DS-3JUNG.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-3JUNG.MUS)  
+  [M3disp: DS-3JUNG.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-3JUNG.MUS)  
+  [VGM file: DS-3JUNG.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/DS-3JUNG.vgm)  
+
 - ドラゴンスピリット ステージ3 ジャングル  
   [MSXPlay: DS-3JUNG.MGS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-3JUNG.MGS)  
-  [M3disp: DS-3JUNG.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-3JUNG.MGS)  
+  [M3disp: DS-3JUNG.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-3JUNG.MGS)  
+
+- ドラゴンスピリット ステージ7 深海 (MGS逆コンパイルから修正作業中)  
+  [MSXPlay: DS-7DEEP.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-7DEEP.MUS)  
+  [M3disp: DS-7DEEP.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-7DEEP.MUS)  
+  [VGM file: DS-7DEEP.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/DS-7DEEP.vgm)  
 
 - ドラゴンスピリット ステージ7 深海  
   [MSXPlay: DS-7DEEP.MGS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-7DEEP.MGS)  
-  [M3disp: DS-7DEEP.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DS-7DEEP.MGS)  
+  [M3disp: DS-7DEEP.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/DS-7DEEP.MGS)  
 
 - ガンフロンティア 1面 （超スロー版）  
   [MSXPlay: G-F-1.MGS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/G-F-1.MGS)  
-  [M3disp: G-F-1.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/G-F-1.MGS)  
+  [M3disp: G-F-1.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/G-F-1.MGS)  
 
 - イース FAIRWIND (未完成)  
   [MSXPlay: YS1FAIR.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS1FAIR.MUS)  
-  [VGM file: M3disp: YS1FAIR.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/YS1FAIR.vgm)  
 
 - イース FEENA (未完成)  
   [MSXPlay: YS1FEENA.MGS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS1FEENA.MGS)  
-  [M3disp: YS1FEENA.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS1FEENA.MGS)  
+  [M3disp: YS1FEENA.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS1FEENA.MGS)  
 
 - イース2 NOBLE DIRECT OF TOAL  
   [MSXPlay: YS2NOBLE.MGS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS2NOBLE.MGS)  
-  [M3disp: YS2NOBLE.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS2NOBLE.MGS)  
+  [M3disp: YS2NOBLE.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS2NOBLE.MGS)  
 
 - イース2 RUINS OF MOONDORIA  
   [MSXPlay: YS2RUINS.MGS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS2RUINS.MGS)  
-  [M3disp: YS2RUINS.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/YS2RUINS.MGS)  
+  [M3disp: YS2RUINS.MGS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/OLD/YS2RUINS.MGS)  
 
 
 ---
