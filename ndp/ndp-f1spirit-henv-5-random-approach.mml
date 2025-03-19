@@ -1,5 +1,5 @@
 ;********************************************************
-#title "F1SPIRIT (H.ENV arr.) [Random Approach] (RALLY RACE)"
+#title "F1SPIRIT (use H.ENV) [Random Approach] (RALLY RACE)"
 ;********************************************************
 #bsave-name "F1SP-5"
 #programmer "uniskie 2024/10/13"
@@ -11,19 +11,19 @@
 #timebase 16
 
 
-@m0 = 38,4,1,8 ,3,1
+@m0 = 32,4,1,8
 ;@p1 = w3  [6 1 0_4 -1 0_4 ] L 2 1 0_2 -1 -2 0_3 ;これだと微妙
 
 ; pon
-@0 = fedcb cba9 L a:2 9:2 8:2  
+@0 = fde L c:2 b:2
 ; too
 @1 = fedc edcb L a:3 9:3 a:3 b:3
 ; pin
-@2 = cf eb:2 a:3 9:4 a 8:5 l 9:4 8:4
+@2 = cf eb:2 a:3 | b:2 a:2
 @n12 = -12 0
 @n2 = 12 0
 ;base
-@6 = fcb L a:5 9:5
+@6 = fcd c:5 L b:5 a:5
 ;@6 = s12r cba 9:4 8:8 L 7:5 8:5  
 ;tom
 @4 = fedcba9876:2 5:2 4:2 3:2 2:2 1:3 L0
@@ -33,90 +33,76 @@
 
 ;**** main
 
-12 v13 o4 @0 @m0
-12 @r12,4 @rd1,18
+12 v13 o4 @m0
+12 @r11,4 @rd1,18
 
 12 @L
 
-12 v-
+12  l8 @q1 @0
 
-12 @0
-1  l8 @q2
 1 [
-1   [br ra2 /g+ ra2..]2
-1         @1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16 v+@q2@0
-1   [dr rc2 /<b> rc c2.]2
-1          @1 e  re d4 c4< / b4 @0
+1  @n12 [br ra2 /g+ ra2..]2
+1  @n-   @1>c+ rc+ <b4 a4 v-1@q0a+16b16>c16c+16 v+1@q1@0
+1  @n12 [dr rc2 /<b> rc c2.]2
+1  @n-   @1 e  re d4 c4< / b4 @0
 1 ]2
-1 @1@q1v- a16b16>c16<a16 v+@q2
+1 @1@q0v-1 a16b16>c16<a16 v+1@q1
 
-2  [g+r rf+2 /e rf+2..]2
-2        @1\1>c+ rc+ <b4 a4 v-@q1a+16b16>c16c+16< v+\0@q2@0
-2  <[br ra2 /g ra a2.]2>
-2         @1 e re d4 c4 <b4> @0
-2  [g+r rf+2 /e rf+4. @q1v-2<g+16a16b16>c16 <a16b16>c16<a16>v+2@q3]2
-2        @1\1>c+ rc+< b4 a4 v-@q1a+16b16>c16c+16< v+\0@q2@0
+2  @n12 [g+r rf+2 /e rf+2..]2
+2  @n-   @1\1>c+ rc+ <b4 a4 v-@q0a+16b16>c16c+16< v+\0@q1@0
+2  @n12 <[br ra2 /g ra a2.]2> \n-
+2  @n-   @1 e re d4 c4 <b4> @0
+2  [@n12 g+r rf+2 /e rf+4. @n-@q0v-2<g+16a16b16>c16 <a16b16>c16<a16>v+2@q1]2
+2  @n-   @1\1>c+ rc+< b4 a4 v-@q0a+16b16>c16c+16< v+\0@q1@0
 2  [br ra2 /g ra a2.]2
 2        @1 e re d4 c4 
-2 @1@q1v- <f16f+16a16f16> v+@q2
+2 @1@q0v-1 <f16f+16a16f16> v+1@q1
 
 12 v+
 
 1 j1
 12 [
-12  @1@q2
+12  @1@q1
 1   b4.> d4. g4. d4.< b4 >d4<
 2   g4. b4. >d4.<  b4. g4 b4
-12  @0@q1
+12  @0@q0
 12 /
-2   r v-2 \1
+2   r v-1 \1
 12  [c<a> ce]2
 12  ae de ce <a>
 1               e
-2   v+2 \0
+2   v+1 \0
 12 ]2 j2
 2   r v-2 \1
 12  ab> ce e<a b>
 1                c 
 2   v+2
-12  @q1 ed eg ed4.<
 
-;12 v-
-
-12 @0 @q2 j3
+12  ed eg ed4.<
+12 @0 @q1 j3
 12 a<a4 b r>c rd
-
-;12 v+
 
 12 @1 @q4 
 1  @n12 >e4 d4 cd4.< @n-
 2  \0   >c4< b4 ab4. \1
 
-;12 v-
-
-12 @0
+12 @0 @q1
 12  e4. d4. <a4.>
 12  e4. d4 <b4>
 
 12 @q2 
 12  c<a rb r>c rg
 
-;12 v+
-
 12 @1 @q4 j4
 1 >e4 d4 cd4.<
 2  e4 d4 cd4.
 2  < \0
 
-;12 v-
-
-12 @0
+12 @0 @q1
 1  e4. d4. <a4.>
 1  e4. dc <b>c
 2  <a4.> e4. a4.
 2  >c4.< ba ga
-
-;12 v+
 
 12 @1
 1 <a4 b>c2^8
@@ -124,17 +110,18 @@
 2 f4 ga2^8
 2 g4 a>d2^8
 
-12 @2@q2 j5
+12 @2@q0 j5
 1 ra g+g rf+ fe
 1 rd+ dc+2^8
 2 re d+d rc+ c<b
 2 ra+ ag+2^8>
 
+12 v-1
 
 ;**** base ****
 
-3 o2 v14 @6 @q0 @r10,2 @rd0 \-1
-3 s14,2  @q1 @r- ;HENVのリリースディレイに正式対応したので使用しない場合はrを消す
+;3 o2 v14 @6 q4 @r14,4 @rd0 \-1
+3 o2 s10,4  @q1 
 
 3 @L 
 
