@@ -1,13 +1,13 @@
-;********************************************************
+ï»¿;********************************************************
 #title "F1SPIRIT (use H.ENV) [Vanishing Heat] (ENDURANCE RACE)"
 ;********************************************************
 #bsave-name "F1SP-8"
-#programmer "uniskie 2025/03/20"
+#programmer "uniskie"
 
-#repeat-mode 1	; ƒƒ‚ƒŠß–ñ ’[”ƒGƒ‰[‚ ‚è
-;#repeat-mode 2	; ƒƒ‚ƒŠß–ñ ’[”ƒGƒ‰[‚È‚µ
+#repeat-mode 1	; ãƒ¡ãƒ¢ãƒªç¯€ç´„ ç«¯æ•°ã‚¨ãƒ©ãƒ¼ã‚ã‚Š
+;#repeat-mode 2	; ãƒ¡ãƒ¢ãƒªç¯€ç´„ ç«¯æ•°ã‚¨ãƒ©ãƒ¼ãªã—
 
-;#tempo 150
+;#tempo 112
 #timebase 32
 
 @m0 = 26,4,3,8 2,4
@@ -19,9 +19,9 @@
 @1 = fe:2 d:2 c:3 b:3 a:4 9:4 8:5 7:6 0=48
 
 @n7 = -7 0
-@n12 = -12 0
+@n12 = 0 -12 0
 ;base
-@6 = fcd c:5 L b:5 a:5
+@6 = fdc b:5 L a:5 b:5
 
 123r l16
 
@@ -39,8 +39,8 @@
 1 /r>v+1ddr ddrd drdd rdddv-1]2
 1 @1 @r11,2 j2
 1 l32
-1 v-2<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ v+1a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
-1     c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ v+1a+f+c+f+a+f+a+>c+ ec+ef+c+ef+e<
+1 v-1<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
+1 v+1 c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+c+ef+e<
 1 l16
 1 @0 @q0 @r13,4 j3
 ;1 v+1
@@ -66,8 +66,8 @@
 2 @1 @r11,2  \1
 2 r ;delay
 2 l32 v-2
-2 v-2<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ v+1a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
-2     c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ v+1a+f+c+f+a+f+a+>c+ ec+ef+c+ef+e< 
+2 v-1<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
+2 v+1 c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+c+ef+e<
 2 l16 v+2
 2 @0 @m1 @q0 @r13,4 \0
 ;2 v+1
@@ -82,8 +82,8 @@
 
 ;**** base ****
 
-;3 o3 v14 @6 @r12,2 @rd- \-1 @n12
-3 o3 s10,5 @q1
+;3 o3 v15 @6 @r12,2 @rd- \-1 @n12
+3 o3 s10,8 @q1
 
 3 @L 
 3 [<bb>d+<b> e<b>f+e8 eg+e aebd8
@@ -99,16 +99,17 @@
 
 ;**** drum
 
-@R:B = *3 :980 N0 V14 / *1 :2000 V12
-;@R:S = *1 :540 V15 / *3 :700 N1 V14 / *2 N0 V13 / V12
-@R:S = *1 :530 V15 / *2 N1 V11
-@R:H = *3 :20 N0 V12
-@R:O = *3 :21 N0 V12 / V11 / v10
+@R:B = *3 :980 N0 v15 / *1 :2000 V12
+;@R:B = *3 :980 N0 s0 m1000 / *1 :2000 ; HENVãƒ™ãƒ¼ã‚¹ã ã¨Må‘¨æœŸç•°å¸¸ãŒç™ºç”Ÿ
+@R:S = *3 :520 N1 v15 / *2 N0 v14 / N1 V12
+;@R:S = *3 :520 N1 s0 m1200 / *2 N0 / N1 ; HENVãƒ™ãƒ¼ã‚¹ã ã¨Må‘¨æœŸç•°å¸¸ãŒç™ºç”Ÿ
+@R:H = *2 :20 N0 V12
+@R:O = *2 :21 N0 V12 / V11 / v10
 ;@R:K = *3 :450 N8  V15 / *1 :500 V14 / :550 V13
 ;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
 ;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
-r v14 @c2
+r v15 @c2
 r @L
 r  [bhsh bbsh]7
 r  bb32b32sb b[s32s32]3

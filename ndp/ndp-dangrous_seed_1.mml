@@ -1,7 +1,7 @@
-;*************************************************
+﻿;*************************************************
 #title "DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8)"
 ;*************************************************
-#programmer "uniskie 2004/09/12"
+#programmer "uniskie"
 #bsave-name "DSEED-1"
 
 ;#repeat-mode 1	; メモリ節約 端数エラーあり
@@ -83,8 +83,8 @@
 3   >d<ddd [eeee]2 eeee a>cde< 
 3  ]2 
 3  [\-1 m\-1[frff>fr<ff]4 [g+rg+g+>g+r<g+g+]4 
-3   [m\-1eree>m\0er<m\-1ee]4 m\0 /  [araa>a</raa]3 
-3                                 aaa
+3   [m\-1eree>m\1er<m\-1ee]4 m\0 / [araa>a</raa]3 
+3                                  aaa
 3   aa>e<aa>e<aa 
 3 ]2 
 3  a+ra+ra+ra+r brbrbrbr >crcrcrcr c+rc+rc+c+c+c+<
@@ -95,7 +95,7 @@
 
 @R:B = *3 :880 N0 V15 / *1 :2000 V14
 ;@R:S = *3 :520 N1 V15 / *2 :670 N0 V14 / *1 :820 V13
-@R:S = *3 :520 N2 V15 / *2 N1 V14 / *1 :670 V13 / :820 V12 / :970 v11
+@R:S = *3 :560 N2 V15 / *2 N1 V14 / *1 :680 V13 / :840 V12 / :980 v11
 @R:H = *3 :18 N0 V12
 @R:O = *3 :20 N0 V12 / V11 / V10
 @R:K = *3 :450 N8  V15 / *1 :500 V14 / :550 V13

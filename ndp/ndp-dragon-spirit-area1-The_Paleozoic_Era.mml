@@ -1,6 +1,6 @@
-#title "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
+﻿#title "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
 #bsave-name "DRSP-AR1"
-#programmer "uniskie 2024/12/12"
+#programmer "uniskie"
 
 #repeat-mode 1	; メモリ節約 端数エラーあり
 ;#repeat-mode 2	; メモリ節約 端数エラーなし
@@ -8,13 +8,16 @@
 #tempo 180
 
 @R:A = *1 :18 V12 / :1650 N0 V13 / :2200 V12
-@R:B = *3 :850 N2 V13 / *1 /* b:1280 V14 */ :2200 V13
+@R:B = *3 :980 n0 v15 / *1 :1420 v14 ;/:2200 v13
 ;@R:S = *3 :520 N2 V15 / *2 N1 V14 / *1 :670 V13 / :820 V12 / :970 v11
 @R:H = *3 :20 N0 V12
 @R:C = *3 :21 N1 V12 / V11 / v10
-@R:K = *3 :420 N2 V15 / *1 /* :480 V14 */ :550  V14 / :620  V13
-@R:M = *3 :550 N3 V15 / *1 /* :600 V14 */ :700  V14 / :850  V13
-@R:N = *3 :700 N4 V15 / *1 /* :850 V14 */ :1000 V14 / :1450 V13
+;@R:K = *3 :420 N2 V15 / *1 /* :480 V14 */ :550  V14 / :620  V13
+;@R:M = *3 :550 N3 V15 / *1 /* :600 V14 */ :700  V14 / :850  V13
+;@R:N = *3 :700 N4 V15 / *1 /* :850 V14 */ :1000 V14 / :1450 V13
+@R:K = *3 :420 N0 V15 / :460 V14 / *1 :550 V13 / :620 V12 / :720 v11
+@R:M = *3 :550 N1 V15 / :600 V14 / *1 :700 V13 / :850 V12 / :960 v11
+@R:N = *3 :700 N2 V15 / :850 V14 / *1 :1000 V13 / :1250 V12 / :1580 v11
 
 ;lead
 @0 = d:5 e d:6 e:16 d:16 c:34 L b:4 a:4 c:4
@@ -25,11 +28,9 @@
       l 9:4 b:4 a:4,
      }
 ;xylophone
-@2 = { efedc ,
-     ;   e d   c   b,
-       d c:2 b:3 a:4,
-     ;  c:2 b:3 a:4 9:5,
-       b:3 a:4 9:5 8:6,
+@2 = { e fed:2 c:2,
+       d c:2 bcb a:4,
+       b:3 abaa 999a9 8:6,
        a:4 [2 9:4 8:8], 
        9:4 [2 8:4 7:8].  8:4 [2 7:4 6:4],
        7:4 [2 6:4 5:4],  6:4 [2 5:4 4:4],
@@ -40,8 +41,7 @@
 @3 = fedcb dcba cba98 a:55 l b:4 a:4 9:4
 
 ;wind chimes
-@4 = { f edcba dcba9 cba98 a987 l 8:2 7:2 6:2
- }
+@4 = f edcba dcba9 cba98 a987 l 8:2 7:2 6:2
 
 ;fade in
 @9 = 0a=40 f=30 e:40 d:40 c:40

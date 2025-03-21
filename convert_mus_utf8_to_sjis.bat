@@ -2,7 +2,7 @@
 
 set src=utf8
 set dst=sjis
-set filter="*.mus"
+set filter="*.mus" "*.mml"
 
 rem set SakuraPath=F:\SAKURAEDITOR\
 

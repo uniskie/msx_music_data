@@ -1,6 +1,6 @@
-#title "女神転生Ⅱ - OMEGA 聖戦 - non-h.env"
+﻿#title "女神転生Ⅱ - OMEGA 聖戦 - non-h.env"
 #bsave-name "DDS2NOMG"
-#programmer "uniskie 2024/09/18"
+#programmer "uniskie"
 
 #repeat-mode 1	; メモリ節約 端数エラーあり
 ;#repeat-mode 2	; メモリ節約 端数エラーなし

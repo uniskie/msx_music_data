@@ -1,5 +1,5 @@
-#TITLE "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std]"
-#PROGRAMMER "uniskie 2014/10/1"
+﻿#TITLE "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std]"
+#PROGRAMMER "uniskie"
 #BSAVE-NAME "SOMD1_01"
 
 #repeat-mode 1	; メモリ節約 端数エラーあり
