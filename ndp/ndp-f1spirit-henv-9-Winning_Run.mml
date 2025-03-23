@@ -1,0 +1,112 @@
+﻿;********************************************************
+#title "F1SPIRIT (H.ENV) [Winning Run] (RANKING GOAL)"
+;********************************************************
+#bsave-name "F1SP-9"
+#programmer "uniskie"
+
+#repeat-mode 1	; メモリ節約 端数エラーあり
+;#repeat-mode 2	; メモリ節約 端数エラーなし
+
+;#tempo 150 ;端数アリ
+#timebase 24
+
+@m0 = 26,4,3,8 2,4
+@m1 = 0,3,4,0, 1,3
+
+@0 = fed edc dcb L cbbc baab
+@1 = f ee L dd cc bb cc 
+@3 = fbc L a:2 9:2 8:2
+@6 = f c:5 L b:3 a:3
+@7 = *1 s10 rrrrrrr *0 r
+@8 = *1 s14 rrrrr *0 r
+
+@n12 = 0 -12 0
+
+123r l16
+
+;*** Sequence ***
+
+;12 o4 v12 @0 @r10,2 @m0
+;1 e4 g4 a4 b8.>e<  
+;2 <b4> e4 e4 e8.b< 
+;1 o4 v9 @3
+;2 o3 v9 @3
+;1 j1
+;12 [
+;1   [dede dded]8
+;2   [abab aaba]8
+;12 ]2
+;1 j2
+;1 o3 @6 v9\-1      @m-
+;2 o2 @6 v8\1  r32. @m-
+
+;(割り込み用)
+$sq11 = @m-@3v-5 dd>e<d d>e<d>e< d      v+5@1@m1
+$sq12 = @m-@3v-5 aa>b<a a>b<a>b< a      v+5@1@m1
+$sq21 = @m-@3v-5  d>e<d d>e<d>e< dd>e<d v+5@1@m1
+$sq22 = @m-@3v-5  a>b<a a>b<a>b< aa>b<a v+5@1@m1
+$sq31 = @m-@3v-5        d>e<d>e<        v+5@1@m1
+$sq32 = @m-@3v-5        a>b<a>b<        v+5@1@m1
+$sq41 = @m-@3v-5          e<d>e         v+5@1@m1
+$sq42 = @m-@3v-5          b<a>b         v+5@1@m1
+
+
+;**** Main ***
+
+12 o4 v14 @0 @r10,2 @m0
+1 e4 g4 a4 b8.>e<  
+2 <b4> e4 e4 e8.b< 
+12 j1
+12 @1
+12 [
+
+; ブラスのみ
+;1   [r2 rd8. er8. r2
+;1   /r4 b8.e]2
+;1    >er8.e4<
+;2   [r2 ra8. br8. r2 
+;2   /r4>e8.<b]2>
+;2    br8. b4
+
+; ブラス+シーケンス割り込み
+1   [$sq11:d8. e$sq21:
+1   /$sq31:b8. e]2
+1    >e-_e$sq41: e8.&e_c<
+2   [$sq12: a8. b$sq22 
+2   /$sq32:>e8.<b]2
+2    >b-_b$sq42: b8.&b_g<
+
+12 ]2
+1 j2
+1 o1 @6 v14        @m-
+2 o2 @6 v10\1  r32. @m-
+
+;**** Base ***
+
+;3 o3 v15 @6 
+3 o3 @7m+ @q1 \-1 ;H.ENV
+3 e4 d4 c4< b8.e 
+3 @8 k12 ;H.ENV
+3 @n12
+123 @l
+123  e8>e<e e>g<ga8 r8.^ 8g8
+123  a8r8^ 8g8 a8rg8 re8
+
+;**** Rhythm ***
+
+@R:B = *3 :980 N0 v15 ;/ *1 :2000 V12
+;@R:B = *3 :980 N0 S0 M700 / *1 :2000 V10 ; HENVベースだとM周期異常が発生
+@R:S = *3 :520 N1 v15 / *2 N0 v11 / N1 V10
+;@R:S = *3 :520 N1 S0 M700 / *2 N0 V11 / N1 V10 ; HENVベースだとM周期異常が発生
+@R:H = *2 :20 N0 V12
+@R:O = *2 :21 N0 V12 / V11 / v10
+;@R:K = *3 :450 N8  V15 / *1 :500 V14 / :550 V13
+;@R:M = *3 :500 N10 V15 / *1 :630 V14 / :760 V13
+;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
+
+r l16 v15 @c2
+
+r r4 b8rr b8b8 ssss
+r @l
+r bhbb shbb bbbh shbb
+r bhsh shbr sshb sbsb

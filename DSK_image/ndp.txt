@@ -1,44 +1,68 @@
 naruto2413氏製作のMSX PSG用音源ドライバ ndpを使用したデータ集です。
 
-play.basが簡易プレイヤーです。
-NDP.BINは許諾を得て同梱しているものです。
+- `play.bas` ... 簡易プレイヤーです。  
 
-KENJAISI.NDP - "CASIO 賢者の石 メドレー"
-DDS2LABY.NDP - "女神転生Ⅱ Labyrinth 午前２時の迷宮"
-DDS2OMEG.NDP - "女神転生Ⅱ - OMEGA 聖戦 -" [ndp-dds2-omega.kss]
-DRSP-AR1.NDP - "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
-DRSP-OMK.NDP - "Dragon Spirit -OMAKE-  (like a FC ver.)"
-DRSP-SEA.NDP - "Dragon Spirit -Sea- (like FC ver.)"
-DRSP-ZAW.NDP - "Dragon Spirit -Zawel- (like FC ver.)"
-DSEED-1.NDP  - "DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8)"
-DSEED-1B.NDP - "DANGEROUS SEED(MD) Triple-Eye (Stage 1&9 BOSS)"
-DSEED-2.NDP  - "DANGEROUS SEED(MD) Jupiter (Stage 6&10)"
-DSEED-5.NDP  - "DANGEROUS SEED(MD) 2nd TUBE (STAGE 2&5)"
-F1SP-1.NDP   - "F1SPIRIT (H.ENV arr.) [F-1 Shuffle] (TITLE)"
-F1SP-2.NDP   - "F1SPIRIT (H.ENV arr.) [Starting Grid] (START)"
-F1SP-3.NDP   - "F1SPIRIT (H.ENV arr.) [D/G] (MACHINE SELECT)"
-F1SP-4.NDP   - "F1SPIRIT (H.ENV arr.) [Hot Summer Riding] (STOCK CAR RACE)"
-F1SP-5.NDP   - "F1SPIRIT (H.ENV arr.) [Random Approach] (RALLY RACE)"
-F1SP-6.NDP   - "F1SPIRIT (H.ENV arr.) [Next] (Retire)"
-F1SP_1.NDP   - "F1SPIRIT (Standard PSG) [F-1 Shuffle] (TITLE)"
-F1SP_2.NDP   - "F1SPIRIT (Standard PSG) [Starting Grid] (START)"
-F1SP_3.NDP   - "F1SPIRIT (Standard PSG) [D/G] (MACHINE SELECT)"
-F1SP_4.NDP   - "F1SPIRIT (Standard PSG) [Hot Summer Riding] (STOCK CAR RACE)"
-F1SP_5.NDP   - "F1SPIRIT (Standard PSG) [Random Approach] (RALLY RACE)"
-F1SP_6.NDP   - "F1SPIRIT (Standard PSG) [Next] (Retire)"
-GALIO-02.NDP - "MAZE of GALIOUS [START] ~ [CASTLE] henv-base"
-GALIOH02.NDP - "MAZE of GALIOUS [START] ~ [CASTLE] normal-base"
-GRAII-7.NDP  - "GRADIUS II AC - Synthetic Life - [NDP Arrange]"
-GRAII-16.NDP - "GRADIUS II AC - Shoot & Shoot - [NDP Arrange]"
-PAROCRIS.NDP - "PARODIUS 中ボス - クライシス第４楽章"
-SALA_M01.NDP - "SALAMANDER [ POWER OF ANGER ]"
-SALA_M02.NDP - "SALAMANDER [ POWER OF ANGER ] (no use H.ENV)"
-SALA_O01.NDP - "SALAMANDER [ POWER OF ANGER ] (test - main: H.ENV)"
-SALA_P01.NDP - "SALAMANDER [ FLY HIGH ]"
-SALA_P02.NDP - "SALAMANDER [ FLY HIGH ] (No H.Env)"
-SOMD1-01.NDP - "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV]"
-SOMD1_01.NDP - "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std]"
-VANILLA.NDP  - "ヴァ〇ニラの求人 NDP祭り"
+- KENJAISI.NDP - "CASIO 賢者の石 メドレー"
+- KENJAISE.NDP - "CASIO 賢者の石 メドレー(SE付き)"
+- DDS2LABY.NDP - "女神転生Ⅱ Labyrinth 午前２時の迷宮 (H.ENV)"
+- DDS2OMEG.NDP - "女神転生Ⅱ - OMEGA 聖戦 - (H.ENV)"
+- DDS2NLAB.NDP - "女神転生Ⅱ Labyrinth 午前２時の迷宮 (no-H.ENV)"
+- DDS2NOME.NDP - "女神転生Ⅱ - OMEGA 聖戦 - (no-H.ENV)"
+- DRSP-AR1.NDP - "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
+- DRSP-OMK.NDP - "Dragon Spirit -OMAKE-  (like a FC ver.)"
+- DRSP-SEA.NDP - "Dragon Spirit -Sea- (like FC ver.)"
+- DRSP-ZAW.NDP - "Dragon Spirit -Zawel- (like FC ver.)"
+- DSEED-1.NDP  - "DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8)"
+- DSEED-1B.NDP - "DANGEROUS SEED(MD) Triple-Eye (Stage 1&9 BOSS)"
+- DSEED-2.NDP  - "DANGEROUS SEED(MD) Jupiter (Stage 6&10)"
+- DSEED-5.NDP  - "DANGEROUS SEED(MD) 2nd TUBE (STAGE 2&5)"
+- F1SP-1.NDP   - "F1SPIRIT (H.ENV) [F-1 Shuffle] (TITLE)"
+- F1SP-2.NDP   - "F1SPIRIT (H.ENV) [Starting Grid] (START)"
+- F1SP-3.NDP   - "F1SPIRIT (H.ENV) [D/G] (MACHINE SELECT)"
+- F1SP-4.NDP   - "F1SPIRIT (H.ENV) [Hot Summer Riding] (STOCK CAR RACE)"
+- F1SP-5.NDP   - "F1SPIRIT (H.ENV) [Random Approach] (RALLY RACE)"
+- F1SP-6.NDP   - "F1SPIRIT (H.ENV) [Next] (Retire)"
+- F1SP-8.NDP   - "F1SPIRIT (H.ENV) [Vanishing Heat] (ENDURANCE RACE)"
+- F1SP-9.NDP   - "F1SPIRIT (H.ENV) [Winning Run] (RANKING GOAL)"
+- F1SP_1.NDP   - "F1SPIRIT  [F-1 Shuffle] (TITLE)"
+- F1SP_2.NDP   - "F1SPIRIT  [Starting Grid] (START)"
+- F1SP_3.NDP   - "F1SPIRIT  [D/G] (MACHINE SELECT)"
+- F1SP_4.NDP   - "F1SPIRIT  [Hot Summer Riding] (STOCK CAR RACE)"
+- F1SP_5.NDP   - "F1SPIRIT  [Random Approach] (RALLY RACE)"
+- F1SP_6.NDP   - "F1SPIRIT  [Next] (Retire)"
+- F1SP_8.NDP   - "F1SPIRIT  [Vanishing Heat] (ENDURANCE RACE)"
+- F1SP_9.NDP   - "F1SPIRIT  [Winning Run] (RANKING GOAL)"
+- GALIO-02.NDP - "MAZE of GALIOUS [START] ~ [CASTLE] henv-base"
+- GALIOH02.NDP - "MAZE of GALIOUS [START] ~ [CASTLE] normal-base"
+- GRAII-7.NDP  - "GRADIUS II AC - Synthetic Life - [NDP Arrange]"
+- GRAII-16.NDP - "GRADIUS II AC - Shoot & Shoot - [NDP Arrange]"
+- PAROCRIS.NDP - "PARODIUS 中ボス - クライシス第４楽章"
+- SALA_M01.NDP - "SALAMANDER [ POWER OF ANGER ] (H.ENV)"
+- SALA_M02.NDP - "SALAMANDER [ POWER OF ANGER ]"
+- SALA_O01.NDP - "SALAMANDER [ POWER OF ANGER ] (鼻歌 with H.ENV)"
+- SALA_P01.NDP - "SALAMANDER [ FLY HIGH ] (H.ENV)"
+- SALA_P02.NDP - "SALAMANDER [ FLY HIGH ]"
+- SOMD1-01.NDP - "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON (H.ENV)"
+- SOMD1_01.NDP - "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON"
+- VANILLA.NDP  - "ヴァ〇ニラの求人 NDP祭り"
 
--- copyrights --
-NDP (PSG Driver for MSX) version 0.9.64     Programmed by naruto2413
+## H.ENV が、タイトルについているデータ
+
+チャンネルミュートの時にハードウェアエンベロープの波形がそのまま出力されることを利用して、
+矩形波以外の波形（三角波・鋸波）を発声させているデータです。
+
+ハードウェアエンベロープは振幅（音量）が一定ですが、
+ミュートを解除して音程レジスタに分周比0を指定すると出力が半減することを利用して2段階の音量をつけています。
+
+ごく一部、互換性のない機種があります。
+
+### 互換性のない機種
+
+- CASIO MX-101 ... ミュート時波形出力、TONE0での減衰ともに未対応
+- MSX0Stack ... ミュート時波形出力、TONE0での減衰が不完全
+
+## 謝辞・ライセンス
+
+NDP (PSG Driver for MSX) - by naruto2413
+
+NDP.BINは許諾を得て同梱しているものです。  

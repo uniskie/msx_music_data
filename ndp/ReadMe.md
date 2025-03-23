@@ -11,7 +11,7 @@
   例） ハードウェアエンベロープの音程制御、アルペジオ展開、セルフエコー
 
 
-> NDP (PSG Driver for MSX) version 0.9.64     Programmed by naruto2413  
+> NDP (PSG Driver for MSX) (C) naruto2413  
 > NDP.BINは許諾を得て同梱しているものです。
 
 
@@ -90,6 +90,10 @@ Windows10以降、PowerShell2.0が入っている環境であれば使えると�
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/ndp-m3disp.zip
 
 - "CASIO MSXソフト 「賢者の石」メドレー"  
+  [ndp-kenja_no_ishi_split_se.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-kenja_no_ishi_split_se.kss
+
+- "CASIO MSXソフト 「賢者の石」メドレー (SE挿入版)"  
   [ndp-kenja_no_ishi.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-kenja_no_ishi.kss
 
@@ -109,12 +113,21 @@ Windows10以降、PowerShell2.0が入っている環境であれば使えると�
   [ndp-dangrous_seed_5.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dangrous_seed_5.kss
 
-- "女神転生Ⅱ Labyrinth 午前２時の迷宮"  
+- "女神転生Ⅱ (H.ENV) Labyrinth 午前２時の迷宮"  
   [ndp-dds2-Labyrinth.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dds2-Labyrinth.kss
 
-- "女神転生Ⅱ - OMEGA 聖戦 -" [ndp-dds2-omega.kss]  
+- "女神転生Ⅱ (H.ENV) - OMEGA 聖戦 -"  
+  [ndp-dds2-omega.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dds2-omega.kss
+
+- "女神転生Ⅱ (STANDARD) Labyrinth 午前２時の迷宮"  
+  [ndp-dds2-Labyrinth-n.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dds2-Labyrinth-n.kss
+
+- "女神転生Ⅱ (STANDARD) - OMEGA 聖戦 -"  
+  [ndp-dds2-omega-n.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dds2-omega-n.kss
 
 - "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"  
   [ndp-dragon-spirit-area1-The_Paleozoic_Era.kss]  
@@ -132,59 +145,75 @@ Windows10以降、PowerShell2.0が入っている環境であれば使えると�
   [ndp-dragon-spirit-zawel.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dragon-spirit-zawel.kss
 
-- "F1SPIRIT (H.ENV arr.) [F-1 Shuffle] (TITLE)"  
+- "F1SPIRIT (H.ENV) [F-1 Shuffle] (TITLE)"  
   [ndp-f1spirit-henv-1-F1_Shuffle.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-1-F1_Shuffle.kss
 
-- "F1SPIRIT (H.ENV arr.) [Starting Grid] (START)"  
+- "F1SPIRIT (H.ENV) [Starting Grid] (START)"  
   [ndp-f1spirit-henv-2-starting_grid.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-2-starting_grid.kss
 
-- "F1SPIRIT (H.ENV arr.) [D/G] (MACHINE SELECT)"  
+- "F1SPIRIT (H.ENV) [D/G] (MACHINE SELECT)"  
   [ndp-f1spirit-henv-3-D_G.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-3-D_G.kss
 
-- "F1SPIRIT (H.ENV arr.) [Hot Summer Riding] (STOCK CAR RACE)"  
+- "F1SPIRIT (H.ENV) [Hot Summer Riding] (STOCK CAR RACE)"  
   [ndp-f1spirit-henv-4-hot_summer_riding.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-4-hot_summer_riding.kss
 
-- "F1SPIRIT (H.ENV arr.) [Random Approach] (RALLY RACE)"  
+- "F1SPIRIT (H.ENV) [Random Approach] (RALLY RACE)"  
   [ndp-f1spirit-henv-5-random-approach.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-5-random-approach.kss
 
-- "F1SPIRIT (H.ENV arr.) [Next] (Retire)"  
+- "F1SPIRIT (H.ENV) [Next] (Retire)"  
   [ndp-f1spirit-henv-6-next.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-6-next.kss
 
-- "F1SPIRIT (Standard PSG) [F-1 Shuffle] (TITLE)"  
-  [ndp-f1spirit-std-1-F1_Shuffle.kss]  
-  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-1-F1_Shuffle.kss
+- "F1SPIRIT (H.ENV) [Vanishing Heat] (ENDURANCE RACE)"  
+  [ndp-f1spirit-henv-8-Vanishing_Heat.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-8-Vanishing_Heat.kss
 
-- "F1SPIRIT (Standard PSG) [Starting Grid] (START)"  
-  [ndp-f1spirit-std-2-starting_grid.kss]  
-  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-2-starting_grid.kss
+- "F1SPIRIT (H.ENV) [Winning Run] (RANKING GOAL)"  
+  [ndp-f1spirit-henv-9-Winning_Run.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-9-Winning_Run.kss
 
-- "F1SPIRIT (Standard PSG) [D/G] (MACHINE SELECT)"  
-  [ndp-f1spirit-std-3-D_G.kss]  
-  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-3-D_G.kss
+- "F1SPIRIT (STANDARD) [F-1 Shuffle] (TITLE)"  
+  [ndp-f1spirit-std-F1_Shuffle.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-F1_Shuffle.kss
 
-- "F1SPIRIT (Standard PSG) [Hot Summer Riding] (STOCK CAR RACE)"  
-  [ndp-f1spirit-std-4-hot_summer_riding.kss]  
-  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-4-hot_summer_riding.kss
+- "F1SPIRIT (STANDARD) [Starting Grid] (START)"  
+  [ndp-f1spirit-std-starting_grid.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-starting_grid.kss
 
-- "F1SPIRIT (Standard PSG) [Random Approach] (RALLY RACE)"  
-  [ndp-f1spirit-std-5-random-approach.kss]  
-  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-5-random-approach.kss
+- "F1SPIRIT (STANDARD) [D/G] (MACHINE SELECT)"  
+  [ndp-f1spirit-std-D_G.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-D_G.kss
 
-- "F1SPIRIT (Standard PSG) [Next] (Retire)"  
-  [ndp-f1spirit-std-6-next.kss]  
-  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-6-next.kss
+- "F1SPIRIT (STANDARD) [Hot Summer Riding] (STOCK CAR RACE)"  
+  [ndp-f1spirit-std-hot_summer_riding.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-hot_summer_riding.kss
 
-- "MAZE of GALIOUS [START] ~ [CASTLE] henv-base"  
+- "F1SPIRIT (STANDARD) [Random Approach] (RALLY RACE)"  
+  [ndp-f1spirit-std-random-approach.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-random-approach.kss
+
+- "F1SPIRIT (STANDARD) [Next] (Retire)"  
+  [ndp-f1spirit-std-next.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-next.kss
+
+- "F1SPIRIT (STANDARD) [Vanishing Heat] (ENDURANCE RACE)"  
+  [ndp-f1spirit-std-Vanishing_Heat.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-Vanishing_Heat.kss
+
+- "F1SPIRIT (STANDARD) [Winning Run] (RANKING GOAL)"  
+  [ndp-f1spirit-std-Winning_Run.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-Winning_Run.kss
+
+- "MAZE of GALIOUS [START] ~ [CASTLE] (H.ENV)"  
   [ndp-galious-castle.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-galious-castle.kss
 
-- "MAZE of GALIOUS [START] ~ [CASTLE] normal-base"  
+- "MAZE of GALIOUS [START] ~ [CASTLE] (STANDARD)"  
   [ndp-galious-castle-nr.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-galious-castle-nr.kss
 
@@ -200,31 +229,31 @@ Windows10以降、PowerShell2.0が入っている環境であれば使えると�
   [ndp-paro-crisis.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-paro-crisis.kss
 
-- "SALAMANDER [ POWER OF ANGER ]"  
+- "SALAMANDER [ POWER OF ANGER ] (H.ENV)"  
   [ndp-saramander-1-power_of_anger.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-saramander-1-power_of_anger.kss
 
-- "SALAMANDER [ POWER OF ANGER ] (no use H.ENV)"  
+- "SALAMANDER [ POWER OF ANGER ] (STANDRD)"  
   [ndp-saramander-1-power_of_anger-nh.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-saramander-1-power_of_anger-nh.kss
 
-- "SALAMANDER [ POWER OF ANGER ] (test - main: H.ENV)"  
+- "SALAMANDER [ POWER OF ANGER ] (鼻歌 with H.ENV)"  
   [ndp-saramander-1-power_of_anger-another.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-saramander-1-power_of_anger-another.kss
 
-- "SALAMANDER [ FLY HIGH ]"  
+- "SALAMANDER [ FLY HIGH ] (H.ENV)"  
   [ndp-saramander-2-fly_high.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-saramander-2-fly_high.kss
 
-- "SALAMANDER [ FLY HIGH ] (No H.Env)"  
+- "SALAMANDER [ FLY HIGH ] (STANDARD)"  
   [ndp-saramander-2-fly_high-nr.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-saramander-2-fly_high-nr.kss
 
-- "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV]"  
+- "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON (H.ENV)"  
   [ndp-sorcerian_md-gray_dungeon-dungeon.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-sorcerian_md-gray_dungeon-dungeon.kss
 
-- "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std]"  
+- "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON (STANDARD)"  
   [ndp-sorcerian_md-gray_dungeon-dungeon-std.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-sorcerian_md-gray_dungeon-dungeon-std.kss
 
@@ -232,3 +261,18 @@ Windows10以降、PowerShell2.0が入っている環境であれば使えると�
   [ndp-vanilla.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-vanilla.kss
 
+
+## H.ENV が、タイトルについているデータ
+
+チャンネルミュートの時にハードウェアエンベロープの波形がそのまま出力されることを利用して、
+矩形波以外の波形（三角波・鋸波）を発声させているデータです。
+
+ハードウェアエンベロープは振幅（音量）が一定ですが、
+ミュートを解除して音程レジスタに分周比0を指定すると出力が半減することを利用して2段階の音量をつけています。
+
+ごく一部、互換性のない機種があります。
+
+### 互換性のない機種
+
+- CASIO MX-101 ... ミュート時波形出力、TONE0での減衰ともに未対応
+- MSX0Stack ... ミュート時波形出力、TONE0での減衰が不完全
