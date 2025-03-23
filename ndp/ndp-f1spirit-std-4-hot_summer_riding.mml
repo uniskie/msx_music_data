@@ -15,20 +15,24 @@
 ;@p1 = w3  [6 1 0_4 -1 0_4 ] L 2 1 0_2 -1 -2 0_3 ;これだと微妙
 
 ; bunbun
-@0 = b fe c dd b cc a, L bb 99 cc aa
+@0 = fe dcb dcb cba bbab, L aa9a ccbc bbab
 ; lead
 ;@1 = fedc edcb L c:4 b:4 
-@1 = f ed:2 c:2 dc:2 b:2 cb:2 a:2 L b:2 c:2 b:2 a:2
+;@1 = fed:2 c:2 dc:2 b:2 cb:2 a:2 L b:2 c:2 b:2 a:2
+@1 = c d e:2 d:2 c:2 dc:2 b:2 L c:2 b:2 a:2 b:2
 ; pyonpyon
-@2 = ef eb:2 a:2 9:2 eda:2 9:2 8:2 da9:2 8:4 7:5 8 6:6 5:7 6 4:8 3:9 2:10 1:11 L 0
+@2 = e feb:2 9 a:2 9:2 eda:2 9:2 8:2 da9:2 8:4 7:5 8 6:6 5:7 6 4:8 3:9 2:10 1:11 L 0
 ;base
-@6 = fbc:3 L b:2 a:3 9:3
-;tom
-@4 = *3 n0 fedcba *1 b:2 a:2 1=20 L 0
-@p9 = 0 0 L -24
-;HENV + TONE
-@15 = *1 s14 rrrrr *0 r 
-@14 = *1 s14 *0 r 
+@6 = fdc:3 L b:2 a:3 9:3
+
+;tom (@4@p4)
+@4 = *3 n1 f *2 n0 e n1 c *3 bcba *1 b:2 a:2 1=20 L 0
+@p4 = 20 0 0 -68 L -24
+
+;HENV + TONE (@15@p15@n15)
+@15 = *1 s14 rrrrrr *0 rrrrrrrrrrrr *1 r
+@p15= 0 0 0 0 0 0 0 0, 0 127_10
+@n15= 0 0 0 0 0 0 0 0, 95 
 
 @n0 = 12 0
 
@@ -38,37 +42,35 @@
 
 1 r1
 
-2 v15 o3 @4 @p9
+2 v15 o3 @4@p4
 2 r16 a+4.. g4 f4 *1
 2 @p-
 
 12 @L
 
 12 v13 @0 o4
-12 @r13,4 @rd1,18 @q1 @m-
+12 @r13,4 @rd1,18  @m-
 
-12 < @n0
+12 < @q1
 1  [a+4.> c2& c& c1<
 1   a+4.> c4. /d+1& d+4<]
 1              d+2< a+2.
 2  [f4. g2& g& g1
 2   f4. g4. /a+1& a+4]
-2            a+2 @n- f2.
-12 > @n-
+2         @c3a+2 f2.@c2
+12 >
 
 12 @1 @m1 @q1
-;2 v-
 
 1 [ef g>c4.< a+4. a4. g4 f4
 1  a4. g2& g& g1
 1  d+f g>c4.< a+4. a4. g4 f4
 1  a4. g2& g& g1]2
 2 [g1& g2.. g
-2  e1& e4 v+ c4 c+4 d4 v-
+2  e1& e4 @c3 c4 c+4 d4 @c2
 2  a+1& a+2..> c<
-2  d+1& d+4 v+ d+4 d4 c+4 v-
+2  d+1& d+4 @c3 d+4 d4 c+4 @c2
 2 ]2
-;2  v+ 
 
 12 @2,2 @m2 @n0 @d1,12
 1 gg rg rg rg ra a2.
@@ -76,19 +78,14 @@
 2 d+d+ rd+ rd+ rd+ rf f2.
 2 ff rf rf rf rg g2.
 
-2 v-
 12 @n- @d-
 12 @1 @m1
 
-1 [>c1 c4< a>c4 e4.
-1  d2< b2 g2 ga b>d
-1  c1 c4< g>c4 e4.
-1 /d2< a2> e2< b2
+1 [>c1 c4< a>c4 e4. d2< b2 g2 ga b>d
+1  c1 c4< g>c4 e4. /d2< a2> e2< b2
 1 ]2
-2 [a1 a4 ea4> c4.<
-2  b2 g2 d2 ef gb
-2  g1 g4 eg4> c4.
-2 /<a2 f+2 b2 g+2]2
+2 [a1 a4 ea4> c4.<  b2 g2 d2 ef gb
+2  g1 g4 eg4> c4. /<a2 f+2 b2 g+2]2
 
 1  f+2 d2< a2 a>d f+a
 1 @md34 g+1 e1 @md44
@@ -97,30 +94,47 @@
 2 @md34 e1< b1> @md44
 2 g+1& g+2< @md28
 
-12 @0 @n0 
-12 <
+12 @0 <
 1 g2 
 2 e2  
 12 >
 
-2 v+
-
 ;**** base ****
 
-3 o2 v14 @6 @q1 @r13,3 @rd0
-;3 o2 s14,6 @q1 m+
+;-- Normal --
+3 o1 v14 @r13,3 @rd0 \2 @q1
+$base0 = @6
+$base1 = ;
+$base2 = ;
+$bz0=;
+$bz1=;
+$bz2=;
+$bz3=;
+$bz4=;
+
+;-- H.ENV --
+;3 o2 @q1
+;$base0 = @15m+@p15@n15 @c3 ;H.ENV+tone
+;$base1 = s14,3 @p-@n- ;H.ENV
+;$base2 = ;
+;$bz0=m\-1 ;HENV限界：マシな方に寄せる
+;$bz1=m\-2 ;HENV限界：マシな方に寄せる
+;$bz2=m\-1 ;HENV限界：マシな方に寄せる
+;$bz3=m\-2 ;HENV限界：マシな方に寄せる
+;$bz4=m\0  ;HENV限界：マシな方に寄せる
 
 3 r1
 
 3 @L j1
 
 3 [
-;3  @15 ;H.ENV+tone
+3  $base0 
 3  a+4.> c2& c& c1<
 3  a+4.> c4. d+2.<
-;3  s14,7 ;@14 ;H.ENV+tone
+3  $base1
 3  gg+ aa+
 3 ]2 >
+3  $base2
 
 3 j2
 
@@ -134,20 +148,20 @@
 3 gg g>g r<g rg r>g< g4> fg cd
 
 3 j4
-;3 m\-1 ;HENV限界：マシな方に寄せる
+3 $bz0
 3 [[<aa> c<a> ec de]2
 3  [<b>]16
 3  [c]16
 3 /
 3  [d]8
-;3  m\-2 ;HENV限界：マシな方に寄せる
+3  $bz1
 3  [e]8
-;3  m\-1 ;HENV限界：マシな方に寄せる
+3  $bz2
 3 ]2 j5
 3 [d]16
-;3  m\-2 ;HENV限界：マシな方に寄せる
+3 $bz3
 3 [e]28 <g2
-;3  m\0	;HENV限界：マシな方に寄せる
+3 $bz4
 3 >
 
 ;**** drum

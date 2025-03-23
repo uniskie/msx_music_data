@@ -1,7 +1,7 @@
 ﻿;********************************************************
 #title "F1SPIRIT (Standard PSG) [Vanishing Heat] (ENDURANCE RACE)"
 ;********************************************************
-#bsave-name "F1SP_8"
+#bsave-name "F1SP_7"
 #programmer "uniskie"
 
 #repeat-mode 1	; メモリ節約 端数エラーあり
@@ -11,79 +11,69 @@
 #timebase 32
 
 @m0 = 26,4,3,8 2,4
-@m1 = 20,2,2,8 1,3
+@m1 = 26,4,2,8 1,3
 
 ; poo
 @0 = f dec:2 cdb:2 b9a L c:2 b:3 d:2
 ; puri
-@1 = fe:2 d:2 c:3 b:3 a:4 9:4 8:5 7:6 0=48
+@1 = fe:2 dedc b:3 a:4 9:4 8:5 7:6 0=48
 
 @n7 = -7 0
 @n12 = 0 -12 0
 ;base
 @6 = fdc b:5 L a:5 b:5
+@7 = *1 s14 r *0 r ;H.ENV
 
 123r l16
 
 ;**** main
 
-1 v13 o4 @m0
-1 @rd1,15 @q1
-1 @L
-1 @0 @q1 @r13,5
-1 [f+4^16 d+eb4.. b>c+
-1  v+1ddre r/f+re rc+r<f+4^16v-1]2
-1            arf+2^16v-1
-1 j1
-1 [drc+<b abr>e reef f+<a8.
-1 /r>v+1ddr ddrd drdd rdddv-1]2
-1 @1 @r11,2 j2
-1 l32
-1 v-1<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
-1 v+1 c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+c+ef+e<
-1 l16
-1 @0 @q0 @r13,4 j3
-;1 v+1
-1 [r8d+8. erf+ rg+4..
-1  r4 a+br>c+ r<gra+ r>erd+4.
-1  c+8.< b>c+rd+ r<b8.
-1  b>c+rd+ r<b8.> f+1<]2
-;1 v-1
+12 v14 o4 @m0
+12 @rd1,15 @q1
+12 @L
+12 @0 @q1 @r13,5
+1  [f+4^16 d+eb4.. b>c+
+1   v+1ddre r/f+re rc+r<f+4^16v-1]2
+1             arf+2^16v-1
+2  [<f+4^16 d+eb4.. b>c+
+2   f+f+rg+ r/arg+ rerc+4^16]2
+2             >dr<b4 a+4^16
+1  j1
+1  [drc+<b abr>e reef f+<a8.
+1  /r>v+1ddr ddrd drdd rdddv-1]2
+2  @n7
+2  [arg+f+ ef+rb rbb>c c+<e8.
+2  /raar aara araa rddd]2
+2  @n-
+12 @1 @r11,2 j2
+2  r v-2 \1 ;delay
+12 l32
+12 v-2<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
+12 v+1 c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+c+ef+e<
+12 v+1
+12 l16
+2  v+2 \0
 
-;*** sub
-
-2 v13 o4 @m0
-2 @rd1,14 @q1
-2 @L
-2 @0 @m0 @q1 @r13,5
-2 [<f+4^16 d+eb4.. b>c+
-2  f+f+rg+ r/arg+ rerc+4^16]2
-2            >dr<b4 a+4^16
-2 @n7
-2 [arg+f+ ef+rb rbb>c c+<e8.
-2 /raar aara araa rddd]2
-2 @n-
-2 @1 @r11,2  \1
-2 r ;delay
-2 l32 v-2
-2 v-1<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
-2 v+1 c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+c+ef+e<
-2 l16 v+2
-2 @0 @m1 @q0 @r13,4 \0
-;2 v+1
-2 [r ;end delay
-2   <d+8. erf+ rg+4.. @n7
-2  r4 a+bra+ rd+rg r>c+r<b4.
-2  a+8. g+a+rb rg+8.
-2  g+a+rb rg+8.> c+4..< b a+2> @n-
-2 /r
-2 ]2
-;2 v-1
+12 @0 @q0 @r13,4 @m1 j3
+12 [
+1   r8d+8. erf+ rg+4..
+2   v-1
+2   r<d+8. erf+ rg+4..
+1   r4a+br     >c+ r<gra+ r>erd+4.
+2   r4a+br v+1 a+ rd+rg r>c+r<b4.
+1   c+8.< b>c+rd+ r<b8.
+2   a+8.  g+a+rb rg+8.
+1   b>c+rd+ r<b8.> f+1<
+2   g+a+rb  rg+8.> c+4..< b a+2
+2  /r
+12 @n12
+12 ]2
+12 @n-
 
 ;**** base ****
 
-3 o3 v15 @6 @r12,2 @rd- \-1 @n12
-;3 o3 s10,5 @q1
+3 o3 v15 @6 @r12,2 \-1 @n12
+;3 o3 @7m+ @q1 ;H.ENV
 
 3 @L 
 3 [<bb>d+<b> e<b>f+e8 eg+e aebd8

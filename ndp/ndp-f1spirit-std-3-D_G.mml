@@ -17,7 +17,8 @@
 @0 = f dec:2 cdb:2 b9a L c:2 b:3 d:2
 @1 = cfdb db9 L b:2 a:2 9:2
 @2 = fed c b:2 a:3 9:4 8:5 7:6 0=48
-@6 = fc:3 L b:2 a:3 9:3
+@6 = fc:2 L b:2 a:3 9:3
+@7 = s10 c:2 L b:2 a:3 9:3
 
 ;**** main
 
@@ -76,13 +77,13 @@
 
 ;**** base ****
 
-3 o2 v15 @6 @q2 @r12,5 @rd0
-;3 o2 s10,4 m+ @q1 @r-
+3 o2 v15 @6 @q2 @r12,5
+;3 o2 @7 m+ @r11,2 @q2 ;H.ENV
 3 @L
 3 l16
 3 [
-3  [eee8> de<ee ree8> de<ab
-3  eee8> de<ee /ree8> e24d+24d24<ba]2
+3  [eee8 >de<ee ree8 >de<ab
+3  eee8 >de<ee /ree8 >e24d+24d24<ba]2
 3               >c+<bef+ d8de
 3 ]
 

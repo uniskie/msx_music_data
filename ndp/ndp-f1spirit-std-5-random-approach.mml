@@ -1,5 +1,5 @@
 ﻿;********************************************************
-#title "F1SPIRIT (Standard PSG) [Random Approach] (RALLY RACE)"
+#title "F2SPIRIT (Standard PSG) [Random Approach] (RALLY RACE)"
 ;********************************************************
 #bsave-name "F1SP_5"
 #programmer "uniskie"
@@ -7,32 +7,28 @@
 #repeat-mode 1	; メモリ節約 端数エラーあり
 ;#repeat-mode 2	; メモリ節約 端数エラーなし
 
-;#tempo 224 ;端数アリ
-#timebase 16
+;#tempo 112 ;端数アリ
+#timebase 32
 
 
 @m0 = 32,4,1,8
-@m1 = 18,3,2,2
 
-;@p1 = w3  [6 1 0_4 -1 0_4 ] L 2 1 0_2 -1 -2 0_3 ;これだと微妙
-
-; pon
-@0 = bf edc dcb c L b:3 a:3 c:3
+; bunbun
+@0 = f dcd cdc  L cbbc baab
+;@0 = fdd cc bb cc aa, L bb aaaa cc
 ; too
 @1 = bfedc edcb L a:3 9:3 b:3
 ; pin
 @2 = bf eb:2 a:3 L b:2 a:2
 ;base
-@6 = fbc:3 L b:2 a:3 9:3
-;@6 = s12r cba 9:4 8:8 L 7:5 8:5  
+@6 = fcbbaa L b:3 a:3
 ;tom
 @4 = fedcba9876:2 5:2 4:2 3:2 2:2 1:3 L0
-@p2 = 64 L -24
+@p2 = 64 L -48
 
 @n12 = -12 0
-@n2  = 12 -12 0
 
-123 l8 
+123 l16 
 
 ;**** main
 
@@ -41,38 +37,35 @@
 
 12 @L
 
-12  l8 @q1 @0 @m1
+12  l16 @q1 @0 @m- 
 
-1 [
-1  @n2 [br ra2 /g+ ra2..]2
-1  @n-@1       >c+ rc+ <b4 a4 v-1@q0a+16b16>c16c+16 v+1@q1@0
-1  @n2 [dr rc2 /<b> rc c2.]2
-1  @n-@1         e  re d4 c4< / b4 @0
-1 ]2
-1 @1@q0v-1 a16b16>c16<a16 v+1@q1
+1  [
+1   [br ra4 /g+ ra4..]2
+1   @1       >c+ rc+ <b8 a8 v-1@q0a+32b32>c32c+32 v+1@q1@0
+1   [dr rc4 /<b> rc c4.]2
+1   @1         e  re d8 c8< / b8 @0
+1  ]2
+1  @1@q0v-1 a32b32>c32<a32 v+1@q1
 
-2  @n2 [g+r rf+2 /e rf+2..]2
-2  @n-@1       \1>c+ rc+ <b4 a4 v-@q0a+16b16>c16c+16< v+\0@q1@0
-2  @n2 <[br ra2 /g ra a2.]2> \n-
-2  @n-@1         e re d4 c4 <b4> @0
-2  [@n2 g+r rf+2 /e rf+4. @n-@q0v-2<g+16a16b16>c16 <a16b16>c16<a16>v+2@q1]2
-2   @n-@1      \1>c+ rc+< b4 a4 v-@q0a+16b16>c16c+16< v+\0@q1@0
-2  [@n2 br ra2 /g ra a2.]2
-2   @n-@1       e re d4 c4 @q0v-1 <f16f+16a16f16> v+1@q1
+2  [g+r rf+4 /e rf+4..]2
+2  @1       \1>c+ rc+ <b8 a8 v-@q0a+32b32>c32c+32< v+\0@q1@0
+2  [br ra4 /g ra a4.]2 \n-
+2  @1         e re d8 c8 <b8> @0
+2  [g+r rf+4 /e rf+8. @q0v-2<g+32a32b32>c32 <a32b32>c32<a32>v+2@q1]2
+2   @1      \1>c+ rc+< b8 a8 v-@q0a+32b32>c32c+32< v+\0@q1@0
+2  [br ra4 /g ra a4.]2
+2   @1       e re d8 c8 @q0v-1 <f32f+32a32f32> v+1@q1
 
 1 j1
 12 [
-12  @1
-2   @n2
-1   b4.> d4. g4. d4.< b4 >d4<
-2   g4. b4. >d4.<  b4. g4 b4
-2   @n-
+12  @1 @m0
+1   b8.> d8. g8. d8.< b8 >d8<
+2   g8. b8. >d8.<  b8. g8 b8
 12  @0@q0
 12 /
 2   r v-1 \1
-12  [c<a> ce]2
-12  ae de ce <a>
-1               e
+12  [c<a> ce]2  ae de ce <a>
+1                           e
 2   v+1 \0
 12 ]2 j2
 2   r v-2 \1
@@ -80,21 +73,21 @@
 1                c 
 2   v+2
 
-12  ed eg ed4.<
+12  ed eg ed8.<
 12 @0 @q1 j3
-12 a<a4 b r>c rd
+12 a<a8 b r>c rd
 
 12 @1 @q4 
 1  @n12
 2  \0
-1  >e4 d4 cd4.<
-2  >c4< b4 ab4.
+1  >e8 d8 cd8.<
+2  >c8< b8 ab8.
 1  @n-
 
 12 @0 @q1
 2  \1
-12  e4. d4. <a4.>
-12  e4. d4 <b4>
+12  e8. d8. <a8.>
+12  e8. d8 <b8>
 
 12 @q2 
 12  c<a rb r>c rg
@@ -102,34 +95,28 @@
 12 @1 @q4 j4
 1  @n12
 2  \1
-1 >e4 d4 cd4.<
-2  e4 d4 cd4.
+1 >e8 d8 cd8.<
+2  e8 d8 cd8.
 1  @n-
 2  < \0
 
 12 @0 @q1
-1  e4. d4. <a4.>
-1  e4. dc <b>c
-2  <a4.> e4. a4.
-2  >c4.< ba ga
+1  e8. d8. <a8.>  e8. dc <b>c
+2  <a8.> e8. a8. >c8.< ba ga
 
 12 @1
-1 <a4 b>c2^8
-1 <b4> cg2^8
-2 f4 ga2^8
-2 g4 a>d2^8
+1  <a8 b>c4^16 <b8> cg4^16
+2   f8 ga4^16   g8 a>d4^16
 
 12 @2@q0 j5
-1 ra g+g rf+ fe
-1 rd+ dc+2^8
-2 re d+d rc+ c<b
-2 ra+ ag+2^8>
+1  ra g+g rf+ fe  rd+ dc+4^16
+2  re d+d rc+ c<b ra+ ag+4^16>
 
 
 ;**** base ****
 
 3 o2 v15 @6 q4 @r14,4 @rd0 \-1
-;3 o2 s10,3  @q1 
+;3 o2 s14,4 @q0
 
 3 @L 
 
@@ -140,10 +127,10 @@
 3 [ef+> c+<b ag+ f+e]3
 3 ef+ f+b ba ae
 3 [g+a aa aa aa]3
-3 g+a aa a+16b16>c16c+16 d16d+16e16f16
+3 g+a aa a+32b32>c32c+32 d32d+32e32f32
 3 [[fg gf gg fg]2
 3 /[ga ag a/a ga]2
-3  >d+16c+16 c16<a+16g+16g16]2
+3  >d+32c+32 c32<a+32g+32g32]2
 3 ef ff ff ff
 3 fg gg gg gg
 3 [ga aa aa aa
@@ -154,7 +141,7 @@
 3 ef ff fg af
 3 fg gg ga bg
 3 a a g+g rf+ fe
-3 rd+ dc+2^8
+3 rd+ dc+4^16
 
 
 ;**** drum
@@ -170,17 +157,17 @@
 ;@R:N = *3 :720 N12 V15 / *1 :870 V14 / :1020 V13
 
 r v15 @c2
-r l8 
+r l16 
 
 r @L
 
 r [[bh sh bb sh]3 bh s/b hb sb ]2
-r b16b16 hb16b16 bs16s16
+r b32b32 hb32b32 bs32s32
 r [[bh sh bb sh]3 bh s/b hb sb ]2
-r                      b16b16 hs16s16 b16b16s16s16
+r                      b32b32 hs32s32 b32b32s32s32
 r [[bh sh bb sh bh s/b hb sh]4
-r                    b16b16 hs16s16 b16b16s16s16]2
+r                    b32b32 hs32s32 b32b32s32s32]2
 r bh sh bb sh
 r bh sb hb sh
-r [bs ss]3 [s16]8
+r [bs ss]3 [s32s32]4
 

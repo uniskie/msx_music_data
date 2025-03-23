@@ -1,4 +1,4 @@
-﻿#title "Dragon Spirit -Sea- (like FC ver.)"
+#title "Dragon Spirit -Sea- (like FC ver.)"
 #bsave-name "DRSP-SEA"
 #programmer "uniskie"
 
@@ -45,9 +45,9 @@
 
 @n12 = -12 0
 
-$s = <@3v+6 @q0 @n12
-$t = >@2v-6 @q2 @n-
-;$s = s14,5@q0
+$s = <@3v+7 @q0 @n12
+$t = >@2v-7 @q2 @n-
+;$s = s14,9@q0
 ;$t = @2   @q2
 
 ;==== main ====
