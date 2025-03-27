@@ -65,7 +65,7 @@
 ;$d3= ;ユニゾン揺れ周期調整
 
 ; TRIANGLE BASE
-$base  = s10,3 m+ mk0 @q0
+$base  = s14,3 m+ mk0 @q0
 $base2 = s8,1 m+ mk0 @q1
 $base3 = s10 m+ mk0 @q1
 $d =\1  ;音程調整
