@@ -4,38 +4,39 @@
 #programmer "uniskie"
 #bsave-name "DSEED-1"
 
-;#repeat-mode 1	; メモリ節約 端数エラーあり
+#repeat-mode 1	; メモリ節約 端数エラーあり
 ;#repeat-mode 2	; メモリ節約 端数エラーなし
 
-#tempo 156
+;#tempo 156
+#time-base 23
 
 ;********************************
 ; melody
 ;********************************
 
-@m0 = 45,5,3,8 ,5,1
-@m1 = 58,5,1,8 ,5,1 
+@m0 = 45,4,3,8 ,5,1
+@m1 = 58,4,2,8 ,3,1 
 @m2 = 28,4,3,8 ,2,1 
-@0 = e f e d:4 c:8 l d:3 c:3
-@1 = fedc:3 edcb:7 l a:1 9:3 a:1 b:3
+@0 = e f e d:4 c:8 l d:3 c:3 b:3
+@1 = fedc:2 edcb:2 l a:1 9:2 a:1 b:2
 @2 = fe d c:10 l b:3 a:3 c:3
 @3 = fedcb A:2 9:3 8:3 7:4 6:4 5:4 4:4 3:4 2:5 1:5 L0
-@6 = f d:2 c:4 b:5 a:6 L 9
-;@6 = *0 s10 rrrr *1 d c b
+@6 = f d:2 c:3 b:4 L a
+;@7 = *1 s10 r:5 *0 r:3 h-
 @n0 = -1 0
 
-1 o3 v13
-1 @r13,20 @rd1,18
+1 o3 v14
+1 @r13,8 @rd1,18
 1 @l
 1 l8
 1  [ q8 @q3 j4
 1 @0 @m0 @n0
-1   e1 &e4b_>c8&c8c_d8&d8e8<g8 &g1& @n-
-1   g16.>@q0f32@q3g8f8d+8c8d8d+8f16.@q0b32@q3>
-1   c1& c8<a+8>c8<a+8f8c8c+8d+8
+1   e1 &e4v-b_>c8&c8c_d8&d8e8<v+g8 &g1& @n-
+1   g16.>v-@q0f32@q2g8f8d+8c8d8d+8f16.@q0b32@q3>
+1   v+c1& c8<a+8>c8<a+8f8c8c+8d+8
 ;  部分的に音の表情を変える
 1 @1 @n-
-1  q7f8d+8f16.@q0a32@q3a+8f8d+8a8e8 f+8e8f+8>c8d8<b8a8g8<@n0
+1  q7f8d+8f16.@q0a32@q2a+8f8d+8a8e8 f+8e8f+8>c8d8<b8a8g8<@n0
 1  ]2
 1 @0 @m1 q8 @n0 @q6
 1 >
@@ -50,10 +51,10 @@
 ; sequence
 ;********************************
 
-2 o4 v12 \-1
+2 o4 v11 \-1
 2 @r11,6 @rd1,10
 2 @l 
-2 @3 q4 @m-
+2 @3 q5 @m-
 2  l16 
 2  [<aa>eeaaeeaa>eeaa>ee aaee<aaee<aaeeaaee
 2   <gg>ddggddgg>ddgg>dd ggdd<ggdd<ggddggdd
@@ -62,29 +63,28 @@
 2   <g+g+g+g+d+d+d+d+g+g+g+g+d+d+a+a+
 2    bbbb eeee eebb>ee>cc<
 2  ]2 
-2  v-1
-2  > q4 j2
+2  > q5 j2
 2  [[g>c<cf]8 [g>c<cd+]8 [a>d<df+]8 / [a>c+<c+e]8
 2  ]2
 2  <
 2 @2 @m2 v+3 q7 j3
 2  a+4.b2&b8 >c4.c+2&c+8<
-2  v-2
+2  v-3
 
 ;********************************
 ; base
 ;********************************
 
 ;3 v13 o2 @6 @r9,4 \-1
-3 o2 s14,2 m+ mk12 \1
+3 o2 s10,1 mk12 m+ \1
 3 @l
 3 l16 @q1
-3  [m\0 [aaaa]8 m\-1[g+g+g+g+]8 m\-2[f+f+f+f+]8 m\-1 [dddd]3 
+3  [m\0 [aaaa]8 m\-1[g+g+g+g+]8 [f+f+f+f+]8 m\0[dddd]3 
 3   >d<ddd [eeee]2 eeee a>cde< m\0
 3  ]2 
-3  [[frff>m\-1frm\0<ff]4 [g+rg+g+>m\-1g+rm\0<g+g+]4 
-3   [eree>er<ee]4 / [araa>a</raa]3 
-3                                  aaa
+3  [[frff>fr<ff]4 [g+rg+g+>m\-1g+rm\0<g+g+]4 
+3   [eree>er<ee]4 / [araa/>a<raa]3 
+3                         >a<aaa
 3   aa>e<aa>e<aa 
 3 ]2 
 3  a+ra+ra+ra+r brbrbrbr >crcrcrcr c+rc+rc+c+c+c+<

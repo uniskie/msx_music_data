@@ -4,10 +4,11 @@
 #programmer "uniskie"
 #bsave-name "DSEED-2"
 
-;#repeat-mode 1	; メモリ節約 端数エラーあり
+#repeat-mode 1	; メモリ節約 端数エラーあり
 ;#repeat-mode 2	; メモリ節約 端数エラーなし
 
-#tempo 128
+;#tempo 128
+#time-base 28
 
 @m0 = 28,4,1,8 ,3,1
 @n0 = -1 0
