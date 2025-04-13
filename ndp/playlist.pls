@@ -2,9 +2,9 @@
 [playlist]
 File1=bouken_no_sho.kss::KSS, 0, おきのどくですが ぼうけんのしょ は きえてしまいました, 00:00:02,,,1
 File2=ndp-dangrous_seed_1.kss::KSS, 0, DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8) - Programmed by uniskie, 00:00:49, 00:00:00-,,2
-File3=ndp-dangrous_seed_1_boss.kss::KSS, 0, DANGEROUS SEED(MD) Triple-Eye (Stage 1&9 BOSS) - Programmed by uniskie, 00:00:38, 00:00:08-,,2
-File4=ndp-dangrous_seed_2.kss::KSS, 0, DANGEROUS SEED(MD) 2nd TUBE (STAGE 2&5) - Programmed by uniskie, 00:00:30, 00:00:00-,,2
-File5=ndp-dangrous_seed_5.kss::KSS, 0, DANGEROUS SEED(MD) Jupiter (Stage 6&10) - Programmed by uniskie, 00:00:24, 00:00:00-,,2
+File3=ndp-dangrous_seed_1_boss.kss::KSS, 0, DANGEROUS SEED(MD) Triple-Eye (Stage 1&9 BOSS) - Programmed by uniskie, 00:00:39, 00:00:08-,,2
+File4=ndp-dangrous_seed_2.kss::KSS, 0, DANGEROUS SEED(MD) 2nd TUBE (STAGE 2&5) - Programmed by uniskie, 00:00:29, 00:00:00-,,2
+File5=ndp-dangrous_seed_5.kss::KSS, 0, DANGEROUS SEED(MD) Jupiter (Stage 6&10) - Programmed by uniskie, 00:00:25, 00:00:00-,,2
 File6=ndp-dds2-Labyrinth.kss::KSS, 0, 女神転生Ⅱ Labyrinth 午前２時の迷宮 - Programmed by uniskie, 00:01:20, 00:00:00-,,2
 File7=ndp-dds2-Labyrinth-n.kss::KSS, 0, 女神転生Ⅱ Labyrinth 午前２時の迷宮 no-h.env - Programmed by uniskie, 00:01:20, 00:00:00-,,2
 File8=ndp-dds2-omega.kss::KSS, 0, 女神転生Ⅱ - OMEGA 聖戦 - - Programmed by uniskie, 00:01:52, 00:00:00-,,2
@@ -43,8 +43,9 @@ File40=ndp-saramander-2-fly_high.kss::KSS, 0, SALAMANDER [ FLY HIGH ] - Programm
 File41=ndp-saramander-2-fly_high-nr.kss::KSS, 0, SALAMANDER [ FLY HIGH ] (No H.Env) - Programmed by uniskie, 00:00:32, 00:00:06-,,2
 File42=ndp-sorcerian_md-gray_dungeon-dungeon.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV] - Programmed by uniskie, 00:01:29, 00:00:06-,,2
 File43=ndp-sorcerian_md-gray_dungeon-dungeon-std.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std] - Programmed by uniskie, 00:01:29, 00:00:06-,,2
-File44=ndp-test-nettaigyo.kss::KSS, 0, 淋しい熱帯魚 PSG Cover - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
-File45=ndp-test-nettaigyo-henv.kss::KSS, 0, 淋しい熱帯魚 PSG Cover (H.ENV) - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
-File46=ndp-vanilla.kss::KSS, 0, ヴァ〇ニラの求人 NDP祭り - Programmed by uniskie, 00:01:04, 00:00:00-,,2
-NumberOfEntries=46
+File44=ndp-test-0.kss::KSS, 0, 不安になる旋律テスト - Composed by uniskie, 00:00:12, 00:00:08-,,2
+File45=ndp-test-nettaigyo.kss::KSS, 0, 淋しい熱帯魚 PSG Cover - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
+File46=ndp-test-nettaigyo-henv.kss::KSS, 0, 淋しい熱帯魚 PSG Cover (H.ENV) - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
+File47=ndp-vanilla.kss::KSS, 0, ヴァ〇ニラの求人 NDP祭り - Programmed by uniskie, 00:01:04, 00:00:00-,,2
+NumberOfEntries=47
 Version=2

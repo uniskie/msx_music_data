@@ -22,7 +22,7 @@
 @n12 = 0 -12 0
 ;base
 @6 = fdc b:5 L a:5 b:5
-@7 = *1 s14 r *0 r ;H.ENV
+@7 = *1 s10 r *0 r:3 h- l r ;H.ENV
 
 123r l16
 
