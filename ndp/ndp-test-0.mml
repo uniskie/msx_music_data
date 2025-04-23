@@ -6,7 +6,7 @@
 
 123 @l
 
-@m0=30,3,1,0 ,4,1
+@m0=30,3,1,0 ,5,1
 
 1 v14 @1 @m0
 1 a2.f4
@@ -15,8 +15,8 @@
 2 v15 @0 @r14,10 @rd1,15 q6
 2 o5
 2 l16
-2 [abrcdc] aba<a>
-2 [gar<b->c<b->] gag<b->
+2 [abrcdc] abr<a>
+2 [gar<b->c<b->] gar<b->
 
 3 v15 @3 o2
 3 l8
@@ -25,6 +25,6 @@
 
 r v15 l4
 r r1 r1
-r r2.s brbs16s16s16s16
+r r2.s brbs16r16s16s16
 r @l
 r [bbbs]2
