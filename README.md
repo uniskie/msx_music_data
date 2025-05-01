@@ -156,7 +156,13 @@ htmlソースコード [tool/vcd_conv.html](tool/vcd_conv.html)
 
 # その他
 
-MuSICA ドキュメント関連： https://github.com/uniskie/MSX_DOCUMENTS
+MuSICA ドキュメント関連：
+
+- オンラインページ  
+  https://uniskie.github.io/msx_music_data/
+
+- オフラインぺージ
+  [index.html](index.html)
 
 
 # COPYRIGHT & THANKS
