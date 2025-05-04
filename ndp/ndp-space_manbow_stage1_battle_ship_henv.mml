@@ -1,0 +1,222 @@
+#title "SPACE MANBOW -STAGE1- Battle Ship (H.ENV)"
+#bsave-name "SMANH-S1"
+#programmer "uniskie"
+#timebase 24
+#repeat-mode 1
+
+@0=F E D C:2 D C:2 B:3 L C B:3 C D:3
+@1=E F E D:2 C:4 E D C:2 B:3 A:4 L C B:2 A:3 9:2
+@6=A B:5 A C:4 B D:4 C E:3 F E:2 D:3 E D:2 C:3 L C:2 B:2 A:2 9:2
+@7=A C:2 B D:2 C E:2 F E:2 D:3 E D:2 C:3 L B:2 A:3 B:2 C:3
+@8=FEDCB:5 C:4 BA:4 B:4 A9:5 A:4 98:5 9:4 87:5 8:4 76:5 7:4 65:5 6:4 54:5 5:4 4L3:3 4:3 
+@9=FEDC:4 E:4 DC:4 D:4 CB:5 C:4 BA:4 B:4 A9:5 A:4 L 98:5 9:4 87:3
+
+;「@M＜番号＞=＜Delay＞,＜Frame＞,＜Depth＞,＜Type＞,＜AddDepth＞,＜AddCount＞,＜LoopMode＞
+@m0=36,3,1,0 ,1,1
+@m1=48,3,1,0 ,1,1
+
+;**********************************************
+; main
+;**********************************************
+12 @AS1 LA24
+
+12 l16 q8
+12 @L
+
+1 v12 o5 @m0 @r13,5 @rd1,20 @d1,12 @q2
+;1  @7>d-_d2&d4<e32f+g32a32b>d32  c+2. bg+a8&
+1  @7>d-_d2&d4@q0<e'>d4@q2  c+2. bg+a8&
+1  a2..  @6<<<v-1e_a4&  v+1a4.& v+1a2 v-1>>@7
+;1  d2.<e32f+g32a32b>d32 c+2.<d+32ef32f+32gg+32
+1  d2.<@q0e'>d4@q2 c+2.<@q0d+'g+4@q2
+1  a1& a1<
+; oct -2
+
+2 v12 o5 @m0 @r13,5 @rd1,20 @d1,12 @q2
+;2  @7 a-_a2&a4<g32ab32>c32df+32  e2.>d<b>c+8&
+2  @7 a-_a2&a4<@q0g'>f+4@q2 e2.>d<b>c+8&
+2  c+2.. @6<<<<v-1b_>e4& v+1e4.& v+1e2 v-1>>@7
+2  <[a1]2
+2  q7f+2d2 c+1<q8
+; oct -2
+
+1 j1
+
+1 @0 @q2 v+1
+1  [dc+de2^16 a8>d8
+1   c+2< b8r>c+8 rd8
+1   e2.. dc+
+1   d2 /c+8.r d8.r
+1   c+8r<a8 re2^8&
+1   e1
+1  ]2
+1  b8r>d8 rge
+1  a2.& v-1a8& v-1a8v+2
+1  @0<<<<ab>c+e ab>c+e ab>c+e ab>c+e
+; oct +2
+
+;2 @0 @q2 v+1
+;2 v-3r8\1
+;2  [dc+de2^16 a8>d8
+;2   c+2< b8.>c+8. d8
+;2   e2.. dc+
+;2   d2 /c+4 d4
+;2   c+8.<a8. e2^8&
+;2   e1
+;2  ]2
+;2  b8.>d8. ge
+;2  a2.. 
+;2 v+3\0
+;2  @0<<<<c+eab> c+eab> c+eab> c+eab
+;2 \0
+; oct +2
+
+;***
+
+1 j2
+1 @m1
+1 [ @1
+1  cde<a2^8 a>de
+1  a2.> c<gdc
+1  <<b2& v-1b2>     v+1@9 b2& v-1b2> v+1@1
+1 /
+1  cde<a2^8 a>de
+1  a2.> c<afd
+1  egb>d4..& 
+1  v-1d4.<v+1
+1  @8<f8.g+8. b8.> d8. <b>dfg+ @0
+1 ]
+1 j3
+1  cde<a2^8> cd+f+
+1  a2> c<af+d d+f+a>c<
+1  bg+>e2..;<
+1 v+1
+1 @0<<<<deg+b> deg+b> deg+b> deg+b >
+1 v-1
+;1 @7v-1
+
+;2 @m1 
+;2 <
+;2 [ @1
+;2  v-3\1 r8 
+;2  cde<a2^8 a>de
+;2  a2.> c<gdc
+;2  <<b2& v-1b4.> \0v+5@9 d2& v-1d2> @1
+;2 /
+;2  v-3\1 r8
+;2  cde<a2^8 a>de
+;2  a2.> c<afd
+;2  egb>d4..& 
+;2  v-1d4 <v+1 v+3\0
+;2  @8<d8.f8.  g+8. b8.  fg+b>d @1
+;2 ]
+;2 v-3\1 r8 
+;2  cde<a2^8> cd+f+
+;2  a2> c<af+d d+f+a>c<
+;2  bg+>e2..;<
+;2 @0<<<deg+b> deg+b> deg+b> de v+3\0
+
+;**********************************************
+; sequence
+;**********************************************
+;2 l16
+;2 @L
+2  o5 v10 @r12,4 @rd1,20 @d1,12
+2  @9@q2
+;2  [[egb>d< /gb]3   gbeg b>d<eg egb>d< gbeg
+;2   [aed]9<a> abdg
+;2  ]2
+
+2  [>c+<ae]10 >c+<a
+2  [bgd]10 bg
+2  [>c+<ae]5 >c+
+2  ec+<a>e c+<a>ec+ [ge/c+]3
+2  [ae/c+]11
+2  [g/d<b>]6 [b/gd]6
+2  @0 @q2
+2  v+3
+2  aec+<a ec+<ae c+<aec+< aec+<a+>
+2  ab>c+e ab>c+e ab>c+e ab>c+e<
+2  v-3
+
+2  <
+2  @7 v-1 @q2 @m1
+2  [a4.> e2^8
+2   d2. c4
+;2   d1 g1<
+2  d1 v+2@9"dg"1<@7v-2
+2  />a2. f4
+2   f+2.> d4
+2   <b1<
+2  v+1
+2   @8 g+8.b8.> d8. f8. dfg+b< @7
+2  v-1
+2  ]2
+2 >a4. f2^8
+2 f+4. a2^8
+2 e1 
+2  @0 v+3 
+;2 <<g+b>de g+b>de g+b>de g+b>de<<
+2 <<<<g+b>de g+b>de g+b>de g+b>de
+2  v-2 @m-
+
+;**********************************************
+; base
+;**********************************************
+@15 = *1 s10 *0 rrr h- r
+3 o2 @15 m+ mk12 \10
+;@15 = FC L B:2 A:2
+;3 o2 @15 v15
+3 l16
+3 @L
+3  [[edgd aeeg edgd aeeg]2
+3  /[<aega egaa aega egaa>]2]2
+3  <aega egaa aega egaa>
+3  c+<f+g+a f+g+aa aeg+a eg+aa
+3  [a>aa<a> aa<aa]3 a>aa<a> aa<e>e<
+3  [g>gg<g> gg<gg]4
+3  [a>aa<a> aa<aa]4
+3  [a>aa<a> aa<aa]11 >ggrg grgg
+3  [[<ff>ff]8
+3   [<ee>ee]8
+3  /[<ff>ff]4 [<f+f+>f+f+]4
+3   [<gg>gg]4 [<g+8>g+]4 <g+b>de
+3  ]2
+3  [<dd>dd]4 [<d+d+>d+d+]4
+3  [<ee>ee]4 <bbrb rbrb ea+b>d eg+a>d<
+
+;**********************************************
+; rhythm
+;**********************************************
+;@R:B = *3 :960 N0 v15 / *1 :2000 V11
+@R:B = *3 :960 N0 S0 M800 / *1 :2000 V11 ; HENV使用につき注意
+;@R:S = *1 :640 N1 v15 / *2 N0 v12 / N1 V11
+@R:S = *1 :640 N1 S0 M700 / *2 N0 v12 / N1 V11 ; HENV使用につき注意
+@R:H = *2 :20 N0 V12
+@R:K = *3 :400 N0 V15 / :460 V14 / *1 :530 V13 / :590 V12 / :690 v11
+@R:M = *3 :530 N1 V15 / :580 V14 / *1 :680 V13 / :830 V12 / :940 v11
+@R:N = *3 :680 N2 V15 / :830 V14 / *1 :980 V13 / :1230 V12 / :1560 v11
+@R:u = *3 :880 N2 V15 / :1030 V14 / *1 :1280 V13 / :1430 V12 / :1760 v11
+
+r v15 @c2
+r @L
+r [b8h8 s8b8 /h16h16b8 s8h8]4
+r  h16s16s16b16 [s16]4
+r  [b8h8 s8b8 h16h16b16b16 s16h8.]3
+r  b16b16h8 s16s16b16h16 [k32]4 [m16]2 [n16]2 u8
+r  b8h8 s8h16b16 h16h16b8 s8h16h16
+r  b8h8 s8b8 [s16/h16h16]3 h16
+r  [b8h8 s8h16b16 h16h16b8 s8h16h16
+r   ]3
+r  b8[s16]6 [h16]4 [s16]4
+r  b8h8 s8h16b16 h16h16b8 s8h16h16
+r  b8h8 s8h16b16 [s16h16h16]2 s16s16
+r  [b8h8 s8h16b16 h16h16b8 s8h16h16
+r   ]3
+r  [s32]2 [s16]9 h16s16 h16b16s16s16
+r  [[b8h8 s16h16b8 h16h16b16b16 s4
+r    ]7
+r  /[b16s16s16]4 s16b16s8
+r   ]2
+r  [b16b16s16s16 ]2 [s16]8
+

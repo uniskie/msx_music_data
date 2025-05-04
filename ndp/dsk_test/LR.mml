@@ -1,0 +1,71 @@
+123 t150
+
+123 !S2 r4...
+
+123 @RD1
+1 @r12,12 @RN1,1 q8@q1
+2		  @RN1,2 q8@q1
+12 v13l%7\3gb>de<g+b>de<a>ceg<a+>c+eg bgedb-gec+agf+edc<ba%8
+3  l%7v9\0q6@RD1 r%7 @r13,12o4gb>de<g+b>de<a>ceg<a+>c+eg bgedb-gec+agf+edc<ba%1
+12 @rn-
+123 @r-
+123 t128 j1 @d2,9
+1 o4 q8@q0 v13l16ddrddrrr ddrddrrr erdregrrf+rrr r4
+2 q8@q0 \-1 v12@5 vi-3la37o3 l16"bg"16 l16"bg"16 r l16"bg"16 l16"bg"16rrr
+2 la37o3 l16"bg+"16 l16"bg+"16 r l16"bg+"16 l16"bg+"16rrr
+2 la37o3 l16"o4c<a"16 r l16"o4c<a"16 r l16"o4c<a"16 l16"o4c<a"16rr 16"o4c<a"16rrr r4
+ 
+3 vi-4 v13 \-2 o3 q6g8.d16g8d8 g+8.d16g+8d8 a8e8ae8r d8 !s1 r4.
+
+123 @L
+
+1 o5 \2 v14 @r13,10 @rd1,24 q7@q1 d8.e8.g8f+8.e8d8.<b1> d8.e8.g8f+8.e8d8.<a1
+1	a8.b8.>c8e8.g8.e8 b8.a8ba8g+2
+1	g8.f+8.e8 d8.f+8.a8 a8.g2+16r4
+
+1 l16 @d2,11@r13,10 q6@q1 @rd-1 v-
+1 @rd-1 d8re8rg16.r32f+8re16.r32d8r <b8rr rrrr r2>
+1 d8re8rg16.r32f+8re16.r32d8r  b8rr r8r8rrb16.r32r8b8
+1 b8r8rrb16.r32b8r>c8r<b16.r32 b8ra8rg16.r32 g8rf+8re16.r32
+1 e8rd8re16.r32d8re8rb16.r32 a8r@D>2g16+4 r8@rd-1q8<b8>c8c+8
+
+vs1=0,L -1,0,+1 
+2 va1,1 @5  j2 v14 @as1 \-2
+2 la39  vi-2[ "o4d<gb>"16 v-4 d v+4 ]2  "o4e<gb>"16 "o4e<gb>"16 v-4 e v+4 ["o4f+<gb>"16 v-4 f+ v+4] ["o4e<gb>"16 v-4e v+4/ "o4f+<gb>"16 ]
+2 la39  vi-2[ "o4d<gb>"16 v-4 d v+4 ]2  "o4e<gb>"16 "o4e<gb>"16 v-4 e v+4 ["o4f+<gb>"16 v-4 f+ v+4] ["o4e<gb>"16 v-4e v+4/ "o4f+<gb>"16 ]
+2 la39  vi-2[ "o4d<gb>"16 v-4 d v+4 ]2  "o4e<gb>"16 "o4e<gb>"16 v-4 e v+4 ["o4f+<gb>"16 v-4 f+ v+4] ["o4e<gb>"16 v-4e v+4/ "o4f+<gb>"16 ]
+2  la39  vi-2[ "o4d<a>c"16 v-4 d v+4 ]2  "o4e<a>c"16 "o4e<a>c"16 v-4 e v+4 ["o4f+<a>c"16 v-4 f+ v+4] ["o4e<a>c"16 v-4e v+4 / "o4f+<a>c"16] 
+2  la39  vi-2[ "o4e<a>c"16 v-4 e v+4 ]2  "o4f+<a>c"16 "o4f+<a>c"16 v-4 f+ v+4 ["o4g<a>c"16 v-4 gv+4] "o4f+<a>c"16 v-4 f+ v+4  "o4e<a>c"16  "o4d<a>c"16 v-4 d v+4 
+2  la39  vi-2[ "o4d<gb>"16 v-4 d v+4 ]2  vi-1[ "o4e<gb>"16 v-4 e v+4 ]2  "o4f+<b>d"16 ["o4f+<b>d"16 v-4 f+ v+4 ] "o4f+<b>d"16  "o4f+<b>e"16 v-4 f+ v+4
+2  la39  vi-2[ "o4e<a>c"16 v-4 e v+4 ]2  "o4f+<a>c"16 "o4f+<a>c"16 v-4 f+ v+4 ["o4f+<a>c"16 v-4 f+v+4] "o4d<a>c"16 v-4 d v+4  "o4f+<a>c"16  "o4d<a>c"16 v-4 d v+4 
+2  v+ ["o4g<b>d"16 v-5  g / v+5 ] v-4 g v+8  "o4g<b>d"16 v-4 g v+4"o4g<b>d"16 ["o4g<b>d"16 v-5 g v+1  ]4  
+ vs2=0,L -3,0,+3
+2 j3 v12 vi-0 va2,1 @as0 q5@q0 @rd1 @r12,1 o4 l16 
+2 [4 v-2dv+2cv-2ev+2<a> ] [4 v-2d<v+2bv-2>e<v+2g> ]
+2 [4 v-2dv+2cv-2ev+2<a> ] [4 v-2d<v+2bv-2>e<v+2g> ]
+2 [4 v-2dv+2<b>v-2ev+2<g+> ] [4 v-2dv+2cv-2ev+2<a> ]
+2 [4 v-2dv+2<a>v-2ev+2<a> ]
+2 va-   v14 @as1 vi-2
+vs3=L 0,-1,+1
+2 v14 va3,1 la39 ["o4<b>de"16 v-5  e / v+5 ] v-4 e v+8  "o4<b>de"16 v-4 g v+4"o4<b>de"16 ["o4<b>de"16 v-5 g v+1  ]4  
+
+
+3 @d2,11 \-3o3 @r13,18 @rd1 l16q8@q2 v13
+3	g8rrd8rrg8rrd8rrg8rrd8rrg8rrd8rr
+3	g8rrd8rrg8rrd8rrf+8rrd8rrf+8rrd8rr
+3  a8rre8rrc8rre8rrg8rrf+8rre8rr<b8rr
+3	>c8rre8rrd8rrf+8rr g8rr d8rr <g>erde8d8
+3 q7@r13,1 v-
+3	e8de8de8de8de8d8 e8ge8de8ge8de8d8
+3	e8de8de8de8de8d8 e8ge8de8ge8de8d8
+3   e8de8de8de8de8d8 e8ge8de8ge8de8d8
+3	q8f+edf+edf+edf+edf+ede v+ grgr rgrg g8r8r4
+
+!S1
+3 s12,1 @,0m+ l%1 f+&g&g+&a&arra-g&g-f&frre&e-&d&d-&d-%2r
+
+!S2
+123 t150 v13
+1 \1 o4 d16.a8. r8
+2 \3 o4 r32e16.b32+8 r8
+3 \5 o4 r16g16.>d8 r8

@@ -42,6 +42,8 @@ ndp-saramander-2-fly_high.kss::KSS, 0, SALAMANDER [ FLY HIGH ] - Programmed by u
 ndp-saramander-2-fly_high-nr.kss::KSS, 0, SALAMANDER [ FLY HIGH ] (No H.Env) - Programmed by uniskie, 00:00:32, 00:00:06-,,2
 ndp-sorcerian_md-gray_dungeon-dungeon.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV] - Programmed by uniskie, 00:01:29, 00:00:06-,,2
 ndp-sorcerian_md-gray_dungeon-dungeon-std.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std] - Programmed by uniskie, 00:01:29, 00:00:06-,,2
+ndp-space_manbow_stage1_battle_ship.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship - Programmed by uniskie, 00:00:57, 00:00:00-,,2
+ndp-space_manbow_stage1_battle_ship_henv.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship (H.ENV) - Programmed by uniskie, 00:00:57, 00:00:00-,,2
 ndp-test-0.kss::KSS, 0, 不安になる旋律テスト - Composed by uniskie, 00:00:12, 00:00:08-,,2
 ndp-test-nettaigyo.kss::KSS, 0, 淋しい熱帯魚 PSG Cover - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
 ndp-test-nettaigyo-henv.kss::KSS, 0, 淋しい熱帯魚 PSG Cover (H.ENV) - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
