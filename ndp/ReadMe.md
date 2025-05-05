@@ -89,6 +89,14 @@ Windows10以降、PowerShell2.0が入っている環境であれば使えると�
 - ndpデータ全曲まとめパック  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/ndp-m3disp.zip
 
+- "スペースマンボウ STAGE1「Battle Ship」"  
+  [ndp-space_manbow_stage1_battle_ship.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-space_manbow_stage1_battle_ship.kss
+
+- "スペースマンボウ STAGE1「Battle Ship」(H.ENV三角波ベース)"  
+  [ndp-space_manbow_stage1_battle_ship_henv.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-space_manbow_stage1_battle_ship_henv.kss
+
 - "CASIO MSXソフト 「賢者の石」メドレー"  
   [ndp-kenja_no_ishi_split_se.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-kenja_no_ishi_split_se.kss
