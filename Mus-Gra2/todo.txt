@@ -1,7 +1,6 @@
 TODO: やりたいこと忘備録
 
-- GRAII-13 Fire Dragon
+- GRAII-14 Fire Dragon
 
-オケヒパート追加
-
+  - オケヒパート追加
 
