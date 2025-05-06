@@ -46,7 +46,6 @@ KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生
    
    ![ndp.dsk](img/ndp_dsk.png)
 
-
    > Windowsからディスクイメージの内容を操作したい場合は、DiskExplorerが便利です。
    >
    > https://www.vector.co.jp/soft/win95/util/se107750.html  
@@ -57,34 +56,12 @@ KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生
    >   フォーマット「AT形式」→  
    >   パーティション「基本領域(FAT)」  
    >   を選択すると操作できます。
-   
-## プレイリスト作成バッチファイル
 
-[_MAKE_KSS_PLAYLIST.BAT](_MAKE_KSS_PLAYLIST.BAT)
+## m3disp 直再生リンク
 
-- 出力ファイルは
-   - ndp_kss_playlist.m3u  ... SJIS
-   - ndp_kss_playlist.m3u8 ... UTF8-BOM
-- このファイルのあるフォルダとサブフォルダにあるkssファイルが対象
-- パスは絶対パスで記録
-- 表示名は相対パスで表示
-- WinAmp文字化け対策の為UTF-8 BOM付きのm3u8も出力
+- おまけ：  
 
-WINAMP、foobar200、kbMediaPlayerいずれの場合でも、
-kssファイルを生でを追加すると50曲ぐらいに内部展開されてうざいので、
-kssファイル1つにつき1曲ずつだけ登録するプレイリスト
-```ndp_kss_playlist.m3u``` (UTF-8版は```m3u8```)
-を自動出力するバッチファイルを作りました。
-
-Windows10以降、PowerShell2.0が入っている環境であれば使えると思います。
-
-```_MAKE_KSS_PLAYLIST.BAT``` を kssファイルのあるフォルダに置いて実行してください。
-
-出力された ```ndp_kss_playlist.m3u```
-または ```ndp_kss_playlist.m3u8```
-をプレイヤーにドロップすればすっきりした形でkssが追加されると思います。
-
-## N3disp 直再生リンク
+  [RISEOUT.BAS](RISEOUT.BAS)
 
 - ndpデータ全曲まとめパック  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/ndp-m3disp.zip
