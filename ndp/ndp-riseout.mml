@@ -1,0 +1,31 @@
+;********************************************************
+#title "RISEOUT TITLE  (Original)"
+;********************************************************
+#bsave-name "RISEOUTO"
+#programmer "uniskie"
+#repeat-mode 1
+#tempo 150
+@15=LF
+1 o2 s9 m3000
+2 o3 s9 m3000 *3 n7 \7
+3 o1 v14 @15
+123  @L l16
+1 [g8bgg8b8ggbgg8b8]4
+2 [r8drr8d8]8
+3 r1 r1 v-1[grbr]8v+1
+1 j1
+1 [[g8bgg8b8ggbgg8b8 f8>c<ff8>c8<ff>c<ff8>c8<]2
+1  d+8a+d+d+8a+8d+d+a+d+d+8a+8 g8bgg8b8ggbgg8b8]2
+2 [[[r8drr8d8]2 < [r8arr8a8]2]2 [r8grr8g8]2 > [r8drr8d8]2]2
+3 o5
+3 [[[gd/<b>]5 <b8> f2..rf ]2 d+2a+2 g1]2
+1 j2
+1 [g8bgg8b8ggbgg8b8 f8>c<ff8>c8<ff>c<ff8>c8<
+1  d+8a+d+d+8a+8d+d+a+d+d+8a+8 d8add8a8/ddadd8a8]2
+1  d+8 a+d+d+8a+8 g8bgg8b8ggbgg8b8
+2 [[r8drr8d8]2 < [r8arr8a8]2 [r8grr8g8]2 [r8f+rr8f+8]2 > ]2
+2 < r8grr8g8 > r8drr8d8
+3 [[gd/<b>]5 <b8 [>fc/<a]5 <a8>
+3  [d+<a+/g>]5 g8> d2/d+eff+f+4]2
+3  a+2 g1
+
