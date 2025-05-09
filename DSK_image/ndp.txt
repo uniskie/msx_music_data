@@ -67,6 +67,16 @@ naruto2413氏製作のMSX PSG用音源ドライバ ndpを使用したデータ集です。
 
 ## 謝辞・ライセンス
 
-NDP (PSG Driver for MSX) - by naruto2413
+NDP (PSG Driver for MSX) - by naruto2413  
+公式リリース：  
+https://ndp.squares.net/web/
 
-NDP.BINは許諾を得て同梱しているものです。  
+- 快適なエディタと即時再生を助ける様々な機能
+- リズムパートを独立して記述し、疑似的な4chを実現
+  （リズムを割り込ませるチャンネルは動的に指定可能）
+- 面倒な処理を簡略化できる様々なコマンド
+  例） ハードウェアエンベロープの音程制御、アルペジオ展開、セルフエコー
+- 効果音機能
+
+NDP (PSG Driver for MSX) (C) naruto2413  
+NDP.BINは許諾により同梱を許可されている物です。
