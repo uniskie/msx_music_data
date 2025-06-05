@@ -1,0 +1,95 @@
+﻿#title "Phantasy Star - Title (OPLL ver Like)"
+#bsave-name "PS1-TITL"
+#programmer "uniskie"
+#timebase 24
+#repeat-mode 1
+
+@0 = EFE D:2 C D C:2 L B:3 A:3 B:3 C:3
+@1 = FEDC:2 B:5 C:4 BA:4 B:4 A9:5 A:4 98:5 9:4 87:5 8:4 76:5 7:4 65:5 6:4 54:5 5:4 4 L 3:3 4:3 
+@2 = D:2 E:2 D:2 E:2 D:2 E D:2 C:2 L B:2 A:2 B:2 C:2
+@3 = FEDC:2 B:3 A:3 L 9:4 8:4 ;7:5 6:5 5:5 4:5 3:5 2:6 1:6 L0
+
+@m0=28,3,1,1
+
+1 @r13,5 @rd1,15 @q2
+1 v15 o4 @m0
+1 @L
+1  @1
+1  [a4. g4. f4
+1   g4. e2& e8
+1  /d4. f4. d8a4
+1   a8 g4 f8g4.
+1  ]
+1  r8<a+8> d8f8 g4 f8a+4
+1  a+8 a4 g4 f4
+1  @0
+1  [g4& g4. a8 a+8>c4
+1   c8 c4 c8<a+4 a8
+1  /a+4& a+4.> d8< a+8>c4.
+1   c4< a8a+4.
+1  ]
+1  >d4& d4.< a+8> d4
+1  e4 e4 d4 c4.
+1  @1
+1  c8 c4 c4 c4
+
+2 @r13,5 @rd1,15 @q2
+2 v14 @m0 \-1
+2 @L
+2  @1
+2  [f4. c4. f4
+2   e4. c2& c8
+2  /d4.< a+4.> d8f4
+2   f8 e4 d8e4.
+2  ]
+2  @2
+2  d4.< a+4.> d8f4
+2  f8 e4 d4 c4
+2  [g4. g4.< a+4>
+2   g8d8< g4 a+4> d4
+2  /e4& e4. f8 e8d4.
+2   c4 e8f4.
+2  ]
+2  g4. g4. e4
+2  f4 g4 e4 c4.
+2  g8 g4 g4 g4
+
+;3 v15 @3 o3 \-1 ;SQUARE WAVE
+3 s14,6 @q2 o3 ;H.ENV TRIANGLE
+3 @L
+3  [f4. f4 c8 f4
+3   c4. c4 g8 f8e8<
+3  /a+4. a+4 a+8 a+8>f4
+3   f8 f4 c8f4.
+3  ]
+3  a+4. a+4 a+8 a+8>f4
+3  f8 f4 c4 f4
+3  [g4. d4 d4.
+3   d8g8 g4 g8d4 d8<
+3  /a+4. a+4> f8< a+8>c4
+3   c8 c4 g4 c4
+3  ]
+3  a+4 a+4 a+4 a+4>
+3  g4 e4 c4 c4.
+3  c8 c4 c4 c4
+
+@R:B = V15 *3 N0 :900 / V14 :2000
+@R:S = V15 *1 :450 / *2 N4 / N1
+@R:H = V13 *3 :18 N1
+@R:O = V15 *3 :440 N2 / *2 V14 N1 / V12
+@R:C = V13 *1 :450 N30 / *2 V14 N16 / V13 N6 / V12 N2 / V11 / V10
+
+r v15 @c2
+r l16  
+r @L
+r  [b16h16h16h16 c8h16h16 b16h16h16h16 c8h16h16]4
+r  [b16h16h16h16 c8h16h16 b16h16h16h16 c8h16h16]3
+r  b8b8 c8b16b16 b8c8 b16b16c8
+r j1
+r  [b8h16h16 o8b16h16 r16r16b16h16 o8h16h16
+r   b8b16h16 o8b16h16 r16r16b16h16 o8h16h16]3
+r   b8h16h16 o8b16h16 r16r16b16h16 c8h16h16
+r j2
+r  b8b8 c8h8 b8o8 s8s8
+r  b8b8 s8b8 s8b8 s8b8
+

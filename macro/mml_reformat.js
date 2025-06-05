@@ -843,48 +843,48 @@ function proc()
 				}
 				if (r[0] != -2) // ポルタメントではない
 				{
-				if (d < 0)
-				{
-					d = default_step;
-				}
-				//efunc.alertBox(d);
-				
-				var ll = d;
-				
-				// period
-				//var ps = '';
-				var o = ll;
-				for (var pi=0; pi<period; ++pi)
-				{
-					o/=2;
-					ll += o;
-					//ps = ps + '.';
-				}
-				
-				// 4分音符単位
-				count_L4 += ll;
-				while (L4 <= count_L4)
-				{
-					add_space = true;
-					count_L4 -= L4;
-					//efunc.alertBox('L4' + result);
-					//test_s = test_s + '(L4:' + count_L4 + ') ';
-				}
-				
-				// 1分音符単位
-				count_BL += ll;
-				while (bl <= count_BL)
-				{
-					add_lf = true;
-					count_BL -= bl;
-					//efunc.alertBox('L1:' + result);
-					//test_s = test_s + '(BL:' + count_BL + ') ';
-				}
-				
-				// ループ中処理
-				if (-1 < loopData.loop_count)
-				{
-					loopData.time += ll;
+					if (d < 0)
+					{
+						d = default_step;
+					}
+					//efunc.alertBox(d);
+					
+					var ll = d;
+					
+					// period
+					//var ps = '';
+					var o = ll;
+					for (var pi=0; pi<period; ++pi)
+					{
+						o/=2;
+						ll += o;
+						//ps = ps + '.';
+					}
+					
+					// 4分音符単位
+					count_L4 += ll;
+					while (L4 <= count_L4)
+					{
+						add_space = true;
+						count_L4 -= L4;
+						//efunc.alertBox('L4' + result);
+						//test_s = test_s + '(L4:' + count_L4 + ') ';
+					}
+					
+					// 1分音符単位
+					count_BL += ll;
+					while (bl <= count_BL)
+					{
+						add_lf = true;
+						count_BL -= bl;
+						//efunc.alertBox('L1:' + result);
+						//test_s = test_s + '(BL:' + count_BL + ') ';
+					}
+					
+					// ループ中処理
+					if (-1 < loopData.loop_count)
+					{
+						loopData.time += ll;
 					}
 				}
 			}

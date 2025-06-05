@@ -1,5 +1,5 @@
 
-bouken_no_sho.kss::KSS, 0, おきのどくですが ぼうけんのしょ は きえてしまいました, 00:00:02,,,1
+bouken_no_sho.kss::KSS, 0, おきのどくですが ぼうけんのしょ は きえてしまいました, 00:00:02, 0,1,1
 ndp-dangrous_seed_1.kss::KSS, 0, DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8) - Programmed by uniskie, 00:00:49, 00:00:00-,,2
 ndp-dangrous_seed_1_boss.kss::KSS, 0, DANGEROUS SEED(MD) Triple-Eye (Stage 1&9 BOSS) - Programmed by uniskie, 00:00:39, 00:00:08-,,2
 ndp-dangrous_seed_2.kss::KSS, 0, DANGEROUS SEED(MD) 2nd TUBE (STAGE 2&5) - Programmed by uniskie, 00:00:29, 00:00:00-,,2
@@ -12,16 +12,16 @@ ndp-dragon-spirit-area1-The_Paleozoic_Era.kss::KSS, 0, Dragon Spirit [AREA 1] -T
 ndp-dragon-spirit-omake.kss::KSS, 0, Dragon Spirit -OMAKE-  (like a FC ver.) - Programmed by uniskie, 00:00:42, 00:00:00-,,2
 ndp-dragon-spirit-sea.kss::KSS, 0, Dragon Spirit -Sea- (like FC ver.) - Programmed by uniskie, 00:00:28, 00:00:00-,,2
 ndp-dragon-spirit-zawel.kss::KSS, 0, Dragon Spirit -Zawel- (like FC ver.) - Programmed by uniskie, 00:00:29, 00:00:02-,,2
-ndp-f1spirit-henv-1-F1_Shuffle.kss::KSS, 0, F-1 SPIRIT (H.ENV) [F-1 Shuffle] (TITLE) - Programmed by uniskie, 00:00:10,,,1
-ndp-f1spirit-henv-2-starting_grid.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Starting Grid] (START) - Programmed by uniskie, 00:00:04,,,1
+ndp-f1spirit-henv-1-F1_Shuffle.kss::KSS, 0, F-1 SPIRIT (H.ENV) [F-1 Shuffle] (TITLE) - Programmed by uniskie, 00:00:10, 0,1,1
+ndp-f1spirit-henv-2-starting_grid.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Starting Grid] (START) - Programmed by uniskie, 00:00:04, 0,1,1
 ndp-f1spirit-henv-3-D_G.kss::KSS, 0, F-1 SPIRIT (H.ENV) [D/G] (MACHINE SELECT) - Programmed by uniskie, 00:00:12, 00:00:00-,,2
 ndp-f1spirit-henv-4-hot_summer_riding.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Hot Summer Riding] (STOCK CAR RACE) - Programmed by uniskie, 00:00:52, 00:00:01-,,2
 ndp-f1spirit-henv-5-random-approach.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Random Approach] (RALLY RACE) - Programmed by uniskie, 00:00:38, 00:00:00-,,2
 ndp-f1spirit-henv-6-next.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Next] (Retire) - Programmed by uniskie, 00:00:25, 00:00:00-,,2
 ndp-f1spirit-henv-8-Vanishing_Heat.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Vanishing Heat] (ENDURANCE RACE) - Programmed by uniskie, 00:00:38, 00:00:00-,,2
 ndp-f1spirit-henv-9-Winning_Run.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Winning Run] (RANKING GOAL) - Programmed by uniskie, 00:00:17, 00:00:01-,,2
-ndp-f1spirit-std-1-F1_Shuffle.kss::KSS, 0, F-1 SPIRIT (Normal) [F-1 Shuffle] (TITLE) - Programmed by uniskie, 00:00:10,,,1
-ndp-f1spirit-std-2-starting_grid.kss::KSS, 0, F-1 SPIRIT (Normal) [Starting Grid] (START) - Programmed by uniskie, 00:00:04,,,1
+ndp-f1spirit-std-1-F1_Shuffle.kss::KSS, 0, F-1 SPIRIT (Normal) [F-1 Shuffle] (TITLE) - Programmed by uniskie, 00:00:10, 0,1,1
+ndp-f1spirit-std-2-starting_grid.kss::KSS, 0, F-1 SPIRIT (Normal) [Starting Grid] (START) - Programmed by uniskie, 00:00:04, 0,1,1
 ndp-f1spirit-std-3-D_G.kss::KSS, 0, F-1 SPIRIT (Normal) [D/G] (MACHINE SELECT) - Programmed by uniskie, 00:00:12, 00:00:00-,,2
 ndp-f1spirit-std-4-hot_summer_riding.kss::KSS, 0, F-1 SPIRIT (Normal) [Hot Summer Riding] (STOCK CAR RACE) - Programmed by uniskie, 00:00:52, 00:00:01-,,2
 ndp-f1spirit-std-5-random-approach.kss::KSS, 0, F-1 SPIRIT (Normal) [Random Approach] (RALLY RACE) - Programmed by uniskie, 00:00:38, 00:00:00-,,2
@@ -35,6 +35,7 @@ ndp-graii-7.kss::KSS, 0, GRADIUS II AC - Synthetic Life - [NDP Arrange] - Progra
 ndp-kenja_no_ishi.kss::KSS, 0, CASIO 賢者の石 サウンドメモ with SE, 00:01:36, 00:00:00-,,2
 ndp-kenja_no_ishi_split_se.kss::KSS, 0, CASIO 賢者の石 サウンドメモ, 00:01:55, 00:00:00-,,2
 ndp-paro-crisis.kss::KSS, 0, PARODIUS 中ボス - クライシス第４楽章 - Programmed by uniskie, 00:00:21, 00:00:05-,,2
+ndp-phantasy_star_title.kss::KSS, 0, Phantasy Star - Title (OPLL ver Like) - Programmed by uniskie, 00:00:27, 00:00:00-,,2
 ndp-riseout.kss::KSS, 0, RISEOUT TITLE  (Original) - Programmed by uniskie, 00:00:40, 00:00:00-,,2
 ndp-riseout-a.kss::KSS, 0, RISEOUT TITLE  (Arrange) - Programmed by uniskie, 00:00:40, 00:00:00-,,2
 ndp-saramander-1-power_of_anger.kss::KSS, 0, SALAMANDER [ POWER OF ANGER ] - Programmed by uniskie, 00:00:35, 00:00:09-,,2
@@ -47,6 +48,6 @@ ndp-sorcerian_md-gray_dungeon-dungeon-std.kss::KSS, 0, SORCERIAN MD - 灰色のダン
 ndp-space_manbow_stage1_battle_ship.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship - Programmed by uniskie, 00:00:57, 00:00:00-,,2
 ndp-space_manbow_stage1_battle_ship_henv.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship (H.ENV) - Programmed by uniskie, 00:00:57, 00:00:00-,,2
 ndp-test-0.kss::KSS, 0, 不安になる旋律テスト - Composed by uniskie, 00:00:12, 00:00:08-,,2
-ndp-test-nettaigyo.kss::KSS, 0, 淋しい熱帯魚 PSG Cover - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
-ndp-test-nettaigyo-henv.kss::KSS, 0, 淋しい熱帯魚 PSG Cover (H.ENV) - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11,,,1
+ndp-test-nettaigyo.kss::KSS, 0, 淋しい熱帯魚 PSG Cover - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11, 0,1,1
+ndp-test-nettaigyo-henv.kss::KSS, 0, 淋しい熱帯魚 PSG Cover (H.ENV) - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11, 0,1,1
 ndp-vanilla.kss::KSS, 0, ヴァ〇ニラの求人 NDP祭り - Programmed by uniskie, 00:01:04, 00:00:00-,,2
