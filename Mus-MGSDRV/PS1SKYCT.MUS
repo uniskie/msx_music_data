@@ -1,0 +1,87 @@
+;[gain=1.0 name=PS1SKYCT duration=300s fade=5s cpu=0 lpf=1]
+; The line above defines extra options, works only on msxplay.com
+; name    : Name of mml, use as the base download filename.
+; gain    : Volume gain. (default: 1.0)
+; duration: Maxiumum play duration. (default: 300s)
+; fade    : Time of fading out. (default: 5s)
+; cpu     : CPU speed ratio. 0:auto, 1:3.58MHz (default: 0)
+; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
+; loop    : Number of global loops. (default: 2).
+;           Note that duration takes precedence over loop.
+#opll_mode 1
+#tempo 142
+#title {"Phantasy Star - Sky City (YM2413)"}
+
+@v15 = { ; Brass1
+;       TL FB
+        22, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+   9, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0,
+  10, 7, 1, 1, 0, 1, 0, 0, 0, 0, 0 }
+
+@v16 = { ; Brass2
+;       TL FB
+       10, 7,
+; AR DR SL RR KL MT AM VB EG KR DT
+   9, 4, 4, 2, 0, 1, 1, 1, 0, 0, 1,
+  10, 7, 1, 2, 0, 1, 0, 0, 0, 0, 0 }
+
+9 v15
+a v13 r8 @\17 
+9a l8 o5
+9a [0
+9a  @15 v-1
+9a  [ d+cgc f+cfd+ d+cgc fcd+c
+9a    d+cd+f gfd+c | g+4gg+ a+2
+9a  ]                g+4a+g+ g2
+9a  @16 v+1
+9a  <
+9a  [ cccd4.< a+2. a4a+4>
+9a  | cccd4. d+2.. gfd+
+9a  ] c4<b>c d+4dd+ g1
+9a  >
+9a ]
+
+B v13 @14 
+C v15 @8 @\19 
+BC l8 o3
+BC [0
+BC  c2.. c< a+1
+BC  a2.. a g+2 a+2>
+BC  c2.. c< a+2.. a+
+BC  a1 g+4a+g+ g2
+BC  [ fffg r4d+2. d4d+4
+BC  | fffg r4g+2& g+a+> c<a+g+4
+BC  ] f4ef g+4gg+> c1
+BC ]
+
+D v13 @11 q7 @\12 
+E v11 @11 q7 r8 @\28 
+DE l8 o4
+DE [0
+DE  @7 v-2
+DE  d+1 c1
+DE  d+1 <g+2a+2>
+DE  d+1 c1
+DE  d+1 v+2 @11 c2< a+2
+DE  fffg4. d+2. d4d+4
+DE  fffg4. g+1& g+4
+DE  g+g+g+a+4. g2. f4g4
+DE  g+4gg+> c4<b>c d+1
+DE ]
+
+R v15 vs13 vh10
+;R y22,32  y38,5 ;BD     default
+;R y23,80  y39,5 ;SD/HH  default
+;R y24,192 y40,1 ;CY/TOM default
+R y22,216 y38,3 ;BD
+R y23,128 y39,3 ;SD/HH
+R y24,190 y40,1 ;CY/TOM
+R [0 
+R  [b4r8b8 bs4r8.b16 b4b4 s4r4
+R   b4r8b8 bs4r8.b16 b4bh8bsh8 bh8bsh8bh8bh8]2
+R  [bh8bh8bsh8bh8 r4bh4 bh4bsh4 bh4bh4
+R  |bh8bh8bsh8bh8 r4bh4 bh4sh4 bh8s8bsh8bs8
+R  ]bh4sh8s8 bh8.bh16s8s8 bh4sh4 h8bh8sh8bh8
+R ] 
+

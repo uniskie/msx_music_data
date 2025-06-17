@@ -17,6 +17,17 @@ VGMファイルもあります。
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
 
+- Phantasy Star - Sky City (YM2413)  
+  [MSXPlay: PS1SKYCT.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/PS1SKYCT.MUS)  
+  [M3disp: PS1SKYCT.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/PS1SKYCT.MUS)  
+  [VGM file: PS1SKYCT.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/PS1SKYCT.vgm)  
+
+- Phantasy Star - Sky City (素YM2413)  
+  [MSXPlay: PS1VSKYC.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/PS1VSKYC.MUS)  
+  [M3disp: PS1VSKYC.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/PS1VSKYC.MUS)  
+  [VGM file: PS1VSKYC.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/PS1VSKYC.vgm)  
+
+
 - DRAGON BUSTER 岩山 (YM2413/PSG)  
   [MSXPlay: DBUS03.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DBUS03.MUS)  
   [M3disp: DBUS03.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/DBUS03.MUS)  
