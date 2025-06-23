@@ -17,6 +17,11 @@ VGMファイルもあります。
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
 
+- F-1SPIRIT Self Confidence (F3000) OPLL ver.  
+  [MSXPlay: F1SPO-07.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/F1SPO-07.MUS)  
+  [M3disp: F1SPO-07.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/F1SPO-07.MUS)  
+  [VGM file: F1SPO-07.vgm](https://raw.githubusercontent.com/uniskie/msx_music_data/master/VGM/F1SPO-07.vgm)  
+
 - Phantasy Star - Sky City (YM2413)  
   [MSXPlay: PS1SKYCT.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/PS1SKYCT.MUS)  
   [M3disp: PS1SKYCT.MUS](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/PS1SKYCT.MUS)  
