@@ -10,15 +10,28 @@ try{
 	efunc.alertBox = function(s)			{	alert(s);	}
 	efunc.isSelectionEmpty = function()		{	return document.selection.IsEmpty;	}
 	efunc.selectLine = function()			{	document.selection.SelectLine();	}
+	efunc.getSelectionStartY = function()	{	return document.selection.GetTopPointY( eePosLogical );	}
+	efunc.getSelectionStartX = function()	{	return document.selection.GetTopPointX( eePosLogical );	}
+	efunc.setCursor = function( x, y )		{	return document.selection.SetActivePoint( eePosLogical, x, y );	}
+	efunc.getLineText = function( l )		{	return document.GetLine( l );	}
 	efunc.getSelectionText = function()		{	return document.selection.Text;	}
+	efunc.setSelectionText = function( s )	{	document.selection.Text = s;	}
+	efunc.lf = '\n';
 }catch(e){
 	//alert('sakura editor ?');
 	efunc.inputBox = function( msg, def )	{	return Editor.InputBox(msg, def, 8);	}
 	efunc.alertBox = function(s)			{	Editor.InfoMsg(s);	}
 	efunc.isSelectionEmpty = function()		{	return (Editor.IsTextSelected == 0);	}
 	efunc.selectLine = function()			{	Editor.SelectLine();	}
-	efunc.getSelectionText = function()		{	return Editor.GetSelectedString();	}
+	efunc.getSelectionStartY = function()	{	return Editor.GetSelectLineFrom();	}
+	efunc.getSelectionStartX = function()	{	return Editor.GetSelectColumnFrom();	}
+	efunc.setCursor = function( x, y )		{	return Editor.MoveCursor( y, x, 0 );	}
+	efunc.getLineText = function( l )		{	return Editor.GetLineStr( l ); 	}
+	efunc.getSelectionText = function() 	{	return Editor.GetSelectedString();	}
+	efunc.setSelectionText = function( s )	{	Editor.InsText( s );	}
+	efunc.lf = ['\r\n', '\r', '\n'][GetLineCode()];
 }
+var lf = efunc.lf;
 //=============================
 
 var o = 0;
