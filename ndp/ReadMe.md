@@ -139,67 +139,75 @@ KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生
   [ndp-dragon-spirit-zawel.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-dragon-spirit-zawel.kss
 
-- "F1SPIRIT (H.ENV) [F-1 Shuffle] (TITLE)"  
+- "F-1 SPIRIT (H.ENV) [F-1 Shuffle] (TITLE)"  
   [ndp-f1spirit-henv-1-F1_Shuffle.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-1-F1_Shuffle.kss
 
-- "F1SPIRIT (H.ENV) [Starting Grid] (START)"  
+- "F-1 SPIRIT (H.ENV) [Starting Grid] (START)"  
   [ndp-f1spirit-henv-2-starting_grid.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-2-starting_grid.kss
 
-- "F1SPIRIT (H.ENV) [D/G] (MACHINE SELECT)"  
+- "F-1 SPIRIT (H.ENV) [D/G] (MACHINE SELECT)"  
   [ndp-f1spirit-henv-3-D_G.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-3-D_G.kss
 
-- "F1SPIRIT (H.ENV) [Hot Summer Riding] (STOCK CAR RACE)"  
+- "F-1 SPIRIT (H.ENV) [Hot Summer Riding] (STOCK CAR RACE)"  
   [ndp-f1spirit-henv-4-hot_summer_riding.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-4-hot_summer_riding.kss
 
-- "F1SPIRIT (H.ENV) [Random Approach] (RALLY RACE)"  
+- "F-1 SPIRIT (H.ENV) [Random Approach] (RALLY RACE)"  
   [ndp-f1spirit-henv-5-random-approach.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-5-random-approach.kss
 
-- "F1SPIRIT (H.ENV) [Next] (Retire)"  
+- "F-1 SPIRIT (H.ENV) [Next] (Retire)"  
   [ndp-f1spirit-henv-6-next.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-6-next.kss
 
-- "F1SPIRIT (H.ENV) [Vanishing Heat] (ENDURANCE RACE)"  
+- "F-1 SPIRIT (H.ENV) [Self-Confidence] (F3000 RACE))"  
+  [ndp-f1spirit-henv-7-Self-Confidence.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-7-Self-Confidence.kss
+
+- "F-1 SPIRIT (H.ENV) [Vanishing Heat] (ENDURANCE RACE)"  
   [ndp-f1spirit-henv-8-Vanishing_Heat.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-8-Vanishing_Heat.kss
 
-- "F1SPIRIT (H.ENV) [Winning Run] (RANKING GOAL)"  
+- "F-1 SPIRIT (H.ENV) [Winning Run] (RANKING GOAL)"  
   [ndp-f1spirit-henv-9-Winning_Run.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-henv-9-Winning_Run.kss
 
-- "F1SPIRIT (STANDARD) [F-1 Shuffle] (TITLE)"  
+- "F-1 SPIRIT (STANDARD) [F-1 Shuffle] (TITLE)"  
   [ndp-f1spirit-std-F1_Shuffle.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-F1_Shuffle.kss
 
-- "F1SPIRIT (STANDARD) [Starting Grid] (START)"  
+- "F-1 SPIRIT (STANDARD) [Starting Grid] (START)"  
   [ndp-f1spirit-std-starting_grid.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-starting_grid.kss
 
-- "F1SPIRIT (STANDARD) [D/G] (MACHINE SELECT)"  
+- "F-1 SPIRIT (STANDARD) [D/G] (MACHINE SELECT)"  
   [ndp-f1spirit-std-D_G.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-D_G.kss
 
-- "F1SPIRIT (STANDARD) [Hot Summer Riding] (STOCK CAR RACE)"  
+- "F-1 SPIRIT (STANDARD) [Hot Summer Riding] (STOCK CAR RACE)"  
   [ndp-f1spirit-std-hot_summer_riding.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-hot_summer_riding.kss
 
-- "F1SPIRIT (STANDARD) [Random Approach] (RALLY RACE)"  
+- "F-1 SPIRIT (STANDARD) [Random Approach] (RALLY RACE)"  
   [ndp-f1spirit-std-random-approach.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-random-approach.kss
 
-- "F1SPIRIT (STANDARD) [Next] (Retire)"  
+- "F-1 SPIRIT (STANDARD) [Next] (Retire)"  
   [ndp-f1spirit-std-next.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-next.kss
 
-- "F1SPIRIT (STANDARD) [Vanishing Heat] (ENDURANCE RACE)"  
+- "F-1 SPIRIT (STANDARD) [Self-Confidence] (F3000 RACE))"  
+  [ndp-f1spirit-std-7-Self-Confidence.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-7-Self-Confidence.kss
+
+- "F-1 SPIRIT (STANDARD) [Vanishing Heat] (ENDURANCE RACE)"  
   [ndp-f1spirit-std-Vanishing_Heat.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-Vanishing_Heat.kss
 
-- "F1SPIRIT (STANDARD) [Winning Run] (RANKING GOAL)"  
+- "F-1 SPIRIT (STANDARD) [Winning Run] (RANKING GOAL)"  
   [ndp-f1spirit-std-Winning_Run.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-Winning_Run.kss
 

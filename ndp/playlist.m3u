@@ -18,6 +18,7 @@ ndp-f1spirit-henv-3-D_G.kss::KSS, 0, F-1 SPIRIT (H.ENV) [D/G] (MACHINE SELECT) -
 ndp-f1spirit-henv-4-hot_summer_riding.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Hot Summer Riding] (STOCK CAR RACE) - Programmed by uniskie, 00:00:52, 00:00:01-,,2
 ndp-f1spirit-henv-5-random-approach.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Random Approach] (RALLY RACE) - Programmed by uniskie, 00:00:38, 00:00:00-,,2
 ndp-f1spirit-henv-6-next.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Next] (Retire) - Programmed by uniskie, 00:00:25, 00:00:00-,,2
+ndp-f1spirit-henv-7-Self-Confidence.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Self-Confidence] (F3000 RACE) - Programmed by uniskie, 00:00:44, 00:00:00-,,2
 ndp-f1spirit-henv-8-Vanishing_Heat.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Vanishing Heat] (ENDURANCE RACE) - Programmed by uniskie, 00:00:38, 00:00:00-,,2
 ndp-f1spirit-henv-9-Winning_Run.kss::KSS, 0, F-1 SPIRIT (H.ENV) [Winning Run] (RANKING GOAL) - Programmed by uniskie, 00:00:17, 00:00:01-,,2
 ndp-f1spirit-std-1-F1_Shuffle.kss::KSS, 0, F-1 SPIRIT (Normal) [F-1 Shuffle] (TITLE) - Programmed by uniskie, 00:00:10, 0,1,1
@@ -26,6 +27,7 @@ ndp-f1spirit-std-3-D_G.kss::KSS, 0, F-1 SPIRIT (Normal) [D/G] (MACHINE SELECT) -
 ndp-f1spirit-std-4-hot_summer_riding.kss::KSS, 0, F-1 SPIRIT (Normal) [Hot Summer Riding] (STOCK CAR RACE) - Programmed by uniskie, 00:00:52, 00:00:01-,,2
 ndp-f1spirit-std-5-random-approach.kss::KSS, 0, F-1 SPIRIT (Normal) [Random Approach] (RALLY RACE) - Programmed by uniskie, 00:00:38, 00:00:00-,,2
 ndp-f1spirit-std-6-next.kss::KSS, 0, F-1 SPIRIT (Normal) [Next] (Retire) - Programmed by uniskie, 00:00:25, 00:00:00-,,2
+ndp-f1spirit-std-7-Self-Confidence.kss::KSS, 0, F-1 SPIRIT (Normal) [Self-Confidence] (F3000 RACE) - Programmed by uniskie, 00:00:44, 00:00:00-,,2
 ndp-f1spirit-std-8-Vanishing_Heat.kss::KSS, 0, F-1 SPIRIT (Normal) [Vanishing Heat] (ENDURANCE RACE) - Programmed by uniskie, 00:00:38, 00:00:00-,,2
 ndp-f1spirit-std-9-Winning_Run.kss::KSS, 0, F-1 SPIRIT (Normal) [Winning Run] (RANKING GOAL) - Programmed by uniskie, 00:00:17, 00:00:01-,,2
 ndp-galious-castle.kss::KSS, 0, MAZE of GALIOUS [START] ~ [CASTLE] henv-base - Programmed by uniskie, 00:01:24, 00:00:01-,,2
