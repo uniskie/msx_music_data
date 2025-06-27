@@ -199,7 +199,7 @@ KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生
   [ndp-f1spirit-std-next.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-next.kss
 
-- "F-1 SPIRIT (STANDARD) [Self-Confidence] (F3000 RACE))"  
+- "F-1 SPIRIT (STANDARD) [Self-Confidence] (F3000 RACE)"  
   [ndp-f1spirit-std-7-Self-Confidence.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-f1spirit-std-7-Self-Confidence.kss
 

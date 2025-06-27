@@ -11,14 +11,14 @@
 #JUMP-OFFSET -1000
 
 ;==== RHYTHM VOICE ====
-;@R:B = *3 :920 N1 V14 / *1 :2000 V12
-@R:S = V15 *1 :539 / V14 *2 N3 / V13 N0 *3 :719 ;/ V12 :590
+;@R:B = *3 :920 N0 V14 / *1 :1200 V12
+@R:S = V15 *1 :568 / *2 V12 N8 :635 / V11 *3 N0 :701 / V10 :793
 @R:H = *3 :19 N0 V15                               ;-- Close Hi-hut
 ;@R:E = *3 :920 N0 V15 / *1 :2000 V12              ;-- Close Hi-hut + Bass drum
 ;@R:O = *3 :21 N0 V15 / N1                         ;-- Open Hi-hut
-@R:K = V15 *3 :453 N4 / *1 V13 :509 / V12 :571 / V11 :641
-@R:M = V15 *3 :571 N6 / *1 V13 :641 / V12 :719 / V11 :807
-@R:N = V15 *3 :719 N8 / *1 V13 :807 / V12 :906 / V11 :1017
+@R:K = V15 *3 :453 N0 / *1 V13 :509 / V12 :571 / V11 :641
+@R:M = V15 *3 :571 N0 / *1 V13 :641 / V12 :719 / V11 :807
+@R:N = V15 *3 :719 N0 / *1 V13 :807 / V12 :906 / V11 :1017
 ;123 @off
 
 ;==== VOICE (VOLUE/AMP ENVELOPE) ====
@@ -27,19 +27,16 @@
 ; lead
 @1 = bdfedc:2 edc:2 L b:3 c:3
 ; brass 
-@2 = fed:2 c dc:2 b L c:2 b:3 a:3
+@2 = fedc dc dc:2 b:2 L c:2 b:3 a:3
 ; echo electone
 @3 = fedcb:3 edcb:3 dcba:2 L b:2 a:2 9:2 8:2
 ; tril piano
 @5 = {fed:2 c:2 d:2 c:2  ;edc:2 b:2 c:2 b:2
       dcb:2 a:2 9:2 8:2 L b:2 a:2 9:2 a:2 }
-      ;[2 cba:2 9:2 a:2 9 ]
-      ;[2 ba9:2 8:2 9:2 8:2 ] [3 a98:2 7:2 8:2 7:2  ]
-      ;[3 987:2 6:2 7:2 6:2 ] L 876:2 5:2 6:2 5:2 }
 
 ; bass
-@6 = FCB:2 L A:4 9:4 
-@7 = FC L B:4 A:4
+@6 = DBA:2 L 9:4 8:4 
+@7 = DB L A:4 9:4
 @8 = *1 s10 *0 r h- ;H.ENV
 @9 = *1 s10 rrr *0 r:5 h- ;H.ENV
 
@@ -82,7 +79,7 @@ $d3=\10 ;ユニゾン揺れ周期調整
 1 @0 o4 v14
 2 @0 o5 v11
 3 $base: $d: o2 v15
-r vs14 vh11 vk14 vm14 vn14 @c2
+r v14 vh11 @c2
 
 12 @m0 @r13,2 @rd1,18 @q2
 12  la%2 @as1
