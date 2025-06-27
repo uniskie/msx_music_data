@@ -1,5 +1,4 @@
 
-bouken_no_sho.kss::KSS, 0, おきのどくですが ぼうけんのしょ は きえてしまいました, 00:00:02, 0,1,1
 ndp-dangrous_seed_1.kss::KSS, 0, DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8) - Programmed by uniskie, 00:00:49, 00:00:00-,,2
 ndp-dangrous_seed_1_boss.kss::KSS, 0, DANGEROUS SEED(MD) Triple-Eye (Stage 1&9 BOSS) - Programmed by uniskie, 00:00:39, 00:00:08-,,2
 ndp-dangrous_seed_2.kss::KSS, 0, DANGEROUS SEED(MD) 2nd TUBE (STAGE 2&5) - Programmed by uniskie, 00:00:29, 00:00:00-,,2
@@ -49,7 +48,6 @@ ndp-sorcerian_md-gray_dungeon-dungeon.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョ
 ndp-sorcerian_md-gray_dungeon-dungeon-std.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std] - Programmed by uniskie, 00:01:29, 00:00:06-,,2
 ndp-space_manbow_stage1_battle_ship.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship - Programmed by uniskie, 00:00:57, 00:00:00-,,2
 ndp-space_manbow_stage1_battle_ship_henv.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship (H.ENV) - Programmed by uniskie, 00:00:57, 00:00:00-,,2
-ndp-test-0.kss::KSS, 0, 不安になる旋律テスト - Composed by uniskie, 00:00:12, 00:00:08-,,2
 ndp-test-nettaigyo.kss::KSS, 0, 淋しい熱帯魚 PSG Cover - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11, 0,1,1
 ndp-test-nettaigyo-henv.kss::KSS, 0, 淋しい熱帯魚 PSG Cover (H.ENV) - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11, 0,1,1
 ndp-vanilla.kss::KSS, 0, ヴァ〇ニラの求人 NDP祭り - Programmed by uniskie, 00:01:04, 00:00:00-,,2

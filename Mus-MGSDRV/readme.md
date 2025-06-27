@@ -12,10 +12,18 @@ VGMファイルもあります。
 
 --
 
-## 曲リスト（MSXPLAY/M3edispで聞く）
+
+## 曲リスト（MSXPLAY/M3dispで聞く）
+
+- MGSDRVデータを全曲一括試聴  
+  [M3disp: 全曲一括試聴](https://m3.ym2413.com/?open=https://raw.githubusercontent.com/uniskie/msx_music_data/master/DSK_image/Mus-MGSDRV.zip)  
+
+---
 
 - OPLL固定音色定義  
   [MSXPlay: nukeinst.txt](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/nukeinst.txt)  
+
+---
 
 - F-1SPIRIT Self Confidence (F3000) OPLL ver.  
   [MSXPlay: F1SPO-07.MUS](https://f.msxplay.com/?id=https://raw.githubusercontent.com/uniskie/msx_music_data/master/Mus-MGSDRV/F1SPO-07.MUS)  
