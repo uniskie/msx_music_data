@@ -1,4 +1,4 @@
-﻿#title "CodeName : Heero Yuy"
+#title "CodeName : Heero Yuy"
 #bsave-name "GW_CODEH"
 ;#composer "KOH OHTANI"
 
@@ -14,25 +14,29 @@
 @R:M = *3 :600 N10 V15 / *1 :730 V14 / :860 V13 / :1000 V12
 @R:N = *3 :820 N12 V15 / *1 :970 V14 / :1180 V13 / :1360 V12
 
-@0=EF EDE DD CDCC L CC BBB CC D 
-;@0=EF E D E DD CC L BB A:3 BB C
+@0=EFED EDCB DBCB L CC BB CC DD
 @1=CDE FED EDCC L D:2 C:3 D:3 E:3
 @2=B:2 C:3 D:3 E:3 F E:2 D:2 L E D:2 C:3 D:3
-@3=EFED EDCC DCBB L CC BB CC DD
-@4=F E D:3 C:4 B:5 A:6 9:7 8:8 0=64
+
+@4=E F E:2 D:3 C:4 0=40
+
 @6=FDCB L A:4 9:4
 @7=*1 S14 rrr *0 rrrrr h- L r
 
 @m0=28,2,4,0 ,1,1
 @m1=60,3,3,0 ,1,2
+@m2= 3,2,3,0 ,1,1
+
 @m3=28,2,2,0 ,1,1
+@m4= 3,2,3,0 ,1,1
 
 @n1 = -1 0
 
 vs0= L -1 
 
-123r @l
+;123r @l
 
+; intro brass
 12 v14 @0 @m0 @r14,6 @rd- q
 1  o5
 2  o3
@@ -51,7 +55,7 @@ r  v15 @c2
 2  a+8a+8a+a+ a+8q6a+8q8r4
 2  a8a8aaq6a8q8a8r4
 3  a8a8aaa8a8r4
-;3    @0*3n0v-4 >d64f64>c32<b_e8.< v+7@7m+
+;3    @0@m0k0 v9\2 >>>f4<<< @7m+k5mk-5
 3  a-8a-8a-a-a-8a-8;r4
 3  o2 @7 m+ k5 mk-5 ;H.ENV
 3    >a'e&e'<a8.
@@ -68,25 +72,29 @@ r  b8n8b8s8b8r4 b8k8mns8b8r4
 
 12 @n1
 ;12 a8.<c>de-e8.>c<b>c< a2^8r8
-12 a&v-1a8v+1<c>de-e8.>c<&b&>c&< a2^8r8
+12 @m2a&v-1a8@m0v+1<c>de-e8.>c<&b&>c&< a2^8r8
 3  [a8a]4 [f8f]3 >f8<f
 r  [a8.s8. a8bs8.]
+;r  [a.h.s.h. a.h32bs.h.]
 
 ;12 r8.>dc<b>c4.dc<b>c <bab8>c8r<a&
-12 r8.>dc&<b>c4.d&c&<b&>c <b&ab8>c8r<a&
+12 r8.>dc&<b>c4.dc&<b&>c <b&ab8>c8r<a&
 3  [d8d]4 f8ff8>c< g8>d<g+a8&
 r  [a8.s8. a8bs8.]
+;r  [a.h.s.h. a.h32bs.h.]
 
 ;12 a8.cde-e8.>c<b>c<b8a^2r
 12 a8.cde-&e8.>c&<b>c&<b8&a^2r
 ;3  [a8a]4 [d8d]4
 3  [a8a]3a8>a< [d8d]4
 r  [a8.s8. a8bs8.]
+;r  [a.h.s.h. a.h32bs.h.]
 
 ;12 >dc<b>c<bab8>c8r<b4a8a-4r
-12 >c+_d32&d32c<b>c<ba&b8&>c8r<b4a8a-4
+12 >@m2c+_d32&d32@m0c<b>c<ba&b8&>c8r<b4a8a-4
 3  [f8f] f8>c8c<g8c>d8c<a-&a-8a->e8<a-
 r  a8.s8. a8bs8. b8bsm8 b8.kmn
+;r  a.h.s.h. a.h32bs.h. b.h32bsm8 b8.kmn
 
 12 r8.
 ;1 r8. v-1 
@@ -103,7 +111,7 @@ r  a8.s8. a8bs8. b8bsm8 b8.kmn
 1  @2 @m0
 2  @2 @m3
 1     v+1  
-2  >> v-3
+2  >> v-4
 
 12 a8.cde-e8.>c<b>c< a2^8r8
 3  [a8a]4 [f8f]3 >f8<f
@@ -118,61 +126,60 @@ r  [a8.s8. a8bs8.]
 3  [a8a]3a8a [d8d]4
 r  [a8.s8. a8bs8.]
 
-12 >dc<b>c<babaedega-8>c8r<q8a4;r8.
+12 >dc<b>c<babaedega-8>c8r<a4.r
 3  >f<f^4 >g<g^4 >a-&<a->a-<a-8>a< a4.
 r  a8.s8. a8bs8b m8m8.m^8bkmn
 
-12 r8.
-;1  r8.
-;2  r.  v+3
-
 1     v-1
-2  << v+3
+2  << v+4
 
 1 j3
 
-; brass interval
+; inverbal brass
 
 1  > v+1
-2    v-2
+2    v-3
 
-1  @3 @m3
-2  @3 @m3
+1  @0 @m3
+2  @0 @m3
 
 12  q7
-12  d4.<a8.>d8e2.r
+12  @m4d4.@m3<a8.>d8e2.r
 12  r8.e_f&fe d8.a8g2.r
 12  a4.d8.a8g2.r
-12  r8.a+%2a+8.-%2g8.e8a2.r
+12  r8.@m4a+8.@m3g8.e8a2.r
 12  q8
 
 3  >
-3  [d8^32r32d8.d8.d8.
-3   d8.d8.d8d8.d
-3   d8.d8.d8.d8^32r32
-3  /d8^32r32d8.d8d8d8]
-3  [<a'>d8.] [<a'>d8] <a'>d&d'<a>
+3  q7d8.q8d8.d8.d8.
+3  d8.d8.d8d8.d
+3  d8.d8.d8.d8^32r32
+3  q7d8.d8.d8d8d8
+3  q7d8.q8d8.d8.d8.
+3  d8.d8.d8d8d8
+3  d8.d8.d8.d8^32r32
+3  @q2[<a'>d8.] [<a'>d8] <a'>d&d'<a>@q0
 3  <
 
 r  [a8.s8. / a8bs8.]8 ssssss
 
 1  < 
-2    v+2
+2    v+3
 
 1 j4 ;sax B
 
 12 @1 @m0 @q1 
 1    v+1
-2  < v-1
+2  < ;v-1
 
 12 @n1
 ;12 a8.cde-e8.>c<b>c< a2^8r8
-12 a8.cde-&e8.>c&<b&>c&< a2^8r8
+12 @m2a8.@m0cde-&e8.>c&<b&>c&< a2^8r8
 3  [a8a]4 [f8f]3 >f8<f
 r  [a8.s8. a8bs8.]
 
 ;12 r8.>dc<b>c4.dc<b>c <bab8>c8r<a&
-12 r8.>dc&<b>c4.dc&<b&>c <b&a&b8&>c8r<a&
+12 r8.>dc&<b>@m2c4.@m0dc<b>c <b&a&b8&>c8r<a&
 3  [d8d]4 f8ff8>c< g8>d<g+a8&
 r  [a8.s8. a8bs8.]
 
@@ -183,14 +190,14 @@ r  [a8.s8. a8bs8.]
 r  [a8.s8. a8bs8.]
 
 ;12 >dc<b>c<babaedega-8>c8r<q8a4;r8.
-12 >dc<b>c&<b&ab&ae&d&eg&a-8>c8r<q8a4r8.
+12 >dc<b>c<baba&edeg&a-8>&c8r<q8a4r8.
 3  >f<f^4 >g<g^4 >a-&<a->a-<a-8>a< a4.
-r  a8.s8. a8bs8b m8m8.m^8bkmn
+r  a8.s8. a8bs8b m8m8.m8b8kmn
 
 12 @n-
 
 1    v-1
-2  > v+1
+2  > ;v+1
 
 1 j5
 
@@ -206,7 +213,7 @@ r  a8.s8. a8bs8b m8m8.m^8bkmn
 2    q7a8q8a8aa b8q6b8q8r@m1a& a1.
 3   f8f8ff f8f8r8
 3   c8c8cc c8c8ra& a1.
-r  @c3 a8k8bbs8s8r8 a8k8mns8s8 @c2 r a r1.
+r  @c3 a8n8bbs8s8r8 a8k8mns8s8 @c2 r a r1.
 r                                     ;r1r4.@c3vb-1bbv+1
 
 ;12 v-1
