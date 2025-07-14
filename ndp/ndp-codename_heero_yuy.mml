@@ -14,7 +14,7 @@
 @R:M = *3 :600 N10 V15 / *1 :730 V14 / :860 V13 / :1000 V12
 @R:N = *3 :820 N12 V15 / *1 :970 V14 / :1180 V13 / :1360 V12
 
-@0=EFED EDCB DBCB L CC BB CC DD
+@0=EFED L CC BB CC DD
 @1=CDE FED EDCC L D:2 C:3 D:3 E:3
 @2=B:2 C:3 D:3 E:3 F E:2 D:2 L E D:2 C:3 D:3
 
@@ -34,13 +34,13 @@
 
 vs0= L -1 
 
-;123r @l
+123r @l
 
 ; intro brass
-12 v14 @0 @m0 @r14,6 @rd- q
+12 v14 @0 @m0 @r13,3 @rd- q
 1  o5
 2  o3
-3  o2 @7 m+ k5 mk-5 ;H.ENV
+3  o2 @7 m+ k8 mk-8 ;H.ENV
 2  > v-1
 r  v15 @c2
 
@@ -50,23 +50,24 @@ r  v15 @c2
 
 2  la32,32,48,4
 
-1  f8f8ff f8q6f8q8r4
-1  e8e8ee a8q6a8q8r4
-2  a+8a+8a+a+ a+8q6a+8q8r4
-2  a8a8aaq6a8q8a8r4
-3  a8a8aaa8a8r4
+1  q6f8q8f8q6ff q8f8q4f8r4
+1  q6e8q8e8q6ee q8a8q6a8r4
+2  q6a+8q8a+8q6a+a+ q8a+8q4a+8r4
+2  q6a8q8a8q6aa q8a8q6a8r4
+;3  d8d8dd d8d8r4
+3  a8a8aa a8a8r4
 ;3    @0@m0k0 v9\2 >>>f4<<< @7m+k5mk-5
-3  a-8a-8a-a-a-8a-8;r4
-3  o2 @7 m+ k5 mk-5 ;H.ENV
+;3  d-8d-8d-d- d-8d-8;r4
+3  a-8a-8a-a- a-8a-8;r4
 3    >a'e&e'<a8.
 r  b8n8b8s8b8r4 b8k8mns8b8r4
 
 2  v+3
-12 o4
 
 1 j1 ;sax A
 
-12 @1 @q0 q8 @m0 @r13,6 @rd1,5 @q1
+12 o4 @1 @q0 q8 @m0 @r13,6 @rd1,5 @q1
+3  o2 @7 m+ k8 mk-8 ;H.ENV
 ;2 \1 r. v-3
 2  > v-3
 
@@ -77,8 +78,8 @@ r  b8n8b8s8b8r4 b8k8mns8b8r4
 r  [a8.s8. a8bs8.]
 ;r  [a.h.s.h. a.h32bs.h.]
 
-;12 r8.>dc<b>c4.dc<b>c <bab8>c8r<a&
-12 r8.>dc&<b>c4.dc&<b&>c <b&ab8>c8r<a&
+;12 r8.d>c<b>c4.dc<b>c <bab8>c8r<a&
+12 r8.d>c&<b>c4.dc&<b&>c <b&ab8>c8r<a&
 3  [d8d]4 f8ff8>c< g8>d<g+a8&
 r  [a8.s8. a8bs8.]
 ;r  [a.h.s.h. a.h32bs.h.]
@@ -91,14 +92,11 @@ r  [a8.s8. a8bs8.]
 ;r  [a.h.s.h. a.h32bs.h.]
 
 ;12 >dc<b>c<bab8>c8r<b4a8a-4r
-12 >@m2c+_d32&d32@m0c<b>c<ba&b8&>c8r<b4a8a-4
-3  [f8f] f8>c8c<g8c>d8c<a-&a-8a->e8<a-
+12 >@m2c+_d32&d32@m0c<b>c<ba&b8&>c8r<b4a8a-4r8.
+3  [f8f] f8f>c8c<g8c>d8c<a-8a->e8<a-
 r  a8.s8. a8bs8. b8bsm8 b8.kmn
 ;r  a.h.s.h. a.h32bs.h. b.h32bsm8 b8.kmn
 
-12 r8.
-;1 r8. v-1 
-;2 r.  v+3 \0
 2  < v+1
 
 12 @n-
@@ -118,7 +116,7 @@ r  a8.s8. a8bs8. b8bsm8 b8.kmn
 r  [a8.s8. a8bs8.]
 
 12 r8.>dc<b>c4.dc<b>c <bab8>c8r<a&
-3  [d8d]4 f8ff8>c< g8>d<g+a8&
+3  [d8d]4 f8ff8>c< g8>d<g+8a&
 r  [a8.s8. a8bs8.]
 
 12 a8rcde-e8.>c<b>cd8.e8<a4..
@@ -151,15 +149,15 @@ r  a8.s8. a8bs8b m8m8.m^8bkmn
 12  q8
 
 3  >
-3  q7d8.q8d8.d8.d8.
+3  d8.d8.d8.d8.
 3  d8.d8.d8d8.d
-3  d8.d8.d8.d8^32r32
-3  q7d8.d8.d8d8d8
+3  d8.d8.d8.d8.
+3  d8.d8.d8d8d8
 3  q7d8.q8d8.d8.d8.
 3  d8.d8.d8d8d8
-3  d8.d8.d8.d8^32r32
-3  @q2[<a'>d8.] [<a'>d8] <a'>d&d'<a>@q0
+3  d8.d8.d8.d8.
 3  <
+3  @q2[a'>d8.<] [a'>d8<] a'>d8<@q0
 
 r  [a8.s8. / a8bs8.]8 ssssss
 
