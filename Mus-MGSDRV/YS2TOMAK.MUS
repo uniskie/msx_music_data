@@ -344,7 +344,7 @@ AC   *v1 ;distortion guitar sub
 3    @\0 l16>>ec+<a+gec+<a+g> @\6 efg+fefg+a< @\0 
 
 123  v-1 q6
-123  h3,2,2,-1
+123  h3,1,2,-2
 
 1    l32 > b-2>e2 g4.f8e2<    a+2>e2 g2<  < 
 2    l32 > g2a+2  >e4.d8c+2<  g2a+2  >e2< < 
