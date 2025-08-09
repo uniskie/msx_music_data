@@ -1,4 +1,4 @@
-;[gain=1.0 name=FF3BOSS1 duration=1200s fade=5s cpu=0 lpf=1]
+;[gain=1.0 name=FF3BOSS1 duration=1200s fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -13,7 +13,7 @@
   "[SQUARE SOFT] FINAL FANTASY III "
         "- BATTLE 2 (BOSS) -"
       " [OPLL+PSG] by Uniskie"}
-      
+
 @v16={
      ;TL,FB
       15, 6,
@@ -28,79 +28,92 @@
       12, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1,
       13, 3, 3, 6, 0, 1, 0, 1, 1, 0, 0}
 
-@e00 = {3,2,C6=7.0=16}
-@e01 = {3,2,ED0=70}
+@e00 = {3,2,C6=6.0=16}
+@e01 = {3,2,CB0=70}
 @e02 = {3,3,F*2n4.En5.Dn6.Cn7.Cn8.Bn9.Bn10.An11.An12.9n13.0=20}
 
 @e09 = {1,,FED}
 @e10 = {1,,FED:20[C=3.D=3]}
 @e12 = {1,,EFA=4.0=68}
 @e13 = {1,,DEFEDDC}
-;@e14 = {,,@10.F @13.F}
-@e14 = {,,@12.F @13.F}
+@e14 = {,,@12.FF @13.E}
+@e15 = {,,@6.FF @13.E}
 
+;123 !
 ;9abcdef !
 
-;* Brass ------------------------------
-1 o5 v8 k5
+;* Main ------------------------------
+1 o5 v8 k5 
 9 o6 v13 
-B o6 v11 r4 @\20
-D o6 v11 @\10
+B o6 v10 r4 \-1
+D o6 v11 \1
 19BD [0 l8
-1     @10 @\1
-9B    @16
-D     @0
-19BD  h15,2,0,4
+1     @10 \1 
+9B    @17
+D     @12
+1     h15,2,0,2
+9BD   h15,2,0,4
 19BD  [rq8d+q5ec<ag+a>c q8eq5gf+dfq8e4q5cq8]
 19BD  [rq8g+q5afdc+df q8aq5>c<bgb-q8a4q5fq8]
-9B    @17
-D     @3
-19BD  l4 ec<af ec<af ec<af l12eg+b>eg+b>eg+b>eg+b l8
+9B    @3 v-1
+D     @0 v+1
+19B   >
+19BD  l4 ec<af ec<af ec<af
+19BD  l12eg+b>eg+b>eg+b>eg+b l8
+19B   <
+9B    v+1
+D     v-1
 1     @12
-9B    @7< q7so
-D     @9<<
+9B    <@9 v-2
+D     @9
 19BD  dfdfag+rf dfag+fg+>c<b
 19BD  a>c<a>ced+rc< a>cgf+df>c<b<
-1    h35,2,1,1
-9BD  h35,3,1,1
-1     @10 @\0
-9B    @16 q8sf
-D     >@11 v+1
+1     h35,1,2,1 
+9BD   h35,1,2,2
+1     @10 \0
+9B     v+2
+9B    @16
+B     v+1
+D     @1
 19BD  >
 19BD  [ a2..a16b16 a2g2 a2g2& g1
 19BD  | f2..f16g16 f2d2 e1 g+1
 19BD  ] a2..a16b16 a2g2 a1 g+1
-1     <
-D     v-1
+B     v-1
+1     < 
+D     <
 19BD ]
 
 ;* Strings ----------------------------
 2 v8 @13 k5 
-A v13
-C v10 r24 @\26
+A v13 
+C v10 r24 \-1
 2AC [0 l8
 AC   o5
 2    o4 
 AC   @0 so
-2AC  h20,2,0,4
+2    h20,2,0,2
+AC   h20,2,0,4
 2AC  [q8eq4ccccccc q8cq4dd+efq8g+4q4a]
 2AC  [q8aq4fffffff q8fq4gg+aa+>q8c+4q4d<]q8
-A    v-1
-AC   @17 sf
+AC   >@0 sf
 2AC  l4 afec <afec< afec< l12 b>dfg+b>dfg+b>dfg+ l8
-AC   @12
+AC   <
+A    @12 v-1
+A    <[3 rrf_cf_crrf_cr] 
+A        rrf_cr l16f_cf_c<f_crb_eb_e<b_er>> l8
 A    v+1
-A    <[4 rrf_cf_c|rrf_cr]
-A                 f_c<b_eg_de_<a>>
-2    @12
+2    @12 
+C    @13
 2C   <dfdfag+rf dfag+fg+>c<b
 2C   a>c<a>ced+rc< a>cgf+df>c<b
 ;2AC  c1& c1
 ;2AC  e1& e2ab>c<b
-2    h20,2,1,1
-AC   h20,3,1,1
-2    @10> v+1
-AC   @0>>
+2    h20,1,2,1 
+AC   h20,1,2,2
+2    @10 v+1 
+AC   @0>
+2AC  >
 2AC  [
 2AC   [l8 c<a24b24>c24d<a>c<a>d<a>]
 2AC   [<bg+24a24b-24bgagbg>]
@@ -110,25 +123,24 @@ AC   @0>>
 2AC  ]
 2AC   <adfdadfd> c<dgd>c<dgd
 2AC   >[d<eae>] d<bg+fl16ef+g+ab>cdel8
-2    < v-1
-AC   <<
+2AC  <
+2    v-1 
+AC   <
 2AC ]
 
 ;* Bass -------------------------------
 E @13@e14 v13 q6so 
 E [0 o2 l8 
 E  [4 [8 a]] 
-E  >[4 [8 d]]<
-E  a2.>d64e8... a2.r4 <aarraarr g+4>d4f4g+4
-E  q5
-E  dfdfag+rf dfag+fg+>c<b
-E  a>c<a>ced+rc< a>cgf+df>c<b<
-E  q6
-;E  v+1
+E  >[4 [8 d]]< 
+E  a2.>d64e8... a2.r4 <aarraarr g+4>d4f4g+4 
+E  @6@e15
+E  dfdfag+rf dfag+fg+>c<b 
+E  a>c<a>ced+rc< a>cgf+df>c<b< 
+E  @13@e14
 E  [ [4 ff<b>c] [4 eedd+] 
 E  | [4 ddcc+] [8 c] eeef+f+f+g+g+ 
 E  ] [2 <a+a+>fa+] [2 d+d+ga+] [4 ee<b>d] 
-;E  v-1
 E ] 
 
 ;* Drums ------------------------------
@@ -139,10 +151,10 @@ E ]
 *07 = { y23, 55y24, 34 }
 
 F y22,162y38,3 
-F y39,3
-F y40,2 
+F y39,2 
+F y40,2
 F *4 
-F vb14 vs12 vm13 vh9 vc12
+F vb14 vs11 vm13 vh9 vc12 
 F l16 
 
 F [0 
@@ -159,13 +171,13 @@ F ]
 *01 = { o8@1p0 }
 *02 = { o2@2p16 }}
 
-3 v11 k3 \-8
+3 v12 k3 \-8 
 3 [0 l8 
 3 *1g+4[3 *0gr] [3 [4 *0gr]] 
 3 [4 [4 *0gr]] 
 3 [3 *1g+4.*0ggr*2e4] l16[*0g8gg*2e8*0gg] 
-3 ([3 *2r4f8f4.f4] ))r4e4eec8dd<b-8( 
+3 ([3 *2r4f8f4.f4] r4f4fffreeer 
 3 [31 *0g8gg*2e8*0gg] 
-3 *2ffffeeee
+3 *0g*2fffeeee 
 3 ] 
 
