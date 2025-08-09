@@ -1,4 +1,4 @@
-;[gain=1.0 name=FF3BOSS1 duration=1200s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=FF3BOSS1 duration=1200s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -8,7 +8,7 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 
 #opll_mode 1
-#tempo 164
+#tempo 165
 #title {
   "[SQUARE SOFT] FINAL FANTASY III "
         "- BATTLE 2 (BOSS) -"
@@ -16,17 +16,17 @@
       
 @v16={
      ;TL,FB
-      21, 7,
+      15, 6,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
-      12, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0,
-      14, 4, 4, 6, 0, 2, 0, 0, 1, 0, 0}
+      10, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+      14, 5, 2, 6, 0, 2, 0, 0, 1, 0, 0}
 
 @v17={
      ;TL,FB
-      20, 7,
+      19, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
-      12, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1,
-      13, 3, 3, 6, 0, 2, 0, 1, 1, 0, 0}
+      12, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1,
+      13, 3, 3, 6, 0, 1, 0, 1, 1, 0, 0}
 
 @e00 = {3,2,C6=7.0=16}
 @e01 = {3,2,ED0=70}
@@ -36,16 +36,17 @@
 @e10 = {1,,FED:20[C=3.D=3]}
 @e12 = {1,,EFA=4.0=68}
 @e13 = {1,,DEFEDDC}
-@e14 = {,,@10.F @13.F}
+;@e14 = {,,@10.F @13.F}
+@e14 = {,,@14.F @13.F}
 
 ;* Brass ------------------------------
 1 o5 v8 k5 @\2
-9 o6 v12 
-B o6 v10 r4 @\27
+9 o6 v13 
+B o6 v11 r4 @\27
 D o6 v11 @\10
 19BD [0 l8
 1     @10
-9B    @16
+9B    @10
 D     @2
 19BD  h15,2,0,4
 19BD  [rq8d+q5ec<ag+a>c q8eq5gf+dfq8e4q5cq8]
@@ -54,19 +55,21 @@ D     @2
 D     @3
 19BD  l4 ec<af ec<af ec<af l12eg+b>eg+b>eg+b>eg+b l8
 1     @12
-9B    @2<
-D     @12<
+9B    @7< q7so
+D     @9<<
 19BD  dfdfag+rf dfag+fg+>c<b
 19BD  a>c<a>ced+rc< a>cgf+df>c<b<
-19BD  h35,2,1,1
+1    h35,2,1,1
+9BD  h35,3,1,1
 1     @10
-9B    @16q8
-D     @2
+9B    @16 q8sf
+D     >@2 v+1
 19BD  >
 19BD  [ a2..a16b16 a2g2 a2g2& g1
 19BD  | f2..f16g16 f2d2 e1 g+1
 19BD  ] a2..a16b16 a2g2 a1 g+1
 1     <
+D     v-1
 19BD ]
 
 ;* Strings ----------------------------
@@ -76,13 +79,13 @@ C v10 r8 @\27
 2AC [0 l8
 AC   o5
 2    o4 
-AC   @10(
+AC   @10 v-1
 2AC  h20,2,0,4
 2AC  [q8eq4ccccccc q8cq4dd+efq8g+4q4aq8]
 2AC  [q8aq4fffffff q8fq4gg+aa+>q8c+4q4dq8<]
 AC   @17
 2AC  l4 afec <afec< afec< l12 b>dfg+b>dfg+b>dfg+ l8
-AC   @12
+AC   @12 v+1
 AC   <[4 rrf_cf_c|rrf_cr]
 AC                f_c<b_eg_de_<a>>
 2    @12
@@ -90,19 +93,20 @@ AC                f_c<b_eg_de_<a>>
 2    a>c<a>ced+rc< a>cgf+df>c<b
 ;2AC  c1& c1
 ;2AC  e1& e2ab>c<b
-2AC  h20,3,0,1
-2    @10>)
-AC   @16>>
+2    h20,2,1,1
+AC   h20,3,1,1
+2    @10> v+1
+AC   @9>>
 2AC  [
 2AC   [l8 c<a24b24>c24d<a>c<a>d<a>]
-2AC   [<bg24a24b-24bgagbg>]
+2AC   [<bg+24a24b-24bgagbg>]
 2AC  |
-2AC   [<af24g24g+24bfafbf>]
-2AC   <ge24f24f+24aegeae g+e24f24g24g+eaebe>
+2AC   [<ad+24e24f24bfafbf>]
+2AC   <gd+24e24f24aegeae g+d24d+24e24g+eaebe>
 2AC  ]
 2AC   <adfdadfd> c<dgd>c<dgd
-2AC   >d<eae>d<eae >d<bg+fl16ef+g+ab>cdel8
-2    <(
+2AC   >[d<eae>] d<bg+fl16ef+g+ab>cdel8
+2    < v-1
 AC   <<
 2AC ]
 
@@ -111,12 +115,11 @@ E @13@e14 v13 q6so
 E [0 o2 l8 
 E  [4 [8 a]] 
 E  >[4 [8 d]]<
-;E  a2.>e4 a2.r4 <aarraarr b4>e4g+4b4
-E  a2.>e4 a2.r4 <aarraarr g+4>d4f4g+4
-E  (q5
+E  a2.>d64e8... a2.r4 <aarraarr g+4>d4f4g+4
+E  q5
 E  dfdfag+rf dfag+fg+>c<b
 E  a>c<a>ced+rc< a>cgf+df>c<b<
-E  )q6
+E  q6
 E  )
 E  [ [4 ff<b>c] [4 eedd+] 
 E  | [4 ddcc+] [8 c] eeef+f+f+g+g+ 
