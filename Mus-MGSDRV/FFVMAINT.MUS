@@ -94,8 +94,8 @@ E q5a+a+rq6fq5a+a+r4 q5g+g+rq6fq5g+g+r4 q5[f+c+]4 ffr4ffr4
 *00 = { y23,175 }
 *02 = { y23,198 }
 *03 = { bh8bh16h16 }
-*04 = { msh16vm-2m16vm-2hm16vm-2mh16vm+6 }
-*05 = { msh16vm-2m16vm-2bhm16vm-2mh16vm+6 }
+*04 = { msh16vm-2m16vm-1hm16vm-1mh16vm+4 }
+*05 = { msh16vm-2m16vm-1bhm16vm-1mh16vm+4 }
 *06 = { bh8bh16h16y23,198h8y23,175h16h16 }
 *07 = { bh8bh16h16y23,198h8y23,175bh16h16 }
 
@@ -109,7 +109,7 @@ F [bh8b8h4h4h4]11 [bh8*2h8*0]8 [bh8*2bh8*0|bh8*2bh8*0]r4 bh8bh16h16*2h8*0bh16h16
 F [ [4 *6*4*2h8*0bh16h16 |*6*4*2h8*0h16h16] 
 F *3*2h8*0h16h16*5*2h8*0bh16h16 ] 
 F [*7*5*2h8*0h16h16 *7*5*2h8*0bh16h16 ] 
-F [*7*5*2h8*0h16h16 *7*5*2|h8*0h16h16 ]msc16vm13m16*0vm12hm16vm11mh16vm15 
+F [*7*5*2h8*0h16h16 *7*5*2|h8*0h16h16 ]msc16vm-2m16*0vm-1hm16vm-1mh16vm+4
 F bh8b8h4h4h4 
 
 ;* psg drum
