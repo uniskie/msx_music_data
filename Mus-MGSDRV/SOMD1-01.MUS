@@ -1,4 +1,4 @@
-;[gain=1.0 name=SOMD1-01 duration=840s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=SOMD1-01 duration=6000s loop=2 fade=5s cpu=0 lpf=0]
 #opll_mode 0
 #tempo 75
 #title {"[SORCERIAN MD] ŠDF‚Ìƒ_ƒ“ƒWƒ‡ƒ“ - DUNGEON (C)SEGA/Falcom | OPLL+PSG ver edit by uniskie"}
@@ -29,27 +29,34 @@
    9, 6, 1, 1, 0, 1, 0, 1, 0, 0, 0,
   10, 3, 2, 6, 0, 1, 0, 1, 1, 0, 0 }
 
+; base ’²®  
+@e6 = {,,fed}
+@e7 = {,,ef}
+
 ;1239abcde ! ; rhythm only
 
 ;==== rhythm settings ====
 #macro_offset { b=6,m=8,s=10,n=12,h=14 }
 *06 = { \-32 } ;snare/tom
-*08 = { v14 q1so } ;tom
-*10 = { v14 q8sf } ;snare body
+*08 = { v14 q1so ho} ;tom
+*10 = { v12 q1so hf} ;snare body
 *12 = { v12 @14 o2 q4so } ; snare noise
+*13 = { v11 @14 o2 q6so } ; tom noise
 *14 = { v0 @6 o3 q8sf }  ; close hi-hut
 *15 = { v0 @6 o3 q1so }  ; open hi-hut
 FGH v0@14
-F Y54,255 ; mute:  --(@) / BD(v)
-G y55,255 ; mute:  HH(@) / SD(v)
-H y56,255 ; mute: TOM(@) / CY(v)
+F Y54,255 ; mute:  --(@) / BD(v) 
+G y55,255 ; mute:  HH(@) / SD(v) 
+H y56,255 ; mute: TOM(@) / CY(v) 
 ; y22/23/24 ... F-Num7-0(8)
-F y38,0 ;     BD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
-G y39,0 ;  HH/SD ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
-H y40,0 ; TOM/CY ... 0(2),sus(1),key(1),Block(3),F-Num8(1)
-F y14,32 l32 ; change to rhythm mode: 0(2),RMODE(1),B(1),S(1),M(1),C(1),H(1)
+F y38,0 ;     BD ... 0(2),sus(1),key(1),Block(3),F-Num8(1) 
+G y39,0 ;  HH/SD ... 0(2),sus(1),key(1),Block(3),F-Num8(1) 
+H y40,0 ; TOM/CY ... 0(2),sus(1),key(1),Block(3),F-Num8(1) 
+F y14,32 l32 ; change to rhythm mode: 0(2),RMODE(1),B(1),S(1),M(1),C(1),H(1) 
 F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom 
 1239abcdefgh r32 ;wait
+
+1239abc r%1	; base & rhythm‚ª’x‚ê‹C–¡‚ÉŠ´‚¶‚é‚Ì‚Å¬×H
 
 ;==== intro ====
 1239abcdefgh l32
@@ -58,7 +65,7 @@ F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom
 123   h24,0,4,1
 
 123  @0 v9 o4
-9ab  @4 v6  o5 @\12
+9ab  @4 v6 o5 @\12
 1 >d1 >d1 
 9 r16>d1 >d2... 
 2 a+1 >a+1 
@@ -66,12 +73,13 @@ a r16a+1 >a+2...
 3 <<c1 c1 
 b r16<<c1 c2... 
 c r1 r1 
-D  v14 @13 o2 
-E  v11 @14 o2 q1 @\17 
+D  v13 @13@e31 o2 q1so @\2 
+E  v9  @12@e6  o3 q8so @\19 
 DE l32
 DE [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
 F [7 rrrrgrrr ] r*m0bb*s0g g*m0eec*s0 
-G [7 *h0bbbb*n0f*h0bbb ] brr*n0f f*h0rrr 
+;G [7 *h0bbbb*n0f*h0bbb ] brr*n0f f*h0rrr
+G [7 *h0bbbb*n0f*h0bbb ] b*n1c-c-*n0f f*n1edd*h0 
 
 ;==== main ===
 
@@ -89,8 +97,8 @@ A3  r16
 B    v12 
 A    v11 @\16 
 C    v10 @9>> @\4 
-D    V14 @13 o2 @\0 
-E    v10 @14 o2 q1 @\19 
+D    V13 @13 o2 q1so @\2 
+E    v9  @12 o3 q1so @\19 
 
 9AC   [
 9AC    [g4>d2^c<a+g>c16<a+16 ]3
@@ -123,7 +131,7 @@ G     [[16 *h0bbbb|*n0g*h0bbb ] *n0g*h0b*n0gg]
 1239ABCDEFG  |
 
 9A    @17
-C     @9<
+C     @9< 
 9AC   g4> g4 a16. f16.  d16^4
 9AC   c4  g4 a+16.f+16. d+16^4<
 9AC   g4> g4 a16. f16.  d16^4
@@ -150,8 +158,12 @@ DE    ]dddd8d d16dd16d16.
 2     cg a+g <a+>f af< 
 2     g+>d+ gd+ c2 
 2    l32 v+2 
-F    [14 rrrrgrrr ]          ggggrrgg rggrgg*m0ee*s0 
-G    [14 *h0bbbb*n0g*h0bbb ] *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0ggrr 
+F    [14 rrrrgrrr ] 
+;F    ggggrrgg rggrgg*m0ee*s0
+F    ggggrrgg rgrrgg*m0ee*s0 ; < ‰¹‚ª‰»‚¯‚é‚Ì‚Å‹x•„‚É 
+G    [14 *h0bbbb*n0g*h0bbb ] 
+;G    *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0ggrr
+G    *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0gg*n1ee 
 
 1239ACBDEFG  ]
 
@@ -169,9 +181,9 @@ C    @9<
 2     a+2.g+8a8 
 2     a+2.a+8a+8 
 2     a2>f4<a4 
-B    @6 o3 q8 @\16
-D    @6 o3 q8 v- 
-E    @6 o2 q8 @\0 
+B    @9    o2 q8so \0   v-1
+D    @6@e7 o3 q8so @\2  v-1
+E    @6@e7 o3 q8so @\26 v+1
 BDE  [ggr8<g2.^16>]
 BDE  ffr8<f2.^16>
 F    [3 r1 ] 
@@ -183,7 +195,7 @@ G    *h0[4 [6 b8 ]]
 9AC  g8f24c24<g+24g4>
 9AC  f8d+24<a+24f+24f4
 9AC  d+f16rr24d+24f24d4
-B    @4 o3 @\0 v-5 
+B    @4 o3 @\0 v-4 ;v-5 v+1
 B    d+2 f+2 
 B    g2 g+2 
 B    g2 f+2 
@@ -196,17 +208,23 @@ B    v+5
 2    d2 g2 
 2    f2 f2 
 123  v+
-D    @9 o3 @\0 
-E    @9 o3 @\18 
+D    @9 o3 q8so @\2 
+E    @9 o3 q8so @\26 v+1
 DE   a2d4d8dd <ef+gg
 DE   r8>g8.<g16>a16<a+a+>
 DE   r8a+8.<a+16e16d+d+
-DE   r8>d+8.<d+16>c+16d4d4
-D    v+ 
-F    r16r8r16 g8r8 r8r8 \-28gggg gg\-24gg*b0 
-F [4 r16r8r16|r16r16 gggg] *m0bb*s0gg *m0eecc*s0 
+DE   r8>d+8.<d+16>c+16;d4d4
+DE                    @6q6so
+DE                    d4d4
+D    v+1
+E    v-2
+F    r16r8r16 gr16.r8 r8r8 \-28gggg gg\-24gg*b0 
+F [4 r16r8r16|r16r16 gggg] 
+F *m0bb*s0gg *m0eecc*s0 
 G    *h0b16*h1b8r16 *n0g16r8. *h1b8r8 *n0gggg gggg 
-G [4 *h0b16*h1b8r16|*h0b16b16 *n0gggg] *n0rrgg rrrr 
+G [4 *h0b16*h1b8r16|*h0b16b16 *n0gggg] 
+;G *n0rrgg rrrr
+G *n1c-c-*n0gg *n1eccc 
 
 1239ACBDEFG ];0
 
