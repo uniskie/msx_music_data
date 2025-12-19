@@ -29,9 +29,9 @@
    9, 6, 1, 1, 0, 1, 0, 1, 0, 0, 0,
   10, 3, 2, 6, 0, 1, 0, 1, 1, 0, 0 }
 
-; base Т▓Ро  
-@e6 = {,,fed}
-@e7 = {,,ef}
+; base Т▓Ро
+@e6 = {,,fedcba}
+@e7 = {,,def}
 
 ;1239abcde ! ; rhythm only
 
@@ -74,7 +74,7 @@ a r16a+1 >a+2...
 b r16<<c1 c2... 
 c r1 r1 
 D  v13 @13@e31 o2 q1so @\2 
-E  v9  @12@e6  o3 q8so @\19 
+E  v9  @1 @e6  o3 q8so @\19 
 DE l32
 DE [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
 F [7 rrrrgrrr ] r*m0bb*s0g g*m0eec*s0 
@@ -98,7 +98,7 @@ B    v12
 A    v11 @\16 
 C    v10 @9>> @\4 
 D    V13 @13 o2 q1so @\2 
-E    v9  @12 o3 q1so @\19 
+E    v9  @1  o3 q1so @\19 
 
 9AC   [
 9AC    [g4>d2^c<a+g>c16<a+16 ]3
