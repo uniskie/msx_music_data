@@ -138,8 +138,8 @@ b5=f4.(e8)e2
 
 ;***** PART 2
 
-m3=o3@06v11q6s1
-m4=o3@24v10q6s1z13
+m3=o3@06v12q6s1
+m4=o3@24v11q6s1z13
 p1=o2@13v7q5z4
 
 c0=l4c2..<g8> c2..<g8> c2..<g8> c1
@@ -195,15 +195,16 @@ d4=@04q4z9 l8>
    (v06gv07gv08gv09gv10g2 g4v09gv08gv07gv06)gr4
    z0v11@16q6<
 d5=l4 fefg
-   >@78
    ffgg eeee dddd
-   eeee
+;   eeee
+   (e4)e16c16e16g16>c8<b-8a8g8 
    ffgg e
    t78 g
    t73 >(c
    t68 )c<
    t63 aa
    t58 gg
+;   >@78
    t53 f2
    t48 f4.r8
    t43 q8 e2.r4 r1<
@@ -230,7 +231,6 @@ e4=z0@04q4 l8>
    (v06gv07gv08gv09gv10g2 g4v09gv08gv07gv06)gr4
    v11@16q4z3<
 e5=l4ccde
-   >@78
    ccdd ccc+c+ <aabb>
    cccc
    ccdd c
@@ -239,7 +239,8 @@ e5=l4ccde
    t68 )a
    t63 ff
    t58 dd
-   t53 <g2
+;   <
+   t53 g2
    t48 g2
    t43 q8 g2.r4 r1<
           ;r24(g12)g2r4 r1<
