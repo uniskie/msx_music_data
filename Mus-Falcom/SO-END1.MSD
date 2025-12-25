@@ -23,27 +23,27 @@ SCC3=
 SCC4=
 SCC5=
 
-t=t83 m6
+t=t78 m6
 
 ;***** PART 0
 
-m0=o6@77v15q7s1
-m1=o6@77v12q7s1 z16 r16
-m8=o5@77v14q7s1
-p0=o5@15v9q5
+m0=o6 @77v13 q6s1
+m1=o6 @77v11 q6s1 z16 r16
+m8=o5 @77v11 q6s1 z1
+p0=o5 @15v09 q5
 
-00=@77v15i
-10=@77v12i
-80=@77v14iz0
-x0=@15v9i
+00=@77v13 i q6
+10=@77v11 i q6
+80=@77v11 i q6 o5z1
+x0=@15v09 i
 a0=l8<fcfcfcfc gcgcgcgc fcfcfcfc gcgcg2>
 a1=e2f.e.<b>           d4.c16<b16>c4c<b
    a2rgce              e4.f16e16d2
    e2gg>d<b>           (c2)c<b>cd<
    a4.a16b16>cc16c<b.> c1
-02=@78v14
-12=@78v12
-82=@78v13z12
+02=@78v14 q7
+12=@78v12 q7
+82=@78v13 q7 z12 o5
 x2=@10
 a2=a2b>c16d<b(g16      )g2ab-16ae(f16  )f4.edagf 
    ef16(g16g2)gr       a2b>c16d<b(g16  )g4>c4e4.e
@@ -64,14 +64,14 @@ a5=>d4.(c)c2<
    a2b>c16d<b(g16   )g2ab-16ae(f16  )f4feda16gf.
    ef16(g.)g2r
    a2b>c16d<b(g16   )g4>
-   t78 c4
-   t73 e4
-   t68 re  
-   t63 eddc
-   t58 c<b>cd
-   t53 c2
-   t48 c4.r8<
-   t43 q8 <e2.r4> r1
+   t73 c4
+   t68 e4
+   t63 re  
+   t58 eddc
+   t53 c<b>cd
+   t43 c2
+   t33 c4.r8<
+   t32 q8 <e2.r4> r1
 
 ;***** PART 1
 
@@ -127,14 +127,14 @@ b5=f4.(e8)e2
    ec<g>cec<g>c ec<g>cec<g>c
    afcfafcf bgdgbgdg
    gece
-   t78 gece
-   t73 a4
-   t68 l8 ra>
-   t63 c<bba
-   t58 agab< 
-   t53 a-2
-   t48 b-4.r8
-   t43 q8 b2.r4> r1
+   t73 gece
+   t68 a4
+   t63 l8 ra>
+   t58 c<bba
+   t53 agab< 
+   t43 a-2
+   t33 b-4.r8
+   t32 q8 b2.r4> r1
 
 ;***** PART 2
 
@@ -158,21 +158,21 @@ c5=>ccde<
    ffgg >cc<aa >dd<gg>
    cccc
    <ffgg> c<
-   t78 b
-   t73 a
-   t68 g
-   t63 ff
-   t58 gg
-   t53 a-2
-   t48 b-4.r8
-   t43 q8 >c2.r4 r1
+   t73 b
+   t68 a
+   t63 g
+   t58 ff
+   t53 gg
+   t43 a-2
+   t33 b-4.r8
+   t32 q8 >c2.r4 r1
 
 ;***** PART 3
 
-m5=o5@77v14q7s1
+m5=o5@77v12q7s1
 
-50=@77v14
-70=@77v11
+50=@77v12
+70=@77v10
 d0=l4cccc cccc cccc ccc2
 51=@16v10
 71=@16v08
@@ -199,20 +199,19 @@ d5=l4 fefg
 ;   eeee
    (e4)e16c16e16g16>c8<b-8a8g8 
    ffgg e
-   t78 g
-   t73 >(c
-   t68 )c<
-   t63 aa
-   t58 gg
-;   >@78
-   t53 f2
-   t48 f4.r8
-   t43 q8 e2.r4 r1<
+   t73 g
+   t68 >(c
+   t63 )c<
+   t58 aa
+   t53 gg
+   t43 f2
+   t33 f4.r8
+   t32 q8 e2.r4 r1<
           ;r12(e6)e4r4 r1<
 
 ;***** PART 4
 
-m6=o5@77v14q7s1z3
+m6=o5@77v10q7s1z3
 
 e1=g2g2 e2e2 c2l8rc<eg g2g2
    g2bb>gd (e2)ed4. c2ff16fd. e1
@@ -234,15 +233,15 @@ e5=l4ccde
    ccdd ccc+c+ <aabb>
    cccc
    ccdd c
-   t78 e
-   t73 (a
-   t68 )a
-   t63 ff
-   t58 dd
+   t73 e
+   t68 (a
+   t63 )a
+   t58 ff
+   t53 dd
 ;   <
-   t53 g2
-   t48 g2
-   t43 q8 g2.r4 r1<
+   t43 g2
+   t33 g2
+   t32 q8 g2.r4 r1<
           ;r24(g12)g2r4 r1<
 
 ;***** PART 5
@@ -262,7 +261,8 @@ f4=z0@04q4 l8>
    >
    (v07cv08cv09cv10cv11cv10cv09cv08)c
    (v06dv07dv08dv09dv10d2 d4v09dv08dv07dv06)dr4
-   v10@77q6z6<
+   <
+   v10@77q7z6
    r16
 
 
