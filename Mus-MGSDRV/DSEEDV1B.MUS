@@ -15,21 +15,28 @@
          6, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
   15,14, 2, 0, 0, 1, 0, 0, 1, 0, 0,
-  15,14, 1, 8, 0, 2, 0, 0, 1, 0, 1 }
+  15,14, 1, 8, 0, 3, 0, 0, 1, 0, 1 }
 
 @v16 = { ; E-LEAD
 ;       TL FB
-         0, 3,
+         0, 6,
 ; AR DR SL RR KL MT AM VB EG KR DT
-  15, 3, 1, 2, 0, 1, 0, 0, 0, 0, 1,
-  15, 5, 1, 8, 0, 2, 0, 1, 1, 0, 1 }
+  15, 1, 2, 1, 0, 3, 0, 0, 1, 0, 1,
+  15, 5, 1, 8, 0, 2, 1, 0, 1, 0, 1 }
 
 @v17 = { ; Brass
 ;       TL FB
-        18, 7,
+        19, 7,
 ; AR DR SL RR KL MT AM VB EG KR DT
    9,14, 1, 1, 0, 1, 0, 0, 1, 0, 0,
-  15, 6, 1, 8, 0, 1, 0, 0, 1, 0, 0 }
+  15, 6, 3, 8, 0, 1, 0, 0, 1, 0, 0 }
+
+@v18 = { ; E-LEAD2
+;       TL FB
+         0, 5,
+; AR DR SL RR KL MT AM VB EG KR DT
+  15, 3, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+  10, 5, 1, 8, 0, 1, 0, 0, 1, 0, 0 }
 
 9 v11 @15 o6 
 A v11 @15 o5 
@@ -50,7 +57,7 @@ A v11 @15 o5
 9  ffrfrfrfrfffffrf 
 9  ggrgrgrgrgggggrg 
 9  < 
-9  @16 q4 v-1
+9  @18 q4 v-1
 9  g+d+g+>c+<b a+bd+ 
 9  g+d+g+>c+<b f+bd+ 
 9  g+d+g+>c+<b a+b>c+ 
@@ -69,7 +76,7 @@ A   bbrbrbrbrbbbbbrb
 A  >ddrdrdrdrdddddrd< 
 A  >d+d+rd+rd+rd+rd+d+d+d+d+rd+< 
 A  < 
-A  @16 q4 v-1
+A  @18 q4 v-1
 A  g+d+g+d+b a+ba+ 
 A  g+d+g+d+b a+bd+ 
 A  g+d+g+d+b >c+<ba+ v+ 
