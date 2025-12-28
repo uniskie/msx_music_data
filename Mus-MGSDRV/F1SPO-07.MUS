@@ -71,11 +71,11 @@ r   *s16*h16 *b16*b16 *s16*s16 *s16*s16]4
 r ] 
 
 de l16 o3
-d  v13 @14
-e  v13 @13 \-1
+d  v11 @12 > \-1
+e  v13 @13 
 de [0
-d   q2sf
-e   q4so
+d   q4sf
+e   q2so
 de  <
 de  [[de8e8eee de8>d e<eab]
 de    a+>c8c8c<a+>c ga8g <a+>cfg
@@ -104,7 +104,7 @@ de ]
 C v10 r8 @\19 
 9C o6 l16
 9C [0
-9C  [@15 q4sf
+9C  [@15 q2sf
 9C   r4 c+8.<b8 r8. b8.a8
 9C   r8. a8.g+8 rg+8 rf+8.
 9C   q7 f2 v+1q4 ffrf rf8.v-1
@@ -140,12 +140,12 @@ C v10 r8 @\19
 A v12 
 A o5 l16 
 A [0
-A  [@15 q4sf 
+A  [@15 q2sf 
 A   r4 a8.g+8 r8. g+8.f+8 
 A   r8. f+8.e8 re8 rd8. 
 A   q7d2 v+1q4 ddrd rd8. 
 A   \-1@10v-1q8
-A   >>ed+dc+ c<ba+a g+gf+f \0v-1@9q6a8.g+<v+1
+A   >>ed+dc+ c<ba+a g+gf+f \0v-1@9q4a8.g+<v+1
 A  ]2 
 
 A  v-1 @16@e1 q7so 
