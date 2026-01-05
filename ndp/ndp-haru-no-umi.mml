@@ -1,0 +1,60 @@
+﻿; 春の海
+#title "HARU no UMI"
+#BSAVE-NAME "HalnoUmi"
+//#tempo 58
+#TIME-BASE 64
+#REPEAT-MODE 2
+
+@1=CECBCDCFE:2 D:2 C:2 D:2 L C:4 B:4
+@2=FDC B:2 A:2 9:2 B:2 A:2 9:2 8:6 7:8 6:8 5:8 4:8 3:8 2:8 1:8 L 0
+
+3 r%3
+123 @L
+
+@m0=20,4,4,8
+1 v11 @1 o3 @m0 @r12,60 \1
+1 l16
+1 r1 r1
+1 >d_e8&e4.g8.e32d32<b8a8
+1 b2..r8
+1 e2.>dega
+1 b4..ab2&
+1 b4e8d24e24d24<b4..a
+1 b2^8r8e8&e_>e8&
+1 e2.g8e16d16
+1 e2..r8
+
+1 <f1 &
+1 e1
+1 >b2a2&
+1 agaba8.ge4.r8
+
+@p1=0,2,1,0,-1,-2,0,0 L 1,0,1,0,-1,0,-1,0
+23 @2 o4 @r14,30 @rd1,10 @q4
+2 v12 \0
+3 v11 \-1
+23 l16 @p1
+23 [
+3   [e2e2]
+2   <e8b>deaba e4.r8
+2   <e8b>deab>d e4.<r8
+23 ]
+2 j1
+3   [e2e2]4
+2  <e8b>db>d<ba >e4.<r8
+2  <e8b>d>e<baf e4.r8
+2  <e8b>defab >e4.<r8
+2  <e8b>d>e<baf e4.r8
+3  [e2e2]
+2  <e8b>deaba e4.r8
+2  <e8b>deab>d e4.<r8
+2 j2
+23 [
+3   r8ff e8 ff e8 ffa8e8
+2   r8dd<b8>dd<b8>dda8e8
+3  <r8ff e8 ff e8 ffa8e8>
+2  <r8dd<b8>dd<b8>dda8e8>
+23 ]
+
+
+
