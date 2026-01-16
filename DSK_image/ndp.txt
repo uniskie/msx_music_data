@@ -2,6 +2,7 @@ naruto2413氏製作のMSX PSG用音源ドライバ ndpを使用したデータ集です。
 
 - `play.bas` ... 簡易プレイヤーです。  
 
+- HALNOUMI.NDP  - "春の海 (冒頭のみ)"
 - RISEOUT.NDP  - "RISEOUT (Arrange)"
 - RISEOUTO.NDP - "RISEOUT (Original)"
 - SMANB-S1.NDP - "SPACE MANBOW -STAGE1- Battle Ship"

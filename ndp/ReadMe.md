@@ -66,6 +66,10 @@ KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生
 - ndpデータ全曲まとめパック  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/ndp-m3disp.zip
 
+- "春の海 (冒頭のみ)"  
+  [ndp-haru-no-umi.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-haru-no-umi.kss
+
 
 - "RISEOUT (Arrange)"  
   [ndp-riseout-a.kss]  

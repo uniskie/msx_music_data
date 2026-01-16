@@ -1,5 +1,5 @@
 
-ndp-codename_heero_yuy.kss::KSS, 0, CodeName : Heero Yuy, 00:01:04, 0,1,1
+ndp-codename_heero_yuy.kss::KSS, 0, CodeName : Heero Yuy, 00:01:04, 00:00:00-,,2
 ndp-dangrous_seed_1.kss::KSS, 0, DANGEROUS SEED(MD) 1st TUBE (STAGE 1&8) - Programmed by uniskie, 00:00:49, 00:00:00-,,2
 ndp-dangrous_seed_1_boss.kss::KSS, 0, DANGEROUS SEED(MD) Triple-Eye (Stage 1&9 BOSS) - Programmed by uniskie, 00:00:39, 00:00:08-,,2
 ndp-dangrous_seed_2.kss::KSS, 0, DANGEROUS SEED(MD) 2nd TUBE (STAGE 2&5) - Programmed by uniskie, 00:00:29, 00:00:00-,,2
@@ -34,6 +34,7 @@ ndp-galious-castle.kss::KSS, 0, MAZE of GALIOUS [START] ~ [CASTLE] henv-base - P
 ndp-galious-castle-nr.kss::KSS, 0, MAZE of GALIOUS [START] ~ [CASTLE] normal-base - Programmed by uniskie, 00:01:24, 00:00:01-,,2
 ndp-graii-16.kss::KSS, 0, GRADIUS II AC - Shoot & Shoot - [NDP Arrange] - Programmed by uniskie, 00:00:19, 00:00:02-,,2
 ndp-graii-7.kss::KSS, 0, GRADIUS II AC - Synthetic Life - [NDP Arrange] - Programmed by uniskie, 00:00:40, 00:00:00-,,2
+ndp-haru-no-umi.kss::KSS, 0, HARU no UMI, 00:01:52, 00:00:00-,,2
 ndp-kenja_no_ishi.kss::KSS, 0, CASIO 賢者の石 サウンドメモ with SE, 00:01:36, 00:00:00-,,2
 ndp-kenja_no_ishi_split_se.kss::KSS, 0, CASIO 賢者の石 サウンドメモ, 00:01:55, 00:00:00-,,2
 ndp-paro-crisis.kss::KSS, 0, PARODIUS 中ボス - クライシス第４楽章 - Programmed by uniskie, 00:00:21, 00:00:05-,,2
@@ -51,4 +52,3 @@ ndp-space_manbow_stage1_battle_ship.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Sh
 ndp-space_manbow_stage1_battle_ship_henv.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship (H.ENV) - Programmed by uniskie, 00:00:57, 00:00:00-,,2
 ndp-test-nettaigyo.kss::KSS, 0, 淋しい熱帯魚 PSG Cover - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11, 0,1,1
 ndp-test-nettaigyo-henv.kss::KSS, 0, 淋しい熱帯魚 PSG Cover (H.ENV) - Composed by 	尾関昌也 - Arranged by 	船山基紀 - Programmed by Uniskie, 00:04:11, 0,1,1
-ndp-vanilla.kss::KSS, 0, ヴァ〇ニラの求人 NDP祭り - Programmed by uniskie, 00:01:04, 00:00:00-,,2
