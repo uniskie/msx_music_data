@@ -9,11 +9,11 @@
 ; lpf     : Low-pass filter. 0:off, 1:on (default: 0)
 
 #opll_mode 1
-#tempo 165
+#tempo 162
 #title {
   "[SQUARE SOFT] FINAL FANTASY III "
-        "- BATTLE 2 (BOSS) -"
-      " [OPLL+PSG] by Uniskie"}
+  "- BATTLE 2 (BOSS 1) -"
+  " [OPLL+PSG] by Uniskie"}
 
 @v16={
      ;TL,FB
@@ -26,8 +26,8 @@
      ;TL,FB
       20, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
-       7, 5, 0, 1, 0, 1, 1, 1, 0, 1, 0,
-      13, 3, 2, 6, 0, 2, 0, 0, 1, 0, 1}
+       8, 5, 0, 1, 0, 1, 1, 1, 0, 1, 0,
+      15, 3, 2, 7, 0, 3, 0, 0, 1, 0, 1}
 
 @e00 = {3,2,C6=6.0=16}
 @e01 = {3,2,CB0=70}
@@ -37,8 +37,7 @@
 @e10 = {1,,FED:20[C=3.D=3]}
 @e12 = {1,,EFA=4.0=68}
 @e13 = {1,,DEFEDDC}
-@e14 = {,,@12.FF @13.E}
-@e15 = {,,@9.FF @13.E}
+@e14 = {,,@12.F @13.E}
 
 ;123 !
 ;9abcdef !
@@ -65,8 +64,9 @@ D     @0 v+1
 9B    v+1
 D     v-1 
 1     @12 
-9B    @17 v-1
-D     @9 
+9B    @16 q6 v-1
+D     @9  q7 v-1
+B     v+1 
 9B    <
 19BD  dfdfag+rf dfag+fg+>c<b
 19BD  a>c<a>ced+rc< a>cgf+df>c<b<
@@ -74,9 +74,9 @@ D     @9
 9BD   h35,1,2,2
 1     @10 \0 
 9B    v+1
-9B    @16
-B     v+1 
-D     @1 
+D     v+1
+9B    @16 q8
+D     @1 q4
 19BD  >
 19BD  [ a2..a16b16 a2g2 a2g2& g1
 19BD  | f2..f16g16 f2d2 e1 g+1
@@ -131,16 +131,16 @@ AC   <
 2AC ]
 
 ;* Bass -------------------------------
-E @13@e14 v13 q6so \-1 
-E [0 o2 l8 
+E @13@e14 v13 q4so \-1 
+E [0 o2 l8
 E  [4 [8 a]] 
 E  >[4 [8 d]]< 
-E  v+1 
+E  v+1 q7 
 E  a2.>d64e8... a2.r4 <aarraarr g+4>d4f4g+4 
-E  @6@e15 v-2 
+E  v-1 q6
 E  dfdfag+rf dfag+fg+>c<b 
-E  a>c<a>ced+rc< a>cgf+df>c<b< 
-E  @13@e14 v+1 
+E  a>c<a>ced+rc< a>cgf+df>c<b<
+E  q4so 
 E  [ [4 ff<b>c] [4 eedd+] 
 E  | [4 ddcc+] [8 c] eeef+f+f+g+g+ 
 E  ] [2 <a+a+>fa+] [2 d+d+ga+] [4 ee<b>d] 
@@ -151,7 +151,7 @@ E ]
 *04 = { y23,175y24,164 }
 *05 = { y23,235y24,224 }
 *06 = { y23,115y24,104 }
-*07 = { y23, 55y24, 34 }
+*07 = { y23, 15y24,  4 }
 
 F y22,162y38,35;3 
 F y39,34;2 
