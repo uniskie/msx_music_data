@@ -1,4 +1,4 @@
-;[gain=1.0 name=FF3BOSS1 duration=1200s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=FF3BOSS1 duration=1200s fade=5s cpu=0 loop=2 lpf=0]
 ;;[gain=1.0 name=FF3BOSS1 duration=1200s loop=100 fade=5s cpu=0 lpf=0]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
@@ -24,10 +24,10 @@
 
 @v17={
      ;TL,FB
-      20, 7,
+      12, 7,
      ;AR,DR,SL,RR,KL,MT,AM,VB,EG,KR,DT
-       8, 5, 0, 1, 0, 1, 1, 1, 0, 1, 0,
-      15, 3, 2, 7, 0, 3, 0, 0, 1, 0, 1}
+       7, 5, 0, 1, 0, 2, 1, 0, 0, 0, 1,
+      15, 4, 2, 8, 0, 1, 0, 0, 1, 0, 1}
 
 @e00 = {3,2,C6=6.0=16}
 @e01 = {3,2,CB0=70}
@@ -43,30 +43,29 @@
 ;9abcdef !
 
 ;* Main ------------------------------
-1 o5 v8 k5 
+1 o5 v8 k2 \-1
 9 o6 v13 
-B o6 v10 r4 \-1 
-D o6 v11 \1 
+B o6 v11 r4 \1 
+D o7 v10 
 19BD [0 l8
-1     @10 \1 
+1     @10 
 9B    @17
-D     @12 
+D     @9
 1     h15,2,0,2 
 9BD   h15,2,0,4
 19BD  [rq8d+q5ec<ag+a>c q8eq5gf+dfq8e4q5cq8]
 19BD  [rq8g+q5afdc+df q8aq5>c<bgb-q8a4q5fq8]
-9B    @3 v-1
-D     @0 v+1 
+9B    @3 v-2
+D     @7 v-2
 19B   >
 19BD  l4 ec<af ec<af v-1 ec<af
 19BD  l12v+1eg+b>eg+b>eg+b>v-1eg+bv+1 l8
 19B   <
-9B    v+1
-D     v-1 
+9B    v+2
+D     v+2
 1     @12 
 9B    @16 q6 v-1
 D     @9  q7 v-1
-B     v+1 
 9B    <
 19BD  dfdfag+rf dfag+fg+>c<b
 19BD  a>c<a>ced+rc< a>cgf+df>c<b<
@@ -76,24 +75,23 @@ B     v+1
 9B    v+1
 D     v+1
 9B    @16 q8
-D     @1 q4
+D     @1 q4 
 19BD  >
 19BD  [ a2..a16b16 a2g2 a2g2& g1
 19BD  | f2..f16g16 f2d2 e1 g+1
 19BD  ] a2..a16b16 a2g2 a1 g+1
-B     v-1 
 1     < 
 D     < 
 19BD ]
 
 ;* Strings ----------------------------
-2 v8 @13 k5 
-A v13 @\1 
-C v10 r24 \-1 
+2 v8 @13 k2
+A v13 \-1
+C v10 r24 @\16
 2AC [0 l8
 AC   o5
 2    o4 
-AC   @0 so
+AC   @0 sf
 2    h20,2,0,2 
 AC   h20,2,0,4
 2AC  [q8eq4ccccccc q8cq4dd+efq8g+4q4a]
@@ -101,12 +99,11 @@ AC   h20,2,0,4
 AC   >> @3 sf v-4
 2AC  l4 afec <afec< v-1afec< l12 v+1b>dfg+b>dfg+v-1b>dfg+v+1 l8
 AC   << v+4
-A    @12 v-1 
-A    <[3 rrf_cf_crrf_cr] 
-A        rrf_cr l16f_cf_c<f_crb_eb_e<b_er>> l8 
-A    v+1 
+A    @12 so
+A    <[3 rrf_cf_crrf_cr]
+A        rrf_cr l16f_cf_cc_<c8>e_<a>e_<aa_<a8>> l8 
 2    @12 
-C    @5 
+C    @6
 2C   <dfdfag+rf dfag+fg+>c<b
 2C   a>c<a>ced+rc< a>cgf+df>c<b
 ;2AC  c1& c1
@@ -131,16 +128,15 @@ AC   <
 2AC ]
 
 ;* Bass -------------------------------
-E @13@e14 v13 q4so \-1 
-E [0 o2 l8
+E @13@e14 v14 q2 so \-1 
+E [0 o2 l8 
 E  [4 [8 a]] 
 E  >[4 [8 d]]< 
-E  v+1 q7 
+E  q7
 E  a2.>d64e8... a2.r4 <aarraarr g+4>d4f4g+4 
-E  v-1 q6
+E  q2
 E  dfdfag+rf dfag+fg+>c<b 
-E  a>c<a>ced+rc< a>cgf+df>c<b<
-E  q4so 
+E  a>c<a>ced+rc< a>cgf+df>c<b< 
 E  [ [4 ff<b>c] [4 eedd+] 
 E  | [4 ddcc+] [8 c] eeef+f+f+g+g+ 
 E  ] [2 <a+a+>fa+] [2 d+d+ga+] [4 ee<b>d] 
@@ -154,17 +150,18 @@ E ]
 *07 = { y23, 15y24,  4 }
 
 F y22,162y38,35;3 
-F y39,34;2 
+F y39,35;2 
 F y40,34;2 
 F *4 
 F vb15 vs12 vm13 vh9 vc12 
-F l16 
+F l16 kf
 
 F [0 
 F bhc4[3 bh4] [3 [4 bh4]] 
 F [4 [4 bh4]] 
 F [3 bhc4.bh8bh4ms4] [*3] 
-F vm-1vs-1[3 r4ms8ms4.ms4]vm+1vs+1 r4ms4*5ms:ms:*6cms8*4ms:ms:*7cms8*4 
+F [3 r4ms8ms4.ms4] 
+F                  r4ms4*5ms:ms:*6ms8*4ms:ms:*7ms8*4 
 F [31 *3] 
 F bms:ms:ms:ms:*6bms:ms:ms:ms:*4 
 F ] 
