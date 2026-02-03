@@ -1,6 +1,7 @@
 ;***** DRAGON SPIRIT (C)namco ***
 ;      ZAWEL  (INTORODUCTION)
 ;********************************
+;voice:DSPIRIT.VCD
 FM1 =t,a,fm0,d0
 FM2 =t,b
 FM3 =t,c
@@ -27,8 +28,8 @@ a=@95v15 o1 m6l2(ai80)ari
 b=@95v13 o2 r16m6l2(ai80)a
 c=@95v11z3 o2 r8l2m6 (ai80)a
 dd=@95v12 z60o2 r4m6 (ai80)a
-d=v11
-e=v12r8
+d=v09
+e=v10r8
 f=@29o1m6i60l2(aa)a4r4
 g=v10@28o1a2r4
 
