@@ -1,7 +1,7 @@
 ;**************************************
-;  DRAGON SABER  Stage1  ¢½²ÎÞÂ Ä¼£
+;  DRAGON SABER Stage1 ¢½²ÎÞÂ Ä¼£
 ;**************************************
-;suibotu.msd suyibotu.vcd/voice.vcd
+;SUIBOTU.MSD/SUIBOTU.VCD
 
 FM1 =t,fm0,a0/3,a1,a2,
            a3,a4,a3,a5,
@@ -34,7 +34,7 @@ FMR =t,fmr,r0,r1/2,r2,r1/3,r3,r0,r1/2,r4,r1/3,r5,
 FM7 =
 FM8 =
 FM9 =
-PSG1=t,ps0,a0/3,a1,a2p,
+PSG1=t,ps0,a0/3,a1',a2p,
            d0,d1,d0,d2,
            d3/7,d4,d3/7,d5,
            wr/8,d8
@@ -54,16 +54,16 @@ SCC2=t,sc1,h0/4,wr,
            h1,h2,h1,h3,
            h4,h5,h4,h6,
            h8,d7/4,d8
-SCC3=t,sc2,a0/3,a1',
-           d3v,d0,d1,d0,d2
+SCC3=t,sc2,a0/3,a1,
+           d0v,d0,d1,d0,d2,;d3v
            d3/7,d4,d3/7,d5
            d6v,d7/4,d8
 SCC4=t,sc2,b0/3,b1',
-           d3v,e0,e1,e0,e2
+           d0v,e0,e1,e0,e2,;d3v
            e3/15,e4
            d6v,e7/4,e8,e9
 SCC5=t,sc2,<,c0/3,c1,
-           d3v,f0,f1,f0,f2
+           d0v,f0,f1,f0,f2,;d3v
            f3/2,f4/2,f5/2,f6/2,f3/2,f4/2,f5/2,f6,f6'
            d6v,f7/2,f8
 
@@ -71,13 +71,16 @@ t=t152
 ;  r64 ;for hi-hut vol bug. <- remove from loop bgm
 
 ;==== keybord 1
-fm0=o5@71v12 m6
-ps0=o4@14v13 m6
+fm0=o5@71m6 v12
+ps0=o4@14m6 v9;v13
 
 a0=l8dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r>cr<
-a1=  dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r>(a-4 i30a-1 i60)a-1i<
-;>(c4 i30c1 i60)c1i<
-a1'= dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r(a-4 i30a-1 i60)a-1i
+a1=  dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r
+   (a-4 i30a-1 i60)a-1i
+   ;>(c4 i30c1 i60)c1i<
+a1'= dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r
+   ;>(a-4 i30a-1 i60)a-1i<
+   >(c4 i30c1 i60)c1i<
 b0=l8<b-r4>cr4<b-r >rd-r4cre-r <a-r4b-r4>d-r rcr4e-ra-r
 b1=  <b-r4>cr4<b-r >rd-r4cre-r <a-r4b-r4>d-r rcr4e-r>(e-4 i30e-1 i60)e-1i<
 ;(a-4 i30a-1 i60)a-1i
@@ -88,7 +91,7 @@ c1=  <fr4a-r4g-r rb-r4a-r>cr <e-r4g-r4a-r ra-r4>cr>(c4 i30c1 i60)c1i<
 
 a2=@61 v14
 c2r=@61 v12r8z10
-a2p=o5@14v12z
+a2p=o5@14z v8;v12
 
 a3=b-amp6b-pm5(ff2i60 )f2.ie-d
    (c4i60)cmp40(gg2m5i60 )g1i<
@@ -113,10 +116,10 @@ c8=l8(e-4i60)e-i (dd2i60 )d2..i
 ab=v14 q6
 
 ;==== keybord 2
-sc2=o5@19v12 m5 l8 q6
-<=<v13
+sc2=o5@18 m5 l8 q6 v4;v12
+<=<;v13
 
-d3v=o4@18v12 l8
+d0v=o4@20 l8 v7;v12
 
 d0=dr4(ff4.i40f )f4ir4e-ra-r
    dr4(e-e-2i40 )e-2.ir4
@@ -153,7 +156,7 @@ f5=<brbr8.bbb8brr4>
 f6=<b-rb-r8.b-b-b-8b-rr4>
 f6'=drdr8.ddd8drr4
 
-d6v=v11 @19
+d6v=@18 v4;v11
 
 d7=l4<(b-i40)b-8i>(c8ci40c )ci<b->cd-
      <(b-i40)b-8i>(c8c2i40 )c1i
@@ -168,7 +171,7 @@ f8=l4<(fi40)f8i(fi40)f8i(e-i40 )e-8i(e-i40)e-8iq6qff>
 
 ;==== strings
 fm4=o5@2q7s1v13 z6
-sc1=o4@14v9q6 z1
+sc1=o4@14q6 z1 v5;v9
 
 h0=m5i4 l1(b- b- i10b- i20)b-i4
 wr=r1 r1
@@ -184,8 +187,8 @@ h4=l8
 h5=l2>(a-i20)a-i (gi20)gil8<
 h6=l2>(a-i20)a-i (b-i20)b-il8<
 
-h7=@12v11<<< o2
-h8=v7@17z7<< o2
+h7=@12<<< o2v11
+h8=@17z7<< o2v4;v7
 
 ;==== sequence
 fm5=o6@0v10 m5i4 q6s1
@@ -204,7 +207,7 @@ i2=>c8<e-8 a-8 e-8
 i3=>c8<a-8>e-8 d 8 rrc<a-e-c<a-e-
    >f8 b-8 a-8>f 8 c<a>f<ac<a>f<a>
    @14 ;* psg/fm both voice *
-i3'=v12@16
+i3'=@16v12
 i4=l4
    r1 (a-i60)a-8i4>(a-8a-i60)a-i
    r1 (gi60)g8i4(f8fi60)fi
@@ -217,7 +220,7 @@ i6=(b-2i60)b-2i
 i7=@62q s1 v9r8z3;-fm
 
 ;==== bass
-fm3=o2@33v14q5s1
+fm3=o2@33v15q5s1
 ;ps1=o2@17v11q5
 sc0=o1@11v15q5
 
@@ -248,11 +251,10 @@ gh=l8b-4b->b-4b-<a-4 a->a-4a-<f>f<f>f
 
 
 ;==== drums
-fmr=v15vh10vc12vs12vm14
+fmr=v15vh10vc12vs12vm15
     y38,4y22,186 ;bassdrum
     y39,2y23,164 ;snare
     y40,2y24,178 ;tom
-;ps2=v12
 
 r0=bc16vh10h16h16h16bms16h16h16h16bh16bh16h16h16bms16h16h16h16
 r1=vh11bh16vh10h16h16h16bms16h16h16h16bh16h16h16h16bms16h16h16h16
@@ -261,7 +263,8 @@ r3=vh11bh16vh10h16h16msh16bh16mh16y24,118mh16y24,178h16bh16h16h16h16bms16msh16y2
 r4=vh11bh16vh10h16h16h16bms16h16h16h16bh16y24,148mh16mh16mh16y24,178bms16y24,118mh16mh16mh16y24,178
 r5=bms32ms32ms16ms16ms16bms16ms16ms16ms16bms16ms16ms16ms16bsc4 bch16hm16y24,148hm16y24,178h16bh16h16h16h16bh16h16h16h16bh16h16h16h16 bch16hm16y24,98hm16y24,178h16bh16h16h16h16y24,148bmh16mh16mc16y24,118mh16y24,178bms16y24,148mh16y24,118mh16mh16y24,178
 
-s0=v12
+;ps2=v12
+s0=v10;v12
    l8o7@6bro4@2errrer
 s1=l8@2rrerrrer
 s2=l64r2@21(gfe)d(gfe)d(gfe)d(gfe)d@22(fed)c(fed)c@24(c<b-a)g><@25(b-ag)f>

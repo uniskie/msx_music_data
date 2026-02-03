@@ -5,13 +5,11 @@ MuSICAで作成した OPLL+PSG+SCC 未完成音楽データ集
 SONY HB-F1XDmk2 + FMPAC(音量大) + SCCカートリッジで作成していたものです。
 
 グラディウスⅡの曲に関してはOpenMSX用に調整しなおしました。  
-水没都市は音量での調整が困難なため対応は未定です。  
-（SCCの音量特性が原因で、視聴可能なレベルに調整できなかった為）
+(2026/02/04)水没都市も一旦視聴可能なレベルに調整しなおしました。
 
 ## DSKイメージ
 
 https://github.com/uniskie/msx_music_data/blob/master/DSK_image/mus-gra2.dsk
-
 
 # ★MuSICA とは
 
@@ -36,36 +34,15 @@ OpenMSX用に音量バランスを調整しました。
 
 未作成またはパート不足：
 
-- 10: The Old Stone Age -1- (未作成)
-- 12: Maximum Speed (リズムパート不足)
 - 14: Into The Hostile Ship (未作成)
 - 15: Shoot and Shooy (未作成)
 
+他、すでにあるデータも作り直したいものがいくつかあります。
+
 ### 再生環境
 
-
-BlueMSXで作成・演奏・調整しています。  
-音量は実機に合わせていませんので、実機での演奏については保証外です。  
-Bluemsx.iniをテキストエディタで開いて各種音量設定を反映してから聞いてみてください。  
-（※その際、書き換え前のbluemsx.iniのバックアップをしておくと良いと思います。）  
-
-元々、機種以降にともなう修正途中で音量バランスが崩壊してしまったデータで  
-それをBlueMSX上で聴けるように音量側を弄ることで鳴らしたものなので、  
-SCCとPSGのバランスも、FM音源のバランスも実機とは大きく異なると思います。  
-
-BlueMSXでの音量は
-```
-sound.mixerChannel.MIXER_CHANNEL_PSG.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_PSG.pan=50
-sound.mixerChannel.MIXER_CHANNEL_PSG.volume=66
-sound.mixerChannel.MIXER_CHANNEL_SCC.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_SCC.pan=50
-sound.mixerChannel.MIXER_CHANNEL_SCC.volume=66
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.enable=yes
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.pan=50
-sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
-```
-です。
+- OpenMSX https://openmsx.org/
+- M3Disp https://m3.ym2413.com/
 
 ## そのほか
 
@@ -74,4 +51,5 @@ sound.mixerChannel.MIXER_CHANNEL_MSXMUSIC.volume=85
 
 とりあえず作ってみただけのごみデータ  
 作りが雑なので消すか、最初から作り直しの予定（そのうち）
+
 
