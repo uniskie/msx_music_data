@@ -1,6 +1,6 @@
 ;   DRAGON SABER Stage1  intro
 ;
-; suibotu1.msd suibotu.vcd/voice.vcd
+; suibotu1.msd suibotu.vcd
 
 FM1 =t,fm0,a0,a1,a0,tt,a2
 FM2 =t,fm0,b0,b1,b0,tt,b1
@@ -12,8 +12,8 @@ FMR =t,fmr,r0,r1,r2,r3,r2,r1,r2,tt,r4
 FM7 =
 FM8 =
 FM9 =
-PSG1=;t,ps0,a0,a1,a0,tt,a2
-PSG2=;t,ps0,b0,b1,b0,tt,b1
+PSG1=t,ps0,a0,a1,a0,tt,a2
+PSG2=t,ps0,b0,b1,b0,tt,b1
 PSG3=t,ps2,s0
 SCC1=t,sc0,g0/7,tt,g0
 SCC2=t,sc2,f0/3,f1
@@ -26,8 +26,8 @@ t=t103 r64
 tt=t152
 
 ;**** keybord 1
-;ps0=o5@11v9
-fm0=o4@60v11
+ps0=o4@11v5;v9
+fm0=o4@60v13
 ;fm2'=v15
 
 a0=l1e- mp6fp (d-m5i40
@@ -84,7 +84,7 @@ sc0=o1@11q5v15
 g0=l8a->a-<a->a-<l16a-a-a->a-r<a->a-r<
 
 ;*** drums
-fmr=v15vs12vm15vh10vc12
+fmr=v15vs13vm15vh10vc12
     y38,3y22,178
     y39,0y23,148
     y40,2y24,178
