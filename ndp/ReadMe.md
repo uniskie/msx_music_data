@@ -66,6 +66,14 @@ KSSファイルを出力するので[M3disp](https://m3.ym2413.com/)でも再生
 - ndpデータ全曲まとめパック  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/DSK_image/ndp-m3disp.zip
 
+- "呼び込み君(三角波)"  
+  [ndp-yobikomi_kun.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-yobikomi_kun.kss
+
+- "呼び込み君(矩形波)"  
+  [ndp-yobikomi_kun_n.kss]  
+  https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-yobikomi_kun_n.kss
+
 - "春の海 (冒頭のみ)"  
   [ndp-haru-no-umi.kss]  
   https://m3.ym2413.com/?open=https://github.com/uniskie/msx_music_data/blob/master/ndp/ndp-haru-no-umi.kss

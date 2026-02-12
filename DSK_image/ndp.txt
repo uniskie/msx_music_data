@@ -1,18 +1,18 @@
-naruto2413Ž»ì‚ÌMSX PSG—p‰¹Œ¹ƒhƒ‰ƒCƒo ndp‚ðŽg—p‚µ‚½ƒf[ƒ^W‚Å‚·B
+ï»¿naruto2413æ°è£½ä½œã®MSX PSGç”¨éŸ³æºãƒ‰ãƒ©ã‚¤ãƒ ndpã‚’ä½¿ç”¨ã—ãŸãƒ‡ãƒ¼ã‚¿é›†ã§ã™ã€‚
 
-- `play.bas` ... ŠÈˆÕƒvƒŒƒCƒ„[‚Å‚·B  
+- `play.bas` ... ç°¡æ˜“ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã§ã™ã€‚  
 
-- HALNOUMI.NDP  - "t‚ÌŠC (–`“ª‚Ì‚Ý)"
+- HALNOUMI.NDP  - "æ˜¥ã®æµ· (å†’é ­ã®ã¿)"
 - RISEOUT.NDP  - "RISEOUT (Arrange)"
 - RISEOUTO.NDP - "RISEOUT (Original)"
 - SMANB-S1.NDP - "SPACE MANBOW -STAGE1- Battle Ship"
 - SMANH-S1.NDP - "SPACE MANBOW -STAGE1- Battle Ship (H.ENV)"
-- KENJAISI.NDP - "CASIO Œ«ŽÒ‚ÌÎ ƒƒhƒŒ["
-- KENJAISE.NDP - "CASIO Œ«ŽÒ‚ÌÎ ƒƒhƒŒ[(SE•t‚«)"
-- DDS2LABY.NDP - "—_“]¶‡U Labyrinth Œß‘O‚QŽž‚Ì–À‹{ (H.ENV)"
-- DDS2OMEG.NDP - "—_“]¶‡U - OMEGA ¹í - (H.ENV)"
-- DDS2NLAB.NDP - "—_“]¶‡U Labyrinth Œß‘O‚QŽž‚Ì–À‹{ (no-H.ENV)"
-- DDS2NOME.NDP - "—_“]¶‡U - OMEGA ¹í - (no-H.ENV)"
+- KENJAISI.NDP - "CASIO è³¢è€…ã®çŸ³ ãƒ¡ãƒ‰ãƒ¬ãƒ¼"
+- KENJAISE.NDP - "CASIO è³¢è€…ã®çŸ³ ãƒ¡ãƒ‰ãƒ¬ãƒ¼(SEä»˜ã)"
+- DDS2LABY.NDP - "å¥³ç¥žè»¢ç”Ÿâ…¡ Labyrinth åˆå‰ï¼’æ™‚ã®è¿·å®® (H.ENV)"
+- DDS2OMEG.NDP - "å¥³ç¥žè»¢ç”Ÿâ…¡ - OMEGA è–æˆ¦ - (H.ENV)"
+- DDS2NLAB.NDP - "å¥³ç¥žè»¢ç”Ÿâ…¡ Labyrinth åˆå‰ï¼’æ™‚ã®è¿·å®® (no-H.ENV)"
+- DDS2NOME.NDP - "å¥³ç¥žè»¢ç”Ÿâ…¡ - OMEGA è–æˆ¦ - (no-H.ENV)"
 - DRSP-AR1.NDP - "Dragon Spirit [AREA 1] -The Paleozoic Era- (like FC ver.)"
 - DRSP-OMK.NDP - "Dragon Spirit -OMAKE-  (like a FC ver.)"
 - DRSP-SEA.NDP - "Dragon Spirit -Sea- (like FC ver.)"
@@ -41,43 +41,45 @@ naruto2413Ž»ì‚ÌMSX PSG—p‰¹Œ¹ƒhƒ‰ƒCƒo ndp‚ðŽg—p‚µ‚½ƒf[ƒ^W‚Å‚·B
 - GALIOH02.NDP - "MAZE of GALIOUS [START] ~ [CASTLE] normal-base"
 - GRAII-7.NDP  - "GRADIUS II AC - Synthetic Life - [NDP Arrange]"
 - GRAII-16.NDP - "GRADIUS II AC - Shoot & Shoot - [NDP Arrange]"
-- PAROCRIS.NDP - "PARODIUS ’†ƒ{ƒX - ƒNƒ‰ƒCƒVƒX‘æ‚SŠyÍ"
+- PAROCRIS.NDP - "PARODIUS ä¸­ãƒœã‚¹ - ã‚¯ãƒ©ã‚¤ã‚·ã‚¹ç¬¬ï¼”æ¥½ç« "
 - SALA_M01.NDP - "SALAMANDER [ POWER OF ANGER ] (H.ENV)"
 - SALA_M02.NDP - "SALAMANDER [ POWER OF ANGER ]"
-- SALA_O01.NDP - "SALAMANDER [ POWER OF ANGER ] (•@‰Ì with H.ENV)"
+- SALA_O01.NDP - "SALAMANDER [ POWER OF ANGER ] (é¼»æ­Œ with H.ENV)"
 - SALA_P01.NDP - "SALAMANDER [ FLY HIGH ] (H.ENV)"
 - SALA_P02.NDP - "SALAMANDER [ FLY HIGH ]"
-- SOMD1-01.NDP - "SORCERIAN MD - ŠDF‚Ìƒ_ƒ“ƒWƒ‡ƒ“(THE DARKEST OF THE DARK) - DUNGEON (H.ENV)"
-- SOMD1_01.NDP - "SORCERIAN MD - ŠDF‚Ìƒ_ƒ“ƒWƒ‡ƒ“(THE DARKEST OF THE DARK) - DUNGEON"
-- VANILLA.NDP  - "ƒ”ƒ@Zƒjƒ‰‚Ì‹l NDPÕ‚è"
+- SOMD1-01.NDP - "SORCERIAN MD - ç°è‰²ã®ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³(THE DARKEST OF THE DARK) - DUNGEON (H.ENV)"
+- SOMD1_01.NDP - "SORCERIAN MD - ç°è‰²ã®ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³(THE DARKEST OF THE DARK) - DUNGEON"
+- VANILLA.NDP  - "ãƒ´ã‚¡ã€‡ãƒ‹ãƒ©ã®æ±‚äºº NDPç¥­ã‚Š"
+- YOBIKOMI.NDP - "å‘¼ã³è¾¼ã¿å›(ä¸‰è§’æ³¢)"
+- YOBIKOMN.NDP - "å‘¼ã³è¾¼ã¿å›(çŸ©å½¢æ³¢)"
 
-## H.ENV ‚ªAƒ^ƒCƒgƒ‹‚É‚Â‚¢‚Ä‚¢‚éƒf[ƒ^
+## H.ENV ãŒã€ã‚¿ã‚¤ãƒˆãƒ«ã«ã¤ã„ã¦ã„ã‚‹ãƒ‡ãƒ¼ã‚¿
 
-ƒ`ƒƒƒ“ƒlƒ‹ƒ~ƒ…[ƒg‚ÌŽž‚Éƒn[ƒhƒEƒFƒAƒGƒ“ƒxƒ[ƒv‚Ì”gŒ`‚ª‚»‚Ì‚Ü‚Üo—Í‚³‚ê‚é‚±‚Æ‚ð—˜—p‚µ‚ÄA
-‹éŒ`”gˆÈŠO‚Ì”gŒ`iŽOŠp”gE‹˜”gj‚ð”­º‚³‚¹‚Ä‚¢‚éƒf[ƒ^‚Å‚·B
+ãƒãƒ£ãƒ³ãƒãƒ«ãƒŸãƒ¥ãƒ¼ãƒˆã®æ™‚ã«ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ã‚¨ãƒ³ãƒ™ãƒ­ãƒ¼ãƒ—ã®æ³¢å½¢ãŒãã®ã¾ã¾å‡ºåŠ›ã•ã‚Œã‚‹ã“ã¨ã‚’åˆ©ç”¨ã—ã¦ã€
+çŸ©å½¢æ³¢ä»¥å¤–ã®æ³¢å½¢ï¼ˆä¸‰è§’æ³¢ãƒ»é‹¸æ³¢ï¼‰ã‚’ç™ºå£°ã•ã›ã¦ã„ã‚‹ãƒ‡ãƒ¼ã‚¿ã§ã™ã€‚
 
-ƒn[ƒhƒEƒFƒAƒGƒ“ƒxƒ[ƒv‚ÍU•i‰¹—Êj‚ªˆê’è‚Å‚·‚ªA
-ƒ~ƒ…[ƒg‚ð‰ðœ‚µ‚Ä‰¹’öƒŒƒWƒXƒ^‚É•ªŽü”ä0‚ðŽw’è‚·‚é‚Æo—Í‚ª”¼Œ¸‚·‚é‚±‚Æ‚ð—˜—p‚µ‚Ä2’iŠK‚Ì‰¹—Ê‚ð‚Â‚¯‚Ä‚¢‚Ü‚·B
+ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ã‚¨ãƒ³ãƒ™ãƒ­ãƒ¼ãƒ—ã¯æŒ¯å¹…ï¼ˆéŸ³é‡ï¼‰ãŒä¸€å®šã§ã™ãŒã€
+ãƒŸãƒ¥ãƒ¼ãƒˆã‚’è§£é™¤ã—ã¦éŸ³ç¨‹ãƒ¬ã‚¸ã‚¹ã‚¿ã«åˆ†å‘¨æ¯”0ã‚’æŒ‡å®šã™ã‚‹ã¨å‡ºåŠ›ãŒåŠæ¸›ã™ã‚‹ã“ã¨ã‚’åˆ©ç”¨ã—ã¦2æ®µéšŽã®éŸ³é‡ã‚’ã¤ã‘ã¦ã„ã¾ã™ã€‚
 
-‚²‚­ˆê•”AŒÝŠ·«‚Ì‚È‚¢‹@Ží‚ª‚ ‚è‚Ü‚·B
+ã”ãä¸€éƒ¨ã€äº’æ›æ€§ã®ãªã„æ©Ÿç¨®ãŒã‚ã‚Šã¾ã™ã€‚
 
-### ŒÝŠ·«‚Ì‚È‚¢‹@Ží
+### äº’æ›æ€§ã®ãªã„æ©Ÿç¨®
 
-- CASIO MX-101 ... ƒ~ƒ…[ƒgŽž”gŒ`o—ÍATONE0‚Å‚ÌŒ¸Š‚Æ‚à‚É–¢‘Î‰ž
-- MSX0Stack ... ƒ~ƒ…[ƒgŽž”gŒ`o—ÍATONE0‚Å‚ÌŒ¸Š‚ª•sŠ®‘S
+- CASIO MX-101 ... ãƒŸãƒ¥ãƒ¼ãƒˆæ™‚æ³¢å½¢å‡ºåŠ›ã€TONE0ã§ã®æ¸›è¡°ã¨ã‚‚ã«æœªå¯¾å¿œ
+- MSX0Stack ... ãƒŸãƒ¥ãƒ¼ãƒˆæ™‚æ³¢å½¢å‡ºåŠ›ã€TONE0ã§ã®æ¸›è¡°ãŒä¸å®Œå…¨
 
-## ŽÓŽ«Eƒ‰ƒCƒZƒ“ƒX
+## è¬è¾žãƒ»ãƒ©ã‚¤ã‚»ãƒ³ã‚¹
 
 NDP (PSG Driver for MSX) - by naruto2413  
-ŒöŽ®ƒŠƒŠ[ƒXF  
+å…¬å¼ãƒªãƒªãƒ¼ã‚¹ï¼š  
 https://ndp.squares.net/web/
 
-- ‰õ“K‚ÈƒGƒfƒBƒ^‚Æ‘¦ŽžÄ¶‚ð•‚¯‚é—lX‚È‹@”\
-- ƒŠƒYƒ€ƒp[ƒg‚ð“Æ—§‚µ‚Ä‹Lq‚µA‹^Ž—“I‚È4ch‚ðŽÀŒ»
-  iƒŠƒYƒ€‚ðŠ„‚èž‚Ü‚¹‚éƒ`ƒƒƒ“ƒlƒ‹‚Í“®“I‚ÉŽw’è‰Â”\j
-- –Ê“|‚Èˆ—‚ðŠÈ—ª‰»‚Å‚«‚é—lX‚ÈƒRƒ}ƒ“ƒh
-  —áj ƒn[ƒhƒEƒFƒAƒGƒ“ƒxƒ[ƒv‚Ì‰¹’ö§ŒäAƒAƒ‹ƒyƒWƒI“WŠJAƒZƒ‹ƒtƒGƒR[
-- Œø‰Ê‰¹‹@”\
+- å¿«é©ãªã‚¨ãƒ‡ã‚£ã‚¿ã¨å³æ™‚å†ç”Ÿã‚’åŠ©ã‘ã‚‹æ§˜ã€…ãªæ©Ÿèƒ½
+- ãƒªã‚ºãƒ ãƒ‘ãƒ¼ãƒˆã‚’ç‹¬ç«‹ã—ã¦è¨˜è¿°ã—ã€ç–‘ä¼¼çš„ãª4chã‚’å®Ÿç¾
+  ï¼ˆãƒªã‚ºãƒ ã‚’å‰²ã‚Šè¾¼ã¾ã›ã‚‹ãƒãƒ£ãƒ³ãƒãƒ«ã¯å‹•çš„ã«æŒ‡å®šå¯èƒ½ï¼‰
+- é¢å€’ãªå‡¦ç†ã‚’ç°¡ç•¥åŒ–ã§ãã‚‹æ§˜ã€…ãªã‚³ãƒžãƒ³ãƒ‰
+  ä¾‹ï¼‰ ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ã‚¨ãƒ³ãƒ™ãƒ­ãƒ¼ãƒ—ã®éŸ³ç¨‹åˆ¶å¾¡ã€ã‚¢ãƒ«ãƒšã‚¸ã‚ªå±•é–‹ã€ã‚»ãƒ«ãƒ•ã‚¨ã‚³ãƒ¼
+- åŠ¹æžœéŸ³æ©Ÿèƒ½
 
 NDP (PSG Driver for MSX) (C) naruto2413  
-NDP.BIN‚Í‹–‘ø‚É‚æ‚è“¯«‚ð‹–‰Â‚³‚ê‚Ä‚¢‚é•¨‚Å‚·B
+NDP.BINã¯è¨±è«¾ã«ã‚ˆã‚ŠåŒæ¢±ã‚’è¨±å¯ã•ã‚Œã¦ã„ã‚‹ç‰©ã§ã™ã€‚

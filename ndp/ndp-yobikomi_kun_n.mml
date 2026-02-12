@@ -1,0 +1,44 @@
+;-----------------------------
+#title "呼び込み君(矩形波)"
+#BSAVE-NAME "YOBIKOMN"
+;-----------------------------
+#REPEAT-MODE 2
+#TIME-BASE 28
+#JUMP-OFFSET -1600
+@m0=24,3,3,1
+;-----------------------------
+; Melody
+1 v15 @1 o4 @r10,2 @q1
+1 @rd1,10 @m0
+1 ;s14 m+
+1 l8
+1 [[q4aq8a4q4baf+q8a4] q4dddeq8f+4.q4d q8f+4.q4aq8a2
+1  [q4dddeq8f+2]       q4eeede4f+4 a4g4f+4e4
+1 ]3
+1  aq8a4q4baf+q8a4 q4aq8a4q4baf+e4  q8d1
+;-----------------------------
+; Chord
+2 v14 @2 o3 @r12,2
+2 l8 la%2 @as1
+2 [[r"a>df+<"]8  [r"a>df+<"]8
+2  [r"db>d<"]8
+2  [r"ea>c+<"]4 [r"ea>c+<"]2r["ea>c+<"16]2r"ea>c+<"
+2 ]3
+2  [r"a>df+<"]8 "a>df+<"1
+;-----------------------------
+; Base
+3 v15 @3 o2  @r12,2
+3 l4
+3 [[d<a>]3d<a8>c+8  <[bf+]3b8.f+16b8a8>
+3  [<g>d]4          [<a>e]3e8<a8b8>c+8
+3 ]3
+3  [d<a>]3d<a8g8>  d1
+;-----------------------------
+r v13 @c2
+r l8
+r [[[bsbsbs16s16bs]
+r  /bsbsbs16s16bs bs16s16bsbs16b16sb
+r  ]bsbsbs16s16bs bs16s16bsbs16s16bs
+r ]3
+r  [bsbsbs16s16bs]
+r   brr2.
