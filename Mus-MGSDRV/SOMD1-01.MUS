@@ -40,8 +40,8 @@
 *06 = { \-32 } ;snare/tom
 *08 = { v14 q1so ho} ;tom
 *10 = { v12 q1so hf} ;snare body
-*12 = { v12 @14 o2 q4so } ; snare noise
-*13 = { v11 @14 o2 q6so } ; tom noise
+*12 = { v12 @14 o2 q5sf } ; snare noise
+*13 = { v11 @14 o2 q5sf } ; tom noise
 *14 = { v0 @6 o3 q8sf }  ; close hi-hut
 *15 = { v0 @6 o3 q1so }  ; open hi-hut
 FGH v0@14
@@ -56,7 +56,7 @@ F y14,32 l32 ; change to rhythm mode: 0(2),RMODE(1),B(1),S(1),M(1),C(1),H(1)
 F h1,32,0,-16 o4 *b0 *s0 ; bass drum -> tom tom 
 1239abcdefgh r32 ;wait
 
-1239abc r%1	; base & rhythm‚ª’x‚ê‹C–¡‚ÉŠ´‚¶‚é‚Ì‚Å¬×H
+;1239abc r%1	; base & rhythm‚ª’x‚ê‹C–¡‚ÉŠ´‚¶‚é‚Ì‚Å¬×H
 
 ;==== intro ====
 1239abcdefgh l32
@@ -77,9 +77,10 @@ D  v13 @13@e31 o2 q1so @\2
 E  v9  @1 @e6  o3 q8so @\19 
 DE l32
 DE [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
-F [7 rrrrgrrr ] r*m0bb*s0g g*m0eec*s0 
+;F [7 rrrrgrrr ] r*m0bb*s0g g*m0eec*s0 
+F [7 rrrrfrrr ] r*m0bb*s0f f*m0eec*s0 
 ;G [7 *h0bbbb*n0f*h0bbb ] brr*n0f f*h0rrr
-G [7 *h0bbbb*n0f*h0bbb ] b*n1c-c-*n0f f*n1edd*h0 
+G [7 *h0bbbb*n0c*h0bbb ] b*n1c-c-*n0c c*n1edd*h0 
 
 ;==== main ===
 
@@ -125,8 +126,10 @@ DE    ]
 2      d+4 g4  g16.a16. a+16^4 
 2      a4 >c4< f+16.d16. f+16^4 
 123   ]
-F     [[16 rrrr|grrr ] grgg] 
-G     [[16 *h0bbbb|*n0g*h0bbb ] *n0g*h0b*n0gg] 
+;F     [[16 rrrr|grrr ] grgg] 
+F     [[16 rrrr|frrr ] frff] 
+;G     [[16 *h0bbbb|*n0g*h0bbb ] *n0g*h0b*n0gg] 
+G     [[16 *h0bbbb|*n0c*h0bbb ] *n0c*h0b*n0cc] 
 
 1239ABCDEFG  |
 
@@ -158,12 +161,17 @@ DE    ]dddd8d d16dd16d16.
 2     cg a+g <a+>f af< 
 2     g+>d+ gd+ c2 
 2    l32 v+2 
-F    [14 rrrrgrrr ] 
+;F    [14 rrrrgrrr ] 
+F    [14 rrrrfrrr ] 
 ;F    ggggrrgg rggrgg*m0ee*s0
-F    ggggrrgg rgrrgg*m0ee*s0 ; < ‰¹‚ª‰»‚¯‚é‚Ì‚Å‹x•„‚É 
-G    [14 *h0bbbb*n0g*h0bbb ] 
+;F    ggggrrgg rgrrgg*m0ee*s0 ; < ‰¹‚ª‰»‚¯‚é‚Ì‚Å‹x•„‚É 
+F    ffffrrff rfrrff*m0ee*s0 ; < ‰¹‚ª‰»‚¯‚é‚Ì‚Å‹x•„‚É 
+;G    [14 *h0bbbb*n0g*h0bbb ] 
+G    [14 *h0bbbb*n0c*h0bbb ] 
 ;G    *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0ggrr
-G    *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0gg*n1ee 
+;G    *n0gggg*h0bb*n0gg *h0b*n0gg*h0b*n0gg*n1ee 
+;G    *n0cccc*h0bb*n0cc *h0b*n0cc*h0b*n0cc*n1ee 
+G    *n0c-c-c-c-*h0bb*n0c-c- *h0b*n0c-c-*h0b*n0c-c-*n1ee 
 
 1239ACBDEFG  ]
 
@@ -218,13 +226,19 @@ DE                    @6q6so
 DE                    d4d4
 D    v+1
 E    v-2
-F    r16r8r16 gr16.r8 r8r8 \-28gggg gg\-24gg*b0 
-F [4 r16r8r16|r16r16 gggg] 
-F *m0bb*s0gg *m0eecc*s0 
-G    *h0b16*h1b8r16 *n0g16r8. *h1b8r8 *n0gggg gggg 
-G [4 *h0b16*h1b8r16|*h0b16b16 *n0gggg] 
+;F    r16r8r16 gr16.r8 r8r8 \-28gggg gg\-24gg*b0 
+F    r16r8r16 fr16.r8 r8r8 \-28ffff ff\-24ff*b0 
+;F [4 r16r8r16|r16r16 gggg] 
+F [4 r16r8r16|r16r16 ffff] 
+;F *m0bb*s0gg *m0eecc*s0 
+F *m0bb*s0ff *m0eecc*s0 
+;G    *h0b16*h1b8r16 *n0g16r8. *h1b8r8 *n0gggg gggg 
+G    *h0b16*h1b8r16 *n0c16r8. *h1b8r8 *n0cccc cccc 
+;G [4 *h0b16*h1b8r16|*h0b16b16 *n0gggg] 
+G [4 *h0b16*h1b8r16|*h0b16b16 *n0cccc] 
 ;G *n0rrgg rrrr
-G *n1c-c-*n0gg *n1eccc 
+;G *n1c-c-*n0gg *n1eccc 
+G *n1c-c-*n0cc *n1eccc 
 
 1239ACBDEFG ];0
 
