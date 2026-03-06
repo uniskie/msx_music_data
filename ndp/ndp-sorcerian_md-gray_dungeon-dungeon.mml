@@ -1,4 +1,4 @@
-﻿#TITLE "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV]"
+#TITLE "SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV]"
 #PROGRAMMER "uniskie"
 #BSAVE-NAME "SOMD1-01"
 
@@ -12,13 +12,14 @@
 
 ;==== RHYTHM VOICE ====
 ;@R:B = *3 :920 N0 V14 / *1 :1200 V12
-@R:S = V15 *1 :568 / *2 V12 N8 :635 / V11 *3 N0 :701 / V10 :793
-@R:H = *3 :19 N0 V15                               ;-- Close Hi-hut
+@R:S = V15 *1 :571 / V13 *2 N1 :641 / V12 *3 :719 / V11 :807
+;@R:H = *3 :16 N0 V15                               ;-- Close Hi-hut
+@R:H = *2 N0 V15 / V12                             ;-- Close Hi-hut
 ;@R:E = *3 :920 N0 V15 / *1 :2000 V12              ;-- Close Hi-hut + Bass drum
 ;@R:O = *3 :21 N0 V15 / N1                         ;-- Open Hi-hut
 @R:K = V15 *3 :453 N0 / *1 V13 :509 / V12 :571 / V11 :641
-@R:M = V15 *3 :571 N0 / *1 V13 :641 / V12 :719 / V11 :807
-@R:N = V15 *3 :719 N0 / *1 V13 :807 / V12 :906 / V11 :1017
+@R:M = V15 *3 :679 N0 / *1 V13 :762 / V12 :855 / V11 :960
+@R:N = V15 *3 :855 N0 / *1 V13 :960 / V12 :1078 / V11 :1210
 ;123 @off
 
 ;==== VOICE (VOLUE/AMP ENVELOPE) ====
@@ -27,24 +28,26 @@
 ; lead
 @1 = bdfedc:2 edc:2 L b:3 c:3
 ; brass 
-@2 = fedc dc dc:2 b:2 L c:2 b:3 a:3
+@2 = fedc edc dc:2 b:2 L c:2 b:3 a:3
+@3 = fedc dc dc:2 b:2 L c:2 b:3 a:3
 ; echo electone
-@3 = fedcb:3 edcb:3 dcba:2 L b:2 a:2 9:2 8:2
+@4 = fedcb:3 edcb:3 dcba:2 L b:2 a:2 9:2 8:2
 ; tril piano
 @5 = {fed:2 c:2 d:2 c:2  ;edc:2 b:2 c:2 b:2
       dcb:2 a:2 9:2 8:2 L b:2 a:2 9:2 a:2 }
 
 ; bass
-@6 = DBA:2 L 9:4 8:4 
-@7 = DB L A:4 9:4
-@8 = *1 s10 *0 r h- ;H.ENV
-@9 = *1 s10 rrr *0 r:5 h- ;H.ENV
+@10 = ECB:2 L A:4 9:4
+@6  = DB:2 L A:4 9:4 
+@7  = DC:2 L  B:4 A:4 9:4 A:4
+@8  = *0 s14 rrrr h- ;H.ENV
+@9  = *0 s10 r:8 h- ;H.ENV
 
 ;==== PITCH VIBRATO ====
 ;@mdで開始ディレイを上書きできる(@m定義パラメータ自体を書き換えるので複数chでの使用時は注意)
 @m0 = 55,4,1,8 ,3,1
-@m1 = 40,4,3,8 ,3,1
-@m2 = 28,3,3,8 ,3,1
+@m1 = 40,4,3,8 ,4,1
+@m2 = 23,3,3,8 ,4,1
 
 ;==== NOTE ENVELOPE ====
 @n0 = L 0 0 0 12 12 12
@@ -54,9 +57,10 @@
 ;==== MACRO ====
 
 ; SQUARE BASE
-;$base  = @6 @q0 @r10,1
-;$base2 = @7 @q0 @r10,1
-;$base3 = @7 @q0 @r10,1
+;$base  = @6  @q0 @r10,1 k0
+;$base1 = @10 @q0 @r10,1 k0
+;$base2 = @6  @q0 @r10,1 k12
+;$base3 = @7  @q0 @r10,1 k0
 ;$d = ;音程調整
 ;$d0= ;ユニゾン揺れ周期調整
 ;$d1= ;ユニゾン揺れ周期調整
@@ -65,6 +69,7 @@
 
 ; TRIANGLE BASE
 $base  = @8 m+ mk0 @q0
+$base1 = @8 m+ mk12 @q0
 $base2 = @8 m+ mk12 @q1
 $base3 = @9 m+ mk12 @q1
 $d =\1  ;音程調整
@@ -77,19 +82,20 @@ $d3=\10 ;ユニゾン揺れ周期調整
 
 123r l32
 1 @0 o4 v14
-2 @0 o5 v11
+2 @0 o5 v10
 3 $base: $d: o2 v15
-r v14 vh11 @c2
+r v14 vs13 vh10 @c2
 
 12 @m0 @r13,2 @rd1,18 @q2
 12  la%2 @as1
 
 ;---- intro
 1 v-4 >d1 >d1<<  v+4
-2 v-2 <a+1 a+1> v+2
+2     <a+1 a+1> 
 3 [2 [2 gggg16ggg ] gga+a+>ccc+c+ d<dddfff+f+ ]
 
-r [7 hhhhshhh ] hkks smmn
+;r [7 hhhhshhh ] hkks smmn
+r [7 rrrrsrrr ] rkks smmn
 
 ;---- main
 123r @L
@@ -138,7 +144,8 @@ r [7 hhhhshhh ] hkks smmn
 3      aaaa16aaa aaa+a+>ccc+c+ dddd16ddd dddd16d<ad
 3     ]
 
-r     [[16 hhhh/shhh ] shss]
+;r     [[16 hhhh/shhh ] shss]
+r     [[16 rrrr/srrr ] srss]
 
 123r /
 
@@ -147,7 +154,7 @@ r     [[16 hhhh/shhh ] shss]
 1    @2 @q3 @r13,3 @rd1,20 @m2
 1    [<g4>g4a16.f16.d16^4
 1     c4g4/a+16.f+16.d+16^4]
-1          @rd1,15 @rd- @q2 ffff16.ff16ff16f8
+1          @rd1,15 @rd-  @3 @q2 ffff16.ff16ff16f8
 /*
 1    [d+%1&<g4-%1> d+%1&g4-%1 f%1&a16.-%1 d%1&f16.-%1 <a+%1&>d16^4-%1
 1     <g%1&>c4-%1 d+%1&g4-%1 / f+%1&a+16.-%1 d+%1&f+16.-%1 <b%1&>d+16^4-%1]
@@ -177,7 +184,7 @@ r     [[16 hhhh/shhh ] shss]
 2    l8 > la48 @5 @q2 @rd-
 2     ["c>d+<"   & v- "g>d+<" a+ g v+ "<a+>>d<" & v- "f>d<" a f v+
 2      "<g+>>c<" & v- "d+>c<" g d+ v+ / "f+b" v- f+ "f>f<" f v+ ]
-2    @2 @r13,2 @rd1,15 @rd-1 @q2v+ @n12 j5
+2    @3 @r13,2 @rd1,15 @rd-1 @q2v+ @n12 j5
 2    l32 cccc16.cc16cc16c8 <
 2    @n- v- 
 
@@ -190,9 +197,12 @@ r     [[16 hhhh/shhh ] shss]
 3      g+g+g+g+16g+g+g+ g+g+g+g+16g+g+g+
 3     /g+g+g+g+16g+g+g+> c+c+c+c+16c+c+c+
 3     ]
+3    $base1:
 3      dddd8d d16dd16d16.
+3    $base:
 
-r     [14 hhhhshhh ] sssshhss hsshssmm
+;r     [14 hhhhshhh ] sssshhss hsshssmm
+r     [14 rrrrsrrr ] ssssrrss rssrssmm
 
 123r ]
 
@@ -200,7 +210,7 @@ r     [14 hhhhshhh ] sssshhss hsshssmm
 
 
 ;--- last
-1 @2 @q2 @n1 @m2 @rd1,15 @rd-
+1 @3 @q2 @n1 @m2 @rd1,15 @rd-
 1 <
 1 r4.^ dga+>c16<a+g>cr<a+16^4
 1 r4.^ dga+>c16< a+g>cr<a+16^4
@@ -219,16 +229,16 @@ r     [14 hhhhshhh ] sssshhss hsshssmm
 2  d2. d8c+8
 2  c2a4c4<
 /*
-2 @3 la%4 @m-
+2 @4 la%4 @m-
 2 >"<a+>d"2. "<g+>c"8"<a>c+"8
 2  "<a+>d"2. "<a+>d"8"<a+>c+"8
 2  "<a>c"2"fa"4"<a>c"4<
 */
-2 @5 la48 @m- v+
+2 @5 la48 @m- v+2
 2 <<"da"2>"<f>c"2<
 2   "da+"2>"<g>d"2
 2   "<f>c+"2"<f>c"2
-2 la%2 @m0 v-
+2 la%2 @m0 v-2
 
 3 $base2:
 3 [ggr8 <g2.^16>]
