@@ -1,4 +1,4 @@
-;[gain=1.0 name=YS2TOMAK duration=300s fade=5s cpu=0 lpf=0]
+;[gain=1.0 name=YS2TOMAK duration=300s fade=5s cpu=0 lpf=1]
 ; The line above defines extra options, works only on msxplay.com
 ; name    : Name of mml, use as the base download filename.
 ; gain    : Volume gain. (default: 1.0)
@@ -10,7 +10,7 @@
 ;           Note that duration takes precedence over loop.
 #opll_mode 0
 #tempo 112
-#title {"YS II - TO MAKE THE END OF BATTLE / OPLL+PSG arrange by uniskie"}
+#title {"YS II : TO MAKE THE END OF BATTLE / OPLL+PSG cover by uniskie"}
 
 #alloc {f=1200, g=1200, h=1200}
 
@@ -419,17 +419,18 @@ AC   *v1 ;distortion guitar sub
 ;=============================================
 
 #macro_offset {b = 6}
-*6 = { <<<  @13@e0 q6sf v-3 hf       } ;base 1
-*7 = { <<<< @10@e0 q1sf v-3 hf       } ;base 2
-*8 = { >>>     @e9 q4so v+3 h4,0,1,2 } ;hit
-*9 = { >>>>    @e9 q4so v+3 h4,0,1,2 } ;hit
-@e9 = {,,@13f@7edc}
+*6 = { <<<  @13@e8 q3so v-1 hf       } ;base 1
+*7 = { <<<< @10@e8 q1sf v-2 hf       } ;base 2
+*8 = { >>>     @e9 q8so v+1 h4,0,1,2 } ;hit
+*9 = { >>>>    @e9 q8so v+2 h4,0,1,2 } ;hit
+@e8 = {,,fe}
+@e9 = {,,@13ffe@7fed}
 
 DE r8.
 
 DE [3
-D   @13q6 v13 o2 
-E   @10q1 v12 o2 
+D   @13@e8q3so v13 o2 
+E   @10@e8q1sf v12 o2 
 
 DE  l16
 DE  aaaa>c+<a>d<a
@@ -486,15 +487,16 @@ DE &d_<d8.r16v0r8.
 @e1={,,fde}
 
 ; bass drum & snare & tom
-*10={q2 v14 o3 g} ;bass drum
-*11={q1 v12 o4 d} ;snare drum
-*98={   v9  o3 d} ;snare drum echo
-*13={@e0 q1 v14 o5 c @e1} ;tom high
-*14={@e0 q1 v14 o4 g @e1} ;tom mid.
-*99={@e0 @14 v1    c @e1} ;mute
+*10={     q2 v13 o3 g} ;bass drum
+*11={     q1 v12 o4 d} ;snare drum
+*98={     q2 v9  o3 d} ;snare drum echo
+*13={     q1 v14 o5 c} ;tom high
+*14={     q1 v14 o4 g} ;tom mid.
+*99={ @14 q2 v1     c} ;mute
 #macro_offset {b=10,s=11,m=13,n=14,h=99,r=98}
 F h0,32,0,-16 ;音程を下げる効果の代用（※4分音符長以上になる時は止める事） 
-F l16 so @e1 
+;F h0,32,0,-12 ;音程を下げる効果の代用（※4分音符長以上になる時は止める事） 
+F l16 so
 F *b*s*r 
 F [3 
 F  [*b*b*s*r]8 
@@ -512,14 +514,14 @@ F ]
 F *s*b*b *s*b*b *s*b*b hf r8. 
 
 ; noise & hi-hut
-*15={q2sf v10   o1g    } ;bass drum
-*16={q2so v13   o2e    } ;snare drum
-*97={  hf  v9   o1c ho } ;snare drum echo
-*19={q2sf v12   o2c    } ;tom high
-*20={q2sf v12   o2g    } ;tom mid.
+*15={q2sf    v11   o1g    } ;bass drum
+*16={q2so    v14   o3d    } ;snare drum
+*97={q1so hf v10   o1d ho } ;snare drum echo
+*19={q2sf    v12   o2c    } ;tom high
+*20={q2sf    v12   o2g    } ;tom mid.
 *21={@e0 q8sf v0 @4 o2g @14 @e1} ;hi-hut
 #macro_offset {b=15,s=16,m=19,n=20,h=21,r=97}
-G h1,32,0,-12 
+G h1,32,0,-10
 G l16 @e1 
 G *b*s*r 
 G [3 
