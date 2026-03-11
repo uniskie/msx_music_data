@@ -46,16 +46,16 @@ c2=)g-2i>>
 ;*** keybord 2
 sc2=o5 m5i4 @21v5;v9
 
-d0=l2e-<a-4.>(f8 )f>mp20fp< (d-1m5i40
+d0=l2e-<a-4.>(f8 f>mp20fp< d-1m5i40
 d1=)d-1i4
 d2=)d-i>>
    v5;v10
    g-64p2m1<<g-4....
 
-e0=l2<a-f4.(b-8 )b->mp20b-p< (g-1m5i40
+e0=l2<a-f4.(b-8 b->mp20)b-p< g-1m5i40
 e1=)g-1i4>
-e2=)g-i>>
-   v8 r32.
+e2=)g-i>>>
+   v9 r32.
    g-64p2m1<<g-4..
 
 f0=l8<<a-ra-ra-ra-r a-a-a-ra-ra-r>>
@@ -67,8 +67,8 @@ fm5=o4@2v12
 sc1=o4@20v8;@19v12
 
 i0=z1m5i4 
-   e-2..f1 (d-8 d-1 i40)d-1i4
-   e-2..f1 (d-8 d-1 t152 i40)d-1i4
+   e-2..(f1 d-8 d-1 i40)d-1i4
+   e-2..(f1 d-8 d-1 t152 i40)d-1i4
 
 ;*** sequence 1
 fm4=o7@0v10 q2s1

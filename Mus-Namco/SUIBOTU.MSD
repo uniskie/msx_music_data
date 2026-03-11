@@ -71,8 +71,8 @@ t=t152
 ;  r64 ;for hi-hut vol bug. <- remove from loop bgm
 
 ;==== keybord 1
-fm0=o5@71m6 v12
-ps0=o4@14m6 v8;v13
+fm0=o6@71m6 v13
+ps0=o4@14m6 v10;v13
 
 a0=l8dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r>cr<
 a1=  dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r
@@ -89,9 +89,9 @@ c0=l8<fr4a-r4g-r rb-r4a-r>cr <e-r4g-r4a-r ra-r4>cre-r
 c1=  <fr4a-r4g-r rb-r4a-r>cr <e-r4g-r4a-r ra-r4>cr>(c4 i30c1 i60)c1i<
 ;(e-4 i30e-1 i60)e-1i
 
-a2=@61 v14
-c2r=@61 v12r8z13
-a2p=o5@14z v8;v12
+a2= o5 @61 v14 
+c2r=o5 @61 v12r8z13
+a2p=o5 @14 v9;v12
 
 a3=b-amp6b-pm5(ff2i60 )f2.ie-d
    (c4i60)cmp40(gg2m5i60 )g1i<
@@ -116,7 +116,7 @@ c8=l8(e-4i60)e-i (dd2i60 )d2..i
 ab=v14 q6
 
 ;==== keybord 2
-sc2=o5@18 m5 l8 q6 v4;v12
+sc2=o5@18 m5 l8 v6;v12
 <=<;v13
 
 d0v=o4@20 l8 v7;v12
@@ -191,7 +191,7 @@ h7=@12<<< o2v11
 h8=@17z7<< o2v4;v7
 
 ;==== sequence
-fm5=o6@0v10 m5i4 q6s1
+fm5=o6@0v10 m5i4 q4s1 z0
 ;ps3=o5@17v8q6 m4i
 
 i0=l16
@@ -207,7 +207,7 @@ i2=>c8<e-8 a-8 e-8
 i3=>c8<a-8>e-8 d 8 rrc<a-e-c<a-e-
    >f8 b-8 a-8>f 8 c<a>f<ac<a>f<a>
    @14 ;* psg/fm both voice *
-i3'=@16v12
+i3'=@16v12q8 z12
 i4=l4
    r1 (a-i60)a-8i4>(a-8a-i60)a-i
    r1 (gi60)g8i4(f8fi60)fi
@@ -217,7 +217,7 @@ i5=>(g2i60)g2i<
 i6=(b-2i60)b-2i
    l8 <;o4
    ;@14 v7z3 ;psg
-i7=@62q s1 v9r8z3 ;fm
+i7=@62q8s1 v9r8z10 ;fm
 
 ;==== bass
 fm3=o2@33v15q5s1

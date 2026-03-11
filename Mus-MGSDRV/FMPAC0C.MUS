@@ -111,7 +111,8 @@ E d2..
 ;@e14={1,0,@10fe@13f}
 B v10@10o2
 D v13@13o2 q1so
-BD l16r1 r1
+;BD l16r1 r1
+BD l16r1 r2..v+1d_<d8>v-1
 BD dr>dd<dr>dd<dr>dd<dr>dd <dr>dd<dr>dd<dr>dd<defd
 BD a+r>a+a+<a+r>a+a+<a+r>a+a+<a+r>a+a+ <a+r>a+a+<a+r>a+a+<a+r>a+a+<a+>cd<a+
 BD gr>gg<gr>gg<gr>gg<gr>gg <gr>gg<gr>gg<gr>gg<gaa+g dr>dd<dr>dd<dr>dd<dr>dd
