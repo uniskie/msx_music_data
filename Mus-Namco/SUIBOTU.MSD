@@ -3,11 +3,11 @@
 ;**************************************
 ;SUIBOTU.MSD/SUIBOTU.VCD
 
-FM1 =t,fm0,a0/3,a1,a2,
+FM1 =t,fm0,a0/3,a1',a2,
            a3,a4,a3,a5,
            a6,a7,a6,a8,
            d7/4,ab,d8
-FM2 =t,fm0,b0/3,b1,a2,
+FM2 =t,fm0,b0/3,b1',a2,
            b3,b4,b3,b5,
            a6,a7,a6,a8,
            e7/4,ab,e8,e9
@@ -37,11 +37,13 @@ FM9 =
 PSG1=t,ps0,a0/3,a1',a2p,
            d0,d1,d0,d2,
            d3/7,d4,d3/7,d5,
-           wr/8,d8
-PSG2=t,ps0,b0/3,b1,a2p,
+;           wr/8,d8
+           d7/4,d8
+PSG2=t,ps0,b0/3,b1',a2p,
            e0,e1,e0,e2,
            e3/15,e4,
-           wr/8,e8
+;           wr/8,e8
+           e7/4,e8
 PSG3=t,    s0,s1/2,s2,s1/3,s3,s0,s1/2,s4,s1/3,s5,
            s0,s1/2,s6,s1/3,s7,s0,s1/2,s6,s1/2,s8,
            s9,sa/6,sb,s9,sa/7
@@ -58,7 +60,7 @@ SCC3=t,sc2,a0/3,a1,
            d0v,d0,d1,d0,d2,;d3v
            d3/7,d4,d3/7,d5
            d6v,d7/4,d8
-SCC4=t,sc2,b0/3,b1',
+SCC4=t,sc2,b0/3,b1,
            d0v,e0,e1,e0,e2,;d3v
            e3/15,e4
            d6v,e7/4,e8,e9
@@ -71,27 +73,27 @@ t=t152
 ;  r64 ;for hi-hut vol bug. <- remove from loop bgm
 
 ;==== keybord 1
-fm0=o6@71m6 v13
-ps0=o4@14m6 v10;v13
+fm0=o6@71m6 v12 z1
+ps0=o4@14m6 v9;v13
 
 a0=l8dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r>cr<
 a1=  dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r
-   (a-4 i30a-1 i60)a-1i
-   ;>(c4 i30c1 i60)c1i<
+     >(c4 i30c1 i60)c1i<
 a1'= dr4e-r4d-r rg-r4e-ra-r cr4d-r4g-r re-r4a-r
-   ;>(a-4 i30a-1 i60)a-1i<
-   >(c4 i30c1 i60)c1i<
+     >>(c4 i30c1 i60)c1i<<
 b0=l8<b-r4>cr4<b-r >rd-r4cre-r <a-r4b-r4>d-r rcr4e-ra-r
-b1=  <b-r4>cr4<b-r >rd-r4cre-r <a-r4b-r4>d-r rcr4e-r>(e-4 i30e-1 i60)e-1i<
-;(a-4 i30a-1 i60)a-1i
-b1'= <b-r4>cr4<b-r >rd-r4cre-r <a-r4b-r4>d-r rcr4e-r(e-4 i30e-1 i60)e-1i
+b1=  <b-r4>cr4<b-r >rd-r4cre-r <a-r4b-r4>d-r rcr4e-r
+     (a-4 i30a-1 i60)a-1i
+b1'= <b-r4>cr4<b-r >rd-r4cre-r <a-r4b-r4>d-r rcr4e-r
+     >(a-4 i30a-1 i60)a-1i<
 c0=l8<fr4a-r4g-r rb-r4a-r>cr <e-r4g-r4a-r ra-r4>cre-r
-c1=  <fr4a-r4g-r rb-r4a-r>cr <e-r4g-r4a-r ra-r4>cr>(c4 i30c1 i60)c1i<
-;(e-4 i30e-1 i60)e-1i
+c1=  <fr4a-r4g-r rb-r4a-r>cr <e-r4g-r4a-r ra-r4>cr
+;    (e-4 i30e-1 i60)e-1i
+     >(e-4 i30e-1 i60)e-1i<
 
-a2= o5 @61 v14 
-c2r=o5 @61 v12r8z13
-a2p=o5 @14 v9;v12
+a2= o5 @61 v12
+c2r=o5 @61 v11r8z13
+a2p=o5 @20 v8;v12
 
 a3=b-amp6b-pm5(ff2i60 )f2.ie-d
    (c4i60)cmp40(gg2m5i60 )g1i<
@@ -103,7 +105,7 @@ b3=dcmp6dpm5<(b-b-2i60 )b-2.igf
    (d4i60)dimp24b-(b-2m5i60 )b-2.igf>
 b4=<gfmp6gpm5(e-e-2i60 )e-1i>
 b5=<e-cmp40a-pm5g4e-c<a- a>dcmp40a4pm5fcmp40apm5
-   z19>
+   z17>v10
 
 a6=<l8(a-4i60)a-8i>mp90(a-8pm5a-2i60 )a-1i
    (g4i60)g8imp8(f8pm5f2i60 )f1i<
@@ -115,8 +117,9 @@ c8=l8(e-4i60)e-i (dd2i60 )d2..i
    v11 z @62q
 ab=v14 q6
 
+
 ;==== keybord 2
-sc2=o5@18 m5 l8 v6;v12
+sc2=o4@18 m5 l8 v7;v12
 <=<;v13
 
 d0v=o4@20 l8 v7;v12
@@ -170,7 +173,7 @@ f8=l4<(fi40)f8i(fi40)f8i(e-i40 )e-8i(e-i40)e-8iq6qff>
 
 
 ;==== strings
-fm4=o5@2q7s1v14 z8
+fm4=o5@2q7s1v13 z10
 sc1=o4@14q6 v5;v9
 
 h0=m5i4 l1(b- b- i10b- i20)b-i4
@@ -251,9 +254,9 @@ gh=l8b-4b->b-4b-<a-4 a->a-4a-<f>f<f>f
 
 
 ;==== drums
-fmr=v15vh11vc12vs13vm15
-    y38,4y22,186 ;bassdrum
-    y39,2y23,164 ;snare
+fmr=v15vh10vc12vs13vm15
+    y38,3y22,166 ;bassdrum
+    y39,4y23,184 ;snare
     y40,2y24,178 ;tom
 
 r0=bc16vh10h16h16h16bms16h16h16h16bh16bh16h16h16bms16h16h16h16

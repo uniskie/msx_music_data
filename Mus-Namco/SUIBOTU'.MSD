@@ -26,8 +26,8 @@ t=t103 r64
 tt=t152
 
 ;**** keybord 1
-ps0=o4@11v5;v9
-fm0=o4@60v13
+ps0=o4@11v6;v9
+fm0=o5@60v11
 ;fm2'=v15
 
 a0=l1e- mp6fp (d-m5i40
@@ -49,13 +49,13 @@ sc2=o5 m5i4 @21v5;v9
 d0=l2e-<a-4.>(f8 f>mp20fp< d-1m5i40
 d1=)d-1i4
 d2=)d-i>>
-   v5;v10
+   v6;v10
    g-64p2m1<<g-4....
 
-e0=l2<a-f4.(b-8 b->mp20)b-p< g-1m5i40
+e0=l2<a-f4.(b-8 b->mp20b-p< g-1m5i40
 e1=)g-1i4>
 e2=)g-i>>>
-   v9 r32.
+   v4 r32.
    g-64p2m1<<g-4..
 
 f0=l8<<a-ra-ra-ra-r a-a-a-ra-ra-r>>
@@ -63,15 +63,15 @@ f1=l8<<a-ra-ra-ra-r t152 a-a-a-ra-ra-r>>
 
 
 ;*** strings
-fm5=o4@2v12
-sc1=o4@20v8;@19v12
+fm5=o5@2v12 z8
+sc1=o4@20v5;@19v12
 
-i0=z1m5i4 
+i0=m5i4 
    e-2..(f1 d-8 d-1 i40)d-1i4
    e-2..(f1 d-8 d-1 t152 i40)d-1i4
 
 ;*** sequence 1
-fm4=o7@0v10 q2s1
+fm4=o7@0v9 q4s1
 
 h0=l16
    a-a-a-ra-a-a-r a-a-a-a-ra-a-r
@@ -85,9 +85,9 @@ g0=l8a->a-<a->a-<l16a-a-a->a-r<a->a-r<
 
 ;*** drums
 fmr=v15vs13vm15vh10vc12
-    y38,3y22,178
-    y39,0y23,148
-    y40,2y24,178
+    y38,3y22,166 ;bassdrum
+    y39,4y23,184 ;snare
+    y40,2y24,178 ;tom
 
 ps2=v10;v12
 
