@@ -8,62 +8,70 @@
 
 @0=EFED:2 CDC:5 LB:4 A:4
 @1=DFEDC DCB CBA BA9 A98 987 876 765 654 543 432 321 21L0
-@2=BCDEFED EDC LB:3 A:3 B:3 C:3 
-@3=FED LC:3 B:3
-@4=FEDC D L C:2 B:2 A:2 B:2 
+@2=CDFED L C:2 B:3 C:2 D:3
+@3=FED L C:3 B:3 A:3 B:3
+@4=FED L C:2 B:2 A:2 B:2 
 @5=CDEFED EDC LB:3 C:3
 @6=FEDCB L A:4 9:4
+@7=BCDEFED EDC LB:3 A:3 B:3 C:3
 @9={ *3 n0
      CDFEDC [2 DCB] [3 DBA] [4 CA9]
      [5 B98] [6 A87] [7 976] [8 865] 
      [9 754] [10 643] [11 532] L 421
    }
 
-@m0=15,4,4,9
-@m1=0,2,2,0 ,6,1
-@m2=0,3,1,2 ,6,1
-@m3=16,3,1,0 ,8,1
+@m0=2,3,2,9
+@m1=0,2,3,0 ,6,1
+;@m2=0,9,3,9
+@p2={ -3 L
+       1 0  1 0 1 0 0 0 -1 0 -1 0 -1 0 0 0
+    }
+@m3=8,3,2,0 ,8,1
 @m4=0,14,14,11
 @m5=0,14,14,10
 @m6=0,10,5,4
 @m7=0,1,4,1
 
+@n0= 1 -1 0
+@n1= -1 1 0
+
 @R:B = V15 *1 :960 / V12 :1080 ;/ V11 :1350
 @R:A = V15 *1 :960 / V12 *3 N0 :27 ;/ V11 *1 :1350
 @R:S = V15 *1 :620 / V13 N0 *3 :1040 ;/ V12 *1 :1120
-@R:M = V14 *3 N0 :297 / V15 *1 :303 / V14 :331 / V13 :341 / V12 :352 ;/ V11
-@R:K = V15 *3 N0 :41 / V12 *1 :190
+@R:M = V14 *3 N0 :40 / V15 *1 :300 / V14 :302 / V13 :304 / V12 :306 ;/ V11
+@R:K = V15 *3 N0 :38 / V12 *1 :142
 @R:H = V15 *3 N0 :27
 @R:C = V15 *3 N0 :27 / V12 / V11 ;/ V10 / V9
 
-;123r @l
+123r @l
 
-;$base = @6 @r10,2 ;-- SQUARE WAVE
-$base = s14,4 m+ ;-- TRIANGLE WAVE
+;$base = @6 @r10,3 ;-- SQUARE WAVE
+$base = s14,4 m+ mk12 ;-- TRIANGLE WAVE
 
 12 o4 @0 @m0 @r12,3 @rd1,8 @q1
 1  v13
 2  v12 \-1
-3  o3 v14 $base:
-r  v13 vs12 vm13 vk12 vh11 vc11 l8 @c2
+3  o2 v14 $base:
+r  v13 vs13 vm13 vk12 vh12 vc12 l8 @c2
 123 l8
 12  la%1,%1,%1,1 @as1
 3   la%1 @as1 
 1 j="A"
-1 [q6e-re-e-ra-fe- q8r4frf/r@1@m1q6f4q8@0@m0]
-2 [q6"<a->c"rrcrccc q8r4"<a->c"r"<a->c"/rq6@1@m1b-4q8@0@m0]
+1 [q6e-re-e-ra-fe- @m3q8r4frf/rq6@1@m1f4q8@0@m0]
+2 [q6"<a->c"rrcrccc @m3q8r4"<a->c"r"<a->c"/rq6@1@m1b-4q8@0@m0]
 3 [a-4ra-a-4e-a- r4frf/rr4]
 r [a4.aar4. b4c4c4r4]
-1 v-1 @1@m7 >r16..q4d-4q8r64< v+1
-2     @1@m7  r16..q3e 4q8r64 
-3 v-1 @1@m7 >r16..q5d-4q8r64< v+1 $base:
+1 r16..          \-8+ @1@m1  e-4r64  \+8+
+2 r16..       v-1\-8+ @1@m1 >e-4r64< \+8+v+1
+3 r8   @r12,3 v-3\-8+ @1@m1>>a-16r.<<\+8+v+3 @r- $base:
 1 j="B" j1
-12 @2 @m2
-1 e-fe-e- e-e-4e- fa-fe- f4 @1>f4< @2
-2 cr4<a-a-re->r "<a->c"&c4r4.@1>c4<@2
+12 @2 @p2
+;1 e-fe-e- e-e-4e- fa-fe- f4 @1@m1>f4< @2@p2
+1 e-fe-e- e-e-4e- fa-fe- f4 @1@m1>f4< @2@p2
+2 cr4<a-a-re->r "<a->c"&c4r4.@1@m1>c4<@2@p2
 3 a-4ra-a-4e-4 f4r<f>f4fe-
 r [a4.aar4.]
-1 a-b-a-a- a-a-4a- b->c<b-a- b-4 @1>e-4<@2
+1 a-b-a-a- a-a-4a- b->c<b-a- b-4 @1@m1>e-4<@2@p2
 2 fr4<d-d-4d-4> "d-g"&g4r<e-e->b-<g>
 3 d-4rd-d-4r4 e-4re-q6e-e-q8fg
 r [a4.aar4.]
@@ -73,8 +81,8 @@ r [a4.aar4.]
 3 a-4re-a-2 <c4rg>c4.r
 r [a4.aar4.]
 1 r4fa-b-a-f4 
-1             e-1
-1             ;e-4.> @0@m0 e-4e-e-e-<
+1             e-1 
+1             ;e-4.\+3+> @0@m0 e-4e-e-e-<
 2 r4d-2. 
 ;2        <a-1>
 ;2        <a-4.@0@m0 a-4a-a-a->
@@ -82,13 +90,13 @@ r [a4.aar4.]
 3 <d-4rd->d-4.r <e-4.b->e-4<ge->
 r [a4.aar4.]
 1 j="D" j3
-12 q5 @4@m0
+12 q5 @4@m0 
 1 >ffff fffe- fa-fe-f4r4<
 2 q4c4r4c4r4 c4r4c4c4
 3 q4f4r4f4r4 f4r4f4f4
 r a4rcc4r4 a4r4c4c4
 1 r@rd-1fa-a-a-a-fa- b->c<b-a-b-4e-4
-2 <a-4r4a-4r4 g4rg>e-4b-4q8
+2 <a-4r4a-4r4 g4rg>e-4b-4
 3 d-4 r4d-4 r4 e-4r4e-4e-4q8
 r a4rcc4r4 a4r4c4cc
 1 j="E" j4
@@ -107,45 +115,48 @@ r [a4.a/ars4] ssss
 2 re-e-<b->c<b-a-a- rb-b-a- b-a-ff
 3 q6<a-4r4r4a-4 f4r4r4f4>q8
 r [a4r2hh]
-1 <e-4>e-4e-2& e-2r4>c<b- a-rr4>a-4<r4
-2 <b-4>b-4b-2& b-2r4>e-e- e-rr4>e-4<r4
-;1 <e-4>e-4e-2 <e-re-r>r4>c<b- a-rr4>a-4<r4
-;2 <b-4>b-4b-2 <b-rb-r>r4>e-e- e-rr4>e-4<r4
+1 la%3 @as0 <e-4>e-4v-2"e-"2^ 2v+2r4 la%1,%1,%1,1 @as1
+2  b-4v-4b-4v+1b-&v+1b-&v+1b-&v+1b- "b->e-<"r"b->e-<">rr4 
+;1 <e-4>e-4e-2 <e-re-r>r4
+;2 <b-4>b-4b-2 <b-rb-r>r4
+1                         >c<b- a-rr4>a-4<r4
+2                         >c<b- e-rr4>e-4<r4
 ;3 <e-1> q6e-4e-4q8r2 >@4crr4<<$base:c4r4>
-3 <e-1> q6e-4e-4q8@m6v-3@9"e->>d-<<"2*1@m-v+3 @4>crr4<$base:a-4r4
+3 <e-1> q6e-4e-4q8>@m6v-3@9"e->>d-<<"2*1@m-v+3 @4>crr4<<$base:a-4r4
 r b4b4r2 b1 r2brr4
 
 ;--- solo
-1 j="G solo" j1
+1 j="G solo" ;j1
 12 @3 @m3 @q2
-1  ra-e-fa-e-fa- a-4a-e-fa-e-16f16a-
-;1  rr e-fr e-fr  r4 r e-fr e-16f16r
-2  ra-e-f a-4. a- a-4a-4fa-4      a-
-3  r@m6v-3@9"e->>c<<"2@m-v+3r4. r4@m6v-3@9"e->>c<<"2.^
+1  v+1 ra-e-fa-e-fa- a-4a-e-fa-e-16f16a-
+;1     rr e-fr e-fr  r4 r e-fr e-16f16r
+2      ra-e-f a-4. a- a-4a-4fa-4      a-
+3  >r@m6v-2@9"e->>c<<"2@m-v+2r4. r4@m6v-2@9"e->>c<<"2.^
 r  b4sb4rsc crmrmrhr
-1  e-fa-\-10+@m4b4\10+@m3bbb b& @m5b@m3b&@m5b@m3b-a-fe-
-2  r4.d8^2^ 2r2
-3  1*1@m-v+3 r1
+1  e-fa-@n0\-10+@m4b4\10+@m3bbb b& @m5b@m3b&@m5b@m3b-a-@n-fe-
+2  r4.v+1d8^2& v-1d2r2
+3  1*1@m-v+2< r1
 r  b4sb4rsr crbrbrhr
-1  <b>ca-e-4a-e-f a-e-fa-e-16f16a-a-r
-2  <b>ca-4. a-4.  a-4 fa-4      a-f r
-3  r1 r@m6v-3@9"e->>c<<"2.@m-v+3r
+1  <b>ca-e-4a-e-f a-e-fa-e-16f16a-@n1a-r
+2  <b>ca-4. a-4.  a-4 fa-4      a-@n1f r
+3  r1 >r@m6v-2@9"e->>c<<"2.@m-v+2*1<r
 r  bkkb4ksc bkrkbkcb
-1  a-ra-a-4@m4g@m3a-r a-ra-.&a-_c16;r2
-2  f rf f 4@m4e@m3f r f r@4"<a->c"r;"<a->c"rr4
-1                       v-7 @5@m7 >>>b-4..&v-1b-16v+1<<<<v+7 
-2                       v-6 @5@m7 >>>>d-4..&v-1d-16v+1<<<<<v+6 
+1  a-@n-ra-a-4@m4g@m3@n1a-r a-@n-ra-&a-_cv-1;r2
+2  f @n-rf f 4@m4e@m3@n1f r f @n-r@4"<a->c"r;"<a->c"rr4
+1                       v-6 @5@m7 >>>b-4..&v-1b-16v+1<<<<v+6
+2                       v-5 @5@m7 >>>>d-4..&v-1d-16v+1<<<<<v+5
 3  r2r;r4. r4$base:frfr4
-3             v-6 @5@m7>>>b2<<<v+6@m- r $base:frfrr4
+3             v-5 @5@m7>>>>b2<<<<v+5@m- r $base:frfrr4
 r  b4sb4hsr r4crcrr4
 ;-- brass break
 1 j="H break" j2
 12 @2@m0
-1   a-4&a-_e-4 d-_e-4&e-8&e-_d8 f+_a-8&a-^2.>
-2  <a-4&a-_e-4 d-_e-4&e-8&e-_d8 f+_a-8>>
-2     @m6@9la%1"<e->>c<"2.^8*1
-3  a-2 e-2 a-1
-r  r1 r2[4 s16s16]
+1   a-4&a-_d-4  d-_e-4&e-8&e-_d-8 f_a-4.&a-2r>
+2   e-4&e-_<a-4 a_b-4&b-8&b-_a8   >d-_e>
+2     @m6@9la%1"<e->>c<"2.*1 r
+3  a-2 e-2 a-2..r
+;3   a-4&a-_d4 d-_e-4&e-8&e-_d-8 f_a-2&a-4.r
+r  r1 r2 vs-3[4 s16s16 vs+1]vs-1
 
 ;-- A-2
 1 j="A-2" j3
@@ -154,12 +165,12 @@ r  r1 r2[4 s16s16]
 2 [q6"<a->c"rrcrccc q8r4"<a->c"r"<a->c"/rq6@1@m1b-4q8@0@m0]
 3 [a-4ra-a-e-a-4 r4frf/rr4]
 r [a4.aa4.r b4c4c4r4]
-1   v-1 @2m4r16.. >ce-< r64 v+1
-2   v-1 @2m4r16..>>ce-<<r64 v+1
-3 @1@m1r16..>>c4r64<<@m-$base:
+1   \-8+v-1 @7m4r16.. >ce-< r64 v+1\+8+
+2   \-8+v-1 @7m4r16..>>ce-<<r64 v+1\+8+
+3 @1@m1r16..>>>c4r64<<<@m-$base:
 ;-- E-2
 1 j="E-2" j4
-12 @2@m2
+12 @2@p2
 1 r4>c4c4.<a- b-4b-a-b-a-f4
 2 r4a-4a-2 f2r2
 3 <a-4r>e-a-4.r d-4r<a->d-4.r
@@ -177,18 +188,22 @@ r [a4.a/ars4] ssss
 2 la%1,%1,%1,1
 3 q6<a-4r4r4a-4 f4r4r4f4>q8
 r [a4r2hc]
-1 v-2 @2@m4  q6f8q8 >e-16d_c16<  v+2 @4@m0
-2 v-2 @2@m4 >q6b-q8 >d_c<<       v+2 @4@m0
+1 \-5+@7@m4  q6f8q8 v-2>e-16d_c16<  v+2\+5+ @4@m0
+2 \-5+@7@m4 >q6b-q8 v-2>d_c<<       v+2\+5+ @4@m0
 ;1 <e-4>e-4e-2 <e-re-r>r4>c<b- a-rr4>a-4<r4
 ;2 <b-4>b-4b-2 <b-rb-r>r4>e-e- e-rr4>e-4<r4
 ;3 <e-1> q6e-4e-4q8r2 >@4crr4<<$base:c4r4>
-1 e-4e-2& e-2r4>c<b- a-rr4
-2 b-4b-2& b-2r4>c<b- a-rr4
-3 <e-1> q6e-4e-4q8@m6v-2@9"<e->>>c<<"2*1@m-v+2 @4>>crr4<<$base:a-4r4>>
-r b4b4r2 b1 r4..b4r16r4
-1                          >a-16.&\-4+e-32< @2@m4 v-1a_a-v+1 r4\+4+
-2               v+1 @2@m4@2 \-5+f16.&f_e32        v-2a_b-v+1 r4\+5+
+1 la%3 @as0 e-4v-2"e-"2^ 2v+2r4 la%1,%1,%1,1 @as1
+2  v-4b-4v+1b-&v+1b-&v+1b-&v+1b- "b->e-<"r"b->e-<">rr4 
+;1 <e-4>e-4e-2 <e-re-r>r4
+;2 <b-4>b-4b-2 <b-rb-r>r4
+1                         >c<b- a-rr4;>a-4<r4
+2                         >c<b- e-rr4;>e-4<r4
+3 <e-1> q6e-4e-4q8>@m6v-2@9"<e->>>c<<"2*1@m-v+2*1 v-1@4>crv+1r4;<<$base:a-4r4
+r b4b4r2 b4b4r2 r4...b4r32r4
+1                        >a-16.&\-5+e-32     @7@m4v-2a-_av+2r4\+5+
+2               v+2 @7@m4 \-5+f16&f_e-16v-2       v-1a-_av+1r4\+5+
+3                           <<$base:a->> \-5+@7@m4v-3e_e-v+3r4\+5+
 
-
-;123 @rd-1
-;123r r1
+123 @rd-1
+123r r1
