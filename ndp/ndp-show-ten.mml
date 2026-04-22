@@ -6,11 +6,11 @@
 #repeat-mode 3
 #jump-offset -600
 
-@0=EFED:2 CDC:5 LB:4 A:4
+@0=EFED:2 EDC:5 LB:4 A:4
 @1=DFEDC DCB CBA BA9 A98 987 876 765 654 543 432 321 21L0
-@2=CDFED L C:2 B:3 C:2 D:3
+@2=CDFED ED L C:2 B:3 C:2 D:3
 @3=FED L C:3 B:3 A:3 B:3
-@4=FED L C:2 B:2 A:2 B:2 
+@4=FDC L B:2 A:2 9:2 
 @5=CDEFED EDC LB:3 C:3
 @6=FEDCB L A:4 9:4
 @7=BCDEFED EDC LB:3 A:3 B:3 C:3
@@ -43,7 +43,7 @@
 @R:H = V15 *3 N0 :27
 @R:C = V15 *3 N0 :27 / V12 / V11 ;/ V10 / V9
 
-123r @l
+;123r @l
 
 ;$base = @6 @r10,3 ;-- SQUARE WAVE
 $base = s14,4 m+ mk12 ;-- TRIANGLE WAVE
@@ -115,7 +115,7 @@ r [a4.a/ars4] ssss
 2 re-e-<b->c<b-a-a- rb-b-a- b-a-ff
 3 q6<a-4r4r4a-4 f4r4r4f4>q8
 r [a4r2hh]
-1 la%3 @as0 <e-4>e-4v-2"e-"2^ 2v+2r4 la%1,%1,%1,1 @as1
+1 la%3,%4 @as0 <e-4>e-4v-2"e-"2^ 4.rv+2r4 la%1,%1,%1,1 @as1
 2  b-4v-4b-4v+1b-&v+1b-&v+1b-&v+1b- "b->e-<"r"b->e-<">rr4 
 ;1 <e-4>e-4e-2 <e-re-r>r4
 ;2 <b-4>b-4b-2 <b-rb-r>r4
@@ -193,17 +193,17 @@ r [a4r2hc]
 ;1 <e-4>e-4e-2 <e-re-r>r4>c<b- a-rr4>a-4<r4
 ;2 <b-4>b-4b-2 <b-rb-r>r4>e-e- e-rr4>e-4<r4
 ;3 <e-1> q6e-4e-4q8r2 >@4crr4<<$base:c4r4>
-1 la%3 @as0 e-4v-2"e-"2^ 2v+2r4 la%1,%1,%1,1 @as1
+1 la%3,%4 @as0 e-4v-2"e-"2^ 4.rv+2r4 la%1,%1,%1,1 @as1
 2  v-4b-4v+1b-&v+1b-&v+1b-&v+1b- "b->e-<"r"b->e-<">rr4 
 ;1 <e-4>e-4e-2 <e-re-r>r4
 ;2 <b-4>b-4b-2 <b-rb-r>r4
 1                         >c<b- a-rr4;>a-4<r4
 2                         >c<b- e-rr4;>e-4<r4
-3 <e-1> q6e-4e-4q8>@m6v-2@9"<e->>>c<<"2*1@m-v+2*1 v-1@4>crv+1r4;<<$base:a-4r4
+3 <e-1> q6e-4e-4q8>@m6v-2@9"<e->>>c<<"2*1@m-v+2*1 >v-1@4crv+1r4<<;$base:a-4r4
 r b4b4r2 b4b4r2 r4...b4r32r4
 1                        >a-16.&\-5+e-32     @7@m4v-2a-_av+2r4\+5+
 2               v+2 @7@m4 \-5+f16&f_e-16v-2       v-1a-_av+1r4\+5+
-3                           <<$base:a->> \-5+@7@m4v-3e_e-v+3r4\+5+
+3                             $base:a->> \-5+@7@m4v-3e_e-v+3r4\+5+
 
 123 @rd-1
 123r r1
