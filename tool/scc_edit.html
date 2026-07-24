@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>MSX SCC波形エディター (MGSDRV)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #dddddd;
+            color: #0e0e0e;
+            margin: 0;
+            padding: 12px;
+        }
+        h1 {
+            font-size: 20px;
+            border-bottom: 2px solid #bcbcbc;
+            color: #232;
+        }
+        .container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #bdbdbd;
+            padding: 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .main-panel {
+            flex: 1;
+            min-width: 550px;
+            background-color: #cdcdcd;
+            padding: 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .editor-canvas-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        canvas {
+            background-color: #000;
+            border: 4px solid #000;
+            display: block;
+            cursor: crosshair;
+        }
+        canvas:focus {
+            outline: none;
+            border-color: #644;
+        }
+        .list-container {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 8px;
+            border: 1px solid #222;
+            background: #111;
+        }
+        .tone-item {
+            font-size: 12px;
+            padding: 3px 8px;
+            cursor: pointer;
+            border-bottom: 1px solid #888;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ed5
+        }
+        .tone-item:hover {
+            background-color: #252525;
+        }
+        .tone-item.active {
+            background-color: #db3;
+            color: #221;
+        }
+        input[type="text"], input[type="number"], textarea {
+            background-color: #eee;
+            color: #111;
+            border: 1px solid #444;
+            padding: 5px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            /*height: 100px;*/
+            resize: vertical;
+            line-height: 1.5;
+            font-size: 16px;
+            font-family: ui-monospace, monospace !important;
+            background-color: #eee !important;
+            color: #000 !important;
+        }
+        #parsedPreview {
+            font-size: 16px !important;
+            font-family: ui-monospace, monospace !important;
+            background-color: #ddd !important;
+            color: #442 !important;
+        }
+        button {
+            background-color: #bcc;
+            color: #222222;
+            border: 1px solid;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-family: inherit;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        button:hover {
+            background-color: #bcbcbc;
+        }
+        button.active {
+            background-color: #00ff66;
+            color: #000;
+        }
+        .instruction {
+            font-size: 12px;
+            color: #333;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+        .drop-zone {
+            border: 2px dashed #ddd;
+            padding: 10px;
+            text-align: center;
+            color: #555;
+            margin-top: 10px;
+            font-size: 12px;
+            height: 64px;
+            background-color: #aaa
+        }
+        .drop-zone.dragover {
+            background-color: #88ffaa;
+            border-color: #00ff66;
+        }
+        .scale-control-panel {
+            background-color: #eee;
+            padding: 4px;
+            margin-top: 4px;
+            border-radius: 4px;
+            border: 1px solid #333;
+            display: inline-block;
+        }
+        .function {
+            border-color: #663300 !important;
+            color: #444422  !important;
+            font-weight: bold !important;
+        }
+    </style>
+</head>
+<body>
+
+<h1>MSX SCC波形エディター for MGSDRV</h1>
+
+<div class="container">
+    <div class="sidebar">
+        <h3>音色リスト</h3>
+        <div class="list-container" id="toneList"></div>
+        <button id="addToneBtn">新規追加</button>
+        <button id="deleteToneBtn">削除</button>
+        
+        <h3 style="margin-top:20px;">音色名</h3>
+        <input type="text" id="toneNameInput" placeholder="音色名を入力">
+        
+        <div class="drop-zone" id="dropZone">
+            ここにファイルをドロップして読み込み
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <div class="editor-canvas-container">
+            <canvas id="waveformCanvas" width="512" height="256" tabindex="0"></canvas>
+        </div>
+        
+        <div>
+            <button id="presetSine">サイン波</button>
+            <button id="presetSquare">矩形波</button>
+            <button id="presetTriangle">三角波</button>
+            <button id="presetSawtooth">のこぎり波</button>
+        </div>
+        <div>
+            <button id="focusCanvasBtn" class="function">キーボード操作</button>
+            <button id="undoBtn" class="function" disabled>元に戻す (Ctrl+Z)</button>
+            <button id="redoBtn" class="function" disabled>やり直す (Ctrl+Y)</button>
+        </div>
+
+        <!-- 振幅コントロール -->
+        <div class="scale-control-panel">
+            <label for="scaleInput">振幅倍率 : </label>
+            <input type="number" id="scaleInput" value="50" min="0" max="100" style="width: 60px; text-align: right; margin-right: 5px;"> %
+            <button id="scaleBtn" style="margin-left: 10px; margin-bottom: 0;">振幅変換</button>
+        </div>
+
+<h3 style="margin-top: 20px;">MGSDRV テキスト形式編集</h3>
+        <textarea id="mgsTextarea" placeholder="ここにMGSDRV形式のテキストを貼り付けると自動で解析します。&#13;&#10;例: @s0={ 00606060606060606060606060606060 a0a0a0a0a0a0a0a0a0a0a0a0a0a0a000 } ; Sample Wave"></textarea>
+        
+        <!-- 警告メッセージ表示エリア -->
+        <div id="statusMessage" style="color: #ff3333; font-size: 13px; margin-top: 5px; font-weight: bold; min-height: 18px;"></div>
+        
+        <!-- 認識している整形済みテキストのプレビューエリア -->
+        <div style="margin-top: 10px;">
+            <span style="font-size: 12px; color: #888;">整形済みテキストプレビュー:</span>
+            <div id="parsedPreview" style="background: #111; color: #00ff66; padding: 10px; border: 1px solid #333; font-size: 12px; white-space: pre-wrap; font-family: monospace; margin-top: 5px;">(なし)</div>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button id="downloadBtn">全音色をテキストファイルで保存</button>
+        </div>
+        <div class="instruction">
+            <strong>操作方法:</strong><br>
+            ・<strong>マウスドラッグ:</strong> 波形を直接描画<br>
+            ・<strong>SHIFT+マウスクリック:</strong> 前回の位置から線を引く<br>
+            ・<strong>左右カーソルキー (← / →):</strong> 編集位置（ステップ）の移動<br>
+            ・<strong>上下カーソルキー (↑ / ↓):</strong> 値の増減（Shiftキーを押しながらで大きく増減）<br>
+            ※キーボード操作を行うには、あらかじめ波形エリア（黒い画面）をクリックしてフォーカスを当ててください。
+        </div>
+    </div>
+</div>
+
+<script>
+    const STEPS = 32;
+    const CANVAS_WIDTH = 512;
+    const CANVAS_HEIGHT = 256;
+    const STEP_WIDTH = CANVAS_WIDTH / STEPS;
+    const STEP_HEIGHT = CANVAS_WIDTH / STEPS;
+    
+    let tones = [
+        { id: 0, name: "Square Wave", data: createSquareWave() },
+        { id: 1, name: "Triangle Wave", data: createTriangleWave() },
+        { id: 2, name: "Sawtooth Wave", data: createSawtoothWave() },
+        { id: 3, name: "Sine Wave", data: createSineWave() },
+    ];
+    let activeToneIndex = 0;
+    let currentStep = 0; 
+    let isDrawing = false;
+    
+    let undoStack = [];
+    let redoStack = [];
+    let isKeyboardEditing = false; // 矢印キー連続入力判定用
+    let isTextEditing = false; // テキスト手動編集判定用のフラグ
+    let typingTimer = null;
+
+    const canvas = document.getElementById('waveformCanvas');
+    const ctx = canvas.getContext('2d');
+    const toneListElement = document.getElementById('toneList');
+    const toneNameInput = document.getElementById('toneNameInput');
+    const mgsTextarea = document.getElementById('mgsTextarea');
+    const addToneBtn = document.getElementById('addToneBtn');
+    const deleteToneBtn = document.getElementById('deleteToneBtn');
+    const dropZone = document.getElementById('dropZone');
+    const scaleInput = document.getElementById('scaleInput');
+    const scaleBtn = document.getElementById('scaleBtn');
+
+    // 1. エディタの全状態をディープコピーする関数
+    function cloneState() {
+        return {
+            activeToneIndex: activeToneIndex,
+            currentStep: currentStep,
+            tones: tones.map(t => ({
+                id: t.id,
+                name: t.name,
+                data: new Int8Array(t.data) // 符号付き8bit配列のコピー
+            }))
+        };
+    }
+
+    // 変更操作の直前に呼び出して、元に戻す状態を保存する関数
+    function saveStateForUndo() {
+        undoStack.push(cloneState());
+        if (undoStack.length > 50) { // 最大履歴数を50に制限
+            undoStack.shift();
+        }
+        redoStack = []; // 新たな操作がされたため、Redoスタックはクリア
+        updateUndoRedoButtons();
+    }
+
+    // Undo / Redo ボタンの有効・無効化を切り替える
+    function updateUndoRedoButtons() {
+        document.getElementById('undoBtn').disabled = (undoStack.length === 0);
+        document.getElementById('redoBtn').disabled = (redoStack.length === 0);
+    }
+
+    // エディタを復元する
+    function restoreState(state) {
+        isTextEditing = false;
+        isKeyboardEditing = false;
+        
+        activeToneIndex = state.activeToneIndex;
+        currentStep = state.currentStep;
+        tones = state.tones.map(t => ({
+            id: t.id,
+            name: t.name,
+            data: new Int8Array(t.data)
+        }));
+        updateUI(true);
+        updateUndoRedoButtons();
+    }
+
+    // Undo 実行
+    function undo() {
+        if (undoStack.length === 0) return;
+        redoStack.push(cloneState());
+        const prevState = undoStack.pop();
+        restoreState(prevState);
+    }
+
+    // Redo 実行
+    function redo() {
+        if (redoStack.length === 0) return;
+        undoStack.push(cloneState());
+        const nextState = redoStack.pop();
+        restoreState(nextState);
+    }
+    
+    function parseHexToData(hexStr) {
+        const data = new Int8Array(STEPS);
+        const cleanHex = hexStr.replace(/[^0-9A-Fa-f]/g, '');
+        for (let i = 0; i < STEPS; i++) {
+            if (i * 2 < cleanHex.length) {
+                const byteHex = cleanHex.substring(i * 2, i * 2 + 2);
+                let val = parseInt(byteHex, 16);
+                if (val >= 128) val -= 256;
+                data[i] = val;
+            }
+        }
+        return data;
+    }
+
+    function createSineWave() {
+        const data = new Int8Array(STEPS);
+        for (let i = 0; i < STEPS; i++) {
+            data[i] = Math.round(127 * Math.sin((i / STEPS) * Math.PI * 2));
+        }
+        return data;
+    }
+
+    function createSquareWave() {
+        const data = new Int8Array(STEPS);
+        for (let i = 0; i < STEPS; i++) {
+            data[i] = i < STEPS / 2 ? 127 : -128;
+        }
+        return data;
+    }
+
+    function createTriangleWave() {
+        const data = new Int8Array(STEPS);
+        for (let i = 0; i < STEPS; i++) {
+            if (i < 8) data[i] = Math.round((i / 8) * 127);
+            else if (i < 24) data[i] = Math.round(127 - ((i - 8) / 8) * 127);
+            else data[i] = Math.round(-128 + ((i - 24) / 8) * 127);
+        }
+        return data;
+    }
+
+    function createSawtoothWave() {
+        const data = new Int8Array(STEPS);
+        for (let i = 0; i < STEPS; i++) {
+            data[i] = Math.round(-128 + (i / (STEPS - 1) * 255));
+        }
+        return data;
+    }
+
+    function updateUI(shouldUpdateTextarea = true) {
+        renderToneList();
+        renderCanvas();
+        updateParsedPreview();
+        
+        if (shouldUpdateTextarea) {
+            updateMgsText(); // 内部でvalidateTextarea()
+        } else {
+            validateTextarea(); // 毎回検査
+        }
+    }
+
+    function renderToneList() {
+        toneListElement.innerHTML = '';
+        tones.forEach((tone, index) => {
+            const item = document.createElement('div');
+            item.className = `tone-item ${index === activeToneIndex ? 'active' : ''}`;
+            item.innerHTML = `<span>@s${tone.id}: ${tone.name}</span>`;
+            item.addEventListener('click', () => {
+                activeToneIndex = index;
+                toneNameInput.value = tone.name;
+                updateUI(true);
+            });
+            toneListElement.appendChild(item);
+        });
+
+        if (tones[activeToneIndex]) {
+            toneNameInput.value = tones[activeToneIndex].name;
+        }
+    }
+
+    function renderCanvas() {
+        ctx.fillStyle = '#0a0a0a';
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+        ctx.strokeStyle = '#222222';
+        ctx.lineWidth = 1;
+
+        for (let i = 0; i <= STEPS; i++) {
+            ctx.beginPath();
+            ctx.moveTo(0, i * STEP_HEIGHT);
+            ctx.lineTo(CANVAS_WIDTH, i * STEP_HEIGHT);
+            ctx.stroke();
+        }
+
+        ctx.strokeStyle = '#444444';
+        ctx.lineWidth = 1;
+
+        for (let i = 0; i <= STEPS; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i * STEP_WIDTH, 0);
+            ctx.lineTo(i * STEP_WIDTH, CANVAS_HEIGHT);
+            ctx.stroke();
+        }
+
+        ctx.strokeStyle = '#888888';
+        ctx.beginPath();
+        ctx.moveTo(0, CANVAS_HEIGHT / 2);
+        ctx.lineTo(CANVAS_WIDTH, CANVAS_HEIGHT / 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(CANVAS_WIDTH / 2, 0);
+        ctx.lineTo(CANVAS_WIDTH / 2, CANVAS_HEIGHT);
+        ctx.stroke();
+
+        ctx.strokeStyle = '#555555';
+        ctx.beginPath();
+        ctx.moveTo(CANVAS_WIDTH / 4, 0);
+        ctx.lineTo(CANVAS_WIDTH / 4, CANVAS_HEIGHT);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(CANVAS_WIDTH * 3 / 4, 0);
+        ctx.lineTo(CANVAS_WIDTH * 3 / 4, CANVAS_HEIGHT);
+        ctx.stroke();
+
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) return;
+
+        ctx.fillStyle = 'rgba(0, 255, 202, 0.2)';
+        ctx.fillRect(currentStep * STEP_WIDTH, 0, STEP_WIDTH, CANVAS_HEIGHT);
+
+        ctx.fillStyle = '#00ff66';
+        for (let i = 0; i < STEPS; i++) {
+            const val = activeTone.data[i];
+            const y = Math.round(127 - val);
+
+            ctx.fillRect(i * STEP_WIDTH + 1, y - 2, STEP_WIDTH - 2, 4);
+
+            if (i > 0) {
+                ctx.strokeStyle = 'rgba(0, 255, 102, 0.4)';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                const prevY = Math.round(127 - activeTone.data[i - 1]);
+                ctx.moveTo((i - 1) * STEP_WIDTH + STEP_WIDTH / 2, prevY);
+                ctx.lineTo(i * STEP_WIDTH + STEP_WIDTH / 2, y);
+                ctx.stroke();
+            }
+        }
+    }
+
+    function validateTextarea() {
+        const text = mgsTextarea.value;
+        // 改行を許容し、中身全体から定義を抽出する
+        const regex = /@s(\d+)[ \t]*=[ \t]*\{([\s\S]*?)\}/g;
+        const statusElement = document.getElementById('statusMessage');
+        let match;
+        let warnings = [];
+
+        while ((match = regex.exec(text)) !== null) {
+            const toneId = parseInt(match[1], 10);
+            const cleanHex = match[2].replace(/[^0-9A-Fa-f]/g, '');
+            const charCount = cleanHex.length;
+            const byteCount = charCount / 2;
+
+            if (charCount !== 64) {
+                if (charCount < 64) {
+                    warnings.push(`@s${toneId}: データが不足しています（現在 ${byteCount} / 32 バイト）`);
+                } else {
+                    warnings.push(`@s${toneId}: データに余剰があります（現在 ${byteCount} / 32 バイト）※32バイトを超えた分は切り捨てられます`);
+                }
+            }
+        }
+
+        // 検出された警告があれば表示、無ければ完全にクリアする
+        if (warnings.length > 0) {
+            statusElement.innerHTML = warnings.join('<br>');
+        } else {
+            statusElement.textContent = '';
+        }
+    }
+
+    function updateMgsText() {
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) {
+            mgsTextarea.value = '';
+            validateTextarea(); // クリア時も検証
+            return;
+        }
+
+        const hexArray = Array.from(activeTone.data).map(v => {
+            const unsignedVal = v < 0 ? v + 256 : v;
+            return unsignedVal.toString(16).toLowerCase().padStart(2, '0');
+        });
+
+        const part1 = hexArray.slice(0, 16).join('');
+        const part2 = hexArray.slice(16, 32).join('');
+        const newText = `@s${activeTone.id}={ ${part1} ${part2} } ; ${activeTone.name}`;
+
+        if (document.activeElement === mgsTextarea) {
+            const start = mgsTextarea.selectionStart;
+            const end = mgsTextarea.selectionEnd;
+            mgsTextarea.value = newText;
+            mgsTextarea.setSelectionRange(start, end);
+        } else {
+            mgsTextarea.value = newText;
+        }
+
+        // テキストエリアが書き換わったので、検証関数をトリガする
+        validateTextarea();
+    }
+
+    let lastEditedStep = 0; 
+
+    function handleMouseEvent(e) {
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const step = Math.min(STEPS - 1, Math.max(0, Math.floor(x / STEP_WIDTH)));
+        let val = Math.round(127 - y);
+        val = Math.min(127, Math.max(-128, val));
+
+        activeTone.data[step] = val;
+        currentStep = step; 
+        lastEditedStep = step; // 編集位置を更新
+        updateUI(true); 
+    }
+
+    // クリック（mousedown）の瞬間にShiftキー判定を行い、線形補間を実行
+    canvas.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        canvas.focus();
+
+        saveStateForUndo(); 
+
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const step = Math.min(STEPS - 1, Math.max(0, Math.floor(x / STEP_WIDTH)));
+        let val = Math.round(127 - y);
+        val = Math.min(127, Math.max(-128, val));
+
+        // Shiftキーが押されており、かつ前回の編集位置と異なる場合
+        if (e.shiftKey && lastEditedStep !== null && lastEditedStep !== step) {
+            const startStep = lastEditedStep;
+            const startVal = activeTone.data[startStep];
+            const endStep = step;
+            const endVal = val;
+
+            const stepDiff = Math.abs(endStep - startStep);
+            const stepDir = endStep > startStep ? 1 : -1;
+
+            // 開始位置から終了位置までを線形補間
+            for (let i = 0; i <= stepDiff; i++) {
+                const currStep = startStep + (i * stepDir);
+                const ratio = i / stepDiff;
+                activeTone.data[currStep] = Math.round(startVal + (endVal - startVal) * ratio);
+            }
+            currentStep = step;
+            lastEditedStep = step;
+            updateUI(true);
+        } else {
+            // 通常のクリック・描画開始
+            handleMouseEvent(e);
+        }
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+        if (isDrawing) {
+            // ドラッグ中はフリーハンドで連続描画
+            handleMouseEvent(e);
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        isDrawing = false;
+    });
+
+    canvas.addEventListener('keydown', (e) => {
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) return;
+
+        let changed = false;
+        const stepAmount = e.shiftKey ? 16 : 1; 
+
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            // キーを押し始めた（編集セッションの開始）時のみUndoスタックに保存
+            if (!isKeyboardEditing) {
+                saveStateForUndo();
+                isKeyboardEditing = true;
+            }
+        }
+        
+        if (e.key === 'ArrowLeft') {
+            currentStep = (currentStep - 1 + STEPS) % STEPS;
+            changed = true;
+            e.preventDefault();
+        } else if (e.key === 'ArrowRight') {
+            currentStep = (currentStep + 1) % STEPS;
+            changed = true;
+            e.preventDefault();
+        } else if (e.key === 'ArrowUp') {
+            activeTone.data[currentStep] = Math.min(127, activeTone.data[currentStep] + stepAmount);
+            changed = true;
+            e.preventDefault();
+        } else if (e.key === 'ArrowDown') {
+            activeTone.data[currentStep] = Math.max(-128, activeTone.data[currentStep] - stepAmount);
+            changed = true;
+            e.preventDefault();
+        }
+
+        if (changed) {
+            lastEditedStep = currentStep; // 起点位置をキー操作位置に同期
+            updateUI(true);
+        }
+    });
+
+    canvas.addEventListener('keyup', () => {
+        // キーを離した時点で、次のキー入力を別履歴にする
+        isKeyboardEditing = false;
+    });
+
+    toneNameInput.addEventListener('input', (e) => {
+        const activeTone = tones[activeToneIndex];
+        if (activeTone) {
+            activeTone.name = e.target.value;
+            updateUI(true);
+        }
+    });
+
+    addToneBtn.addEventListener('click', () => {
+        saveStateForUndo();
+
+        const newId = tones.length > 0 ? Math.max(...tones.map(t => t.id)) + 1 : 0;
+        const newTone = {
+            id: newId,
+            name: `New Wave ${newId}`,
+            data: createSineWave()
+        };
+        tones.push(newTone);
+        activeToneIndex = tones.length - 1;
+        updateUI(true);
+    });
+
+    deleteToneBtn.addEventListener('click', () => {
+        if (tones.length <= 1) {
+            alert("これ以上削除できません。");
+            return;
+        }
+        tones.splice(activeToneIndex, 1);
+        activeToneIndex = Math.max(0, activeToneIndex - 1);
+        updateUI(true);
+    });
+
+    document.getElementById('presetSine').addEventListener('click', () => {
+        if (tones[activeToneIndex]) {
+            saveStateForUndo();
+            isTextEditing = false;
+            isKeyboardEditing = false;
+            tones[activeToneIndex].data = createSineWave();
+            updateUI(true);
+        }
+    });
+    document.getElementById('presetSquare').addEventListener('click', () => {
+        if (tones[activeToneIndex]) {
+            saveStateForUndo();
+            isTextEditing = false;
+            isKeyboardEditing = false;
+            tones[activeToneIndex].data = createSquareWave();
+            updateUI(true);
+        }
+    });
+    document.getElementById('presetTriangle').addEventListener('click', () => {
+        if (tones[activeToneIndex]) {
+            saveStateForUndo();
+            isTextEditing = false;
+            isKeyboardEditing = false;
+            tones[activeToneIndex].data = createTriangleWave();
+            updateUI(true);
+        }
+    });
+    document.getElementById('presetSawtooth').addEventListener('click', () => {
+        if (tones[activeToneIndex]) {
+            saveStateForUndo();
+            isTextEditing = false;
+            isKeyboardEditing = false;
+            tones[activeToneIndex].data = createSawtoothWave();
+            updateUI(true);
+        }
+    });
+    document.getElementById('focusCanvasBtn').addEventListener('click', () => {
+        canvas.focus();
+    });
+    
+    document.getElementById('undoBtn').addEventListener('click', undo);
+    document.getElementById('redoBtn').addEventListener('click', redo);
+
+    // グローバルなキーボードショートカット (Ctrl+Z, Ctrl+Y) の制御
+    window.addEventListener('keydown', (e) => {
+        //if (document.activeElement === mgsTextarea) return;
+        if (document.activeElement === toneNameInput) return;
+
+        const isCtrl = e.ctrlKey || e.metaKey;
+        if (isCtrl && e.key.toLowerCase() === 'z') {
+            e.preventDefault();
+            clearTimeout(typingTimer);
+            isTextEditing = false;
+            undo();
+        } else if (isCtrl && e.key.toLowerCase() === 'y') {
+            e.preventDefault();
+            clearTimeout(typingTimer);
+            isTextEditing = false;
+            redo();
+        }
+    });
+    
+    // スケーリング（音量調整）変換処理
+    scaleBtn.addEventListener('click', () => {
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) return;
+
+        let scaleValue = parseFloat(scaleInput.value);
+        if (isNaN(scaleValue)) {
+            alert("0〜100の数値を入力してください。");
+            return;
+        }
+
+        // 0%〜100%の範囲に制限
+        scaleValue = Math.min(100, Math.max(0, scaleValue));
+        scaleInput.value = scaleValue; // 正規化した値を書き戻す
+
+        saveStateForUndo();
+        isTextEditing = false;
+        isKeyboardEditing = false;
+
+        const ratio = scaleValue / 100;
+
+        // 現在の波形データをベースに値をスケールする（四捨五入）
+        for (let i = 0; i < STEPS; i++) {
+            activeTone.data[i] = Math.round(activeTone.data[i] * ratio);
+        }
+
+        updateUI(true);
+    });
+
+    // 現在のアクティブな音色の整形済みテキストをプレビュー表示
+    function updateParsedPreview() {
+        const previewElement = document.getElementById('parsedPreview');
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) {
+            previewElement.textContent = "(なし)";
+            return;
+        }
+        
+        const hexArray = Array.from(activeTone.data).map(v => {
+            const unsignedVal = v < 0 ? v + 256 : v;
+            return unsignedVal.toString(16).toLowerCase().padStart(2, '0');
+        });
+        const part1 = hexArray.slice(0, 16).join('');
+        const part2 = hexArray.slice(16, 32).join('');
+        
+        previewElement.textContent = `@s${activeTone.id}={ ${part1} ${part2} } ; ${activeTone.name}`;
+    }
+    
+    // MGSDRV 形式パーサー
+    function parseMgsText(text, updateTextarea = true) {
+        const regex = /@s(\d+)[ \t]*=[ \t]*\{([\s\S]*?)\}(?:[ \t]*;[ \t]*([^\r\n]*))?/g;
+        let match;
+        let importedCount = 0;
+
+        while ((match = regex.exec(text)) !== null) {
+            const toneId = parseInt(match[1], 10);
+            const dataStr = match[2].replace(/[^0-9A-Fa-f]/g, '');
+            const parsedName = match[3] ? match[3].trim() : ` @s${toneId}`;
+
+            
+            //if (dataStr.length >= 64)
+            {
+                const data = parseHexToData(dataStr.substring(0, 64));
+                
+                const existingIndex = tones.findIndex(t => t.id === toneId);
+                if (existingIndex !== -1) {
+                    tones[existingIndex].data = data;
+                    tones[existingIndex].name = parsedName;
+                } else {
+                    tones.push({
+                        id: toneId,
+                        name: parsedName,
+                        data: data
+                    });
+                }
+                importedCount++;
+            }
+        }
+
+        if (importedCount > 0) {
+            if (updateTextarea) {
+                activeToneIndex = 0;
+            }
+            renderToneList();
+            renderCanvas();
+            updateParsedPreview();
+            if (updateTextarea) {
+                updateMgsText();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    // 既存のupdateUI関数にプレビュー更新を紐付ける
+    function updateUI(shouldUpdateTextarea = true) {
+        renderToneList();
+        renderCanvas();
+        updateParsedPreview(); // プレビューを同期
+        if (shouldUpdateTextarea) {
+            updateMgsText();
+        }
+    }
+
+    // フォーカスが当たった時点では、まだ履歴保存はしない
+    mgsTextarea.addEventListener('focus', () => {
+        isTextEditing = false; 
+    });
+
+    // テキスト手動入力（タイピング時）
+    mgsTextarea.addEventListener('input', () => {
+        // タイピングの最初の1文字目（または変更開始時）に直前の状態をUndoスタックに保存
+        if (!isTextEditing) {
+            saveStateForUndo();
+            isTextEditing = true;
+        }
+
+        // テキストをパースして波形に反映
+        parseMgsText(mgsTextarea.value, false);
+        // テキスト変更を検知して過不足チェックをリアルタイムに実行
+        validateTextarea();
+
+        // デバウンス処理：入力が「1秒間（1000ms）」途切れたら、現在の編集を1つの履歴として確定する
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(() => {
+            isTextEditing = false;
+        }, 1000); 
+    });
+
+    // フォーカスが外れた（編集を終えた）らフラグをリセット
+    mgsTextarea.addEventListener('blur', () => {
+        clearTimeout(typingTimer);
+        isTextEditing = false;
+    });
+
+    // ペースト（貼り付け）が行われた場合、即座に保存してパースを実行する
+    mgsTextarea.addEventListener('paste', () => {
+        clearTimeout(typingTimer);
+        saveStateForUndo();
+        isTextEditing = true;
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+        let outputText = "";
+        tones.forEach(tone => {
+            const hexArray = Array.from(tone.data).map(v => {
+                const unsignedVal = v < 0 ? v + 256 : v;
+                return unsignedVal.toString(16).toLowerCase().padStart(2, '0');
+            });
+
+            const part1 = hexArray.slice(0, 16).join('');
+            const part2 = hexArray.slice(16, 32).join('');
+
+            outputText += `@s${tone.id}={ ${part1} ${part2} } ; ${tone.name}\n`;
+        });
+
+        const blob = new Blob([outputText], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'scc_mgs_waveforms.txt';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+
+        const file = e.dataTransfer.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const text = event.target.result;
+                mgsTextarea.value = text;
+                const success = parseMgsText(text, true); 
+                if (success) {
+                    
+                } else {
+                    alert("ファイルを読み込みましたが、有効な @s番号={...} 定義が見つかりませんでした。");
+                }
+            };
+            reader.readAsText(file);
+        }
+    });
+
+    updateUI(true);
+</script>
+
+</body>
+</html>

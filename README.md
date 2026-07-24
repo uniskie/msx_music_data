@@ -165,12 +165,24 @@ Danteで原型が作られ、Dante2の時にMuSICAとして独立して頒布さ
   現在では、ツクールシリーズで作成したデータは制作者に権利があり、公開も自由ですが、MuSICAにもその条件が適用されるかは不明です。当時の規約ではMSXマガジンへの投稿のみが許可されていました。
 
 ## おまけ
-音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール  
+
+### SCC波形を編集するツール（MGSDRV形式）
+
+https://uniskie.github.io/msx_music_data/tool/scc_edit.html
+
+htmlソースコード [tool/scc_edit.html](tool/scc_edit.html)  
+(ダウンロードしてブラウザで開いて使用できます)
+
+振幅（音量）を手軽に減らす機能も付いてます。
+
+### 音色定義ファイル(vcdファイル)をMGSDRV形式で表示するツール  
+
 https://uniskie.github.io/msx_music_data/tool/vcd_conv.html
 
 htmlソースコード [tool/vcd_conv.html](tool/vcd_conv.html)  
 (ダウンロードしてブラウザで開いて使用できます)
 
+（※ すみません。以前は単体では動作しませんでしたので修正しました）
 
 # その他
 
