@@ -2,37 +2,44 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>MSX SCC波形エディター (MGSDRV)</title>
+    <title>Simple SCC波形エディター (MGSDRV)</title>
     <style>
         body {
             font-family: sans-serif;
+            font-size: 13px;
             background-color: #dddddd;
             color: #0e0e0e;
             margin: 0;
-            padding: 12px;
+            padding: 4px 12px;
         }
         h1 {
             font-size: 20px;
             border-bottom: 2px solid #bcbcbc;
             color: #232;
+            margin: 4px 0px
+        }
+        h3 {
+            font-size: 18px;
+            color: #232;
+            margin: 1px 0px 2px 0px;
         }
         .container {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             flex-wrap: wrap;
         }
         .sidebar {
             width: 200px;
             background-color: #bdbdbd;
-            padding: 10px;
+            padding: 4px 8px;
             border-radius: 4px;
             box-sizing: border-box;
         }
         .main-panel {
             flex: 1;
             min-width: 550px;
-            background-color: #cdcdcd;
-            padding: 10px;
+            background-color: #d2d2d2;
+            padding: 6px 8px;
             border-radius: 4px;
             box-sizing: border-box;
         }
@@ -78,46 +85,59 @@
             background-color: #eee;
             color: #111;
             border: 1px solid #444;
-            padding: 5px;
+            padding: 4px;
             font-family: inherit;
             box-sizing: border-box;
         }
         input[type="text"] {
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
         textarea {
             width: 100%;
             /*height: 100px;*/
             resize: vertical;
-            line-height: 1.5;
-            font-size: 16px;
+            line-height: 1.25;
+            font-size: 14px;
             font-family: ui-monospace, monospace !important;
             background-color: #eee !important;
             color: #000 !important;
         }
         #parsedPreview {
-            font-size: 16px !important;
-            font-family: ui-monospace, monospace !important;
-            background-color: #ddd !important;
-            color: #442 !important;
+            font-size: 14px !important;
+            font-family: ui-monospace, monospace;
+            background-color: #ddd;
+            border: 1px solid #333;
+            color: #442;
+            padding: 3px;
+            white-space: pre-wrap;
+            margin-top: 3px;
         }
         button {
             background-color: #bcc;
             color: #222222;
             border: 1px solid;
-            padding: 6px 12px;
+            padding: 2px 9px;
             cursor: pointer;
             font-family: inherit;
-            margin-right: 5px;
-            margin-bottom: 5px;
+            margin-right: 3px;
+            margin-bottom: 3px;
         }
         button:hover {
-            background-color: #bcbcbc;
+            background-color: #abb;
         }
         button.active {
-            background-color: #00ff66;
+            background-color: #fb2;
             color: #000;
+        }
+        .preset_btn {
+            border-color: #456 !important;
+            background-color: #cde !important;
+            color: #343 !important;
+            /*font-weight: bold !important;*/
+        }
+        .preset_btn:hover {
+            background-color: #bcd !important;
         }
         .instruction {
             font-size: 12px;
@@ -140,33 +160,102 @@
             border-color: #00ff66;
         }
         .scale-control-panel {
-            background-color: #eee;
-            padding: 4px;
+            background-color: #cad3c4;
+            padding: 2px 4px;
             margin-top: 4px;
             border-radius: 4px;
-            border: 1px solid #333;
+            border: 1px solid #aab;
             display: inline-block;
         }
-        .function {
-            border-color: #663300 !important;
-            color: #444422  !important;
-            font-weight: bold !important;
+
+        /* 再生プレビューパネル用スタイル */
+        .preview-panel {
+            background-color: #bdbdbd;
+            padding: 3px 7px 0px 7px;
+            border-radius: 4px;
+            border: 1px solid #222;
+            margin: 3px 0px 2px 0px;
+        }
+        .preview-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .keyboard {
+            display: flex;
+            position: relative;
+            background: #222;
+            padding: 6px;
+            border-radius: 4px;
+            width: fit-content;
+            user-select: none;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+        .key {
+            width: 24px;
+            height: 48px;
+            background: #fff;
+            border: 1px solid #bbb;
+            border-bottom: 4px solid #ccc;
+            border-radius: 0 0 4px 4px;
+            cursor: pointer;
+            box-sizing: border-box;
+            z-index: 1;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 3px;
+            font-size: 8px;
+            color: #888;
+            font-weight: bold;
+        }
+        .key:hover {
+            background: #f0f0f0;
+        }
+        .key.active-playing {
+            background-color: #afa !important;
+            border-bottom-color: #9b9 !important;
+            color: #221 !important;
+        }
+        .key.black {
+            width: 16px;
+            height: 28px;
+            background: #111;
+            border: 1px solid #000;
+            border-bottom: 3px solid #222;
+            border-radius: 0 0 3px 3px;
+            margin-left: -10px;
+            margin-right: -10px;
+            z-index: 2;
+            color: #aaa;
+            padding-bottom: 4px;
+        }
+        .key.black:hover {
+            background: #333;
+        }
+        .key.black.active-playing {
+            background-color: #afa !important;
+            border-bottom-color: #9b9 !important;
+            color: #221 !important;
         }
     </style>
 </head>
 <body>
 
-<h1>MSX SCC波形エディター for MGSDRV</h1>
+<h1>Simple SCC波形エディター for MGSDRV</h1>
 
-<div class="container">
+<div class="container" id="mainContainer">
     <div class="sidebar">
-        <h3>音色リスト</h3>
+        <h3>波形リスト</h3>
         <div class="list-container" id="toneList"></div>
         <button id="addToneBtn">新規追加</button>
         <button id="deleteToneBtn">削除</button>
         
-        <h3 style="margin-top:20px;">音色名</h3>
-        <input type="text" id="toneNameInput" placeholder="音色名を入力">
+        <h3 style="margin-top:20px;">波形名</h3>
+        <input type="text" id="toneNameInput" placeholder="波形名を入力">
         
         <div class="drop-zone" id="dropZone">
             ここにファイルをドロップして読み込み
@@ -179,25 +268,60 @@
         </div>
         
         <div>
-            <button id="presetSine">サイン波</button>
-            <button id="presetSquare">矩形波</button>
-            <button id="presetTriangle">三角波</button>
-            <button id="presetSawtooth">のこぎり波</button>
-        </div>
-        <div>
-            <button id="focusCanvasBtn" class="function">キーボード操作</button>
-            <button id="undoBtn" class="function" disabled>元に戻す (Ctrl+Z)</button>
-            <button id="redoBtn" class="function" disabled>やり直す (Ctrl+Y)</button>
+            <button id="presetSine" class="preset_btn">サイン波</button>
+            <button id="presetSquare" class="preset_btn">矩形波</button>
+            <button id="presetTriangle" class="preset_btn">三角波</button>
+            <button id="presetSawtooth" class="preset_btn">鋸波</button>
+            <button id="focusCanvasBtn">キーボード操作開始</button>
+            <button id="undoBtn" disabled>元に戻す (Ctrl+Z)</button>
+            <button id="redoBtn" disabled>やり直す (Ctrl+Y)</button>
+
+            <!-- 振幅コントロール -->
+            <span class="scale-control-panel">
+                <label for="scaleInput">振幅倍率 : </label>
+                <input type="number" id="scaleInput" value="50" min="0" max="100" style="width: 4em; text-align: right; margin-right: 0.1em;"> %
+                <button id="scaleBtn" style="margin-left: 10px; margin-bottom: 0;">振幅変換</button>
+            </span>
         </div>
 
-        <!-- 振幅コントロール -->
-        <div class="scale-control-panel">
-            <label for="scaleInput">振幅倍率 : </label>
-            <input type="number" id="scaleInput" value="50" min="0" max="100" style="width: 60px; text-align: right; margin-right: 5px;"> %
-            <button id="scaleBtn" style="margin-left: 10px; margin-bottom: 0;">振幅変換</button>
+        <!-- 音の再生プレビューパネル -->
+        <div class="preview-panel">
+
+            <!-- h3 style="margin-top: 0; margin-bottom: 10px; font-size: 14px; color: #232;">簡易再生プレビュー (11bit DAC)</h3 -->
+            <!-- div style="font-size: 11px; color: #555; margin-bottom: 6px;">簡易再生プレビュー (再生バッファ生成方式＆正確な再現ではありません):</div -->
+
+            <div class="preview-controls">
+                <div>
+                    <label for="previewVolume" style="font-size: 13px;">音量 (0-15): </label>
+                    <input type="number" id="previewVolume" value="12" min="0" max="15" style="width: 50px; text-align: right; margin-right: 5px;">
+                </div>
+                <div>
+                    <label for="previewNote" style="font-size: 13px;">音階: </label>
+                    <select id="previewNote" style="padding: 4px; font-size: 13px; background: #eee; border: 1px solid #444; max-width: 280px;"></select>
+                </div>
+                <div>
+                    <button id="playBtn" style="margin-bottom: 0; font-size: 13px;">▶ 再生</button>
+                    <!-- button id="stopBtn" style="margin-bottom: 0; font-size: 13px;">■ 停止</button -->
+                </div>
+            </div>
+
+            <div class="keyboard" id="keyboardContainer"></div>
+
+            <!-- SCCバグ再現 -->
+            <div style="background-color: #c8c2bc; border: 1px solid #777; padding: 8px; border-radius: 4px; margin-bottom: 12px;">
+                <label style="font-size: 12px; font-weight: bold; color: #322; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="bugModeToggle"> SCCバグ簡易再現 (サンプル16→17バイト目移動時のノイズ)
+                </label>
+                <div id="bugSettingsContainer" style="margin-top: 6px; display: flex; align-items: center; gap: 8px; font-size: 11px; color: #433;">
+                    <span style="margin-left: 20px;">CPUとのアクセス衝突 確率:</span>
+                    <input type="range" id="bugProbabilityInput" min="0" max="5" step="0.001" value="0.008" style="width: 130px; margin: 0;">
+                    <span id="bugProbabilityVal" style="font-weight: bold; width: 40px; text-align: right;">0.008%</span>
+                    <span style="color: #666; margin-left: 5px;">(※アドレス移動の瞬間にCPUからウェーブテーブルのどこかに書き込みがあるとその値をサンプルする)</span>
+                </div>
+            </div>
         </div>
 
-<h3 style="margin-top: 20px;">MGSDRV テキスト形式編集</h3>
+        <h3 style="margin-top: 20px;">MGSDRV テキスト形式編集</h3>
         <textarea id="mgsTextarea" placeholder="ここにMGSDRV形式のテキストを貼り付けると自動で解析します。&#13;&#10;例: @s0={ 00606060606060606060606060606060 a0a0a0a0a0a0a0a0a0a0a0a0a0a0a000 } ; Sample Wave"></textarea>
         
         <!-- 警告メッセージ表示エリア -->
@@ -205,12 +329,12 @@
         
         <!-- 認識している整形済みテキストのプレビューエリア -->
         <div style="margin-top: 10px;">
-            <span style="font-size: 12px; color: #888;">整形済みテキストプレビュー:</span>
-            <div id="parsedPreview" style="background: #111; color: #00ff66; padding: 10px; border: 1px solid #333; font-size: 12px; white-space: pre-wrap; font-family: monospace; margin-top: 5px;">(なし)</div>
+            <span style="color: #753;">整形済みテキストプレビュー:</span>
+            <div id="parsedPreview">(なし)</div>
         </div>
 
         <div style="margin-top: 10px;">
-            <button id="downloadBtn">全音色をテキストファイルで保存</button>
+            <button id="downloadBtn">全波形をテキストファイルで保存</button>
         </div>
         <div class="instruction">
             <strong>操作方法:</strong><br>
@@ -219,6 +343,9 @@
             ・<strong>左右カーソルキー (← / →):</strong> 編集位置（ステップ）の移動<br>
             ・<strong>上下カーソルキー (↑ / ↓):</strong> 値の増減（Shiftキーを押しながらで大きく増減）<br>
             ※キーボード操作を行うには、あらかじめ波形エリア（黒い画面）をクリックしてフォーカスを当ててください。
+        </div>
+        <div>
+            実機動作 参考資料: <a href="https://d4.princess.ne.jp/msx/scc/scc2.html">https://d4.princess.ne.jp/msx/scc/scc2.html</a>
         </div>
     </div>
 </div>
@@ -245,7 +372,8 @@
     let isKeyboardEditing = false; // 矢印キー連続入力判定用
     let isTextEditing = false; // テキスト手動編集判定用のフラグ
     let typingTimer = null;
-
+    
+    const mainContainer = document.getElementById('mainContainer');
     const canvas = document.getElementById('waveformCanvas');
     const ctx = canvas.getContext('2d');
     const toneListElement = document.getElementById('toneList');
@@ -375,6 +503,11 @@
             updateMgsText(); // 内部でvalidateTextarea()
         } else {
             validateTextarea(); // 毎回検査
+        }
+
+        // 再生用プレビューバッファの同期
+        if (typeof updatePreviewBuffer === 'function') {
+            updatePreviewBuffer();
         }
     }
 
@@ -507,7 +640,7 @@
 
         const hexArray = Array.from(activeTone.data).map(v => {
             const unsignedVal = v < 0 ? v + 256 : v;
-            return unsignedVal.toString(16).toLowerCase().padStart(2, '0');
+            return unsignedVal.toString(16).toUpperCase().padStart(2, '0');
         });
 
         const part1 = hexArray.slice(0, 16).join('');
@@ -767,7 +900,7 @@
         updateUI(true);
     });
 
-    // 現在のアクティブな音色の整形済みテキストをプレビュー表示
+    // 現在のアクティブな波形の整形済みテキストをプレビュー表示
     function updateParsedPreview() {
         const previewElement = document.getElementById('parsedPreview');
         const activeTone = tones[activeToneIndex];
@@ -778,7 +911,7 @@
         
         const hexArray = Array.from(activeTone.data).map(v => {
             const unsignedVal = v < 0 ? v + 256 : v;
-            return unsignedVal.toString(16).toLowerCase().padStart(2, '0');
+            return unsignedVal.toString(16).toUpperCase().padStart(2, '0');
         });
         const part1 = hexArray.slice(0, 16).join('');
         const part2 = hexArray.slice(16, 32).join('');
@@ -832,16 +965,6 @@
         return false;
     }
 
-    // 既存のupdateUI関数にプレビュー更新を紐付ける
-    function updateUI(shouldUpdateTextarea = true) {
-        renderToneList();
-        renderCanvas();
-        updateParsedPreview(); // プレビューを同期
-        if (shouldUpdateTextarea) {
-            updateMgsText();
-        }
-    }
-
     // フォーカスが当たった時点では、まだ履歴保存はしない
     mgsTextarea.addEventListener('focus', () => {
         isTextEditing = false; 
@@ -885,7 +1008,7 @@
         tones.forEach(tone => {
             const hexArray = Array.from(tone.data).map(v => {
                 const unsignedVal = v < 0 ? v + 256 : v;
-                return unsignedVal.toString(16).toLowerCase().padStart(2, '0');
+                return unsignedVal.toString(16).toUpperCase().padStart(2, '0');
             });
 
             const part1 = hexArray.slice(0, 16).join('');
@@ -903,16 +1026,25 @@
         URL.revokeObjectURL(url);
     });
 
-    dropZone.addEventListener('dragover', (e) => {
+    function handleFileDragOver(e) {
         e.preventDefault();
         dropZone.classList.add('dragover');
-    });
+    }
+    dropZone.addEventListener('dragover', (e) => handleFileDragOver(e));
+    toneListElement.addEventListener('dragover', (e) => handleFileDragOver(e));
+    mainContainer.addEventListener('dragover', (e) => handleFileDragOver(e));
 
     dropZone.addEventListener('dragleave', () => {
         dropZone.classList.remove('dragover');
     });
+    toneListElement.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+    mainContainer.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
 
-    dropZone.addEventListener('drop', (e) => {
+    function handleFileDrop(e) {
         e.preventDefault();
         dropZone.classList.remove('dragover');
 
@@ -931,6 +1063,435 @@
             };
             reader.readAsText(file);
         }
+    }
+    dropZone.addEventListener('drop', (e) => handleFileDrop(e));
+    toneListElement.addEventListener('drop', (e) => handleFileDrop(e));
+    mainContainer.addEventListener('drop', (e) => handleFileDrop(e));
+
+    // ==========================================
+    // 音の再生プレビュー機能 (SCC) & 実機バグ再現
+    // ==========================================
+    let audioCtx = null;
+    let previewSource = null;
+    let previewGainNode = null;
+    let previewBuffer = null;
+    let activeKeyNote = null;
+    let mouseIsDown = false;
+    let bugIntervalId = null; // 動的ノイズ更新用のタイマーID
+
+    // システムクロック (3,579,545 Hz)
+    const SCC_CLOCK = 3579545;
+    const noteNames = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+
+    function midiNoteToFrequency(note) {
+        return 440 * Math.pow(2, (note - 69) / 12);
+    }
+
+    function getNoteName(note) {
+        const octave = Math.floor(note / 12) - 1;
+        const name = noteNames[note % 12];
+        return `${name}${octave}`;
+    }
+
+    // 周波数からSCCの12ビット分周レジスタ値 N を算出
+    function getSCCRegisterValue(freq) {
+        if (freq <= 0) return 4095;
+        // N = round(f_sys / (32 * f_target)) - 1
+        const n = Math.round(SCC_CLOCK / (32 * freq)) - 1;
+        return Math.min(4095, Math.max(0, n));
+    }
+
+    // 分周レジスタ値 N から実際の再生周波数を算出 (0〜8時は発音しない)
+    function getSCCActualFrequency(n) {
+        if (n <= 8) return 0;
+        return SCC_CLOCK / (32 * (n + 1));
+    }
+
+    function initAudio() {
+        if (audioCtx) return;
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        // アンチエイリアスなし（最近傍補間）を模倣するため、4096サンプルのバッファを作成
+        previewBuffer = audioCtx.createBuffer(1, 4096, audioCtx.sampleRate);
+        previewGainNode = audioCtx.createGain();
+        previewGainNode.connect(audioCtx.destination);
+    }
+
+    // 現在選択されている波形をプレビュー用バッファに書き込む
+    function updatePreviewBuffer() {
+        if (!audioCtx || !previewBuffer) return;
+        const activeTone = tones[activeToneIndex];
+        if (!activeTone) return;
+
+        const channelData = previewBuffer.getChannelData(0);
+        const steps = 32;
+        const samplesPerStep = 4096 / steps; // 128
+
+        const isBugEnabled = document.getElementById('bugModeToggle').checked;
+        const bugProbability = parseFloat(document.getElementById('bugProbabilityInput').value) / 100;
+
+        const volInput = document.getElementById('previewVolume');
+        let volume = parseInt(volInput.value, 10);
+        if (isNaN(volume)) volume = 12;
+        volume = Math.min(15, Math.max(0, volume));
+
+        // 現在選択されている音階のレジスタ値 N を取得し、発音禁止範囲かをチェック
+        const noteSelect = document.getElementById('previewNote');
+        const midiNote = parseInt(noteSelect.value, 10);
+        const targetFreq = midiNoteToFrequency(midiNote);
+        const sccN = getSCCRegisterValue(targetFreq);
+        const isMutedByRegister = (sccN <= 8);
+
+        for (let i = 0; i < steps; i++) {
+            // Nが0〜8のときはミュートされるため無音値(0)を基本にする
+            const rawWave = isMutedByRegister ? 0 : activeTone.data[i];
+            
+            // アドレスが切り替わる瞬間（各ステップの開始時）におけるCPUアクセスの衝突判定
+            const hasCpuAccessCollision = isBugEnabled && !isMutedByRegister && (Math.random() < bugProbability);
+
+            for (let j = 0; j < samplesPerStep; j++) {
+                let currentWave = rawWave;
+
+                if (isBugEnabled && !isMutedByRegister) {
+                    // バグ1: 16バイト目から17バイト目（インデックス15から16）への移動ノイズ
+                    // 17バイト目の開始から数サンプルに0xFF (-1) を強制的に挿入
+                    if (i === 16) {
+                        currentWave = -1;
+                    }
+                    // バグ2: アドレスが移動する瞬間（j === 0 付近）のCPU書き込みとのアクセス衝突ノイズ
+                    else if (hasCpuAccessCollision) {
+                        currentWave = Math.random(-128, 127);
+                    }
+                }
+
+                // 訂正された11bit DAC丸め処理の数式を適用
+                // Cout ＝ 波形データ値 × 音量 ÷ 16 ＋ 128 (小数点以下切り捨て)
+                const Cout = Math.floor(currentWave * volume / 16) + 128;
+
+                // Web Audioのfloat範囲 [-1.0, 1.0] へ正規化
+                // 静止点（全ch無音またはvol=0時）の合計出力は640。これを0.0基準とする。
+                // 1ch分の出力振幅差分 (Cout - 128) を、全体の最大ダイナミックレンジ幅（600）で除算
+                const floatVal = (Cout - 128) / 600.0;
+
+                channelData[i * samplesPerStep + j] = floatVal;
+            }
+        }
+    }
+
+    // ノイズ混入のガサガサ音を再現するために、動的にバッファを書き換えるタイマー
+    function startBugNoiseTimer() {
+        stopBugNoiseTimer();
+        const isBugEnabled = document.getElementById('bugModeToggle').checked;
+        if (isBugEnabled) {
+            // 約60msごとに再生バッファを更新し、不規則な衝突ノイズの有無を動的にずらします
+            bugIntervalId = setInterval(() => {
+                if (previewSource) {
+                    updatePreviewBuffer();
+                }
+            }, 60);
+        }
+    }
+
+    function stopBugNoiseTimer() {
+        if (bugIntervalId) {
+            clearInterval(bugIntervalId);
+            bugIntervalId = null;
+        }
+    }
+
+    function updatePreviewVolume() {
+        const volInput = document.getElementById('previewVolume');
+        let vol = parseInt(volInput.value, 10);
+        if (isNaN(vol)) vol = 12;
+        vol = Math.min(15, Math.max(0, vol));
+        volInput.value = vol;
+
+        // デジタル演算部分（updatePreviewBuffer内）に音量を通知してバッファを更新
+        updatePreviewBuffer();
+
+        // アナログマスターゲインは固定してヘッドホンなどを保護
+        if (previewGainNode) {
+            previewGainNode.gain.value = 1.0; 
+        }
+    }
+
+    function updatePreviewFrequency() {
+        if (!previewSource || !audioCtx) return;
+        const noteSelect = document.getElementById('previewNote');
+        const midiNote = parseInt(noteSelect.value, 10);
+        const targetFreq = midiNoteToFrequency(midiNote);
+        const sccN = getSCCRegisterValue(targetFreq);
+        const actualFreq = getSCCActualFrequency(sccN);
+
+        if (actualFreq > 0) {
+            const baseFreq = audioCtx.sampleRate / 4096;
+            previewSource.playbackRate.value = actualFreq / baseFreq;
+        } else {
+            // レジスタNが0〜8になり発音禁止範囲に入った場合は再生を停止する
+            stopPreview();
+        }
+    }
+
+    function startPreview() {
+        initAudio();
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        stopPreview();
+
+        updatePreviewBuffer();
+        updatePreviewVolume();
+
+        const noteSelect = document.getElementById('previewNote');
+        const midiNote = parseInt(noteSelect.value, 10);
+        const targetFreq = midiNoteToFrequency(midiNote);
+        const sccN = getSCCRegisterValue(targetFreq);
+        const actualFreq = getSCCActualFrequency(sccN);
+
+        // N > 8 の場合のみ実際にノードをスタートする
+        if (actualFreq > 0) {
+            previewSource = audioCtx.createBufferSource();
+            previewSource.buffer = previewBuffer;
+            previewSource.loop = true;
+
+            const baseFreq = audioCtx.sampleRate / 4096;
+            previewSource.playbackRate.value = actualFreq / baseFreq;
+
+            previewSource.connect(previewGainNode);
+            previewSource.start();
+            document.getElementById('playBtn').classList.add('active');
+            document.getElementById('playBtn').textContent = "■ 停止";
+
+            startBugNoiseTimer();
+        } else {
+            alert(`Nの値が${sccN}（0〜8）となるため、実機の仕様に準拠して発音しません。`);
+        }
+    }
+
+    function stopPreview(stopAutoPlay = true) {
+        if (previewSource) {
+            try {
+                previewSource.stop();
+            } catch (e) {}
+            previewSource.disconnect();
+            previewSource = null;
+        }
+        if (stopAutoPlay) {
+            document.getElementById('playBtn').classList.remove('active');
+            document.getElementById('playBtn').textContent = "▶ 再生";
+        }
+
+        stopBugNoiseTimer();
+    }
+
+    function playNote(midiNote) {
+        initAudio();
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        stopPreview(false);
+
+        document.getElementById('previewNote').value = midiNote;
+
+        updatePreviewBuffer();
+        updatePreviewVolume();
+
+        const targetFreq = midiNoteToFrequency(midiNote);
+        const sccN = getSCCRegisterValue(targetFreq);
+        const actualFreq = getSCCActualFrequency(sccN);
+
+        if (actualFreq > 0) {
+            previewSource = audioCtx.createBufferSource();
+            previewSource.buffer = previewBuffer;
+            previewSource.loop = true;
+
+            const baseFreq = audioCtx.sampleRate / 4096;
+            previewSource.playbackRate.value = actualFreq / baseFreq;
+
+            previewSource.connect(previewGainNode);
+            previewSource.start();
+
+            startBugNoiseTimer();
+        }
+    }
+
+    function stopNote() {
+        if (!document.getElementById('playBtn').classList.contains('active')) {
+            stopPreview();
+        }
+    }
+
+    // 音階セレクトボックスの生成 (C2[36] から C7[96] まで)
+    // 実機に則して計算された実際の再生周波数と、分周比レジスタ値 N をプルダウンに表示
+    const previewNoteSelect = document.getElementById('previewNote');
+    for (let m = 24; m < 120; m++) {
+        const option = document.createElement('option');
+        option.value = m;
+
+        const targetFreq = midiNoteToFrequency(m);
+        const sccN = getSCCRegisterValue(targetFreq);
+        const actualFreq = getSCCActualFrequency(sccN);
+
+        let displayText = `${getNoteName(m)}`;
+        if (sccN <= 8) {
+            displayText += ` (N=${sccN}:発音禁止範囲)`;
+        } else {
+            const hexN = sccN.toString(16).toUpperCase().padStart(3, '0') + 'h';
+            displayText += ` (${Math.round(actualFreq)}Hz, N=${sccN}/${hexN})`;
+        }
+
+        option.textContent = displayText;
+        if (m === 69) { // A4 (440Hz)
+            option.selected = true;
+        }
+        previewNoteSelect.appendChild(option);
+    }
+
+    // 簡易鍵盤の生成 (C4 から C5)
+    const keyboardContainer = document.getElementById('keyboardContainer');
+    const keyboardNotes = [
+        { note: 47, isBlack: false, label: "B" },
+
+        { note: 48, isBlack: false, label: "C3" },
+        { note: 49, isBlack: true,  label: "C#" },
+        { note: 50, isBlack: false, label: "D" },
+        { note: 51, isBlack: true,  label: "D#" },
+        { note: 52, isBlack: false, label: "E" },
+        { note: 53, isBlack: false, label: "F" },
+        { note: 54, isBlack: true,  label: "F#" },
+        { note: 55, isBlack: false, label: "G" },
+        { note: 56, isBlack: true,  label: "G#" },
+        { note: 57, isBlack: false, label: "A" },
+        { note: 58, isBlack: true,  label: "A#" },
+        { note: 59, isBlack: false, label: "B" },
+
+        { note: 60, isBlack: false, label: "C4" },
+        { note: 61, isBlack: true,  label: "C#" },
+        { note: 62, isBlack: false, label: "D" },
+        { note: 63, isBlack: true,  label: "D#" },
+        { note: 64, isBlack: false, label: "E" },
+        { note: 65, isBlack: false, label: "F" },
+        { note: 66, isBlack: true,  label: "F#" },
+        { note: 67, isBlack: false, label: "G" },
+        { note: 68, isBlack: true,  label: "G#" },
+        { note: 69, isBlack: false, label: "A" },
+        { note: 70, isBlack: true,  label: "A#" },
+        { note: 71, isBlack: false, label: "B" },
+
+        { note: 72, isBlack: false, label: "C5"},
+        { note: 73, isBlack: true,  label: "C#" },
+        { note: 74, isBlack: false, label: "D" },
+        { note: 75, isBlack: true,  label: "D#" },
+        { note: 76, isBlack: false, label: "E" },
+        { note: 77, isBlack: false, label: "F" },
+        { note: 78, isBlack: true,  label: "F#" },
+        { note: 79, isBlack: false, label: "G" },
+        { note: 80, isBlack: true,  label: "G#" },
+        { note: 81, isBlack: false, label: "A" },
+        { note: 82, isBlack: true,  label: "A#" },
+        { note: 83, isBlack: false, label: "B" },
+        { note: 84, isBlack: false, label: "C6"},
+    ];
+
+    window.addEventListener('mousedown', () => { mouseIsDown = true; });
+    window.addEventListener('mouseup', () => { 
+        mouseIsDown = false; 
+        if (activeKeyNote !== null) {
+            releaseKey();
+        }
+    });
+
+    function triggerKeyPlay(note, element) {
+        activeKeyNote = note;
+        document.querySelectorAll('.key').forEach(el => el.classList.remove('active-playing'));
+        element.classList.add('active-playing');
+        playNote(note);
+    }
+
+    function releaseKey() {
+        activeKeyNote = null;
+        document.querySelectorAll('.key').forEach(el => el.classList.remove('active-playing'));
+        stopNote();
+    }
+
+    keyboardNotes.forEach(k => {
+        const keyEl = document.createElement('div');
+        keyEl.className = `key ${k.isBlack ? 'black' : ''}`;
+        keyEl.textContent = k.label;
+        keyEl.dataset.note = k.note;
+
+        // マウスクリック・ドラッグイベント
+        keyEl.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            triggerKeyPlay(k.note, keyEl);
+        });
+
+        keyEl.addEventListener('mouseenter', () => {
+            if (mouseIsDown) {
+                triggerKeyPlay(k.note, keyEl);
+            }
+        });
+
+        keyEl.addEventListener('mouseleave', () => {
+            if (activeKeyNote === k.note) {
+                releaseKey();
+            }
+        });
+
+        // タッチイベント
+        keyEl.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            triggerKeyPlay(k.note, keyEl);
+        });
+
+        keyEl.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            if (activeKeyNote === k.note) {
+                releaseKey();
+            }
+        });
+
+        keyboardContainer.appendChild(keyEl);
+    });
+
+    // 各UIコントロールのイベント
+    document.getElementById('playBtn').addEventListener('click', () => {
+        if (previewSource) {
+            stopPreview();
+        } else {
+            startPreview();
+        }
+    });
+
+    //document.getElementById('stopBtn').addEventListener('click', () => {
+    //    stopPreview();
+    //});
+
+    previewNoteSelect.addEventListener('change', () => {
+        if (previewSource) {
+            updatePreviewFrequency();
+        }
+    });
+
+    document.getElementById('previewVolume').addEventListener('input', () => {
+        updatePreviewVolume();
+    });
+
+    // バグ再現設定のコントロールイベント
+    document.getElementById('bugModeToggle').addEventListener('change', () => {
+        updatePreviewBuffer();
+        if (previewSource) {
+            const isBugEnabled = document.getElementById('bugModeToggle').checked;
+            if (isBugEnabled) {
+                startBugNoiseTimer();
+            } else {
+                stopBugNoiseTimer();
+            }
+        }
+    });
+
+    document.getElementById('bugProbabilityInput').addEventListener('input', (e) => {
+        document.getElementById('bugProbabilityVal').textContent = parseFloat(e.target.value).toFixed(3) + '%';
+        updatePreviewBuffer();
     });
 
     updateUI(true);
