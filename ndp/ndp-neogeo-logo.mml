@@ -1,0 +1,16 @@
+#title "NEOGEO BOOT"
+#tempo 135
+;#time-base 27
+
+@m0=20,4,3,9
+1 o4 v15
+2 o5 v14
+12 @8 @m0
+12 g4^8e4^8b4 a1 >c4^8<b4^8g4 a1
+
+3 o4 v12 @3 @q2 @r12,2 @rd1,12
+3 l16
+3 <g>cdfgfdcd <g>cdd<g>cd <a>degagede <a>dee<a>de
+3 cega+>c<a+gea+ cega+ceg [4 <a>deav-2]v+8
+
+;Special Tanks to takawo

@@ -37,6 +37,7 @@ ndp-graii-7.kss::KSS, 0, GRADIUS II AC - Synthetic Life - [NDP Arrange] - Progra
 ndp-haru-no-umi.kss::KSS, 0, HARU no UMI, 00:01:53, 00:00:00-,,2
 ndp-kenja_no_ishi.kss::KSS, 0, CASIO 賢者の石 サウンドメモ with SE, 00:01:36, 00:00:00-,,2
 ndp-kenja_no_ishi_split_se.kss::KSS, 0, CASIO 賢者の石 サウンドメモ, 00:01:55, 00:00:00-,,2
+ndp-neogeo-logo.kss::KSS, 0, NEOGEO BOOT, 00:00:07, 0,1,1
 ndp-paro-crisis.kss::KSS, 0, PARODIUS 中ボス - クライシス第４楽章 - Programmed by uniskie, 00:00:21, 00:00:05-,,2
 ndp-phantasy_star_title.kss::KSS, 0, Phantasy Star - Title (OPLL ver Like) - Programmed by uniskie, 00:00:27, 00:00:00-,,2
 ndp-riseout.kss::KSS, 0, RISEOUT TITLE  (Original) - Programmed by uniskie, 00:00:40, 00:00:00-,,2
@@ -46,7 +47,7 @@ ndp-saramander-1-power_of_anger-another.kss::KSS, 0, SALAMANDER [ POWER OF ANGER
 ndp-saramander-1-power_of_anger-nh.kss::KSS, 0, SALAMANDER [ POWER OF ANGER ] (no H.ENV) - Programmed by uniskie, 00:00:35, 00:00:09-,,2
 ndp-saramander-2-fly_high.kss::KSS, 0, SALAMANDER [ FLY HIGH ] - Programmed by uniskie, 00:00:32, 00:00:06-,,2
 ndp-saramander-2-fly_high-nr.kss::KSS, 0, SALAMANDER [ FLY HIGH ] (No H.Env) - Programmed by uniskie, 00:00:32, 00:00:06-,,2
-ndp-show-ten.kss::KSS, 0, Theme of The Laugh Spot - Composed by 中村八大, 00:01:16, 0,1,1
+ndp-show-ten.kss::KSS, 0, Theme of The Laugh Spot - Composed by 中村八大, 00:01:18, 0,1,1
 ndp-sorcerian_md-gray_dungeon-dungeon.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [H.ENV] - Programmed by uniskie, 00:01:29, 00:00:06-,,2
 ndp-sorcerian_md-gray_dungeon-dungeon-std.kss::KSS, 0, SORCERIAN MD - 灰色のダンジョン(THE DARKEST OF THE DARK) - DUNGEON [Std] - Programmed by uniskie, 00:01:29, 00:00:06-,,2
 ndp-space_manbow_stage1_battle_ship.kss::KSS, 0, SPACE MANBOW -STAGE1- Battle Ship - Programmed by uniskie, 00:00:57, 00:00:00-,,2

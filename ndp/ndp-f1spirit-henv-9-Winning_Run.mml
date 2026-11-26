@@ -18,7 +18,7 @@
 @3 = fbc L a:2 9:2 8:2
 @6 = f c:5 L b:3 a:3
 @7 = *1 s10 rrrrrrr *0 r
-@8 = *1 s14 rrrrr *0 r
+@8 = *1 s14 rrrr *0 r
 
 @n12 = 0 -12 0
 
@@ -84,7 +84,7 @@ $sq42 = @m-@3v-5          b<a>b         v+5@1@m1
 ;**** Base ***
 
 ;3 o3 v15 @6 
-3 o3 @7m+ @q1 \-1 ;H.ENV
+3 o3 @7m+ ;H.ENV
 3 e4 d4 c4< b8.e 
 3 @8 k12 ;H.ENV
 3 @n12

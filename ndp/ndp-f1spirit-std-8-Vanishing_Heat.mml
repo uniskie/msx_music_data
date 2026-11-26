@@ -31,7 +31,7 @@
 12 v14 o4 @m0
 12 @rd1,15 @q1
 12 @L
-12 @0 @q1 @r13,5
+12 @0 @q1 @r13,5 @n12
 1  [f+4^16 d+eb4.. b>c+
 1   v+1ddre r/f+re rc+r<f+4^16v-1]2
 1             arf+2^16v-1
@@ -45,7 +45,7 @@
 2  [arg+f+ ef+rb rbb>c c+<e8.
 2  /raar aara araa rddd]2
 2  @n-
-12 @1 @r11,2 j2
+12 @1 @r11,2 j2 @n-
 2  r v-2 \1 ;delay
 12 l32
 12 v-2<c+f+<a+>f+c+a+g+a+ f+c+f+a+g+a+f+a+ a+f+c+f+a+f+a+>c+ ec+ef+a+f+c+f+
